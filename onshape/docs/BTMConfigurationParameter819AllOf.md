@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**EnumOptionIds** | Pointer to **[]string** |  | [optional] 
 **GeneratedParameterId** | Pointer to [**BTTreeNode20**](BTTreeNode20.md) |  | [optional] 
 **IsCosmetic** | Pointer to **bool** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
@@ -56,6 +57,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMConfigurationParameter819AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetEnumOptionIds
+
+`func (o *BTMConfigurationParameter819AllOf) GetEnumOptionIds() []string`
+
+GetEnumOptionIds returns the EnumOptionIds field if non-nil, zero value otherwise.
+
+### GetEnumOptionIdsOk
+
+`func (o *BTMConfigurationParameter819AllOf) GetEnumOptionIdsOk() (*[]string, bool)`
+
+GetEnumOptionIdsOk returns a tuple with the EnumOptionIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnumOptionIds
+
+`func (o *BTMConfigurationParameter819AllOf) SetEnumOptionIds(v []string)`
+
+SetEnumOptionIds sets EnumOptionIds field to given value.
+
+### HasEnumOptionIds
+
+`func (o *BTMConfigurationParameter819AllOf) HasEnumOptionIds() bool`
+
+HasEnumOptionIds returns a boolean if a field has been set.
 
 ### GetGeneratedParameterId
 

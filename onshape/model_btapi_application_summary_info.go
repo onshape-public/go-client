@@ -16,8 +16,9 @@ import (
 
 // BTAPIApplicationSummaryInfo struct for BTAPIApplicationSummaryInfo
 type BTAPIApplicationSummaryInfo struct {
-	ClientId    *string `json:"clientId,omitempty"`
-	Description *string `json:"description,omitempty"`
+	ApplicationOwnerType *int32  `json:"applicationOwnerType,omitempty"`
+	ClientId             *string `json:"clientId,omitempty"`
+	Description          *string `json:"description,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -44,6 +45,38 @@ func NewBTAPIApplicationSummaryInfo() *BTAPIApplicationSummaryInfo {
 func NewBTAPIApplicationSummaryInfoWithDefaults() *BTAPIApplicationSummaryInfo {
 	this := BTAPIApplicationSummaryInfo{}
 	return &this
+}
+
+// GetApplicationOwnerType returns the ApplicationOwnerType field value if set, zero value otherwise.
+func (o *BTAPIApplicationSummaryInfo) GetApplicationOwnerType() int32 {
+	if o == nil || o.ApplicationOwnerType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ApplicationOwnerType
+}
+
+// GetApplicationOwnerTypeOk returns a tuple with the ApplicationOwnerType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationSummaryInfo) GetApplicationOwnerTypeOk() (*int32, bool) {
+	if o == nil || o.ApplicationOwnerType == nil {
+		return nil, false
+	}
+	return o.ApplicationOwnerType, true
+}
+
+// HasApplicationOwnerType returns a boolean if a field has been set.
+func (o *BTAPIApplicationSummaryInfo) HasApplicationOwnerType() bool {
+	if o != nil && o.ApplicationOwnerType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApplicationOwnerType gets a reference to the given int32 and assigns it to the ApplicationOwnerType field.
+func (o *BTAPIApplicationSummaryInfo) SetApplicationOwnerType(v int32) {
+	o.ApplicationOwnerType = &v
 }
 
 // GetClientId returns the ClientId field value if set, zero value otherwise.
@@ -272,6 +305,9 @@ func (o *BTAPIApplicationSummaryInfo) SetViewRef(v string) {
 
 func (o BTAPIApplicationSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ApplicationOwnerType != nil {
+		toSerialize["applicationOwnerType"] = o.ApplicationOwnerType
+	}
 	if o.ClientId != nil {
 		toSerialize["clientId"] = o.ClientId
 	}

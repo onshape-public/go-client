@@ -1636,8 +1636,26 @@ const (
 	GBTErrorStringEnumTwoTabMateconnectorsNeeded                                  GBTErrorStringEnum = "TWO_TAB_MATECONNECTORS_NEEDED"
 	GBTErrorStringEnumFormedTagFormOriginOutsideToolsBbox                         GBTErrorStringEnum = "FORMED_TAG_FORM_ORIGIN_OUTSIDE_TOOLS_BBOX"
 	GBTErrorStringEnumFormedToolsIntersectCannotCut                               GBTErrorStringEnum = "FORMED_TOOLS_INTERSECT_CANNOT_CUT"
+	GBTErrorStringEnumRoutingCurveAtLeastTwoDistinctPoints                        GBTErrorStringEnum = "ROUTING_CURVE_AT_LEAST_TWO_DISTINCT_POINTS"
+	GBTErrorStringEnumRoutingCurveOrthoPathAlreadyAxisAligned                     GBTErrorStringEnum = "ROUTING_CURVE_ORTHO_PATH_ALREADY_AXIS_ALIGNED"
+	GBTErrorStringEnumRoutingCurveInvalidPath                                     GBTErrorStringEnum = "ROUTING_CURVE_INVALID_PATH"
+	GBTErrorStringEnumRoutingCurveCsvInvalidData                                  GBTErrorStringEnum = "ROUTING_CURVE_CSV_INVALID_DATA"
+	GBTErrorStringEnumRoutingCurveCsvNotEnoughColumns                             GBTErrorStringEnum = "ROUTING_CURVE_CSV_NOT_ENOUGH_COLUMNS"
+	GBTErrorStringEnumExtendToPartFailed                                          GBTErrorStringEnum = "EXTEND_TO_PART_FAILED"
+	GBTErrorStringEnumExtendOffsetFailed                                          GBTErrorStringEnum = "EXTEND_OFFSET_FAILED"
 	GBTErrorStringEnumSketchPatternNeedsSeed                                      GBTErrorStringEnum = "SKETCH_PATTERN_NEEDS_SEED"
 	GBTErrorStringEnumWrapNeedsDifferentAnchor                                    GBTErrorStringEnum = "WRAP_NEEDS_DIFFERENT_ANCHOR"
+	GBTErrorStringEnumCannotResolvePartStudio                                     GBTErrorStringEnum = "CANNOT_RESOLVE_PART_STUDIO"
+	GBTErrorStringEnumCannotResolveAssembly                                       GBTErrorStringEnum = "CANNOT_RESOLVE_ASSEMBLY"
+	GBTErrorStringEnumNoMeshFound                                                 GBTErrorStringEnum = "NO_MESH_FOUND"
+	GBTErrorStringEnumConstrainedSurfaceTooFewPoints                              GBTErrorStringEnum = "CONSTRAINED_SURFACE_TOO_FEW_POINTS"
+	GBTErrorStringEnumConstrainedSurfaceBadTolerance                              GBTErrorStringEnum = "CONSTRAINED_SURFACE_BAD_TOLERANCE"
+	GBTErrorStringEnumConstrainedSurfaceBadPosition                               GBTErrorStringEnum = "CONSTRAINED_SURFACE_BAD_POSITION"
+	GBTErrorStringEnumConstrainedSurfaceFailedTolerance                           GBTErrorStringEnum = "CONSTRAINED_SURFACE_FAILED_TOLERANCE"
+	GBTErrorStringEnumConstrainedSurfaceFailed                                    GBTErrorStringEnum = "CONSTRAINED_SURFACE_FAILED"
+	GBTErrorStringEnumConstrainedSurfaceSelectMesh                                GBTErrorStringEnum = "CONSTRAINED_SURFACE_SELECT_MESH"
+	GBTErrorStringEnumRoutingCurveSelectCurve                                     GBTErrorStringEnum = "ROUTING_CURVE_SELECT_CURVE"
+	GBTErrorStringEnumRoutingCurveAtLeastThreeDistinctPoints                      GBTErrorStringEnum = "ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3259,8 +3277,26 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"TWO_TAB_MATECONNECTORS_NEEDED",
 	"FORMED_TAG_FORM_ORIGIN_OUTSIDE_TOOLS_BBOX",
 	"FORMED_TOOLS_INTERSECT_CANNOT_CUT",
+	"ROUTING_CURVE_AT_LEAST_TWO_DISTINCT_POINTS",
+	"ROUTING_CURVE_ORTHO_PATH_ALREADY_AXIS_ALIGNED",
+	"ROUTING_CURVE_INVALID_PATH",
+	"ROUTING_CURVE_CSV_INVALID_DATA",
+	"ROUTING_CURVE_CSV_NOT_ENOUGH_COLUMNS",
+	"EXTEND_TO_PART_FAILED",
+	"EXTEND_OFFSET_FAILED",
 	"SKETCH_PATTERN_NEEDS_SEED",
 	"WRAP_NEEDS_DIFFERENT_ANCHOR",
+	"CANNOT_RESOLVE_PART_STUDIO",
+	"CANNOT_RESOLVE_ASSEMBLY",
+	"NO_MESH_FOUND",
+	"CONSTRAINED_SURFACE_TOO_FEW_POINTS",
+	"CONSTRAINED_SURFACE_BAD_TOLERANCE",
+	"CONSTRAINED_SURFACE_BAD_POSITION",
+	"CONSTRAINED_SURFACE_FAILED_TOLERANCE",
+	"CONSTRAINED_SURFACE_FAILED",
+	"CONSTRAINED_SURFACE_SELECT_MESH",
+	"ROUTING_CURVE_SELECT_CURVE",
+	"ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS",
 	"UNKNOWN",
 }
 
