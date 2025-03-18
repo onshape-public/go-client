@@ -6,7 +6,7 @@
     "operationIds": null
   },
   "generate": {
-    "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.9.0/openapi-generator-cli-7.9.0.jar",
+    "generatorUrl": "https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/7.12.0/openapi-generator-cli-7.12.0.jar",
     "customGeneratorUrl": "https://github.com/onshape-public/openapi-utilities/raw/main/go-oapi-codegen/release/go-oapi-codegen-latest.jar",
     "preprocess": [
       {
@@ -177,11 +177,6 @@
       {
         "key": "components.schemas.BTGlobalTreeNodeListResponseBTTeamInfo.properties.items.properties",
         "type": "remove"
-      },
-      {
-        "key": "components.schemas.GBTStlEncodingType.default",
-        "type": "update",
-        "value": "GBTStlEncodingTypeText"
       }
     ]
   }
