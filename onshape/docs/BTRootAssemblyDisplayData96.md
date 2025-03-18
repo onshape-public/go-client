@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **FromFullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
+**FullElementIdToReferencedSketchIds** | Pointer to **map[string][]string** |  | [optional] 
 **GeometryMates** | Pointer to [**[]BTGeometryMateDisplayData1050**](BTGeometryMateDisplayData1050.md) |  | [optional] 
 **Incremental** | Pointer to **bool** |  | [optional] 
 **InstanceCount** | Pointer to **int32** |  | [optional] 
@@ -354,6 +355,31 @@ SetFullElementId sets FullElementId field to given value.
 `func (o *BTRootAssemblyDisplayData96) HasFullElementId() bool`
 
 HasFullElementId returns a boolean if a field has been set.
+
+### GetFullElementIdToReferencedSketchIds
+
+`func (o *BTRootAssemblyDisplayData96) GetFullElementIdToReferencedSketchIds() map[string][]string`
+
+GetFullElementIdToReferencedSketchIds returns the FullElementIdToReferencedSketchIds field if non-nil, zero value otherwise.
+
+### GetFullElementIdToReferencedSketchIdsOk
+
+`func (o *BTRootAssemblyDisplayData96) GetFullElementIdToReferencedSketchIdsOk() (*map[string][]string, bool)`
+
+GetFullElementIdToReferencedSketchIdsOk returns a tuple with the FullElementIdToReferencedSketchIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullElementIdToReferencedSketchIds
+
+`func (o *BTRootAssemblyDisplayData96) SetFullElementIdToReferencedSketchIds(v map[string][]string)`
+
+SetFullElementIdToReferencedSketchIds sets FullElementIdToReferencedSketchIds field to given value.
+
+### HasFullElementIdToReferencedSketchIds
+
+`func (o *BTRootAssemblyDisplayData96) HasFullElementIdToReferencedSketchIds() bool`
+
+HasFullElementIdToReferencedSketchIds returns a boolean if a field has been set.
 
 ### GetGeometryMates
 

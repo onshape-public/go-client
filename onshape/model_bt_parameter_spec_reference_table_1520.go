@@ -21,6 +21,7 @@ type BTParameterSpecReferenceTable1520 struct {
 	AdditionalLocalizedStrings *int32                             `json:"additionalLocalizedStrings,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
 	DefaultValue               *BTMParameter1                     `json:"defaultValue,omitempty"`
+	EnumOptions                []string                           `json:"enumOptions,omitempty"`
 	IconUri                    *string                            `json:"iconUri,omitempty"`
 	LocalizableName            *string                            `json:"localizableName,omitempty"`
 	LocalizedName              *string                            `json:"localizedName,omitempty"`
@@ -179,6 +180,38 @@ func (o *BTParameterSpecReferenceTable1520) HasDefaultValue() bool {
 // SetDefaultValue gets a reference to the given BTMParameter1 and assigns it to the DefaultValue field.
 func (o *BTParameterSpecReferenceTable1520) SetDefaultValue(v BTMParameter1) {
 	o.DefaultValue = &v
+}
+
+// GetEnumOptions returns the EnumOptions field value if set, zero value otherwise.
+func (o *BTParameterSpecReferenceTable1520) GetEnumOptions() []string {
+	if o == nil || o.EnumOptions == nil {
+		var ret []string
+		return ret
+	}
+	return o.EnumOptions
+}
+
+// GetEnumOptionsOk returns a tuple with the EnumOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecReferenceTable1520) GetEnumOptionsOk() ([]string, bool) {
+	if o == nil || o.EnumOptions == nil {
+		return nil, false
+	}
+	return o.EnumOptions, true
+}
+
+// HasEnumOptions returns a boolean if a field has been set.
+func (o *BTParameterSpecReferenceTable1520) HasEnumOptions() bool {
+	if o != nil && o.EnumOptions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptions gets a reference to the given []string and assigns it to the EnumOptions field.
+func (o *BTParameterSpecReferenceTable1520) SetEnumOptions(v []string) {
+	o.EnumOptions = v
 }
 
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
@@ -618,6 +651,9 @@ func (o BTParameterSpecReferenceTable1520) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue
+	}
+	if o.EnumOptions != nil {
+		toSerialize["enumOptions"] = o.EnumOptions
 	}
 	if o.IconUri != nil {
 		toSerialize["iconUri"] = o.IconUri

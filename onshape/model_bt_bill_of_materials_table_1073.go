@@ -32,6 +32,7 @@ type BTBillOfMaterialsTable1073 struct {
 	Title                                   *string                 `json:"title,omitempty"`
 	FailedMetadataRepresentativeOccurrences []string                `json:"failedMetadataRepresentativeOccurrences,omitempty"`
 	Indented                                *bool                   `json:"indented,omitempty"`
+	IsProtectedWorkspace                    *bool                   `json:"isProtectedWorkspace,omitempty"`
 	IsShowingTopLevelAssemblyRow            *bool                   `json:"isShowingTopLevelAssemblyRow,omitempty"`
 	PartNumber                              *string                 `json:"partNumber,omitempty"`
 	Revision                                *string                 `json:"revision,omitempty"`
@@ -535,6 +536,38 @@ func (o *BTBillOfMaterialsTable1073) SetIndented(v bool) {
 	o.Indented = &v
 }
 
+// GetIsProtectedWorkspace returns the IsProtectedWorkspace field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTable1073) GetIsProtectedWorkspace() bool {
+	if o == nil || o.IsProtectedWorkspace == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsProtectedWorkspace
+}
+
+// GetIsProtectedWorkspaceOk returns a tuple with the IsProtectedWorkspace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTable1073) GetIsProtectedWorkspaceOk() (*bool, bool) {
+	if o == nil || o.IsProtectedWorkspace == nil {
+		return nil, false
+	}
+	return o.IsProtectedWorkspace, true
+}
+
+// HasIsProtectedWorkspace returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTable1073) HasIsProtectedWorkspace() bool {
+	if o != nil && o.IsProtectedWorkspace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsProtectedWorkspace gets a reference to the given bool and assigns it to the IsProtectedWorkspace field.
+func (o *BTBillOfMaterialsTable1073) SetIsProtectedWorkspace(v bool) {
+	o.IsProtectedWorkspace = &v
+}
+
 // GetIsShowingTopLevelAssemblyRow returns the IsShowingTopLevelAssemblyRow field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTable1073) GetIsShowingTopLevelAssemblyRow() bool {
 	if o == nil || o.IsShowingTopLevelAssemblyRow == nil {
@@ -717,6 +750,9 @@ func (o BTBillOfMaterialsTable1073) MarshalJSON() ([]byte, error) {
 	}
 	if o.Indented != nil {
 		toSerialize["indented"] = o.Indented
+	}
+	if o.IsProtectedWorkspace != nil {
+		toSerialize["isProtectedWorkspace"] = o.IsProtectedWorkspace
 	}
 	if o.IsShowingTopLevelAssemblyRow != nil {
 		toSerialize["isShowingTopLevelAssemblyRow"] = o.IsShowingTopLevelAssemblyRow

@@ -17,29 +17,28 @@ import (
 // BTAnnotationWeldDisplayData4919 struct for BTAnnotationWeldDisplayData4919
 type BTAnnotationWeldDisplayData4919 struct {
 	BTAnnotationDisplayData3225
-	AnnotationPlane         []float32         `json:"annotationPlane,omitempty"`
-	BaseNormal              []float32         `json:"baseNormal,omitempty"`
-	BasePoint               []float32         `json:"basePoint,omitempty"`
-	BtType                  *string           `json:"btType,omitempty"`
-	DeterministicId         *string           `json:"deterministicId,omitempty"`
-	DxdySegments            []float32         `json:"dxdySegments,omitempty"`
-	NumberOfLeaderSegements *int32            `json:"numberOfLeaderSegements,omitempty"`
-	JointType               *GBTWeldJointType `json:"jointType,omitempty"`
-	LowerGroove             *float64          `json:"lowerGroove,omitempty"`
-	LowerRootOpening        *float64          `json:"lowerRootOpening,omitempty"`
-	LowerValueFour          *float64          `json:"lowerValueFour,omitempty"`
-	LowerValueOne           *float64          `json:"lowerValueOne,omitempty"`
-	LowerValueThree         *float64          `json:"lowerValueThree,omitempty"`
-	LowerValueTwo           *float64          `json:"lowerValueTwo,omitempty"`
-	LowerWeldType           *GBTWeldType      `json:"lowerWeldType,omitempty"`
-	Reference               *string           `json:"reference,omitempty"`
-	UpperGroove             *float64          `json:"upperGroove,omitempty"`
-	UpperRootOpening        *float64          `json:"upperRootOpening,omitempty"`
-	UpperValueFour          *float64          `json:"upperValueFour,omitempty"`
-	UpperValueOne           *float64          `json:"upperValueOne,omitempty"`
-	UpperValueThree         *float64          `json:"upperValueThree,omitempty"`
-	UpperValueTwo           *float64          `json:"upperValueTwo,omitempty"`
-	UpperWeldType           *GBTWeldType      `json:"upperWeldType,omitempty"`
+	AnnotationPlane  *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
+	BasePlane        *BTCoordinateSystem387 `json:"basePlane,omitempty"`
+	BtType           *string                `json:"btType,omitempty"`
+	DeterministicId  *string                `json:"deterministicId,omitempty"`
+	DxdySegments     []BTVector2d1812       `json:"dxdySegments,omitempty"`
+	IsoFlip          *bool                  `json:"isoFlip,omitempty"`
+	JointType        *GBTWeldJointType      `json:"jointType,omitempty"`
+	LowerGroove      *float64               `json:"lowerGroove,omitempty"`
+	LowerRootOpening *float64               `json:"lowerRootOpening,omitempty"`
+	LowerValueFour   *float64               `json:"lowerValueFour,omitempty"`
+	LowerValueOne    *float64               `json:"lowerValueOne,omitempty"`
+	LowerValueThree  *float64               `json:"lowerValueThree,omitempty"`
+	LowerValueTwo    *float64               `json:"lowerValueTwo,omitempty"`
+	LowerWeldType    *GBTWeldType           `json:"lowerWeldType,omitempty"`
+	Reference        *string                `json:"reference,omitempty"`
+	UpperGroove      *float64               `json:"upperGroove,omitempty"`
+	UpperRootOpening *float64               `json:"upperRootOpening,omitempty"`
+	UpperValueFour   *float64               `json:"upperValueFour,omitempty"`
+	UpperValueOne    *float64               `json:"upperValueOne,omitempty"`
+	UpperValueThree  *float64               `json:"upperValueThree,omitempty"`
+	UpperValueTwo    *float64               `json:"upperValueTwo,omitempty"`
+	UpperWeldType    *GBTWeldType           `json:"upperWeldType,omitempty"`
 }
 
 // NewBTAnnotationWeldDisplayData4919 instantiates a new BTAnnotationWeldDisplayData4919 object
@@ -60,17 +59,17 @@ func NewBTAnnotationWeldDisplayData4919WithDefaults() *BTAnnotationWeldDisplayDa
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
-func (o *BTAnnotationWeldDisplayData4919) GetAnnotationPlane() []float32 {
+func (o *BTAnnotationWeldDisplayData4919) GetAnnotationPlane() BTCoordinateSystem387 {
 	if o == nil || o.AnnotationPlane == nil {
-		var ret []float32
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.AnnotationPlane
+	return *o.AnnotationPlane
 }
 
 // GetAnnotationPlaneOk returns a tuple with the AnnotationPlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationWeldDisplayData4919) GetAnnotationPlaneOk() ([]float32, bool) {
+func (o *BTAnnotationWeldDisplayData4919) GetAnnotationPlaneOk() (*BTCoordinateSystem387, bool) {
 	if o == nil || o.AnnotationPlane == nil {
 		return nil, false
 	}
@@ -86,73 +85,41 @@ func (o *BTAnnotationWeldDisplayData4919) HasAnnotationPlane() bool {
 	return false
 }
 
-// SetAnnotationPlane gets a reference to the given []float32 and assigns it to the AnnotationPlane field.
-func (o *BTAnnotationWeldDisplayData4919) SetAnnotationPlane(v []float32) {
-	o.AnnotationPlane = v
+// SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
+func (o *BTAnnotationWeldDisplayData4919) SetAnnotationPlane(v BTCoordinateSystem387) {
+	o.AnnotationPlane = &v
 }
 
-// GetBaseNormal returns the BaseNormal field value if set, zero value otherwise.
-func (o *BTAnnotationWeldDisplayData4919) GetBaseNormal() []float32 {
-	if o == nil || o.BaseNormal == nil {
-		var ret []float32
+// GetBasePlane returns the BasePlane field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetBasePlane() BTCoordinateSystem387 {
+	if o == nil || o.BasePlane == nil {
+		var ret BTCoordinateSystem387
 		return ret
 	}
-	return o.BaseNormal
+	return *o.BasePlane
 }
 
-// GetBaseNormalOk returns a tuple with the BaseNormal field value if set, nil otherwise
+// GetBasePlaneOk returns a tuple with the BasePlane field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationWeldDisplayData4919) GetBaseNormalOk() ([]float32, bool) {
-	if o == nil || o.BaseNormal == nil {
+func (o *BTAnnotationWeldDisplayData4919) GetBasePlaneOk() (*BTCoordinateSystem387, bool) {
+	if o == nil || o.BasePlane == nil {
 		return nil, false
 	}
-	return o.BaseNormal, true
+	return o.BasePlane, true
 }
 
-// HasBaseNormal returns a boolean if a field has been set.
-func (o *BTAnnotationWeldDisplayData4919) HasBaseNormal() bool {
-	if o != nil && o.BaseNormal != nil {
+// HasBasePlane returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasBasePlane() bool {
+	if o != nil && o.BasePlane != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetBaseNormal gets a reference to the given []float32 and assigns it to the BaseNormal field.
-func (o *BTAnnotationWeldDisplayData4919) SetBaseNormal(v []float32) {
-	o.BaseNormal = v
-}
-
-// GetBasePoint returns the BasePoint field value if set, zero value otherwise.
-func (o *BTAnnotationWeldDisplayData4919) GetBasePoint() []float32 {
-	if o == nil || o.BasePoint == nil {
-		var ret []float32
-		return ret
-	}
-	return o.BasePoint
-}
-
-// GetBasePointOk returns a tuple with the BasePoint field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAnnotationWeldDisplayData4919) GetBasePointOk() ([]float32, bool) {
-	if o == nil || o.BasePoint == nil {
-		return nil, false
-	}
-	return o.BasePoint, true
-}
-
-// HasBasePoint returns a boolean if a field has been set.
-func (o *BTAnnotationWeldDisplayData4919) HasBasePoint() bool {
-	if o != nil && o.BasePoint != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBasePoint gets a reference to the given []float32 and assigns it to the BasePoint field.
-func (o *BTAnnotationWeldDisplayData4919) SetBasePoint(v []float32) {
-	o.BasePoint = v
+// SetBasePlane gets a reference to the given BTCoordinateSystem387 and assigns it to the BasePlane field.
+func (o *BTAnnotationWeldDisplayData4919) SetBasePlane(v BTCoordinateSystem387) {
+	o.BasePlane = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -220,9 +187,9 @@ func (o *BTAnnotationWeldDisplayData4919) SetDeterministicId(v string) {
 }
 
 // GetDxdySegments returns the DxdySegments field value if set, zero value otherwise.
-func (o *BTAnnotationWeldDisplayData4919) GetDxdySegments() []float32 {
+func (o *BTAnnotationWeldDisplayData4919) GetDxdySegments() []BTVector2d1812 {
 	if o == nil || o.DxdySegments == nil {
-		var ret []float32
+		var ret []BTVector2d1812
 		return ret
 	}
 	return o.DxdySegments
@@ -230,7 +197,7 @@ func (o *BTAnnotationWeldDisplayData4919) GetDxdySegments() []float32 {
 
 // GetDxdySegmentsOk returns a tuple with the DxdySegments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationWeldDisplayData4919) GetDxdySegmentsOk() ([]float32, bool) {
+func (o *BTAnnotationWeldDisplayData4919) GetDxdySegmentsOk() ([]BTVector2d1812, bool) {
 	if o == nil || o.DxdySegments == nil {
 		return nil, false
 	}
@@ -246,41 +213,41 @@ func (o *BTAnnotationWeldDisplayData4919) HasDxdySegments() bool {
 	return false
 }
 
-// SetDxdySegments gets a reference to the given []float32 and assigns it to the DxdySegments field.
-func (o *BTAnnotationWeldDisplayData4919) SetDxdySegments(v []float32) {
+// SetDxdySegments gets a reference to the given []BTVector2d1812 and assigns it to the DxdySegments field.
+func (o *BTAnnotationWeldDisplayData4919) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
 }
 
-// GetNumberOfLeaderSegements returns the NumberOfLeaderSegements field value if set, zero value otherwise.
-func (o *BTAnnotationWeldDisplayData4919) GetNumberOfLeaderSegements() int32 {
-	if o == nil || o.NumberOfLeaderSegements == nil {
-		var ret int32
+// GetIsoFlip returns the IsoFlip field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetIsoFlip() bool {
+	if o == nil || o.IsoFlip == nil {
+		var ret bool
 		return ret
 	}
-	return *o.NumberOfLeaderSegements
+	return *o.IsoFlip
 }
 
-// GetNumberOfLeaderSegementsOk returns a tuple with the NumberOfLeaderSegements field value if set, nil otherwise
+// GetIsoFlipOk returns a tuple with the IsoFlip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAnnotationWeldDisplayData4919) GetNumberOfLeaderSegementsOk() (*int32, bool) {
-	if o == nil || o.NumberOfLeaderSegements == nil {
+func (o *BTAnnotationWeldDisplayData4919) GetIsoFlipOk() (*bool, bool) {
+	if o == nil || o.IsoFlip == nil {
 		return nil, false
 	}
-	return o.NumberOfLeaderSegements, true
+	return o.IsoFlip, true
 }
 
-// HasNumberOfLeaderSegements returns a boolean if a field has been set.
-func (o *BTAnnotationWeldDisplayData4919) HasNumberOfLeaderSegements() bool {
-	if o != nil && o.NumberOfLeaderSegements != nil {
+// HasIsoFlip returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasIsoFlip() bool {
+	if o != nil && o.IsoFlip != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetNumberOfLeaderSegements gets a reference to the given int32 and assigns it to the NumberOfLeaderSegements field.
-func (o *BTAnnotationWeldDisplayData4919) SetNumberOfLeaderSegements(v int32) {
-	o.NumberOfLeaderSegements = &v
+// SetIsoFlip gets a reference to the given bool and assigns it to the IsoFlip field.
+func (o *BTAnnotationWeldDisplayData4919) SetIsoFlip(v bool) {
+	o.IsoFlip = &v
 }
 
 // GetJointType returns the JointType field value if set, zero value otherwise.
@@ -808,11 +775,8 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
-	if o.BaseNormal != nil {
-		toSerialize["baseNormal"] = o.BaseNormal
-	}
-	if o.BasePoint != nil {
-		toSerialize["basePoint"] = o.BasePoint
+	if o.BasePlane != nil {
+		toSerialize["basePlane"] = o.BasePlane
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
@@ -823,8 +787,8 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
 	}
-	if o.NumberOfLeaderSegements != nil {
-		toSerialize["numberOfLeaderSegements"] = o.NumberOfLeaderSegements
+	if o.IsoFlip != nil {
+		toSerialize["isoFlip"] = o.IsoFlip
 	}
 	if o.JointType != nil {
 		toSerialize["jointType"] = o.JointType

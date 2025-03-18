@@ -65,6 +65,7 @@ Name | Type | Description | Notes
 **ProxyWorkspaceVersion** | Pointer to **string** |  | [optional] 
 **ProxyWorkspaceVersionId** | Pointer to **string** |  | [optional] 
 **Resolution** | Pointer to **string** | Determines export resolution of fine, medium, or coarse | [optional] 
+**RhinoVersion** | Pointer to [**GBTRhinoVersions**](GBTRhinoVersions.md) |  | [optional] 
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** |  | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
@@ -77,6 +78,7 @@ Name | Type | Description | Notes
 **SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
 **StepParasolidPreprocessingOption** | Pointer to [**GBTPreProcessParasolidOption**](GBTPreProcessParasolidOption.md) |  | [optional] 
 **StepVersionString** | Pointer to **string** |  | [optional] 
+**StlMode** | Pointer to [**GBTStlEncodingType**](GBTStlEncodingType.md) |  | [optional] [default to TEXT]
 **StoreInDocument** | Pointer to **bool** |  | [optional] 
 **TextAsGeometry** | Pointer to **bool** |  | [optional] 
 **TextOption** | Pointer to **string** |  | [optional] 
@@ -1629,6 +1631,31 @@ SetResolution sets Resolution field to given value.
 
 HasResolution returns a boolean if a field has been set.
 
+### GetRhinoVersion
+
+`func (o *BTTranslateFormatParams) GetRhinoVersion() GBTRhinoVersions`
+
+GetRhinoVersion returns the RhinoVersion field if non-nil, zero value otherwise.
+
+### GetRhinoVersionOk
+
+`func (o *BTTranslateFormatParams) GetRhinoVersionOk() (*GBTRhinoVersions, bool)`
+
+GetRhinoVersionOk returns a tuple with the RhinoVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRhinoVersion
+
+`func (o *BTTranslateFormatParams) SetRhinoVersion(v GBTRhinoVersions)`
+
+SetRhinoVersion sets RhinoVersion field to given value.
+
+### HasRhinoVersion
+
+`func (o *BTTranslateFormatParams) HasRhinoVersion() bool`
+
+HasRhinoVersion returns a boolean if a field has been set.
+
 ### GetSelectablePdfText
 
 `func (o *BTTranslateFormatParams) GetSelectablePdfText() bool`
@@ -1928,6 +1955,31 @@ SetStepVersionString sets StepVersionString field to given value.
 `func (o *BTTranslateFormatParams) HasStepVersionString() bool`
 
 HasStepVersionString returns a boolean if a field has been set.
+
+### GetStlMode
+
+`func (o *BTTranslateFormatParams) GetStlMode() GBTStlEncodingType`
+
+GetStlMode returns the StlMode field if non-nil, zero value otherwise.
+
+### GetStlModeOk
+
+`func (o *BTTranslateFormatParams) GetStlModeOk() (*GBTStlEncodingType, bool)`
+
+GetStlModeOk returns a tuple with the StlMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStlMode
+
+`func (o *BTTranslateFormatParams) SetStlMode(v GBTStlEncodingType)`
+
+SetStlMode sets StlMode field to given value.
+
+### HasStlMode
+
+`func (o *BTTranslateFormatParams) HasStlMode() bool`
+
+HasStlMode returns a boolean if a field has been set.
 
 ### GetStoreInDocument
 

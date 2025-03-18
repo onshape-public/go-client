@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **MateConnectorQueryList** | Pointer to [**BTMParameterQueryWithOccurrenceList67**](BTMParameterQueryWithOccurrenceList67.md) |  | [optional] 
-**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **MateType** | Pointer to [**GBTMateType**](GBTMateType.md) |  | [optional] 
 
 ## Methods
@@ -77,31 +76,6 @@ SetMateConnectorQueryList sets MateConnectorQueryList field to given value.
 `func (o *BTMMate64) HasMateConnectorQueryList() bool`
 
 HasMateConnectorQueryList returns a boolean if a field has been set.
-
-### GetMateConnectors
-
-`func (o *BTMMate64) GetMateConnectors() []BTMMateConnector66`
-
-GetMateConnectors returns the MateConnectors field if non-nil, zero value otherwise.
-
-### GetMateConnectorsOk
-
-`func (o *BTMMate64) GetMateConnectorsOk() (*[]BTMMateConnector66, bool)`
-
-GetMateConnectorsOk returns a tuple with the MateConnectors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMateConnectors
-
-`func (o *BTMMate64) SetMateConnectors(v []BTMMateConnector66)`
-
-SetMateConnectors sets MateConnectors field to given value.
-
-### HasMateConnectors
-
-`func (o *BTMMate64) HasMateConnectors() bool`
-
-HasMateConnectors returns a boolean if a field has been set.
 
 ### GetMateType
 

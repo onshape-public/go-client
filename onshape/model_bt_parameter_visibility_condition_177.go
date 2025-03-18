@@ -25,6 +25,11 @@ func (o *BTParameterVisibilityOnMateDOFType2114) AsBTParameterVisibilityConditio
 	return &BTParameterVisibilityCondition177{o}
 }
 
+// BTParameterVisibilityInRange2980AsBTParameterVisibilityCondition177 is a convenience function that returns BTParameterVisibilityInRange2980 wrapped in BTParameterVisibilityCondition177
+func (o *BTParameterVisibilityInRange2980) AsBTParameterVisibilityCondition177() *BTParameterVisibilityCondition177 {
+	return &BTParameterVisibilityCondition177{o}
+}
+
 // BTParameterVisibilityLogical178AsBTParameterVisibilityCondition177 is a convenience function that returns BTParameterVisibilityLogical178 wrapped in BTParameterVisibilityCondition177
 func (o *BTParameterVisibilityLogical178) AsBTParameterVisibilityCondition177() *BTParameterVisibilityCondition177 {
 	return &BTParameterVisibilityCondition177{o}
@@ -128,6 +133,20 @@ func (dst *BTParameterVisibilityCondition177) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTParameterVisibilityCondition177 = nil
 			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityAlwaysHidden176: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterVisibilityInRange-2980'
+	if jsonDict["btType"] == "BTParameterVisibilityInRange-2980" {
+		// try to unmarshal JSON data into BTParameterVisibilityInRange2980
+		var qr *BTParameterVisibilityInRange2980
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTParameterVisibilityCondition177 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTParameterVisibilityCondition177 = nil
+			return fmt.Errorf("failed to unmarshal BTParameterVisibilityCondition177 as BTParameterVisibilityInRange2980: %s", err.Error())
 		}
 	}
 
