@@ -207,6 +207,56 @@ func (o *BTMConfigurationParameter819) SetNodeId(v string) {
 	o.GetActualInstance().(getResult).SetNodeId(v)
 }
 
+// GetEnumOptionIds returns the EnumOptionIds field value if set, zero value otherwise.
+func (o *BTMConfigurationParameter819) GetEnumOptionIds() []string {
+	type getResult interface {
+		GetEnumOptionIds() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptionIds()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetEnumOptionIdsOk returns a tuple with the EnumOptionIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameter819) GetEnumOptionIdsOk() ([]string, bool) {
+	type getResult interface {
+		GetEnumOptionIdsOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptionIdsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEnumOptionIds returns a boolean if a field has been set.
+func (o *BTMConfigurationParameter819) HasEnumOptionIds() bool {
+	type getResult interface {
+		HasEnumOptionIds() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEnumOptionIds()
+	} else {
+		return false
+	}
+}
+
+// SetEnumOptionIds gets a reference to the given []string and assigns it to the EnumOptionIds field.
+func (o *BTMConfigurationParameter819) SetEnumOptionIds(v []string) {
+	type getResult interface {
+		SetEnumOptionIds(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetEnumOptionIds(v)
+}
+
 // GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
 func (o *BTMConfigurationParameter819) GetGeneratedParameterId() BTTreeNode20 {
 	type getResult interface {
@@ -694,6 +744,7 @@ type base_BTMConfigurationParameter819 struct {
 	// Microversion that resulted from the import.
 	ImportMicroversion   *string                            `json:"importMicroversion,omitempty"`
 	NodeId               *string                            `json:"nodeId,omitempty"`
+	EnumOptionIds        []string                           `json:"enumOptionIds,omitempty"`
 	GeneratedParameterId *BTTreeNode20                      `json:"generatedParameterId,omitempty"`
 	IsCosmetic           *bool                              `json:"isCosmetic,omitempty"`
 	ParameterId          *string                            `json:"parameterId,omitempty"`
@@ -814,6 +865,38 @@ func (o *base_BTMConfigurationParameter819) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *base_BTMConfigurationParameter819) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetEnumOptionIds returns the EnumOptionIds field value if set, zero value otherwise.
+func (o *base_BTMConfigurationParameter819) GetEnumOptionIds() []string {
+	if o == nil || o.EnumOptionIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.EnumOptionIds
+}
+
+// GetEnumOptionIdsOk returns a tuple with the EnumOptionIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMConfigurationParameter819) GetEnumOptionIdsOk() ([]string, bool) {
+	if o == nil || o.EnumOptionIds == nil {
+		return nil, false
+	}
+	return o.EnumOptionIds, true
+}
+
+// HasEnumOptionIds returns a boolean if a field has been set.
+func (o *base_BTMConfigurationParameter819) HasEnumOptionIds() bool {
+	if o != nil && o.EnumOptionIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptionIds gets a reference to the given []string and assigns it to the EnumOptionIds field.
+func (o *base_BTMConfigurationParameter819) SetEnumOptionIds(v []string) {
+	o.EnumOptionIds = v
 }
 
 // GetGeneratedParameterId returns the GeneratedParameterId field value if set, zero value otherwise.
@@ -1058,6 +1141,9 @@ func (o base_BTMConfigurationParameter819) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.EnumOptionIds != nil {
+		toSerialize["enumOptionIds"] = o.EnumOptionIds
 	}
 	if o.GeneratedParameterId != nil {
 		toSerialize["generatedParameterId"] = o.GeneratedParameterId

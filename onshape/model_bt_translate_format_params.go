@@ -86,6 +86,7 @@ type BTTranslateFormatParams struct {
 	ProxyWorkspaceVersionId *string                  `json:"proxyWorkspaceVersionId,omitempty"`
 	// Determines export resolution of fine, medium, or coarse
 	Resolution                           *string                       `json:"resolution,omitempty"`
+	RhinoVersion                         *GBTRhinoVersions             `json:"rhinoVersion,omitempty"`
 	SelectablePdfText                    *bool                         `json:"selectablePdfText,omitempty"`
 	SendCopyToMe                         *bool                         `json:"sendCopyToMe,omitempty"`
 	SheetIndices                         []int32                       `json:"sheetIndices,omitempty"`
@@ -98,6 +99,7 @@ type BTTranslateFormatParams struct {
 	SplitAssembliesIntoMultipleDocuments *bool                         `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
 	StepParasolidPreprocessingOption     *GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption,omitempty"`
 	StepVersionString                    *string                       `json:"stepVersionString,omitempty"`
+	StlMode                              *GBTStlEncodingType           `json:"stlMode,omitempty"`
 	StoreInDocument                      *bool                         `json:"storeInDocument,omitempty"`
 	TextAsGeometry                       *bool                         `json:"textAsGeometry,omitempty"`
 	TextOption                           *string                       `json:"textOption,omitempty"`
@@ -123,6 +125,8 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
 	this.FormatName = formatName
+	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
+	this.StlMode = &stlMode
 	return &this
 }
 
@@ -135,6 +139,8 @@ func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this.AllowFaultyParts = &allowFaultyParts
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
+	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
+	this.StlMode = &stlMode
 	return &this
 }
 
@@ -2082,6 +2088,38 @@ func (o *BTTranslateFormatParams) SetResolution(v string) {
 	o.Resolution = &v
 }
 
+// GetRhinoVersion returns the RhinoVersion field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetRhinoVersion() GBTRhinoVersions {
+	if o == nil || o.RhinoVersion == nil {
+		var ret GBTRhinoVersions
+		return ret
+	}
+	return *o.RhinoVersion
+}
+
+// GetRhinoVersionOk returns a tuple with the RhinoVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetRhinoVersionOk() (*GBTRhinoVersions, bool) {
+	if o == nil || o.RhinoVersion == nil {
+		return nil, false
+	}
+	return o.RhinoVersion, true
+}
+
+// HasRhinoVersion returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasRhinoVersion() bool {
+	if o != nil && o.RhinoVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRhinoVersion gets a reference to the given GBTRhinoVersions and assigns it to the RhinoVersion field.
+func (o *BTTranslateFormatParams) SetRhinoVersion(v GBTRhinoVersions) {
+	o.RhinoVersion = &v
+}
+
 // GetSelectablePdfText returns the SelectablePdfText field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetSelectablePdfText() bool {
 	if o == nil || o.SelectablePdfText == nil {
@@ -2464,6 +2502,38 @@ func (o *BTTranslateFormatParams) HasStepVersionString() bool {
 // SetStepVersionString gets a reference to the given string and assigns it to the StepVersionString field.
 func (o *BTTranslateFormatParams) SetStepVersionString(v string) {
 	o.StepVersionString = &v
+}
+
+// GetStlMode returns the StlMode field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetStlMode() GBTStlEncodingType {
+	if o == nil || o.StlMode == nil {
+		var ret GBTStlEncodingType
+		return ret
+	}
+	return *o.StlMode
+}
+
+// GetStlModeOk returns a tuple with the StlMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetStlModeOk() (*GBTStlEncodingType, bool) {
+	if o == nil || o.StlMode == nil {
+		return nil, false
+	}
+	return o.StlMode, true
+}
+
+// HasStlMode returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasStlMode() bool {
+	if o != nil && o.StlMode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStlMode gets a reference to the given GBTStlEncodingType and assigns it to the StlMode field.
+func (o *BTTranslateFormatParams) SetStlMode(v GBTStlEncodingType) {
+	o.StlMode = &v
 }
 
 // GetStoreInDocument returns the StoreInDocument field value if set, zero value otherwise.
@@ -3035,6 +3105,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.Resolution != nil {
 		toSerialize["resolution"] = o.Resolution
 	}
+	if o.RhinoVersion != nil {
+		toSerialize["rhinoVersion"] = o.RhinoVersion
+	}
 	if o.SelectablePdfText != nil {
 		toSerialize["selectablePdfText"] = o.SelectablePdfText
 	}
@@ -3070,6 +3143,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.StepVersionString != nil {
 		toSerialize["stepVersionString"] = o.StepVersionString
+	}
+	if o.StlMode != nil {
+		toSerialize["stlMode"] = o.StlMode
 	}
 	if o.StoreInDocument != nil {
 		toSerialize["storeInDocument"] = o.StoreInDocument

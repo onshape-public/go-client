@@ -2233,7 +2233,8 @@ type ApiGetMateValuesRequest struct {
 	ctx        context.Context
 	ApiService *AssemblyApiService
 	did        string
-	wid        string
+	wv         string
+	wvid       string
 	eid        string
 }
 
@@ -2248,16 +2249,18 @@ Describes the relative position of the first mate connector with respect to the 
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
-	@param wid
+	@param wv
+	@param wvid
 	@param eid
 	@return ApiGetMateValuesRequest
 */
-func (a *AssemblyApiService) GetMateValues(ctx context.Context, did string, wid string, eid string) ApiGetMateValuesRequest {
+func (a *AssemblyApiService) GetMateValues(ctx context.Context, did string, wv string, wvid string, eid string) ApiGetMateValuesRequest {
 	return ApiGetMateValuesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		did:        did,
-		wid:        wid,
+		wv:         wv,
+		wvid:       wvid,
 		eid:        eid,
 	}
 }
@@ -2278,9 +2281,10 @@ func (a *AssemblyApiService) GetMateValuesExecute(r ApiGetMateValuesRequest) (*B
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/assemblies/d/{did}/w/{wid}/e/{eid}/matevalues"
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/matevalues"
 	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
-	localVarPath = strings.Replace(localVarPath, "{"+"wid"+"}", url.PathEscape(parameterToString(r.wid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
 	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)

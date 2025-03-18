@@ -30,6 +30,11 @@ func (o *BTParameterSpecStringWithTolerances2535) AsBTReadOnlyParameterSpec1889(
 	return &BTReadOnlyParameterSpec1889{o}
 }
 
+// BTParameterSpecIcon4779AsBTReadOnlyParameterSpec1889 is a convenience function that returns BTParameterSpecIcon4779 wrapped in BTReadOnlyParameterSpec1889
+func (o *BTParameterSpecIcon4779) AsBTReadOnlyParameterSpec1889() *BTReadOnlyParameterSpec1889 {
+	return &BTReadOnlyParameterSpec1889{o}
+}
+
 // NewBTReadOnlyParameterSpec1889 instantiates a new BTReadOnlyParameterSpec1889 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -245,6 +250,56 @@ func (o *BTReadOnlyParameterSpec1889) SetDefaultValue(v BTMParameter1) {
 	}
 
 	o.GetActualInstance().(getResult).SetDefaultValue(v)
+}
+
+// GetEnumOptions returns the EnumOptions field value if set, zero value otherwise.
+func (o *BTReadOnlyParameterSpec1889) GetEnumOptions() []string {
+	type getResult interface {
+		GetEnumOptions() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptions()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetEnumOptionsOk returns a tuple with the EnumOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReadOnlyParameterSpec1889) GetEnumOptionsOk() ([]string, bool) {
+	type getResult interface {
+		GetEnumOptionsOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetEnumOptionsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasEnumOptions returns a boolean if a field has been set.
+func (o *BTReadOnlyParameterSpec1889) HasEnumOptions() bool {
+	type getResult interface {
+		HasEnumOptions() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasEnumOptions()
+	} else {
+		return false
+	}
+}
+
+// SetEnumOptions gets a reference to the given []string and assigns it to the EnumOptions field.
+func (o *BTReadOnlyParameterSpec1889) SetEnumOptions(v []string) {
+	type getResult interface {
+		SetEnumOptions(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetEnumOptions(v)
 }
 
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
@@ -807,6 +862,20 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
 
+	// check if the discriminator value is 'BTParameterSpecIcon-4779'
+	if jsonDict["btType"] == "BTParameterSpecIcon-4779" {
+		// try to unmarshal JSON data into BTParameterSpecIcon4779
+		var qr *BTParameterSpecIcon4779
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTReadOnlyParameterSpec1889 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTReadOnlyParameterSpec1889 = nil
+			return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecIcon4779: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTParameterSpecProgress-3078'
 	if jsonDict["btType"] == "BTParameterSpecProgress-3078" {
 		// try to unmarshal JSON data into BTParameterSpecProgress3078
@@ -906,6 +975,7 @@ type base_BTReadOnlyParameterSpec1889 struct {
 	BtType                     *string                            `json:"btType,omitempty"`
 	ColumnName                 *string                            `json:"columnName,omitempty"`
 	DefaultValue               *BTMParameter1                     `json:"defaultValue,omitempty"`
+	EnumOptions                []string                           `json:"enumOptions,omitempty"`
 	IconUri                    *string                            `json:"iconUri,omitempty"`
 	LocalizableName            *string                            `json:"localizableName,omitempty"`
 	LocalizedName              *string                            `json:"localizedName,omitempty"`
@@ -1062,6 +1132,38 @@ func (o *base_BTReadOnlyParameterSpec1889) HasDefaultValue() bool {
 // SetDefaultValue gets a reference to the given BTMParameter1 and assigns it to the DefaultValue field.
 func (o *base_BTReadOnlyParameterSpec1889) SetDefaultValue(v BTMParameter1) {
 	o.DefaultValue = &v
+}
+
+// GetEnumOptions returns the EnumOptions field value if set, zero value otherwise.
+func (o *base_BTReadOnlyParameterSpec1889) GetEnumOptions() []string {
+	if o == nil || o.EnumOptions == nil {
+		var ret []string
+		return ret
+	}
+	return o.EnumOptions
+}
+
+// GetEnumOptionsOk returns a tuple with the EnumOptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTReadOnlyParameterSpec1889) GetEnumOptionsOk() ([]string, bool) {
+	if o == nil || o.EnumOptions == nil {
+		return nil, false
+	}
+	return o.EnumOptions, true
+}
+
+// HasEnumOptions returns a boolean if a field has been set.
+func (o *base_BTReadOnlyParameterSpec1889) HasEnumOptions() bool {
+	if o != nil && o.EnumOptions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptions gets a reference to the given []string and assigns it to the EnumOptions field.
+func (o *base_BTReadOnlyParameterSpec1889) SetEnumOptions(v []string) {
+	o.EnumOptions = v
 }
 
 // GetIconUri returns the IconUri field value if set, zero value otherwise.
@@ -1437,6 +1539,9 @@ func (o base_BTReadOnlyParameterSpec1889) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultValue != nil {
 		toSerialize["defaultValue"] = o.DefaultValue
+	}
+	if o.EnumOptions != nil {
+		toSerialize["enumOptions"] = o.EnumOptions
 	}
 	if o.IconUri != nil {
 		toSerialize["iconUri"] = o.IconUri

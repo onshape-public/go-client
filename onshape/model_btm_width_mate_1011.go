@@ -46,10 +46,11 @@ type BTMWidthMate1011 struct {
 	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
 	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
 	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
+	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
-	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
+	MateConnectorsNotUsedInQuery           []BTMMateConnector66                      `json:"mateConnectorsNotUsedInQuery,omitempty"`
 	TabMateConnectorQueryList              *BTMParameterQueryWithOccurrenceList67    `json:"tabMateConnectorQueryList,omitempty"`
 	WidthMateConnectorQueryList            *BTMParameterQueryWithOccurrenceList67    `json:"widthMateConnectorQueryList,omitempty"`
 }
@@ -615,6 +616,38 @@ func (o *BTMWidthMate1011) SetFieldIndexForOwnedMateConnectors(v int32) {
 	o.FieldIndexForOwnedMateConnectors = &v
 }
 
+// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
+func (o *BTMWidthMate1011) GetMateConnectors() []BTMMateConnector66 {
+	if o == nil || o.MateConnectors == nil {
+		var ret []BTMMateConnector66
+		return ret
+	}
+	return o.MateConnectors
+}
+
+// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMWidthMate1011) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
+	if o == nil || o.MateConnectors == nil {
+		return nil, false
+	}
+	return o.MateConnectors, true
+}
+
+// HasMateConnectors returns a boolean if a field has been set.
+func (o *BTMWidthMate1011) HasMateConnectors() bool {
+	if o != nil && o.MateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
+func (o *BTMWidthMate1011) SetMateConnectors(v []BTMMateConnector66) {
+	o.MateConnectors = v
+}
+
 // GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
 func (o *BTMWidthMate1011) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
 	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
@@ -711,36 +744,36 @@ func (o *BTMWidthMate1011) SetVersion(v int32) {
 	o.Version = &v
 }
 
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *BTMWidthMate1011) GetMateConnectors() []BTMMateConnector66 {
-	if o == nil || o.MateConnectors == nil {
+// GetMateConnectorsNotUsedInQuery returns the MateConnectorsNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTMWidthMate1011) GetMateConnectorsNotUsedInQuery() []BTMMateConnector66 {
+	if o == nil || o.MateConnectorsNotUsedInQuery == nil {
 		var ret []BTMMateConnector66
 		return ret
 	}
-	return o.MateConnectors
+	return o.MateConnectorsNotUsedInQuery
 }
 
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
+// GetMateConnectorsNotUsedInQueryOk returns a tuple with the MateConnectorsNotUsedInQuery field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMWidthMate1011) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	if o == nil || o.MateConnectors == nil {
+func (o *BTMWidthMate1011) GetMateConnectorsNotUsedInQueryOk() ([]BTMMateConnector66, bool) {
+	if o == nil || o.MateConnectorsNotUsedInQuery == nil {
 		return nil, false
 	}
-	return o.MateConnectors, true
+	return o.MateConnectorsNotUsedInQuery, true
 }
 
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *BTMWidthMate1011) HasMateConnectors() bool {
-	if o != nil && o.MateConnectors != nil {
+// HasMateConnectorsNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTMWidthMate1011) HasMateConnectorsNotUsedInQuery() bool {
+	if o != nil && o.MateConnectorsNotUsedInQuery != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *BTMWidthMate1011) SetMateConnectors(v []BTMMateConnector66) {
-	o.MateConnectors = v
+// SetMateConnectorsNotUsedInQuery gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectorsNotUsedInQuery field.
+func (o *BTMWidthMate1011) SetMateConnectorsNotUsedInQuery(v []BTMMateConnector66) {
+	o.MateConnectorsNotUsedInQuery = v
 }
 
 // GetTabMateConnectorQueryList returns the TabMateConnectorQueryList field value if set, zero value otherwise.
@@ -868,6 +901,9 @@ func (o BTMWidthMate1011) MarshalJSON() ([]byte, error) {
 	if o.FieldIndexForOwnedMateConnectors != nil {
 		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
 	}
+	if o.MateConnectors != nil {
+		toSerialize["mateConnectors"] = o.MateConnectors
+	}
 	if o.OccurrenceQueriesFromAllConfigurations != nil {
 		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
 	}
@@ -877,8 +913,8 @@ func (o BTMWidthMate1011) MarshalJSON() ([]byte, error) {
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
 	}
-	if o.MateConnectors != nil {
-		toSerialize["mateConnectors"] = o.MateConnectors
+	if o.MateConnectorsNotUsedInQuery != nil {
+		toSerialize["mateConnectorsNotUsedInQuery"] = o.MateConnectorsNotUsedInQuery
 	}
 	if o.TabMateConnectorQueryList != nil {
 		toSerialize["tabMateConnectorQueryList"] = o.TabMateConnectorQueryList
