@@ -20,8 +20,8 @@ type VersionAlias string
 
 // List of VersionAlias
 const (
-	VersionAliasMinor VersionAlias = "LAST_MINOR"
-	VersionAliasBuild VersionAlias = "LAST_BUILD"
+	VersionAliasLastMinor VersionAlias = "LAST_MINOR"
+	VersionAliasLastBuild VersionAlias = "LAST_BUILD"
 )
 
 // All allowed values of VersionAlias enum

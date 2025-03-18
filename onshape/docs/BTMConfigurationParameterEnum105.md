@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefaultValue** | Pointer to **string** |  | [optional] 
 **EnumName** | Pointer to **string** |  | [optional] 
+**EnumOptionVisibilityConditions** | Pointer to [**BTEnumOptionVisibilityConditionList2936**](BTEnumOptionVisibilityConditionList2936.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **OptionIds** | Pointer to **[]string** |  | [optional] 
 **Options** | Pointer to [**[]BTMEnumOption592**](BTMEnumOption592.md) |  | [optional] 
@@ -104,6 +105,31 @@ SetEnumName sets EnumName field to given value.
 `func (o *BTMConfigurationParameterEnum105) HasEnumName() bool`
 
 HasEnumName returns a boolean if a field has been set.
+
+### GetEnumOptionVisibilityConditions
+
+`func (o *BTMConfigurationParameterEnum105) GetEnumOptionVisibilityConditions() BTEnumOptionVisibilityConditionList2936`
+
+GetEnumOptionVisibilityConditions returns the EnumOptionVisibilityConditions field if non-nil, zero value otherwise.
+
+### GetEnumOptionVisibilityConditionsOk
+
+`func (o *BTMConfigurationParameterEnum105) GetEnumOptionVisibilityConditionsOk() (*BTEnumOptionVisibilityConditionList2936, bool)`
+
+GetEnumOptionVisibilityConditionsOk returns a tuple with the EnumOptionVisibilityConditions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnumOptionVisibilityConditions
+
+`func (o *BTMConfigurationParameterEnum105) SetEnumOptionVisibilityConditions(v BTEnumOptionVisibilityConditionList2936)`
+
+SetEnumOptionVisibilityConditions sets EnumOptionVisibilityConditions field to given value.
+
+### HasEnumOptionVisibilityConditions
+
+`func (o *BTMConfigurationParameterEnum105) HasEnumOptionVisibilityConditions() bool`
+
+HasEnumOptionVisibilityConditions returns a boolean if a field has been set.
 
 ### GetNamespace
 
