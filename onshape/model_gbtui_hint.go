@@ -54,6 +54,7 @@ const (
 	GBTUIHintCanBeTolerant                    GBTUIHint = "CAN_BE_TOLERANT"
 	GBTUIHintCanBeTolerantDiameter            GBTUIHint = "CAN_BE_TOLERANT_DIAMETER"
 	GBTUIHintPlusMinus                        GBTUIHint = "PLUS_MINUS"
+	GBTUIHintAlwaysUseDependencies            GBTUIHint = "ALWAYS_USE_DEPENDENCIES"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -93,6 +94,7 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"CAN_BE_TOLERANT",
 	"CAN_BE_TOLERANT_DIAMETER",
 	"PLUS_MINUS",
+	"ALWAYS_USE_DEPENDENCIES",
 	"UNKNOWN",
 }
 

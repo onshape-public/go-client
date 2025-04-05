@@ -44,14 +44,15 @@ type BTAssemblyReplicate2774 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                            `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924         `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                            `json:"validRevisionReference,omitempty"`
-	Version                *int32                           `json:"version,omitempty"`
-	Feature                *BTMAssemblyFeature887           `json:"feature,omitempty"`
-	FeatureId              *string                          `json:"featureId,omitempty"`
-	InstanceControlNodes   []BTInstanceControlNode750       `json:"instanceControlNodes,omitempty"`
-	ReplicateFeature       *BTMAssemblyReplicateFeature1351 `json:"replicateFeature,omitempty"`
+	SuppressionConfigured       *bool                            `json:"suppressionConfigured,omitempty"`
+	SuppressionState            *BTMSuppressionState1924         `json:"suppressionState,omitempty"`
+	ValidRevisionReference      *bool                            `json:"validRevisionReference,omitempty"`
+	Version                     *int32                           `json:"version,omitempty"`
+	Feature                     *BTMAssemblyFeature887           `json:"feature,omitempty"`
+	FeatureId                   *string                          `json:"featureId,omitempty"`
+	InstanceControlNodes        []BTInstanceControlNode750       `json:"instanceControlNodes,omitempty"`
+	SeedBasedParametricInstance *bool                            `json:"seedBasedParametricInstance,omitempty"`
+	ReplicateFeature            *BTMAssemblyReplicateFeature1351 `json:"replicateFeature,omitempty"`
 }
 
 // NewBTAssemblyReplicate2774 instantiates a new BTAssemblyReplicate2774 object
@@ -1095,6 +1096,38 @@ func (o *BTAssemblyReplicate2774) SetInstanceControlNodes(v []BTInstanceControlN
 	o.InstanceControlNodes = v
 }
 
+// GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field value if set, zero value otherwise.
+func (o *BTAssemblyReplicate2774) GetSeedBasedParametricInstance() bool {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SeedBasedParametricInstance
+}
+
+// GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyReplicate2774) GetSeedBasedParametricInstanceOk() (*bool, bool) {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		return nil, false
+	}
+	return o.SeedBasedParametricInstance, true
+}
+
+// HasSeedBasedParametricInstance returns a boolean if a field has been set.
+func (o *BTAssemblyReplicate2774) HasSeedBasedParametricInstance() bool {
+	if o != nil && o.SeedBasedParametricInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
+func (o *BTAssemblyReplicate2774) SetSeedBasedParametricInstance(v bool) {
+	o.SeedBasedParametricInstance = &v
+}
+
 // GetReplicateFeature returns the ReplicateFeature field value if set, zero value otherwise.
 func (o *BTAssemblyReplicate2774) GetReplicateFeature() BTMAssemblyReplicateFeature1351 {
 	if o == nil || o.ReplicateFeature == nil {
@@ -1232,6 +1265,9 @@ func (o BTAssemblyReplicate2774) MarshalJSON() ([]byte, error) {
 	}
 	if o.InstanceControlNodes != nil {
 		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
+	}
+	if o.SeedBasedParametricInstance != nil {
+		toSerialize["seedBasedParametricInstance"] = o.SeedBasedParametricInstance
 	}
 	if o.ReplicateFeature != nil {
 		toSerialize["replicateFeature"] = o.ReplicateFeature

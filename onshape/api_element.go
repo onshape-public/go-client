@@ -588,7 +588,7 @@ func (r ApiGetConfigurationRequest) Execute() (*BTConfigurationResponse2019, *ht
 }
 
 /*
-GetConfiguration Get the configuration definition for a Part Studio or Assembly.
+GetConfiguration Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
 
 Use Configurations to create variations of elements. You can configure feature and parameter values, part properties, custom part properties, face and part appearances, and sketch text. Each Part Studio can have only one Configuration, but it can contain multiple Configuration inputs.
 See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details.
@@ -872,7 +872,7 @@ func (r ApiUpdateConfigurationRequest) Execute() (*BTConfigurationResponse2019, 
 }
 
 /*
-UpdateConfiguration Update the configuration definition for a Part Studio or Assembly.
+UpdateConfiguration Update the configuration definition for a Part Studio, Variable Studio, or Assembly.
 
 See the [Configuration API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for additional details
 

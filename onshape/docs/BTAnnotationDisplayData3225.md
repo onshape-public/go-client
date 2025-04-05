@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeterministicId** | Pointer to **string** |  | [optional] 
 **DxdySegments** | Pointer to [**[]BTVector2d1812**](BTVector2d1812.md) |  | [optional] 
+**IsDeletion** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetDxdySegments sets DxdySegments field to given value.
 `func (o *BTAnnotationDisplayData3225) HasDxdySegments() bool`
 
 HasDxdySegments returns a boolean if a field has been set.
+
+### GetIsDeletion
+
+`func (o *BTAnnotationDisplayData3225) GetIsDeletion() bool`
+
+GetIsDeletion returns the IsDeletion field if non-nil, zero value otherwise.
+
+### GetIsDeletionOk
+
+`func (o *BTAnnotationDisplayData3225) GetIsDeletionOk() (*bool, bool)`
+
+GetIsDeletionOk returns a tuple with the IsDeletion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDeletion
+
+`func (o *BTAnnotationDisplayData3225) SetIsDeletion(v bool)`
+
+SetIsDeletion sets IsDeletion field to given value.
+
+### HasIsDeletion
+
+`func (o *BTAnnotationDisplayData3225) HasIsDeletion() bool`
+
+HasIsDeletion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

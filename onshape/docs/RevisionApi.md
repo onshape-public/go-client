@@ -496,7 +496,7 @@ func main() {
     elementType := "elementType_example" // string | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
-    fillApprovers := true // bool |  (optional) (default to false)
+    fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
     supportChangeType := true // bool |  (optional) (default to false)
 
@@ -539,7 +539,7 @@ Name | Type | Description  | Notes
  **elementType** | **string** |  | 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
- **fillApprovers** | **bool** |  | [default to false]
+ **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
  **supportChangeType** | **bool** |  | [default to false]
 
@@ -588,7 +588,7 @@ func main() {
     pid := "pid_example" // string | 
     configuration := "configuration_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
-    fillApprovers := true // bool |  (optional) (default to false)
+    fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
     supportChangeType := true // bool |  (optional) (default to false)
 
@@ -632,7 +632,7 @@ Name | Type | Description  | Notes
 
  **configuration** | **string** |  | 
  **linkDocumentId** | **string** |  | 
- **fillApprovers** | **bool** |  | [default to false]
+ **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
  **supportChangeType** | **bool** |  | [default to false]
 
@@ -678,7 +678,7 @@ func main() {
     cid := "cid_example" // string | 
     pnum := "pnum_example" // string | 
     elementType := "elementType_example" // string | 
-    fillApprovers := true // bool |  (optional) (default to false)
+    fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
     fillExportPermission := true // bool |  (optional) (default to false)
     supportChangeType := true // bool |  (optional) (default to false)
 
@@ -713,7 +713,7 @@ Name | Type | Description  | Notes
 
 
  **elementType** | **string** |  | 
- **fillApprovers** | **bool** |  | [default to false]
+ **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
  **fillExportPermission** | **bool** |  | [default to false]
  **supportChangeType** | **bool** |  | [default to false]
 

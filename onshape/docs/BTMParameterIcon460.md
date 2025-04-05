@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**HasError** | Pointer to **bool** |  | [optional] 
 **Icon** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
+**Link** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -51,6 +53,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterIcon460) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetHasError
+
+`func (o *BTMParameterIcon460) GetHasError() bool`
+
+GetHasError returns the HasError field if non-nil, zero value otherwise.
+
+### GetHasErrorOk
+
+`func (o *BTMParameterIcon460) GetHasErrorOk() (*bool, bool)`
+
+GetHasErrorOk returns a tuple with the HasError field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasError
+
+`func (o *BTMParameterIcon460) SetHasError(v bool)`
+
+SetHasError sets HasError field to given value.
+
+### HasHasError
+
+`func (o *BTMParameterIcon460) HasHasError() bool`
+
+HasHasError returns a boolean if a field has been set.
 
 ### GetIcon
 
@@ -101,6 +128,31 @@ SetLabel sets Label field to given value.
 `func (o *BTMParameterIcon460) HasLabel() bool`
 
 HasLabel returns a boolean if a field has been set.
+
+### GetLink
+
+`func (o *BTMParameterIcon460) GetLink() string`
+
+GetLink returns the Link field if non-nil, zero value otherwise.
+
+### GetLinkOk
+
+`func (o *BTMParameterIcon460) GetLinkOk() (*string, bool)`
+
+GetLinkOk returns a tuple with the Link field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLink
+
+`func (o *BTMParameterIcon460) SetLink(v string)`
+
+SetLink sets Link field to given value.
+
+### HasLink
+
+`func (o *BTMParameterIcon460) HasLink() bool`
+
+HasLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

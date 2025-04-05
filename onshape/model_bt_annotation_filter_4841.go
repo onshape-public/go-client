@@ -14,31 +14,31 @@ import (
 	"encoding/json"
 )
 
-// BTElementLibraryPurpose3353 struct for BTElementLibraryPurpose3353
-type BTElementLibraryPurpose3353 struct {
-	// Type of JSON object.
+// BTAnnotationFilter4841 struct for BTAnnotationFilter4841
+type BTAnnotationFilter4841 struct {
+	BTQueryFilter183
 	BtType *string `json:"btType,omitempty"`
 }
 
-// NewBTElementLibraryPurpose3353 instantiates a new BTElementLibraryPurpose3353 object
+// NewBTAnnotationFilter4841 instantiates a new BTAnnotationFilter4841 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTElementLibraryPurpose3353() *BTElementLibraryPurpose3353 {
-	this := BTElementLibraryPurpose3353{}
+func NewBTAnnotationFilter4841() *BTAnnotationFilter4841 {
+	this := BTAnnotationFilter4841{}
 	return &this
 }
 
-// NewBTElementLibraryPurpose3353WithDefaults instantiates a new BTElementLibraryPurpose3353 object
+// NewBTAnnotationFilter4841WithDefaults instantiates a new BTAnnotationFilter4841 object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTElementLibraryPurpose3353WithDefaults() *BTElementLibraryPurpose3353 {
-	this := BTElementLibraryPurpose3353{}
+func NewBTAnnotationFilter4841WithDefaults() *BTAnnotationFilter4841 {
+	this := BTAnnotationFilter4841{}
 	return &this
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTElementLibraryPurpose3353) GetBtType() string {
+func (o *BTAnnotationFilter4841) GetBtType() string {
 	if o == nil || o.BtType == nil {
 		var ret string
 		return ret
@@ -48,7 +48,7 @@ func (o *BTElementLibraryPurpose3353) GetBtType() string {
 
 // GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTElementLibraryPurpose3353) GetBtTypeOk() (*string, bool) {
+func (o *BTAnnotationFilter4841) GetBtTypeOk() (*string, bool) {
 	if o == nil || o.BtType == nil {
 		return nil, false
 	}
@@ -56,7 +56,7 @@ func (o *BTElementLibraryPurpose3353) GetBtTypeOk() (*string, bool) {
 }
 
 // HasBtType returns a boolean if a field has been set.
-func (o *BTElementLibraryPurpose3353) HasBtType() bool {
+func (o *BTAnnotationFilter4841) HasBtType() bool {
 	if o != nil && o.BtType != nil {
 		return true
 	}
@@ -65,50 +65,58 @@ func (o *BTElementLibraryPurpose3353) HasBtType() bool {
 }
 
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTElementLibraryPurpose3353) SetBtType(v string) {
+func (o *BTAnnotationFilter4841) SetBtType(v string) {
 	o.BtType = &v
 }
 
-func (o BTElementLibraryPurpose3353) MarshalJSON() ([]byte, error) {
+func (o BTAnnotationFilter4841) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
+	errBTQueryFilter183 = json.Unmarshal([]byte(serializedBTQueryFilter183), &toSerialize)
+	if errBTQueryFilter183 != nil {
+		return []byte{}, errBTQueryFilter183
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
 }
 
-type NullableBTElementLibraryPurpose3353 struct {
-	value *BTElementLibraryPurpose3353
+type NullableBTAnnotationFilter4841 struct {
+	value *BTAnnotationFilter4841
 	isSet bool
 }
 
-func (v NullableBTElementLibraryPurpose3353) Get() *BTElementLibraryPurpose3353 {
+func (v NullableBTAnnotationFilter4841) Get() *BTAnnotationFilter4841 {
 	return v.value
 }
 
-func (v *NullableBTElementLibraryPurpose3353) Set(val *BTElementLibraryPurpose3353) {
+func (v *NullableBTAnnotationFilter4841) Set(val *BTAnnotationFilter4841) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTElementLibraryPurpose3353) IsSet() bool {
+func (v NullableBTAnnotationFilter4841) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTElementLibraryPurpose3353) Unset() {
+func (v *NullableBTAnnotationFilter4841) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTElementLibraryPurpose3353(val *BTElementLibraryPurpose3353) *NullableBTElementLibraryPurpose3353 {
-	return &NullableBTElementLibraryPurpose3353{value: val, isSet: true}
+func NewNullableBTAnnotationFilter4841(val *BTAnnotationFilter4841) *NullableBTAnnotationFilter4841 {
+	return &NullableBTAnnotationFilter4841{value: val, isSet: true}
 }
 
-func (v NullableBTElementLibraryPurpose3353) MarshalJSON() ([]byte, error) {
+func (v NullableBTAnnotationFilter4841) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTElementLibraryPurpose3353) UnmarshalJSON(src []byte) error {
+func (v *NullableBTAnnotationFilter4841) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

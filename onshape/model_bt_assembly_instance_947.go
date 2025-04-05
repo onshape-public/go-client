@@ -58,6 +58,7 @@ type BTAssemblyInstance947 struct {
 	LockedState                             *BTMParameter1                              `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	Name                                    *string                                     `json:"name,omitempty"`
+	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	Parameters                              []BTMParameter1                             `json:"parameters,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
@@ -1329,6 +1330,38 @@ func (o *BTAssemblyInstance947) SetName(v string) {
 	o.Name = &v
 }
 
+// GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
+func (o *BTAssemblyInstance947) GetNodeWithReferenceList() []BTNodeWithReference {
+	if o == nil || o.NodeWithReferenceList == nil {
+		var ret []BTNodeWithReference
+		return ret
+	}
+	return o.NodeWithReferenceList
+}
+
+// GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyInstance947) GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool) {
+	if o == nil || o.NodeWithReferenceList == nil {
+		return nil, false
+	}
+	return o.NodeWithReferenceList, true
+}
+
+// HasNodeWithReferenceList returns a boolean if a field has been set.
+func (o *BTAssemblyInstance947) HasNodeWithReferenceList() bool {
+	if o != nil && o.NodeWithReferenceList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeWithReferenceList gets a reference to the given []BTNodeWithReference and assigns it to the NodeWithReferenceList field.
+func (o *BTAssemblyInstance947) SetNodeWithReferenceList(v []BTNodeWithReference) {
+	o.NodeWithReferenceList = v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTAssemblyInstance947) GetParameters() []BTMParameter1 {
 	if o == nil || o.Parameters == nil {
@@ -1583,6 +1616,9 @@ func (o BTAssemblyInstance947) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.NodeWithReferenceList != nil {
+		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

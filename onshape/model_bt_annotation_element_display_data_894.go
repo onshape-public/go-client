@@ -17,6 +17,7 @@ import (
 // BTAnnotationElementDisplayData894 struct for BTAnnotationElementDisplayData894
 type BTAnnotationElementDisplayData894 struct {
 	AnnotationIdToDisplayObject *map[string]BTAnnotationDisplayData3225 `json:"annotationIdToDisplayObject,omitempty"`
+	AnnotationIds               []string                                `json:"annotationIds,omitempty"`
 	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 }
@@ -70,6 +71,38 @@ func (o *BTAnnotationElementDisplayData894) SetAnnotationIdToDisplayObject(v map
 	o.AnnotationIdToDisplayObject = &v
 }
 
+// GetAnnotationIds returns the AnnotationIds field value if set, zero value otherwise.
+func (o *BTAnnotationElementDisplayData894) GetAnnotationIds() []string {
+	if o == nil || o.AnnotationIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.AnnotationIds
+}
+
+// GetAnnotationIdsOk returns a tuple with the AnnotationIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationElementDisplayData894) GetAnnotationIdsOk() ([]string, bool) {
+	if o == nil || o.AnnotationIds == nil {
+		return nil, false
+	}
+	return o.AnnotationIds, true
+}
+
+// HasAnnotationIds returns a boolean if a field has been set.
+func (o *BTAnnotationElementDisplayData894) HasAnnotationIds() bool {
+	if o != nil && o.AnnotationIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationIds gets a reference to the given []string and assigns it to the AnnotationIds field.
+func (o *BTAnnotationElementDisplayData894) SetAnnotationIds(v []string) {
+	o.AnnotationIds = v
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTAnnotationElementDisplayData894) GetBtType() string {
 	if o == nil || o.BtType == nil {
@@ -106,6 +139,9 @@ func (o BTAnnotationElementDisplayData894) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AnnotationIdToDisplayObject != nil {
 		toSerialize["annotationIdToDisplayObject"] = o.AnnotationIdToDisplayObject
+	}
+	if o.AnnotationIds != nil {
+		toSerialize["annotationIds"] = o.AnnotationIds
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType

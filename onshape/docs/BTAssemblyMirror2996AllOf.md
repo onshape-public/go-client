@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **MirrorFeature** | Pointer to [**BTMAssemblyMirrorFeature3037**](BTMAssemblyMirrorFeature3037.md) |  | [optional] 
+**NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetMirrorFeature sets MirrorFeature field to given value.
 `func (o *BTAssemblyMirror2996AllOf) HasMirrorFeature() bool`
 
 HasMirrorFeature returns a boolean if a field has been set.
+
+### GetNodeWithReferenceList
+
+`func (o *BTAssemblyMirror2996AllOf) GetNodeWithReferenceList() []BTNodeWithReference`
+
+GetNodeWithReferenceList returns the NodeWithReferenceList field if non-nil, zero value otherwise.
+
+### GetNodeWithReferenceListOk
+
+`func (o *BTAssemblyMirror2996AllOf) GetNodeWithReferenceListOk() (*[]BTNodeWithReference, bool)`
+
+GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeWithReferenceList
+
+`func (o *BTAssemblyMirror2996AllOf) SetNodeWithReferenceList(v []BTNodeWithReference)`
+
+SetNodeWithReferenceList sets NodeWithReferenceList field to given value.
+
+### HasNodeWithReferenceList
+
+`func (o *BTAssemblyMirror2996AllOf) HasNodeWithReferenceList() bool`
+
+HasNodeWithReferenceList returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

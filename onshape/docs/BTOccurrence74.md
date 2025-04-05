@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
 **HeadInstanceId** | Pointer to **string** |  | [optional] 
+**InternalOccurrence** | Pointer to **bool** |  | [optional] 
 **OccurrenceWithoutHead** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **OccurrenceWithoutTail** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Parent** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
@@ -107,6 +108,31 @@ SetHeadInstanceId sets HeadInstanceId field to given value.
 `func (o *BTOccurrence74) HasHeadInstanceId() bool`
 
 HasHeadInstanceId returns a boolean if a field has been set.
+
+### GetInternalOccurrence
+
+`func (o *BTOccurrence74) GetInternalOccurrence() bool`
+
+GetInternalOccurrence returns the InternalOccurrence field if non-nil, zero value otherwise.
+
+### GetInternalOccurrenceOk
+
+`func (o *BTOccurrence74) GetInternalOccurrenceOk() (*bool, bool)`
+
+GetInternalOccurrenceOk returns a tuple with the InternalOccurrence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInternalOccurrence
+
+`func (o *BTOccurrence74) SetInternalOccurrence(v bool)`
+
+SetInternalOccurrence sets InternalOccurrence field to given value.
+
+### HasInternalOccurrence
+
+`func (o *BTOccurrence74) HasInternalOccurrence() bool`
+
+HasInternalOccurrence returns a boolean if a field has been set.
 
 ### GetOccurrenceWithoutHead
 

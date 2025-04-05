@@ -33,7 +33,6 @@ type BTParameterSpecReferenceTable1520 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
-	DefaultPurpose             *BTElementLibraryPurpose3353       `json:"defaultPurpose,omitempty"`
 	LibraryDefinitionId        *string                            `json:"libraryDefinitionId,omitempty"`
 }
 
@@ -566,38 +565,6 @@ func (o *BTParameterSpecReferenceTable1520) SetVisibilityCondition(v BTParameter
 	o.VisibilityCondition = &v
 }
 
-// GetDefaultPurpose returns the DefaultPurpose field value if set, zero value otherwise.
-func (o *BTParameterSpecReferenceTable1520) GetDefaultPurpose() BTElementLibraryPurpose3353 {
-	if o == nil || o.DefaultPurpose == nil {
-		var ret BTElementLibraryPurpose3353
-		return ret
-	}
-	return *o.DefaultPurpose
-}
-
-// GetDefaultPurposeOk returns a tuple with the DefaultPurpose field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferenceTable1520) GetDefaultPurposeOk() (*BTElementLibraryPurpose3353, bool) {
-	if o == nil || o.DefaultPurpose == nil {
-		return nil, false
-	}
-	return o.DefaultPurpose, true
-}
-
-// HasDefaultPurpose returns a boolean if a field has been set.
-func (o *BTParameterSpecReferenceTable1520) HasDefaultPurpose() bool {
-	if o != nil && o.DefaultPurpose != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultPurpose gets a reference to the given BTElementLibraryPurpose3353 and assigns it to the DefaultPurpose field.
-func (o *BTParameterSpecReferenceTable1520) SetDefaultPurpose(v BTElementLibraryPurpose3353) {
-	o.DefaultPurpose = &v
-}
-
 // GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
 func (o *BTParameterSpecReferenceTable1520) GetLibraryDefinitionId() string {
 	if o == nil || o.LibraryDefinitionId == nil {
@@ -687,9 +654,6 @@ func (o BTParameterSpecReferenceTable1520) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
-	}
-	if o.DefaultPurpose != nil {
-		toSerialize["defaultPurpose"] = o.DefaultPurpose
 	}
 	if o.LibraryDefinitionId != nil {
 		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId

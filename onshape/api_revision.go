@@ -824,6 +824,7 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Configuration(configur
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) FillApprovers(fillApprovers bool) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.fillApprovers = &fillApprovers
 	return r
@@ -999,6 +1000,7 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) LinkDocumentId(linkDocume
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) FillApprovers(fillApprovers bool) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.fillApprovers = &fillApprovers
 	return r
@@ -1163,6 +1165,7 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) ElementType(elementTy
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) FillApprovers(fillApprovers bool) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	r.fillApprovers = &fillApprovers
 	return r

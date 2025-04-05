@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **LockedState** | Pointer to [**BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -313,6 +314,31 @@ SetName sets Name field to given value.
 `func (o *BTInstance642) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetNodeWithReferenceList
+
+`func (o *BTInstance642) GetNodeWithReferenceList() []BTNodeWithReference`
+
+GetNodeWithReferenceList returns the NodeWithReferenceList field if non-nil, zero value otherwise.
+
+### GetNodeWithReferenceListOk
+
+`func (o *BTInstance642) GetNodeWithReferenceListOk() (*[]BTNodeWithReference, bool)`
+
+GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeWithReferenceList
+
+`func (o *BTInstance642) SetNodeWithReferenceList(v []BTNodeWithReference)`
+
+SetNodeWithReferenceList sets NodeWithReferenceList field to given value.
+
+### HasNodeWithReferenceList
+
+`func (o *BTInstance642) HasNodeWithReferenceList() bool`
+
+HasNodeWithReferenceList returns a boolean if a field has been set.
 
 ### GetParameters
 

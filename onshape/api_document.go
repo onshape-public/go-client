@@ -1787,31 +1787,31 @@ func (r ApiGetDocumentsRequest) Q(q string) ApiGetDocumentsRequest {
 	return r
 }
 
-// Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team).
+// Type of documents to search: &#x60;0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team&#x60;
 func (r ApiGetDocumentsRequest) Filter(filter int32) ApiGetDocumentsRequest {
 	r.filter = &filter
 	return r
 }
 
-// Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)
+// Owner ID. Can be a user ID, company ID, or team ID, depending on &#x60;ownerType&#x60;.
 func (r ApiGetDocumentsRequest) Owner(owner string) ApiGetDocumentsRequest {
 	r.owner = &owner
 	return r
 }
 
-// Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified.
+// Type of owner. &#x60;0: User | 1: Company | 2: Onshape&#x60;. If the owner is a teamId, leave this unspecified.
 func (r ApiGetDocumentsRequest) OwnerType(ownerType int32) ApiGetDocumentsRequest {
 	r.ownerType = &ownerType
 	return r
 }
 
-// Column by which to sort search results. Options are name, modifiedAt, createdAt (Default), email, modifiedBy, and promotedAt.
+// Column by which to sort search results. &#x60;name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt&#x60;
 func (r ApiGetDocumentsRequest) SortColumn(sortColumn string) ApiGetDocumentsRequest {
 	r.sortColumn = &sortColumn
 	return r
 }
 
-// Sort order. Options are desc (descending, the default), or asc (ascending).
+// Sort order. &#x60;desc&#x60; (descending, default), or &#x60;asc&#x60; (ascending).
 func (r ApiGetDocumentsRequest) SortOrder(sortOrder string) ApiGetDocumentsRequest {
 	r.sortOrder = &sortOrder
 	return r

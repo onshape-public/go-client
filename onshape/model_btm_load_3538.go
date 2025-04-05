@@ -49,6 +49,7 @@ type BTMLoad3538 struct {
 	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
+	SubFeaturesNotUsedInQuery              []BTMFeature134                           `json:"subFeaturesNotUsedInQuery,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
 	DefinedByComponents                    *bool                                     `json:"definedByComponents,omitempty"`
 	DirectionFlipped                       *bool                                     `json:"directionFlipped,omitempty"`
@@ -719,6 +720,38 @@ func (o *BTMLoad3538) SetParametricInstanceFeature(v bool) {
 	o.ParametricInstanceFeature = &v
 }
 
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeaturesNotUsedInQuery
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		return nil, false
+	}
+	return o.SubFeaturesNotUsedInQuery, true
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSubFeaturesNotUsedInQuery() bool {
+	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *BTMLoad3538) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	o.SubFeaturesNotUsedInQuery = v
+}
+
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetVersion() int32 {
 	if o == nil || o.Version == nil {
@@ -1140,6 +1173,9 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.SubFeaturesNotUsedInQuery != nil {
+		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

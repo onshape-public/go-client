@@ -33,7 +33,6 @@ type BTParameterSpecReferencePartStudio1256 struct {
 	UiHint                      *string                                `json:"uiHint,omitempty"`
 	UiHints                     []GBTUIHint                            `json:"uiHints,omitempty"`
 	VisibilityCondition         *BTParameterVisibilityCondition177     `json:"visibilityCondition,omitempty"`
-	DefaultPurpose              *BTElementLibraryPurpose3353           `json:"defaultPurpose,omitempty"`
 	LibraryDefinitionId         *string                                `json:"libraryDefinitionId,omitempty"`
 	AllowedInsertableTypes      []GBTPartStudioItemType                `json:"allowedInsertableTypes,omitempty"`
 	ComputedConfigurationInputs []BTComputedConfigurationInputSpec2525 `json:"computedConfigurationInputs,omitempty"`
@@ -569,38 +568,6 @@ func (o *BTParameterSpecReferencePartStudio1256) SetVisibilityCondition(v BTPara
 	o.VisibilityCondition = &v
 }
 
-// GetDefaultPurpose returns the DefaultPurpose field value if set, zero value otherwise.
-func (o *BTParameterSpecReferencePartStudio1256) GetDefaultPurpose() BTElementLibraryPurpose3353 {
-	if o == nil || o.DefaultPurpose == nil {
-		var ret BTElementLibraryPurpose3353
-		return ret
-	}
-	return *o.DefaultPurpose
-}
-
-// GetDefaultPurposeOk returns a tuple with the DefaultPurpose field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecReferencePartStudio1256) GetDefaultPurposeOk() (*BTElementLibraryPurpose3353, bool) {
-	if o == nil || o.DefaultPurpose == nil {
-		return nil, false
-	}
-	return o.DefaultPurpose, true
-}
-
-// HasDefaultPurpose returns a boolean if a field has been set.
-func (o *BTParameterSpecReferencePartStudio1256) HasDefaultPurpose() bool {
-	if o != nil && o.DefaultPurpose != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultPurpose gets a reference to the given BTElementLibraryPurpose3353 and assigns it to the DefaultPurpose field.
-func (o *BTParameterSpecReferencePartStudio1256) SetDefaultPurpose(v BTElementLibraryPurpose3353) {
-	o.DefaultPurpose = &v
-}
-
 // GetLibraryDefinitionId returns the LibraryDefinitionId field value if set, zero value otherwise.
 func (o *BTParameterSpecReferencePartStudio1256) GetLibraryDefinitionId() string {
 	if o == nil || o.LibraryDefinitionId == nil {
@@ -786,9 +753,6 @@ func (o BTParameterSpecReferencePartStudio1256) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
-	}
-	if o.DefaultPurpose != nil {
-		toSerialize["defaultPurpose"] = o.DefaultPurpose
 	}
 	if o.LibraryDefinitionId != nil {
 		toSerialize["libraryDefinitionId"] = o.LibraryDefinitionId

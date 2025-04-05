@@ -88,8 +88,11 @@ docs/BTAndFilter110.md
 docs/BTAndFilter110AllOf.md
 docs/BTAngularDimensionDisplayData320.md
 docs/BTAngularDimensionDisplayData320AllOf.md
+docs/BTAnnotationDeleteDisplayData1815.md
+docs/BTAnnotationDeleteDisplayData1815AllOf.md
 docs/BTAnnotationDisplayData3225.md
 docs/BTAnnotationElementDisplayData894.md
+docs/BTAnnotationFilter4841.md
 docs/BTAnnotationGTolDisplayData4887.md
 docs/BTAnnotationGTolDisplayData4887AllOf.md
 docs/BTAnnotationGTolRowDisplayData4397.md
@@ -136,9 +139,9 @@ docs/BTApplicationElementThumbnailParamsArray.md
 docs/BTApplicationSettingsType.md
 docs/BTApplicationTargetInfo.md
 docs/BTArcLengthDimensionDisplayData1018.md
-docs/BTArcLengthDimensionDisplayData1018AllOf.md
 docs/BTAssemblyDefinitionInfo.md
 docs/BTAssemblyFeatureDataInfo.md
+docs/BTAssemblyFeatureDisplayData1783.md
 docs/BTAssemblyFeatureInfo.md
 docs/BTAssemblyFeatureListResponse1174.md
 docs/BTAssemblyFeatureListResponse1174AllOf.md
@@ -265,6 +268,7 @@ docs/BTConfiguredPartProperties2645.md
 docs/BTConfiguredPartPropertiesTable2740.md
 docs/BTConfiguredPartPropertiesTable2740AllOf.md
 docs/BTConfiguredSuppressionColumnInfo2498.md
+docs/BTConfiguredValue.md
 docs/BTConfiguredValuesColumnInfo1025.md
 docs/BTConfiguredValuesColumnInfo1025AllOf.md
 docs/BTConstructionObjectFilter113.md
@@ -343,7 +347,6 @@ docs/BTEdgeTopologyFilter122.md
 docs/BTEdgeTopologyFilter122AllOf.md
 docs/BTEditingLogic2350.md
 docs/BTElementDisplayData326.md
-docs/BTElementLibraryPurpose3353.md
 docs/BTElementLibraryReferenceData3133.md
 docs/BTElementLibrarySummaryInfo.md
 docs/BTElementLocationParams.md
@@ -460,6 +463,7 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
+docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -553,6 +557,7 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
+docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -673,6 +678,8 @@ docs/BTMParameterMaterial1388.md
 docs/BTMParameterMaterial1388AllOf.md
 docs/BTMParameterMultiEnum3411.md
 docs/BTMParameterMultiEnum3411AllOf.md
+docs/BTMParameterNotice4455.md
+docs/BTMParameterNotice4455AllOf.md
 docs/BTMParameterNullableQuantity807.md
 docs/BTMParameterNullableQuantity807AllOf.md
 docs/BTMParameterProgress3232.md
@@ -745,9 +752,11 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
+docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
+docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -800,6 +809,7 @@ docs/BTNextPartNumber.md
 docs/BTNextPartNumberParam.md
 docs/BTNextPartNumbersParam.md
 docs/BTNodeReference21.md
+docs/BTNodeWithReference.md
 docs/BTNonAlignedBoundingBox4180.md
 docs/BTNonAlignedBoundingBox4180AllOf.md
 docs/BTNotFilter165.md
@@ -820,6 +830,7 @@ docs/BTOccurrenceWithFullPartIds1464AllOf.md
 docs/BTOldPermission.md
 docs/BTOneConfigurationPartProperties1661.md
 docs/BTOnePartProperties230.md
+docs/BTOptionallyConfiguredValue.md
 docs/BTOrFilter167.md
 docs/BTOriginDisplayData934.md
 docs/BTOriginEntity935.md
@@ -962,11 +973,13 @@ docs/BTParameterSpecEnum171AllOf.md
 docs/BTParameterSpecFeatureList703.md
 docs/BTParameterSpecForeignId172.md
 docs/BTParameterSpecIcon4779.md
+docs/BTParameterSpecIcon4779AllOf.md
 docs/BTParameterSpecLookupTablePath761.md
 docs/BTParameterSpecLookupTablePath761AllOf.md
 docs/BTParameterSpecMaterial2700.md
 docs/BTParameterSpecMultiEnum3118.md
 docs/BTParameterSpecMultiEnum3118AllOf.md
+docs/BTParameterSpecNotice3132.md
 docs/BTParameterSpecNullableQuantity715.md
 docs/BTParameterSpecNullableQuantity715AllOf.md
 docs/BTParameterSpecProgress3078.md
@@ -1227,6 +1240,7 @@ docs/BTTorusDescription1834.md
 docs/BTTorusDescription1834AllOf.md
 docs/BTTransitionType.md
 docs/BTTranslateFormatParams.md
+docs/BTTranslationRequestImportInfo.md
 docs/BTTranslationRequestInfo.md
 docs/BTTranslationRequestState.md
 docs/BTTreeEdit13.md
@@ -1292,6 +1306,8 @@ docs/BTWebhookInfo.md
 docs/BTWebhookLifecycleMessageBody.md
 docs/BTWebhookOptions.md
 docs/BTWebhookParams.md
+docs/BTWidthMateDisplayData2888.md
+docs/BTWidthMateDisplayData2888AllOf.md
 docs/BTWorkflowActionInfo.md
 docs/BTWorkflowAuditLogEntryInfo.md
 docs/BTWorkflowAuditLogInfo.md
@@ -1532,8 +1548,10 @@ model_bt_allow_mesh_geometry_filter_1026.go
 model_bt_allowed_mate_type_filter_1511.go
 model_bt_and_filter_110.go
 model_bt_angular_dimension_display_data_320.go
+model_bt_annotation_delete_display_data_1815.go
 model_bt_annotation_display_data_3225.go
 model_bt_annotation_element_display_data_894.go
+model_bt_annotation_filter_4841.go
 model_bt_annotation_g_tol_display_data_4887.go
 model_bt_annotation_g_tol_row_display_data_4397.go
 model_bt_annotation_weld_display_data_4919.go
@@ -1580,6 +1598,7 @@ model_bt_application_target_info.go
 model_bt_arc_length_dimension_display_data_1018.go
 model_bt_assembly_definition_info.go
 model_bt_assembly_feature_data_info.go
+model_bt_assembly_feature_display_data_1783.go
 model_bt_assembly_feature_info.go
 model_bt_assembly_feature_list_response_1174.go
 model_bt_assembly_insert_transformed_instances_response.go
@@ -1678,6 +1697,7 @@ model_bt_configured_parameter_column_info_2900.go
 model_bt_configured_part_properties_2645.go
 model_bt_configured_part_properties_table_2740.go
 model_bt_configured_suppression_column_info_2498.go
+model_bt_configured_value.go
 model_bt_configured_values_column_info_1025.go
 model_bt_construction_object_filter_113.go
 model_bt_construction_plane_entity_27.go
@@ -1737,7 +1757,6 @@ model_bt_drawing_params.go
 model_bt_edge_topology_filter_122.go
 model_bt_editing_logic_2350.go
 model_bt_element_display_data_326.go
-model_bt_element_library_purpose_3353.go
 model_bt_element_library_reference_data_3133.go
 model_bt_element_library_summary_info.go
 model_bt_element_location_params.go
@@ -1930,6 +1949,7 @@ model_bt_next_part_number.go
 model_bt_next_part_number_param.go
 model_bt_next_part_numbers_param.go
 model_bt_node_reference_21.go
+model_bt_node_with_reference.go
 model_bt_non_aligned_bounding_box_4180.go
 model_bt_not_filter_165.go
 model_bt_notice_227.go
@@ -1945,6 +1965,7 @@ model_bt_occurrence_with_full_part_ids_1464.go
 model_bt_old_permission.go
 model_bt_one_configuration_part_properties_1661.go
 model_bt_one_part_properties_230.go
+model_bt_optionally_configured_value.go
 model_bt_origin_display_data_934.go
 model_bt_origin_entity_935.go
 model_bt_other_document_selector_parameters_info.go
@@ -1968,6 +1989,7 @@ model_bt_parameter_spec_icon_4779.go
 model_bt_parameter_spec_lookup_table_path_761.go
 model_bt_parameter_spec_material_2700.go
 model_bt_parameter_spec_multi_enum_3118.go
+model_bt_parameter_spec_notice_3132.go
 model_bt_parameter_spec_nullable_quantity_715.go
 model_bt_parameter_spec_progress_3078.go
 model_bt_parameter_spec_quantity_173.go
@@ -2157,6 +2179,7 @@ model_bt_tolerance_string_3274.go
 model_bt_torus_description_1834.go
 model_bt_transition_type.go
 model_bt_translate_format_params.go
+model_bt_translation_request_import_info.go
 model_bt_translation_request_info.go
 model_bt_translation_request_state.go
 model_bt_tree_edit_13.go
@@ -2212,6 +2235,7 @@ model_bt_webhook_info.go
 model_bt_webhook_lifecycle_message_body.go
 model_bt_webhook_options.go
 model_bt_webhook_params.go
+model_bt_width_mate_display_data_2888.go
 model_bt_workflow_action_info.go
 model_bt_workflow_audit_log_entry_info.go
 model_bt_workflow_audit_log_info.go
@@ -2329,6 +2353,7 @@ model_btm_parameter_invalid_1664.go
 model_btm_parameter_lookup_table_path_1419.go
 model_btm_parameter_material_1388.go
 model_btm_parameter_multi_enum_3411.go
+model_btm_parameter_notice_4455.go
 model_btm_parameter_nullable_quantity_807.go
 model_btm_parameter_progress_3232.go
 model_btm_parameter_quantity_147.go

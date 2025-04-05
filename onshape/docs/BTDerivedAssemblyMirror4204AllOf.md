@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **LockedState** | Pointer to [**BTInstanceWithReference**](BTInstanceWithReference.md) |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MirrorFeature** | Pointer to [**BTMDerivedAssemblyMirrorFeature5094**](BTMDerivedAssemblyMirrorFeature5094.md) |  | [optional] 
+**NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **VersionIdIfExternal** | Pointer to **string** |  | [optional] 
@@ -286,6 +287,31 @@ SetMirrorFeature sets MirrorFeature field to given value.
 `func (o *BTDerivedAssemblyMirror4204AllOf) HasMirrorFeature() bool`
 
 HasMirrorFeature returns a boolean if a field has been set.
+
+### GetNodeWithReferenceList
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) GetNodeWithReferenceList() []BTNodeWithReference`
+
+GetNodeWithReferenceList returns the NodeWithReferenceList field if non-nil, zero value otherwise.
+
+### GetNodeWithReferenceListOk
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) GetNodeWithReferenceListOk() (*[]BTNodeWithReference, bool)`
+
+GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeWithReferenceList
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) SetNodeWithReferenceList(v []BTNodeWithReference)`
+
+SetNodeWithReferenceList sets NodeWithReferenceList field to given value.
+
+### HasNodeWithReferenceList
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) HasNodeWithReferenceList() bool`
+
+HasNodeWithReferenceList returns a boolean if a field has been set.
 
 ### GetReferenceParameter
 

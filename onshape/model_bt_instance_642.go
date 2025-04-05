@@ -1997,6 +1997,56 @@ func (o *BTInstance642) SetName(v string) {
 	o.GetActualInstance().(getResult).SetName(v)
 }
 
+// GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
+func (o *BTInstance642) GetNodeWithReferenceList() []BTNodeWithReference {
+	type getResult interface {
+		GetNodeWithReferenceList() []BTNodeWithReference
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeWithReferenceList()
+	} else {
+		var de []BTNodeWithReference
+		return de
+	}
+}
+
+// GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstance642) GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool) {
+	type getResult interface {
+		GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeWithReferenceListOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNodeWithReferenceList returns a boolean if a field has been set.
+func (o *BTInstance642) HasNodeWithReferenceList() bool {
+	type getResult interface {
+		HasNodeWithReferenceList() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNodeWithReferenceList()
+	} else {
+		return false
+	}
+}
+
+// SetNodeWithReferenceList gets a reference to the given []BTNodeWithReference and assigns it to the NodeWithReferenceList field.
+func (o *BTInstance642) SetNodeWithReferenceList(v []BTNodeWithReference) {
+	type getResult interface {
+		SetNodeWithReferenceList(v []BTNodeWithReference)
+	}
+
+	o.GetActualInstance().(getResult).SetNodeWithReferenceList(v)
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTInstance642) GetParameters() []BTMParameter1 {
 	type getResult interface {
@@ -2343,6 +2393,7 @@ type base_BTInstance642 struct {
 	LockedState                             *BTMParameter1                              `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	Name                                    *string                                     `json:"name,omitempty"`
+	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	Parameters                              []BTMParameter1                             `json:"parameters,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
@@ -3614,6 +3665,38 @@ func (o *base_BTInstance642) SetName(v string) {
 	o.Name = &v
 }
 
+// GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
+func (o *base_BTInstance642) GetNodeWithReferenceList() []BTNodeWithReference {
+	if o == nil || o.NodeWithReferenceList == nil {
+		var ret []BTNodeWithReference
+		return ret
+	}
+	return o.NodeWithReferenceList
+}
+
+// GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInstance642) GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool) {
+	if o == nil || o.NodeWithReferenceList == nil {
+		return nil, false
+	}
+	return o.NodeWithReferenceList, true
+}
+
+// HasNodeWithReferenceList returns a boolean if a field has been set.
+func (o *base_BTInstance642) HasNodeWithReferenceList() bool {
+	if o != nil && o.NodeWithReferenceList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeWithReferenceList gets a reference to the given []BTNodeWithReference and assigns it to the NodeWithReferenceList field.
+func (o *base_BTInstance642) SetNodeWithReferenceList(v []BTNodeWithReference) {
+	o.NodeWithReferenceList = v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *base_BTInstance642) GetParameters() []BTMParameter1 {
 	if o == nil || o.Parameters == nil {
@@ -3868,6 +3951,9 @@ func (o base_BTInstance642) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.NodeWithReferenceList != nil {
+		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

@@ -16,24 +16,24 @@ import (
 
 // BTDocumentSearchParams struct for BTDocumentSearchParams
 type BTDocumentSearchParams struct {
-	// Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team).
+	// Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`
 	DocumentFilter *int32                      `json:"documentFilter,omitempty"`
 	FoundIn        *BTESVersionWorkspaceChoice `json:"foundIn,omitempty"`
-	// Number of results to return per page.
+	// Number of results to return per page. Default value is 20 (also the maximum).
 	Limit *int32 `json:"limit,omitempty"`
-	// Offset. Determines where search results begin.
+	// Offset. Determines where search results begin. Default value is 0.
 	Offset *int32 `json:"offset,omitempty"`
-	// Document owner's ID (if the filter is 6 or 7), or Team Id (if the filter is 9)
+	// Owner ID. Can be a user ID, company ID, or team ID, depending on `ownerType`.
 	OwnerId *string `json:"ownerId,omitempty"`
 	// Search document parent Id
 	ParentId *string `json:"parentId,omitempty"`
 	// Search for documents that contain the given string in the name. Search is not case-sensitive.
 	RawQuery *string `json:"rawQuery,omitempty"`
-	// Column by which to sort search results. `name | modifiedAt | createdAt | email | modifiedBy | promotedAt`
+	// Column by which to sort search results. `name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt`
 	SortColumn *string `json:"sortColumn,omitempty"`
-	// Sort order. `desc (descending) | asc (ascending)`
+	// Type of documents to search: `0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team`
 	SortOrder *string `json:"sortOrder,omitempty"`
-	// Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified.
+	// Type of owner. `0: User | 1: Company | 2: Onshape`. If the owner is a teamId, leave this unspecified.
 	Type *string            `json:"type,omitempty"`
 	When *BTESResultsFilter `json:"when,omitempty"`
 }

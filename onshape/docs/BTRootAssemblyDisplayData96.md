@@ -5,8 +5,10 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationsForElement** | Pointer to [**BTAnnotationElementDisplayData894**](BTAnnotationElementDisplayData894.md) |  | [optional] 
+**AssemblyFeatures** | Pointer to [**[]BTAssemblyFeatureDisplayData1783**](BTAssemblyFeatureDisplayData1783.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BuildDurationMillis** | Pointer to **float64** |  | [optional] 
+**DeletedAssemblyFeatures** | Pointer to **[]string** |  | [optional] 
 **DeletedGeometryMateIds** | Pointer to **[]string** |  | [optional] 
 **DeletedLoads** | Pointer to **[]string** |  | [optional] 
 **DeletedMateConnectorIds** | Pointer to **[]string** |  | [optional] 
@@ -81,6 +83,31 @@ SetAnnotationsForElement sets AnnotationsForElement field to given value.
 
 HasAnnotationsForElement returns a boolean if a field has been set.
 
+### GetAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) GetAssemblyFeatures() []BTAssemblyFeatureDisplayData1783`
+
+GetAssemblyFeatures returns the AssemblyFeatures field if non-nil, zero value otherwise.
+
+### GetAssemblyFeaturesOk
+
+`func (o *BTRootAssemblyDisplayData96) GetAssemblyFeaturesOk() (*[]BTAssemblyFeatureDisplayData1783, bool)`
+
+GetAssemblyFeaturesOk returns a tuple with the AssemblyFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) SetAssemblyFeatures(v []BTAssemblyFeatureDisplayData1783)`
+
+SetAssemblyFeatures sets AssemblyFeatures field to given value.
+
+### HasAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) HasAssemblyFeatures() bool`
+
+HasAssemblyFeatures returns a boolean if a field has been set.
+
 ### GetBtType
 
 `func (o *BTRootAssemblyDisplayData96) GetBtType() string`
@@ -130,6 +157,31 @@ SetBuildDurationMillis sets BuildDurationMillis field to given value.
 `func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool`
 
 HasBuildDurationMillis returns a boolean if a field has been set.
+
+### GetDeletedAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) GetDeletedAssemblyFeatures() []string`
+
+GetDeletedAssemblyFeatures returns the DeletedAssemblyFeatures field if non-nil, zero value otherwise.
+
+### GetDeletedAssemblyFeaturesOk
+
+`func (o *BTRootAssemblyDisplayData96) GetDeletedAssemblyFeaturesOk() (*[]string, bool)`
+
+GetDeletedAssemblyFeaturesOk returns a tuple with the DeletedAssemblyFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDeletedAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) SetDeletedAssemblyFeatures(v []string)`
+
+SetDeletedAssemblyFeatures sets DeletedAssemblyFeatures field to given value.
+
+### HasDeletedAssemblyFeatures
+
+`func (o *BTRootAssemblyDisplayData96) HasDeletedAssemblyFeatures() bool`
+
+HasDeletedAssemblyFeatures returns a boolean if a field has been set.
 
 ### GetDeletedGeometryMateIds
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Feature** | Pointer to [**BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **InstanceControlNodes** | Pointer to [**[]BTInstanceControlNode750**](BTInstanceControlNode750.md) |  | [optional] 
+**SeedBasedParametricInstance** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetInstanceControlNodes sets InstanceControlNodes field to given value.
 `func (o *BTParametricInstance2641AllOf) HasInstanceControlNodes() bool`
 
 HasInstanceControlNodes returns a boolean if a field has been set.
+
+### GetSeedBasedParametricInstance
+
+`func (o *BTParametricInstance2641AllOf) GetSeedBasedParametricInstance() bool`
+
+GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field if non-nil, zero value otherwise.
+
+### GetSeedBasedParametricInstanceOk
+
+`func (o *BTParametricInstance2641AllOf) GetSeedBasedParametricInstanceOk() (*bool, bool)`
+
+GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSeedBasedParametricInstance
+
+`func (o *BTParametricInstance2641AllOf) SetSeedBasedParametricInstance(v bool)`
+
+SetSeedBasedParametricInstance sets SeedBasedParametricInstance field to given value.
+
+### HasSeedBasedParametricInstance
+
+`func (o *BTParametricInstance2641AllOf) HasSeedBasedParametricInstance() bool`
+
+HasSeedBasedParametricInstance returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
