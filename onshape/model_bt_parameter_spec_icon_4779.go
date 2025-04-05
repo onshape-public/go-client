@@ -33,6 +33,7 @@ type BTParameterSpecIcon4779 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	AllowLink                  *bool                              `json:"allowLink,omitempty"`
 }
 
 // NewBTParameterSpecIcon4779 instantiates a new BTParameterSpecIcon4779 object
@@ -564,6 +565,38 @@ func (o *BTParameterSpecIcon4779) SetVisibilityCondition(v BTParameterVisibility
 	o.VisibilityCondition = &v
 }
 
+// GetAllowLink returns the AllowLink field value if set, zero value otherwise.
+func (o *BTParameterSpecIcon4779) GetAllowLink() bool {
+	if o == nil || o.AllowLink == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllowLink
+}
+
+// GetAllowLinkOk returns a tuple with the AllowLink field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecIcon4779) GetAllowLinkOk() (*bool, bool) {
+	if o == nil || o.AllowLink == nil {
+		return nil, false
+	}
+	return o.AllowLink, true
+}
+
+// HasAllowLink returns a boolean if a field has been set.
+func (o *BTParameterSpecIcon4779) HasAllowLink() bool {
+	if o != nil && o.AllowLink != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllowLink gets a reference to the given bool and assigns it to the AllowLink field.
+func (o *BTParameterSpecIcon4779) SetAllowLink(v bool) {
+	o.AllowLink = &v
+}
+
 func (o BTParameterSpecIcon4779) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTReadOnlyParameterSpec1889, errBTReadOnlyParameterSpec1889 := json.Marshal(o.BTReadOnlyParameterSpec1889)
@@ -621,6 +654,9 @@ func (o BTParameterSpecIcon4779) MarshalJSON() ([]byte, error) {
 	}
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
+	}
+	if o.AllowLink != nil {
+		toSerialize["allowLink"] = o.AllowLink
 	}
 	return json.Marshal(toSerialize)
 }

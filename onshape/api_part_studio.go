@@ -1676,32 +1676,37 @@ type ApiGetFeatureScriptTableRequest struct {
 	linkDocumentId  *string
 }
 
-// &#x60;holeTable | cutlistTable&#x60;
+// May be any standard table type (i.e., &#x60;holeTable&#x60;) or custom table type name defined in FeatureScript.  If using a custom table type, &#x60;tableNamespace&#x60; must also be specified.
 func (r ApiGetFeatureScriptTableRequest) TableType(tableType string) ApiGetFeatureScriptTableRequest {
 	r.tableType = &tableType
 	return r
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetFeatureScriptTableRequest) Configuration(configuration string) ApiGetFeatureScriptTableRequest {
 	r.configuration = &configuration
 	return r
 }
 
+// Namespace of the custom table in FS. Must be in the form of:  * &#x60;e{eid}::m{mid}&#x60; if the FS and PS tabs are in the same workspace  * &#x60;d{did}::v{vid}::e{eid}::m{mid}&#x60; if the tabs are in different workspace   Obtain the microversion id (&#x60;{mid}&#x60;) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom &#x60;tableType&#x60;.
 func (r ApiGetFeatureScriptTableRequest) TableNamespace(tableNamespace string) ApiGetFeatureScriptTableRequest {
 	r.tableNamespace = &tableNamespace
 	return r
 }
 
+// Include all parameters for the table. i.e., &#x60;customBool&#x3D;false&#x60;
 func (r ApiGetFeatureScriptTableRequest) TableParameters(tableParameters string) ApiGetFeatureScriptTableRequest {
 	r.tableParameters = &tableParameters
 	return r
 }
 
+// ID of the part to retrieve.
 func (r ApiGetFeatureScriptTableRequest) PartId(partId string) ApiGetFeatureScriptTableRequest {
 	r.partId = &partId
 	return r
 }
 
+// Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter.
 func (r ApiGetFeatureScriptTableRequest) LinkDocumentId(linkDocumentId string) ApiGetFeatureScriptTableRequest {
 	r.linkDocumentId = &linkDocumentId
 	return r
@@ -1715,10 +1720,10 @@ func (r ApiGetFeatureScriptTableRequest) Execute() (*BTApiTableList1223, *http.R
 GetFeatureScriptTable Compute and return a FeatureScript table for a Part Studio.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param wvm
-	@param wvmid
-	@param eid
+	@param did Document ID.
+	@param wvm One of w or v or m corresponding to whether a workspace or version or microversion was entered.
+	@param wvmid Workspace (w), Version (v) or Microversion (m) ID.
+	@param eid Element ID.
 	@return ApiGetFeatureScriptTableRequest
 */
 func (a *PartStudioApiService) GetFeatureScriptTable(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetFeatureScriptTableRequest {

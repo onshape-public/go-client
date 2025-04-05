@@ -22,6 +22,7 @@ type BTAnnotationGTolDisplayData4887 struct {
 	BtType          *string                              `json:"btType,omitempty"`
 	DeterministicId *string                              `json:"deterministicId,omitempty"`
 	DxdySegments    []BTVector2d1812                     `json:"dxdySegments,omitempty"`
+	IsDeletion      *bool                                `json:"isDeletion,omitempty"`
 	Lower           *string                              `json:"lower,omitempty"`
 	Rows            []BTAnnotationGTolRowDisplayData4397 `json:"rows,omitempty"`
 	Upper           *string                              `json:"upper,omitempty"`
@@ -204,6 +205,38 @@ func (o *BTAnnotationGTolDisplayData4887) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
 }
 
+// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetIsDeletion() bool {
+	if o == nil || o.IsDeletion == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDeletion
+}
+
+// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetIsDeletionOk() (*bool, bool) {
+	if o == nil || o.IsDeletion == nil {
+		return nil, false
+	}
+	return o.IsDeletion, true
+}
+
+// HasIsDeletion returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasIsDeletion() bool {
+	if o != nil && o.IsDeletion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
+func (o *BTAnnotationGTolDisplayData4887) SetIsDeletion(v bool) {
+	o.IsDeletion = &v
+}
+
 // GetLower returns the Lower field value if set, zero value otherwise.
 func (o *BTAnnotationGTolDisplayData4887) GetLower() string {
 	if o == nil || o.Lower == nil {
@@ -324,6 +357,9 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
+	}
+	if o.IsDeletion != nil {
+		toSerialize["isDeletion"] = o.IsDeletion
 	}
 	if o.Lower != nil {
 		toSerialize["lower"] = o.Lower

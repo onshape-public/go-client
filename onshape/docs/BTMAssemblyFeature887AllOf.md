@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 **ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
+**SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetParametricInstanceFeature sets ParametricInstanceFeature field to given value
 `func (o *BTMAssemblyFeature887AllOf) HasParametricInstanceFeature() bool`
 
 HasParametricInstanceFeature returns a boolean if a field has been set.
+
+### GetSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyFeature887AllOf) GetSubFeaturesNotUsedInQuery() []BTMFeature134`
+
+GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field if non-nil, zero value otherwise.
+
+### GetSubFeaturesNotUsedInQueryOk
+
+`func (o *BTMAssemblyFeature887AllOf) GetSubFeaturesNotUsedInQueryOk() (*[]BTMFeature134, bool)`
+
+GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyFeature887AllOf) SetSubFeaturesNotUsedInQuery(v []BTMFeature134)`
+
+SetSubFeaturesNotUsedInQuery sets SubFeaturesNotUsedInQuery field to given value.
+
+### HasSubFeaturesNotUsedInQuery
+
+`func (o *BTMAssemblyFeature887AllOf) HasSubFeaturesNotUsedInQuery() bool`
+
+HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
 
 ### GetVersion
 

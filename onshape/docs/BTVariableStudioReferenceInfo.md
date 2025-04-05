@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ConfigurationIdToValue** | Pointer to [**map[string]BTOptionallyConfiguredValue**](BTOptionallyConfiguredValue.md) | Optional map of configuration parameter id to value | [optional] 
 **EntireVariableStudio** | Pointer to **bool** | Whether all variables in the referenced variable studio are included | [optional] 
 **ReferenceDocumentId** | Pointer to **string** | DocumentId of referenced variable studio, blank for intra-workspace references | [optional] 
 **ReferenceElementId** | **string** | ElementId of referenced variable studio | 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewBTVariableStudioReferenceInfoWithDefaults instantiates a new BTVariableStudioReferenceInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConfigurationIdToValue
+
+`func (o *BTVariableStudioReferenceInfo) GetConfigurationIdToValue() map[string]BTOptionallyConfiguredValue`
+
+GetConfigurationIdToValue returns the ConfigurationIdToValue field if non-nil, zero value otherwise.
+
+### GetConfigurationIdToValueOk
+
+`func (o *BTVariableStudioReferenceInfo) GetConfigurationIdToValueOk() (*map[string]BTOptionallyConfiguredValue, bool)`
+
+GetConfigurationIdToValueOk returns a tuple with the ConfigurationIdToValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfigurationIdToValue
+
+`func (o *BTVariableStudioReferenceInfo) SetConfigurationIdToValue(v map[string]BTOptionallyConfiguredValue)`
+
+SetConfigurationIdToValue sets ConfigurationIdToValue field to given value.
+
+### HasConfigurationIdToValue
+
+`func (o *BTVariableStudioReferenceInfo) HasConfigurationIdToValue() bool`
+
+HasConfigurationIdToValue returns a boolean if a field has been set.
 
 ### GetEntireVariableStudio
 

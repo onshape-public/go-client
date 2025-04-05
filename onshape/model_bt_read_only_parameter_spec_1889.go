@@ -30,6 +30,11 @@ func (o *BTParameterSpecStringWithTolerances2535) AsBTReadOnlyParameterSpec1889(
 	return &BTReadOnlyParameterSpec1889{o}
 }
 
+// BTParameterSpecNotice3132AsBTReadOnlyParameterSpec1889 is a convenience function that returns BTParameterSpecNotice3132 wrapped in BTReadOnlyParameterSpec1889
+func (o *BTParameterSpecNotice3132) AsBTReadOnlyParameterSpec1889() *BTReadOnlyParameterSpec1889 {
+	return &BTReadOnlyParameterSpec1889{o}
+}
+
 // BTParameterSpecIcon4779AsBTReadOnlyParameterSpec1889 is a convenience function that returns BTParameterSpecIcon4779 wrapped in BTReadOnlyParameterSpec1889
 func (o *BTParameterSpecIcon4779) AsBTReadOnlyParameterSpec1889() *BTReadOnlyParameterSpec1889 {
 	return &BTReadOnlyParameterSpec1889{o}
@@ -873,6 +878,20 @@ func (dst *BTReadOnlyParameterSpec1889) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTReadOnlyParameterSpec1889 = nil
 			return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecIcon4779: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTParameterSpecNotice-3132'
+	if jsonDict["btType"] == "BTParameterSpecNotice-3132" {
+		// try to unmarshal JSON data into BTParameterSpecNotice3132
+		var qr *BTParameterSpecNotice3132
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTReadOnlyParameterSpec1889 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTReadOnlyParameterSpec1889 = nil
+			return fmt.Errorf("failed to unmarshal BTReadOnlyParameterSpec1889 as BTParameterSpecNotice3132: %s", err.Error())
 		}
 	}
 

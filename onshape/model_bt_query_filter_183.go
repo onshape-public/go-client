@@ -170,6 +170,11 @@ func (o *BTAllowEdgePointFilter2371) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
 }
 
+// BTAnnotationFilter4841AsBTQueryFilter183 is a convenience function that returns BTAnnotationFilter4841 wrapped in BTQueryFilter183
+func (o *BTAnnotationFilter4841) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
 // BTSketchObjectFilter184AsBTQueryFilter183 is a convenience function that returns BTSketchObjectFilter184 wrapped in BTQueryFilter183
 func (o *BTSketchObjectFilter184) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
@@ -329,6 +334,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAndFilter110: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTAnnotationFilter-4841'
+	if jsonDict["btType"] == "BTAnnotationFilter-4841" {
+		// try to unmarshal JSON data into BTAnnotationFilter4841
+		var qr *BTAnnotationFilter4841
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTAnnotationFilter4841: %s", err.Error())
 		}
 	}
 

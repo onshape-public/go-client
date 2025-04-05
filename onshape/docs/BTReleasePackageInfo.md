@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
-**IndependentCADRevisions** | Pointer to **bool** |  | [optional] 
 **IsObsoletion** | Pointer to **bool** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemInfo**](BTReleasePackageItemInfo.md) |  | [optional] 
 **LinkedVersionIds** | Pointer to **[]string** |  | [optional] 
@@ -357,31 +356,6 @@ SetId sets Id field to given value.
 `func (o *BTReleasePackageInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetIndependentCADRevisions
-
-`func (o *BTReleasePackageInfo) GetIndependentCADRevisions() bool`
-
-GetIndependentCADRevisions returns the IndependentCADRevisions field if non-nil, zero value otherwise.
-
-### GetIndependentCADRevisionsOk
-
-`func (o *BTReleasePackageInfo) GetIndependentCADRevisionsOk() (*bool, bool)`
-
-GetIndependentCADRevisionsOk returns a tuple with the IndependentCADRevisions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndependentCADRevisions
-
-`func (o *BTReleasePackageInfo) SetIndependentCADRevisions(v bool)`
-
-SetIndependentCADRevisions sets IndependentCADRevisions field to given value.
-
-### HasIndependentCADRevisions
-
-`func (o *BTReleasePackageInfo) HasIndependentCADRevisions() bool`
-
-HasIndependentCADRevisions returns a boolean if a field has been set.
 
 ### GetIsObsoletion
 

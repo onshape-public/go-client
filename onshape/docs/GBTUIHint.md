@@ -71,6 +71,8 @@
 
 * `GBTUIHintPlusMinus` (value: `"PLUS_MINUS"`)
 
+* `GBTUIHintAlwaysUseDependencies` (value: `"ALWAYS_USE_DEPENDENCIES"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

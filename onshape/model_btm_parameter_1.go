@@ -90,6 +90,11 @@ func (o *BTMParameterArray2025) AsBTMParameter1() *BTMParameter1 {
 	return &BTMParameter1{o}
 }
 
+// BTMParameterNotice4455AsBTMParameter1 is a convenience function that returns BTMParameterNotice4455 wrapped in BTMParameter1
+func (o *BTMParameterNotice4455) AsBTMParameter1() *BTMParameter1 {
+	return &BTMParameter1{o}
+}
+
 // BTMParameterStringWithTolerances4286AsBTMParameter1 is a convenience function that returns BTMParameterStringWithTolerances4286 wrapped in BTMParameter1
 func (o *BTMParameterStringWithTolerances4286) AsBTMParameter1() *BTMParameter1 {
 	return &BTMParameter1{o}
@@ -712,6 +717,20 @@ func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMParameter1 = nil
 			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterIcon460: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterNotice-4455'
+	if jsonDict["btType"] == "BTMParameterNotice-4455" {
+		// try to unmarshal JSON data into BTMParameterNotice4455
+		var qr *BTMParameterNotice4455
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMParameter1 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMParameter1 = nil
+			return fmt.Errorf("failed to unmarshal BTMParameter1 as BTMParameterNotice4455: %s", err.Error())
 		}
 	}
 

@@ -1137,6 +1137,56 @@ func (o *BTMAssemblyFeature887) SetParametricInstanceFeature(v bool) {
 	o.GetActualInstance().(getResult).SetParametricInstanceFeature(v)
 }
 
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTMAssemblyFeature887) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	type getResult interface {
+		GetSubFeaturesNotUsedInQuery() []BTMFeature134
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSubFeaturesNotUsedInQuery()
+	} else {
+		var de []BTMFeature134
+		return de
+	}
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyFeature887) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	type getResult interface {
+		GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSubFeaturesNotUsedInQueryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTMAssemblyFeature887) HasSubFeaturesNotUsedInQuery() bool {
+	type getResult interface {
+		HasSubFeaturesNotUsedInQuery() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSubFeaturesNotUsedInQuery()
+	} else {
+		return false
+	}
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *BTMAssemblyFeature887) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	type getResult interface {
+		SetSubFeaturesNotUsedInQuery(v []BTMFeature134)
+	}
+
+	o.GetActualInstance().(getResult).SetSubFeaturesNotUsedInQuery(v)
+}
+
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *BTMAssemblyFeature887) GetVersion() int32 {
 	type getResult interface {
@@ -1576,6 +1626,7 @@ type base_BTMAssemblyFeature887 struct {
 	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
+	SubFeaturesNotUsedInQuery              []BTMFeature134                           `json:"subFeaturesNotUsedInQuery,omitempty"`
 	Version                                *int32                                    `json:"version,omitempty"`
 }
 
@@ -2236,6 +2287,38 @@ func (o *base_BTMAssemblyFeature887) SetParametricInstanceFeature(v bool) {
 	o.ParametricInstanceFeature = &v
 }
 
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *base_BTMAssemblyFeature887) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeaturesNotUsedInQuery
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMAssemblyFeature887) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		return nil, false
+	}
+	return o.SubFeaturesNotUsedInQuery, true
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *base_BTMAssemblyFeature887) HasSubFeaturesNotUsedInQuery() bool {
+	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *base_BTMAssemblyFeature887) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	o.SubFeaturesNotUsedInQuery = v
+}
+
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *base_BTMAssemblyFeature887) GetVersion() int32 {
 	if o == nil || o.Version == nil {
@@ -2337,6 +2420,9 @@ func (o base_BTMAssemblyFeature887) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.SubFeaturesNotUsedInQuery != nil {
+		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

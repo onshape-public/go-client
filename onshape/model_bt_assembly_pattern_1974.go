@@ -44,14 +44,15 @@ type BTAssemblyPattern1974 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                          `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924       `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                          `json:"validRevisionReference,omitempty"`
-	Version                *int32                         `json:"version,omitempty"`
-	Feature                *BTMAssemblyFeature887         `json:"feature,omitempty"`
-	FeatureId              *string                        `json:"featureId,omitempty"`
-	InstanceControlNodes   []BTInstanceControlNode750     `json:"instanceControlNodes,omitempty"`
-	PatternFeature         *BTMAssemblyPatternFeature2241 `json:"patternFeature,omitempty"`
+	SuppressionConfigured       *bool                          `json:"suppressionConfigured,omitempty"`
+	SuppressionState            *BTMSuppressionState1924       `json:"suppressionState,omitempty"`
+	ValidRevisionReference      *bool                          `json:"validRevisionReference,omitempty"`
+	Version                     *int32                         `json:"version,omitempty"`
+	Feature                     *BTMAssemblyFeature887         `json:"feature,omitempty"`
+	FeatureId                   *string                        `json:"featureId,omitempty"`
+	InstanceControlNodes        []BTInstanceControlNode750     `json:"instanceControlNodes,omitempty"`
+	SeedBasedParametricInstance *bool                          `json:"seedBasedParametricInstance,omitempty"`
+	PatternFeature              *BTMAssemblyPatternFeature2241 `json:"patternFeature,omitempty"`
 }
 
 // NewBTAssemblyPattern1974 instantiates a new BTAssemblyPattern1974 object
@@ -1095,6 +1096,38 @@ func (o *BTAssemblyPattern1974) SetInstanceControlNodes(v []BTInstanceControlNod
 	o.InstanceControlNodes = v
 }
 
+// GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field value if set, zero value otherwise.
+func (o *BTAssemblyPattern1974) GetSeedBasedParametricInstance() bool {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SeedBasedParametricInstance
+}
+
+// GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyPattern1974) GetSeedBasedParametricInstanceOk() (*bool, bool) {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		return nil, false
+	}
+	return o.SeedBasedParametricInstance, true
+}
+
+// HasSeedBasedParametricInstance returns a boolean if a field has been set.
+func (o *BTAssemblyPattern1974) HasSeedBasedParametricInstance() bool {
+	if o != nil && o.SeedBasedParametricInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
+func (o *BTAssemblyPattern1974) SetSeedBasedParametricInstance(v bool) {
+	o.SeedBasedParametricInstance = &v
+}
+
 // GetPatternFeature returns the PatternFeature field value if set, zero value otherwise.
 func (o *BTAssemblyPattern1974) GetPatternFeature() BTMAssemblyPatternFeature2241 {
 	if o == nil || o.PatternFeature == nil {
@@ -1232,6 +1265,9 @@ func (o BTAssemblyPattern1974) MarshalJSON() ([]byte, error) {
 	}
 	if o.InstanceControlNodes != nil {
 		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
+	}
+	if o.SeedBasedParametricInstance != nil {
+		toSerialize["seedBasedParametricInstance"] = o.SeedBasedParametricInstance
 	}
 	if o.PatternFeature != nil {
 		toSerialize["patternFeature"] = o.PatternFeature

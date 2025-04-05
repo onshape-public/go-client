@@ -192,6 +192,56 @@ func (o *BTOccurrence74) SetHeadInstanceId(v string) {
 	o.GetActualInstance().(getResult).SetHeadInstanceId(v)
 }
 
+// GetInternalOccurrence returns the InternalOccurrence field value if set, zero value otherwise.
+func (o *BTOccurrence74) GetInternalOccurrence() bool {
+	type getResult interface {
+		GetInternalOccurrence() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInternalOccurrence()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetInternalOccurrenceOk returns a tuple with the InternalOccurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrence74) GetInternalOccurrenceOk() (*bool, bool) {
+	type getResult interface {
+		GetInternalOccurrenceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInternalOccurrenceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasInternalOccurrence returns a boolean if a field has been set.
+func (o *BTOccurrence74) HasInternalOccurrence() bool {
+	type getResult interface {
+		HasInternalOccurrence() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasInternalOccurrence()
+	} else {
+		return false
+	}
+}
+
+// SetInternalOccurrence gets a reference to the given bool and assigns it to the InternalOccurrence field.
+func (o *BTOccurrence74) SetInternalOccurrence(v bool) {
+	type getResult interface {
+		SetInternalOccurrence(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetInternalOccurrence(v)
+}
+
 // GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
 func (o *BTOccurrence74) GetOccurrenceWithoutHead() BTOccurrence74 {
 	type getResult interface {
@@ -586,6 +636,7 @@ type base_BTOccurrence74 struct {
 	BtType                *string         `json:"btType,omitempty"`
 	FullPathAsString      *string         `json:"fullPathAsString,omitempty"`
 	HeadInstanceId        *string         `json:"headInstanceId,omitempty"`
+	InternalOccurrence    *bool           `json:"internalOccurrence,omitempty"`
 	OccurrenceWithoutHead *BTOccurrence74 `json:"occurrenceWithoutHead,omitempty"`
 	OccurrenceWithoutTail *BTOccurrence74 `json:"occurrenceWithoutTail,omitempty"`
 	Parent                *BTOccurrence74 `json:"parent,omitempty"`
@@ -705,6 +756,38 @@ func (o *base_BTOccurrence74) HasHeadInstanceId() bool {
 // SetHeadInstanceId gets a reference to the given string and assigns it to the HeadInstanceId field.
 func (o *base_BTOccurrence74) SetHeadInstanceId(v string) {
 	o.HeadInstanceId = &v
+}
+
+// GetInternalOccurrence returns the InternalOccurrence field value if set, zero value otherwise.
+func (o *base_BTOccurrence74) GetInternalOccurrence() bool {
+	if o == nil || o.InternalOccurrence == nil {
+		var ret bool
+		return ret
+	}
+	return *o.InternalOccurrence
+}
+
+// GetInternalOccurrenceOk returns a tuple with the InternalOccurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTOccurrence74) GetInternalOccurrenceOk() (*bool, bool) {
+	if o == nil || o.InternalOccurrence == nil {
+		return nil, false
+	}
+	return o.InternalOccurrence, true
+}
+
+// HasInternalOccurrence returns a boolean if a field has been set.
+func (o *base_BTOccurrence74) HasInternalOccurrence() bool {
+	if o != nil && o.InternalOccurrence != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInternalOccurrence gets a reference to the given bool and assigns it to the InternalOccurrence field.
+func (o *base_BTOccurrence74) SetInternalOccurrence(v bool) {
+	o.InternalOccurrence = &v
 }
 
 // GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
@@ -909,6 +992,9 @@ func (o base_BTOccurrence74) MarshalJSON() ([]byte, error) {
 	}
 	if o.HeadInstanceId != nil {
 		toSerialize["headInstanceId"] = o.HeadInstanceId
+	}
+	if o.InternalOccurrence != nil {
+		toSerialize["internalOccurrence"] = o.InternalOccurrence
 	}
 	if o.OccurrenceWithoutHead != nil {
 		toSerialize["occurrenceWithoutHead"] = o.OccurrenceWithoutHead

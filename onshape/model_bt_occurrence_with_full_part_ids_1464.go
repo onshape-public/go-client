@@ -20,6 +20,7 @@ type BTOccurrenceWithFullPartIds1464 struct {
 	BtType                *string                          `json:"btType,omitempty"`
 	FullPathAsString      *string                          `json:"fullPathAsString,omitempty"`
 	HeadInstanceId        *string                          `json:"headInstanceId,omitempty"`
+	InternalOccurrence    *bool                            `json:"internalOccurrence,omitempty"`
 	OccurrenceWithoutHead *BTOccurrence74                  `json:"occurrenceWithoutHead,omitempty"`
 	OccurrenceWithoutTail *BTOccurrence74                  `json:"occurrenceWithoutTail,omitempty"`
 	Parent                *BTOccurrence74                  `json:"parent,omitempty"`
@@ -142,6 +143,38 @@ func (o *BTOccurrenceWithFullPartIds1464) HasHeadInstanceId() bool {
 // SetHeadInstanceId gets a reference to the given string and assigns it to the HeadInstanceId field.
 func (o *BTOccurrenceWithFullPartIds1464) SetHeadInstanceId(v string) {
 	o.HeadInstanceId = &v
+}
+
+// GetInternalOccurrence returns the InternalOccurrence field value if set, zero value otherwise.
+func (o *BTOccurrenceWithFullPartIds1464) GetInternalOccurrence() bool {
+	if o == nil || o.InternalOccurrence == nil {
+		var ret bool
+		return ret
+	}
+	return *o.InternalOccurrence
+}
+
+// GetInternalOccurrenceOk returns a tuple with the InternalOccurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceWithFullPartIds1464) GetInternalOccurrenceOk() (*bool, bool) {
+	if o == nil || o.InternalOccurrence == nil {
+		return nil, false
+	}
+	return o.InternalOccurrence, true
+}
+
+// HasInternalOccurrence returns a boolean if a field has been set.
+func (o *BTOccurrenceWithFullPartIds1464) HasInternalOccurrence() bool {
+	if o != nil && o.InternalOccurrence != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInternalOccurrence gets a reference to the given bool and assigns it to the InternalOccurrence field.
+func (o *BTOccurrenceWithFullPartIds1464) SetInternalOccurrence(v bool) {
+	o.InternalOccurrence = &v
 }
 
 // GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
@@ -450,6 +483,9 @@ func (o BTOccurrenceWithFullPartIds1464) MarshalJSON() ([]byte, error) {
 	}
 	if o.HeadInstanceId != nil {
 		toSerialize["headInstanceId"] = o.HeadInstanceId
+	}
+	if o.InternalOccurrence != nil {
+		toSerialize["internalOccurrence"] = o.InternalOccurrence
 	}
 	if o.OccurrenceWithoutHead != nil {
 		toSerialize["occurrenceWithoutHead"] = o.OccurrenceWithoutHead

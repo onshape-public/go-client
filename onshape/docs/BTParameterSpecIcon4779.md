@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**AllowLink** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecIcon4779) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAllowLink
+
+`func (o *BTParameterSpecIcon4779) GetAllowLink() bool`
+
+GetAllowLink returns the AllowLink field if non-nil, zero value otherwise.
+
+### GetAllowLinkOk
+
+`func (o *BTParameterSpecIcon4779) GetAllowLinkOk() (*bool, bool)`
+
+GetAllowLinkOk returns a tuple with the AllowLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowLink
+
+`func (o *BTParameterSpecIcon4779) SetAllowLink(v bool)`
+
+SetAllowLink sets AllowLink field to given value.
+
+### HasAllowLink
+
+`func (o *BTParameterSpecIcon4779) HasAllowLink() bool`
+
+HasAllowLink returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationIdToDisplayObject** | Pointer to [**map[string]BTAnnotationDisplayData3225**](BTAnnotationDisplayData3225.md) |  | [optional] 
+**AnnotationIds** | Pointer to **[]string** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetAnnotationIdToDisplayObject sets AnnotationIdToDisplayObject field to given v
 `func (o *BTAnnotationElementDisplayData894) HasAnnotationIdToDisplayObject() bool`
 
 HasAnnotationIdToDisplayObject returns a boolean if a field has been set.
+
+### GetAnnotationIds
+
+`func (o *BTAnnotationElementDisplayData894) GetAnnotationIds() []string`
+
+GetAnnotationIds returns the AnnotationIds field if non-nil, zero value otherwise.
+
+### GetAnnotationIdsOk
+
+`func (o *BTAnnotationElementDisplayData894) GetAnnotationIdsOk() (*[]string, bool)`
+
+GetAnnotationIdsOk returns a tuple with the AnnotationIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationIds
+
+`func (o *BTAnnotationElementDisplayData894) SetAnnotationIds(v []string)`
+
+SetAnnotationIds sets AnnotationIds field to given value.
+
+### HasAnnotationIds
+
+`func (o *BTAnnotationElementDisplayData894) HasAnnotationIds() bool`
+
+HasAnnotationIds returns a boolean if a field has been set.
 
 ### GetBtType
 

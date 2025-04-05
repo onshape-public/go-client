@@ -508,7 +508,7 @@ func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
     wid := "wid_example" // string | The id of the workspace in which to perform the operation.
     eid := "eid_example" // string | 
-    bTVariableParams := []openapiclient.BTVariableParams{*openapiclient.NewBTVariableParams("Expression_example", "Name_example", "Type_example")} // []BTVariableParams | 
+    bTVariableParams := []openapiclient.BTVariableParams{*openapiclient.NewBTVariableParams("Name_example", "Type_example")} // []BTVariableParams | 
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
 
     apiConfiguration := openapiclient.NewAPIConfiguration()

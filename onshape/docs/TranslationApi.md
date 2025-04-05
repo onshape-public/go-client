@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v10*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
+[**CreateTranslation**](TranslationApi.md#CreateTranslation) | **Post** /translations/d/{did}/w/{wid} | Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 [**DeleteTranslation**](TranslationApi.md#DeleteTranslation) | **Delete** /translations/{tid} | Delete a translation request.
 [**GetAllTranslatorFormats**](TranslationApi.md#GetAllTranslatorFormats) | **Get** /translations/translationformats | Get a list of formats this translation can use.
 [**GetDocumentTranslations**](TranslationApi.md#GetDocumentTranslations) | **Get** /translations/d/{did} | Get information on an in-progress or completed translation by document ID.
@@ -14,9 +14,9 @@ Method | HTTP request | Description
 
 ## CreateTranslation
 
-> BTTranslationRequestInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
+> BTTranslationRequestImportInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
 
-Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
+Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
 
 
@@ -73,7 +73,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TranslationApi.CreateTranslation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateTranslation`: BTTranslationRequestInfo
+    // response from `CreateTranslation`: BTTranslationRequestImportInfo
     fmt.Fprintf(os.Stdout, "Response from `TranslationApi.CreateTranslation`: %v\n", resp)
 }
 ```
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+[**BTTranslationRequestImportInfo**](BTTranslationRequestImportInfo.md)
 
 ### Authorization
 

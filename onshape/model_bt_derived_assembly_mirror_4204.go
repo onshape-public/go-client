@@ -51,6 +51,7 @@ type BTDerivedAssemblyMirror4204 struct {
 	Feature                                 *BTMAssemblyFeature887                      `json:"feature,omitempty"`
 	FeatureId                               *string                                     `json:"featureId,omitempty"`
 	InstanceControlNodes                    []BTInstanceControlNode750                  `json:"instanceControlNodes,omitempty"`
+	SeedBasedParametricInstance             *bool                                       `json:"seedBasedParametricInstance,omitempty"`
 	Configuration                           []BTMParameter1                             `json:"configuration,omitempty"`
 	DocumentId                              *string                                     `json:"documentId,omitempty"`
 	ElementId                               *string                                     `json:"elementId,omitempty"`
@@ -60,6 +61,7 @@ type BTDerivedAssemblyMirror4204 struct {
 	LockedState                             *BTInstanceWithReference                    `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	MirrorFeature                           *BTMDerivedAssemblyMirrorFeature5094        `json:"mirrorFeature,omitempty"`
+	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
 	VersionIdIfExternal                     *string                                     `json:"versionIdIfExternal,omitempty"`
@@ -1106,6 +1108,38 @@ func (o *BTDerivedAssemblyMirror4204) SetInstanceControlNodes(v []BTInstanceCont
 	o.InstanceControlNodes = v
 }
 
+// GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetSeedBasedParametricInstance() bool {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SeedBasedParametricInstance
+}
+
+// GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetSeedBasedParametricInstanceOk() (*bool, bool) {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		return nil, false
+	}
+	return o.SeedBasedParametricInstance, true
+}
+
+// HasSeedBasedParametricInstance returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasSeedBasedParametricInstance() bool {
+	if o != nil && o.SeedBasedParametricInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
+func (o *BTDerivedAssemblyMirror4204) SetSeedBasedParametricInstance(v bool) {
+	o.SeedBasedParametricInstance = &v
+}
+
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
 func (o *BTDerivedAssemblyMirror4204) GetConfiguration() []BTMParameter1 {
 	if o == nil || o.Configuration == nil {
@@ -1394,6 +1428,38 @@ func (o *BTDerivedAssemblyMirror4204) SetMirrorFeature(v BTMDerivedAssemblyMirro
 	o.MirrorFeature = &v
 }
 
+// GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetNodeWithReferenceList() []BTNodeWithReference {
+	if o == nil || o.NodeWithReferenceList == nil {
+		var ret []BTNodeWithReference
+		return ret
+	}
+	return o.NodeWithReferenceList
+}
+
+// GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool) {
+	if o == nil || o.NodeWithReferenceList == nil {
+		return nil, false
+	}
+	return o.NodeWithReferenceList, true
+}
+
+// HasNodeWithReferenceList returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasNodeWithReferenceList() bool {
+	if o != nil && o.NodeWithReferenceList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeWithReferenceList gets a reference to the given []BTNodeWithReference and assigns it to the NodeWithReferenceList field.
+func (o *BTDerivedAssemblyMirror4204) SetNodeWithReferenceList(v []BTNodeWithReference) {
+	o.NodeWithReferenceList = v
+}
+
 // GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
 func (o *BTDerivedAssemblyMirror4204) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
 	if o == nil || o.ReferenceParameter == nil {
@@ -1596,6 +1662,9 @@ func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	if o.InstanceControlNodes != nil {
 		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
 	}
+	if o.SeedBasedParametricInstance != nil {
+		toSerialize["seedBasedParametricInstance"] = o.SeedBasedParametricInstance
+	}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration
 	}
@@ -1622,6 +1691,9 @@ func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	}
 	if o.MirrorFeature != nil {
 		toSerialize["mirrorFeature"] = o.MirrorFeature
+	}
+	if o.NodeWithReferenceList != nil {
+		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter

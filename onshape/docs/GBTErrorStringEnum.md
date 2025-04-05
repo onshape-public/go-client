@@ -3275,6 +3275,44 @@
 
 * `GBTErrorStringEnumRoutingCurveAtLeastThreeDistinctPoints` (value: `"ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS"`)
 
+* `GBTErrorStringEnumAssemblyMirrorHasReferenceErrors` (value: `"ASSEMBLY_MIRROR_HAS_REFERENCE_ERRORS"`)
+
+* `GBTErrorStringEnumAssemblyMirrorHasNoReferenceErrors` (value: `"ASSEMBLY_MIRROR_HAS_NO_REFERENCE_ERRORS"`)
+
+* `GBTErrorStringEnumFeatureNotProvided` (value: `"FEATURE_NOT_PROVIDED"`)
+
+* `GBTErrorStringEnumTolerantOffsetEndConsumed` (value: `"TOLERANT_OFFSET_END_CONSUMED"`)
+
+* `GBTErrorStringEnumTolerantOffsetNotToFace` (value: `"TOLERANT_OFFSET_NOT_TO_FACE"`)
+
+* `GBTErrorStringEnumTolerantDepthNoSecond` (value: `"TOLERANT_DEPTH_NO_SECOND"`)
+
+* `GBTErrorStringEnumTolerantDepthEndConsumed` (value: `"TOLERANT_DEPTH_END_CONSUMED"`)
+
+* `GBTErrorStringEnumMixedThicknessTolerance` (value: `"MIXED_THICKNESS_TOLERANCE"`)
+
+* `GBTErrorStringEnumDoubleThicknessTolerance` (value: `"DOUBLE_THICKNESS_TOLERANCE"`)
+
+* `GBTErrorStringEnumTolerantAngleNoSecond` (value: `"TOLERANT_ANGLE_NO_SECOND"`)
+
+* `GBTErrorStringEnumTolerantAngleEndConsumed` (value: `"TOLERANT_ANGLE_END_CONSUMED"`)
+
+* `GBTErrorStringEnumTolerantThicknessNeedsPlane` (value: `"TOLERANT_THICKNESS_NEEDS_PLANE"`)
+
+* `GBTErrorStringEnumTolerantSolidOnly` (value: `"TOLERANT_SOLID_ONLY"`)
+
+* `GBTErrorStringEnumTolerantInvalidOffsetTarget` (value: `"TOLERANT_INVALID_OFFSET_TARGET"`)
+
+* `GBTErrorStringEnumSheetMetalHemAdjacentCone` (value: `"SHEET_METAL_HEM_ADJACENT_CONE"`)
+
+* `GBTErrorStringEnumSheetMetalFlangeAdjacentCone` (value: `"SHEET_METAL_FLANGE_ADJACENT_CONE"`)
+
+* `GBTErrorStringEnumSheetMetalBendReliefCone` (value: `"SHEET_METAL_BEND_RELIEF_CONE"`)
+
+* `GBTErrorStringEnumSheetMetalActiveModelCannotOffset` (value: `"SHEET_METAL_ACTIVE_MODEL_CANNOT_OFFSET"`)
+
+* `GBTErrorStringEnumTrimToMultiFailedForUptoBody` (value: `"TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

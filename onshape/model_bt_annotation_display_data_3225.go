@@ -30,6 +30,11 @@ func (o *BTAnnotationWeldDisplayData4919) AsBTAnnotationDisplayData3225() *BTAnn
 	return &BTAnnotationDisplayData3225{o}
 }
 
+// BTAnnotationDeleteDisplayData1815AsBTAnnotationDisplayData3225 is a convenience function that returns BTAnnotationDeleteDisplayData1815 wrapped in BTAnnotationDisplayData3225
+func (o *BTAnnotationDeleteDisplayData1815) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
+	return &BTAnnotationDisplayData3225{o}
+}
+
 // BTAnnotationGTolDisplayData4887AsBTAnnotationDisplayData3225 is a convenience function that returns BTAnnotationGTolDisplayData4887 wrapped in BTAnnotationDisplayData3225
 func (o *BTAnnotationGTolDisplayData4887) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
 	return &BTAnnotationDisplayData3225{o}
@@ -302,6 +307,56 @@ func (o *BTAnnotationDisplayData3225) SetDxdySegments(v []BTVector2d1812) {
 	o.GetActualInstance().(getResult).SetDxdySegments(v)
 }
 
+// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetIsDeletion() bool {
+	type getResult interface {
+		GetIsDeletion() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsDeletion()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetIsDeletionOk() (*bool, bool) {
+	type getResult interface {
+		GetIsDeletionOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsDeletionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsDeletion returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasIsDeletion() bool {
+	type getResult interface {
+		HasIsDeletion() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsDeletion()
+	} else {
+		return false
+	}
+}
+
+// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
+func (o *BTAnnotationDisplayData3225) SetIsDeletion(v bool) {
+	type getResult interface {
+		SetIsDeletion(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsDeletion(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 	var err error
@@ -310,6 +365,20 @@ func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTAnnotationDeleteDisplayData-1815'
+	if jsonDict["btType"] == "BTAnnotationDeleteDisplayData-1815" {
+		// try to unmarshal JSON data into BTAnnotationDeleteDisplayData1815
+		var qr *BTAnnotationDeleteDisplayData1815
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTAnnotationDisplayData3225 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTAnnotationDisplayData3225 = nil
+			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTAnnotationDeleteDisplayData1815: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTAnnotationGTolDisplayData-4887'
@@ -426,6 +495,7 @@ type base_BTAnnotationDisplayData3225 struct {
 	BtType          *string          `json:"btType,omitempty"`
 	DeterministicId *string          `json:"deterministicId,omitempty"`
 	DxdySegments    []BTVector2d1812 `json:"dxdySegments,omitempty"`
+	IsDeletion      *bool            `json:"isDeletion,omitempty"`
 }
 
 // Newbase_BTAnnotationDisplayData3225 instantiates a new base_BTAnnotationDisplayData3225 object
@@ -605,6 +675,38 @@ func (o *base_BTAnnotationDisplayData3225) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
 }
 
+// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetIsDeletion() bool {
+	if o == nil || o.IsDeletion == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDeletion
+}
+
+// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetIsDeletionOk() (*bool, bool) {
+	if o == nil || o.IsDeletion == nil {
+		return nil, false
+	}
+	return o.IsDeletion, true
+}
+
+// HasIsDeletion returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasIsDeletion() bool {
+	if o != nil && o.IsDeletion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
+func (o *base_BTAnnotationDisplayData3225) SetIsDeletion(v bool) {
+	o.IsDeletion = &v
+}
+
 func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AnnotationPlane != nil {
@@ -621,6 +723,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
+	}
+	if o.IsDeletion != nil {
+		toSerialize["isDeletion"] = o.IsDeletion
 	}
 	return json.Marshal(toSerialize)
 }

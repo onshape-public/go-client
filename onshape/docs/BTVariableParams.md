@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Description** | Pointer to **string** | Variable description | [optional] 
-**Expression** | **string** | Variable definition expression | 
+**ConfiguredDescription** | Pointer to [**BTConfiguredValue**](BTConfiguredValue.md) |  | [optional] 
+**ConfiguredExpression** | Pointer to [**BTConfiguredValue**](BTConfiguredValue.md) |  | [optional] 
+**Description** | Pointer to **string** | Variable description, if not configured | [optional] 
+**Expression** | Pointer to **string** | Variable definition expression, if not configured | [optional] 
 **Name** | **string** | Variable name | 
 **Type** | **string** | VariableType name, from FeatureScript VariableType | 
 
@@ -13,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewBTVariableParams
 
-`func NewBTVariableParams(expression string, name string, type_ string, ) *BTVariableParams`
+`func NewBTVariableParams(name string, type_ string, ) *BTVariableParams`
 
 NewBTVariableParams instantiates a new BTVariableParams object
 This constructor will assign default values to properties that have it defined,
@@ -27,6 +29,56 @@ will change when the set of required properties is changed
 NewBTVariableParamsWithDefaults instantiates a new BTVariableParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConfiguredDescription
+
+`func (o *BTVariableParams) GetConfiguredDescription() BTConfiguredValue`
+
+GetConfiguredDescription returns the ConfiguredDescription field if non-nil, zero value otherwise.
+
+### GetConfiguredDescriptionOk
+
+`func (o *BTVariableParams) GetConfiguredDescriptionOk() (*BTConfiguredValue, bool)`
+
+GetConfiguredDescriptionOk returns a tuple with the ConfiguredDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfiguredDescription
+
+`func (o *BTVariableParams) SetConfiguredDescription(v BTConfiguredValue)`
+
+SetConfiguredDescription sets ConfiguredDescription field to given value.
+
+### HasConfiguredDescription
+
+`func (o *BTVariableParams) HasConfiguredDescription() bool`
+
+HasConfiguredDescription returns a boolean if a field has been set.
+
+### GetConfiguredExpression
+
+`func (o *BTVariableParams) GetConfiguredExpression() BTConfiguredValue`
+
+GetConfiguredExpression returns the ConfiguredExpression field if non-nil, zero value otherwise.
+
+### GetConfiguredExpressionOk
+
+`func (o *BTVariableParams) GetConfiguredExpressionOk() (*BTConfiguredValue, bool)`
+
+GetConfiguredExpressionOk returns a tuple with the ConfiguredExpression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfiguredExpression
+
+`func (o *BTVariableParams) SetConfiguredExpression(v BTConfiguredValue)`
+
+SetConfiguredExpression sets ConfiguredExpression field to given value.
+
+### HasConfiguredExpression
+
+`func (o *BTVariableParams) HasConfiguredExpression() bool`
+
+HasConfiguredExpression returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -72,6 +124,11 @@ and a boolean to check if the value has been set.
 
 SetExpression sets Expression field to given value.
 
+### HasExpression
+
+`func (o *BTVariableParams) HasExpression() bool`
+
+HasExpression returns a boolean if a field has been set.
 
 ### GetName
 

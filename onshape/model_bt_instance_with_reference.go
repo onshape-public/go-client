@@ -27,6 +27,7 @@ type BTInstanceWithReference struct {
 	LockedState                             *BTInstanceWithReference                    `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	NodeId                                  *string                                     `json:"nodeId,omitempty"`
+	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	StandardContent                         *bool                                       `json:"standardContent,omitempty"`
 	StandardContentParametersId             *string                                     `json:"standardContentParametersId,omitempty"`
@@ -404,6 +405,38 @@ func (o *BTInstanceWithReference) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
+func (o *BTInstanceWithReference) GetNodeWithReferenceList() []BTNodeWithReference {
+	if o == nil || o.NodeWithReferenceList == nil {
+		var ret []BTNodeWithReference
+		return ret
+	}
+	return o.NodeWithReferenceList
+}
+
+// GetNodeWithReferenceListOk returns a tuple with the NodeWithReferenceList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceWithReference) GetNodeWithReferenceListOk() ([]BTNodeWithReference, bool) {
+	if o == nil || o.NodeWithReferenceList == nil {
+		return nil, false
+	}
+	return o.NodeWithReferenceList, true
+}
+
+// HasNodeWithReferenceList returns a boolean if a field has been set.
+func (o *BTInstanceWithReference) HasNodeWithReferenceList() bool {
+	if o != nil && o.NodeWithReferenceList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeWithReferenceList gets a reference to the given []BTNodeWithReference and assigns it to the NodeWithReferenceList field.
+func (o *BTInstanceWithReference) SetNodeWithReferenceList(v []BTNodeWithReference) {
+	o.NodeWithReferenceList = v
+}
+
 // GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
 func (o *BTInstanceWithReference) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
 	if o == nil || o.ReferenceParameter == nil {
@@ -630,6 +663,9 @@ func (o BTInstanceWithReference) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.NodeWithReferenceList != nil {
+		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter

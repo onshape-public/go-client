@@ -16,10 +16,12 @@ import (
 
 // BTVariableParams struct for BTVariableParams
 type BTVariableParams struct {
-	// Variable description
+	ConfiguredDescription *BTConfiguredValue `json:"configuredDescription,omitempty"`
+	ConfiguredExpression  *BTConfiguredValue `json:"configuredExpression,omitempty"`
+	// Variable description, if not configured
 	Description *string `json:"description,omitempty"`
-	// Variable definition expression
-	Expression string `json:"expression"`
+	// Variable definition expression, if not configured
+	Expression *string `json:"expression,omitempty"`
 	// Variable name
 	Name string `json:"name"`
 	// VariableType name, from FeatureScript VariableType
@@ -30,9 +32,8 @@ type BTVariableParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTVariableParams(expression string, name string, type_ string) *BTVariableParams {
+func NewBTVariableParams(name string, type_ string) *BTVariableParams {
 	this := BTVariableParams{}
-	this.Expression = expression
 	this.Name = name
 	this.Type = type_
 	return &this
@@ -44,6 +45,70 @@ func NewBTVariableParams(expression string, name string, type_ string) *BTVariab
 func NewBTVariableParamsWithDefaults() *BTVariableParams {
 	this := BTVariableParams{}
 	return &this
+}
+
+// GetConfiguredDescription returns the ConfiguredDescription field value if set, zero value otherwise.
+func (o *BTVariableParams) GetConfiguredDescription() BTConfiguredValue {
+	if o == nil || o.ConfiguredDescription == nil {
+		var ret BTConfiguredValue
+		return ret
+	}
+	return *o.ConfiguredDescription
+}
+
+// GetConfiguredDescriptionOk returns a tuple with the ConfiguredDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVariableParams) GetConfiguredDescriptionOk() (*BTConfiguredValue, bool) {
+	if o == nil || o.ConfiguredDescription == nil {
+		return nil, false
+	}
+	return o.ConfiguredDescription, true
+}
+
+// HasConfiguredDescription returns a boolean if a field has been set.
+func (o *BTVariableParams) HasConfiguredDescription() bool {
+	if o != nil && o.ConfiguredDescription != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfiguredDescription gets a reference to the given BTConfiguredValue and assigns it to the ConfiguredDescription field.
+func (o *BTVariableParams) SetConfiguredDescription(v BTConfiguredValue) {
+	o.ConfiguredDescription = &v
+}
+
+// GetConfiguredExpression returns the ConfiguredExpression field value if set, zero value otherwise.
+func (o *BTVariableParams) GetConfiguredExpression() BTConfiguredValue {
+	if o == nil || o.ConfiguredExpression == nil {
+		var ret BTConfiguredValue
+		return ret
+	}
+	return *o.ConfiguredExpression
+}
+
+// GetConfiguredExpressionOk returns a tuple with the ConfiguredExpression field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVariableParams) GetConfiguredExpressionOk() (*BTConfiguredValue, bool) {
+	if o == nil || o.ConfiguredExpression == nil {
+		return nil, false
+	}
+	return o.ConfiguredExpression, true
+}
+
+// HasConfiguredExpression returns a boolean if a field has been set.
+func (o *BTVariableParams) HasConfiguredExpression() bool {
+	if o != nil && o.ConfiguredExpression != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfiguredExpression gets a reference to the given BTConfiguredValue and assigns it to the ConfiguredExpression field.
+func (o *BTVariableParams) SetConfiguredExpression(v BTConfiguredValue) {
+	o.ConfiguredExpression = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -78,28 +143,36 @@ func (o *BTVariableParams) SetDescription(v string) {
 	o.Description = &v
 }
 
-// GetExpression returns the Expression field value
+// GetExpression returns the Expression field value if set, zero value otherwise.
 func (o *BTVariableParams) GetExpression() string {
-	if o == nil {
+	if o == nil || o.Expression == nil {
 		var ret string
 		return ret
 	}
-
-	return o.Expression
+	return *o.Expression
 }
 
-// GetExpressionOk returns a tuple with the Expression field value
+// GetExpressionOk returns a tuple with the Expression field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTVariableParams) GetExpressionOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.Expression == nil {
 		return nil, false
 	}
-	return &o.Expression, true
+	return o.Expression, true
 }
 
-// SetExpression sets field value
+// HasExpression returns a boolean if a field has been set.
+func (o *BTVariableParams) HasExpression() bool {
+	if o != nil && o.Expression != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExpression gets a reference to the given string and assigns it to the Expression field.
 func (o *BTVariableParams) SetExpression(v string) {
-	o.Expression = v
+	o.Expression = &v
 }
 
 // GetName returns the Name field value
@@ -152,10 +225,16 @@ func (o *BTVariableParams) SetType(v string) {
 
 func (o BTVariableParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ConfiguredDescription != nil {
+		toSerialize["configuredDescription"] = o.ConfiguredDescription
+	}
+	if o.ConfiguredExpression != nil {
+		toSerialize["configuredExpression"] = o.ConfiguredExpression
+	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
-	if true {
+	if o.Expression != nil {
 		toSerialize["expression"] = o.Expression
 	}
 	if true {

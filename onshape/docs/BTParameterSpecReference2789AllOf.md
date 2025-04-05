@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
-**DefaultPurpose** | Pointer to [**BTElementLibraryPurpose3353**](BTElementLibraryPurpose3353.md) |  | [optional] 
 **LibraryDefinitionId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -51,31 +50,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTParameterSpecReference2789AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetDefaultPurpose
-
-`func (o *BTParameterSpecReference2789AllOf) GetDefaultPurpose() BTElementLibraryPurpose3353`
-
-GetDefaultPurpose returns the DefaultPurpose field if non-nil, zero value otherwise.
-
-### GetDefaultPurposeOk
-
-`func (o *BTParameterSpecReference2789AllOf) GetDefaultPurposeOk() (*BTElementLibraryPurpose3353, bool)`
-
-GetDefaultPurposeOk returns a tuple with the DefaultPurpose field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultPurpose
-
-`func (o *BTParameterSpecReference2789AllOf) SetDefaultPurpose(v BTElementLibraryPurpose3353)`
-
-SetDefaultPurpose sets DefaultPurpose field to given value.
-
-### HasDefaultPurpose
-
-`func (o *BTParameterSpecReference2789AllOf) HasDefaultPurpose() bool`
-
-HasDefaultPurpose returns a boolean if a field has been set.
 
 ### GetLibraryDefinitionId
 

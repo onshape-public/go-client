@@ -24,8 +24,10 @@ type BTMParameterIcon460 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string `json:"parameterId,omitempty"`
+	HasError    *bool   `json:"hasError,omitempty"`
 	Icon        *string `json:"icon,omitempty"`
 	Label       *string `json:"label,omitempty"`
+	Link        *string `json:"link,omitempty"`
 }
 
 // NewBTMParameterIcon460 instantiates a new BTMParameterIcon460 object
@@ -173,6 +175,38 @@ func (o *BTMParameterIcon460) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetHasError returns the HasError field value if set, zero value otherwise.
+func (o *BTMParameterIcon460) GetHasError() bool {
+	if o == nil || o.HasError == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasError
+}
+
+// GetHasErrorOk returns a tuple with the HasError field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterIcon460) GetHasErrorOk() (*bool, bool) {
+	if o == nil || o.HasError == nil {
+		return nil, false
+	}
+	return o.HasError, true
+}
+
+// HasHasError returns a boolean if a field has been set.
+func (o *BTMParameterIcon460) HasHasError() bool {
+	if o != nil && o.HasError != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasError gets a reference to the given bool and assigns it to the HasError field.
+func (o *BTMParameterIcon460) SetHasError(v bool) {
+	o.HasError = &v
+}
+
 // GetIcon returns the Icon field value if set, zero value otherwise.
 func (o *BTMParameterIcon460) GetIcon() string {
 	if o == nil || o.Icon == nil {
@@ -237,6 +271,38 @@ func (o *BTMParameterIcon460) SetLabel(v string) {
 	o.Label = &v
 }
 
+// GetLink returns the Link field value if set, zero value otherwise.
+func (o *BTMParameterIcon460) GetLink() string {
+	if o == nil || o.Link == nil {
+		var ret string
+		return ret
+	}
+	return *o.Link
+}
+
+// GetLinkOk returns a tuple with the Link field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterIcon460) GetLinkOk() (*string, bool) {
+	if o == nil || o.Link == nil {
+		return nil, false
+	}
+	return o.Link, true
+}
+
+// HasLink returns a boolean if a field has been set.
+func (o *BTMParameterIcon460) HasLink() bool {
+	if o != nil && o.Link != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLink gets a reference to the given string and assigns it to the Link field.
+func (o *BTMParameterIcon460) SetLink(v string) {
+	o.Link = &v
+}
+
 func (o BTMParameterIcon460) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
@@ -259,11 +325,17 @@ func (o BTMParameterIcon460) MarshalJSON() ([]byte, error) {
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
 	}
+	if o.HasError != nil {
+		toSerialize["hasError"] = o.HasError
+	}
 	if o.Icon != nil {
 		toSerialize["icon"] = o.Icon
 	}
 	if o.Label != nil {
 		toSerialize["label"] = o.Label
+	}
+	if o.Link != nil {
+		toSerialize["link"] = o.Link
 	}
 	return json.Marshal(toSerialize)
 }

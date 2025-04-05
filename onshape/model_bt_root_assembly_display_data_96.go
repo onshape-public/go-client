@@ -17,9 +17,11 @@ import (
 // BTRootAssemblyDisplayData96 struct for BTRootAssemblyDisplayData96
 type BTRootAssemblyDisplayData96 struct {
 	AnnotationsForElement *BTAnnotationElementDisplayData894 `json:"annotationsForElement,omitempty"`
+	AssemblyFeatures      []BTAssemblyFeatureDisplayData1783 `json:"assemblyFeatures,omitempty"`
 	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	BuildDurationMillis                    *float64                                      `json:"buildDurationMillis,omitempty"`
+	DeletedAssemblyFeatures                []string                                      `json:"deletedAssemblyFeatures,omitempty"`
 	DeletedGeometryMateIds                 []string                                      `json:"deletedGeometryMateIds,omitempty"`
 	DeletedLoads                           []string                                      `json:"deletedLoads,omitempty"`
 	DeletedMateConnectorIds                []string                                      `json:"deletedMateConnectorIds,omitempty"`
@@ -100,6 +102,38 @@ func (o *BTRootAssemblyDisplayData96) SetAnnotationsForElement(v BTAnnotationEle
 	o.AnnotationsForElement = &v
 }
 
+// GetAssemblyFeatures returns the AssemblyFeatures field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetAssemblyFeatures() []BTAssemblyFeatureDisplayData1783 {
+	if o == nil || o.AssemblyFeatures == nil {
+		var ret []BTAssemblyFeatureDisplayData1783
+		return ret
+	}
+	return o.AssemblyFeatures
+}
+
+// GetAssemblyFeaturesOk returns a tuple with the AssemblyFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetAssemblyFeaturesOk() ([]BTAssemblyFeatureDisplayData1783, bool) {
+	if o == nil || o.AssemblyFeatures == nil {
+		return nil, false
+	}
+	return o.AssemblyFeatures, true
+}
+
+// HasAssemblyFeatures returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasAssemblyFeatures() bool {
+	if o != nil && o.AssemblyFeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyFeatures gets a reference to the given []BTAssemblyFeatureDisplayData1783 and assigns it to the AssemblyFeatures field.
+func (o *BTRootAssemblyDisplayData96) SetAssemblyFeatures(v []BTAssemblyFeatureDisplayData1783) {
+	o.AssemblyFeatures = v
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTRootAssemblyDisplayData96) GetBtType() string {
 	if o == nil || o.BtType == nil {
@@ -162,6 +196,38 @@ func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool {
 // SetBuildDurationMillis gets a reference to the given float64 and assigns it to the BuildDurationMillis field.
 func (o *BTRootAssemblyDisplayData96) SetBuildDurationMillis(v float64) {
 	o.BuildDurationMillis = &v
+}
+
+// GetDeletedAssemblyFeatures returns the DeletedAssemblyFeatures field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetDeletedAssemblyFeatures() []string {
+	if o == nil || o.DeletedAssemblyFeatures == nil {
+		var ret []string
+		return ret
+	}
+	return o.DeletedAssemblyFeatures
+}
+
+// GetDeletedAssemblyFeaturesOk returns a tuple with the DeletedAssemblyFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetDeletedAssemblyFeaturesOk() ([]string, bool) {
+	if o == nil || o.DeletedAssemblyFeatures == nil {
+		return nil, false
+	}
+	return o.DeletedAssemblyFeatures, true
+}
+
+// HasDeletedAssemblyFeatures returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasDeletedAssemblyFeatures() bool {
+	if o != nil && o.DeletedAssemblyFeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeletedAssemblyFeatures gets a reference to the given []string and assigns it to the DeletedAssemblyFeatures field.
+func (o *BTRootAssemblyDisplayData96) SetDeletedAssemblyFeatures(v []string) {
+	o.DeletedAssemblyFeatures = v
 }
 
 // GetDeletedGeometryMateIds returns the DeletedGeometryMateIds field value if set, zero value otherwise.
@@ -1097,11 +1163,17 @@ func (o BTRootAssemblyDisplayData96) MarshalJSON() ([]byte, error) {
 	if o.AnnotationsForElement != nil {
 		toSerialize["annotationsForElement"] = o.AnnotationsForElement
 	}
+	if o.AssemblyFeatures != nil {
+		toSerialize["assemblyFeatures"] = o.AssemblyFeatures
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.BuildDurationMillis != nil {
 		toSerialize["buildDurationMillis"] = o.BuildDurationMillis
+	}
+	if o.DeletedAssemblyFeatures != nil {
+		toSerialize["deletedAssemblyFeatures"] = o.DeletedAssemblyFeatures
 	}
 	if o.DeletedGeometryMateIds != nil {
 		toSerialize["deletedGeometryMateIds"] = o.DeletedGeometryMateIds

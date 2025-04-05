@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DocumentFilter** | Pointer to **int32** | Filter ID. Options are 0 (my documents), 1 (created), 2 (shared), 3 (trash), 4 (public), 5 (recent), 6 (by owner), 7 (by company), or 9 (by team). | [optional] 
+**DocumentFilter** | Pointer to **int32** | Type of documents to search: &#x60;0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team&#x60; | [optional] 
 **FoundIn** | Pointer to [**BTESVersionWorkspaceChoice**](BTESVersionWorkspaceChoice.md) |  | [optional] 
-**Limit** | Pointer to **int32** | Number of results to return per page. | [optional] [default to 20]
-**Offset** | Pointer to **int32** | Offset. Determines where search results begin. | [optional] [default to 0]
-**OwnerId** | Pointer to **string** | Document owner&#39;s ID (if the filter is 6 or 7), or Team Id (if the filter is 9)  | [optional] 
+**Limit** | Pointer to **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [optional] [default to 20]
+**Offset** | Pointer to **int32** | Offset. Determines where search results begin. Default value is 0. | [optional] [default to 0]
+**OwnerId** | Pointer to **string** | Owner ID. Can be a user ID, company ID, or team ID, depending on &#x60;ownerType&#x60;. | [optional] 
 **ParentId** | Pointer to **string** | Search document parent Id  | [optional] 
 **RawQuery** | Pointer to **string** | Search for documents that contain the given string in the name. Search is not case-sensitive. | [optional] 
-**SortColumn** | Pointer to **string** | Column by which to sort search results. &#x60;name | modifiedAt | createdAt | email | modifiedBy | promotedAt&#x60; | [optional] [default to "createdAt"]
-**SortOrder** | Pointer to **string** | Sort order. &#x60;desc (descending) | asc (ascending)&#x60; | [optional] [default to "desc"]
-**Type** | Pointer to **string** | Type of owner. Options are 0 (user), 1 (company), 2 (onshape). If the owner is a teamId, leave this unspecified. | [optional] 
+**SortColumn** | Pointer to **string** | Column by which to sort search results. &#x60;name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt&#x60; | [optional] [default to "createdAt"]
+**SortOrder** | Pointer to **string** | Type of documents to search: &#x60;0: My Documents | 1: Created | 2: Shared | 3: Trash | 4: Public | 5: Recent | 6: By Owner | 7: By Company | 9: By Team&#x60; | [optional] [default to "desc"]
+**Type** | Pointer to **string** | Type of owner. &#x60;0: User | 1: Company | 2: Onshape&#x60;. If the owner is a teamId, leave this unspecified. | [optional] 
 **When** | Pointer to [**BTESResultsFilter**](BTESResultsFilter.md) |  | [optional] 
 
 ## Methods

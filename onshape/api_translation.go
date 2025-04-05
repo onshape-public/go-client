@@ -217,14 +217,16 @@ func (r ApiCreateTranslationRequest) UpgradeFeatureScriptVersion(upgradeFeatureS
 	return r
 }
 
-func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestImportInfo, *http.Response, error) {
 	return r.ApiService.CreateTranslationExecute(r)
 }
 
 /*
-CreateTranslation Upload a foreign file into Onshape and translate the data into parts, Part Studios, assemblies, and subassemblies.
+CreateTranslation Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
-The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either `DONE` or `FAILED`. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`). See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
+The API call may complete before the translation is finished. If `requestState = ACTIVE`, the translation can be polled until the state is either `DONE` or `FAILED`. Alternatively, a webhook callback can be registered for notification of translation completion (requires `Write` scope if `storeInDocument` is `true`).
+
+See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/) for examples.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -242,13 +244,13 @@ func (a *TranslationApiService) CreateTranslation(ctx context.Context, did strin
 
 // Execute executes the request
 //
-//	@return BTTranslationRequestInfo
-func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+//	@return BTTranslationRequestImportInfo
+func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationRequest) (*BTTranslationRequestImportInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BTTranslationRequestInfo
+		localVarReturnValue *BTTranslationRequestImportInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TranslationApiService.CreateTranslation")
@@ -390,7 +392,7 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v BTTranslationRequestInfo
+		var v BTTranslationRequestImportInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

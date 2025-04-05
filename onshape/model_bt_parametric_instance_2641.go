@@ -1662,6 +1662,56 @@ func (o *BTParametricInstance2641) SetInstanceControlNodes(v []BTInstanceControl
 	o.GetActualInstance().(getResult).SetInstanceControlNodes(v)
 }
 
+// GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field value if set, zero value otherwise.
+func (o *BTParametricInstance2641) GetSeedBasedParametricInstance() bool {
+	type getResult interface {
+		GetSeedBasedParametricInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSeedBasedParametricInstance()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricInstance2641) GetSeedBasedParametricInstanceOk() (*bool, bool) {
+	type getResult interface {
+		GetSeedBasedParametricInstanceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSeedBasedParametricInstanceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSeedBasedParametricInstance returns a boolean if a field has been set.
+func (o *BTParametricInstance2641) HasSeedBasedParametricInstance() bool {
+	type getResult interface {
+		HasSeedBasedParametricInstance() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSeedBasedParametricInstance()
+	} else {
+		return false
+	}
+}
+
+// SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
+func (o *BTParametricInstance2641) SetSeedBasedParametricInstance(v bool) {
+	type getResult interface {
+		SetSeedBasedParametricInstance(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetSeedBasedParametricInstance(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTParametricInstance2641) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1836,13 +1886,14 @@ type base_BTParametricInstance2641 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                      `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924   `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                      `json:"validRevisionReference,omitempty"`
-	Version                *int32                     `json:"version,omitempty"`
-	Feature                *BTMAssemblyFeature887     `json:"feature,omitempty"`
-	FeatureId              *string                    `json:"featureId,omitempty"`
-	InstanceControlNodes   []BTInstanceControlNode750 `json:"instanceControlNodes,omitempty"`
+	SuppressionConfigured       *bool                      `json:"suppressionConfigured,omitempty"`
+	SuppressionState            *BTMSuppressionState1924   `json:"suppressionState,omitempty"`
+	ValidRevisionReference      *bool                      `json:"validRevisionReference,omitempty"`
+	Version                     *int32                     `json:"version,omitempty"`
+	Feature                     *BTMAssemblyFeature887     `json:"feature,omitempty"`
+	FeatureId                   *string                    `json:"featureId,omitempty"`
+	InstanceControlNodes        []BTInstanceControlNode750 `json:"instanceControlNodes,omitempty"`
+	SeedBasedParametricInstance *bool                      `json:"seedBasedParametricInstance,omitempty"`
 }
 
 // Newbase_BTParametricInstance2641 instantiates a new base_BTParametricInstance2641 object
@@ -2886,6 +2937,38 @@ func (o *base_BTParametricInstance2641) SetInstanceControlNodes(v []BTInstanceCo
 	o.InstanceControlNodes = v
 }
 
+// GetSeedBasedParametricInstance returns the SeedBasedParametricInstance field value if set, zero value otherwise.
+func (o *base_BTParametricInstance2641) GetSeedBasedParametricInstance() bool {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SeedBasedParametricInstance
+}
+
+// GetSeedBasedParametricInstanceOk returns a tuple with the SeedBasedParametricInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricInstance2641) GetSeedBasedParametricInstanceOk() (*bool, bool) {
+	if o == nil || o.SeedBasedParametricInstance == nil {
+		return nil, false
+	}
+	return o.SeedBasedParametricInstance, true
+}
+
+// HasSeedBasedParametricInstance returns a boolean if a field has been set.
+func (o *base_BTParametricInstance2641) HasSeedBasedParametricInstance() bool {
+	if o != nil && o.SeedBasedParametricInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
+func (o *base_BTParametricInstance2641) SetSeedBasedParametricInstance(v bool) {
+	o.SeedBasedParametricInstance = &v
+}
+
 func (o base_BTParametricInstance2641) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTInstanceBase2263, errBTInstanceBase2263 := json.Marshal(o.BTInstanceBase2263)
@@ -2991,6 +3074,9 @@ func (o base_BTParametricInstance2641) MarshalJSON() ([]byte, error) {
 	}
 	if o.InstanceControlNodes != nil {
 		toSerialize["instanceControlNodes"] = o.InstanceControlNodes
+	}
+	if o.SeedBasedParametricInstance != nil {
+		toSerialize["seedBasedParametricInstance"] = o.SeedBasedParametricInstance
 	}
 	return json.Marshal(toSerialize)
 }

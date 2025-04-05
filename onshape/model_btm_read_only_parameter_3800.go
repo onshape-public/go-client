@@ -35,6 +35,11 @@ func (o *BTMParameterProgress3232) AsBTMReadOnlyParameter3800() *BTMReadOnlyPara
 	return &BTMReadOnlyParameter3800{o}
 }
 
+// BTMParameterNotice4455AsBTMReadOnlyParameter3800 is a convenience function that returns BTMParameterNotice4455 wrapped in BTMReadOnlyParameter3800
+func (o *BTMParameterNotice4455) AsBTMReadOnlyParameter3800() *BTMReadOnlyParameter3800 {
+	return &BTMReadOnlyParameter3800{o}
+}
+
 // NewBTMReadOnlyParameter3800 instantiates a new BTMReadOnlyParameter3800 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -273,6 +278,20 @@ func (dst *BTMReadOnlyParameter3800) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMReadOnlyParameter3800 = nil
 			return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterIcon460: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMParameterNotice-4455'
+	if jsonDict["btType"] == "BTMParameterNotice-4455" {
+		// try to unmarshal JSON data into BTMParameterNotice4455
+		var qr *BTMParameterNotice4455
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMReadOnlyParameter3800 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMReadOnlyParameter3800 = nil
+			return fmt.Errorf("failed to unmarshal BTMReadOnlyParameter3800 as BTMParameterNotice4455: %s", err.Error())
 		}
 	}
 

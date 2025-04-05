@@ -8,9 +8,9 @@ Method | HTTP request | Description
 [**DecodeConfiguration**](ElementApi.md#DecodeConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configurationencodings/{cid} | Decode a configuration string.
 [**DeleteElement**](ElementApi.md#DeleteElement) | **Delete** /elements/d/{did}/w/{wid}/e/{eid} | Delete an element from a document.
 [**EncodeConfigurationMap**](ElementApi.md#EncodeConfigurationMap) | **Post** /elements/d/{did}/e/{eid}/configurationencodings | Encode a configuration option for use in other API calls.
-[**GetConfiguration**](ElementApi.md#GetConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Get the configuration definition for a Part Studio or Assembly.
+[**GetConfiguration**](ElementApi.md#GetConfiguration) | **Get** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
 [**GetElementTranslatorFormatsByVersionOrWorkspace**](ElementApi.md#GetElementTranslatorFormatsByVersionOrWorkspace) | **Get** /elements/translatorFormats/{did}/{wv}/{wvid}/{eid} | Gets the list of formats an element can be translated to or from.
-[**UpdateConfiguration**](ElementApi.md#UpdateConfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update the configuration definition for a Part Studio or Assembly.
+[**UpdateConfiguration**](ElementApi.md#UpdateConfiguration) | **Post** /elements/d/{did}/{wvm}/{wvmid}/e/{eid}/configuration | Update the configuration definition for a Part Studio, Variable Studio, or Assembly.
 [**UpdateReferences**](ElementApi.md#UpdateReferences) | **Post** /elements/d/{did}/w/{wid}/e/{eid}/updatereferences | Update or replace references in an element.
 
 
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 
 > BTConfigurationResponse2019 GetConfiguration(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Execute()
 
-Get the configuration definition for a Part Studio or Assembly.
+Get the configuration definition for a Part Studio, Variable Studio, or Assembly.
 
 
 
@@ -503,7 +503,7 @@ Name | Type | Description  | Notes
 
 > BTConfigurationResponse2019 UpdateConfiguration(ctx, did, wvm, wvmid, eid).BTConfigurationUpdateCall2933(bTConfigurationUpdateCall2933).Execute()
 
-Update the configuration definition for a Part Studio or Assembly.
+Update the configuration definition for a Part Studio, Variable Studio, or Assembly.
 
 
 

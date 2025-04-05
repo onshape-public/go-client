@@ -1656,6 +1656,25 @@ const (
 	GBTErrorStringEnumConstrainedSurfaceSelectMesh                                GBTErrorStringEnum = "CONSTRAINED_SURFACE_SELECT_MESH"
 	GBTErrorStringEnumRoutingCurveSelectCurve                                     GBTErrorStringEnum = "ROUTING_CURVE_SELECT_CURVE"
 	GBTErrorStringEnumRoutingCurveAtLeastThreeDistinctPoints                      GBTErrorStringEnum = "ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS"
+	GBTErrorStringEnumAssemblyMirrorHasReferenceErrors                            GBTErrorStringEnum = "ASSEMBLY_MIRROR_HAS_REFERENCE_ERRORS"
+	GBTErrorStringEnumAssemblyMirrorHasNoReferenceErrors                          GBTErrorStringEnum = "ASSEMBLY_MIRROR_HAS_NO_REFERENCE_ERRORS"
+	GBTErrorStringEnumFeatureNotProvided                                          GBTErrorStringEnum = "FEATURE_NOT_PROVIDED"
+	GBTErrorStringEnumTolerantOffsetEndConsumed                                   GBTErrorStringEnum = "TOLERANT_OFFSET_END_CONSUMED"
+	GBTErrorStringEnumTolerantOffsetNotToFace                                     GBTErrorStringEnum = "TOLERANT_OFFSET_NOT_TO_FACE"
+	GBTErrorStringEnumTolerantDepthNoSecond                                       GBTErrorStringEnum = "TOLERANT_DEPTH_NO_SECOND"
+	GBTErrorStringEnumTolerantDepthEndConsumed                                    GBTErrorStringEnum = "TOLERANT_DEPTH_END_CONSUMED"
+	GBTErrorStringEnumMixedThicknessTolerance                                     GBTErrorStringEnum = "MIXED_THICKNESS_TOLERANCE"
+	GBTErrorStringEnumDoubleThicknessTolerance                                    GBTErrorStringEnum = "DOUBLE_THICKNESS_TOLERANCE"
+	GBTErrorStringEnumTolerantAngleNoSecond                                       GBTErrorStringEnum = "TOLERANT_ANGLE_NO_SECOND"
+	GBTErrorStringEnumTolerantAngleEndConsumed                                    GBTErrorStringEnum = "TOLERANT_ANGLE_END_CONSUMED"
+	GBTErrorStringEnumTolerantThicknessNeedsPlane                                 GBTErrorStringEnum = "TOLERANT_THICKNESS_NEEDS_PLANE"
+	GBTErrorStringEnumTolerantSolidOnly                                           GBTErrorStringEnum = "TOLERANT_SOLID_ONLY"
+	GBTErrorStringEnumTolerantInvalidOffsetTarget                                 GBTErrorStringEnum = "TOLERANT_INVALID_OFFSET_TARGET"
+	GBTErrorStringEnumSheetMetalHemAdjacentCone                                   GBTErrorStringEnum = "SHEET_METAL_HEM_ADJACENT_CONE"
+	GBTErrorStringEnumSheetMetalFlangeAdjacentCone                                GBTErrorStringEnum = "SHEET_METAL_FLANGE_ADJACENT_CONE"
+	GBTErrorStringEnumSheetMetalBendReliefCone                                    GBTErrorStringEnum = "SHEET_METAL_BEND_RELIEF_CONE"
+	GBTErrorStringEnumSheetMetalActiveModelCannotOffset                           GBTErrorStringEnum = "SHEET_METAL_ACTIVE_MODEL_CANNOT_OFFSET"
+	GBTErrorStringEnumTrimToMultiFailedForUptoBody                                GBTErrorStringEnum = "TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3297,6 +3316,25 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"CONSTRAINED_SURFACE_SELECT_MESH",
 	"ROUTING_CURVE_SELECT_CURVE",
 	"ROUTING_CURVE_AT_LEAST_THREE_DISTINCT_POINTS",
+	"ASSEMBLY_MIRROR_HAS_REFERENCE_ERRORS",
+	"ASSEMBLY_MIRROR_HAS_NO_REFERENCE_ERRORS",
+	"FEATURE_NOT_PROVIDED",
+	"TOLERANT_OFFSET_END_CONSUMED",
+	"TOLERANT_OFFSET_NOT_TO_FACE",
+	"TOLERANT_DEPTH_NO_SECOND",
+	"TOLERANT_DEPTH_END_CONSUMED",
+	"MIXED_THICKNESS_TOLERANCE",
+	"DOUBLE_THICKNESS_TOLERANCE",
+	"TOLERANT_ANGLE_NO_SECOND",
+	"TOLERANT_ANGLE_END_CONSUMED",
+	"TOLERANT_THICKNESS_NEEDS_PLANE",
+	"TOLERANT_SOLID_ONLY",
+	"TOLERANT_INVALID_OFFSET_TARGET",
+	"SHEET_METAL_HEM_ADJACENT_CONE",
+	"SHEET_METAL_FLANGE_ADJACENT_CONE",
+	"SHEET_METAL_BEND_RELIEF_CONE",
+	"SHEET_METAL_ACTIVE_MODEL_CANNOT_OFFSET",
+	"TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY",
 	"UNKNOWN",
 }
 

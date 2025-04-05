@@ -22,6 +22,7 @@ type BTAnnotationWeldDisplayData4919 struct {
 	BtType           *string                `json:"btType,omitempty"`
 	DeterministicId  *string                `json:"deterministicId,omitempty"`
 	DxdySegments     []BTVector2d1812       `json:"dxdySegments,omitempty"`
+	IsDeletion       *bool                  `json:"isDeletion,omitempty"`
 	IsoFlip          *bool                  `json:"isoFlip,omitempty"`
 	JointType        *GBTWeldJointType      `json:"jointType,omitempty"`
 	LowerGroove      *float64               `json:"lowerGroove,omitempty"`
@@ -216,6 +217,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasDxdySegments() bool {
 // SetDxdySegments gets a reference to the given []BTVector2d1812 and assigns it to the DxdySegments field.
 func (o *BTAnnotationWeldDisplayData4919) SetDxdySegments(v []BTVector2d1812) {
 	o.DxdySegments = v
+}
+
+// GetIsDeletion returns the IsDeletion field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetIsDeletion() bool {
+	if o == nil || o.IsDeletion == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDeletion
+}
+
+// GetIsDeletionOk returns a tuple with the IsDeletion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetIsDeletionOk() (*bool, bool) {
+	if o == nil || o.IsDeletion == nil {
+		return nil, false
+	}
+	return o.IsDeletion, true
+}
+
+// HasIsDeletion returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasIsDeletion() bool {
+	if o != nil && o.IsDeletion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
+func (o *BTAnnotationWeldDisplayData4919) SetIsDeletion(v bool) {
+	o.IsDeletion = &v
 }
 
 // GetIsoFlip returns the IsoFlip field value if set, zero value otherwise.
@@ -786,6 +819,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	}
 	if o.DxdySegments != nil {
 		toSerialize["dxdySegments"] = o.DxdySegments
+	}
+	if o.IsDeletion != nil {
+		toSerialize["isDeletion"] = o.IsDeletion
 	}
 	if o.IsoFlip != nil {
 		toSerialize["isoFlip"] = o.IsoFlip

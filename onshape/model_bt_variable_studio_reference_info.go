@@ -16,6 +16,8 @@ import (
 
 // BTVariableStudioReferenceInfo List of variable studio references
 type BTVariableStudioReferenceInfo struct {
+	// Optional map of configuration parameter id to value
+	ConfigurationIdToValue *map[string]BTOptionallyConfiguredValue `json:"configurationIdToValue,omitempty"`
 	// Whether all variables in the referenced variable studio are included
 	EntireVariableStudio *bool `json:"entireVariableStudio,omitempty"`
 	// DocumentId of referenced variable studio, blank for intra-workspace references
@@ -44,6 +46,38 @@ func NewBTVariableStudioReferenceInfo(referenceElementId string) *BTVariableStud
 func NewBTVariableStudioReferenceInfoWithDefaults() *BTVariableStudioReferenceInfo {
 	this := BTVariableStudioReferenceInfo{}
 	return &this
+}
+
+// GetConfigurationIdToValue returns the ConfigurationIdToValue field value if set, zero value otherwise.
+func (o *BTVariableStudioReferenceInfo) GetConfigurationIdToValue() map[string]BTOptionallyConfiguredValue {
+	if o == nil || o.ConfigurationIdToValue == nil {
+		var ret map[string]BTOptionallyConfiguredValue
+		return ret
+	}
+	return *o.ConfigurationIdToValue
+}
+
+// GetConfigurationIdToValueOk returns a tuple with the ConfigurationIdToValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVariableStudioReferenceInfo) GetConfigurationIdToValueOk() (*map[string]BTOptionallyConfiguredValue, bool) {
+	if o == nil || o.ConfigurationIdToValue == nil {
+		return nil, false
+	}
+	return o.ConfigurationIdToValue, true
+}
+
+// HasConfigurationIdToValue returns a boolean if a field has been set.
+func (o *BTVariableStudioReferenceInfo) HasConfigurationIdToValue() bool {
+	if o != nil && o.ConfigurationIdToValue != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfigurationIdToValue gets a reference to the given map[string]BTOptionallyConfiguredValue and assigns it to the ConfigurationIdToValue field.
+func (o *BTVariableStudioReferenceInfo) SetConfigurationIdToValue(v map[string]BTOptionallyConfiguredValue) {
+	o.ConfigurationIdToValue = &v
 }
 
 // GetEntireVariableStudio returns the EntireVariableStudio field value if set, zero value otherwise.
@@ -200,6 +234,9 @@ func (o *BTVariableStudioReferenceInfo) SetVariableNames(v []string) {
 
 func (o BTVariableStudioReferenceInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ConfigurationIdToValue != nil {
+		toSerialize["configurationIdToValue"] = o.ConfigurationIdToValue
+	}
 	if o.EntireVariableStudio != nil {
 		toSerialize["entireVariableStudio"] = o.EntireVariableStudio
 	}
