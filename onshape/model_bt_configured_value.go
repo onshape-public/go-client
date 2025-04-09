@@ -14,7 +14,7 @@ import (
 	"encoding/json"
 )
 
-// BTConfiguredValue Configured variable expression, if configured
+// BTConfiguredValue Configured variable description, if configured
 type BTConfiguredValue struct {
 	// The configuration parameter configuring this value, if configured
 	ConfigurationParameterId *string `json:"configurationParameterId,omitempty"`
