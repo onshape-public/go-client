@@ -5,7 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**Hidden** | Pointer to **bool** |  | [optional] 
+**IsDerivedFeature** | Pointer to **bool** |  | [optional] 
+**NodeId** | Pointer to **string** |  | [optional] 
 **OccurrenceIds** | Pointer to **[]string** |  | [optional] 
+**OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -51,6 +56,81 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
+### GetHidden
+
+`func (o *BTMateGroupDisplayData1990) GetHidden() bool`
+
+GetHidden returns the Hidden field if non-nil, zero value otherwise.
+
+### GetHiddenOk
+
+`func (o *BTMateGroupDisplayData1990) GetHiddenOk() (*bool, bool)`
+
+GetHiddenOk returns a tuple with the Hidden field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHidden
+
+`func (o *BTMateGroupDisplayData1990) SetHidden(v bool)`
+
+SetHidden sets Hidden field to given value.
+
+### HasHidden
+
+`func (o *BTMateGroupDisplayData1990) HasHidden() bool`
+
+HasHidden returns a boolean if a field has been set.
+
+### GetIsDerivedFeature
+
+`func (o *BTMateGroupDisplayData1990) GetIsDerivedFeature() bool`
+
+GetIsDerivedFeature returns the IsDerivedFeature field if non-nil, zero value otherwise.
+
+### GetIsDerivedFeatureOk
+
+`func (o *BTMateGroupDisplayData1990) GetIsDerivedFeatureOk() (*bool, bool)`
+
+GetIsDerivedFeatureOk returns a tuple with the IsDerivedFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDerivedFeature
+
+`func (o *BTMateGroupDisplayData1990) SetIsDerivedFeature(v bool)`
+
+SetIsDerivedFeature sets IsDerivedFeature field to given value.
+
+### HasIsDerivedFeature
+
+`func (o *BTMateGroupDisplayData1990) HasIsDerivedFeature() bool`
+
+HasIsDerivedFeature returns a boolean if a field has been set.
+
+### GetNodeId
+
+`func (o *BTMateGroupDisplayData1990) GetNodeId() string`
+
+GetNodeId returns the NodeId field if non-nil, zero value otherwise.
+
+### GetNodeIdOk
+
+`func (o *BTMateGroupDisplayData1990) GetNodeIdOk() (*string, bool)`
+
+GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeId
+
+`func (o *BTMateGroupDisplayData1990) SetNodeId(v string)`
+
+SetNodeId sets NodeId field to given value.
+
+### HasNodeId
+
+`func (o *BTMateGroupDisplayData1990) HasNodeId() bool`
+
+HasNodeId returns a boolean if a field has been set.
+
 ### GetOccurrenceIds
 
 `func (o *BTMateGroupDisplayData1990) GetOccurrenceIds() []string`
@@ -75,6 +155,56 @@ SetOccurrenceIds sets OccurrenceIds field to given value.
 `func (o *BTMateGroupDisplayData1990) HasOccurrenceIds() bool`
 
 HasOccurrenceIds returns a boolean if a field has been set.
+
+### GetOwnerOccurrence
+
+`func (o *BTMateGroupDisplayData1990) GetOwnerOccurrence() BTOccurrence74`
+
+GetOwnerOccurrence returns the OwnerOccurrence field if non-nil, zero value otherwise.
+
+### GetOwnerOccurrenceOk
+
+`func (o *BTMateGroupDisplayData1990) GetOwnerOccurrenceOk() (*BTOccurrence74, bool)`
+
+GetOwnerOccurrenceOk returns a tuple with the OwnerOccurrence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwnerOccurrence
+
+`func (o *BTMateGroupDisplayData1990) SetOwnerOccurrence(v BTOccurrence74)`
+
+SetOwnerOccurrence sets OwnerOccurrence field to given value.
+
+### HasOwnerOccurrence
+
+`func (o *BTMateGroupDisplayData1990) HasOwnerOccurrence() bool`
+
+HasOwnerOccurrence returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *BTMateGroupDisplayData1990) GetStatus() GBTAssemblyFeatureDisplayStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *BTMateGroupDisplayData1990) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *BTMateGroupDisplayData1990) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *BTMateGroupDisplayData1990) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
