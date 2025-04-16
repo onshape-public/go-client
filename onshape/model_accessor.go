@@ -16,18 +16,18 @@ import (
 
 // Accessor struct for Accessor
 type Accessor struct {
-	BufferView    *int32                            `json:"bufferView,omitempty"`
-	ByteOffset    *int32                            `json:"byteOffset,omitempty"`
-	ComponentType *int32                            `json:"componentType,omitempty"`
-	Count         *int32                            `json:"count,omitempty"`
-	Extensions    map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras        map[string]interface{}            `json:"extras,omitempty"`
-	Max           []float32                         `json:"max,omitempty"`
-	Min           []float32                         `json:"min,omitempty"`
-	Name          *string                           `json:"name,omitempty"`
-	Normalized    *bool                             `json:"normalized,omitempty"`
-	Sparse        *AccessorSparse                   `json:"sparse,omitempty"`
-	Type          *string                           `json:"type,omitempty"`
+	BufferView    *int32                 `json:"bufferView,omitempty"`
+	ByteOffset    *int32                 `json:"byteOffset,omitempty"`
+	ComponentType *int32                 `json:"componentType,omitempty"`
+	Count         *int32                 `json:"count,omitempty"`
+	Extensions    map[string]interface{} `json:"extensions,omitempty"`
+	Extras        map[string]interface{} `json:"extras,omitempty"`
+	Max           []float32              `json:"max,omitempty"`
+	Min           []float32              `json:"min,omitempty"`
+	Name          *string                `json:"name,omitempty"`
+	Normalized    *bool                  `json:"normalized,omitempty"`
+	Sparse        *AccessorSparse        `json:"sparse,omitempty"`
+	Type          *string                `json:"type,omitempty"`
 }
 
 // NewAccessor instantiates a new Accessor object
@@ -176,9 +176,9 @@ func (o *Accessor) SetCount(v int32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Accessor) GetExtensions() map[string]map[string]interface{} {
+func (o *Accessor) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -186,7 +186,7 @@ func (o *Accessor) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Accessor) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Accessor) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *Accessor) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Accessor) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Accessor) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

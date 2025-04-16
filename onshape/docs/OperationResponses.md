@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetExtensions
 
-`func (o *OperationResponses) GetExtensions() map[string]map[string]interface{}`
+`func (o *OperationResponses) GetExtensions() map[string]interface{}`
 
 GetExtensions returns the Extensions field if non-nil, zero value otherwise.
 
 ### GetExtensionsOk
 
-`func (o *OperationResponses) GetExtensionsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *OperationResponses) GetExtensionsOk() (*map[string]interface{}, bool)`
 
 GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtensions
 
-`func (o *OperationResponses) SetExtensions(v map[string]map[string]interface{})`
+`func (o *OperationResponses) SetExtensions(v map[string]interface{})`
 
 SetExtensions sets Extensions field to given value.
 

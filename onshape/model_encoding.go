@@ -16,12 +16,12 @@ import (
 
 // Encoding struct for Encoding
 type Encoding struct {
-	AllowReserved *bool                             `json:"allowReserved,omitempty"`
-	ContentType   *string                           `json:"contentType,omitempty"`
-	Explode       *bool                             `json:"explode,omitempty"`
-	Extensions    map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Headers       *map[string]Header                `json:"headers,omitempty"`
-	Style         *StyleEnum                        `json:"style,omitempty"`
+	AllowReserved *bool                  `json:"allowReserved,omitempty"`
+	ContentType   *string                `json:"contentType,omitempty"`
+	Explode       *bool                  `json:"explode,omitempty"`
+	Extensions    map[string]interface{} `json:"extensions,omitempty"`
+	Headers       *map[string]Header     `json:"headers,omitempty"`
+	Style         *StyleEnum             `json:"style,omitempty"`
 }
 
 // NewEncoding instantiates a new Encoding object
@@ -138,9 +138,9 @@ func (o *Encoding) SetExplode(v bool) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Encoding) GetExtensions() map[string]map[string]interface{} {
+func (o *Encoding) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -148,7 +148,7 @@ func (o *Encoding) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Encoding) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Encoding) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -164,8 +164,8 @@ func (o *Encoding) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Encoding) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Encoding) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

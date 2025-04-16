@@ -16,17 +16,17 @@ import (
 
 // BTDocumentSearchHitInfo struct for BTDocumentSearchHitInfo
 type BTDocumentSearchHitInfo struct {
-	DocumentId             *string                           `json:"documentId,omitempty"`
-	ElementName            *string                           `json:"elementName,omitempty"`
-	HighlightedFields      *map[string][]string              `json:"highlightedFields,omitempty"`
-	Hit                    *BTLegacySearchHit                `json:"hit,omitempty"`
-	HitId                  *string                           `json:"hitId,omitempty"`
-	MeshState              *int32                            `json:"meshState,omitempty"`
-	Name                   *string                           `json:"name,omitempty"`
-	ProjectId              *string                           `json:"projectId,omitempty"`
-	SourceMap              map[string]map[string]interface{} `json:"sourceMap,omitempty"`
-	Type                   *BTSearchEntityType               `json:"type,omitempty"`
-	VersionOrWorkspaceName *string                           `json:"versionOrWorkspaceName,omitempty"`
+	DocumentId             *string                `json:"documentId,omitempty"`
+	ElementName            *string                `json:"elementName,omitempty"`
+	HighlightedFields      *map[string][]string   `json:"highlightedFields,omitempty"`
+	Hit                    *BTLegacySearchHit     `json:"hit,omitempty"`
+	HitId                  *string                `json:"hitId,omitempty"`
+	MeshState              *int32                 `json:"meshState,omitempty"`
+	Name                   *string                `json:"name,omitempty"`
+	ProjectId              *string                `json:"projectId,omitempty"`
+	SourceMap              map[string]interface{} `json:"sourceMap,omitempty"`
+	Type                   *BTSearchEntityType    `json:"type,omitempty"`
+	VersionOrWorkspaceName *string                `json:"versionOrWorkspaceName,omitempty"`
 }
 
 // NewBTDocumentSearchHitInfo instantiates a new BTDocumentSearchHitInfo object
@@ -303,9 +303,9 @@ func (o *BTDocumentSearchHitInfo) SetProjectId(v string) {
 }
 
 // GetSourceMap returns the SourceMap field value if set, zero value otherwise.
-func (o *BTDocumentSearchHitInfo) GetSourceMap() map[string]map[string]interface{} {
+func (o *BTDocumentSearchHitInfo) GetSourceMap() map[string]interface{} {
 	if o == nil || o.SourceMap == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.SourceMap
@@ -313,7 +313,7 @@ func (o *BTDocumentSearchHitInfo) GetSourceMap() map[string]map[string]interface
 
 // GetSourceMapOk returns a tuple with the SourceMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDocumentSearchHitInfo) GetSourceMapOk() (map[string]map[string]interface{}, bool) {
+func (o *BTDocumentSearchHitInfo) GetSourceMapOk() (map[string]interface{}, bool) {
 	if o == nil || o.SourceMap == nil {
 		return nil, false
 	}
@@ -329,8 +329,8 @@ func (o *BTDocumentSearchHitInfo) HasSourceMap() bool {
 	return false
 }
 
-// SetSourceMap gets a reference to the given map[string]map[string]interface{} and assigns it to the SourceMap field.
-func (o *BTDocumentSearchHitInfo) SetSourceMap(v map[string]map[string]interface{}) {
+// SetSourceMap gets a reference to the given map[string]interface{} and assigns it to the SourceMap field.
+func (o *BTDocumentSearchHitInfo) SetSourceMap(v map[string]interface{}) {
 	o.SourceMap = v
 }
 

@@ -294,20 +294,20 @@ HasId returns a boolean if a field has been set.
 
 ### GetMetadata
 
-`func (o *BTDiscount) GetMetadata() map[string]map[string]interface{}`
+`func (o *BTDiscount) GetMetadata() map[string]interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *BTDiscount) GetMetadataOk() (*map[string]map[string]interface{}, bool)`
+`func (o *BTDiscount) GetMetadataOk() (*map[string]interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *BTDiscount) SetMetadata(v map[string]map[string]interface{})`
+`func (o *BTDiscount) SetMetadata(v map[string]interface{})`
 
 SetMetadata sets Metadata field to given value.
 

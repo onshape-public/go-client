@@ -16,11 +16,11 @@ import (
 
 // OAuthFlow struct for OAuthFlow
 type OAuthFlow struct {
-	AuthorizationUrl *string                           `json:"authorizationUrl,omitempty"`
-	Extensions       map[string]map[string]interface{} `json:"extensions,omitempty"`
-	RefreshUrl       *string                           `json:"refreshUrl,omitempty"`
-	Scopes           *map[string]string                `json:"scopes,omitempty"`
-	TokenUrl         *string                           `json:"tokenUrl,omitempty"`
+	AuthorizationUrl *string                `json:"authorizationUrl,omitempty"`
+	Extensions       map[string]interface{} `json:"extensions,omitempty"`
+	RefreshUrl       *string                `json:"refreshUrl,omitempty"`
+	Scopes           *map[string]string     `json:"scopes,omitempty"`
+	TokenUrl         *string                `json:"tokenUrl,omitempty"`
 }
 
 // NewOAuthFlow instantiates a new OAuthFlow object
@@ -73,9 +73,9 @@ func (o *OAuthFlow) SetAuthorizationUrl(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *OAuthFlow) GetExtensions() map[string]map[string]interface{} {
+func (o *OAuthFlow) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -83,7 +83,7 @@ func (o *OAuthFlow) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OAuthFlow) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *OAuthFlow) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *OAuthFlow) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *OAuthFlow) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *OAuthFlow) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

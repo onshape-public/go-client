@@ -16,10 +16,10 @@ import (
 
 // Contact struct for Contact
 type Contact struct {
-	Email      *string                           `json:"email,omitempty"`
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Name       *string                           `json:"name,omitempty"`
-	Url        *string                           `json:"url,omitempty"`
+	Email      *string                `json:"email,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Name       *string                `json:"name,omitempty"`
+	Url        *string                `json:"url,omitempty"`
 }
 
 // NewContact instantiates a new Contact object
@@ -72,9 +72,9 @@ func (o *Contact) SetEmail(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Contact) GetExtensions() map[string]map[string]interface{} {
+func (o *Contact) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -82,7 +82,7 @@ func (o *Contact) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Contact) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Contact) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -98,8 +98,8 @@ func (o *Contact) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Contact) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Contact) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

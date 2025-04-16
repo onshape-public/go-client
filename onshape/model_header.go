@@ -16,16 +16,16 @@ import (
 
 // Header struct for Header
 type Header struct {
-	Deprecated  *bool                             `json:"deprecated,omitempty"`
-	Description *string                           `json:"description,omitempty"`
-	Example     map[string]interface{}            `json:"example,omitempty"`
-	Examples    *map[string]Example               `json:"examples,omitempty"`
-	Explode     *bool                             `json:"explode,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Getref      *string                           `json:"get$ref,omitempty"`
-	Required    *bool                             `json:"required,omitempty"`
-	Schema      *Schema                           `json:"schema,omitempty"`
-	Style       *StyleEnum                        `json:"style,omitempty"`
+	Deprecated  *bool                  `json:"deprecated,omitempty"`
+	Description *string                `json:"description,omitempty"`
+	Example     map[string]interface{} `json:"example,omitempty"`
+	Examples    *map[string]Example    `json:"examples,omitempty"`
+	Explode     *bool                  `json:"explode,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
+	Getref      *string                `json:"get$ref,omitempty"`
+	Required    *bool                  `json:"required,omitempty"`
+	Schema      *Schema                `json:"schema,omitempty"`
+	Style       *StyleEnum             `json:"style,omitempty"`
 }
 
 // NewHeader instantiates a new Header object
@@ -206,9 +206,9 @@ func (o *Header) SetExplode(v bool) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Header) GetExtensions() map[string]map[string]interface{} {
+func (o *Header) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -216,7 +216,7 @@ func (o *Header) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Header) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Header) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -232,8 +232,8 @@ func (o *Header) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Header) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Header) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

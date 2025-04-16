@@ -16,10 +16,10 @@ import (
 
 // TextureInfo struct for TextureInfo
 type TextureInfo struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Index      *int32                            `json:"index,omitempty"`
-	TexCoord   *int32                            `json:"texCoord,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Index      *int32                 `json:"index,omitempty"`
+	TexCoord   *int32                 `json:"texCoord,omitempty"`
 }
 
 // NewTextureInfo instantiates a new TextureInfo object
@@ -40,9 +40,9 @@ func NewTextureInfoWithDefaults() *TextureInfo {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *TextureInfo) GetExtensions() map[string]map[string]interface{} {
+func (o *TextureInfo) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -50,7 +50,7 @@ func (o *TextureInfo) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TextureInfo) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *TextureInfo) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *TextureInfo) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *TextureInfo) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *TextureInfo) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

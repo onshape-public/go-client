@@ -16,7 +16,7 @@ import (
 
 // BTBillOfMaterialsObjectWithPropertiesInfo struct for BTBillOfMaterialsObjectWithPropertiesInfo
 type BTBillOfMaterialsObjectWithPropertiesInfo struct {
-	HeaderIdToValue map[string]map[string]interface{} `json:"headerIdToValue,omitempty"`
+	HeaderIdToValue map[string]interface{} `json:"headerIdToValue,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -45,9 +45,9 @@ func NewBTBillOfMaterialsObjectWithPropertiesInfoWithDefaults() *BTBillOfMateria
 }
 
 // GetHeaderIdToValue returns the HeaderIdToValue field value if set, zero value otherwise.
-func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValue() map[string]map[string]interface{} {
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValue() map[string]interface{} {
 	if o == nil || o.HeaderIdToValue == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.HeaderIdToValue
@@ -55,7 +55,7 @@ func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValue() map[str
 
 // GetHeaderIdToValueOk returns a tuple with the HeaderIdToValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValueOk() (map[string]map[string]interface{}, bool) {
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValueOk() (map[string]interface{}, bool) {
 	if o == nil || o.HeaderIdToValue == nil {
 		return nil, false
 	}
@@ -71,8 +71,8 @@ func (o *BTBillOfMaterialsObjectWithPropertiesInfo) HasHeaderIdToValue() bool {
 	return false
 }
 
-// SetHeaderIdToValue gets a reference to the given map[string]map[string]interface{} and assigns it to the HeaderIdToValue field.
-func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetHeaderIdToValue(v map[string]map[string]interface{}) {
+// SetHeaderIdToValue gets a reference to the given map[string]interface{} and assigns it to the HeaderIdToValue field.
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetHeaderIdToValue(v map[string]interface{}) {
 	o.HeaderIdToValue = v
 }
 

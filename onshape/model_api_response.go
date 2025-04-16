@@ -16,12 +16,12 @@ import (
 
 // ApiResponse struct for ApiResponse
 type ApiResponse struct {
-	Content     *map[string]MediaType             `json:"content,omitempty"`
-	Description *string                           `json:"description,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Getref      *string                           `json:"get$ref,omitempty"`
-	Headers     *map[string]Header                `json:"headers,omitempty"`
-	Links       *map[string]Link                  `json:"links,omitempty"`
+	Content     *map[string]MediaType  `json:"content,omitempty"`
+	Description *string                `json:"description,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
+	Getref      *string                `json:"get$ref,omitempty"`
+	Headers     *map[string]Header     `json:"headers,omitempty"`
+	Links       *map[string]Link       `json:"links,omitempty"`
 }
 
 // NewApiResponse instantiates a new ApiResponse object
@@ -106,9 +106,9 @@ func (o *ApiResponse) SetDescription(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *ApiResponse) GetExtensions() map[string]map[string]interface{} {
+func (o *ApiResponse) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -116,7 +116,7 @@ func (o *ApiResponse) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApiResponse) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *ApiResponse) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -132,8 +132,8 @@ func (o *ApiResponse) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *ApiResponse) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *ApiResponse) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

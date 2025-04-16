@@ -16,10 +16,10 @@ import (
 
 // ServerVariable struct for ServerVariable
 type ServerVariable struct {
-	Default     *string                           `json:"default,omitempty"`
-	Description *string                           `json:"description,omitempty"`
-	Enum        []string                          `json:"enum,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
+	Default     *string                `json:"default,omitempty"`
+	Description *string                `json:"description,omitempty"`
+	Enum        []string               `json:"enum,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
 }
 
 // NewServerVariable instantiates a new ServerVariable object
@@ -136,9 +136,9 @@ func (o *ServerVariable) SetEnum(v []string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *ServerVariable) GetExtensions() map[string]map[string]interface{} {
+func (o *ServerVariable) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -146,7 +146,7 @@ func (o *ServerVariable) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ServerVariable) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *ServerVariable) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -162,8 +162,8 @@ func (o *ServerVariable) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *ServerVariable) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *ServerVariable) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

@@ -16,11 +16,11 @@ import (
 
 // AccessorSparse struct for AccessorSparse
 type AccessorSparse struct {
-	Count      *int32                            `json:"count,omitempty"`
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Indices    *AccessorSparseIndices            `json:"indices,omitempty"`
-	Values     *AccessorSparseValues             `json:"values,omitempty"`
+	Count      *int32                 `json:"count,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Indices    *AccessorSparseIndices `json:"indices,omitempty"`
+	Values     *AccessorSparseValues  `json:"values,omitempty"`
 }
 
 // NewAccessorSparse instantiates a new AccessorSparse object
@@ -73,9 +73,9 @@ func (o *AccessorSparse) SetCount(v int32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *AccessorSparse) GetExtensions() map[string]map[string]interface{} {
+func (o *AccessorSparse) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -83,7 +83,7 @@ func (o *AccessorSparse) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AccessorSparse) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *AccessorSparse) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -99,8 +99,8 @@ func (o *AccessorSparse) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *AccessorSparse) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *AccessorSparse) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

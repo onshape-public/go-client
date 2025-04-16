@@ -16,10 +16,10 @@ import (
 
 // AnimationChannel struct for AnimationChannel
 type AnimationChannel struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Sampler    *int32                            `json:"sampler,omitempty"`
-	Target     *AnimationChannelTarget           `json:"target,omitempty"`
+	Extensions map[string]interface{}  `json:"extensions,omitempty"`
+	Extras     map[string]interface{}  `json:"extras,omitempty"`
+	Sampler    *int32                  `json:"sampler,omitempty"`
+	Target     *AnimationChannelTarget `json:"target,omitempty"`
 }
 
 // NewAnimationChannel instantiates a new AnimationChannel object
@@ -40,9 +40,9 @@ func NewAnimationChannelWithDefaults() *AnimationChannel {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *AnimationChannel) GetExtensions() map[string]map[string]interface{} {
+func (o *AnimationChannel) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -50,7 +50,7 @@ func (o *AnimationChannel) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnimationChannel) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *AnimationChannel) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -66,8 +66,8 @@ func (o *AnimationChannel) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *AnimationChannel) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *AnimationChannel) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

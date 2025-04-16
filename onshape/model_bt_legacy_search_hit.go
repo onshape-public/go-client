@@ -16,13 +16,13 @@ import (
 
 // BTLegacySearchHit struct for BTLegacySearchHit
 type BTLegacySearchHit struct {
-	DocumentId        *string                           `json:"documentId,omitempty"`
-	HighlightedFields *map[string][]string              `json:"highlightedFields,omitempty"`
-	HitId             *string                           `json:"hitId,omitempty"`
-	Name              *string                           `json:"name,omitempty"`
-	ProjectId         *string                           `json:"projectId,omitempty"`
-	SourceMap         map[string]map[string]interface{} `json:"sourceMap,omitempty"`
-	Type              *BTSearchEntityType               `json:"type,omitempty"`
+	DocumentId        *string                `json:"documentId,omitempty"`
+	HighlightedFields *map[string][]string   `json:"highlightedFields,omitempty"`
+	HitId             *string                `json:"hitId,omitempty"`
+	Name              *string                `json:"name,omitempty"`
+	ProjectId         *string                `json:"projectId,omitempty"`
+	SourceMap         map[string]interface{} `json:"sourceMap,omitempty"`
+	Type              *BTSearchEntityType    `json:"type,omitempty"`
 }
 
 // NewBTLegacySearchHit instantiates a new BTLegacySearchHit object
@@ -203,9 +203,9 @@ func (o *BTLegacySearchHit) SetProjectId(v string) {
 }
 
 // GetSourceMap returns the SourceMap field value if set, zero value otherwise.
-func (o *BTLegacySearchHit) GetSourceMap() map[string]map[string]interface{} {
+func (o *BTLegacySearchHit) GetSourceMap() map[string]interface{} {
 	if o == nil || o.SourceMap == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.SourceMap
@@ -213,7 +213,7 @@ func (o *BTLegacySearchHit) GetSourceMap() map[string]map[string]interface{} {
 
 // GetSourceMapOk returns a tuple with the SourceMap field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTLegacySearchHit) GetSourceMapOk() (map[string]map[string]interface{}, bool) {
+func (o *BTLegacySearchHit) GetSourceMapOk() (map[string]interface{}, bool) {
 	if o == nil || o.SourceMap == nil {
 		return nil, false
 	}
@@ -229,8 +229,8 @@ func (o *BTLegacySearchHit) HasSourceMap() bool {
 	return false
 }
 
-// SetSourceMap gets a reference to the given map[string]map[string]interface{} and assigns it to the SourceMap field.
-func (o *BTLegacySearchHit) SetSourceMap(v map[string]map[string]interface{}) {
+// SetSourceMap gets a reference to the given map[string]interface{} and assigns it to the SourceMap field.
+func (o *BTLegacySearchHit) SetSourceMap(v map[string]interface{}) {
 	o.SourceMap = v
 }
 

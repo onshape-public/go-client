@@ -16,13 +16,13 @@ import (
 
 // Example struct for Example
 type Example struct {
-	Description   *string                           `json:"description,omitempty"`
-	Extensions    map[string]map[string]interface{} `json:"extensions,omitempty"`
-	ExternalValue *string                           `json:"externalValue,omitempty"`
-	Getref        *string                           `json:"get$ref,omitempty"`
-	Summary       *string                           `json:"summary,omitempty"`
-	Value         map[string]interface{}            `json:"value,omitempty"`
-	ValueSetFlag  *bool                             `json:"valueSetFlag,omitempty"`
+	Description   *string                `json:"description,omitempty"`
+	Extensions    map[string]interface{} `json:"extensions,omitempty"`
+	ExternalValue *string                `json:"externalValue,omitempty"`
+	Getref        *string                `json:"get$ref,omitempty"`
+	Summary       *string                `json:"summary,omitempty"`
+	Value         map[string]interface{} `json:"value,omitempty"`
+	ValueSetFlag  *bool                  `json:"valueSetFlag,omitempty"`
 }
 
 // NewExample instantiates a new Example object
@@ -75,9 +75,9 @@ func (o *Example) SetDescription(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Example) GetExtensions() map[string]map[string]interface{} {
+func (o *Example) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -85,7 +85,7 @@ func (o *Example) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Example) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Example) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -101,8 +101,8 @@ func (o *Example) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Example) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Example) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

@@ -16,17 +16,17 @@ import (
 
 // Components struct for Components
 type Components struct {
-	Callbacks       *map[string]Callback              `json:"callbacks,omitempty"`
-	Examples        *map[string]Example               `json:"examples,omitempty"`
-	Extensions      map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Headers         *map[string]Header                `json:"headers,omitempty"`
-	Links           *map[string]Link                  `json:"links,omitempty"`
-	Parameters      *map[string]Parameter             `json:"parameters,omitempty"`
-	PathItems       *map[string]PathItem              `json:"pathItems,omitempty"`
-	RequestBodies   *map[string]RequestBody           `json:"requestBodies,omitempty"`
-	Responses       *map[string]ApiResponse           `json:"responses,omitempty"`
-	Schemas         *map[string]Schema                `json:"schemas,omitempty"`
-	SecuritySchemes *map[string]SecurityScheme        `json:"securitySchemes,omitempty"`
+	Callbacks       *map[string]Callback       `json:"callbacks,omitempty"`
+	Examples        *map[string]Example        `json:"examples,omitempty"`
+	Extensions      map[string]interface{}     `json:"extensions,omitempty"`
+	Headers         *map[string]Header         `json:"headers,omitempty"`
+	Links           *map[string]Link           `json:"links,omitempty"`
+	Parameters      *map[string]Parameter      `json:"parameters,omitempty"`
+	PathItems       *map[string]PathItem       `json:"pathItems,omitempty"`
+	RequestBodies   *map[string]RequestBody    `json:"requestBodies,omitempty"`
+	Responses       *map[string]ApiResponse    `json:"responses,omitempty"`
+	Schemas         *map[string]Schema         `json:"schemas,omitempty"`
+	SecuritySchemes *map[string]SecurityScheme `json:"securitySchemes,omitempty"`
 }
 
 // NewComponents instantiates a new Components object
@@ -111,9 +111,9 @@ func (o *Components) SetExamples(v map[string]Example) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Components) GetExtensions() map[string]map[string]interface{} {
+func (o *Components) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -121,7 +121,7 @@ func (o *Components) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Components) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Components) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -137,8 +137,8 @@ func (o *Components) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Components) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Components) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

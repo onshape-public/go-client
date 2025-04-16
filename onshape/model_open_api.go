@@ -16,17 +16,17 @@ import (
 
 // OpenAPI struct for OpenAPI
 type OpenAPI struct {
-	Components        *Components                       `json:"components,omitempty"`
-	Extensions        map[string]map[string]interface{} `json:"extensions,omitempty"`
-	ExternalDocs      *ExternalDocumentation            `json:"externalDocs,omitempty"`
-	Info              *Info                             `json:"info,omitempty"`
-	JsonSchemaDialect *string                           `json:"jsonSchemaDialect,omitempty"`
-	Openapi           *string                           `json:"openapi,omitempty"`
-	Paths             *map[string]PathItem              `json:"paths,omitempty"`
-	Security          []SecurityRequirement             `json:"security,omitempty"`
-	Servers           []Server                          `json:"servers,omitempty"`
-	Tags              []Tag                             `json:"tags,omitempty"`
-	Webhooks          *map[string]PathItem              `json:"webhooks,omitempty"`
+	Components        *Components            `json:"components,omitempty"`
+	Extensions        map[string]interface{} `json:"extensions,omitempty"`
+	ExternalDocs      *ExternalDocumentation `json:"externalDocs,omitempty"`
+	Info              *Info                  `json:"info,omitempty"`
+	JsonSchemaDialect *string                `json:"jsonSchemaDialect,omitempty"`
+	Openapi           *string                `json:"openapi,omitempty"`
+	Paths             *map[string]PathItem   `json:"paths,omitempty"`
+	Security          []SecurityRequirement  `json:"security,omitempty"`
+	Servers           []Server               `json:"servers,omitempty"`
+	Tags              []Tag                  `json:"tags,omitempty"`
+	Webhooks          *map[string]PathItem   `json:"webhooks,omitempty"`
 }
 
 // NewOpenAPI instantiates a new OpenAPI object
@@ -79,9 +79,9 @@ func (o *OpenAPI) SetComponents(v Components) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *OpenAPI) GetExtensions() map[string]map[string]interface{} {
+func (o *OpenAPI) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -89,7 +89,7 @@ func (o *OpenAPI) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OpenAPI) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *OpenAPI) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -105,8 +105,8 @@ func (o *OpenAPI) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *OpenAPI) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *OpenAPI) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

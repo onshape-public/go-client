@@ -60,20 +60,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetExtensions
 
-`func (o *Link) GetExtensions() map[string]map[string]interface{}`
+`func (o *Link) GetExtensions() map[string]interface{}`
 
 GetExtensions returns the Extensions field if non-nil, zero value otherwise.
 
 ### GetExtensionsOk
 
-`func (o *Link) GetExtensionsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *Link) GetExtensionsOk() (*map[string]interface{}, bool)`
 
 GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtensions
 
-`func (o *Link) SetExtensions(v map[string]map[string]interface{})`
+`func (o *Link) SetExtensions(v map[string]interface{})`
 
 SetExtensions sets Extensions field to given value.
 

@@ -16,19 +16,19 @@ import (
 
 // Operation struct for Operation
 type Operation struct {
-	Callbacks    *map[string]Callback              `json:"callbacks,omitempty"`
-	Deprecated   *bool                             `json:"deprecated,omitempty"`
-	Description  *string                           `json:"description,omitempty"`
-	Extensions   map[string]map[string]interface{} `json:"extensions,omitempty"`
-	ExternalDocs *ExternalDocumentation            `json:"externalDocs,omitempty"`
-	OperationId  *string                           `json:"operationId,omitempty"`
-	Parameters   []Parameter                       `json:"parameters,omitempty"`
-	RequestBody  *RequestBody                      `json:"requestBody,omitempty"`
-	Responses    *map[string]ApiResponse           `json:"responses,omitempty"`
-	Security     []SecurityRequirement             `json:"security,omitempty"`
-	Servers      []Server                          `json:"servers,omitempty"`
-	Summary      *string                           `json:"summary,omitempty"`
-	Tags         []string                          `json:"tags,omitempty"`
+	Callbacks    *map[string]Callback    `json:"callbacks,omitempty"`
+	Deprecated   *bool                   `json:"deprecated,omitempty"`
+	Description  *string                 `json:"description,omitempty"`
+	Extensions   map[string]interface{}  `json:"extensions,omitempty"`
+	ExternalDocs *ExternalDocumentation  `json:"externalDocs,omitempty"`
+	OperationId  *string                 `json:"operationId,omitempty"`
+	Parameters   []Parameter             `json:"parameters,omitempty"`
+	RequestBody  *RequestBody            `json:"requestBody,omitempty"`
+	Responses    *map[string]ApiResponse `json:"responses,omitempty"`
+	Security     []SecurityRequirement   `json:"security,omitempty"`
+	Servers      []Server                `json:"servers,omitempty"`
+	Summary      *string                 `json:"summary,omitempty"`
+	Tags         []string                `json:"tags,omitempty"`
 }
 
 // NewOperation instantiates a new Operation object
@@ -145,9 +145,9 @@ func (o *Operation) SetDescription(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Operation) GetExtensions() map[string]map[string]interface{} {
+func (o *Operation) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -155,7 +155,7 @@ func (o *Operation) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Operation) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Operation) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -171,8 +171,8 @@ func (o *Operation) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Operation) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Operation) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

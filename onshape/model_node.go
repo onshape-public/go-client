@@ -16,18 +16,18 @@ import (
 
 // Node struct for Node
 type Node struct {
-	Camera      *int32                            `json:"camera,omitempty"`
-	Children    []int32                           `json:"children,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras      map[string]interface{}            `json:"extras,omitempty"`
-	Matrix      []float32                         `json:"matrix,omitempty"`
-	Mesh        *int32                            `json:"mesh,omitempty"`
-	Name        *string                           `json:"name,omitempty"`
-	Rotation    []float32                         `json:"rotation,omitempty"`
-	Scale       []float32                         `json:"scale,omitempty"`
-	Skin        *int32                            `json:"skin,omitempty"`
-	Translation []float32                         `json:"translation,omitempty"`
-	Weights     []float32                         `json:"weights,omitempty"`
+	Camera      *int32                 `json:"camera,omitempty"`
+	Children    []int32                `json:"children,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
+	Extras      map[string]interface{} `json:"extras,omitempty"`
+	Matrix      []float32              `json:"matrix,omitempty"`
+	Mesh        *int32                 `json:"mesh,omitempty"`
+	Name        *string                `json:"name,omitempty"`
+	Rotation    []float32              `json:"rotation,omitempty"`
+	Scale       []float32              `json:"scale,omitempty"`
+	Skin        *int32                 `json:"skin,omitempty"`
+	Translation []float32              `json:"translation,omitempty"`
+	Weights     []float32              `json:"weights,omitempty"`
 }
 
 // NewNode instantiates a new Node object
@@ -112,9 +112,9 @@ func (o *Node) SetChildren(v []int32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Node) GetExtensions() map[string]map[string]interface{} {
+func (o *Node) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -122,7 +122,7 @@ func (o *Node) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Node) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Node) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -138,8 +138,8 @@ func (o *Node) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Node) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Node) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 
