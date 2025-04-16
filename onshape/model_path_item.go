@@ -16,20 +16,20 @@ import (
 
 // PathItem struct for PathItem
 type PathItem struct {
-	Delete      *Operation                        `json:"delete,omitempty"`
-	Description *string                           `json:"description,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Get         *Operation                        `json:"get,omitempty"`
-	Getref      *string                           `json:"get$ref,omitempty"`
-	Head        *Operation                        `json:"head,omitempty"`
-	Options     *Operation                        `json:"options,omitempty"`
-	Parameters  []Parameter                       `json:"parameters,omitempty"`
-	Patch       *Operation                        `json:"patch,omitempty"`
-	Post        *Operation                        `json:"post,omitempty"`
-	Put         *Operation                        `json:"put,omitempty"`
-	Servers     []Server                          `json:"servers,omitempty"`
-	Summary     *string                           `json:"summary,omitempty"`
-	Trace       *Operation                        `json:"trace,omitempty"`
+	Delete      *Operation             `json:"delete,omitempty"`
+	Description *string                `json:"description,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
+	Get         *Operation             `json:"get,omitempty"`
+	Getref      *string                `json:"get$ref,omitempty"`
+	Head        *Operation             `json:"head,omitempty"`
+	Options     *Operation             `json:"options,omitempty"`
+	Parameters  []Parameter            `json:"parameters,omitempty"`
+	Patch       *Operation             `json:"patch,omitempty"`
+	Post        *Operation             `json:"post,omitempty"`
+	Put         *Operation             `json:"put,omitempty"`
+	Servers     []Server               `json:"servers,omitempty"`
+	Summary     *string                `json:"summary,omitempty"`
+	Trace       *Operation             `json:"trace,omitempty"`
 }
 
 // NewPathItem instantiates a new PathItem object
@@ -114,9 +114,9 @@ func (o *PathItem) SetDescription(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *PathItem) GetExtensions() map[string]map[string]interface{} {
+func (o *PathItem) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -124,7 +124,7 @@ func (o *PathItem) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PathItem) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *PathItem) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -140,8 +140,8 @@ func (o *PathItem) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *PathItem) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *PathItem) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

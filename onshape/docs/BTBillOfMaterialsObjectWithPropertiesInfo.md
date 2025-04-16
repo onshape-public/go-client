@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetHeaderIdToValue
 
-`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValue() map[string]map[string]interface{}`
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValue() map[string]interface{}`
 
 GetHeaderIdToValue returns the HeaderIdToValue field if non-nil, zero value otherwise.
 
 ### GetHeaderIdToValueOk
 
-`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValueOk() (*map[string]map[string]interface{}, bool)`
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetHeaderIdToValueOk() (*map[string]interface{}, bool)`
 
 GetHeaderIdToValueOk returns a tuple with the HeaderIdToValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHeaderIdToValue
 
-`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetHeaderIdToValue(v map[string]map[string]interface{})`
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetHeaderIdToValue(v map[string]interface{})`
 
 SetHeaderIdToValue sets HeaderIdToValue field to given value.
 

@@ -16,73 +16,73 @@ import (
 
 // Schema struct for Schema
 type Schema struct {
-	AdditionalItems           *Schema                           `json:"additionalItems,omitempty"`
-	AdditionalPropertiesField map[string]interface{}            `json:"additionalProperties,omitempty"`
-	AllOf                     []Schema                          `json:"allOf,omitempty"`
-	AnyOf                     []Schema                          `json:"anyOf,omitempty"`
-	BooleanSchemaValue        *bool                             `json:"booleanSchemaValue,omitempty"`
-	Const                     map[string]interface{}            `json:"const,omitempty"`
-	Contains                  *Schema                           `json:"contains,omitempty"`
-	ContentEncoding           *string                           `json:"contentEncoding,omitempty"`
-	ContentMediaType          *string                           `json:"contentMediaType,omitempty"`
-	ContentSchema             *Schema                           `json:"contentSchema,omitempty"`
-	Default                   map[string]interface{}            `json:"default,omitempty"`
-	DependentRequired         *map[string][]string              `json:"dependentRequired,omitempty"`
-	DependentSchemas          *map[string]Schema                `json:"dependentSchemas,omitempty"`
-	Deprecated                *bool                             `json:"deprecated,omitempty"`
-	Description               *string                           `json:"description,omitempty"`
-	Discriminator             *Discriminator                    `json:"discriminator,omitempty"`
-	Else                      *Schema                           `json:"else,omitempty"`
-	Enum                      []map[string]interface{}          `json:"enum,omitempty"`
-	Example                   map[string]interface{}            `json:"example,omitempty"`
-	ExampleSetFlag            *bool                             `json:"exampleSetFlag,omitempty"`
-	Examples                  []map[string]interface{}          `json:"examples,omitempty"`
-	ExclusiveMaximum          *bool                             `json:"exclusiveMaximum,omitempty"`
-	ExclusiveMaximumValue     *float32                          `json:"exclusiveMaximumValue,omitempty"`
-	ExclusiveMinimum          *bool                             `json:"exclusiveMinimum,omitempty"`
-	ExclusiveMinimumValue     *float32                          `json:"exclusiveMinimumValue,omitempty"`
-	Extensions                map[string]map[string]interface{} `json:"extensions,omitempty"`
-	ExternalDocs              *ExternalDocumentation            `json:"externalDocs,omitempty"`
-	Format                    *string                           `json:"format,omitempty"`
-	Getanchor                 *string                           `json:"get$anchor,omitempty"`
-	Getcomment                *string                           `json:"get$comment,omitempty"`
-	Getid                     *string                           `json:"get$id,omitempty"`
-	Getref                    *string                           `json:"get$ref,omitempty"`
-	Getschema                 *string                           `json:"get$schema,omitempty"`
-	If                        *Schema                           `json:"if,omitempty"`
-	Items                     *SchemaObject                     `json:"items,omitempty"`
-	JsonSchema                map[string]map[string]interface{} `json:"jsonSchema,omitempty"`
-	JsonSchemaImpl            map[string]interface{}            `json:"jsonSchemaImpl,omitempty"`
-	MaxContains               *int32                            `json:"maxContains,omitempty"`
-	MaxItems                  *int32                            `json:"maxItems,omitempty"`
-	MaxLength                 *int32                            `json:"maxLength,omitempty"`
-	MaxProperties             *int32                            `json:"maxProperties,omitempty"`
-	Maximum                   *float32                          `json:"maximum,omitempty"`
-	MinContains               *int32                            `json:"minContains,omitempty"`
-	MinItems                  *int32                            `json:"minItems,omitempty"`
-	MinLength                 *int32                            `json:"minLength,omitempty"`
-	MinProperties             *int32                            `json:"minProperties,omitempty"`
-	Minimum                   *float32                          `json:"minimum,omitempty"`
-	MultipleOf                *float32                          `json:"multipleOf,omitempty"`
-	Not                       *Schema                           `json:"not,omitempty"`
-	Nullable                  *bool                             `json:"nullable,omitempty"`
-	OneOf                     []Schema                          `json:"oneOf,omitempty"`
-	Pattern                   *string                           `json:"pattern,omitempty"`
-	PatternProperties         *map[string]Schema                `json:"patternProperties,omitempty"`
-	PrefixItems               []Schema                          `json:"prefixItems,omitempty"`
-	Properties                *map[string]Schema                `json:"properties,omitempty"`
-	PropertyNames             *Schema                           `json:"propertyNames,omitempty"`
-	ReadOnly                  *bool                             `json:"readOnly,omitempty"`
-	Required                  []string                          `json:"required,omitempty"`
-	Then                      *Schema                           `json:"then,omitempty"`
-	Title                     *string                           `json:"title,omitempty"`
-	Type                      *string                           `json:"type,omitempty"`
-	Types                     []string                          `json:"types,omitempty"`
-	UnevaluatedItems          *Schema                           `json:"unevaluatedItems,omitempty"`
-	UnevaluatedProperties     *Schema                           `json:"unevaluatedProperties,omitempty"`
-	UniqueItems               *bool                             `json:"uniqueItems,omitempty"`
-	WriteOnly                 *bool                             `json:"writeOnly,omitempty"`
-	Xml                       *XML                              `json:"xml,omitempty"`
+	AdditionalItems           *Schema                  `json:"additionalItems,omitempty"`
+	AdditionalPropertiesField map[string]interface{}   `json:"additionalProperties,omitempty"`
+	AllOf                     []Schema                 `json:"allOf,omitempty"`
+	AnyOf                     []Schema                 `json:"anyOf,omitempty"`
+	BooleanSchemaValue        *bool                    `json:"booleanSchemaValue,omitempty"`
+	Const                     map[string]interface{}   `json:"const,omitempty"`
+	Contains                  *Schema                  `json:"contains,omitempty"`
+	ContentEncoding           *string                  `json:"contentEncoding,omitempty"`
+	ContentMediaType          *string                  `json:"contentMediaType,omitempty"`
+	ContentSchema             *Schema                  `json:"contentSchema,omitempty"`
+	Default                   map[string]interface{}   `json:"default,omitempty"`
+	DependentRequired         *map[string][]string     `json:"dependentRequired,omitempty"`
+	DependentSchemas          *map[string]Schema       `json:"dependentSchemas,omitempty"`
+	Deprecated                *bool                    `json:"deprecated,omitempty"`
+	Description               *string                  `json:"description,omitempty"`
+	Discriminator             *Discriminator           `json:"discriminator,omitempty"`
+	Else                      *Schema                  `json:"else,omitempty"`
+	Enum                      []map[string]interface{} `json:"enum,omitempty"`
+	Example                   map[string]interface{}   `json:"example,omitempty"`
+	ExampleSetFlag            *bool                    `json:"exampleSetFlag,omitempty"`
+	Examples                  []map[string]interface{} `json:"examples,omitempty"`
+	ExclusiveMaximum          *bool                    `json:"exclusiveMaximum,omitempty"`
+	ExclusiveMaximumValue     *float32                 `json:"exclusiveMaximumValue,omitempty"`
+	ExclusiveMinimum          *bool                    `json:"exclusiveMinimum,omitempty"`
+	ExclusiveMinimumValue     *float32                 `json:"exclusiveMinimumValue,omitempty"`
+	Extensions                map[string]interface{}   `json:"extensions,omitempty"`
+	ExternalDocs              *ExternalDocumentation   `json:"externalDocs,omitempty"`
+	Format                    *string                  `json:"format,omitempty"`
+	Getanchor                 *string                  `json:"get$anchor,omitempty"`
+	Getcomment                *string                  `json:"get$comment,omitempty"`
+	Getid                     *string                  `json:"get$id,omitempty"`
+	Getref                    *string                  `json:"get$ref,omitempty"`
+	Getschema                 *string                  `json:"get$schema,omitempty"`
+	If                        *Schema                  `json:"if,omitempty"`
+	Items                     *SchemaObject            `json:"items,omitempty"`
+	JsonSchema                map[string]interface{}   `json:"jsonSchema,omitempty"`
+	JsonSchemaImpl            map[string]interface{}   `json:"jsonSchemaImpl,omitempty"`
+	MaxContains               *int32                   `json:"maxContains,omitempty"`
+	MaxItems                  *int32                   `json:"maxItems,omitempty"`
+	MaxLength                 *int32                   `json:"maxLength,omitempty"`
+	MaxProperties             *int32                   `json:"maxProperties,omitempty"`
+	Maximum                   *float32                 `json:"maximum,omitempty"`
+	MinContains               *int32                   `json:"minContains,omitempty"`
+	MinItems                  *int32                   `json:"minItems,omitempty"`
+	MinLength                 *int32                   `json:"minLength,omitempty"`
+	MinProperties             *int32                   `json:"minProperties,omitempty"`
+	Minimum                   *float32                 `json:"minimum,omitempty"`
+	MultipleOf                *float32                 `json:"multipleOf,omitempty"`
+	Not                       *Schema                  `json:"not,omitempty"`
+	Nullable                  *bool                    `json:"nullable,omitempty"`
+	OneOf                     []Schema                 `json:"oneOf,omitempty"`
+	Pattern                   *string                  `json:"pattern,omitempty"`
+	PatternProperties         *map[string]Schema       `json:"patternProperties,omitempty"`
+	PrefixItems               []Schema                 `json:"prefixItems,omitempty"`
+	Properties                *map[string]Schema       `json:"properties,omitempty"`
+	PropertyNames             *Schema                  `json:"propertyNames,omitempty"`
+	ReadOnly                  *bool                    `json:"readOnly,omitempty"`
+	Required                  []string                 `json:"required,omitempty"`
+	Then                      *Schema                  `json:"then,omitempty"`
+	Title                     *string                  `json:"title,omitempty"`
+	Type                      *string                  `json:"type,omitempty"`
+	Types                     []string                 `json:"types,omitempty"`
+	UnevaluatedItems          *Schema                  `json:"unevaluatedItems,omitempty"`
+	UnevaluatedProperties     *Schema                  `json:"unevaluatedProperties,omitempty"`
+	UniqueItems               *bool                    `json:"uniqueItems,omitempty"`
+	WriteOnly                 *bool                    `json:"writeOnly,omitempty"`
+	Xml                       *XML                     `json:"xml,omitempty"`
 }
 
 // NewSchema instantiates a new Schema object
@@ -903,9 +903,9 @@ func (o *Schema) SetExclusiveMinimumValue(v float32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Schema) GetExtensions() map[string]map[string]interface{} {
+func (o *Schema) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -913,7 +913,7 @@ func (o *Schema) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Schema) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -929,8 +929,8 @@ func (o *Schema) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Schema) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Schema) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 
@@ -1223,9 +1223,9 @@ func (o *Schema) SetItems(v SchemaObject) {
 }
 
 // GetJsonSchema returns the JsonSchema field value if set, zero value otherwise.
-func (o *Schema) GetJsonSchema() map[string]map[string]interface{} {
+func (o *Schema) GetJsonSchema() map[string]interface{} {
 	if o == nil || o.JsonSchema == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.JsonSchema
@@ -1233,7 +1233,7 @@ func (o *Schema) GetJsonSchema() map[string]map[string]interface{} {
 
 // GetJsonSchemaOk returns a tuple with the JsonSchema field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Schema) GetJsonSchemaOk() (map[string]map[string]interface{}, bool) {
+func (o *Schema) GetJsonSchemaOk() (map[string]interface{}, bool) {
 	if o == nil || o.JsonSchema == nil {
 		return nil, false
 	}
@@ -1249,8 +1249,8 @@ func (o *Schema) HasJsonSchema() bool {
 	return false
 }
 
-// SetJsonSchema gets a reference to the given map[string]map[string]interface{} and assigns it to the JsonSchema field.
-func (o *Schema) SetJsonSchema(v map[string]map[string]interface{}) {
+// SetJsonSchema gets a reference to the given map[string]interface{} and assigns it to the JsonSchema field.
+func (o *Schema) SetJsonSchema(v map[string]interface{}) {
 	o.JsonSchema = v
 }
 

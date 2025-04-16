@@ -16,24 +16,24 @@ import (
 
 // BTDiscount struct for BTDiscount
 type BTDiscount struct {
-	AccountBalance    *int32                            `json:"accountBalance,omitempty"`
-	AmountOff         *int32                            `json:"amountOff,omitempty"`
-	AmountOffCurrency *string                           `json:"amountOffCurrency,omitempty"`
-	CouponType        *int32                            `json:"couponType,omitempty"`
-	CouponValidMonths *int32                            `json:"couponValidMonths,omitempty"`
-	CreatedAt         *JSONTime                         `json:"createdAt,omitempty"`
-	CreatedBy         *string                           `json:"createdBy,omitempty"`
-	Description       *string                           `json:"description,omitempty"`
-	ExpiresAt         *JSONTime                         `json:"expiresAt,omitempty"`
-	Id                *BTDiscountOwnerIdPlanId          `json:"id,omitempty"`
-	Metadata          map[string]map[string]interface{} `json:"metadata,omitempty"`
-	ModifiedAt        *JSONTime                         `json:"modifiedAt,omitempty"`
-	ModifiedBy        *string                           `json:"modifiedBy,omitempty"`
-	Name              *string                           `json:"name,omitempty"`
-	New               *bool                             `json:"new,omitempty"`
-	PercentOff        *int32                            `json:"percentOff,omitempty"`
-	TrialEndDate      *string                           `json:"trialEndDate,omitempty"`
-	UsedAt            *JSONTime                         `json:"usedAt,omitempty"`
+	AccountBalance    *int32                   `json:"accountBalance,omitempty"`
+	AmountOff         *int32                   `json:"amountOff,omitempty"`
+	AmountOffCurrency *string                  `json:"amountOffCurrency,omitempty"`
+	CouponType        *int32                   `json:"couponType,omitempty"`
+	CouponValidMonths *int32                   `json:"couponValidMonths,omitempty"`
+	CreatedAt         *JSONTime                `json:"createdAt,omitempty"`
+	CreatedBy         *string                  `json:"createdBy,omitempty"`
+	Description       *string                  `json:"description,omitempty"`
+	ExpiresAt         *JSONTime                `json:"expiresAt,omitempty"`
+	Id                *BTDiscountOwnerIdPlanId `json:"id,omitempty"`
+	Metadata          map[string]interface{}   `json:"metadata,omitempty"`
+	ModifiedAt        *JSONTime                `json:"modifiedAt,omitempty"`
+	ModifiedBy        *string                  `json:"modifiedBy,omitempty"`
+	Name              *string                  `json:"name,omitempty"`
+	New               *bool                    `json:"new,omitempty"`
+	PercentOff        *int32                   `json:"percentOff,omitempty"`
+	TrialEndDate      *string                  `json:"trialEndDate,omitempty"`
+	UsedAt            *JSONTime                `json:"usedAt,omitempty"`
 }
 
 // NewBTDiscount instantiates a new BTDiscount object
@@ -374,9 +374,9 @@ func (o *BTDiscount) SetId(v BTDiscountOwnerIdPlanId) {
 }
 
 // GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *BTDiscount) GetMetadata() map[string]map[string]interface{} {
+func (o *BTDiscount) GetMetadata() map[string]interface{} {
 	if o == nil || o.Metadata == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Metadata
@@ -384,7 +384,7 @@ func (o *BTDiscount) GetMetadata() map[string]map[string]interface{} {
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiscount) GetMetadataOk() (map[string]map[string]interface{}, bool) {
+func (o *BTDiscount) GetMetadataOk() (map[string]interface{}, bool) {
 	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
@@ -400,8 +400,8 @@ func (o *BTDiscount) HasMetadata() bool {
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]map[string]interface{} and assigns it to the Metadata field.
-func (o *BTDiscount) SetMetadata(v map[string]map[string]interface{}) {
+// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
+func (o *BTDiscount) SetMetadata(v map[string]interface{}) {
 	o.Metadata = v
 }
 

@@ -16,11 +16,11 @@ import (
 
 // MaterialOcclusionTextureInfo struct for MaterialOcclusionTextureInfo
 type MaterialOcclusionTextureInfo struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Index      *int32                            `json:"index,omitempty"`
-	Strength   *float32                          `json:"strength,omitempty"`
-	TexCoord   *int32                            `json:"texCoord,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Index      *int32                 `json:"index,omitempty"`
+	Strength   *float32               `json:"strength,omitempty"`
+	TexCoord   *int32                 `json:"texCoord,omitempty"`
 }
 
 // NewMaterialOcclusionTextureInfo instantiates a new MaterialOcclusionTextureInfo object
@@ -41,9 +41,9 @@ func NewMaterialOcclusionTextureInfoWithDefaults() *MaterialOcclusionTextureInfo
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *MaterialOcclusionTextureInfo) GetExtensions() map[string]map[string]interface{} {
+func (o *MaterialOcclusionTextureInfo) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -51,7 +51,7 @@ func (o *MaterialOcclusionTextureInfo) GetExtensions() map[string]map[string]int
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MaterialOcclusionTextureInfo) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *MaterialOcclusionTextureInfo) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *MaterialOcclusionTextureInfo) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *MaterialOcclusionTextureInfo) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *MaterialOcclusionTextureInfo) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

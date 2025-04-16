@@ -16,14 +16,14 @@ import (
 
 // BufferView struct for BufferView
 type BufferView struct {
-	Buffer     *int32                            `json:"buffer,omitempty"`
-	ByteLength *int32                            `json:"byteLength,omitempty"`
-	ByteOffset *int32                            `json:"byteOffset,omitempty"`
-	ByteStride *int32                            `json:"byteStride,omitempty"`
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Name       *string                           `json:"name,omitempty"`
-	Target     *int32                            `json:"target,omitempty"`
+	Buffer     *int32                 `json:"buffer,omitempty"`
+	ByteLength *int32                 `json:"byteLength,omitempty"`
+	ByteOffset *int32                 `json:"byteOffset,omitempty"`
+	ByteStride *int32                 `json:"byteStride,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Name       *string                `json:"name,omitempty"`
+	Target     *int32                 `json:"target,omitempty"`
 }
 
 // NewBufferView instantiates a new BufferView object
@@ -172,9 +172,9 @@ func (o *BufferView) SetByteStride(v int32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *BufferView) GetExtensions() map[string]map[string]interface{} {
+func (o *BufferView) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -182,7 +182,7 @@ func (o *BufferView) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BufferView) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *BufferView) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *BufferView) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *BufferView) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *BufferView) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

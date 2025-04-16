@@ -158,20 +158,20 @@ HasProjectId returns a boolean if a field has been set.
 
 ### GetSourceMap
 
-`func (o *BTLegacySearchHit) GetSourceMap() map[string]map[string]interface{}`
+`func (o *BTLegacySearchHit) GetSourceMap() map[string]interface{}`
 
 GetSourceMap returns the SourceMap field if non-nil, zero value otherwise.
 
 ### GetSourceMapOk
 
-`func (o *BTLegacySearchHit) GetSourceMapOk() (*map[string]map[string]interface{}, bool)`
+`func (o *BTLegacySearchHit) GetSourceMapOk() (*map[string]interface{}, bool)`
 
 GetSourceMapOk returns a tuple with the SourceMap field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceMap
 
-`func (o *BTLegacySearchHit) SetSourceMap(v map[string]map[string]interface{})`
+`func (o *BTLegacySearchHit) SetSourceMap(v map[string]interface{})`
 
 SetSourceMap sets SourceMap field to given value.
 

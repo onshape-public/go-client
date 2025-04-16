@@ -690,20 +690,20 @@ HasExclusiveMinimumValue returns a boolean if a field has been set.
 
 ### GetExtensions
 
-`func (o *SchemaObject) GetExtensions() map[string]map[string]interface{}`
+`func (o *SchemaObject) GetExtensions() map[string]interface{}`
 
 GetExtensions returns the Extensions field if non-nil, zero value otherwise.
 
 ### GetExtensionsOk
 
-`func (o *SchemaObject) GetExtensionsOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SchemaObject) GetExtensionsOk() (*map[string]interface{}, bool)`
 
 GetExtensionsOk returns a tuple with the Extensions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExtensions
 
-`func (o *SchemaObject) SetExtensions(v map[string]map[string]interface{})`
+`func (o *SchemaObject) SetExtensions(v map[string]interface{})`
 
 SetExtensions sets Extensions field to given value.
 
@@ -940,20 +940,20 @@ HasItems returns a boolean if a field has been set.
 
 ### GetJsonSchema
 
-`func (o *SchemaObject) GetJsonSchema() map[string]map[string]interface{}`
+`func (o *SchemaObject) GetJsonSchema() map[string]interface{}`
 
 GetJsonSchema returns the JsonSchema field if non-nil, zero value otherwise.
 
 ### GetJsonSchemaOk
 
-`func (o *SchemaObject) GetJsonSchemaOk() (*map[string]map[string]interface{}, bool)`
+`func (o *SchemaObject) GetJsonSchemaOk() (*map[string]interface{}, bool)`
 
 GetJsonSchemaOk returns a tuple with the JsonSchema field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJsonSchema
 
-`func (o *SchemaObject) SetJsonSchema(v map[string]map[string]interface{})`
+`func (o *SchemaObject) SetJsonSchema(v map[string]interface{})`
 
 SetJsonSchema sets JsonSchema field to given value.
 

@@ -16,11 +16,11 @@ import (
 
 // Texture struct for Texture
 type Texture struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Name       *string                           `json:"name,omitempty"`
-	Sampler    *int32                            `json:"sampler,omitempty"`
-	Source     *int32                            `json:"source,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Name       *string                `json:"name,omitempty"`
+	Sampler    *int32                 `json:"sampler,omitempty"`
+	Source     *int32                 `json:"source,omitempty"`
 }
 
 // NewTexture instantiates a new Texture object
@@ -41,9 +41,9 @@ func NewTextureWithDefaults() *Texture {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Texture) GetExtensions() map[string]map[string]interface{} {
+func (o *Texture) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -51,7 +51,7 @@ func (o *Texture) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Texture) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Texture) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *Texture) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Texture) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Texture) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

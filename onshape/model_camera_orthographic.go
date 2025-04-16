@@ -16,12 +16,12 @@ import (
 
 // CameraOrthographic struct for CameraOrthographic
 type CameraOrthographic struct {
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	Xmag       *float32                          `json:"xmag,omitempty"`
-	Ymag       *float32                          `json:"ymag,omitempty"`
-	Zfar       *float32                          `json:"zfar,omitempty"`
-	Znear      *float32                          `json:"znear,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	Xmag       *float32               `json:"xmag,omitempty"`
+	Ymag       *float32               `json:"ymag,omitempty"`
+	Zfar       *float32               `json:"zfar,omitempty"`
+	Znear      *float32               `json:"znear,omitempty"`
 }
 
 // NewCameraOrthographic instantiates a new CameraOrthographic object
@@ -42,9 +42,9 @@ func NewCameraOrthographicWithDefaults() *CameraOrthographic {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *CameraOrthographic) GetExtensions() map[string]map[string]interface{} {
+func (o *CameraOrthographic) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -52,7 +52,7 @@ func (o *CameraOrthographic) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CameraOrthographic) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *CameraOrthographic) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -68,8 +68,8 @@ func (o *CameraOrthographic) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *CameraOrthographic) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *CameraOrthographic) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

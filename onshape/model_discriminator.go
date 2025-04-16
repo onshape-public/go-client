@@ -16,9 +16,9 @@ import (
 
 // Discriminator struct for Discriminator
 type Discriminator struct {
-	Extensions   map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Mapping      *map[string]string                `json:"mapping,omitempty"`
-	PropertyName *string                           `json:"propertyName,omitempty"`
+	Extensions   map[string]interface{} `json:"extensions,omitempty"`
+	Mapping      *map[string]string     `json:"mapping,omitempty"`
+	PropertyName *string                `json:"propertyName,omitempty"`
 }
 
 // NewDiscriminator instantiates a new Discriminator object
@@ -39,9 +39,9 @@ func NewDiscriminatorWithDefaults() *Discriminator {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Discriminator) GetExtensions() map[string]map[string]interface{} {
+func (o *Discriminator) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -49,7 +49,7 @@ func (o *Discriminator) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Discriminator) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Discriminator) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -65,8 +65,8 @@ func (o *Discriminator) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Discriminator) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Discriminator) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

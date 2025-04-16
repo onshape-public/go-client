@@ -16,13 +16,13 @@ import (
 
 // MaterialPbrMetallicRoughness struct for MaterialPbrMetallicRoughness
 type MaterialPbrMetallicRoughness struct {
-	BaseColorFactor          []float32                         `json:"baseColorFactor,omitempty"`
-	BaseColorTexture         *TextureInfo                      `json:"baseColorTexture,omitempty"`
-	Extensions               map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras                   map[string]interface{}            `json:"extras,omitempty"`
-	MetallicFactor           *float32                          `json:"metallicFactor,omitempty"`
-	MetallicRoughnessTexture *TextureInfo                      `json:"metallicRoughnessTexture,omitempty"`
-	RoughnessFactor          *float32                          `json:"roughnessFactor,omitempty"`
+	BaseColorFactor          []float32              `json:"baseColorFactor,omitempty"`
+	BaseColorTexture         *TextureInfo           `json:"baseColorTexture,omitempty"`
+	Extensions               map[string]interface{} `json:"extensions,omitempty"`
+	Extras                   map[string]interface{} `json:"extras,omitempty"`
+	MetallicFactor           *float32               `json:"metallicFactor,omitempty"`
+	MetallicRoughnessTexture *TextureInfo           `json:"metallicRoughnessTexture,omitempty"`
+	RoughnessFactor          *float32               `json:"roughnessFactor,omitempty"`
 }
 
 // NewMaterialPbrMetallicRoughness instantiates a new MaterialPbrMetallicRoughness object
@@ -107,9 +107,9 @@ func (o *MaterialPbrMetallicRoughness) SetBaseColorTexture(v TextureInfo) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *MaterialPbrMetallicRoughness) GetExtensions() map[string]map[string]interface{} {
+func (o *MaterialPbrMetallicRoughness) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -117,7 +117,7 @@ func (o *MaterialPbrMetallicRoughness) GetExtensions() map[string]map[string]int
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MaterialPbrMetallicRoughness) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *MaterialPbrMetallicRoughness) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -133,8 +133,8 @@ func (o *MaterialPbrMetallicRoughness) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *MaterialPbrMetallicRoughness) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *MaterialPbrMetallicRoughness) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

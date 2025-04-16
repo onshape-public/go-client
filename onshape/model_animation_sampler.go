@@ -16,11 +16,11 @@ import (
 
 // AnimationSampler struct for AnimationSampler
 type AnimationSampler struct {
-	Extensions    map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras        map[string]interface{}            `json:"extras,omitempty"`
-	Input         *int32                            `json:"input,omitempty"`
-	Interpolation *string                           `json:"interpolation,omitempty"`
-	Output        *int32                            `json:"output,omitempty"`
+	Extensions    map[string]interface{} `json:"extensions,omitempty"`
+	Extras        map[string]interface{} `json:"extras,omitempty"`
+	Input         *int32                 `json:"input,omitempty"`
+	Interpolation *string                `json:"interpolation,omitempty"`
+	Output        *int32                 `json:"output,omitempty"`
 }
 
 // NewAnimationSampler instantiates a new AnimationSampler object
@@ -41,9 +41,9 @@ func NewAnimationSamplerWithDefaults() *AnimationSampler {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *AnimationSampler) GetExtensions() map[string]map[string]interface{} {
+func (o *AnimationSampler) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -51,7 +51,7 @@ func (o *AnimationSampler) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AnimationSampler) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *AnimationSampler) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -67,8 +67,8 @@ func (o *AnimationSampler) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *AnimationSampler) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *AnimationSampler) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

@@ -16,11 +16,11 @@ import (
 
 // RequestBody struct for RequestBody
 type RequestBody struct {
-	Content     *map[string]MediaType             `json:"content,omitempty"`
-	Description *string                           `json:"description,omitempty"`
-	Extensions  map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Getref      *string                           `json:"get$ref,omitempty"`
-	Required    *bool                             `json:"required,omitempty"`
+	Content     *map[string]MediaType  `json:"content,omitempty"`
+	Description *string                `json:"description,omitempty"`
+	Extensions  map[string]interface{} `json:"extensions,omitempty"`
+	Getref      *string                `json:"get$ref,omitempty"`
+	Required    *bool                  `json:"required,omitempty"`
 }
 
 // NewRequestBody instantiates a new RequestBody object
@@ -105,9 +105,9 @@ func (o *RequestBody) SetDescription(v string) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *RequestBody) GetExtensions() map[string]map[string]interface{} {
+func (o *RequestBody) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -115,7 +115,7 @@ func (o *RequestBody) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RequestBody) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *RequestBody) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -131,8 +131,8 @@ func (o *RequestBody) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *RequestBody) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *RequestBody) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

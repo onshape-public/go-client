@@ -16,12 +16,12 @@ import (
 
 // Image struct for Image
 type Image struct {
-	BufferView *int32                            `json:"bufferView,omitempty"`
-	Extensions map[string]map[string]interface{} `json:"extensions,omitempty"`
-	Extras     map[string]interface{}            `json:"extras,omitempty"`
-	MimeType   *string                           `json:"mimeType,omitempty"`
-	Name       *string                           `json:"name,omitempty"`
-	Uri        *string                           `json:"uri,omitempty"`
+	BufferView *int32                 `json:"bufferView,omitempty"`
+	Extensions map[string]interface{} `json:"extensions,omitempty"`
+	Extras     map[string]interface{} `json:"extras,omitempty"`
+	MimeType   *string                `json:"mimeType,omitempty"`
+	Name       *string                `json:"name,omitempty"`
+	Uri        *string                `json:"uri,omitempty"`
 }
 
 // NewImage instantiates a new Image object
@@ -74,9 +74,9 @@ func (o *Image) SetBufferView(v int32) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *Image) GetExtensions() map[string]map[string]interface{} {
+func (o *Image) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -84,7 +84,7 @@ func (o *Image) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Image) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *Image) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -100,8 +100,8 @@ func (o *Image) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *Image) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *Image) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 

@@ -16,25 +16,25 @@ import (
 
 // GlTF struct for GlTF
 type GlTF struct {
-	Accessors          []Accessor                        `json:"accessors,omitempty"`
-	Animations         []Animation                       `json:"animations,omitempty"`
-	Asset              *Asset                            `json:"asset,omitempty"`
-	BufferViews        []BufferView                      `json:"bufferViews,omitempty"`
-	Buffers            []Buffer                          `json:"buffers,omitempty"`
-	Cameras            []Camera                          `json:"cameras,omitempty"`
-	Extensions         map[string]map[string]interface{} `json:"extensions,omitempty"`
-	ExtensionsRequired []string                          `json:"extensionsRequired,omitempty"`
-	ExtensionsUsed     []string                          `json:"extensionsUsed,omitempty"`
-	Extras             map[string]interface{}            `json:"extras,omitempty"`
-	Images             []Image                           `json:"images,omitempty"`
-	Materials          []Material                        `json:"materials,omitempty"`
-	Meshes             []Mesh                            `json:"meshes,omitempty"`
-	Nodes              []Node                            `json:"nodes,omitempty"`
-	Samplers           []Sampler                         `json:"samplers,omitempty"`
-	Scene              *int32                            `json:"scene,omitempty"`
-	Scenes             []Scene                           `json:"scenes,omitempty"`
-	Skins              []Skin                            `json:"skins,omitempty"`
-	Textures           []Texture                         `json:"textures,omitempty"`
+	Accessors          []Accessor             `json:"accessors,omitempty"`
+	Animations         []Animation            `json:"animations,omitempty"`
+	Asset              *Asset                 `json:"asset,omitempty"`
+	BufferViews        []BufferView           `json:"bufferViews,omitempty"`
+	Buffers            []Buffer               `json:"buffers,omitempty"`
+	Cameras            []Camera               `json:"cameras,omitempty"`
+	Extensions         map[string]interface{} `json:"extensions,omitempty"`
+	ExtensionsRequired []string               `json:"extensionsRequired,omitempty"`
+	ExtensionsUsed     []string               `json:"extensionsUsed,omitempty"`
+	Extras             map[string]interface{} `json:"extras,omitempty"`
+	Images             []Image                `json:"images,omitempty"`
+	Materials          []Material             `json:"materials,omitempty"`
+	Meshes             []Mesh                 `json:"meshes,omitempty"`
+	Nodes              []Node                 `json:"nodes,omitempty"`
+	Samplers           []Sampler              `json:"samplers,omitempty"`
+	Scene              *int32                 `json:"scene,omitempty"`
+	Scenes             []Scene                `json:"scenes,omitempty"`
+	Skins              []Skin                 `json:"skins,omitempty"`
+	Textures           []Texture              `json:"textures,omitempty"`
 }
 
 // NewGlTF instantiates a new GlTF object
@@ -247,9 +247,9 @@ func (o *GlTF) SetCameras(v []Camera) {
 }
 
 // GetExtensions returns the Extensions field value if set, zero value otherwise.
-func (o *GlTF) GetExtensions() map[string]map[string]interface{} {
+func (o *GlTF) GetExtensions() map[string]interface{} {
 	if o == nil || o.Extensions == nil {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Extensions
@@ -257,7 +257,7 @@ func (o *GlTF) GetExtensions() map[string]map[string]interface{} {
 
 // GetExtensionsOk returns a tuple with the Extensions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GlTF) GetExtensionsOk() (map[string]map[string]interface{}, bool) {
+func (o *GlTF) GetExtensionsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Extensions == nil {
 		return nil, false
 	}
@@ -273,8 +273,8 @@ func (o *GlTF) HasExtensions() bool {
 	return false
 }
 
-// SetExtensions gets a reference to the given map[string]map[string]interface{} and assigns it to the Extensions field.
-func (o *GlTF) SetExtensions(v map[string]map[string]interface{}) {
+// SetExtensions gets a reference to the given map[string]interface{} and assigns it to the Extensions field.
+func (o *GlTF) SetExtensions(v map[string]interface{}) {
 	o.Extensions = v
 }
 
