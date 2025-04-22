@@ -8,14 +8,9 @@ Name | Type | Description | Notes
 **ComponentValues** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
 **DirectionMateConnectorId** | Pointer to **string** |  | [optional] 
 **FaceLoadDeterministicIds** | Pointer to **[]string** |  | [optional] 
-**Hidden** | Pointer to **bool** |  | [optional] 
-**IsDerivedFeature** | Pointer to **bool** |  | [optional] 
 **IsDirectionFlipped** | Pointer to **bool** |  | [optional] 
 **LoadType** | Pointer to [**GBTLoadType**](GBTLoadType.md) |  | [optional] 
-**NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -136,56 +131,6 @@ SetFaceLoadDeterministicIds sets FaceLoadDeterministicIds field to given value.
 
 HasFaceLoadDeterministicIds returns a boolean if a field has been set.
 
-### GetHidden
-
-`func (o *BTLoadDisplayData837) GetHidden() bool`
-
-GetHidden returns the Hidden field if non-nil, zero value otherwise.
-
-### GetHiddenOk
-
-`func (o *BTLoadDisplayData837) GetHiddenOk() (*bool, bool)`
-
-GetHiddenOk returns a tuple with the Hidden field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHidden
-
-`func (o *BTLoadDisplayData837) SetHidden(v bool)`
-
-SetHidden sets Hidden field to given value.
-
-### HasHidden
-
-`func (o *BTLoadDisplayData837) HasHidden() bool`
-
-HasHidden returns a boolean if a field has been set.
-
-### GetIsDerivedFeature
-
-`func (o *BTLoadDisplayData837) GetIsDerivedFeature() bool`
-
-GetIsDerivedFeature returns the IsDerivedFeature field if non-nil, zero value otherwise.
-
-### GetIsDerivedFeatureOk
-
-`func (o *BTLoadDisplayData837) GetIsDerivedFeatureOk() (*bool, bool)`
-
-GetIsDerivedFeatureOk returns a tuple with the IsDerivedFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsDerivedFeature
-
-`func (o *BTLoadDisplayData837) SetIsDerivedFeature(v bool)`
-
-SetIsDerivedFeature sets IsDerivedFeature field to given value.
-
-### HasIsDerivedFeature
-
-`func (o *BTLoadDisplayData837) HasIsDerivedFeature() bool`
-
-HasIsDerivedFeature returns a boolean if a field has been set.
-
 ### GetIsDirectionFlipped
 
 `func (o *BTLoadDisplayData837) GetIsDirectionFlipped() bool`
@@ -236,31 +181,6 @@ SetLoadType sets LoadType field to given value.
 
 HasLoadType returns a boolean if a field has been set.
 
-### GetNodeId
-
-`func (o *BTLoadDisplayData837) GetNodeId() string`
-
-GetNodeId returns the NodeId field if non-nil, zero value otherwise.
-
-### GetNodeIdOk
-
-`func (o *BTLoadDisplayData837) GetNodeIdOk() (*string, bool)`
-
-GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNodeId
-
-`func (o *BTLoadDisplayData837) SetNodeId(v string)`
-
-SetNodeId sets NodeId field to given value.
-
-### HasNodeId
-
-`func (o *BTLoadDisplayData837) HasNodeId() bool`
-
-HasNodeId returns a boolean if a field has been set.
-
 ### GetOccurrence
 
 `func (o *BTLoadDisplayData837) GetOccurrence() BTOccurrence74`
@@ -285,56 +205,6 @@ SetOccurrence sets Occurrence field to given value.
 `func (o *BTLoadDisplayData837) HasOccurrence() bool`
 
 HasOccurrence returns a boolean if a field has been set.
-
-### GetOwnerOccurrence
-
-`func (o *BTLoadDisplayData837) GetOwnerOccurrence() BTOccurrence74`
-
-GetOwnerOccurrence returns the OwnerOccurrence field if non-nil, zero value otherwise.
-
-### GetOwnerOccurrenceOk
-
-`func (o *BTLoadDisplayData837) GetOwnerOccurrenceOk() (*BTOccurrence74, bool)`
-
-GetOwnerOccurrenceOk returns a tuple with the OwnerOccurrence field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOwnerOccurrence
-
-`func (o *BTLoadDisplayData837) SetOwnerOccurrence(v BTOccurrence74)`
-
-SetOwnerOccurrence sets OwnerOccurrence field to given value.
-
-### HasOwnerOccurrence
-
-`func (o *BTLoadDisplayData837) HasOwnerOccurrence() bool`
-
-HasOwnerOccurrence returns a boolean if a field has been set.
-
-### GetStatus
-
-`func (o *BTLoadDisplayData837) GetStatus() GBTAssemblyFeatureDisplayStatus`
-
-GetStatus returns the Status field if non-nil, zero value otherwise.
-
-### GetStatusOk
-
-`func (o *BTLoadDisplayData837) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
-
-GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetStatus
-
-`func (o *BTLoadDisplayData837) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
-
-SetStatus sets Status field to given value.
-
-### HasStatus
-
-`func (o *BTLoadDisplayData837) HasStatus() bool`
-
-HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
