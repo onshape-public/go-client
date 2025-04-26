@@ -41,6 +41,7 @@ type BTActiveWorkflowInfo struct {
 	StandardContentNumberingSchemeId            *string                   `json:"standardContentNumberingSchemeId,omitempty"`
 	StandardContentUsingAutoNumbering           *bool                     `json:"standardContentUsingAutoNumbering,omitempty"`
 	StandardContentUsingThirdPartyPartNumbering *bool                     `json:"standardContentUsingThirdPartyPartNumbering,omitempty"`
+	TaskWorkflow                                *BTPublishedWorkflowInfo  `json:"taskWorkflow,omitempty"`
 	UsingAutoPartNumbering                      *bool                     `json:"usingAutoPartNumbering,omitempty"`
 	UsingManagedWorkflow                        *bool                     `json:"usingManagedWorkflow,omitempty"`
 	UsingThirdPartyPartNumbering                *bool                     `json:"usingThirdPartyPartNumbering,omitempty"`
@@ -863,6 +864,38 @@ func (o *BTActiveWorkflowInfo) SetStandardContentUsingThirdPartyPartNumbering(v 
 	o.StandardContentUsingThirdPartyPartNumbering = &v
 }
 
+// GetTaskWorkflow returns the TaskWorkflow field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetTaskWorkflow() BTPublishedWorkflowInfo {
+	if o == nil || o.TaskWorkflow == nil {
+		var ret BTPublishedWorkflowInfo
+		return ret
+	}
+	return *o.TaskWorkflow
+}
+
+// GetTaskWorkflowOk returns a tuple with the TaskWorkflow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetTaskWorkflowOk() (*BTPublishedWorkflowInfo, bool) {
+	if o == nil || o.TaskWorkflow == nil {
+		return nil, false
+	}
+	return o.TaskWorkflow, true
+}
+
+// HasTaskWorkflow returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasTaskWorkflow() bool {
+	if o != nil && o.TaskWorkflow != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTaskWorkflow gets a reference to the given BTPublishedWorkflowInfo and assigns it to the TaskWorkflow field.
+func (o *BTActiveWorkflowInfo) SetTaskWorkflow(v BTPublishedWorkflowInfo) {
+	o.TaskWorkflow = &v
+}
+
 // GetUsingAutoPartNumbering returns the UsingAutoPartNumbering field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumbering() bool {
 	if o == nil || o.UsingAutoPartNumbering == nil {
@@ -1035,6 +1068,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.StandardContentUsingThirdPartyPartNumbering != nil {
 		toSerialize["standardContentUsingThirdPartyPartNumbering"] = o.StandardContentUsingThirdPartyPartNumbering
+	}
+	if o.TaskWorkflow != nil {
+		toSerialize["taskWorkflow"] = o.TaskWorkflow
 	}
 	if o.UsingAutoPartNumbering != nil {
 		toSerialize["usingAutoPartNumbering"] = o.UsingAutoPartNumbering

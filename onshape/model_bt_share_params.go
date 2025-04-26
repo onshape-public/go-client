@@ -16,6 +16,7 @@ import (
 
 // BTShareParams struct for BTShareParams
 type BTShareParams struct {
+	ConnectionId         *string              `json:"connectionId,omitempty"`
 	DocumentId           *string              `json:"documentId,omitempty"`
 	ElementId            *string              `json:"elementId,omitempty"`
 	EncodedConfiguration *string              `json:"encodedConfiguration,omitempty"`
@@ -43,6 +44,38 @@ func NewBTShareParams() *BTShareParams {
 func NewBTShareParamsWithDefaults() *BTShareParams {
 	this := BTShareParams{}
 	return &this
+}
+
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
+func (o *BTShareParams) GetConnectionId() string {
+	if o == nil || o.ConnectionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionId
+}
+
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTShareParams) GetConnectionIdOk() (*string, bool) {
+	if o == nil || o.ConnectionId == nil {
+		return nil, false
+	}
+	return o.ConnectionId, true
+}
+
+// HasConnectionId returns a boolean if a field has been set.
+func (o *BTShareParams) HasConnectionId() bool {
+	if o != nil && o.ConnectionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
+func (o *BTShareParams) SetConnectionId(v string) {
+	o.ConnectionId = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -367,6 +400,9 @@ func (o *BTShareParams) SetWorkspaceId(v string) {
 
 func (o BTShareParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ConnectionId != nil {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
 	}

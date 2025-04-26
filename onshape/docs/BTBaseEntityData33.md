@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ConstructionPlane** | Pointer to **bool** |  | [optional] 
 **CopyWithoutGeometry** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
 **Decompressed** | Pointer to [**BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
+**DefaultPane** | Pointer to **bool** |  | [optional] 
 **Deletion** | Pointer to **bool** |  | [optional] 
 **FeatureIds** | Pointer to **[]string** |  | [optional] 
 **FromSketch** | Pointer to **bool** |  | [optional] 
@@ -132,6 +133,31 @@ SetDecompressed sets Decompressed field to given value.
 `func (o *BTBaseEntityData33) HasDecompressed() bool`
 
 HasDecompressed returns a boolean if a field has been set.
+
+### GetDefaultPane
+
+`func (o *BTBaseEntityData33) GetDefaultPane() bool`
+
+GetDefaultPane returns the DefaultPane field if non-nil, zero value otherwise.
+
+### GetDefaultPaneOk
+
+`func (o *BTBaseEntityData33) GetDefaultPaneOk() (*bool, bool)`
+
+GetDefaultPaneOk returns a tuple with the DefaultPane field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefaultPane
+
+`func (o *BTBaseEntityData33) SetDefaultPane(v bool)`
+
+SetDefaultPane sets DefaultPane field to given value.
+
+### HasDefaultPane
+
+`func (o *BTBaseEntityData33) HasDefaultPane() bool`
+
+HasDefaultPane returns a boolean if a field has been set.
 
 ### GetDeletion
 

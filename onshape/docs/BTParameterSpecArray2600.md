@@ -5,11 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**DialogId** | Pointer to **string** |  | [optional] 
 **DrivenQuery** | Pointer to **string** |  | [optional] 
+**Icon** | Pointer to **string** |  | [optional] 
 **ItemLabelTemplate** | Pointer to **string** |  | [optional] 
 **ItemName** | Pointer to **string** |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
-**Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **ShowLabelsOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -56,6 +57,31 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
+### GetDialogId
+
+`func (o *BTParameterSpecArray2600) GetDialogId() string`
+
+GetDialogId returns the DialogId field if non-nil, zero value otherwise.
+
+### GetDialogIdOk
+
+`func (o *BTParameterSpecArray2600) GetDialogIdOk() (*string, bool)`
+
+GetDialogIdOk returns a tuple with the DialogId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDialogId
+
+`func (o *BTParameterSpecArray2600) SetDialogId(v string)`
+
+SetDialogId sets DialogId field to given value.
+
+### HasDialogId
+
+`func (o *BTParameterSpecArray2600) HasDialogId() bool`
+
+HasDialogId returns a boolean if a field has been set.
+
 ### GetDrivenQuery
 
 `func (o *BTParameterSpecArray2600) GetDrivenQuery() string`
@@ -80,6 +106,31 @@ SetDrivenQuery sets DrivenQuery field to given value.
 `func (o *BTParameterSpecArray2600) HasDrivenQuery() bool`
 
 HasDrivenQuery returns a boolean if a field has been set.
+
+### GetIcon
+
+`func (o *BTParameterSpecArray2600) GetIcon() string`
+
+GetIcon returns the Icon field if non-nil, zero value otherwise.
+
+### GetIconOk
+
+`func (o *BTParameterSpecArray2600) GetIconOk() (*string, bool)`
+
+GetIconOk returns a tuple with the Icon field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIcon
+
+`func (o *BTParameterSpecArray2600) SetIcon(v string)`
+
+SetIcon sets Icon field to given value.
+
+### HasIcon
+
+`func (o *BTParameterSpecArray2600) HasIcon() bool`
+
+HasIcon returns a boolean if a field has been set.
 
 ### GetItemLabelTemplate
 
@@ -155,31 +206,6 @@ SetMaxNumberOfPicks sets MaxNumberOfPicks field to given value.
 `func (o *BTParameterSpecArray2600) HasMaxNumberOfPicks() bool`
 
 HasMaxNumberOfPicks returns a boolean if a field has been set.
-
-### GetParameters
-
-`func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6`
-
-GetParameters returns the Parameters field if non-nil, zero value otherwise.
-
-### GetParametersOk
-
-`func (o *BTParameterSpecArray2600) GetParametersOk() (*[]BTParameterSpec6, bool)`
-
-GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParameters
-
-`func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6)`
-
-SetParameters sets Parameters field to given value.
-
-### HasParameters
-
-`func (o *BTParameterSpecArray2600) HasParameters() bool`
-
-HasParameters returns a boolean if a field has been set.
 
 ### GetShowLabelsOnly
 

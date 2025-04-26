@@ -28,6 +28,7 @@ type BTMParameterIcon460 struct {
 	Icon        *string `json:"icon,omitempty"`
 	Label       *string `json:"label,omitempty"`
 	Link        *string `json:"link,omitempty"`
+	Tooltip     *string `json:"tooltip,omitempty"`
 }
 
 // NewBTMParameterIcon460 instantiates a new BTMParameterIcon460 object
@@ -303,6 +304,38 @@ func (o *BTMParameterIcon460) SetLink(v string) {
 	o.Link = &v
 }
 
+// GetTooltip returns the Tooltip field value if set, zero value otherwise.
+func (o *BTMParameterIcon460) GetTooltip() string {
+	if o == nil || o.Tooltip == nil {
+		var ret string
+		return ret
+	}
+	return *o.Tooltip
+}
+
+// GetTooltipOk returns a tuple with the Tooltip field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterIcon460) GetTooltipOk() (*string, bool) {
+	if o == nil || o.Tooltip == nil {
+		return nil, false
+	}
+	return o.Tooltip, true
+}
+
+// HasTooltip returns a boolean if a field has been set.
+func (o *BTMParameterIcon460) HasTooltip() bool {
+	if o != nil && o.Tooltip != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTooltip gets a reference to the given string and assigns it to the Tooltip field.
+func (o *BTMParameterIcon460) SetTooltip(v string) {
+	o.Tooltip = &v
+}
+
 func (o BTMParameterIcon460) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
@@ -336,6 +369,9 @@ func (o BTMParameterIcon460) MarshalJSON() ([]byte, error) {
 	}
 	if o.Link != nil {
 		toSerialize["link"] = o.Link
+	}
+	if o.Tooltip != nil {
+		toSerialize["tooltip"] = o.Tooltip
 	}
 	return json.Marshal(toSerialize)
 }

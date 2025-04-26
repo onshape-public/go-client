@@ -23,7 +23,8 @@ type BTMSketch151 struct {
 	// The name of the feature spec that this feature instantiates.
 	FeatureType *string `json:"featureType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
+	MateConnectorFeature *bool   `json:"mateConnectorFeature,omitempty"`
 	// User-visible name of the feature.
 	Name *string `json:"name,omitempty"`
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
@@ -189,6 +190,38 @@ func (o *BTMSketch151) HasImportMicroversion() bool {
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
 func (o *BTMSketch151) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
+}
+
+// GetMateConnectorFeature returns the MateConnectorFeature field value if set, zero value otherwise.
+func (o *BTMSketch151) GetMateConnectorFeature() bool {
+	if o == nil || o.MateConnectorFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.MateConnectorFeature
+}
+
+// GetMateConnectorFeatureOk returns a tuple with the MateConnectorFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketch151) GetMateConnectorFeatureOk() (*bool, bool) {
+	if o == nil || o.MateConnectorFeature == nil {
+		return nil, false
+	}
+	return o.MateConnectorFeature, true
+}
+
+// HasMateConnectorFeature returns a boolean if a field has been set.
+func (o *BTMSketch151) HasMateConnectorFeature() bool {
+	if o != nil && o.MateConnectorFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectorFeature gets a reference to the given bool and assigns it to the MateConnectorFeature field.
+func (o *BTMSketch151) SetMateConnectorFeature(v bool) {
+	o.MateConnectorFeature = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -564,6 +597,9 @@ func (o BTMSketch151) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.MateConnectorFeature != nil {
+		toSerialize["mateConnectorFeature"] = o.MateConnectorFeature
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

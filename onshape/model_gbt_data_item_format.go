@@ -28,6 +28,7 @@ const (
 	GBTDataItemFormatXTXmmZip  GBTDataItemFormat = "X_T_XMM_ZIP"
 	GBTDataItemFormatObjMtlZip GBTDataItemFormat = "OBJ_MTL_ZIP"
 	GBTDataItemFormatXB        GBTDataItemFormat = "X_B"
+	GBTDataItemFormatJson      GBTDataItemFormat = "JSON"
 	GBTDataItemFormatUnknown   GBTDataItemFormat = "UNKNOWN"
 )
 
@@ -41,6 +42,7 @@ var AllowedGBTDataItemFormatEnumValues = []GBTDataItemFormat{
 	"X_T_XMM_ZIP",
 	"OBJ_MTL_ZIP",
 	"X_B",
+	"JSON",
 	"UNKNOWN",
 }
 

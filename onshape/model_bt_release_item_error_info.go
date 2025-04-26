@@ -23,6 +23,7 @@ type BTReleaseItemErrorInfo struct {
 	PendingTaskId       *string `json:"pendingTaskId,omitempty"`
 	PendingTaskObjectId *string `json:"pendingTaskObjectId,omitempty"`
 	PendingTaskType     *string `json:"pendingTaskType,omitempty"`
+	RejectAllowed       *bool   `json:"rejectAllowed,omitempty"`
 	ReleaseId           *string `json:"releaseId,omitempty"`
 	Severity            *int32  `json:"severity,omitempty"`
 	VersionId           *string `json:"versionId,omitempty"`
@@ -270,6 +271,38 @@ func (o *BTReleaseItemErrorInfo) SetPendingTaskType(v string) {
 	o.PendingTaskType = &v
 }
 
+// GetRejectAllowed returns the RejectAllowed field value if set, zero value otherwise.
+func (o *BTReleaseItemErrorInfo) GetRejectAllowed() bool {
+	if o == nil || o.RejectAllowed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.RejectAllowed
+}
+
+// GetRejectAllowedOk returns a tuple with the RejectAllowed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleaseItemErrorInfo) GetRejectAllowedOk() (*bool, bool) {
+	if o == nil || o.RejectAllowed == nil {
+		return nil, false
+	}
+	return o.RejectAllowed, true
+}
+
+// HasRejectAllowed returns a boolean if a field has been set.
+func (o *BTReleaseItemErrorInfo) HasRejectAllowed() bool {
+	if o != nil && o.RejectAllowed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRejectAllowed gets a reference to the given bool and assigns it to the RejectAllowed field.
+func (o *BTReleaseItemErrorInfo) SetRejectAllowed(v bool) {
+	o.RejectAllowed = &v
+}
+
 // GetReleaseId returns the ReleaseId field value if set, zero value otherwise.
 func (o *BTReleaseItemErrorInfo) GetReleaseId() string {
 	if o == nil || o.ReleaseId == nil {
@@ -420,6 +453,9 @@ func (o BTReleaseItemErrorInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PendingTaskType != nil {
 		toSerialize["pendingTaskType"] = o.PendingTaskType
+	}
+	if o.RejectAllowed != nil {
+		toSerialize["rejectAllowed"] = o.RejectAllowed
 	}
 	if o.ReleaseId != nil {
 		toSerialize["releaseId"] = o.ReleaseId

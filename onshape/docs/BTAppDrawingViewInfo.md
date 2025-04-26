@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **QualityOption** | Pointer to **int32** |  | [optional] 
 **RenderSketches** | Pointer to **bool** |  | [optional] 
 **SectionId** | Pointer to **string** |  | [optional] 
+**SectionPlanes** | Pointer to **[]float64** |  | [optional] 
 **ShowAutoCenterlines** | Pointer to **bool** |  | [optional] 
 **ShowAutoCentermarks** | Pointer to **bool** |  | [optional] 
 **ShowCutGeomOnly** | Pointer to **bool** |  | [optional] 
@@ -1076,6 +1077,31 @@ SetSectionId sets SectionId field to given value.
 `func (o *BTAppDrawingViewInfo) HasSectionId() bool`
 
 HasSectionId returns a boolean if a field has been set.
+
+### GetSectionPlanes
+
+`func (o *BTAppDrawingViewInfo) GetSectionPlanes() []float64`
+
+GetSectionPlanes returns the SectionPlanes field if non-nil, zero value otherwise.
+
+### GetSectionPlanesOk
+
+`func (o *BTAppDrawingViewInfo) GetSectionPlanesOk() (*[]float64, bool)`
+
+GetSectionPlanesOk returns a tuple with the SectionPlanes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSectionPlanes
+
+`func (o *BTAppDrawingViewInfo) SetSectionPlanes(v []float64)`
+
+SetSectionPlanes sets SectionPlanes field to given value.
+
+### HasSectionPlanes
+
+`func (o *BTAppDrawingViewInfo) HasSectionPlanes() bool`
+
+HasSectionPlanes returns a boolean if a field has been set.
 
 ### GetShowAutoCenterlines
 

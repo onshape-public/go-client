@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **StandardContentNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **StandardContentUsingAutoNumbering** | Pointer to **bool** |  | [optional] 
 **StandardContentUsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
+**TaskWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **UsingAutoPartNumbering** | Pointer to **bool** |  | [optional] 
 **UsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **UsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
@@ -676,6 +677,31 @@ SetStandardContentUsingThirdPartyPartNumbering sets StandardContentUsingThirdPar
 `func (o *BTActiveWorkflowInfo) HasStandardContentUsingThirdPartyPartNumbering() bool`
 
 HasStandardContentUsingThirdPartyPartNumbering returns a boolean if a field has been set.
+
+### GetTaskWorkflow
+
+`func (o *BTActiveWorkflowInfo) GetTaskWorkflow() BTPublishedWorkflowInfo`
+
+GetTaskWorkflow returns the TaskWorkflow field if non-nil, zero value otherwise.
+
+### GetTaskWorkflowOk
+
+`func (o *BTActiveWorkflowInfo) GetTaskWorkflowOk() (*BTPublishedWorkflowInfo, bool)`
+
+GetTaskWorkflowOk returns a tuple with the TaskWorkflow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskWorkflow
+
+`func (o *BTActiveWorkflowInfo) SetTaskWorkflow(v BTPublishedWorkflowInfo)`
+
+SetTaskWorkflow sets TaskWorkflow field to given value.
+
+### HasTaskWorkflow
+
+`func (o *BTActiveWorkflowInfo) HasTaskWorkflow() bool`
+
+HasTaskWorkflow returns a boolean if a field has been set.
 
 ### GetUsingAutoPartNumbering
 

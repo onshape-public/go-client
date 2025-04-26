@@ -21,6 +21,7 @@ type BTEntityDeletion24 struct {
 	ConstructionPlane   *bool                `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry *BTBaseEntityData33  `json:"copyWithoutGeometry,omitempty"`
 	Decompressed        *BTBaseEntityData33  `json:"decompressed,omitempty"`
+	DefaultPane         *bool                `json:"defaultPane,omitempty"`
 	Deletion            *bool                `json:"deletion,omitempty"`
 	FeatureIds          []string             `json:"featureIds,omitempty"`
 	FromSketch          *bool                `json:"fromSketch,omitempty"`
@@ -171,6 +172,38 @@ func (o *BTEntityDeletion24) HasDecompressed() bool {
 // SetDecompressed gets a reference to the given BTBaseEntityData33 and assigns it to the Decompressed field.
 func (o *BTEntityDeletion24) SetDecompressed(v BTBaseEntityData33) {
 	o.Decompressed = &v
+}
+
+// GetDefaultPane returns the DefaultPane field value if set, zero value otherwise.
+func (o *BTEntityDeletion24) GetDefaultPane() bool {
+	if o == nil || o.DefaultPane == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultPane
+}
+
+// GetDefaultPaneOk returns a tuple with the DefaultPane field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityDeletion24) GetDefaultPaneOk() (*bool, bool) {
+	if o == nil || o.DefaultPane == nil {
+		return nil, false
+	}
+	return o.DefaultPane, true
+}
+
+// HasDefaultPane returns a boolean if a field has been set.
+func (o *BTEntityDeletion24) HasDefaultPane() bool {
+	if o != nil && o.DefaultPane != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultPane gets a reference to the given bool and assigns it to the DefaultPane field.
+func (o *BTEntityDeletion24) SetDefaultPane(v bool) {
+	o.DefaultPane = &v
 }
 
 // GetDeletion returns the Deletion field value if set, zero value otherwise.
@@ -354,6 +387,9 @@ func (o BTEntityDeletion24) MarshalJSON() ([]byte, error) {
 	}
 	if o.Decompressed != nil {
 		toSerialize["decompressed"] = o.Decompressed
+	}
+	if o.DefaultPane != nil {
+		toSerialize["defaultPane"] = o.DefaultPane
 	}
 	if o.Deletion != nil {
 		toSerialize["deletion"] = o.Deletion

@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**GetJson**](AppElementApi.md#GetJson) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/json | Get the full JSON tree for the specified workspace/version/microversion.
 [**GetJsonPaths**](AppElementApi.md#GetJsonPaths) | **Post** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/jsonpaths | Get the JSON at specified paths for an element.
 [**GetSubElementContent**](AppElementApi.md#GetSubElementContent) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content | Get a list of all subelement IDs in a specified workspace/version/microversion.
+[**GetSubElementContentBatch**](AppElementApi.md#GetSubElementContentBatch) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements | Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
 [**GetSubelementIds**](AppElementApi.md#GetSubelementIds) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/ids | Get a list of all subelement IDs in a specified workspace/version/microversion.
 [**ResolveAllElementReferences**](AppElementApi.md#ResolveAllElementReferences) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/resolvereferences | Resolves bulk app element references.
 [**ResolveReference**](AppElementApi.md#ResolveReference) | **Get** /appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/references/{rid} | Resolves a single reference to an app element.
@@ -1498,6 +1499,93 @@ Name | Type | Description  | Notes
  **changeId** | **string** |  | 
  **baseChangeId** | **string** |  | 
  **subelementId** | **string** |  | 
+
+### Return type
+
+[**BTAppElementContentInfo**](BTAppElementContentInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSubElementContentBatch
+
+> BTAppElementContentInfo GetSubElementContentBatch(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BaseChangeId(baseChangeId).SubelementIds(subelementIds).Execute()
+
+Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    eid := "eid_example" // string | The id of the element in which to perform the operation.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    transactionId := "transactionId_example" // string | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. (optional)
+    changeId := "changeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
+    baseChangeId := "baseChangeId_example" // string | The id of a change made prior to the specified or implied changeId. If specified, only changes made after the base changeId are returned. (optional)
+    subelementIds := []string{"Inner_example"} // []string | The array of subelementIds in format: `&subelementIds=ID1& &subelementIds=ID2...&subelementIds=IDn.` (optional)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AppElementApi.GetSubElementContentBatch(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).TransactionId(transactionId).ChangeId(changeId).BaseChangeId(baseChangeId).SubelementIds(subelementIds).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.GetSubElementContentBatch``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetSubElementContentBatch`: BTAppElementContentInfo
+    fmt.Fprintf(os.Stdout, "Response from `AppElementApi.GetSubElementContentBatch`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+**eid** | **string** | The id of the element in which to perform the operation. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSubElementContentBatchRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **transactionId** | **string** | The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API. | 
+ **changeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
+ **baseChangeId** | **string** | The id of a change made prior to the specified or implied changeId. If specified, only changes made after the base changeId are returned. | 
+ **subelementIds** | **[]string** | The array of subelementIds in format: &#x60;&amp;subelementIds&#x3D;ID1&amp; &amp;subelementIds&#x3D;ID2...&amp;subelementIds&#x3D;IDn.&#x60; | 
 
 ### Return type
 

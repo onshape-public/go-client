@@ -38,12 +38,15 @@ type BTEllipseDiameterDimensionDisplayData1301 struct {
 	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
 	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
 	Value                 *float64               `json:"value,omitempty"`
+	HasExtension          *bool                  `json:"hasExtension,omitempty"`
 	PositionX             *float64               `json:"positionX,omitempty"`
 	PositionY             *float64               `json:"positionY,omitempty"`
 	WitnessEndPoint0X     *float64               `json:"witnessEndPoint0X,omitempty"`
 	WitnessEndPoint0Y     *float64               `json:"witnessEndPoint0Y,omitempty"`
 	WitnessEndPoint1X     *float64               `json:"witnessEndPoint1X,omitempty"`
 	WitnessEndPoint1Y     *float64               `json:"witnessEndPoint1Y,omitempty"`
+	WitnessExtension0Z    *float64               `json:"witnessExtension0Z,omitempty"`
+	WitnessExtension1Z    *float64               `json:"witnessExtension1Z,omitempty"`
 }
 
 // NewBTEllipseDiameterDimensionDisplayData1301 instantiates a new BTEllipseDiameterDimensionDisplayData1301 object
@@ -735,6 +738,38 @@ func (o *BTEllipseDiameterDimensionDisplayData1301) SetValue(v float64) {
 	o.Value = &v
 }
 
+// GetHasExtension returns the HasExtension field value if set, zero value otherwise.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetHasExtension() bool {
+	if o == nil || o.HasExtension == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasExtension
+}
+
+// GetHasExtensionOk returns a tuple with the HasExtension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetHasExtensionOk() (*bool, bool) {
+	if o == nil || o.HasExtension == nil {
+		return nil, false
+	}
+	return o.HasExtension, true
+}
+
+// HasHasExtension returns a boolean if a field has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) HasHasExtension() bool {
+	if o != nil && o.HasExtension != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasExtension gets a reference to the given bool and assigns it to the HasExtension field.
+func (o *BTEllipseDiameterDimensionDisplayData1301) SetHasExtension(v bool) {
+	o.HasExtension = &v
+}
+
 // GetPositionX returns the PositionX field value if set, zero value otherwise.
 func (o *BTEllipseDiameterDimensionDisplayData1301) GetPositionX() float64 {
 	if o == nil || o.PositionX == nil {
@@ -927,6 +962,70 @@ func (o *BTEllipseDiameterDimensionDisplayData1301) SetWitnessEndPoint1Y(v float
 	o.WitnessEndPoint1Y = &v
 }
 
+// GetWitnessExtension0Z returns the WitnessExtension0Z field value if set, zero value otherwise.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetWitnessExtension0Z() float64 {
+	if o == nil || o.WitnessExtension0Z == nil {
+		var ret float64
+		return ret
+	}
+	return *o.WitnessExtension0Z
+}
+
+// GetWitnessExtension0ZOk returns a tuple with the WitnessExtension0Z field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetWitnessExtension0ZOk() (*float64, bool) {
+	if o == nil || o.WitnessExtension0Z == nil {
+		return nil, false
+	}
+	return o.WitnessExtension0Z, true
+}
+
+// HasWitnessExtension0Z returns a boolean if a field has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) HasWitnessExtension0Z() bool {
+	if o != nil && o.WitnessExtension0Z != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWitnessExtension0Z gets a reference to the given float64 and assigns it to the WitnessExtension0Z field.
+func (o *BTEllipseDiameterDimensionDisplayData1301) SetWitnessExtension0Z(v float64) {
+	o.WitnessExtension0Z = &v
+}
+
+// GetWitnessExtension1Z returns the WitnessExtension1Z field value if set, zero value otherwise.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetWitnessExtension1Z() float64 {
+	if o == nil || o.WitnessExtension1Z == nil {
+		var ret float64
+		return ret
+	}
+	return *o.WitnessExtension1Z
+}
+
+// GetWitnessExtension1ZOk returns a tuple with the WitnessExtension1Z field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetWitnessExtension1ZOk() (*float64, bool) {
+	if o == nil || o.WitnessExtension1Z == nil {
+		return nil, false
+	}
+	return o.WitnessExtension1Z, true
+}
+
+// HasWitnessExtension1Z returns a boolean if a field has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) HasWitnessExtension1Z() bool {
+	if o != nil && o.WitnessExtension1Z != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWitnessExtension1Z gets a reference to the given float64 and assigns it to the WitnessExtension1Z field.
+func (o *BTEllipseDiameterDimensionDisplayData1301) SetWitnessExtension1Z(v float64) {
+	o.WitnessExtension1Z = &v
+}
+
 func (o BTEllipseDiameterDimensionDisplayData1301) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTLinearDimensionDisplayData330, errBTLinearDimensionDisplayData330 := json.Marshal(o.BTLinearDimensionDisplayData330)
@@ -1000,6 +1099,9 @@ func (o BTEllipseDiameterDimensionDisplayData1301) MarshalJSON() ([]byte, error)
 	if o.Value != nil {
 		toSerialize["value"] = o.Value
 	}
+	if o.HasExtension != nil {
+		toSerialize["hasExtension"] = o.HasExtension
+	}
 	if o.PositionX != nil {
 		toSerialize["positionX"] = o.PositionX
 	}
@@ -1017,6 +1119,12 @@ func (o BTEllipseDiameterDimensionDisplayData1301) MarshalJSON() ([]byte, error)
 	}
 	if o.WitnessEndPoint1Y != nil {
 		toSerialize["witnessEndPoint1Y"] = o.WitnessEndPoint1Y
+	}
+	if o.WitnessExtension0Z != nil {
+		toSerialize["witnessExtension0Z"] = o.WitnessExtension0Z
+	}
+	if o.WitnessExtension1Z != nil {
+		toSerialize["witnessExtension1Z"] = o.WitnessExtension1Z
 	}
 	return json.Marshal(toSerialize)
 }

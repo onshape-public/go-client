@@ -2653,6 +2653,185 @@ func (a *AppElementApiService) GetSubElementContentExecute(r ApiGetSubElementCon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetSubElementContentBatchRequest struct {
+	ctx            context.Context
+	ApiService     *AppElementApiService
+	did            string
+	wvm            string
+	wvmid          string
+	eid            string
+	linkDocumentId *string
+	transactionId  *string
+	changeId       *string
+	baseChangeId   *string
+	subelementIds  *[]string
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetSubElementContentBatchRequest) LinkDocumentId(linkDocumentId string) ApiGetSubElementContentBatchRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// The id of the transaction in which this operation should take place. Transaction ids can be generated through the AppElement startTransaction API.
+func (r ApiGetSubElementContentBatchRequest) TransactionId(transactionId string) ApiGetSubElementContentBatchRequest {
+	r.transactionId = &transactionId
+	return r
+}
+
+// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
+func (r ApiGetSubElementContentBatchRequest) ChangeId(changeId string) ApiGetSubElementContentBatchRequest {
+	r.changeId = &changeId
+	return r
+}
+
+// The id of a change made prior to the specified or implied changeId. If specified, only changes made after the base changeId are returned.
+func (r ApiGetSubElementContentBatchRequest) BaseChangeId(baseChangeId string) ApiGetSubElementContentBatchRequest {
+	r.baseChangeId = &baseChangeId
+	return r
+}
+
+// The array of subelementIds in format: &#x60;&amp;subelementIds&#x3D;ID1&amp; &amp;subelementIds&#x3D;ID2...&amp;subelementIds&#x3D;IDn.&#x60;
+func (r ApiGetSubElementContentBatchRequest) SubelementIds(subelementIds []string) ApiGetSubElementContentBatchRequest {
+	r.subelementIds = &subelementIds
+	return r
+}
+
+func (r ApiGetSubElementContentBatchRequest) Execute() (*BTAppElementContentInfo, *http.Response, error) {
+	return r.ApiService.GetSubElementContentBatchExecute(r)
+}
+
+/*
+GetSubElementContentBatch Get a list of multiple subelements by document ID, workspace or version or microversion ID, tab ID, and subelement IDs.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@param eid The id of the element in which to perform the operation.
+	@return ApiGetSubElementContentBatchRequest
+*/
+func (a *AppElementApiService) GetSubElementContentBatch(ctx context.Context, did string, wvm string, wvmid string, eid string) ApiGetSubElementContentBatchRequest {
+	return ApiGetSubElementContentBatchRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTAppElementContentInfo
+func (a *AppElementApiService) GetSubElementContentBatchExecute(r ApiGetSubElementContentBatchRequest) (*BTAppElementContentInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTAppElementContentInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AppElementApiService.GetSubElementContentBatch")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/appelements/d/{did}/{wvm}/{wvmid}/e/{eid}/content/subelements"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.transactionId != nil {
+		localVarQueryParams.Add("transactionId", parameterToString(*r.transactionId, ""))
+	}
+	if r.changeId != nil {
+		localVarQueryParams.Add("changeId", parameterToString(*r.changeId, ""))
+	}
+	if r.baseChangeId != nil {
+		localVarQueryParams.Add("baseChangeId", parameterToString(*r.baseChangeId, ""))
+	}
+	if r.subelementIds != nil {
+		t := *r.subelementIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("subelementIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("subelementIds", parameterToString(t, "multi"))
+		}
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTAppElementContentInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetSubelementIdsRequest struct {
 	ctx           context.Context
 	ApiService    *AppElementApiService

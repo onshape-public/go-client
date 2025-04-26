@@ -56,6 +56,8 @@ type ApiCreateTranslationRequest struct {
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
 	upgradeFeatureScriptVersion          *bool
+	preserveSourceIds                    *bool
+	documentId                           *string
 }
 
 // The file to upload.
@@ -217,6 +219,16 @@ func (r ApiCreateTranslationRequest) UpgradeFeatureScriptVersion(upgradeFeatureS
 	return r
 }
 
+func (r ApiCreateTranslationRequest) PreserveSourceIds(preserveSourceIds bool) ApiCreateTranslationRequest {
+	r.preserveSourceIds = &preserveSourceIds
+	return r
+}
+
+func (r ApiCreateTranslationRequest) DocumentId(documentId string) ApiCreateTranslationRequest {
+	r.documentId = &documentId
+	return r
+}
+
 func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestImportInfo, *http.Response, error) {
 	return r.ApiService.CreateTranslationExecute(r)
 }
@@ -372,6 +384,12 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.upgradeFeatureScriptVersion != nil {
 		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
+	}
+	if r.preserveSourceIds != nil {
+		localVarFormParams.Add("preserveSourceIds", parameterToString(*r.preserveSourceIds, ""))
+	}
+	if r.documentId != nil {
+		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

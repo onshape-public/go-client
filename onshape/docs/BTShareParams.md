@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **EncodedConfiguration** | Pointer to **string** |  | [optional] 
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewBTShareParamsWithDefaults instantiates a new BTShareParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetConnectionId
+
+`func (o *BTShareParams) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *BTShareParams) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *BTShareParams) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *BTShareParams) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetDocumentId
 

@@ -3173,7 +3173,7 @@ func (r ApiTranslateFormatRequest) Execute() (*BTTranslationRequestInfo, *http.R
 TranslateFormat Export the assembly to another format.
 
 * Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`
-* Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document.
+* Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
