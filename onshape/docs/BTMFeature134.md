@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **FeatureId** | Pointer to **string** | Unique ID of the feature instance within this Part Studio. | [optional] 
 **FeatureType** | Pointer to **string** | The name of the feature spec that this feature instantiates. | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
+**MateConnectorFeature** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
@@ -136,6 +137,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMFeature134) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetMateConnectorFeature
+
+`func (o *BTMFeature134) GetMateConnectorFeature() bool`
+
+GetMateConnectorFeature returns the MateConnectorFeature field if non-nil, zero value otherwise.
+
+### GetMateConnectorFeatureOk
+
+`func (o *BTMFeature134) GetMateConnectorFeatureOk() (*bool, bool)`
+
+GetMateConnectorFeatureOk returns a tuple with the MateConnectorFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMateConnectorFeature
+
+`func (o *BTMFeature134) SetMateConnectorFeature(v bool)`
+
+SetMateConnectorFeature sets MateConnectorFeature field to given value.
+
+### HasMateConnectorFeature
+
+`func (o *BTMFeature134) HasMateConnectorFeature() bool`
+
+HasMateConnectorFeature returns a boolean if a field has been set.
 
 ### GetName
 

@@ -33,11 +33,12 @@ type BTParameterSpecArray2600 struct {
 	UiHint                     *string                            `json:"uiHint,omitempty"`
 	UiHints                    []GBTUIHint                        `json:"uiHints,omitempty"`
 	VisibilityCondition        *BTParameterVisibilityCondition177 `json:"visibilityCondition,omitempty"`
+	DialogId                   *string                            `json:"dialogId,omitempty"`
 	DrivenQuery                *string                            `json:"drivenQuery,omitempty"`
+	Icon                       *string                            `json:"icon,omitempty"`
 	ItemLabelTemplate          *string                            `json:"itemLabelTemplate,omitempty"`
 	ItemName                   *string                            `json:"itemName,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
-	Parameters                 []BTParameterSpec6                 `json:"parameters,omitempty"`
 	ShowLabelsOnly             *bool                              `json:"showLabelsOnly,omitempty"`
 }
 
@@ -570,6 +571,38 @@ func (o *BTParameterSpecArray2600) SetVisibilityCondition(v BTParameterVisibilit
 	o.VisibilityCondition = &v
 }
 
+// GetDialogId returns the DialogId field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetDialogId() string {
+	if o == nil || o.DialogId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DialogId
+}
+
+// GetDialogIdOk returns a tuple with the DialogId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetDialogIdOk() (*string, bool) {
+	if o == nil || o.DialogId == nil {
+		return nil, false
+	}
+	return o.DialogId, true
+}
+
+// HasDialogId returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasDialogId() bool {
+	if o != nil && o.DialogId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDialogId gets a reference to the given string and assigns it to the DialogId field.
+func (o *BTParameterSpecArray2600) SetDialogId(v string) {
+	o.DialogId = &v
+}
+
 // GetDrivenQuery returns the DrivenQuery field value if set, zero value otherwise.
 func (o *BTParameterSpecArray2600) GetDrivenQuery() string {
 	if o == nil || o.DrivenQuery == nil {
@@ -600,6 +633,38 @@ func (o *BTParameterSpecArray2600) HasDrivenQuery() bool {
 // SetDrivenQuery gets a reference to the given string and assigns it to the DrivenQuery field.
 func (o *BTParameterSpecArray2600) SetDrivenQuery(v string) {
 	o.DrivenQuery = &v
+}
+
+// GetIcon returns the Icon field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetIcon() string {
+	if o == nil || o.Icon == nil {
+		var ret string
+		return ret
+	}
+	return *o.Icon
+}
+
+// GetIconOk returns a tuple with the Icon field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetIconOk() (*string, bool) {
+	if o == nil || o.Icon == nil {
+		return nil, false
+	}
+	return o.Icon, true
+}
+
+// HasIcon returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasIcon() bool {
+	if o != nil && o.Icon != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIcon gets a reference to the given string and assigns it to the Icon field.
+func (o *BTParameterSpecArray2600) SetIcon(v string) {
+	o.Icon = &v
 }
 
 // GetItemLabelTemplate returns the ItemLabelTemplate field value if set, zero value otherwise.
@@ -698,38 +763,6 @@ func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32) {
 	o.MaxNumberOfPicks = &v
 }
 
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTParameterSpec6
-		return ret
-	}
-	return o.Parameters
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTParameterSpecArray2600) GetParametersOk() ([]BTParameterSpec6, bool) {
-	if o == nil || o.Parameters == nil {
-		return nil, false
-	}
-	return o.Parameters, true
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *BTParameterSpecArray2600) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParameters gets a reference to the given []BTParameterSpec6 and assigns it to the Parameters field.
-func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6) {
-	o.Parameters = v
-}
-
 // GetShowLabelsOnly returns the ShowLabelsOnly field value if set, zero value otherwise.
 func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool {
 	if o == nil || o.ShowLabelsOnly == nil {
@@ -820,8 +853,14 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	if o.VisibilityCondition != nil {
 		toSerialize["visibilityCondition"] = o.VisibilityCondition
 	}
+	if o.DialogId != nil {
+		toSerialize["dialogId"] = o.DialogId
+	}
 	if o.DrivenQuery != nil {
 		toSerialize["drivenQuery"] = o.DrivenQuery
+	}
+	if o.Icon != nil {
+		toSerialize["icon"] = o.Icon
 	}
 	if o.ItemLabelTemplate != nil {
 		toSerialize["itemLabelTemplate"] = o.ItemLabelTemplate
@@ -831,9 +870,6 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	}
 	if o.MaxNumberOfPicks != nil {
 		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
-	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
 	}
 	if o.ShowLabelsOnly != nil {
 		toSerialize["showLabelsOnly"] = o.ShowLabelsOnly

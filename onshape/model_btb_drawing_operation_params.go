@@ -16,6 +16,8 @@ import (
 
 // BTBDrawingOperationParams A single drawing entity creation or modification definition
 type BTBDrawingOperationParams struct {
+	// Operation description
+	Description *string `json:"description,omitempty"`
 	// Version of drawing entity format.
 	FormatVersion string `json:"formatVersion"`
 	// Type of drawing modification operation: `onshapeCreateAnnotations` | `onshapeEditAnnotations`
@@ -39,6 +41,38 @@ func NewBTBDrawingOperationParams(formatVersion string, messageName string) *BTB
 func NewBTBDrawingOperationParamsWithDefaults() *BTBDrawingOperationParams {
 	this := BTBDrawingOperationParams{}
 	return &this
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *BTBDrawingOperationParams) GetDescription() string {
+	if o == nil || o.Description == nil {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBDrawingOperationParams) GetDescriptionOk() (*string, bool) {
+	if o == nil || o.Description == nil {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *BTBDrawingOperationParams) HasDescription() bool {
+	if o != nil && o.Description != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *BTBDrawingOperationParams) SetDescription(v string) {
+	o.Description = &v
 }
 
 // GetFormatVersion returns the FormatVersion field value
@@ -91,6 +125,9 @@ func (o *BTBDrawingOperationParams) SetMessageName(v string) {
 
 func (o BTBDrawingOperationParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Description != nil {
+		toSerialize["description"] = o.Description
+	}
 	if true {
 		toSerialize["formatVersion"] = o.FormatVersion
 	}

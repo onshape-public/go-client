@@ -3313,6 +3313,12 @@
 
 * `GBTErrorStringEnumTrimToMultiFailedForUptoBody` (value: `"TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY"`)
 
+* `GBTErrorStringEnumLoftConnectionEdgeParameterMismatch` (value: `"LOFT_CONNECTION_EDGE_PARAMETER_MISMATCH"`)
+
+* `GBTErrorStringEnumSheetMetalNoConeApex` (value: `"SHEET_METAL_NO_CONE_APEX"`)
+
+* `GBTErrorStringEnumSimulationMaterialPropertyOutsideRequiredBounds` (value: `"SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

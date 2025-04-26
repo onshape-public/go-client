@@ -58,6 +58,7 @@ type BTAppDrawingViewInfo struct {
 	QualityOption                         *int32                                             `json:"qualityOption,omitempty"`
 	RenderSketches                        *bool                                              `json:"renderSketches,omitempty"`
 	SectionId                             *string                                            `json:"sectionId,omitempty"`
+	SectionPlanes                         []float64                                          `json:"sectionPlanes,omitempty"`
 	ShowAutoCenterlines                   *bool                                              `json:"showAutoCenterlines,omitempty"`
 	ShowAutoCentermarks                   *bool                                              `json:"showAutoCentermarks,omitempty"`
 	ShowCutGeomOnly                       *bool                                              `json:"showCutGeomOnly,omitempty"`
@@ -1370,6 +1371,38 @@ func (o *BTAppDrawingViewInfo) SetSectionId(v string) {
 	o.SectionId = &v
 }
 
+// GetSectionPlanes returns the SectionPlanes field value if set, zero value otherwise.
+func (o *BTAppDrawingViewInfo) GetSectionPlanes() []float64 {
+	if o == nil || o.SectionPlanes == nil {
+		var ret []float64
+		return ret
+	}
+	return o.SectionPlanes
+}
+
+// GetSectionPlanesOk returns a tuple with the SectionPlanes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAppDrawingViewInfo) GetSectionPlanesOk() ([]float64, bool) {
+	if o == nil || o.SectionPlanes == nil {
+		return nil, false
+	}
+	return o.SectionPlanes, true
+}
+
+// HasSectionPlanes returns a boolean if a field has been set.
+func (o *BTAppDrawingViewInfo) HasSectionPlanes() bool {
+	if o != nil && o.SectionPlanes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSectionPlanes gets a reference to the given []float64 and assigns it to the SectionPlanes field.
+func (o *BTAppDrawingViewInfo) SetSectionPlanes(v []float64) {
+	o.SectionPlanes = v
+}
+
 // GetShowAutoCenterlines returns the ShowAutoCenterlines field value if set, zero value otherwise.
 func (o *BTAppDrawingViewInfo) GetShowAutoCenterlines() bool {
 	if o == nil || o.ShowAutoCenterlines == nil {
@@ -1907,6 +1940,9 @@ func (o BTAppDrawingViewInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SectionId != nil {
 		toSerialize["sectionId"] = o.SectionId
+	}
+	if o.SectionPlanes != nil {
+		toSerialize["sectionPlanes"] = o.SectionPlanes
 	}
 	if o.ShowAutoCenterlines != nil {
 		toSerialize["showAutoCenterlines"] = o.ShowAutoCenterlines

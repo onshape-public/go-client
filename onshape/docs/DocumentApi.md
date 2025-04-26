@@ -2230,7 +2230,7 @@ import (
 func main() {
     did := "did_example" // string | ID of the document to unshare.
     eid := "eid_example" // string | ID of the entity to remove permissions for. Uses `userId`, `companyId`, `teamId`, `documentId`, or `applicationId`, depending on the `entryType` value.
-    entryType := int32(56) // int32 | `0` (user) | `1` (company) | `2` (team) | `3` (document) | `4` (application) (optional) (default to 0)
+    entryType := int32(56) // int32 | `0` (user) | `1` (company) | `2` (team) | `3` (document) | `4` (application) | `5` (connection_user) (optional) (default to 0)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -2262,7 +2262,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **entryType** | **int32** | &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application) | [default to 0]
+ **entryType** | **int32** | &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application) | &#x60;5&#x60; (connection_user) | [default to 0]
 
 ### Return type
 

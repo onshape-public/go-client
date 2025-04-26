@@ -3853,7 +3853,7 @@ type ApiUnShareDocumentRequest struct {
 	entryType  *int32
 }
 
-// &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application)
+// &#x60;0&#x60; (user) | &#x60;1&#x60; (company) | &#x60;2&#x60; (team) | &#x60;3&#x60; (document) | &#x60;4&#x60; (application) | &#x60;5&#x60; (connection_user)
 func (r ApiUnShareDocumentRequest) EntryType(entryType int32) ApiUnShareDocumentRequest {
 	r.entryType = &entryType
 	return r

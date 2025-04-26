@@ -18,6 +18,9 @@ import (
 type BTAclEntryInfo struct {
 	AcceptOwnerTransfer  *bool        `json:"acceptOwnerTransfer,omitempty"`
 	CompanyName          *string      `json:"companyName,omitempty"`
+	ConnectionId         *string      `json:"connectionId,omitempty"`
+	ConnectionName       *string      `json:"connectionName,omitempty"`
+	ConnectionUser       *bool        `json:"connectionUser,omitempty"`
 	Email                *string      `json:"email,omitempty"`
 	EnterpriseMember     *bool        `json:"enterpriseMember,omitempty"`
 	EntryId              *string      `json:"entryId,omitempty"`
@@ -112,6 +115,102 @@ func (o *BTAclEntryInfo) HasCompanyName() bool {
 // SetCompanyName gets a reference to the given string and assigns it to the CompanyName field.
 func (o *BTAclEntryInfo) SetCompanyName(v string) {
 	o.CompanyName = &v
+}
+
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetConnectionId() string {
+	if o == nil || o.ConnectionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionId
+}
+
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetConnectionIdOk() (*string, bool) {
+	if o == nil || o.ConnectionId == nil {
+		return nil, false
+	}
+	return o.ConnectionId, true
+}
+
+// HasConnectionId returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasConnectionId() bool {
+	if o != nil && o.ConnectionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
+func (o *BTAclEntryInfo) SetConnectionId(v string) {
+	o.ConnectionId = &v
+}
+
+// GetConnectionName returns the ConnectionName field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetConnectionName() string {
+	if o == nil || o.ConnectionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionName
+}
+
+// GetConnectionNameOk returns a tuple with the ConnectionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetConnectionNameOk() (*string, bool) {
+	if o == nil || o.ConnectionName == nil {
+		return nil, false
+	}
+	return o.ConnectionName, true
+}
+
+// HasConnectionName returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasConnectionName() bool {
+	if o != nil && o.ConnectionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
+func (o *BTAclEntryInfo) SetConnectionName(v string) {
+	o.ConnectionName = &v
+}
+
+// GetConnectionUser returns the ConnectionUser field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetConnectionUser() bool {
+	if o == nil || o.ConnectionUser == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConnectionUser
+}
+
+// GetConnectionUserOk returns a tuple with the ConnectionUser field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetConnectionUserOk() (*bool, bool) {
+	if o == nil || o.ConnectionUser == nil {
+		return nil, false
+	}
+	return o.ConnectionUser, true
+}
+
+// HasConnectionUser returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasConnectionUser() bool {
+	if o != nil && o.ConnectionUser != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionUser gets a reference to the given bool and assigns it to the ConnectionUser field.
+func (o *BTAclEntryInfo) SetConnectionUser(v bool) {
+	o.ConnectionUser = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -537,6 +636,15 @@ func (o BTAclEntryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CompanyName != nil {
 		toSerialize["companyName"] = o.CompanyName
+	}
+	if o.ConnectionId != nil {
+		toSerialize["connectionId"] = o.ConnectionId
+	}
+	if o.ConnectionName != nil {
+		toSerialize["connectionName"] = o.ConnectionName
+	}
+	if o.ConnectionUser != nil {
+		toSerialize["connectionUser"] = o.ConnectionUser
 	}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email

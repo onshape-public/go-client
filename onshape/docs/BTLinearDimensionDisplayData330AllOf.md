@@ -5,12 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**HasExtension** | Pointer to **bool** |  | [optional] 
 **PositionX** | Pointer to **float64** |  | [optional] 
 **PositionY** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint0X** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint0Y** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint1X** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint1Y** | Pointer to **float64** |  | [optional] 
+**WitnessExtension0Z** | Pointer to **float64** |  | [optional] 
+**WitnessExtension1Z** | Pointer to **float64** |  | [optional] 
 
 ## Methods
 
@@ -55,6 +58,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTLinearDimensionDisplayData330AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetHasExtension
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetHasExtension() bool`
+
+GetHasExtension returns the HasExtension field if non-nil, zero value otherwise.
+
+### GetHasExtensionOk
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetHasExtensionOk() (*bool, bool)`
+
+GetHasExtensionOk returns a tuple with the HasExtension field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasExtension
+
+`func (o *BTLinearDimensionDisplayData330AllOf) SetHasExtension(v bool)`
+
+SetHasExtension sets HasExtension field to given value.
+
+### HasHasExtension
+
+`func (o *BTLinearDimensionDisplayData330AllOf) HasHasExtension() bool`
+
+HasHasExtension returns a boolean if a field has been set.
 
 ### GetPositionX
 
@@ -205,6 +233,56 @@ SetWitnessEndPoint1Y sets WitnessEndPoint1Y field to given value.
 `func (o *BTLinearDimensionDisplayData330AllOf) HasWitnessEndPoint1Y() bool`
 
 HasWitnessEndPoint1Y returns a boolean if a field has been set.
+
+### GetWitnessExtension0Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetWitnessExtension0Z() float64`
+
+GetWitnessExtension0Z returns the WitnessExtension0Z field if non-nil, zero value otherwise.
+
+### GetWitnessExtension0ZOk
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetWitnessExtension0ZOk() (*float64, bool)`
+
+GetWitnessExtension0ZOk returns a tuple with the WitnessExtension0Z field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWitnessExtension0Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) SetWitnessExtension0Z(v float64)`
+
+SetWitnessExtension0Z sets WitnessExtension0Z field to given value.
+
+### HasWitnessExtension0Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) HasWitnessExtension0Z() bool`
+
+HasWitnessExtension0Z returns a boolean if a field has been set.
+
+### GetWitnessExtension1Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetWitnessExtension1Z() float64`
+
+GetWitnessExtension1Z returns the WitnessExtension1Z field if non-nil, zero value otherwise.
+
+### GetWitnessExtension1ZOk
+
+`func (o *BTLinearDimensionDisplayData330AllOf) GetWitnessExtension1ZOk() (*float64, bool)`
+
+GetWitnessExtension1ZOk returns a tuple with the WitnessExtension1Z field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWitnessExtension1Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) SetWitnessExtension1Z(v float64)`
+
+SetWitnessExtension1Z sets WitnessExtension1Z field to given value.
+
+### HasWitnessExtension1Z
+
+`func (o *BTLinearDimensionDisplayData330AllOf) HasWitnessExtension1Z() bool`
+
+HasWitnessExtension1Z returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

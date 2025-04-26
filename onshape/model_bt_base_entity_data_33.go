@@ -277,6 +277,56 @@ func (o *BTBaseEntityData33) SetDecompressed(v BTBaseEntityData33) {
 	o.GetActualInstance().(getResult).SetDecompressed(v)
 }
 
+// GetDefaultPane returns the DefaultPane field value if set, zero value otherwise.
+func (o *BTBaseEntityData33) GetDefaultPane() bool {
+	type getResult interface {
+		GetDefaultPane() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultPane()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetDefaultPaneOk returns a tuple with the DefaultPane field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBaseEntityData33) GetDefaultPaneOk() (*bool, bool) {
+	type getResult interface {
+		GetDefaultPaneOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDefaultPaneOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDefaultPane returns a boolean if a field has been set.
+func (o *BTBaseEntityData33) HasDefaultPane() bool {
+	type getResult interface {
+		HasDefaultPane() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDefaultPane()
+	} else {
+		return false
+	}
+}
+
+// SetDefaultPane gets a reference to the given bool and assigns it to the DefaultPane field.
+func (o *BTBaseEntityData33) SetDefaultPane(v bool) {
+	type getResult interface {
+		SetDefaultPane(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetDefaultPane(v)
+}
+
 // GetDeletion returns the Deletion field value if set, zero value otherwise.
 func (o *BTBaseEntityData33) GetDeletion() bool {
 	type getResult interface {
@@ -720,6 +770,7 @@ type base_BTBaseEntityData33 struct {
 	ConstructionPlane   *bool                `json:"constructionPlane,omitempty"`
 	CopyWithoutGeometry *BTBaseEntityData33  `json:"copyWithoutGeometry,omitempty"`
 	Decompressed        *BTBaseEntityData33  `json:"decompressed,omitempty"`
+	DefaultPane         *bool                `json:"defaultPane,omitempty"`
 	Deletion            *bool                `json:"deletion,omitempty"`
 	FeatureIds          []string             `json:"featureIds,omitempty"`
 	FromSketch          *bool                `json:"fromSketch,omitempty"`
@@ -870,6 +921,38 @@ func (o *base_BTBaseEntityData33) HasDecompressed() bool {
 // SetDecompressed gets a reference to the given BTBaseEntityData33 and assigns it to the Decompressed field.
 func (o *base_BTBaseEntityData33) SetDecompressed(v BTBaseEntityData33) {
 	o.Decompressed = &v
+}
+
+// GetDefaultPane returns the DefaultPane field value if set, zero value otherwise.
+func (o *base_BTBaseEntityData33) GetDefaultPane() bool {
+	if o == nil || o.DefaultPane == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DefaultPane
+}
+
+// GetDefaultPaneOk returns a tuple with the DefaultPane field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTBaseEntityData33) GetDefaultPaneOk() (*bool, bool) {
+	if o == nil || o.DefaultPane == nil {
+		return nil, false
+	}
+	return o.DefaultPane, true
+}
+
+// HasDefaultPane returns a boolean if a field has been set.
+func (o *base_BTBaseEntityData33) HasDefaultPane() bool {
+	if o != nil && o.DefaultPane != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefaultPane gets a reference to the given bool and assigns it to the DefaultPane field.
+func (o *base_BTBaseEntityData33) SetDefaultPane(v bool) {
+	o.DefaultPane = &v
 }
 
 // GetDeletion returns the Deletion field value if set, zero value otherwise.
@@ -1045,6 +1128,9 @@ func (o base_BTBaseEntityData33) MarshalJSON() ([]byte, error) {
 	}
 	if o.Decompressed != nil {
 		toSerialize["decompressed"] = o.Decompressed
+	}
+	if o.DefaultPane != nil {
+		toSerialize["defaultPane"] = o.DefaultPane
 	}
 	if o.Deletion != nil {
 		toSerialize["deletion"] = o.Deletion

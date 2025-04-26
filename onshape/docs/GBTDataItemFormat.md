@@ -19,6 +19,8 @@
 
 * `GBTDataItemFormatXB` (value: `"X_B"`)
 
+* `GBTDataItemFormatJson` (value: `"JSON"`)
+
 * `GBTDataItemFormatUnknown` (value: `"UNKNOWN"`)
 
 

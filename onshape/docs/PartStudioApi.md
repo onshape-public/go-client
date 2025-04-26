@@ -7,12 +7,12 @@ Method | HTTP request | Description
 [**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
 [**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
 [**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
-[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Export a Part Studio to another format.
+[**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Asynchronously export a Part Studio to another format.
 [**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
 [**EvalFeatureScript**](PartStudioApi.md#EvalFeatureScript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
-[**ExportParasolid**](PartStudioApi.md#ExportParasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Export the Part Studio as a Parasolid file.
-[**ExportPartStudioGltf**](PartStudioApi.md#ExportPartStudioGltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Export the Part Studio as a glTF file.
-[**ExportPartStudioStl**](PartStudioApi.md#ExportPartStudioStl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Export the Part Studio as an STL file.
+[**ExportParasolid**](PartStudioApi.md#ExportParasolid) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/parasolid | Synchronously export a Part Studio to a Parasolid file.
+[**ExportPartStudioGltf**](PartStudioApi.md#ExportPartStudioGltf) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/gltf | Synchronously export a Part Studio to a glTF file.
+[**ExportPartStudioStl**](PartStudioApi.md#ExportPartStudioStl) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/stl | Synchronously export a Part Studio to an STL file.
 [**GetFeatureScriptRepresentation**](PartStudioApi.md#GetFeatureScriptRepresentation) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescriptrepresentation | Get the FeatureScript representation of a Part Studio.
 [**GetFeatureScriptTable**](PartStudioApi.md#GetFeatureScriptTable) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/fstable | Compute and return a FeatureScript table for a Part Studio.
 [**GetPartStudioBodyDetails**](PartStudioApi.md#GetPartStudioBodyDetails) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/bodydetails | Get the body details for a Part Studio.
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 > BTTranslationRequestInfo CreatePartStudioTranslation(ctx, did, wv, wvid, eid).BTTranslateFormatParams(bTTranslateFormatParams).Execute()
 
-Export a Part Studio to another format.
+Asynchronously export a Part Studio to another format.
 
 
 
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 
 > ExportParasolid(ctx, did, wvm, wvmid, eid).PartIds(partIds).Version(version).IncludeExportIds(includeExportIds).Configuration(configuration).LinkDocumentId(linkDocumentId).BinaryExport(binaryExport).Execute()
 
-Export the Part Studio as a Parasolid file.
+Synchronously export a Part Studio to a Parasolid file.
 
 
 
@@ -616,7 +616,7 @@ Name | Type | Description  | Notes
 
 > GlTF ExportPartStudioGltf(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).PartId(partId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).OutputSeparateFaceNodes(outputSeparateFaceNodes).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).Execute()
 
-Export the Part Studio as a glTF file.
+Synchronously export a Part Studio to a glTF file.
 
 
 
@@ -719,7 +719,7 @@ Name | Type | Description  | Notes
 
 > ExportPartStudioStl(ctx, did, wvm, wvmid, eid).PartIds(partIds).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Export the Part Studio as an STL file.
+Synchronously export a Part Studio to an STL file.
 
 
 

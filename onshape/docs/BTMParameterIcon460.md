@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Icon** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
+**Tooltip** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -153,6 +154,31 @@ SetLink sets Link field to given value.
 `func (o *BTMParameterIcon460) HasLink() bool`
 
 HasLink returns a boolean if a field has been set.
+
+### GetTooltip
+
+`func (o *BTMParameterIcon460) GetTooltip() string`
+
+GetTooltip returns the Tooltip field if non-nil, zero value otherwise.
+
+### GetTooltipOk
+
+`func (o *BTMParameterIcon460) GetTooltipOk() (*string, bool)`
+
+GetTooltipOk returns a tuple with the Tooltip field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTooltip
+
+`func (o *BTMParameterIcon460) SetTooltip(v string)`
+
+SetTooltip sets Tooltip field to given value.
+
+### HasTooltip
+
+`func (o *BTMParameterIcon460) HasTooltip() bool`
+
+HasTooltip returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

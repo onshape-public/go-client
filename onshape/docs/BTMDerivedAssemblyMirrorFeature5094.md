@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **FeatureType** | Pointer to **string** | The name of the feature spec that this feature instantiates. | [optional] 
 **FieldIndexForOwnedMateConnectors** | Pointer to **int32** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
+**MateConnectorFeature** | Pointer to **bool** |  | [optional] 
 **MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
@@ -245,6 +246,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMDerivedAssemblyMirrorFeature5094) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetMateConnectorFeature
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) GetMateConnectorFeature() bool`
+
+GetMateConnectorFeature returns the MateConnectorFeature field if non-nil, zero value otherwise.
+
+### GetMateConnectorFeatureOk
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) GetMateConnectorFeatureOk() (*bool, bool)`
+
+GetMateConnectorFeatureOk returns a tuple with the MateConnectorFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMateConnectorFeature
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) SetMateConnectorFeature(v bool)`
+
+SetMateConnectorFeature sets MateConnectorFeature field to given value.
+
+### HasMateConnectorFeature
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) HasMateConnectorFeature() bool`
+
+HasMateConnectorFeature returns a boolean if a field has been set.
 
 ### GetMateConnectors
 

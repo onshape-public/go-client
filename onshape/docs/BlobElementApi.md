@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileCreateElement
 
-> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
+> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
 
 Upload a file and create a blob element from it.
 
@@ -309,10 +309,12 @@ func main() {
     importWithinDocument := true // bool |  (optional)
     useIGESImportPostProcessing := true // bool | Try getting optimized topology from IGES model. (optional) (default to false)
     upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
+    preserveSourceIds := true // bool |  (optional) (default to false)
+    documentId := "documentId_example" // string |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileCreateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -371,6 +373,8 @@ Name | Type | Description  | Notes
  **importWithinDocument** | **bool** |  | 
  **useIGESImportPostProcessing** | **bool** | Try getting optimized topology from IGES model. | [default to false]
  **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
+ **preserveSourceIds** | **bool** |  | [default to false]
+ **documentId** | **string** |  | 
 
 ### Return type
 
@@ -392,7 +396,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileUpdateElement
 
-> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
+> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
 
 Update a blob element by uploading a file.
 
@@ -446,10 +450,12 @@ func main() {
     importWithinDocument := true // bool |  (optional)
     useIGESImportPostProcessing := true // bool | Try getting optimized topology from IGES model. (optional) (default to false)
     upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
+    preserveSourceIds := true // bool |  (optional) (default to false)
+    documentId := "documentId_example" // string |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileUpdateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -511,6 +517,8 @@ Name | Type | Description  | Notes
  **importWithinDocument** | **bool** |  | 
  **useIGESImportPostProcessing** | **bool** | Try getting optimized topology from IGES model. | [default to false]
  **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
+ **preserveSourceIds** | **bool** |  | [default to false]
+ **documentId** | **string** |  | 
 
 ### Return type
 

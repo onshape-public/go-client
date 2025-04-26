@@ -51,7 +51,7 @@ func (r ApiCreateBlobTranslationRequest) Execute() (*BTTranslationRequestInfo, *
 CreateBlobTranslation Export a blob element to another format.
 
 * Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats.
-* Set `storeInDocument` to `true` to export to a data file. Set to `false` to export to a blob element in the same document.
+* Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -490,6 +490,8 @@ type ApiUploadFileCreateElementRequest struct {
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
 	upgradeFeatureScriptVersion          *bool
+	preserveSourceIds                    *bool
+	documentId                           *string
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -657,6 +659,16 @@ func (r ApiUploadFileCreateElementRequest) UpgradeFeatureScriptVersion(upgradeFe
 	return r
 }
 
+func (r ApiUploadFileCreateElementRequest) PreserveSourceIds(preserveSourceIds bool) ApiUploadFileCreateElementRequest {
+	r.preserveSourceIds = &preserveSourceIds
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) DocumentId(documentId string) ApiUploadFileCreateElementRequest {
+	r.documentId = &documentId
+	return r
+}
+
 func (r ApiUploadFileCreateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileCreateElementExecute(r)
 }
@@ -814,6 +826,12 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.upgradeFeatureScriptVersion != nil {
 		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
 	}
+	if r.preserveSourceIds != nil {
+		localVarFormParams.Add("preserveSourceIds", parameterToString(*r.preserveSourceIds, ""))
+	}
+	if r.documentId != nil {
+		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -896,6 +914,8 @@ type ApiUploadFileUpdateElementRequest struct {
 	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
 	upgradeFeatureScriptVersion          *bool
+	preserveSourceIds                    *bool
+	documentId                           *string
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -1069,6 +1089,16 @@ func (r ApiUploadFileUpdateElementRequest) UpgradeFeatureScriptVersion(upgradeFe
 	return r
 }
 
+func (r ApiUploadFileUpdateElementRequest) PreserveSourceIds(preserveSourceIds bool) ApiUploadFileUpdateElementRequest {
+	r.preserveSourceIds = &preserveSourceIds
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) DocumentId(documentId string) ApiUploadFileUpdateElementRequest {
+	r.documentId = &documentId
+	return r
+}
+
 func (r ApiUploadFileUpdateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileUpdateElementExecute(r)
 }
@@ -1231,6 +1261,12 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.upgradeFeatureScriptVersion != nil {
 		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
+	}
+	if r.preserveSourceIds != nil {
+		localVarFormParams.Add("preserveSourceIds", parameterToString(*r.preserveSourceIds, ""))
+	}
+	if r.documentId != nil {
+		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

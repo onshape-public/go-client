@@ -1675,6 +1675,9 @@ const (
 	GBTErrorStringEnumSheetMetalBendReliefCone                                    GBTErrorStringEnum = "SHEET_METAL_BEND_RELIEF_CONE"
 	GBTErrorStringEnumSheetMetalActiveModelCannotOffset                           GBTErrorStringEnum = "SHEET_METAL_ACTIVE_MODEL_CANNOT_OFFSET"
 	GBTErrorStringEnumTrimToMultiFailedForUptoBody                                GBTErrorStringEnum = "TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY"
+	GBTErrorStringEnumLoftConnectionEdgeParameterMismatch                         GBTErrorStringEnum = "LOFT_CONNECTION_EDGE_PARAMETER_MISMATCH"
+	GBTErrorStringEnumSheetMetalNoConeApex                                        GBTErrorStringEnum = "SHEET_METAL_NO_CONE_APEX"
+	GBTErrorStringEnumSimulationMaterialPropertyOutsideRequiredBounds             GBTErrorStringEnum = "SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3335,6 +3338,9 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SHEET_METAL_BEND_RELIEF_CONE",
 	"SHEET_METAL_ACTIVE_MODEL_CANNOT_OFFSET",
 	"TRIM_TO_MULTI_FAILED_FOR_UPTO_BODY",
+	"LOFT_CONNECTION_EDGE_PARAMETER_MISMATCH",
+	"SHEET_METAL_NO_CONE_APEX",
+	"SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS",
 	"UNKNOWN",
 }
 

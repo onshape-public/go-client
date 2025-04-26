@@ -55,9 +55,14 @@ func (r ApiExportPSRequest) Execute() (*http.Response, error) {
 }
 
 /*
-ExportPS Export a part as a Parasolid file.
+ExportPS Synchronously export a part to a Parasolid file.
 
-Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
+Creates a synchronous export of the part (with limited tessellation settings) to a Parasolid file.
+* Returns a 307 redirect from which to download the exported file.
+* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control.
+
+See [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -248,9 +253,14 @@ func (r ApiExportPartGltfRequest) Execute() (*GlTF, *http.Response, error) {
 }
 
 /*
-ExportPartGltf Export a part as a glTF file.
+ExportPartGltf Synchronously export a part to a glTF file.
 
-Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
+Creates a synchronous export of the part (with limited tessellation settings) to a glTF file.
+* Returns a 307 redirect from which to download the exported file.
+* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control.
+
+See [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.
@@ -469,9 +479,14 @@ func (r ApiExportStlRequest) Execute() (map[string]interface{}, *http.Response, 
 }
 
 /*
-ExportStl Export a part as an STL file.
+ExportStl Synchronously export a part to an STL file.
 
-Returns a 307 redirect from which to download the exported file. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
+Creates a synchronous export of the part (with limited tessellation settings) to an STL file.
+* Returns a 307 redirect from which to download the exported file.
+* Export is much faster than asynchronous endpoints at the expense of limited control on tessellation settings.
+* Use the [PartStudio/createPartStudioTranslation](#/PartStudio/createPartStudioTranslation) asynchronous export for greater control.
+
+See [API Guide: Synchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#synchronous-exports) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did

@@ -6,6 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AcceptOwnerTransfer** | Pointer to **bool** |  | [optional] 
 **CompanyName** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
+**ConnectionName** | Pointer to **string** |  | [optional] 
+**ConnectionUser** | Pointer to **bool** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **EnterpriseMember** | Pointer to **bool** |  | [optional] 
 **EntryId** | Pointer to **string** |  | [optional] 
@@ -88,6 +91,81 @@ SetCompanyName sets CompanyName field to given value.
 `func (o *BTAclEntryInfo) HasCompanyName() bool`
 
 HasCompanyName returns a boolean if a field has been set.
+
+### GetConnectionId
+
+`func (o *BTAclEntryInfo) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *BTAclEntryInfo) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *BTAclEntryInfo) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *BTAclEntryInfo) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
+
+### GetConnectionName
+
+`func (o *BTAclEntryInfo) GetConnectionName() string`
+
+GetConnectionName returns the ConnectionName field if non-nil, zero value otherwise.
+
+### GetConnectionNameOk
+
+`func (o *BTAclEntryInfo) GetConnectionNameOk() (*string, bool)`
+
+GetConnectionNameOk returns a tuple with the ConnectionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionName
+
+`func (o *BTAclEntryInfo) SetConnectionName(v string)`
+
+SetConnectionName sets ConnectionName field to given value.
+
+### HasConnectionName
+
+`func (o *BTAclEntryInfo) HasConnectionName() bool`
+
+HasConnectionName returns a boolean if a field has been set.
+
+### GetConnectionUser
+
+`func (o *BTAclEntryInfo) GetConnectionUser() bool`
+
+GetConnectionUser returns the ConnectionUser field if non-nil, zero value otherwise.
+
+### GetConnectionUserOk
+
+`func (o *BTAclEntryInfo) GetConnectionUserOk() (*bool, bool)`
+
+GetConnectionUserOk returns a tuple with the ConnectionUser field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionUser
+
+`func (o *BTAclEntryInfo) SetConnectionUser(v bool)`
+
+SetConnectionUser sets ConnectionUser field to given value.
+
+### HasConnectionUser
+
+`func (o *BTAclEntryInfo) HasConnectionUser() bool`
+
+HasConnectionUser returns a boolean if a field has been set.
 
 ### GetEmail
 

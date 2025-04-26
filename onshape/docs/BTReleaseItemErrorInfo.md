@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **PendingTaskId** | Pointer to **string** |  | [optional] 
 **PendingTaskObjectId** | Pointer to **string** |  | [optional] 
 **PendingTaskType** | Pointer to **string** |  | [optional] 
+**RejectAllowed** | Pointer to **bool** |  | [optional] 
 **ReleaseId** | Pointer to **string** |  | [optional] 
 **Severity** | Pointer to **int32** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -209,6 +210,31 @@ SetPendingTaskType sets PendingTaskType field to given value.
 `func (o *BTReleaseItemErrorInfo) HasPendingTaskType() bool`
 
 HasPendingTaskType returns a boolean if a field has been set.
+
+### GetRejectAllowed
+
+`func (o *BTReleaseItemErrorInfo) GetRejectAllowed() bool`
+
+GetRejectAllowed returns the RejectAllowed field if non-nil, zero value otherwise.
+
+### GetRejectAllowedOk
+
+`func (o *BTReleaseItemErrorInfo) GetRejectAllowedOk() (*bool, bool)`
+
+GetRejectAllowedOk returns a tuple with the RejectAllowed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRejectAllowed
+
+`func (o *BTReleaseItemErrorInfo) SetRejectAllowed(v bool)`
+
+SetRejectAllowed sets RejectAllowed field to given value.
+
+### HasRejectAllowed
+
+`func (o *BTReleaseItemErrorInfo) HasRejectAllowed() bool`
+
+HasRejectAllowed returns a boolean if a field has been set.
 
 ### GetReleaseId
 

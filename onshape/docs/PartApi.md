@@ -4,9 +4,9 @@ All URIs are relative to *https://cad.onshape.com/api/v10*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExportPS**](PartApi.md#ExportPS) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Export a part as a Parasolid file.
-[**ExportPartGltf**](PartApi.md#ExportPartGltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Export a part as a glTF file.
-[**ExportStl**](PartApi.md#ExportStl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Export a part as an STL file.
+[**ExportPS**](PartApi.md#ExportPS) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/parasolid | Synchronously export a part to a Parasolid file.
+[**ExportPartGltf**](PartApi.md#ExportPartGltf) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/gltf | Synchronously export a part to a glTF file.
+[**ExportStl**](PartApi.md#ExportStl) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/stl | Synchronously export a part to an STL file.
 [**GetBendTable**](PartApi.md#GetBendTable) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/sheetmetal/bendtable | Get a part&#39;s sheet metal bend table.
 [**GetBodyDetails**](PartApi.md#GetBodyDetails) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/bodydetails | Get a part&#39;s body details.
 [**GetBoundingBoxes**](PartApi.md#GetBoundingBoxes) | **Get** /parts/d/{did}/{wvm}/{wvmid}/e/{eid}/partid/{partid}/boundingboxes | Get a part&#39;s bounding box details.
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 > ExportPS(ctx, did, wvm, wvmid, eid, partid).Version(version).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Export a part as a Parasolid file.
+Synchronously export a part to a Parasolid file.
 
 
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 > GlTF ExportPartGltf(ctx, did, wvm, wvmid, eid, partid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).PrecomputedLevelOfDetail(precomputedLevelOfDetail).OutputSeparateFaceNodes(outputSeparateFaceNodes).FaceId(faceId).OutputFaceAppearances(outputFaceAppearances).MaxFacetWidth(maxFacetWidth).Execute()
 
-Export a part as a glTF file.
+Synchronously export a part to a glTF file.
 
 
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} ExportStl(ctx, did, wvm, wvmid, eid, partid).Mode(mode).Grouping(grouping).Scale(scale).Units(units).AngleTolerance(angleTolerance).ChordTolerance(chordTolerance).MaxFacetWidth(maxFacetWidth).MinFacetWidth(minFacetWidth).Configuration(configuration).LinkDocumentId(linkDocumentId).Execute()
 
-Export a part as an STL file.
+Synchronously export a part to an STL file.
 
 
 

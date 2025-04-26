@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Description** | Pointer to **string** | Operation description | [optional] 
 **FormatVersion** | **string** | Version of drawing entity format. | 
 **MessageName** | **string** | Type of drawing modification operation: &#x60;onshapeCreateAnnotations&#x60; | &#x60;onshapeEditAnnotations&#x60; | 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTBDrawingOperationParamsWithDefaults instantiates a new BTBDrawingOperationParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetDescription
+
+`func (o *BTBDrawingOperationParams) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *BTBDrawingOperationParams) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *BTBDrawingOperationParams) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *BTBDrawingOperationParams) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
 
 ### GetFormatVersion
 
