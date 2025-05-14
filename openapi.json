@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.197.55524-c7a66a65ca18",
+    "version" : "1.197.55669-ffb4438fe2ea",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green.svg",
       "backgroundColor" : "#ffffff",
@@ -37802,6 +37802,9 @@
       "BTMicroversionId-366" : {
         "type" : "object",
         "properties" : {
+          "ambiguous" : {
+            "type" : "boolean"
+          },
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
