@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Ambiguous** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
 **TheId** | Pointer to **string** |  | [optional] 
@@ -26,6 +27,31 @@ will change when the set of required properties is changed
 NewBTMicroversionId366WithDefaults instantiates a new BTMicroversionId366 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAmbiguous
+
+`func (o *BTMicroversionId366) GetAmbiguous() bool`
+
+GetAmbiguous returns the Ambiguous field if non-nil, zero value otherwise.
+
+### GetAmbiguousOk
+
+`func (o *BTMicroversionId366) GetAmbiguousOk() (*bool, bool)`
+
+GetAmbiguousOk returns a tuple with the Ambiguous field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAmbiguous
+
+`func (o *BTMicroversionId366) SetAmbiguous(v bool)`
+
+SetAmbiguous sets Ambiguous field to given value.
+
+### HasAmbiguous
+
+`func (o *BTMicroversionId366) HasAmbiguous() bool`
+
+HasAmbiguous returns a boolean if a field has been set.
 
 ### GetBtType
 

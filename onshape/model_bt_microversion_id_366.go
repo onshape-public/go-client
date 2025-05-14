@@ -16,6 +16,7 @@ import (
 
 // BTMicroversionId366 struct for BTMicroversionId366
 type BTMicroversionId366 struct {
+	Ambiguous *bool `json:"ambiguous,omitempty"`
 	// Type of JSON object.
 	BtType  *string `json:"btType,omitempty"`
 	Deleted *bool   `json:"deleted,omitempty"`
@@ -37,6 +38,38 @@ func NewBTMicroversionId366() *BTMicroversionId366 {
 func NewBTMicroversionId366WithDefaults() *BTMicroversionId366 {
 	this := BTMicroversionId366{}
 	return &this
+}
+
+// GetAmbiguous returns the Ambiguous field value if set, zero value otherwise.
+func (o *BTMicroversionId366) GetAmbiguous() bool {
+	if o == nil || o.Ambiguous == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Ambiguous
+}
+
+// GetAmbiguousOk returns a tuple with the Ambiguous field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMicroversionId366) GetAmbiguousOk() (*bool, bool) {
+	if o == nil || o.Ambiguous == nil {
+		return nil, false
+	}
+	return o.Ambiguous, true
+}
+
+// HasAmbiguous returns a boolean if a field has been set.
+func (o *BTMicroversionId366) HasAmbiguous() bool {
+	if o != nil && o.Ambiguous != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAmbiguous gets a reference to the given bool and assigns it to the Ambiguous field.
+func (o *BTMicroversionId366) SetAmbiguous(v bool) {
+	o.Ambiguous = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -137,6 +170,9 @@ func (o *BTMicroversionId366) SetTheId(v string) {
 
 func (o BTMicroversionId366) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Ambiguous != nil {
+		toSerialize["ambiguous"] = o.Ambiguous
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
