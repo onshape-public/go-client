@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 **AllowPublicDocumentsAccess** | Pointer to **bool** |  | [optional] 
 **ApproveReleases** | Pointer to **bool** |  | [optional] 
 **BranchLockPermissions** | Pointer to **bool** |  | [optional] 
-**CreateChangeOrders** | Pointer to **bool** |  | [optional] 
-**CreateChangeRequests** | Pointer to **bool** |  | [optional] 
 **CreateDocumentsInRoot** | Pointer to **bool** |  | [optional] 
 **CreateProject** | Pointer to **bool** |  | [optional] 
 **CreateReleases** | Pointer to **bool** |  | [optional] 
@@ -26,8 +24,6 @@ Name | Type | Description | Notes
 **ManageWorkflows** | Pointer to **bool** |  | [optional] 
 **ShareForAnonymousAccess** | Pointer to **bool** |  | [optional] 
 **TransferDocumentsFromEnterprise** | Pointer to **bool** |  | [optional] 
-**ViewChangeOrders** | Pointer to **bool** |  | [optional] 
-**ViewChangeRequests** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -197,56 +193,6 @@ SetBranchLockPermissions sets BranchLockPermissions field to given value.
 `func (o *GlobalPermissionInfo) HasBranchLockPermissions() bool`
 
 HasBranchLockPermissions returns a boolean if a field has been set.
-
-### GetCreateChangeOrders
-
-`func (o *GlobalPermissionInfo) GetCreateChangeOrders() bool`
-
-GetCreateChangeOrders returns the CreateChangeOrders field if non-nil, zero value otherwise.
-
-### GetCreateChangeOrdersOk
-
-`func (o *GlobalPermissionInfo) GetCreateChangeOrdersOk() (*bool, bool)`
-
-GetCreateChangeOrdersOk returns a tuple with the CreateChangeOrders field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreateChangeOrders
-
-`func (o *GlobalPermissionInfo) SetCreateChangeOrders(v bool)`
-
-SetCreateChangeOrders sets CreateChangeOrders field to given value.
-
-### HasCreateChangeOrders
-
-`func (o *GlobalPermissionInfo) HasCreateChangeOrders() bool`
-
-HasCreateChangeOrders returns a boolean if a field has been set.
-
-### GetCreateChangeRequests
-
-`func (o *GlobalPermissionInfo) GetCreateChangeRequests() bool`
-
-GetCreateChangeRequests returns the CreateChangeRequests field if non-nil, zero value otherwise.
-
-### GetCreateChangeRequestsOk
-
-`func (o *GlobalPermissionInfo) GetCreateChangeRequestsOk() (*bool, bool)`
-
-GetCreateChangeRequestsOk returns a tuple with the CreateChangeRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCreateChangeRequests
-
-`func (o *GlobalPermissionInfo) SetCreateChangeRequests(v bool)`
-
-SetCreateChangeRequests sets CreateChangeRequests field to given value.
-
-### HasCreateChangeRequests
-
-`func (o *GlobalPermissionInfo) HasCreateChangeRequests() bool`
-
-HasCreateChangeRequests returns a boolean if a field has been set.
 
 ### GetCreateDocumentsInRoot
 
@@ -597,56 +543,6 @@ SetTransferDocumentsFromEnterprise sets TransferDocumentsFromEnterprise field to
 `func (o *GlobalPermissionInfo) HasTransferDocumentsFromEnterprise() bool`
 
 HasTransferDocumentsFromEnterprise returns a boolean if a field has been set.
-
-### GetViewChangeOrders
-
-`func (o *GlobalPermissionInfo) GetViewChangeOrders() bool`
-
-GetViewChangeOrders returns the ViewChangeOrders field if non-nil, zero value otherwise.
-
-### GetViewChangeOrdersOk
-
-`func (o *GlobalPermissionInfo) GetViewChangeOrdersOk() (*bool, bool)`
-
-GetViewChangeOrdersOk returns a tuple with the ViewChangeOrders field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetViewChangeOrders
-
-`func (o *GlobalPermissionInfo) SetViewChangeOrders(v bool)`
-
-SetViewChangeOrders sets ViewChangeOrders field to given value.
-
-### HasViewChangeOrders
-
-`func (o *GlobalPermissionInfo) HasViewChangeOrders() bool`
-
-HasViewChangeOrders returns a boolean if a field has been set.
-
-### GetViewChangeRequests
-
-`func (o *GlobalPermissionInfo) GetViewChangeRequests() bool`
-
-GetViewChangeRequests returns the ViewChangeRequests field if non-nil, zero value otherwise.
-
-### GetViewChangeRequestsOk
-
-`func (o *GlobalPermissionInfo) GetViewChangeRequestsOk() (*bool, bool)`
-
-GetViewChangeRequestsOk returns a tuple with the ViewChangeRequests field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetViewChangeRequests
-
-`func (o *GlobalPermissionInfo) SetViewChangeRequests(v bool)`
-
-SetViewChangeRequests sets ViewChangeRequests field to given value.
-
-### HasViewChangeRequests
-
-`func (o *GlobalPermissionInfo) HasViewChangeRequests() bool`
-
-HasViewChangeRequests returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
