@@ -45,7 +45,6 @@ type BTTaskInfo struct {
 	State                        *string                  `json:"state,omitempty"`
 	Status                       *int32                   `json:"status,omitempty"`
 	TaskItems                    []BTTaskItemInfo         `json:"taskItems,omitempty"`
-	TaskTemplate                 *int32                   `json:"taskTemplate,omitempty"`
 	TaskType                     *string                  `json:"taskType,omitempty"`
 	Teams                        []BTTaskTeamSummaryInfo  `json:"teams,omitempty"`
 	Thumbnail                    *BTThumbnailInfo         `json:"thumbnail,omitempty"`
@@ -908,38 +907,6 @@ func (o *BTTaskInfo) SetTaskItems(v []BTTaskItemInfo) {
 	o.TaskItems = v
 }
 
-// GetTaskTemplate returns the TaskTemplate field value if set, zero value otherwise.
-func (o *BTTaskInfo) GetTaskTemplate() int32 {
-	if o == nil || o.TaskTemplate == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TaskTemplate
-}
-
-// GetTaskTemplateOk returns a tuple with the TaskTemplate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTTaskInfo) GetTaskTemplateOk() (*int32, bool) {
-	if o == nil || o.TaskTemplate == nil {
-		return nil, false
-	}
-	return o.TaskTemplate, true
-}
-
-// HasTaskTemplate returns a boolean if a field has been set.
-func (o *BTTaskInfo) HasTaskTemplate() bool {
-	if o != nil && o.TaskTemplate != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTaskTemplate gets a reference to the given int32 and assigns it to the TaskTemplate field.
-func (o *BTTaskInfo) SetTaskTemplate(v int32) {
-	o.TaskTemplate = &v
-}
-
 // GetTaskType returns the TaskType field value if set, zero value otherwise.
 func (o *BTTaskInfo) GetTaskType() string {
 	if o == nil || o.TaskType == nil {
@@ -1339,9 +1306,6 @@ func (o BTTaskInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TaskItems != nil {
 		toSerialize["taskItems"] = o.TaskItems
-	}
-	if o.TaskTemplate != nil {
-		toSerialize["taskTemplate"] = o.TaskTemplate
 	}
 	if o.TaskType != nil {
 		toSerialize["taskType"] = o.TaskType

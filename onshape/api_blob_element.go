@@ -492,6 +492,7 @@ type ApiUploadFileCreateElementRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	repointAppElementVersionRefs         *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -669,6 +670,12 @@ func (r ApiUploadFileCreateElementRequest) DocumentId(documentId string) ApiUplo
 	return r
 }
 
+// Re-point the version references in APP elements to initial version in the new document
+func (r ApiUploadFileCreateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileCreateElementRequest {
+	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
+	return r
+}
+
 func (r ApiUploadFileCreateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileCreateElementExecute(r)
 }
@@ -832,6 +839,9 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
 	}
+	if r.repointAppElementVersionRefs != nil {
+		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -916,6 +926,7 @@ type ApiUploadFileUpdateElementRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	repointAppElementVersionRefs         *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -1099,6 +1110,12 @@ func (r ApiUploadFileUpdateElementRequest) DocumentId(documentId string) ApiUplo
 	return r
 }
 
+// Re-point the version references in APP elements to initial version in the new document
+func (r ApiUploadFileUpdateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileUpdateElementRequest {
+	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
+	return r
+}
+
 func (r ApiUploadFileUpdateElementRequest) Execute() (*BTDocumentElementProcessingInfo, *http.Response, error) {
 	return r.ApiService.UploadFileUpdateElementExecute(r)
 }
@@ -1267,6 +1284,9 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
+	if r.repointAppElementVersionRefs != nil {
+		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

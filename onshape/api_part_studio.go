@@ -456,6 +456,141 @@ func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiCreatePartStudioExportStepRequest struct {
+	ctx                 context.Context
+	ApiService          *PartStudioApiService
+	did                 string
+	wv                  string
+	wvid                string
+	eid                 string
+	bTBStepExportParams *BTBStepExportParams
+}
+
+func (r ApiCreatePartStudioExportStepRequest) BTBStepExportParams(bTBStepExportParams BTBStepExportParams) ApiCreatePartStudioExportStepRequest {
+	r.bTBStepExportParams = &bTBStepExportParams
+	return r
+}
+
+func (r ApiCreatePartStudioExportStepRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreatePartStudioExportStepExecute(r)
+}
+
+/*
+CreatePartStudioExportStep Asynchronously export a Part Studio to STEP.
+
+Creates an asynchronous export of a Part Studio to STEP.
+* See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#asynchronous-exports) for more details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreatePartStudioExportStepRequest
+*/
+func (a *PartStudioApiService) CreatePartStudioExportStep(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreatePartStudioExportStepRequest {
+	return ApiCreatePartStudioExportStepRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *PartStudioApiService) CreatePartStudioExportStepExecute(r ApiCreatePartStudioExportStepRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartStudioApiService.CreatePartStudioExportStep")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/step"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBStepExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBStepExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBStepExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiCreatePartStudioTranslationRequest struct {
 	ctx                     context.Context
 	ApiService              *PartStudioApiService

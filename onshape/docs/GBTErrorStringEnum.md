@@ -3319,6 +3319,8 @@
 
 * `GBTErrorStringEnumSimulationMaterialPropertyOutsideRequiredBounds` (value: `"SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS"`)
 
+* `GBTErrorStringEnumFgsConnectionsAssemblyTooComplex` (value: `"FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

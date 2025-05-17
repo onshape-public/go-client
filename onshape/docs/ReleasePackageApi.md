@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateObsoletionPackage**](ReleasePackageApi.md#CreateObsoletionPackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion package to make an existing revision obsolete.
 [**CreateReleasePackage**](ReleasePackageApi.md#CreateReleasePackage) | **Post** /releasepackages/release/{wfid} | Create a new release package for one or more items.
-[**GetCompanyReleaseWorkflow**](ReleasePackageApi.md#GetCompanyReleaseWorkflow) | **Get** /releasepackages/companyreleaseworkflow | Get information about the release/obsoletion workflow for a company-owned document.
 [**GetReleasePackage**](ReleasePackageApi.md#GetReleasePackage) | **Get** /releasepackages/{rpid} | Get details about the specified release package.
 [**UpdateReleasePackage**](ReleasePackageApi.md#UpdateReleasePackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion package/item properties.
 
@@ -151,70 +150,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json;charset=UTF-8; qs=0.09
-- **Accept**: application/json;charset=UTF-8; qs=0.09
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetCompanyReleaseWorkflow
-
-> BTActiveWorkflowInfo GetCompanyReleaseWorkflow(ctx).DocumentId(documentId).Execute()
-
-Get information about the release/obsoletion workflow for a company-owned document.
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    documentId := "documentId_example" // string |  (optional)
-
-    apiConfiguration := openapiclient.NewAPIConfiguration()
-    apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.ReleasePackageApi.GetCompanyReleaseWorkflow(context.Background()).DocumentId(documentId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.GetCompanyReleaseWorkflow``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-    // response from `GetCompanyReleaseWorkflow`: BTActiveWorkflowInfo
-    fmt.Fprintf(os.Stdout, "Response from `ReleasePackageApi.GetCompanyReleaseWorkflow`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCompanyReleaseWorkflowRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **documentId** | **string** |  | 
-
-### Return type
-
-[**BTActiveWorkflowInfo**](BTActiveWorkflowInfo.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
 - **Accept**: application/json;charset=UTF-8; qs=0.09
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

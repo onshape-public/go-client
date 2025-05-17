@@ -16,40 +16,42 @@ import (
 
 // BTUserSettingsInfo struct for BTUserSettingsInfo
 type BTUserSettingsInfo struct {
-	AxisRotationLock                *bool                                  `json:"axisRotationLock,omitempty"`
-	CommonUnits                     *BTCommonUnitsInfo                     `json:"commonUnits,omitempty"`
-	CustomColors                    []string                               `json:"customColors,omitempty"`
-	DefaultUnits                    *BTDefaultUnitsInfo                    `json:"defaultUnits,omitempty"`
-	DisplayAssemblyProperties       *bool                                  `json:"displayAssemblyProperties,omitempty"`
-	DrawingBackgroundId             *int32                                 `json:"drawingBackgroundId,omitempty"`
-	EnforceApplicationAcl           *bool                                  `json:"enforceApplicationAcl,omitempty"`
-	ExportDrawingOptions            *string                                `json:"exportDrawingOptions,omitempty"`
-	ExportSolidOptions              *string                                `json:"exportSolidOptions,omitempty"`
-	GraphicsRenderMode              *string                                `json:"graphicsRenderMode,omitempty"`
-	GraphicsSmoothEdge              *string                                `json:"graphicsSmoothEdge,omitempty"`
-	HighlightLaminarEdges           *string                                `json:"highlightLaminarEdges,omitempty"`
-	Id                              *string                                `json:"id,omitempty"`
-	ImportOptions                   *string                                `json:"importOptions,omitempty"`
-	IsolateHideTransparent          *string                                `json:"isolateHideTransparent,omitempty"`
-	IsolateTranslucentMode          *string                                `json:"isolateTranslucentMode,omitempty"`
-	Locale                          *string                                `json:"locale,omitempty"`
-	MakeTransparentTranslucentMode  *string                                `json:"makeTransparentTranslucentMode,omitempty"`
-	MaterialLibrarySettings         *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
-	MiniToolbarSettings             *string                                `json:"miniToolbarSettings,omitempty"`
-	MouseActions                    *string                                `json:"mouseActions,omitempty"`
-	PerspectiveModeOn               *string                                `json:"perspectiveModeOn,omitempty"`
-	PreviousSketchFont              *string                                `json:"previousSketchFont,omitempty"`
-	ReverseScrollWheelZoomDirection *bool                                  `json:"reverseScrollWheelZoomDirection,omitempty"`
-	SelectItemViewStateInfos        []BTSelectItemViewStateInfo            `json:"selectItemViewStateInfos,omitempty"`
-	StartupPage                     *int32                                 `json:"startupPage,omitempty"`
-	SubstituteApprovers             []BTSubstituteApproverInfo             `json:"substituteApprovers,omitempty"`
-	Theme                           *int32                                 `json:"theme,omitempty"`
-	UnitsDisplayPrecision           *map[string]int32                      `json:"unitsDisplayPrecision,omitempty"`
-	UnitsMaximumDisplayPrecision    *BTUnitsMaximumDisplayPrecisionInfo    `json:"unitsMaximumDisplayPrecision,omitempty"`
-	Use24HourTime                   *bool                                  `json:"use24HourTime,omitempty"`
-	UseDecimalComma                 *bool                                  `json:"useDecimalComma,omitempty"`
-	ViewManipulationMouseKeyMapping *BTViewManipulationMouseKeyMappingInfo `json:"viewManipulationMouseKeyMapping,omitempty"`
-	ViewMappingId                   *int32                                 `json:"viewMappingId,omitempty"`
+	AxisRotationLock                     *bool                                  `json:"axisRotationLock,omitempty"`
+	CommonUnits                          *BTCommonUnitsInfo                     `json:"commonUnits,omitempty"`
+	CustomColors                         []string                               `json:"customColors,omitempty"`
+	DefaultUnits                         *BTDefaultUnitsInfo                    `json:"defaultUnits,omitempty"`
+	DisplayAssemblyProperties            *bool                                  `json:"displayAssemblyProperties,omitempty"`
+	DrawingBackgroundId                  *int32                                 `json:"drawingBackgroundId,omitempty"`
+	EnforceApplicationAcl                *bool                                  `json:"enforceApplicationAcl,omitempty"`
+	ExportDrawingOptions                 *string                                `json:"exportDrawingOptions,omitempty"`
+	ExportSolidOptions                   *string                                `json:"exportSolidOptions,omitempty"`
+	GraphicsRenderMode                   *string                                `json:"graphicsRenderMode,omitempty"`
+	GraphicsSmoothEdge                   *string                                `json:"graphicsSmoothEdge,omitempty"`
+	HighlightLaminarEdges                *string                                `json:"highlightLaminarEdges,omitempty"`
+	Id                                   *string                                `json:"id,omitempty"`
+	ImportOptions                        *string                                `json:"importOptions,omitempty"`
+	IsolateEnableSelectionDesire         *bool                                  `json:"isolateEnableSelectionDesire,omitempty"`
+	IsolateHideTransparent               *string                                `json:"isolateHideTransparent,omitempty"`
+	IsolateOpacitySliderValue            *int32                                 `json:"isolateOpacitySliderValue,omitempty"`
+	Locale                               *string                                `json:"locale,omitempty"`
+	MakeTransparentEnableSelectionDesire *bool                                  `json:"makeTransparentEnableSelectionDesire,omitempty"`
+	MakeTransparentOpacitySliderValue    *int32                                 `json:"makeTransparentOpacitySliderValue,omitempty"`
+	MaterialLibrarySettings              *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
+	MiniToolbarSettings                  *string                                `json:"miniToolbarSettings,omitempty"`
+	MouseActions                         *string                                `json:"mouseActions,omitempty"`
+	PerspectiveModeOn                    *string                                `json:"perspectiveModeOn,omitempty"`
+	PreviousSketchFont                   *string                                `json:"previousSketchFont,omitempty"`
+	ReverseScrollWheelZoomDirection      *bool                                  `json:"reverseScrollWheelZoomDirection,omitempty"`
+	SelectItemViewStateInfos             []BTSelectItemViewStateInfo            `json:"selectItemViewStateInfos,omitempty"`
+	StartupPage                          *int32                                 `json:"startupPage,omitempty"`
+	SubstituteApprovers                  []BTSubstituteApproverInfo             `json:"substituteApprovers,omitempty"`
+	Theme                                *int32                                 `json:"theme,omitempty"`
+	UnitsDisplayPrecision                *map[string]int32                      `json:"unitsDisplayPrecision,omitempty"`
+	UnitsMaximumDisplayPrecision         *BTUnitsMaximumDisplayPrecisionInfo    `json:"unitsMaximumDisplayPrecision,omitempty"`
+	Use24HourTime                        *bool                                  `json:"use24HourTime,omitempty"`
+	UseDecimalComma                      *bool                                  `json:"useDecimalComma,omitempty"`
+	ViewManipulationMouseKeyMapping      *BTViewManipulationMouseKeyMappingInfo `json:"viewManipulationMouseKeyMapping,omitempty"`
+	ViewMappingId                        *int32                                 `json:"viewMappingId,omitempty"`
 }
 
 // NewBTUserSettingsInfo instantiates a new BTUserSettingsInfo object
@@ -517,6 +519,38 @@ func (o *BTUserSettingsInfo) SetImportOptions(v string) {
 	o.ImportOptions = &v
 }
 
+// GetIsolateEnableSelectionDesire returns the IsolateEnableSelectionDesire field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetIsolateEnableSelectionDesire() bool {
+	if o == nil || o.IsolateEnableSelectionDesire == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsolateEnableSelectionDesire
+}
+
+// GetIsolateEnableSelectionDesireOk returns a tuple with the IsolateEnableSelectionDesire field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetIsolateEnableSelectionDesireOk() (*bool, bool) {
+	if o == nil || o.IsolateEnableSelectionDesire == nil {
+		return nil, false
+	}
+	return o.IsolateEnableSelectionDesire, true
+}
+
+// HasIsolateEnableSelectionDesire returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasIsolateEnableSelectionDesire() bool {
+	if o != nil && o.IsolateEnableSelectionDesire != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsolateEnableSelectionDesire gets a reference to the given bool and assigns it to the IsolateEnableSelectionDesire field.
+func (o *BTUserSettingsInfo) SetIsolateEnableSelectionDesire(v bool) {
+	o.IsolateEnableSelectionDesire = &v
+}
+
 // GetIsolateHideTransparent returns the IsolateHideTransparent field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetIsolateHideTransparent() string {
 	if o == nil || o.IsolateHideTransparent == nil {
@@ -549,36 +583,36 @@ func (o *BTUserSettingsInfo) SetIsolateHideTransparent(v string) {
 	o.IsolateHideTransparent = &v
 }
 
-// GetIsolateTranslucentMode returns the IsolateTranslucentMode field value if set, zero value otherwise.
-func (o *BTUserSettingsInfo) GetIsolateTranslucentMode() string {
-	if o == nil || o.IsolateTranslucentMode == nil {
-		var ret string
+// GetIsolateOpacitySliderValue returns the IsolateOpacitySliderValue field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValue() int32 {
+	if o == nil || o.IsolateOpacitySliderValue == nil {
+		var ret int32
 		return ret
 	}
-	return *o.IsolateTranslucentMode
+	return *o.IsolateOpacitySliderValue
 }
 
-// GetIsolateTranslucentModeOk returns a tuple with the IsolateTranslucentMode field value if set, nil otherwise
+// GetIsolateOpacitySliderValueOk returns a tuple with the IsolateOpacitySliderValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserSettingsInfo) GetIsolateTranslucentModeOk() (*string, bool) {
-	if o == nil || o.IsolateTranslucentMode == nil {
+func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValueOk() (*int32, bool) {
+	if o == nil || o.IsolateOpacitySliderValue == nil {
 		return nil, false
 	}
-	return o.IsolateTranslucentMode, true
+	return o.IsolateOpacitySliderValue, true
 }
 
-// HasIsolateTranslucentMode returns a boolean if a field has been set.
-func (o *BTUserSettingsInfo) HasIsolateTranslucentMode() bool {
-	if o != nil && o.IsolateTranslucentMode != nil {
+// HasIsolateOpacitySliderValue returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasIsolateOpacitySliderValue() bool {
+	if o != nil && o.IsolateOpacitySliderValue != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetIsolateTranslucentMode gets a reference to the given string and assigns it to the IsolateTranslucentMode field.
-func (o *BTUserSettingsInfo) SetIsolateTranslucentMode(v string) {
-	o.IsolateTranslucentMode = &v
+// SetIsolateOpacitySliderValue gets a reference to the given int32 and assigns it to the IsolateOpacitySliderValue field.
+func (o *BTUserSettingsInfo) SetIsolateOpacitySliderValue(v int32) {
+	o.IsolateOpacitySliderValue = &v
 }
 
 // GetLocale returns the Locale field value if set, zero value otherwise.
@@ -613,36 +647,68 @@ func (o *BTUserSettingsInfo) SetLocale(v string) {
 	o.Locale = &v
 }
 
-// GetMakeTransparentTranslucentMode returns the MakeTransparentTranslucentMode field value if set, zero value otherwise.
-func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentMode() string {
-	if o == nil || o.MakeTransparentTranslucentMode == nil {
-		var ret string
+// GetMakeTransparentEnableSelectionDesire returns the MakeTransparentEnableSelectionDesire field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetMakeTransparentEnableSelectionDesire() bool {
+	if o == nil || o.MakeTransparentEnableSelectionDesire == nil {
+		var ret bool
 		return ret
 	}
-	return *o.MakeTransparentTranslucentMode
+	return *o.MakeTransparentEnableSelectionDesire
 }
 
-// GetMakeTransparentTranslucentModeOk returns a tuple with the MakeTransparentTranslucentMode field value if set, nil otherwise
+// GetMakeTransparentEnableSelectionDesireOk returns a tuple with the MakeTransparentEnableSelectionDesire field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentModeOk() (*string, bool) {
-	if o == nil || o.MakeTransparentTranslucentMode == nil {
+func (o *BTUserSettingsInfo) GetMakeTransparentEnableSelectionDesireOk() (*bool, bool) {
+	if o == nil || o.MakeTransparentEnableSelectionDesire == nil {
 		return nil, false
 	}
-	return o.MakeTransparentTranslucentMode, true
+	return o.MakeTransparentEnableSelectionDesire, true
 }
 
-// HasMakeTransparentTranslucentMode returns a boolean if a field has been set.
-func (o *BTUserSettingsInfo) HasMakeTransparentTranslucentMode() bool {
-	if o != nil && o.MakeTransparentTranslucentMode != nil {
+// HasMakeTransparentEnableSelectionDesire returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasMakeTransparentEnableSelectionDesire() bool {
+	if o != nil && o.MakeTransparentEnableSelectionDesire != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMakeTransparentTranslucentMode gets a reference to the given string and assigns it to the MakeTransparentTranslucentMode field.
-func (o *BTUserSettingsInfo) SetMakeTransparentTranslucentMode(v string) {
-	o.MakeTransparentTranslucentMode = &v
+// SetMakeTransparentEnableSelectionDesire gets a reference to the given bool and assigns it to the MakeTransparentEnableSelectionDesire field.
+func (o *BTUserSettingsInfo) SetMakeTransparentEnableSelectionDesire(v bool) {
+	o.MakeTransparentEnableSelectionDesire = &v
+}
+
+// GetMakeTransparentOpacitySliderValue returns the MakeTransparentOpacitySliderValue field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValue() int32 {
+	if o == nil || o.MakeTransparentOpacitySliderValue == nil {
+		var ret int32
+		return ret
+	}
+	return *o.MakeTransparentOpacitySliderValue
+}
+
+// GetMakeTransparentOpacitySliderValueOk returns a tuple with the MakeTransparentOpacitySliderValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValueOk() (*int32, bool) {
+	if o == nil || o.MakeTransparentOpacitySliderValue == nil {
+		return nil, false
+	}
+	return o.MakeTransparentOpacitySliderValue, true
+}
+
+// HasMakeTransparentOpacitySliderValue returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasMakeTransparentOpacitySliderValue() bool {
+	if o != nil && o.MakeTransparentOpacitySliderValue != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMakeTransparentOpacitySliderValue gets a reference to the given int32 and assigns it to the MakeTransparentOpacitySliderValue field.
+func (o *BTUserSettingsInfo) SetMakeTransparentOpacitySliderValue(v int32) {
+	o.MakeTransparentOpacitySliderValue = &v
 }
 
 // GetMaterialLibrarySettings returns the MaterialLibrarySettings field value if set, zero value otherwise.
@@ -1201,17 +1267,23 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	if o.ImportOptions != nil {
 		toSerialize["importOptions"] = o.ImportOptions
 	}
+	if o.IsolateEnableSelectionDesire != nil {
+		toSerialize["isolateEnableSelectionDesire"] = o.IsolateEnableSelectionDesire
+	}
 	if o.IsolateHideTransparent != nil {
 		toSerialize["isolateHideTransparent"] = o.IsolateHideTransparent
 	}
-	if o.IsolateTranslucentMode != nil {
-		toSerialize["isolateTranslucentMode"] = o.IsolateTranslucentMode
+	if o.IsolateOpacitySliderValue != nil {
+		toSerialize["isolateOpacitySliderValue"] = o.IsolateOpacitySliderValue
 	}
 	if o.Locale != nil {
 		toSerialize["locale"] = o.Locale
 	}
-	if o.MakeTransparentTranslucentMode != nil {
-		toSerialize["makeTransparentTranslucentMode"] = o.MakeTransparentTranslucentMode
+	if o.MakeTransparentEnableSelectionDesire != nil {
+		toSerialize["makeTransparentEnableSelectionDesire"] = o.MakeTransparentEnableSelectionDesire
+	}
+	if o.MakeTransparentOpacitySliderValue != nil {
+		toSerialize["makeTransparentOpacitySliderValue"] = o.MakeTransparentOpacitySliderValue
 	}
 	if o.MaterialLibrarySettings != nil {
 		toSerialize["materialLibrarySettings"] = o.MaterialLibrarySettings

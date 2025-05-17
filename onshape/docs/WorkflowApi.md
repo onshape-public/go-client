@@ -36,7 +36,7 @@ func main() {
     cid := "cid_example" // string | The company or enterprise ID that owns the resource.
     objectTypes := []openapiclient.BTAPIWorkflowableType{openapiclient.BTAPIWorkflowableType("RELEASE")} // []BTAPIWorkflowableType | Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION (optional)
     states := []string{"Inner_example"} // []string | Optionally filter for specific workflow states like PENDING, RELEASED (optional)
-    limit := int32(56) // int32 | The number of items to return in a single API call (optional) (default to 20)
+    limit := int32(56) // int32 | The number of list entries to return in a single API call. (optional) (default to 20)
     modifiedAfter := time.Now() // JSONTime | The earliest modification date of workflowable object to find. (optional) (default to "2000-01-01T00:00Z")
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
  **objectTypes** | [**[]BTAPIWorkflowableType**](BTAPIWorkflowableType.md) | Optionally filter for specific workflowable types. Defaults to RELEASE and OBSOLETION | 
  **states** | **[]string** | Optionally filter for specific workflow states like PENDING, RELEASED | 
- **limit** | **int32** | The number of items to return in a single API call | [default to 20]
+ **limit** | **int32** | The number of list entries to return in a single API call. | [default to 20]
  **modifiedAfter** | **JSONTime** | The earliest modification date of workflowable object to find. | [default to &quot;2000-01-01T00:00Z&quot;]
 
 ### Return type
