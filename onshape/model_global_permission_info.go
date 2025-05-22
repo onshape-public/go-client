@@ -22,8 +22,6 @@ type GlobalPermissionInfo struct {
 	AllowPublicDocumentsAccess      *bool `json:"allowPublicDocumentsAccess,omitempty"`
 	ApproveReleases                 *bool `json:"approveReleases,omitempty"`
 	BranchLockPermissions           *bool `json:"branchLockPermissions,omitempty"`
-	CreateChangeOrders              *bool `json:"createChangeOrders,omitempty"`
-	CreateChangeRequests            *bool `json:"createChangeRequests,omitempty"`
 	CreateDocumentsInRoot           *bool `json:"createDocumentsInRoot,omitempty"`
 	CreateProject                   *bool `json:"createProject,omitempty"`
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
@@ -38,8 +36,6 @@ type GlobalPermissionInfo struct {
 	ManageWorkflows                 *bool `json:"manageWorkflows,omitempty"`
 	ShareForAnonymousAccess         *bool `json:"shareForAnonymousAccess,omitempty"`
 	TransferDocumentsFromEnterprise *bool `json:"transferDocumentsFromEnterprise,omitempty"`
-	ViewChangeOrders                *bool `json:"viewChangeOrders,omitempty"`
-	ViewChangeRequests              *bool `json:"viewChangeRequests,omitempty"`
 }
 
 // NewGlobalPermissionInfo instantiates a new GlobalPermissionInfo object
@@ -249,70 +245,6 @@ func (o *GlobalPermissionInfo) HasBranchLockPermissions() bool {
 // SetBranchLockPermissions gets a reference to the given bool and assigns it to the BranchLockPermissions field.
 func (o *GlobalPermissionInfo) SetBranchLockPermissions(v bool) {
 	o.BranchLockPermissions = &v
-}
-
-// GetCreateChangeOrders returns the CreateChangeOrders field value if set, zero value otherwise.
-func (o *GlobalPermissionInfo) GetCreateChangeOrders() bool {
-	if o == nil || o.CreateChangeOrders == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CreateChangeOrders
-}
-
-// GetCreateChangeOrdersOk returns a tuple with the CreateChangeOrders field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalPermissionInfo) GetCreateChangeOrdersOk() (*bool, bool) {
-	if o == nil || o.CreateChangeOrders == nil {
-		return nil, false
-	}
-	return o.CreateChangeOrders, true
-}
-
-// HasCreateChangeOrders returns a boolean if a field has been set.
-func (o *GlobalPermissionInfo) HasCreateChangeOrders() bool {
-	if o != nil && o.CreateChangeOrders != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateChangeOrders gets a reference to the given bool and assigns it to the CreateChangeOrders field.
-func (o *GlobalPermissionInfo) SetCreateChangeOrders(v bool) {
-	o.CreateChangeOrders = &v
-}
-
-// GetCreateChangeRequests returns the CreateChangeRequests field value if set, zero value otherwise.
-func (o *GlobalPermissionInfo) GetCreateChangeRequests() bool {
-	if o == nil || o.CreateChangeRequests == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CreateChangeRequests
-}
-
-// GetCreateChangeRequestsOk returns a tuple with the CreateChangeRequests field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalPermissionInfo) GetCreateChangeRequestsOk() (*bool, bool) {
-	if o == nil || o.CreateChangeRequests == nil {
-		return nil, false
-	}
-	return o.CreateChangeRequests, true
-}
-
-// HasCreateChangeRequests returns a boolean if a field has been set.
-func (o *GlobalPermissionInfo) HasCreateChangeRequests() bool {
-	if o != nil && o.CreateChangeRequests != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCreateChangeRequests gets a reference to the given bool and assigns it to the CreateChangeRequests field.
-func (o *GlobalPermissionInfo) SetCreateChangeRequests(v bool) {
-	o.CreateChangeRequests = &v
 }
 
 // GetCreateDocumentsInRoot returns the CreateDocumentsInRoot field value if set, zero value otherwise.
@@ -763,70 +695,6 @@ func (o *GlobalPermissionInfo) SetTransferDocumentsFromEnterprise(v bool) {
 	o.TransferDocumentsFromEnterprise = &v
 }
 
-// GetViewChangeOrders returns the ViewChangeOrders field value if set, zero value otherwise.
-func (o *GlobalPermissionInfo) GetViewChangeOrders() bool {
-	if o == nil || o.ViewChangeOrders == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ViewChangeOrders
-}
-
-// GetViewChangeOrdersOk returns a tuple with the ViewChangeOrders field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalPermissionInfo) GetViewChangeOrdersOk() (*bool, bool) {
-	if o == nil || o.ViewChangeOrders == nil {
-		return nil, false
-	}
-	return o.ViewChangeOrders, true
-}
-
-// HasViewChangeOrders returns a boolean if a field has been set.
-func (o *GlobalPermissionInfo) HasViewChangeOrders() bool {
-	if o != nil && o.ViewChangeOrders != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetViewChangeOrders gets a reference to the given bool and assigns it to the ViewChangeOrders field.
-func (o *GlobalPermissionInfo) SetViewChangeOrders(v bool) {
-	o.ViewChangeOrders = &v
-}
-
-// GetViewChangeRequests returns the ViewChangeRequests field value if set, zero value otherwise.
-func (o *GlobalPermissionInfo) GetViewChangeRequests() bool {
-	if o == nil || o.ViewChangeRequests == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ViewChangeRequests
-}
-
-// GetViewChangeRequestsOk returns a tuple with the ViewChangeRequests field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GlobalPermissionInfo) GetViewChangeRequestsOk() (*bool, bool) {
-	if o == nil || o.ViewChangeRequests == nil {
-		return nil, false
-	}
-	return o.ViewChangeRequests, true
-}
-
-// HasViewChangeRequests returns a boolean if a field has been set.
-func (o *GlobalPermissionInfo) HasViewChangeRequests() bool {
-	if o != nil && o.ViewChangeRequests != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetViewChangeRequests gets a reference to the given bool and assigns it to the ViewChangeRequests field.
-func (o *GlobalPermissionInfo) SetViewChangeRequests(v bool) {
-	o.ViewChangeRequests = &v
-}
-
 func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AccessReports != nil {
@@ -846,12 +714,6 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.BranchLockPermissions != nil {
 		toSerialize["branchLockPermissions"] = o.BranchLockPermissions
-	}
-	if o.CreateChangeOrders != nil {
-		toSerialize["createChangeOrders"] = o.CreateChangeOrders
-	}
-	if o.CreateChangeRequests != nil {
-		toSerialize["createChangeRequests"] = o.CreateChangeRequests
 	}
 	if o.CreateDocumentsInRoot != nil {
 		toSerialize["createDocumentsInRoot"] = o.CreateDocumentsInRoot
@@ -894,12 +756,6 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TransferDocumentsFromEnterprise != nil {
 		toSerialize["transferDocumentsFromEnterprise"] = o.TransferDocumentsFromEnterprise
-	}
-	if o.ViewChangeOrders != nil {
-		toSerialize["viewChangeOrders"] = o.ViewChangeOrders
-	}
-	if o.ViewChangeRequests != nil {
-		toSerialize["viewChangeRequests"] = o.ViewChangeRequests
 	}
 	return json.Marshal(toSerialize)
 }

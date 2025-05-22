@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **ForumId** | Pointer to **string** |  | [optional] 
 **IntendedUse** | Pointer to **int32** |  | [optional] 
 **LastTrialInfo** | Pointer to [**BTTrialInfo**](BTTrialInfo.md) |  | [optional] 
+**NeedToResetClientCacheTime** | Pointer to **JSONTime** |  | [optional] 
 **NeedToShowNewWalkthrough** | Pointer to **bool** |  | [optional] 
 **OwnPurchase** | Pointer to [**BTPurchaseInfo**](BTPurchaseInfo.md) |  | [optional] 
 **PhoneNumber** | Pointer to **string** |  | [optional] 
@@ -584,6 +585,31 @@ SetLastTrialInfo sets LastTrialInfo field to given value.
 `func (o *BTUserInfoAllOf) HasLastTrialInfo() bool`
 
 HasLastTrialInfo returns a boolean if a field has been set.
+
+### GetNeedToResetClientCacheTime
+
+`func (o *BTUserInfoAllOf) GetNeedToResetClientCacheTime() JSONTime`
+
+GetNeedToResetClientCacheTime returns the NeedToResetClientCacheTime field if non-nil, zero value otherwise.
+
+### GetNeedToResetClientCacheTimeOk
+
+`func (o *BTUserInfoAllOf) GetNeedToResetClientCacheTimeOk() (*JSONTime, bool)`
+
+GetNeedToResetClientCacheTimeOk returns a tuple with the NeedToResetClientCacheTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNeedToResetClientCacheTime
+
+`func (o *BTUserInfoAllOf) SetNeedToResetClientCacheTime(v JSONTime)`
+
+SetNeedToResetClientCacheTime sets NeedToResetClientCacheTime field to given value.
+
+### HasNeedToResetClientCacheTime
+
+`func (o *BTUserInfoAllOf) HasNeedToResetClientCacheTime() bool`
+
+HasNeedToResetClientCacheTime returns a boolean if a field has been set.
 
 ### GetNeedToShowNewWalkthrough
 

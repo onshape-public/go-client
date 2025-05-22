@@ -29,6 +29,7 @@ type BTEntityEdge30 struct {
 	EdgeType                    *GBTEdgeType                   `json:"edgeType,omitempty"`
 	IsClosed                    *bool                          `json:"isClosed,omitempty"`
 	IsInternalEdge              *bool                          `json:"isInternalEdge,omitempty"`
+	MeshState                   *GBTMeshState                  `json:"meshState,omitempty"`
 	Points                      *BTImmutableFloatArray         `json:"points,omitempty"`
 }
 
@@ -433,6 +434,38 @@ func (o *BTEntityEdge30) SetIsInternalEdge(v bool) {
 	o.IsInternalEdge = &v
 }
 
+// GetMeshState returns the MeshState field value if set, zero value otherwise.
+func (o *BTEntityEdge30) GetMeshState() GBTMeshState {
+	if o == nil || o.MeshState == nil {
+		var ret GBTMeshState
+		return ret
+	}
+	return *o.MeshState
+}
+
+// GetMeshStateOk returns a tuple with the MeshState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEntityEdge30) GetMeshStateOk() (*GBTMeshState, bool) {
+	if o == nil || o.MeshState == nil {
+		return nil, false
+	}
+	return o.MeshState, true
+}
+
+// HasMeshState returns a boolean if a field has been set.
+func (o *BTEntityEdge30) HasMeshState() bool {
+	if o != nil && o.MeshState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeshState gets a reference to the given GBTMeshState and assigns it to the MeshState field.
+func (o *BTEntityEdge30) SetMeshState(v GBTMeshState) {
+	o.MeshState = &v
+}
+
 // GetPoints returns the Points field value if set, zero value otherwise.
 func (o *BTEntityEdge30) GetPoints() BTImmutableFloatArray {
 	if o == nil || o.Points == nil {
@@ -510,6 +543,9 @@ func (o BTEntityEdge30) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsInternalEdge != nil {
 		toSerialize["isInternalEdge"] = o.IsInternalEdge
+	}
+	if o.MeshState != nil {
+		toSerialize["meshState"] = o.MeshState
 	}
 	if o.Points != nil {
 		toSerialize["points"] = o.Points

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **DestinationName** | Pointer to **string** |  | [optional] 
 **DistanceTolerance** | Pointer to **float64** |  | [optional] 
 **ElementId** | Pointer to **string** | The id of the element in which to perform the operation. | [optional] 
-**ElementIds** | Pointer to **[]string** | An array of element ids. | [optional] 
+**ElementIds** | Pointer to **[]string** | An array of element ids for multi-element export. | [optional] 
 **EmailLink** | Pointer to **bool** |  | [optional] 
 **EmailMessage** | Pointer to **string** |  | [optional] 
 **EmailSubject** | Pointer to **string** |  | [optional] 

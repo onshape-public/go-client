@@ -44,7 +44,7 @@ func (r ApiEnumerateObjectWorkflowsRequest) States(states []string) ApiEnumerate
 	return r
 }
 
-// The number of items to return in a single API call
+// The number of list entries to return in a single API call.
 func (r ApiEnumerateObjectWorkflowsRequest) Limit(limit int32) ApiEnumerateObjectWorkflowsRequest {
 	r.limit = &limit
 	return r

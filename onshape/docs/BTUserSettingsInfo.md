@@ -18,10 +18,12 @@ Name | Type | Description | Notes
 **HighlightLaminarEdges** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **ImportOptions** | Pointer to **string** |  | [optional] 
+**IsolateEnableSelectionDesire** | Pointer to **bool** |  | [optional] 
 **IsolateHideTransparent** | Pointer to **string** |  | [optional] 
-**IsolateTranslucentMode** | Pointer to **string** |  | [optional] 
+**IsolateOpacitySliderValue** | Pointer to **int32** |  | [optional] 
 **Locale** | Pointer to **string** |  | [optional] 
-**MakeTransparentTranslucentMode** | Pointer to **string** |  | [optional] 
+**MakeTransparentEnableSelectionDesire** | Pointer to **bool** |  | [optional] 
+**MakeTransparentOpacitySliderValue** | Pointer to **int32** |  | [optional] 
 **MaterialLibrarySettings** | Pointer to [**BTMaterialLibrarySettingsInfo**](BTMaterialLibrarySettingsInfo.md) |  | [optional] 
 **MiniToolbarSettings** | Pointer to **string** |  | [optional] 
 **MouseActions** | Pointer to **string** |  | [optional] 
@@ -408,6 +410,31 @@ SetImportOptions sets ImportOptions field to given value.
 
 HasImportOptions returns a boolean if a field has been set.
 
+### GetIsolateEnableSelectionDesire
+
+`func (o *BTUserSettingsInfo) GetIsolateEnableSelectionDesire() bool`
+
+GetIsolateEnableSelectionDesire returns the IsolateEnableSelectionDesire field if non-nil, zero value otherwise.
+
+### GetIsolateEnableSelectionDesireOk
+
+`func (o *BTUserSettingsInfo) GetIsolateEnableSelectionDesireOk() (*bool, bool)`
+
+GetIsolateEnableSelectionDesireOk returns a tuple with the IsolateEnableSelectionDesire field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsolateEnableSelectionDesire
+
+`func (o *BTUserSettingsInfo) SetIsolateEnableSelectionDesire(v bool)`
+
+SetIsolateEnableSelectionDesire sets IsolateEnableSelectionDesire field to given value.
+
+### HasIsolateEnableSelectionDesire
+
+`func (o *BTUserSettingsInfo) HasIsolateEnableSelectionDesire() bool`
+
+HasIsolateEnableSelectionDesire returns a boolean if a field has been set.
+
 ### GetIsolateHideTransparent
 
 `func (o *BTUserSettingsInfo) GetIsolateHideTransparent() string`
@@ -433,30 +460,30 @@ SetIsolateHideTransparent sets IsolateHideTransparent field to given value.
 
 HasIsolateHideTransparent returns a boolean if a field has been set.
 
-### GetIsolateTranslucentMode
+### GetIsolateOpacitySliderValue
 
-`func (o *BTUserSettingsInfo) GetIsolateTranslucentMode() string`
+`func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValue() int32`
 
-GetIsolateTranslucentMode returns the IsolateTranslucentMode field if non-nil, zero value otherwise.
+GetIsolateOpacitySliderValue returns the IsolateOpacitySliderValue field if non-nil, zero value otherwise.
 
-### GetIsolateTranslucentModeOk
+### GetIsolateOpacitySliderValueOk
 
-`func (o *BTUserSettingsInfo) GetIsolateTranslucentModeOk() (*string, bool)`
+`func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValueOk() (*int32, bool)`
 
-GetIsolateTranslucentModeOk returns a tuple with the IsolateTranslucentMode field if it's non-nil, zero value otherwise
+GetIsolateOpacitySliderValueOk returns a tuple with the IsolateOpacitySliderValue field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIsolateTranslucentMode
+### SetIsolateOpacitySliderValue
 
-`func (o *BTUserSettingsInfo) SetIsolateTranslucentMode(v string)`
+`func (o *BTUserSettingsInfo) SetIsolateOpacitySliderValue(v int32)`
 
-SetIsolateTranslucentMode sets IsolateTranslucentMode field to given value.
+SetIsolateOpacitySliderValue sets IsolateOpacitySliderValue field to given value.
 
-### HasIsolateTranslucentMode
+### HasIsolateOpacitySliderValue
 
-`func (o *BTUserSettingsInfo) HasIsolateTranslucentMode() bool`
+`func (o *BTUserSettingsInfo) HasIsolateOpacitySliderValue() bool`
 
-HasIsolateTranslucentMode returns a boolean if a field has been set.
+HasIsolateOpacitySliderValue returns a boolean if a field has been set.
 
 ### GetLocale
 
@@ -483,30 +510,55 @@ SetLocale sets Locale field to given value.
 
 HasLocale returns a boolean if a field has been set.
 
-### GetMakeTransparentTranslucentMode
+### GetMakeTransparentEnableSelectionDesire
 
-`func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentMode() string`
+`func (o *BTUserSettingsInfo) GetMakeTransparentEnableSelectionDesire() bool`
 
-GetMakeTransparentTranslucentMode returns the MakeTransparentTranslucentMode field if non-nil, zero value otherwise.
+GetMakeTransparentEnableSelectionDesire returns the MakeTransparentEnableSelectionDesire field if non-nil, zero value otherwise.
 
-### GetMakeTransparentTranslucentModeOk
+### GetMakeTransparentEnableSelectionDesireOk
 
-`func (o *BTUserSettingsInfo) GetMakeTransparentTranslucentModeOk() (*string, bool)`
+`func (o *BTUserSettingsInfo) GetMakeTransparentEnableSelectionDesireOk() (*bool, bool)`
 
-GetMakeTransparentTranslucentModeOk returns a tuple with the MakeTransparentTranslucentMode field if it's non-nil, zero value otherwise
+GetMakeTransparentEnableSelectionDesireOk returns a tuple with the MakeTransparentEnableSelectionDesire field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMakeTransparentTranslucentMode
+### SetMakeTransparentEnableSelectionDesire
 
-`func (o *BTUserSettingsInfo) SetMakeTransparentTranslucentMode(v string)`
+`func (o *BTUserSettingsInfo) SetMakeTransparentEnableSelectionDesire(v bool)`
 
-SetMakeTransparentTranslucentMode sets MakeTransparentTranslucentMode field to given value.
+SetMakeTransparentEnableSelectionDesire sets MakeTransparentEnableSelectionDesire field to given value.
 
-### HasMakeTransparentTranslucentMode
+### HasMakeTransparentEnableSelectionDesire
 
-`func (o *BTUserSettingsInfo) HasMakeTransparentTranslucentMode() bool`
+`func (o *BTUserSettingsInfo) HasMakeTransparentEnableSelectionDesire() bool`
 
-HasMakeTransparentTranslucentMode returns a boolean if a field has been set.
+HasMakeTransparentEnableSelectionDesire returns a boolean if a field has been set.
+
+### GetMakeTransparentOpacitySliderValue
+
+`func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValue() int32`
+
+GetMakeTransparentOpacitySliderValue returns the MakeTransparentOpacitySliderValue field if non-nil, zero value otherwise.
+
+### GetMakeTransparentOpacitySliderValueOk
+
+`func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValueOk() (*int32, bool)`
+
+GetMakeTransparentOpacitySliderValueOk returns a tuple with the MakeTransparentOpacitySliderValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMakeTransparentOpacitySliderValue
+
+`func (o *BTUserSettingsInfo) SetMakeTransparentOpacitySliderValue(v int32)`
+
+SetMakeTransparentOpacitySliderValue sets MakeTransparentOpacitySliderValue field to given value.
+
+### HasMakeTransparentOpacitySliderValue
+
+`func (o *BTUserSettingsInfo) HasMakeTransparentOpacitySliderValue() bool`
+
+HasMakeTransparentOpacitySliderValue returns a boolean if a field has been set.
 
 ### GetMaterialLibrarySettings
 

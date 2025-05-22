@@ -16,12 +16,13 @@ import (
 
 // BTCopyDocumentParams struct for BTCopyDocumentParams
 type BTCopyDocumentParams struct {
-	IsPublic       *bool   `json:"isPublic,omitempty"`
-	NewName        *string `json:"newName,omitempty"`
-	OwnerId        *string `json:"ownerId,omitempty"`
-	OwnerTypeIndex *int32  `json:"ownerTypeIndex,omitempty"`
-	ParentId       *string `json:"parentId,omitempty"`
-	ProjectId      *string `json:"projectId,omitempty"`
+	IsPublic                     *bool   `json:"isPublic,omitempty"`
+	NewName                      *string `json:"newName,omitempty"`
+	OwnerId                      *string `json:"ownerId,omitempty"`
+	OwnerTypeIndex               *int32  `json:"ownerTypeIndex,omitempty"`
+	ParentId                     *string `json:"parentId,omitempty"`
+	ProjectId                    *string `json:"projectId,omitempty"`
+	RepointAppElementVersionRefs *bool   `json:"repointAppElementVersionRefs,omitempty"`
 }
 
 // NewBTCopyDocumentParams instantiates a new BTCopyDocumentParams object
@@ -233,6 +234,38 @@ func (o *BTCopyDocumentParams) SetProjectId(v string) {
 	o.ProjectId = &v
 }
 
+// GetRepointAppElementVersionRefs returns the RepointAppElementVersionRefs field value if set, zero value otherwise.
+func (o *BTCopyDocumentParams) GetRepointAppElementVersionRefs() bool {
+	if o == nil || o.RepointAppElementVersionRefs == nil {
+		var ret bool
+		return ret
+	}
+	return *o.RepointAppElementVersionRefs
+}
+
+// GetRepointAppElementVersionRefsOk returns a tuple with the RepointAppElementVersionRefs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCopyDocumentParams) GetRepointAppElementVersionRefsOk() (*bool, bool) {
+	if o == nil || o.RepointAppElementVersionRefs == nil {
+		return nil, false
+	}
+	return o.RepointAppElementVersionRefs, true
+}
+
+// HasRepointAppElementVersionRefs returns a boolean if a field has been set.
+func (o *BTCopyDocumentParams) HasRepointAppElementVersionRefs() bool {
+	if o != nil && o.RepointAppElementVersionRefs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRepointAppElementVersionRefs gets a reference to the given bool and assigns it to the RepointAppElementVersionRefs field.
+func (o *BTCopyDocumentParams) SetRepointAppElementVersionRefs(v bool) {
+	o.RepointAppElementVersionRefs = &v
+}
+
 func (o BTCopyDocumentParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.IsPublic != nil {
@@ -252,6 +285,9 @@ func (o BTCopyDocumentParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
+	}
+	if o.RepointAppElementVersionRefs != nil {
+		toSerialize["repointAppElementVersionRefs"] = o.RepointAppElementVersionRefs
 	}
 	return json.Marshal(toSerialize)
 }

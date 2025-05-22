@@ -2129,6 +2129,56 @@ func (o *BTUserInfo) SetLastTrialInfo(v BTTrialInfo) {
 	o.GetActualInstance().(getResult).SetLastTrialInfo(v)
 }
 
+// GetNeedToResetClientCacheTime returns the NeedToResetClientCacheTime field value if set, zero value otherwise.
+func (o *BTUserInfo) GetNeedToResetClientCacheTime() JSONTime {
+	type getResult interface {
+		GetNeedToResetClientCacheTime() JSONTime
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNeedToResetClientCacheTime()
+	} else {
+		var de JSONTime
+		return de
+	}
+}
+
+// GetNeedToResetClientCacheTimeOk returns a tuple with the NeedToResetClientCacheTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetNeedToResetClientCacheTimeOk() (*JSONTime, bool) {
+	type getResult interface {
+		GetNeedToResetClientCacheTimeOk() (*JSONTime, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNeedToResetClientCacheTimeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNeedToResetClientCacheTime returns a boolean if a field has been set.
+func (o *BTUserInfo) HasNeedToResetClientCacheTime() bool {
+	type getResult interface {
+		HasNeedToResetClientCacheTime() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNeedToResetClientCacheTime()
+	} else {
+		return false
+	}
+}
+
+// SetNeedToResetClientCacheTime gets a reference to the given JSONTime and assigns it to the NeedToResetClientCacheTime field.
+func (o *BTUserInfo) SetNeedToResetClientCacheTime(v JSONTime) {
+	type getResult interface {
+		SetNeedToResetClientCacheTime(v JSONTime)
+	}
+
+	o.GetActualInstance().(getResult).SetNeedToResetClientCacheTime(v)
+}
+
 // GetNeedToShowNewWalkthrough returns the NeedToShowNewWalkthrough field value if set, zero value otherwise.
 func (o *BTUserInfo) GetNeedToShowNewWalkthrough() bool {
 	type getResult interface {
@@ -2977,59 +3027,60 @@ type base_BTUserInfo struct {
 	// Name of the resource.
 	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                   *string                  `json:"viewRef,omitempty"`
-	Image                     *string                  `json:"image,omitempty"`
-	IsOnshapeSupport          *bool                    `json:"isOnshapeSupport,omitempty"`
-	State                     *int32                   `json:"state,omitempty"`
-	DocumentationName         *string                  `json:"documentationName,omitempty"`
-	Email                     *string                  `json:"email,omitempty"`
-	FirstName                 *string                  `json:"firstName,omitempty"`
-	LastName                  *string                  `json:"lastName,omitempty"`
-	Company                   *BTCompanySummaryInfo    `json:"company,omitempty"`
-	DocumentationNameOverride *string                  `json:"documentationNameOverride,omitempty"`
-	GlobalPermissions         *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
-	InvitationState           *int32                   `json:"invitationState,omitempty"`
-	IsGuest                   *bool                    `json:"isGuest,omitempty"`
-	IsLight                   *bool                    `json:"isLight,omitempty"`
-	LastLoginTime             *JSONTime                `json:"lastLoginTime,omitempty"`
-	PersonalMessageAllowed    *bool                    `json:"personalMessageAllowed,omitempty"`
-	Source                    *int32                   `json:"source,omitempty"`
-	ActivePlan                *BTBillingPlanInfo       `json:"activePlan,omitempty"`
-	ActivePlanId              *string                  `json:"activePlanId,omitempty"`
-	ActivePurchases           []BTPurchaseInfo         `json:"activePurchases,omitempty"`
-	ActiveTrialInfo           *BTTrialInfo             `json:"activeTrialInfo,omitempty"`
-	B2cId                     *string                  `json:"b2cId,omitempty"`
-	BillingUpdateRequired     *bool                    `json:"billingUpdateRequired,omitempty"`
-	CadSystemAtSignup         *string                  `json:"cadSystemAtSignup,omitempty"`
-	CountryCode               *string                  `json:"countryCode,omitempty"`
-	CreatedAt                 *JSONTime                `json:"createdAt,omitempty"`
-	Credential                *BTSessionCredentialInfo `json:"credential,omitempty"`
-	DefaultCompanyName        *string                  `json:"defaultCompanyName,omitempty"`
-	Description               *string                  `json:"description,omitempty"`
-	DeviceInfo                *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
-	Discounts                 []BTDiscountInfo         `json:"discounts,omitempty"`
-	Enterprise                *bool                    `json:"enterprise,omitempty"`
-	EulaId                    *string                  `json:"eulaId,omitempty"`
-	EulaRequired              *bool                    `json:"eulaRequired,omitempty"`
-	EvalCenter                *bool                    `json:"evalCenter,omitempty"`
-	ForumId                   *string                  `json:"forumId,omitempty"`
-	IntendedUse               *int32                   `json:"intendedUse,omitempty"`
-	LastTrialInfo             *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
-	NeedToShowNewWalkthrough  *bool                    `json:"needToShowNewWalkthrough,omitempty"`
-	OwnPurchase               *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
-	PhoneNumber               *string                  `json:"phoneNumber,omitempty"`
-	ProDiscoveryTrialRejected *bool                    `json:"proDiscoveryTrialRejected,omitempty"`
-	ProductType               []string                 `json:"productType,omitempty"`
-	RedirectUrl               *string                  `json:"redirectUrl,omitempty"`
-	Role                      *int32                   `json:"role,omitempty"`
-	Roles                     []BTRole                 `json:"roles,omitempty"`
-	RumEnabled                *bool                    `json:"rumEnabled,omitempty"`
-	ShowRenewStudentPages     *bool                    `json:"showRenewStudentPages,omitempty"`
-	StartupPage               *int32                   `json:"startupPage,omitempty"`
-	SystemUser                *bool                    `json:"systemUser,omitempty"`
-	TotpEnabled               *bool                    `json:"totpEnabled,omitempty"`
-	TracingEnabled            *bool                    `json:"tracingEnabled,omitempty"`
-	TrialInfos                []BTTrialInfo            `json:"trialInfos,omitempty"`
+	ViewRef                    *string                  `json:"viewRef,omitempty"`
+	Image                      *string                  `json:"image,omitempty"`
+	IsOnshapeSupport           *bool                    `json:"isOnshapeSupport,omitempty"`
+	State                      *int32                   `json:"state,omitempty"`
+	DocumentationName          *string                  `json:"documentationName,omitempty"`
+	Email                      *string                  `json:"email,omitempty"`
+	FirstName                  *string                  `json:"firstName,omitempty"`
+	LastName                   *string                  `json:"lastName,omitempty"`
+	Company                    *BTCompanySummaryInfo    `json:"company,omitempty"`
+	DocumentationNameOverride  *string                  `json:"documentationNameOverride,omitempty"`
+	GlobalPermissions          *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
+	InvitationState            *int32                   `json:"invitationState,omitempty"`
+	IsGuest                    *bool                    `json:"isGuest,omitempty"`
+	IsLight                    *bool                    `json:"isLight,omitempty"`
+	LastLoginTime              *JSONTime                `json:"lastLoginTime,omitempty"`
+	PersonalMessageAllowed     *bool                    `json:"personalMessageAllowed,omitempty"`
+	Source                     *int32                   `json:"source,omitempty"`
+	ActivePlan                 *BTBillingPlanInfo       `json:"activePlan,omitempty"`
+	ActivePlanId               *string                  `json:"activePlanId,omitempty"`
+	ActivePurchases            []BTPurchaseInfo         `json:"activePurchases,omitempty"`
+	ActiveTrialInfo            *BTTrialInfo             `json:"activeTrialInfo,omitempty"`
+	B2cId                      *string                  `json:"b2cId,omitempty"`
+	BillingUpdateRequired      *bool                    `json:"billingUpdateRequired,omitempty"`
+	CadSystemAtSignup          *string                  `json:"cadSystemAtSignup,omitempty"`
+	CountryCode                *string                  `json:"countryCode,omitempty"`
+	CreatedAt                  *JSONTime                `json:"createdAt,omitempty"`
+	Credential                 *BTSessionCredentialInfo `json:"credential,omitempty"`
+	DefaultCompanyName         *string                  `json:"defaultCompanyName,omitempty"`
+	Description                *string                  `json:"description,omitempty"`
+	DeviceInfo                 *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
+	Discounts                  []BTDiscountInfo         `json:"discounts,omitempty"`
+	Enterprise                 *bool                    `json:"enterprise,omitempty"`
+	EulaId                     *string                  `json:"eulaId,omitempty"`
+	EulaRequired               *bool                    `json:"eulaRequired,omitempty"`
+	EvalCenter                 *bool                    `json:"evalCenter,omitempty"`
+	ForumId                    *string                  `json:"forumId,omitempty"`
+	IntendedUse                *int32                   `json:"intendedUse,omitempty"`
+	LastTrialInfo              *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
+	NeedToResetClientCacheTime *JSONTime                `json:"needToResetClientCacheTime,omitempty"`
+	NeedToShowNewWalkthrough   *bool                    `json:"needToShowNewWalkthrough,omitempty"`
+	OwnPurchase                *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
+	PhoneNumber                *string                  `json:"phoneNumber,omitempty"`
+	ProDiscoveryTrialRejected  *bool                    `json:"proDiscoveryTrialRejected,omitempty"`
+	ProductType                []string                 `json:"productType,omitempty"`
+	RedirectUrl                *string                  `json:"redirectUrl,omitempty"`
+	Role                       *int32                   `json:"role,omitempty"`
+	Roles                      []BTRole                 `json:"roles,omitempty"`
+	RumEnabled                 *bool                    `json:"rumEnabled,omitempty"`
+	ShowRenewStudentPages      *bool                    `json:"showRenewStudentPages,omitempty"`
+	StartupPage                *int32                   `json:"startupPage,omitempty"`
+	SystemUser                 *bool                    `json:"systemUser,omitempty"`
+	TotpEnabled                *bool                    `json:"totpEnabled,omitempty"`
+	TracingEnabled             *bool                    `json:"tracingEnabled,omitempty"`
+	TrialInfos                 []BTTrialInfo            `json:"trialInfos,omitempty"`
 }
 
 // Newbase_BTUserInfo instantiates a new base_BTUserInfo object
@@ -4386,6 +4437,38 @@ func (o *base_BTUserInfo) SetLastTrialInfo(v BTTrialInfo) {
 	o.LastTrialInfo = &v
 }
 
+// GetNeedToResetClientCacheTime returns the NeedToResetClientCacheTime field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetNeedToResetClientCacheTime() JSONTime {
+	if o == nil || o.NeedToResetClientCacheTime == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.NeedToResetClientCacheTime
+}
+
+// GetNeedToResetClientCacheTimeOk returns a tuple with the NeedToResetClientCacheTime field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetNeedToResetClientCacheTimeOk() (*JSONTime, bool) {
+	if o == nil || o.NeedToResetClientCacheTime == nil {
+		return nil, false
+	}
+	return o.NeedToResetClientCacheTime, true
+}
+
+// HasNeedToResetClientCacheTime returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasNeedToResetClientCacheTime() bool {
+	if o != nil && o.NeedToResetClientCacheTime != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNeedToResetClientCacheTime gets a reference to the given JSONTime and assigns it to the NeedToResetClientCacheTime field.
+func (o *base_BTUserInfo) SetNeedToResetClientCacheTime(v JSONTime) {
+	o.NeedToResetClientCacheTime = &v
+}
+
 // GetNeedToShowNewWalkthrough returns the NeedToShowNewWalkthrough field value if set, zero value otherwise.
 func (o *base_BTUserInfo) GetNeedToShowNewWalkthrough() bool {
 	if o == nil || o.NeedToShowNewWalkthrough == nil {
@@ -4993,6 +5076,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.LastTrialInfo != nil {
 		toSerialize["lastTrialInfo"] = o.LastTrialInfo
+	}
+	if o.NeedToResetClientCacheTime != nil {
+		toSerialize["needToResetClientCacheTime"] = o.NeedToResetClientCacheTime
 	}
 	if o.NeedToShowNewWalkthrough != nil {
 		toSerialize["needToShowNewWalkthrough"] = o.NeedToShowNewWalkthrough
