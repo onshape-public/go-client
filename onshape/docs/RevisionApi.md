@@ -118,7 +118,7 @@ import (
 func main() {
     cid := "cid_example" // string | The company or enterprise ID that owns the resource.
     elementType := int32(56) // int32 | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob (optional)
-    limit := int32(56) // int32 | The number of items to return in a single API call (optional) (default to 20)
+    limit := int32(56) // int32 | The number of list entries to return in a single API call. (optional) (default to 20)
     latestOnly := true // bool | Whether to limit search to only latest revisions. (optional) (default to false)
     after := time.Now() // JSONTime | The earliest creation date of the revision to find. (optional) (default to "2000-01-01T00:00Z")
 
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **elementType** | **int32** | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | 
- **limit** | **int32** | The number of items to return in a single API call | [default to 20]
+ **limit** | **int32** | The number of list entries to return in a single API call. | [default to 20]
  **latestOnly** | **bool** | Whether to limit search to only latest revisions. | [default to false]
  **after** | **JSONTime** | The earliest creation date of the revision to find. | [default to &quot;2000-01-01T00:00Z&quot;]
 

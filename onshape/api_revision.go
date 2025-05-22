@@ -165,7 +165,7 @@ func (r ApiEnumerateRevisionsRequest) ElementType(elementType int32) ApiEnumerat
 	return r
 }
 
-// The number of items to return in a single API call
+// The number of list entries to return in a single API call.
 func (r ApiEnumerateRevisionsRequest) Limit(limit int32) ApiEnumerateRevisionsRequest {
 	r.limit = &limit
 	return r

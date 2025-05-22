@@ -30,7 +30,6 @@ Name | Type | Description | Notes
 **State** | Pointer to **string** |  | [optional] 
 **Status** | Pointer to **int32** |  | [optional] 
 **TaskItems** | Pointer to [**[]BTTaskItemInfo**](BTTaskItemInfo.md) |  | [optional] 
-**TaskTemplate** | Pointer to **int32** |  | [optional] 
 **TaskType** | Pointer to **string** |  | [optional] 
 **Teams** | Pointer to [**[]BTTaskTeamSummaryInfo**](BTTaskTeamSummaryInfo.md) |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
@@ -710,31 +709,6 @@ SetTaskItems sets TaskItems field to given value.
 `func (o *BTTaskInfo) HasTaskItems() bool`
 
 HasTaskItems returns a boolean if a field has been set.
-
-### GetTaskTemplate
-
-`func (o *BTTaskInfo) GetTaskTemplate() int32`
-
-GetTaskTemplate returns the TaskTemplate field if non-nil, zero value otherwise.
-
-### GetTaskTemplateOk
-
-`func (o *BTTaskInfo) GetTaskTemplateOk() (*int32, bool)`
-
-GetTaskTemplateOk returns a tuple with the TaskTemplate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaskTemplate
-
-`func (o *BTTaskInfo) SetTaskTemplate(v int32)`
-
-SetTaskTemplate sets TaskTemplate field to given value.
-
-### HasTaskTemplate
-
-`func (o *BTTaskInfo) HasTaskTemplate() bool`
-
-HasTaskTemplate returns a boolean if a field has been set.
 
 ### GetTaskType
 

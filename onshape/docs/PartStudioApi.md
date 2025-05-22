@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
 [**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
 [**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
+[**CreatePartStudioExportStep**](PartStudioApi.md#CreatePartStudioExportStep) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/step | Asynchronously export a Part Studio to STEP.
 [**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Asynchronously export a Part Studio to another format.
 [**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
 [**EvalFeatureScript**](PartStudioApi.md#EvalFeatureScript) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/featurescript | Evaluate the FeatureScript snippet for a Part Studio.
@@ -265,6 +266,87 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePartStudioExportStep
+
+> BTTranslationRequestInfo CreatePartStudioExportStep(ctx, did, wv, wvid, eid).BTBStepExportParams(bTBStepExportParams).Execute()
+
+Asynchronously export a Part Studio to STEP.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBStepExportParams := *openapiclient.NewBTBStepExportParams(openapiclient.GBTPreProcessParasolidOption("NO_PRE_PROCESSING"), "StepVersionString_example") // BTBStepExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.PartStudioApi.CreatePartStudioExportStep(context.Background(), did, wv, wvid, eid).BTBStepExportParams(bTBStepExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudioExportStep``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreatePartStudioExportStep`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `PartStudioApi.CreatePartStudioExportStep`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePartStudioExportStepRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBStepExportParams** | [**BTBStepExportParams**](BTBStepExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

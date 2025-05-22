@@ -48,6 +48,7 @@ type ApiGetLatestInDocumentRequest struct {
 	includeVariables                       *bool
 	includeVariableStudios                 *bool
 	allowedBlobExtensions                  *string
+	isObsoletion                           *bool
 }
 
 func (r ApiGetLatestInDocumentRequest) IncludeParts(includeParts bool) ApiGetLatestInDocumentRequest {
@@ -165,6 +166,11 @@ func (r ApiGetLatestInDocumentRequest) AllowedBlobExtensions(allowedBlobExtensio
 	return r
 }
 
+func (r ApiGetLatestInDocumentRequest) IsObsoletion(isObsoletion bool) ApiGetLatestInDocumentRequest {
+	r.isObsoletion = &isObsoletion
+	return r
+}
+
 func (r ApiGetLatestInDocumentRequest) Execute() (*BTListResponseBTInsertableInfo, *http.Response, error) {
 	return r.ApiService.GetLatestInDocumentExecute(r)
 }
@@ -279,6 +285,9 @@ func (a *InsertableApiService) GetLatestInDocumentExecute(r ApiGetLatestInDocume
 	}
 	if r.allowedBlobExtensions != nil {
 		localVarQueryParams.Add("allowedBlobExtensions", parameterToString(*r.allowedBlobExtensions, ""))
+	}
+	if r.isObsoletion != nil {
+		localVarQueryParams.Add("isObsoletion", parameterToString(*r.isObsoletion, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

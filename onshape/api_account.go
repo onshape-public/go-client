@@ -388,11 +388,10 @@ func (a *AccountApiService) GetPlanPurchasesExecute(r ApiGetPlanPurchasesRequest
 }
 
 type ApiGetPurchasesRequest struct {
-	ctx                           context.Context
-	ApiService                    *AccountApiService
-	all                           *bool
-	ownPurchaseOnly               *bool
-	includeGoDEnabledAppPurchases *bool
+	ctx             context.Context
+	ApiService      *AccountApiService
+	all             *bool
+	ownPurchaseOnly *bool
 }
 
 func (r ApiGetPurchasesRequest) All(all bool) ApiGetPurchasesRequest {
@@ -402,11 +401,6 @@ func (r ApiGetPurchasesRequest) All(all bool) ApiGetPurchasesRequest {
 
 func (r ApiGetPurchasesRequest) OwnPurchaseOnly(ownPurchaseOnly bool) ApiGetPurchasesRequest {
 	r.ownPurchaseOnly = &ownPurchaseOnly
-	return r
-}
-
-func (r ApiGetPurchasesRequest) IncludeGoDEnabledAppPurchases(includeGoDEnabledAppPurchases bool) ApiGetPurchasesRequest {
-	r.includeGoDEnabledAppPurchases = &includeGoDEnabledAppPurchases
 	return r
 }
 
@@ -456,9 +450,6 @@ func (a *AccountApiService) GetPurchasesExecute(r ApiGetPurchasesRequest) ([]BTP
 	}
 	if r.ownPurchaseOnly != nil {
 		localVarQueryParams.Add("ownPurchaseOnly", parameterToString(*r.ownPurchaseOnly, ""))
-	}
-	if r.includeGoDEnabledAppPurchases != nil {
-		localVarQueryParams.Add("includeGoDEnabledAppPurchases", parameterToString(*r.includeGoDEnabledAppPurchases, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

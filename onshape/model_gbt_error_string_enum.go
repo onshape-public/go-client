@@ -1678,6 +1678,7 @@ const (
 	GBTErrorStringEnumLoftConnectionEdgeParameterMismatch                         GBTErrorStringEnum = "LOFT_CONNECTION_EDGE_PARAMETER_MISMATCH"
 	GBTErrorStringEnumSheetMetalNoConeApex                                        GBTErrorStringEnum = "SHEET_METAL_NO_CONE_APEX"
 	GBTErrorStringEnumSimulationMaterialPropertyOutsideRequiredBounds             GBTErrorStringEnum = "SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS"
+	GBTErrorStringEnumFgsConnectionsAssemblyTooComplex                            GBTErrorStringEnum = "FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3341,6 +3342,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"LOFT_CONNECTION_EDGE_PARAMETER_MISMATCH",
 	"SHEET_METAL_NO_CONE_APEX",
 	"SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS",
+	"FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX",
 	"UNKNOWN",
 }
 

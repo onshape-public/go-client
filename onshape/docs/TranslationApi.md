@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateTranslation
 
-> BTTranslationRequestImportInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
+> BTTranslationRequestImportInfo CreateTranslation(ctx, did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
 
 Import or upload a CAD file into Onshape, and translate the data into parts or assemblies.
 
@@ -67,10 +67,11 @@ func main() {
     upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
     preserveSourceIds := true // bool |  (optional) (default to false)
     documentId := "documentId_example" // string |  (optional)
+    repointAppElementVersionRefs := true // bool | Re-point the version references in APP elements to initial version in the new document (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.TranslationApi.CreateTranslation(context.Background(), did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).Execute()
+    resp, r, err := apiClient.TranslationApi.CreateTranslation(context.Background(), did, wid).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TranslationApi.CreateTranslation``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,6 +131,7 @@ Name | Type | Description  | Notes
  **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
  **preserveSourceIds** | **bool** |  | [default to false]
  **documentId** | **string** |  | 
+ **repointAppElementVersionRefs** | **bool** | Re-point the version references in APP elements to initial version in the new document | [default to false]
 
 ### Return type
 

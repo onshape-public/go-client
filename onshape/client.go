@@ -40,7 +40,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Onshape REST API API v1.197.55669-ffb4438fe2ea
+// APIClient manages communication with the Onshape REST API API v1.198.56184-061ff9eda49f
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *APIConfiguration
@@ -83,6 +83,8 @@ type APIClient struct {
 	FolderApi *FolderApiService
 
 	InsertableApi *InsertableApiService
+
+	ItemApi *ItemApiService
 
 	MetadataApi *MetadataApiService
 
@@ -161,6 +163,7 @@ func NewAPIClient(cfg *APIConfiguration) *APIClient {
 	c.FeatureStudioApi = (*FeatureStudioApiService)(&c.common)
 	c.FolderApi = (*FolderApiService)(&c.common)
 	c.InsertableApi = (*InsertableApiService)(&c.common)
+	c.ItemApi = (*ItemApiService)(&c.common)
 	c.MetadataApi = (*MetadataApiService)(&c.common)
 	c.MetadataCategoryApi = (*MetadataCategoryApiService)(&c.common)
 	c.NumberingSchemeApi = (*NumberingSchemeApiService)(&c.common)
