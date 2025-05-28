@@ -8,11 +8,6 @@ import (
 
 func TestReleasePackageAPI(t *testing.T) {
     InitializeTester[*onshape.ReleasePackageApiService](t)
-
-    OpenAPITest{
-        Call: onshape.ApiGetCompanyReleaseWorkflowRequest{},
-        Expect: Todo(),
-    }.Execute()
     
     OpenAPITest{
         Call: onshape.ApiCreateObsoletionPackageRequest{},
