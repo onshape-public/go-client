@@ -58,6 +58,7 @@ type ApiCreateTranslationRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	repointAppElementVersionRefs         *bool
 }
 
 // The file to upload.
@@ -229,6 +230,12 @@ func (r ApiCreateTranslationRequest) DocumentId(documentId string) ApiCreateTran
 	return r
 }
 
+// Re-point the version references in APP elements to initial version in the new document
+func (r ApiCreateTranslationRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiCreateTranslationRequest {
+	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
+	return r
+}
+
 func (r ApiCreateTranslationRequest) Execute() (*BTTranslationRequestImportInfo, *http.Response, error) {
 	return r.ApiService.CreateTranslationExecute(r)
 }
@@ -390,6 +397,9 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
+	if r.repointAppElementVersionRefs != nil {
+		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
