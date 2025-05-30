@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EdgeType** | Pointer to [**GBTEdgeType**](GBTEdgeType.md) |  | [optional] 
 **IsClosed** | Pointer to **bool** |  | [optional] 
 **IsInternalEdge** | Pointer to **bool** |  | [optional] 
+**MeshState** | Pointer to [**GBTMeshState**](GBTMeshState.md) |  | [optional] 
 **Points** | Pointer to [**BTImmutableFloatArray**](BTImmutableFloatArray.md) |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetIsInternalEdge sets IsInternalEdge field to given value.
 `func (o *BTEntityEdge30) HasIsInternalEdge() bool`
 
 HasIsInternalEdge returns a boolean if a field has been set.
+
+### GetMeshState
+
+`func (o *BTEntityEdge30) GetMeshState() GBTMeshState`
+
+GetMeshState returns the MeshState field if non-nil, zero value otherwise.
+
+### GetMeshStateOk
+
+`func (o *BTEntityEdge30) GetMeshStateOk() (*GBTMeshState, bool)`
+
+GetMeshStateOk returns a tuple with the MeshState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMeshState
+
+`func (o *BTEntityEdge30) SetMeshState(v GBTMeshState)`
+
+SetMeshState sets MeshState field to given value.
+
+### HasMeshState
+
+`func (o *BTEntityEdge30) HasMeshState() bool`
+
+HasMeshState returns a boolean if a field has been set.
 
 ### GetPoints
 

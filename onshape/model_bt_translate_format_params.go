@@ -33,7 +33,7 @@ type BTTranslateFormatParams struct {
 	DistanceTolerance     *float64 `json:"distanceTolerance,omitempty"`
 	// The id of the element in which to perform the operation.
 	ElementId *string `json:"elementId,omitempty"`
-	// An array of element ids.
+	// An array of element ids for multi-element export.
 	ElementIds   []string `json:"elementIds,omitempty"`
 	EmailLink    *bool    `json:"emailLink,omitempty"`
 	EmailMessage *string  `json:"emailMessage,omitempty"`

@@ -2152,6 +2152,7 @@ type ApiGetInsertablesRequest struct {
 	includeVariables                       *bool
 	includeVariableStudios                 *bool
 	allowedBlobExtensions                  *string
+	isObsoletion                           *bool
 }
 
 func (r ApiGetInsertablesRequest) ElementId(elementId string) ApiGetInsertablesRequest {
@@ -2285,6 +2286,11 @@ func (r ApiGetInsertablesRequest) AllowedBlobExtensions(allowedBlobExtensions st
 	return r
 }
 
+func (r ApiGetInsertablesRequest) IsObsoletion(isObsoletion bool) ApiGetInsertablesRequest {
+	r.isObsoletion = &isObsoletion
+	return r
+}
+
 func (r ApiGetInsertablesRequest) Execute() (*BTInsertablesListResponse, *http.Response, error) {
 	return r.ApiService.GetInsertablesExecute(r)
 }
@@ -2410,6 +2416,9 @@ func (a *DocumentApiService) GetInsertablesExecute(r ApiGetInsertablesRequest) (
 	}
 	if r.allowedBlobExtensions != nil {
 		localVarQueryParams.Add("allowedBlobExtensions", parameterToString(*r.allowedBlobExtensions, ""))
+	}
+	if r.isObsoletion != nil {
+		localVarQueryParams.Add("isObsoletion", parameterToString(*r.isObsoletion, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
