@@ -31,6 +31,7 @@ const (
 	BTApiVersionV8RestoreNoopNoNewMicroversion                  BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
 	BTApiVersionV9IncludeDeterministicIdsToQueryResponses       BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
 	BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams BTApiVersion = "V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"
+	BTApiVersionV11ExcludeZipContentsByDefault                  BTApiVersion = "V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"
 )
 
 // All allowed values of BTApiVersion enum
@@ -46,6 +47,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V8_RESTORE_NOOP_NO_NEW_MICROVERSION",
 	"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES",
 	"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS",
+	"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

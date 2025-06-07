@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **IsYAxisUp** | Pointer to **bool** | Rotate model from Z-axis-up orientation to Y-axis-up. | [optional] [default to false]
 **NotifyUser** | Pointer to **bool** | Send notification to the user client. | [optional] [default to true]
 **StepParasolidPreprocessingOption** | [**GBTPreProcessParasolidOption**](GBTPreProcessParasolidOption.md) |  | 
-**StepUnit** | Pointer to **string** | Units for the element: &#x60;METER&#x60; | &#x60;CENTIMETER&#x60; | &#x60;MILLIMETER&#x60; | &#x60;INCH&#x60; | &#x60;FOOT&#x60; | &#x60;YARD&#x60; | [optional] [default to "METER"]
+**StepUnit** | Pointer to [**GBTExportUnit**](GBTExportUnit.md) |  | [optional] [default to GBTExportUnitMeter]
 **StepVersionString** | **string** | Export STEP in version: &#x60;AP242&#x60; | &#x60;AP203&#x60; | &#x60;AP214&#x60; | [default to "AP242"]
 **StoreInDocument** | Pointer to **bool** | Create a blob with exported file in the source document. | [optional] [default to true]
 **TriggerAutoDownload** | Pointer to **bool** | Automatically download a translated file. | [optional] [default to false]
@@ -285,20 +285,20 @@ SetStepParasolidPreprocessingOption sets StepParasolidPreprocessingOption field 
 
 ### GetStepUnit
 
-`func (o *BTBStepExportParams) GetStepUnit() string`
+`func (o *BTBStepExportParams) GetStepUnit() GBTExportUnit`
 
 GetStepUnit returns the StepUnit field if non-nil, zero value otherwise.
 
 ### GetStepUnitOk
 
-`func (o *BTBStepExportParams) GetStepUnitOk() (*string, bool)`
+`func (o *BTBStepExportParams) GetStepUnitOk() (*GBTExportUnit, bool)`
 
 GetStepUnitOk returns a tuple with the StepUnit field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStepUnit
 
-`func (o *BTBStepExportParams) SetStepUnit(v string)`
+`func (o *BTBStepExportParams) SetStepUnit(v GBTExportUnit)`
 
 SetStepUnit sets StepUnit field to given value.
 

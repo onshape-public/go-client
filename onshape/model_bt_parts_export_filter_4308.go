@@ -14,7 +14,7 @@ import (
 	"encoding/json"
 )
 
-// BTPartsExportFilter4308 struct for BTPartsExportFilter4308
+// BTPartsExportFilter4308 Skip mesh/curve foreign data creation in individual parts export
 type BTPartsExportFilter4308 struct {
 	// Type of JSON object.
 	BtType          *string `json:"btType,omitempty"`

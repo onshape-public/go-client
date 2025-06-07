@@ -1310,6 +1310,175 @@ func (a *DocumentApiService) GetDocumentAclExecute(r ApiGetDocumentAclRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiGetDocumentContentsRequest struct {
+	ctx             context.Context
+	ApiService      *DocumentApiService
+	did             string
+	wvm             string
+	wvmid           string
+	linkDocumentId  *string
+	elementType     *GBTElementType
+	elementId       *string
+	withThumbnails  *bool
+	withZipContents *bool
+}
+
+// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
+func (r ApiGetDocumentContentsRequest) LinkDocumentId(linkDocumentId string) ApiGetDocumentContentsRequest {
+	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+// If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter.
+func (r ApiGetDocumentContentsRequest) ElementType(elementType GBTElementType) ApiGetDocumentContentsRequest {
+	r.elementType = &elementType
+	return r
+}
+
+// If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter.
+func (r ApiGetDocumentContentsRequest) ElementId(elementId string) ApiGetDocumentContentsRequest {
+	r.elementId = &elementId
+	return r
+}
+
+// Whether or not to include thumbnails (not supported for microversion)
+func (r ApiGetDocumentContentsRequest) WithThumbnails(withThumbnails bool) ApiGetDocumentContentsRequest {
+	r.withThumbnails = &withThumbnails
+	return r
+}
+
+// Returns the names of the files inside a zip file tab.
+func (r ApiGetDocumentContentsRequest) WithZipContents(withZipContents bool) ApiGetDocumentContentsRequest {
+	r.withZipContents = &withZipContents
+	return r
+}
+
+func (r ApiGetDocumentContentsRequest) Execute() (*BTDocumentContentsInfo, *http.Response, error) {
+	return r.ApiService.GetDocumentContentsExecute(r)
+}
+
+/*
+GetDocumentContents Retrieve tabs and folders by document ID and workspace or version or microversion ID.
+
+Returns information on tabs and folders in the document.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did The id of the document in which to perform the operation.
+	@param wvm Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+	@param wvmid The id of the workspace, version or document microversion in which the operation should be performed.
+	@return ApiGetDocumentContentsRequest
+*/
+func (a *DocumentApiService) GetDocumentContents(ctx context.Context, did string, wvm string, wvmid string) ApiGetDocumentContentsRequest {
+	return ApiGetDocumentContentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wvm:        wvm,
+		wvmid:      wvmid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTDocumentContentsInfo
+func (a *DocumentApiService) GetDocumentContentsExecute(r ApiGetDocumentContentsRequest) (*BTDocumentContentsInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTDocumentContentsInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.GetDocumentContents")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/d/{did}/{wvm}/{wvmid}/contents"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvm"+"}", url.PathEscape(parameterToString(r.wvm, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvmid"+"}", url.PathEscape(parameterToString(r.wvmid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.elementType != nil {
+		localVarQueryParams.Add("elementType", parameterToString(*r.elementType, ""))
+	}
+	if r.elementId != nil {
+		localVarQueryParams.Add("elementId", parameterToString(*r.elementId, ""))
+	}
+	if r.withThumbnails != nil {
+		localVarQueryParams.Add("withThumbnails", parameterToString(*r.withThumbnails, ""))
+	}
+	if r.withZipContents != nil {
+		localVarQueryParams.Add("withZipContents", parameterToString(*r.withZipContents, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTDocumentContentsInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiGetDocumentHistoryRequest struct {
 	ctx        context.Context
 	ApiService *DocumentApiService
@@ -1974,15 +2143,16 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 }
 
 type ApiGetElementsInDocumentRequest struct {
-	ctx            context.Context
-	ApiService     *DocumentApiService
-	did            string
-	wvm            string
-	wvmid          string
-	linkDocumentId *string
-	elementType    *string
-	elementId      *string
-	withThumbnails *bool
+	ctx             context.Context
+	ApiService      *DocumentApiService
+	did             string
+	wvm             string
+	wvmid           string
+	linkDocumentId  *string
+	elementType     *string
+	elementId       *string
+	withThumbnails  *bool
+	withZipContents *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -2006,12 +2176,20 @@ func (r ApiGetElementsInDocumentRequest) WithThumbnails(withThumbnails bool) Api
 	return r
 }
 
+// Returns the names of the files inside a zip file tab.
+func (r ApiGetElementsInDocumentRequest) WithZipContents(withZipContents bool) ApiGetElementsInDocumentRequest {
+	r.withZipContents = &withZipContents
+	return r
+}
+
 func (r ApiGetElementsInDocumentRequest) Execute() ([]BTDocumentElementInfo, *http.Response, error) {
 	return r.ApiService.GetElementsInDocumentExecute(r)
 }
 
 /*
 GetElementsInDocument Retrieve tabs by document ID and workspace or version or microversion ID.
+
+This endpoint only returns the tabs and not folders in the document. Use the [getDocumentContents](#/Document/getDocumentContents) endpoint to get information about folders and tabs.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.
@@ -2065,6 +2243,9 @@ func (a *DocumentApiService) GetElementsInDocumentExecute(r ApiGetElementsInDocu
 	}
 	if r.withThumbnails != nil {
 		localVarQueryParams.Add("withThumbnails", parameterToString(*r.withThumbnails, ""))
+	}
+	if r.withZipContents != nil {
+		localVarQueryParams.Add("withZipContents", parameterToString(*r.withZipContents, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

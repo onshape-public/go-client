@@ -14,7 +14,7 @@ import (
 	"encoding/json"
 )
 
-// BTBStepExportParams Set options for exporting elements to STEP.
+// BTBStepExportParams Options for exporting elements to STEP.
 type BTBStepExportParams struct {
 	AdvancedParams      *BTBExportAdvancedParams `json:"advancedParams,omitempty"`
 	CloudStorageOptions *BTBCloudStorageOptions  `json:"cloudStorageOptions,omitempty"`
@@ -32,8 +32,7 @@ type BTBStepExportParams struct {
 	// Send notification to the user client.
 	NotifyUser                       *bool                        `json:"notifyUser,omitempty"`
 	StepParasolidPreprocessingOption GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption"`
-	// Units for the element: `METER` | `CENTIMETER` | `MILLIMETER` | `INCH` | `FOOT` | `YARD`
-	StepUnit *string `json:"stepUnit,omitempty"`
+	StepUnit                         *GBTExportUnit               `json:"stepUnit,omitempty"`
 	// Export STEP in version: `AP242` | `AP203` | `AP214`
 	StepVersionString string `json:"stepVersionString"`
 	// Create a blob with exported file in the source document.
@@ -61,7 +60,7 @@ func NewBTBStepExportParams(stepParasolidPreprocessingOption GBTPreProcessParaso
 	var notifyUser bool = true
 	this.NotifyUser = &notifyUser
 	this.StepParasolidPreprocessingOption = stepParasolidPreprocessingOption
-	var stepUnit string = "METER"
+	var stepUnit GBTExportUnit = GBTExportUnitMeter
 	this.StepUnit = &stepUnit
 	this.StepVersionString = stepVersionString
 	var storeInDocument bool = true
@@ -88,7 +87,7 @@ func NewBTBStepExportParamsWithDefaults() *BTBStepExportParams {
 	this.IsYAxisUp = &isYAxisUp
 	var notifyUser bool = true
 	this.NotifyUser = &notifyUser
-	var stepUnit string = "METER"
+	var stepUnit GBTExportUnit = GBTExportUnitMeter
 	this.StepUnit = &stepUnit
 	var stepVersionString string = "AP242"
 	this.StepVersionString = stepVersionString
@@ -412,9 +411,9 @@ func (o *BTBStepExportParams) SetStepParasolidPreprocessingOption(v GBTPreProces
 }
 
 // GetStepUnit returns the StepUnit field value if set, zero value otherwise.
-func (o *BTBStepExportParams) GetStepUnit() string {
+func (o *BTBStepExportParams) GetStepUnit() GBTExportUnit {
 	if o == nil || o.StepUnit == nil {
-		var ret string
+		var ret GBTExportUnit
 		return ret
 	}
 	return *o.StepUnit
@@ -422,7 +421,7 @@ func (o *BTBStepExportParams) GetStepUnit() string {
 
 // GetStepUnitOk returns a tuple with the StepUnit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTBStepExportParams) GetStepUnitOk() (*string, bool) {
+func (o *BTBStepExportParams) GetStepUnitOk() (*GBTExportUnit, bool) {
 	if o == nil || o.StepUnit == nil {
 		return nil, false
 	}
@@ -438,8 +437,8 @@ func (o *BTBStepExportParams) HasStepUnit() bool {
 	return false
 }
 
-// SetStepUnit gets a reference to the given string and assigns it to the StepUnit field.
-func (o *BTBStepExportParams) SetStepUnit(v string) {
+// SetStepUnit gets a reference to the given GBTExportUnit and assigns it to the StepUnit field.
+func (o *BTBStepExportParams) SetStepUnit(v GBTExportUnit) {
 	o.StepUnit = &v
 }
 

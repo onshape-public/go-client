@@ -30,6 +30,11 @@ func (o *BTCountDimensionDisplayData1778) AsBTDimensionDisplayData323() *BTDimen
 	return &BTDimensionDisplayData323{o}
 }
 
+// BTRadialDistanceDimensionDisplayData2644AsBTDimensionDisplayData323 is a convenience function that returns BTRadialDistanceDimensionDisplayData2644 wrapped in BTDimensionDisplayData323
+func (o *BTRadialDistanceDimensionDisplayData2644) AsBTDimensionDisplayData323() *BTDimensionDisplayData323 {
+	return &BTDimensionDisplayData323{o}
+}
+
 // BTRadialDimensionDisplayData348AsBTDimensionDisplayData323 is a convenience function that returns BTRadialDimensionDisplayData348 wrapped in BTDimensionDisplayData323
 func (o *BTRadialDimensionDisplayData348) AsBTDimensionDisplayData323() *BTDimensionDisplayData323 {
 	return &BTDimensionDisplayData323{o}
@@ -1228,6 +1233,20 @@ func (dst *BTDimensionDisplayData323) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTDimensionDisplayData323 = nil
 			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTRadialDimensionDisplayData348: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTRadialDistanceDimensionDisplayData-2644'
+	if jsonDict["btType"] == "BTRadialDistanceDimensionDisplayData-2644" {
+		// try to unmarshal JSON data into BTRadialDistanceDimensionDisplayData2644
+		var qr *BTRadialDistanceDimensionDisplayData2644
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTDimensionDisplayData323 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTDimensionDisplayData323 = nil
+			return fmt.Errorf("failed to unmarshal BTDimensionDisplayData323 as BTRadialDistanceDimensionDisplayData2644: %s", err.Error())
 		}
 	}
 

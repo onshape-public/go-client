@@ -1,12 +1,15 @@
 # \PartStudioApi
 
-All URIs are relative to *https://cad.onshape.com/api/v10*
+All URIs are relative to *https://cad.onshape.com/api/v11*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddPartStudioFeature**](PartStudioApi.md#AddPartStudioFeature) | **Post** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the Part Studio&#39;s Feature List.
 [**ComparePartStudios**](PartStudioApi.md#ComparePartStudios) | **Get** /partstudios/d/{did}/{wvm}/{wvmid}/e/{eid}/compare | Get the differences between two Part Studios in a single document.
 [**CreatePartStudio**](PartStudioApi.md#CreatePartStudio) | **Post** /partstudios/d/{did}/w/{wid} | Create a new Part Studio in a document.
+[**CreatePartStudioExportGltf**](PartStudioApi.md#CreatePartStudioExportGltf) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf | Asynchronously export a Part Studio to glTF.
+[**CreatePartStudioExportObj**](PartStudioApi.md#CreatePartStudioExportObj) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/obj | Asynchronously export a Part Studio to OBJ.
+[**CreatePartStudioExportSolidworks**](PartStudioApi.md#CreatePartStudioExportSolidworks) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/solidworks | Asynchronously export a Part Studio to Solidworks.
 [**CreatePartStudioExportStep**](PartStudioApi.md#CreatePartStudioExportStep) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/step | Asynchronously export a Part Studio to STEP.
 [**CreatePartStudioTranslation**](PartStudioApi.md#CreatePartStudioTranslation) | **Post** /partstudios/d/{did}/{wv}/{wvid}/e/{eid}/translations | Asynchronously export a Part Studio to another format.
 [**DeletePartStudioFeature**](PartStudioApi.md#DeletePartStudioFeature) | **Delete** /partstudios/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a Part Studio feature.
@@ -266,6 +269,249 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePartStudioExportGltf
+
+> BTTranslationRequestInfo CreatePartStudioExportGltf(ctx, did, wv, wvid, eid).BTBGltfExportParams(bTBGltfExportParams).Execute()
+
+Asynchronously export a Part Studio to glTF.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBGltfExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.PartStudioApi.CreatePartStudioExportGltf(context.Background(), did, wv, wvid, eid).BTBGltfExportParams(bTBGltfExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudioExportGltf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreatePartStudioExportGltf`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `PartStudioApi.CreatePartStudioExportGltf`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePartStudioExportGltfRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBGltfExportParams** | [**BTBGltfExportParams**](BTBGltfExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePartStudioExportObj
+
+> BTTranslationRequestInfo CreatePartStudioExportObj(ctx, did, wv, wvid, eid).BTBObjExportParams(bTBObjExportParams).Execute()
+
+Asynchronously export a Part Studio to OBJ.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBObjExportParams := *openapiclient.NewBTBObjExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBObjExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.PartStudioApi.CreatePartStudioExportObj(context.Background(), did, wv, wvid, eid).BTBObjExportParams(bTBObjExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudioExportObj``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreatePartStudioExportObj`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `PartStudioApi.CreatePartStudioExportObj`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePartStudioExportObjRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBObjExportParams** | [**BTBObjExportParams**](BTBObjExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePartStudioExportSolidworks
+
+> BTTranslationRequestInfo CreatePartStudioExportSolidworks(ctx, did, wv, wvid, eid).BTBSolidworksExportParams(bTBSolidworksExportParams).Execute()
+
+Asynchronously export a Part Studio to Solidworks.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBSolidworksExportParams := *openapiclient.NewBTBSolidworksExportParams() // BTBSolidworksExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.PartStudioApi.CreatePartStudioExportSolidworks(context.Background(), did, wv, wvid, eid).BTBSolidworksExportParams(bTBSolidworksExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.CreatePartStudioExportSolidworks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreatePartStudioExportSolidworks`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `PartStudioApi.CreatePartStudioExportSolidworks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePartStudioExportSolidworksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBSolidworksExportParams** | [**BTBSolidworksExportParams**](BTBSolidworksExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

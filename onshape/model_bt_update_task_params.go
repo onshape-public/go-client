@@ -26,6 +26,7 @@ type BTUpdateTaskParams struct {
 	NameParamValue *string            `json:"nameParamValue,omitempty"`
 	// Task metadata properties.
 	PropertyValues []BTPropertyValueParam `json:"propertyValues,omitempty"`
+	WorkflowId     *string                `json:"workflowId,omitempty"`
 }
 
 // NewBTUpdateTaskParams instantiates a new BTUpdateTaskParams object
@@ -237,6 +238,38 @@ func (o *BTUpdateTaskParams) SetPropertyValues(v []BTPropertyValueParam) {
 	o.PropertyValues = v
 }
 
+// GetWorkflowId returns the WorkflowId field value if set, zero value otherwise.
+func (o *BTUpdateTaskParams) GetWorkflowId() string {
+	if o == nil || o.WorkflowId == nil {
+		var ret string
+		return ret
+	}
+	return *o.WorkflowId
+}
+
+// GetWorkflowIdOk returns a tuple with the WorkflowId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUpdateTaskParams) GetWorkflowIdOk() (*string, bool) {
+	if o == nil || o.WorkflowId == nil {
+		return nil, false
+	}
+	return o.WorkflowId, true
+}
+
+// HasWorkflowId returns a boolean if a field has been set.
+func (o *BTUpdateTaskParams) HasWorkflowId() bool {
+	if o != nil && o.WorkflowId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWorkflowId gets a reference to the given string and assigns it to the WorkflowId field.
+func (o *BTUpdateTaskParams) SetWorkflowId(v string) {
+	o.WorkflowId = &v
+}
+
 func (o BTUpdateTaskParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CompanyId != nil {
@@ -256,6 +289,9 @@ func (o BTUpdateTaskParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.PropertyValues != nil {
 		toSerialize["propertyValues"] = o.PropertyValues
+	}
+	if o.WorkflowId != nil {
+		toSerialize["workflowId"] = o.WorkflowId
 	}
 	return json.Marshal(toSerialize)
 }

@@ -1,6 +1,6 @@
 # \DocumentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v10*
+All URIs are relative to *https://cad.onshape.com/api/v11*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**GetCurrentMicroversion**](DocumentApi.md#GetCurrentMicroversion) | **Get** /documents/d/{did}/{wv}/{wvid}/currentmicroversion | Retrieve current microversion by document ID and workspace or version ID.
 [**GetDocument**](DocumentApi.md#GetDocument) | **Get** /documents/{did} | Retrieve document by document ID.
 [**GetDocumentAcl**](DocumentApi.md#GetDocumentAcl) | **Get** /documents/{did}/acl | Retrieve access control list by document ID.
+[**GetDocumentContents**](DocumentApi.md#GetDocumentContents) | **Get** /documents/d/{did}/{wvm}/{wvmid}/contents | Retrieve tabs and folders by document ID and workspace or version or microversion ID.
 [**GetDocumentHistory**](DocumentApi.md#GetDocumentHistory) | **Get** /documents/d/{did}/{wm}/{wmid}/documenthistory | Retrieve document history by document ID and workspace or microversion ID.
 [**GetDocumentPermissionSet**](DocumentApi.md#GetDocumentPermissionSet) | **Get** /documents/{did}/permissionset | Retrieve Document permissions by document ID.
 [**GetDocumentVersions**](DocumentApi.md#GetDocumentVersions) | **Get** /documents/d/{did}/versions | Retrieve versions by document ID.
@@ -828,6 +829,92 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetDocumentContents
+
+> BTDocumentContentsInfo GetDocumentContents(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
+
+Retrieve tabs and folders by document ID and workspace or version or microversion ID.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | The id of the document in which to perform the operation.
+    wvm := "wvm_example" // string | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below.
+    wvmid := "wvmid_example" // string | The id of the workspace, version or document microversion in which the operation should be performed.
+    linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
+    elementType := openapiclient.GBTElementType("PARTSTUDIO") // GBTElementType | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. (optional)
+    elementId := "elementId_example" // string | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. (optional)
+    withThumbnails := true // bool | Whether or not to include thumbnails (not supported for microversion) (optional) (default to false)
+    withZipContents := true // bool | Returns the names of the files inside a zip file tab. (optional) (default to false)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentApi.GetDocumentContents(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentContents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetDocumentContents`: BTDocumentContentsInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.GetDocumentContents`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | The id of the document in which to perform the operation. | 
+**wvm** | **string** | Indicates which of workspace (w), version (v), or document microversion (m) id is specified below. | 
+**wvmid** | **string** | The id of the workspace, version or document microversion in which the operation should be performed. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetDocumentContentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+ **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
+ **elementType** | [**GBTElementType**](GBTElementType.md) | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. | 
+ **elementId** | **string** | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. | 
+ **withThumbnails** | **bool** | Whether or not to include thumbnails (not supported for microversion) | [default to false]
+ **withZipContents** | **bool** | Returns the names of the files inside a zip file tab. | [default to false]
+
+### Return type
+
+[**BTDocumentContentsInfo**](BTDocumentContentsInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetDocumentHistory
 
 > []BTDocumentHistoryInfo GetDocumentHistory(ctx, did, wm, wmid).Execute()
@@ -1196,9 +1283,11 @@ Name | Type | Description  | Notes
 
 ## GetElementsInDocument
 
-> []BTDocumentElementInfo GetElementsInDocument(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
+> []BTDocumentElementInfo GetElementsInDocument(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
 
 Retrieve tabs by document ID and workspace or version or microversion ID.
+
+
 
 ### Example
 
@@ -1220,10 +1309,11 @@ func main() {
     elementType := "elementType_example" // string |  (optional) (default to "")
     elementId := "elementId_example" // string |  (optional) (default to "")
     withThumbnails := true // bool |  (optional) (default to false)
+    withZipContents := true // bool | Returns the names of the files inside a zip file tab. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.DocumentApi.GetElementsInDocument(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).Execute()
+    resp, r, err := apiClient.DocumentApi.GetElementsInDocument(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetElementsInDocument``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1257,6 +1347,7 @@ Name | Type | Description  | Notes
  **elementType** | **string** |  | [default to &quot;&quot;]
  **elementId** | **string** |  | [default to &quot;&quot;]
  **withThumbnails** | **bool** |  | [default to false]
+ **withZipContents** | **bool** | Returns the names of the files inside a zip file tab. | [default to false]
 
 ### Return type
 

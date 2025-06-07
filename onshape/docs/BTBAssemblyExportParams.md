@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OccurrencesToExport** | Pointer to **string** | IDs of the instances to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport&#x3D;JHK,JHD). | [optional] 
+**OccurrencesToExport** | Pointer to **string** | IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport&#x3D;JHK,JHD). | [optional] 
 
 ## Methods
 

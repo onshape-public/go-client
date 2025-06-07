@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
+**SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
 **VariableStudioReference** | Pointer to **bool** | If &#x60;true&#x60;, the feature references a Variable Studio. | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
@@ -571,6 +572,31 @@ SetSuppressionConfigured sets SuppressionConfigured field to given value.
 `func (o *BTMDerivedAssemblyMirrorFeature5094) HasSuppressionConfigured() bool`
 
 HasSuppressionConfigured returns a boolean if a field has been set.
+
+### GetSuppressionState
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) GetSuppressionState() BTMSuppressionState1924`
+
+GetSuppressionState returns the SuppressionState field if non-nil, zero value otherwise.
+
+### GetSuppressionStateOk
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) GetSuppressionStateOk() (*BTMSuppressionState1924, bool)`
+
+GetSuppressionStateOk returns a tuple with the SuppressionState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressionState
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) SetSuppressionState(v BTMSuppressionState1924)`
+
+SetSuppressionState sets SuppressionState field to given value.
+
+### HasSuppressionState
+
+`func (o *BTMDerivedAssemblyMirrorFeature5094) HasSuppressionState() bool`
+
+HasSuppressionState returns a boolean if a field has been set.
 
 ### GetVariableStudioReference
 

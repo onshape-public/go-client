@@ -1,11 +1,15 @@
 # \AssemblyApi
 
-All URIs are relative to *https://cad.onshape.com/api/v10*
+All URIs are relative to *https://cad.onshape.com/api/v11*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**AddFeature**](AssemblyApi.md#AddFeature) | **Post** /assemblies/d/{did}/{wvm}/{wvmid}/e/{eid}/features | Add a feature to the assembly feature list.
 [**CreateAssembly**](AssemblyApi.md#CreateAssembly) | **Post** /assemblies/d/{did}/w/{wid} | Create a new assembly tab in the document.
+[**CreateAssemblyExportGltf**](AssemblyApi.md#CreateAssemblyExportGltf) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf | Export the assembly to glTF.
+[**CreateAssemblyExportObj**](AssemblyApi.md#CreateAssemblyExportObj) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/obj | Export the assembly to OBJ.
+[**CreateAssemblyExportSolidworks**](AssemblyApi.md#CreateAssemblyExportSolidworks) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/solidworks | Export the assembly to Solidworks.
+[**CreateAssemblyExportStep**](AssemblyApi.md#CreateAssemblyExportStep) | **Post** /assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/step | Export the assembly to STEP.
 [**CreateInstance**](AssemblyApi.md#CreateInstance) | **Post** /assemblies/d/{did}/w/{wid}/e/{eid}/instances | Insert an instance of a part, sketch, assembly, or Part Studio into an assembly.
 [**DeleteFeature**](AssemblyApi.md#DeleteFeature) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/features/featureid/{fid} | Delete a feature from an assembly.
 [**DeleteInstance**](AssemblyApi.md#DeleteInstance) | **Delete** /assemblies/d/{did}/w/{wid}/e/{eid}/instance/nodeid/{nid} | Delete an instance of an assembly.
@@ -168,6 +172,330 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTDocumentElementInfo**](BTDocumentElementInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAssemblyExportGltf
+
+> BTTranslationRequestInfo CreateAssemblyExportGltf(ctx, did, wv, wvid, eid).BTBGltfExportParams(bTBGltfExportParams).Execute()
+
+Export the assembly to glTF.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBGltfExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.CreateAssemblyExportGltf(context.Background(), did, wv, wvid, eid).BTBGltfExportParams(bTBGltfExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.CreateAssemblyExportGltf``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateAssemblyExportGltf`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.CreateAssemblyExportGltf`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAssemblyExportGltfRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBGltfExportParams** | [**BTBGltfExportParams**](BTBGltfExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAssemblyExportObj
+
+> BTTranslationRequestInfo CreateAssemblyExportObj(ctx, did, wv, wvid, eid).BTBObjExportParams(bTBObjExportParams).Execute()
+
+Export the assembly to OBJ.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBObjExportParams := *openapiclient.NewBTBObjExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBObjExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.CreateAssemblyExportObj(context.Background(), did, wv, wvid, eid).BTBObjExportParams(bTBObjExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.CreateAssemblyExportObj``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateAssemblyExportObj`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.CreateAssemblyExportObj`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAssemblyExportObjRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBObjExportParams** | [**BTBObjExportParams**](BTBObjExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAssemblyExportSolidworks
+
+> BTTranslationRequestInfo CreateAssemblyExportSolidworks(ctx, did, wv, wvid, eid).BTBSolidworksExportParams(bTBSolidworksExportParams).Execute()
+
+Export the assembly to Solidworks.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBSolidworksExportParams := *openapiclient.NewBTBSolidworksExportParams() // BTBSolidworksExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.CreateAssemblyExportSolidworks(context.Background(), did, wv, wvid, eid).BTBSolidworksExportParams(bTBSolidworksExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.CreateAssemblyExportSolidworks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateAssemblyExportSolidworks`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.CreateAssemblyExportSolidworks`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAssemblyExportSolidworksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBSolidworksExportParams** | [**BTBSolidworksExportParams**](BTBSolidworksExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAssemblyExportStep
+
+> BTTranslationRequestInfo CreateAssemblyExportStep(ctx, did, wv, wvid, eid).BTBStepExportParams(bTBStepExportParams).Execute()
+
+Export the assembly to STEP.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    bTBStepExportParams := *openapiclient.NewBTBStepExportParams(openapiclient.GBTPreProcessParasolidOption("NO_PRE_PROCESSING"), "StepVersionString_example") // BTBStepExportParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.AssemblyApi.CreateAssemblyExportStep(context.Background(), did, wv, wvid, eid).BTBStepExportParams(bTBStepExportParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.CreateAssemblyExportStep``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `CreateAssemblyExportStep`: BTTranslationRequestInfo
+    fmt.Fprintf(os.Stdout, "Response from `AssemblyApi.CreateAssemblyExportStep`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAssemblyExportStepRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+
+ **bTBStepExportParams** | [**BTBStepExportParams**](BTBStepExportParams.md) |  | 
+
+### Return type
+
+[**BTTranslationRequestInfo**](BTTranslationRequestInfo.md)
 
 ### Authorization
 

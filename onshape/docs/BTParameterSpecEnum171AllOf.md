@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **EnumName** | Pointer to **string** |  | [optional] 
+**EnumOptionVisibilityConditions** | Pointer to [**BTEnumOptionVisibilityConditionList2936**](BTEnumOptionVisibilityConditionList2936.md) |  | [optional] 
 **EnumValueToVisibilityCondition** | Pointer to [**map[string]BTParameterVisibilityCondition177**](BTParameterVisibilityCondition177.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **OptionIconUris** | Pointer to **[]string** |  | [optional] 
@@ -80,6 +81,31 @@ SetEnumName sets EnumName field to given value.
 `func (o *BTParameterSpecEnum171AllOf) HasEnumName() bool`
 
 HasEnumName returns a boolean if a field has been set.
+
+### GetEnumOptionVisibilityConditions
+
+`func (o *BTParameterSpecEnum171AllOf) GetEnumOptionVisibilityConditions() BTEnumOptionVisibilityConditionList2936`
+
+GetEnumOptionVisibilityConditions returns the EnumOptionVisibilityConditions field if non-nil, zero value otherwise.
+
+### GetEnumOptionVisibilityConditionsOk
+
+`func (o *BTParameterSpecEnum171AllOf) GetEnumOptionVisibilityConditionsOk() (*BTEnumOptionVisibilityConditionList2936, bool)`
+
+GetEnumOptionVisibilityConditionsOk returns a tuple with the EnumOptionVisibilityConditions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnumOptionVisibilityConditions
+
+`func (o *BTParameterSpecEnum171AllOf) SetEnumOptionVisibilityConditions(v BTEnumOptionVisibilityConditionList2936)`
+
+SetEnumOptionVisibilityConditions sets EnumOptionVisibilityConditions field to given value.
+
+### HasEnumOptionVisibilityConditions
+
+`func (o *BTParameterSpecEnum171AllOf) HasEnumOptionVisibilityConditions() bool`
+
+HasEnumOptionVisibilityConditions returns a boolean if a field has been set.
 
 ### GetEnumValueToVisibilityCondition
 

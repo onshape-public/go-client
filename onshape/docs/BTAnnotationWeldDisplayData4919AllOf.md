@@ -4,9 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllAround** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **IsoFlip** | Pointer to **bool** |  | [optional] 
 **JointType** | Pointer to [**GBTWeldJointType**](GBTWeldJointType.md) |  | [optional] 
+**LowerFlag** | Pointer to **bool** |  | [optional] 
 **LowerGroove** | Pointer to **float64** |  | [optional] 
 **LowerRootOpening** | Pointer to **float64** |  | [optional] 
 **LowerValueFour** | Pointer to **float64** |  | [optional] 
@@ -15,6 +17,7 @@ Name | Type | Description | Notes
 **LowerValueTwo** | Pointer to **float64** |  | [optional] 
 **LowerWeldType** | Pointer to [**GBTWeldType**](GBTWeldType.md) |  | [optional] 
 **Reference** | Pointer to **string** |  | [optional] 
+**UpperFlag** | Pointer to **bool** |  | [optional] 
 **UpperGroove** | Pointer to **float64** |  | [optional] 
 **UpperRootOpening** | Pointer to **float64** |  | [optional] 
 **UpperValueFour** | Pointer to **float64** |  | [optional] 
@@ -41,6 +44,31 @@ will change when the set of required properties is changed
 NewBTAnnotationWeldDisplayData4919AllOfWithDefaults instantiates a new BTAnnotationWeldDisplayData4919AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllAround
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetAllAround() bool`
+
+GetAllAround returns the AllAround field if non-nil, zero value otherwise.
+
+### GetAllAroundOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetAllAroundOk() (*bool, bool)`
+
+GetAllAroundOk returns a tuple with the AllAround field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllAround
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetAllAround(v bool)`
+
+SetAllAround sets AllAround field to given value.
+
+### HasAllAround
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasAllAround() bool`
+
+HasAllAround returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -116,6 +144,31 @@ SetJointType sets JointType field to given value.
 `func (o *BTAnnotationWeldDisplayData4919AllOf) HasJointType() bool`
 
 HasJointType returns a boolean if a field has been set.
+
+### GetLowerFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetLowerFlag() bool`
+
+GetLowerFlag returns the LowerFlag field if non-nil, zero value otherwise.
+
+### GetLowerFlagOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetLowerFlagOk() (*bool, bool)`
+
+GetLowerFlagOk returns a tuple with the LowerFlag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLowerFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetLowerFlag(v bool)`
+
+SetLowerFlag sets LowerFlag field to given value.
+
+### HasLowerFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasLowerFlag() bool`
+
+HasLowerFlag returns a boolean if a field has been set.
 
 ### GetLowerGroove
 
@@ -316,6 +369,31 @@ SetReference sets Reference field to given value.
 `func (o *BTAnnotationWeldDisplayData4919AllOf) HasReference() bool`
 
 HasReference returns a boolean if a field has been set.
+
+### GetUpperFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetUpperFlag() bool`
+
+GetUpperFlag returns the UpperFlag field if non-nil, zero value otherwise.
+
+### GetUpperFlagOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetUpperFlagOk() (*bool, bool)`
+
+GetUpperFlagOk returns a tuple with the UpperFlag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpperFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetUpperFlag(v bool)`
+
+SetUpperFlag sets UpperFlag field to given value.
+
+### HasUpperFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasUpperFlag() bool`
+
+HasUpperFlag returns a boolean if a field has been set.
 
 ### GetUpperGroove
 

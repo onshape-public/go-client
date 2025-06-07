@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **Thumbnail** | Pointer to [**BTCommentAttachmentInfo**](BTCommentAttachmentInfo.md) |  | [optional] 
 **TopLevel** | Pointer to **bool** |  | [optional] 
 **User** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
+**UserCompany** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewData** | Pointer to [**BTViewDataInfo**](BTViewDataInfo.md) |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -807,6 +808,31 @@ SetUser sets User field to given value.
 `func (o *BTCommentInfo) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
+
+### GetUserCompany
+
+`func (o *BTCommentInfo) GetUserCompany() string`
+
+GetUserCompany returns the UserCompany field if non-nil, zero value otherwise.
+
+### GetUserCompanyOk
+
+`func (o *BTCommentInfo) GetUserCompanyOk() (*string, bool)`
+
+GetUserCompanyOk returns a tuple with the UserCompany field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserCompany
+
+`func (o *BTCommentInfo) SetUserCompany(v string)`
+
+SetUserCompany sets UserCompany field to given value.
+
+### HasUserCompany
+
+`func (o *BTCommentInfo) HasUserCompany() bool`
+
+HasUserCompany returns a boolean if a field has been set.
 
 ### GetVersionId
 

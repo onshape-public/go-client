@@ -25,6 +25,8 @@
 
 * `BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams` (value: `"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"`)
 
+* `BTApiVersionV11ExcludeZipContentsByDefault` (value: `"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

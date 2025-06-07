@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Admin** | Pointer to **bool** |  | [optional] 
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
+**DateAdded** | Pointer to **JSONTime** |  | [optional] 
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **Guest** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
@@ -85,6 +86,31 @@ SetCompany sets Company field to given value.
 `func (o *BTCompanyUserInfo) HasCompany() bool`
 
 HasCompany returns a boolean if a field has been set.
+
+### GetDateAdded
+
+`func (o *BTCompanyUserInfo) GetDateAdded() JSONTime`
+
+GetDateAdded returns the DateAdded field if non-nil, zero value otherwise.
+
+### GetDateAddedOk
+
+`func (o *BTCompanyUserInfo) GetDateAddedOk() (*JSONTime, bool)`
+
+GetDateAddedOk returns a tuple with the DateAdded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDateAdded
+
+`func (o *BTCompanyUserInfo) SetDateAdded(v JSONTime)`
+
+SetDateAdded sets DateAdded field to given value.
+
+### HasDateAdded
+
+`func (o *BTCompanyUserInfo) HasDateAdded() bool`
+
+HasDateAdded returns a boolean if a field has been set.
 
 ### GetDocumentationNameOverride
 

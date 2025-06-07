@@ -36,6 +36,7 @@ type GlobalPermissionInfo struct {
 	ManageWorkflows                 *bool `json:"manageWorkflows,omitempty"`
 	ShareForAnonymousAccess         *bool `json:"shareForAnonymousAccess,omitempty"`
 	TransferDocumentsFromEnterprise *bool `json:"transferDocumentsFromEnterprise,omitempty"`
+	UseRevisionTools                *bool `json:"useRevisionTools,omitempty"`
 }
 
 // NewGlobalPermissionInfo instantiates a new GlobalPermissionInfo object
@@ -695,6 +696,38 @@ func (o *GlobalPermissionInfo) SetTransferDocumentsFromEnterprise(v bool) {
 	o.TransferDocumentsFromEnterprise = &v
 }
 
+// GetUseRevisionTools returns the UseRevisionTools field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetUseRevisionTools() bool {
+	if o == nil || o.UseRevisionTools == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseRevisionTools
+}
+
+// GetUseRevisionToolsOk returns a tuple with the UseRevisionTools field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetUseRevisionToolsOk() (*bool, bool) {
+	if o == nil || o.UseRevisionTools == nil {
+		return nil, false
+	}
+	return o.UseRevisionTools, true
+}
+
+// HasUseRevisionTools returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasUseRevisionTools() bool {
+	if o != nil && o.UseRevisionTools != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseRevisionTools gets a reference to the given bool and assigns it to the UseRevisionTools field.
+func (o *GlobalPermissionInfo) SetUseRevisionTools(v bool) {
+	o.UseRevisionTools = &v
+}
+
 func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AccessReports != nil {
@@ -756,6 +789,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TransferDocumentsFromEnterprise != nil {
 		toSerialize["transferDocumentsFromEnterprise"] = o.TransferDocumentsFromEnterprise
+	}
+	if o.UseRevisionTools != nil {
+		toSerialize["useRevisionTools"] = o.UseRevisionTools
 	}
 	return json.Marshal(toSerialize)
 }

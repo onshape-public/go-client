@@ -3321,6 +3321,10 @@
 
 * `GBTErrorStringEnumFgsConnectionsAssemblyTooComplex` (value: `"FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX"`)
 
+* `GBTErrorStringEnumThinExtrudeNotParallelPlanes` (value: `"THIN_EXTRUDE_NOT_PARALLEL_PLANES"`)
+
+* `GBTErrorStringEnumWidthAndTabMateconnectorsOnSameOccurrence` (value: `"WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -185,8 +185,12 @@ docs/BTBCloudStorageOptions.md
 docs/BTBDrawingOperationParams.md
 docs/BTBEmailExportOptions.md
 docs/BTBExportAdvancedParams.md
+docs/BTBExportMeshParams.md
 docs/BTBExportModelParams.md
+docs/BTBGltfExportParams.md
+docs/BTBObjExportParams.md
 docs/BTBSMatrix386.md
+docs/BTBSolidworksExportParams.md
 docs/BTBStepExportParams.md
 docs/BTBaseEntityAppearanceEntry3607.md
 docs/BTBaseEntityAppearanceSettings1391.md
@@ -317,9 +321,12 @@ docs/BTDiscount.md
 docs/BTDiscountInfo.md
 docs/BTDiscountOwnerIdPlanId.md
 docs/BTDisplayStateInfo.md
+docs/BTDocumentContentsInfo.md
 docs/BTDocumentElementCreationDescriptor.md
 docs/BTDocumentElementInfo.md
 docs/BTDocumentElementProcessingInfo.md
+docs/BTDocumentElementReference2484.md
+docs/BTDocumentElementReference2484AllOf.md
 docs/BTDocumentHistoryInfo.md
 docs/BTDocumentInfo.md
 docs/BTDocumentInfoAllOf.md
@@ -353,6 +360,7 @@ docs/BTEdgeTopologyFilter122.md
 docs/BTEdgeTopologyFilter122AllOf.md
 docs/BTEditingLogic2350.md
 docs/BTElementDisplayData326.md
+docs/BTElementGroup1458.md
 docs/BTElementLibraryReferenceData3133.md
 docs/BTElementLibrarySummaryInfo.md
 docs/BTElementLocationParams.md
@@ -469,6 +477,7 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
+docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -482,6 +491,7 @@ docs/BTGraphicsAppearance1152.md
 docs/BTGraphicsBuffer2668.md
 docs/BTGraphicsSectionPlaneData1429.md
 docs/BTGraphicsSectionViewStateData4379.md
+docs/BTGroupOrElementReference2205.md
 docs/BTIdTranslationInfo.md
 docs/BTIdTranslationParams.md
 docs/BTIdTranslationResultInfo.md
@@ -565,6 +575,7 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
+docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -759,9 +770,11 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
+docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
+docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -1066,6 +1079,7 @@ docs/BTPropertyValueParam.md
 docs/BTPublicationBulkItemParams.md
 docs/BTPublicationInfo.md
 docs/BTPublicationInfoAllOf.md
+docs/BTPublicationInfoItem.md
 docs/BTPublicationItemParams.md
 docs/BTPublicationParams.md
 docs/BTPublishedWorkflowId.md
@@ -1076,6 +1090,8 @@ docs/BTQuantityRange181.md
 docs/BTQueryFilter183.md
 docs/BTRadialDimensionDisplayData348.md
 docs/BTRadialDimensionDisplayData348AllOf.md
+docs/BTRadialDistanceDimensionDisplayData2644.md
+docs/BTRadialDistanceDimensionDisplayData2644AllOf.md
 docs/BTRbacPermissionSchemeInfo.md
 docs/BTRbacRoleInfo.md
 docs/BTReadOnlyParameterSpec1889.md
@@ -1397,6 +1413,8 @@ docs/GBTEntityEdgeSmoothnessStatus.md
 docs/GBTEntityInferenceType.md
 docs/GBTEntityType.md
 docs/GBTErrorStringEnum.md
+docs/GBTExportResolution.md
+docs/GBTExportUnit.md
 docs/GBTFeatureFilterExclusion.md
 docs/GBTFilterFlattenedGeometryOptions.md
 docs/GBTGTolConstraintType.md
@@ -1454,7 +1472,6 @@ docs/In.md
 docs/Info.md
 docs/InsertableApi.md
 docs/Interpolation.md
-docs/Item.md
 docs/ItemApi.md
 docs/License.md
 docs/Lines.md
@@ -1736,9 +1753,11 @@ model_bt_discount.go
 model_bt_discount_info.go
 model_bt_discount_owner_id_plan_id.go
 model_bt_display_state_info.go
+model_bt_document_contents_info.go
 model_bt_document_element_creation_descriptor.go
 model_bt_document_element_info.go
 model_bt_document_element_processing_info.go
+model_bt_document_element_reference_2484.go
 model_bt_document_history_info.go
 model_bt_document_info.go
 model_bt_document_label_info.go
@@ -1763,6 +1782,7 @@ model_bt_drawing_params.go
 model_bt_edge_topology_filter_122.go
 model_bt_editing_logic_2350.go
 model_bt_element_display_data_326.go
+model_bt_element_group_1458.go
 model_bt_element_library_reference_data_3133.go
 model_bt_element_library_summary_info.go
 model_bt_element_location_params.go
@@ -1847,6 +1867,7 @@ model_bt_graphics_appearance_1152.go
 model_bt_graphics_buffer_2668.go
 model_bt_graphics_section_plane_data_1429.go
 model_bt_graphics_section_view_state_data_4379.go
+model_bt_group_or_element_reference_2205.go
 model_bt_identity_info.go
 model_bt_image_filter_853.go
 model_bt_image_mapping_3821.go
@@ -2059,6 +2080,7 @@ model_bt_property_update_info.go
 model_bt_property_value_param.go
 model_bt_publication_bulk_item_params.go
 model_bt_publication_info.go
+model_bt_publication_info_item.go
 model_bt_publication_item_params.go
 model_bt_publication_params.go
 model_bt_published_workflow_id.go
@@ -2068,6 +2090,7 @@ model_bt_purchase_info.go
 model_bt_quantity_range_181.go
 model_bt_query_filter_183.go
 model_bt_radial_dimension_display_data_348.go
+model_bt_radial_distance_dimension_display_data_2644.go
 model_bt_rbac_permission_scheme_info.go
 model_bt_rbac_role_info.go
 model_bt_read_only_parameter_spec_1889.go
@@ -2269,7 +2292,11 @@ model_btb_cloud_storage_options.go
 model_btb_drawing_operation_params.go
 model_btb_email_export_options.go
 model_btb_export_advanced_params.go
+model_btb_export_mesh_params.go
 model_btb_export_model_params.go
+model_btb_gltf_export_params.go
+model_btb_obj_export_params.go
+model_btb_solidworks_export_params.go
 model_btb_step_export_params.go
 model_btbs_matrix_386_.go
 model_btes_results_filter.go
@@ -2538,6 +2565,8 @@ model_gbt_entity_edge_smoothness_status.go
 model_gbt_entity_inference_type.go
 model_gbt_entity_type.go
 model_gbt_error_string_enum.go
+model_gbt_export_resolution.go
+model_gbt_export_unit.go
 model_gbt_feature_filter_exclusion.go
 model_gbt_filter_flattened_geometry_options.go
 model_gbt_geometry_type.go
@@ -2595,7 +2624,6 @@ model_image.go
 model_in.go
 model_info.go
 model_interpolation.go
-model_item.go
 model_license.go
 model_lines.go
 model_link.go

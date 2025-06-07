@@ -18,6 +18,7 @@ import (
 type BTCompanyUserInfo struct {
 	Admin                     *bool                 `json:"admin,omitempty"`
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	DateAdded                 *JSONTime             `json:"dateAdded_,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	Guest                     *bool                 `json:"guest,omitempty"`
 	// URI to fetch complete information of the resource.
@@ -113,6 +114,38 @@ func (o *BTCompanyUserInfo) HasCompany() bool {
 // SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
 func (o *BTCompanyUserInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
+}
+
+// GetDateAdded returns the DateAdded field value if set, zero value otherwise.
+func (o *BTCompanyUserInfo) GetDateAdded() JSONTime {
+	if o == nil || o.DateAdded == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.DateAdded
+}
+
+// GetDateAddedOk returns a tuple with the DateAdded field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserInfo) GetDateAddedOk() (*JSONTime, bool) {
+	if o == nil || o.DateAdded == nil {
+		return nil, false
+	}
+	return o.DateAdded, true
+}
+
+// HasDateAdded returns a boolean if a field has been set.
+func (o *BTCompanyUserInfo) HasDateAdded() bool {
+	if o != nil && o.DateAdded != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDateAdded gets a reference to the given JSONTime and assigns it to the DateAdded field.
+func (o *BTCompanyUserInfo) SetDateAdded(v JSONTime) {
+	o.DateAdded = &v
 }
 
 // GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
@@ -442,6 +475,9 @@ func (o BTCompanyUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.DateAdded != nil {
+		toSerialize["dateAdded_"] = o.DateAdded
 	}
 	if o.DocumentationNameOverride != nil {
 		toSerialize["documentationNameOverride"] = o.DocumentationNameOverride

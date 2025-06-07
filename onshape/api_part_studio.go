@@ -456,6 +456,408 @@ func (a *PartStudioApiService) CreatePartStudioExecute(r ApiCreatePartStudioRequ
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiCreatePartStudioExportGltfRequest struct {
+	ctx                 context.Context
+	ApiService          *PartStudioApiService
+	did                 string
+	wv                  string
+	wvid                string
+	eid                 string
+	bTBGltfExportParams *BTBGltfExportParams
+}
+
+func (r ApiCreatePartStudioExportGltfRequest) BTBGltfExportParams(bTBGltfExportParams BTBGltfExportParams) ApiCreatePartStudioExportGltfRequest {
+	r.bTBGltfExportParams = &bTBGltfExportParams
+	return r
+}
+
+func (r ApiCreatePartStudioExportGltfRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreatePartStudioExportGltfExecute(r)
+}
+
+/*
+CreatePartStudioExportGltf Asynchronously export a Part Studio to glTF.
+
+Creates an asynchronous export of a Part Studio to glTF. See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#export-a-part-studio-to-gltf-obj-solidworks-or-step) for more details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreatePartStudioExportGltfRequest
+*/
+func (a *PartStudioApiService) CreatePartStudioExportGltf(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreatePartStudioExportGltfRequest {
+	return ApiCreatePartStudioExportGltfRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *PartStudioApiService) CreatePartStudioExportGltfExecute(r ApiCreatePartStudioExportGltfRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartStudioApiService.CreatePartStudioExportGltf")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBGltfExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBGltfExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBGltfExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreatePartStudioExportObjRequest struct {
+	ctx                context.Context
+	ApiService         *PartStudioApiService
+	did                string
+	wv                 string
+	wvid               string
+	eid                string
+	bTBObjExportParams *BTBObjExportParams
+}
+
+func (r ApiCreatePartStudioExportObjRequest) BTBObjExportParams(bTBObjExportParams BTBObjExportParams) ApiCreatePartStudioExportObjRequest {
+	r.bTBObjExportParams = &bTBObjExportParams
+	return r
+}
+
+func (r ApiCreatePartStudioExportObjRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreatePartStudioExportObjExecute(r)
+}
+
+/*
+CreatePartStudioExportObj Asynchronously export a Part Studio to OBJ.
+
+Creates an asynchronous export of a Part Studio to OBJ. See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#export-a-part-studio-to-gltf-obj-solidworks-or-step) for more details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreatePartStudioExportObjRequest
+*/
+func (a *PartStudioApiService) CreatePartStudioExportObj(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreatePartStudioExportObjRequest {
+	return ApiCreatePartStudioExportObjRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *PartStudioApiService) CreatePartStudioExportObjExecute(r ApiCreatePartStudioExportObjRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartStudioApiService.CreatePartStudioExportObj")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/obj"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBObjExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBObjExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBObjExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreatePartStudioExportSolidworksRequest struct {
+	ctx                       context.Context
+	ApiService                *PartStudioApiService
+	did                       string
+	wv                        string
+	wvid                      string
+	eid                       string
+	bTBSolidworksExportParams *BTBSolidworksExportParams
+}
+
+func (r ApiCreatePartStudioExportSolidworksRequest) BTBSolidworksExportParams(bTBSolidworksExportParams BTBSolidworksExportParams) ApiCreatePartStudioExportSolidworksRequest {
+	r.bTBSolidworksExportParams = &bTBSolidworksExportParams
+	return r
+}
+
+func (r ApiCreatePartStudioExportSolidworksRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreatePartStudioExportSolidworksExecute(r)
+}
+
+/*
+CreatePartStudioExportSolidworks Asynchronously export a Part Studio to Solidworks.
+
+Creates an asynchronous export of a Part Studio to Solidworks. See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#export-a-part-studio-to-gltf-obj-solidworks-or-step) for more details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreatePartStudioExportSolidworksRequest
+*/
+func (a *PartStudioApiService) CreatePartStudioExportSolidworks(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreatePartStudioExportSolidworksRequest {
+	return ApiCreatePartStudioExportSolidworksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *PartStudioApiService) CreatePartStudioExportSolidworksExecute(r ApiCreatePartStudioExportSolidworksRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PartStudioApiService.CreatePartStudioExportSolidworks")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/partstudios/d/{did}/{wv}/{wvid}/e/{eid}/export/solidworks"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBSolidworksExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBSolidworksExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBSolidworksExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiCreatePartStudioExportStepRequest struct {
 	ctx                 context.Context
 	ApiService          *PartStudioApiService
@@ -478,8 +880,7 @@ func (r ApiCreatePartStudioExportStepRequest) Execute() (*BTTranslationRequestIn
 /*
 CreatePartStudioExportStep Asynchronously export a Part Studio to STEP.
 
-Creates an asynchronous export of a Part Studio to STEP.
-* See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#asynchronous-exports) for more details.
+Creates an asynchronous export of a Part Studio to STEP. See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#export-a-part-studio-to-gltf-obj-solidworks-or-step) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did Document ID.
@@ -617,7 +1018,7 @@ Creates an asynchronous export of a Part Studio to another file format.
 * Can take longer than synchronous export options, but supports more formats and provides more control on tessellation and other settings.
 * Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. `
 * Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
-* See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#asynchronous-exports) for more details.
+* See [API Guide: Asynchronous Exports](https://onshape-public.github.io/docs/api-adv/translation/#export-a-part-studio-to-another-format) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did Document ID.

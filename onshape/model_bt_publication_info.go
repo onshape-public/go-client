@@ -1075,24 +1075,24 @@ func (o *BTPublicationInfo) SetDefaultWorkspaceId(v string) {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *BTPublicationInfo) GetItems() []Item {
+func (o *BTPublicationInfo) GetItems() []BTPublicationInfoItem {
 	type getResult interface {
-		GetItems() []Item
+		GetItems() []BTPublicationInfoItem
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
 		return tx.GetItems()
 	} else {
-		var de []Item
+		var de []BTPublicationInfoItem
 		return de
 	}
 }
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPublicationInfo) GetItemsOk() ([]Item, bool) {
+func (o *BTPublicationInfo) GetItemsOk() ([]BTPublicationInfoItem, bool) {
 	type getResult interface {
-		GetItemsOk() ([]Item, bool)
+		GetItemsOk() ([]BTPublicationInfoItem, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
@@ -1115,10 +1115,10 @@ func (o *BTPublicationInfo) HasItems() bool {
 	}
 }
 
-// SetItems gets a reference to the given []Item and assigns it to the Items field.
-func (o *BTPublicationInfo) SetItems(v []Item) {
+// SetItems gets a reference to the given []BTPublicationInfoItem and assigns it to the Items field.
+func (o *BTPublicationInfo) SetItems(v []BTPublicationInfoItem) {
 	type getResult interface {
-		SetItems(v []Item)
+		SetItems(v []BTPublicationInfoItem)
 	}
 
 	o.GetActualInstance().(getResult).SetItems(v)
@@ -1462,11 +1462,11 @@ type base_BTPublicationInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef            *string `json:"viewRef,omitempty"`
-	DefaultWorkspaceId *string `json:"defaultWorkspaceId,omitempty"`
-	Items              []Item  `json:"items,omitempty"`
-	Notes              *string `json:"notes,omitempty"`
-	Sequence           *string `json:"sequence,omitempty"`
+	ViewRef            *string                 `json:"viewRef,omitempty"`
+	DefaultWorkspaceId *string                 `json:"defaultWorkspaceId,omitempty"`
+	Items              []BTPublicationInfoItem `json:"items,omitempty"`
+	Notes              *string                 `json:"notes,omitempty"`
+	Sequence           *string                 `json:"sequence,omitempty"`
 }
 
 // Newbase_BTPublicationInfo instantiates a new base_BTPublicationInfo object
@@ -2120,9 +2120,9 @@ func (o *base_BTPublicationInfo) SetDefaultWorkspaceId(v string) {
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
-func (o *base_BTPublicationInfo) GetItems() []Item {
+func (o *base_BTPublicationInfo) GetItems() []BTPublicationInfoItem {
 	if o == nil || o.Items == nil {
-		var ret []Item
+		var ret []BTPublicationInfoItem
 		return ret
 	}
 	return o.Items
@@ -2130,7 +2130,7 @@ func (o *base_BTPublicationInfo) GetItems() []Item {
 
 // GetItemsOk returns a tuple with the Items field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTPublicationInfo) GetItemsOk() ([]Item, bool) {
+func (o *base_BTPublicationInfo) GetItemsOk() ([]BTPublicationInfoItem, bool) {
 	if o == nil || o.Items == nil {
 		return nil, false
 	}
@@ -2146,8 +2146,8 @@ func (o *base_BTPublicationInfo) HasItems() bool {
 	return false
 }
 
-// SetItems gets a reference to the given []Item and assigns it to the Items field.
-func (o *base_BTPublicationInfo) SetItems(v []Item) {
+// SetItems gets a reference to the given []BTPublicationInfoItem and assigns it to the Items field.
+func (o *base_BTPublicationInfo) SetItems(v []BTPublicationInfoItem) {
 	o.Items = v
 }
 

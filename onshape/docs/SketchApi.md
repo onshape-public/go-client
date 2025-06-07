@@ -1,6 +1,6 @@
 # \SketchApi
 
-All URIs are relative to *https://cad.onshape.com/api/v10*
+All URIs are relative to *https://cad.onshape.com/api/v11*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
