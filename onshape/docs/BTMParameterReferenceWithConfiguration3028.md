@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **FeatureScriptType** | Pointer to **string** |  | [optional] 
 **Ids** | Pointer to **[]string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
-**MicroversioId** | Pointer to **string** |  | [optional] 
+**MicroversionId** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
 **ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
@@ -262,30 +262,30 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 
 HasImportMicroversion returns a boolean if a field has been set.
 
-### GetMicroversioId
+### GetMicroversionId
 
-`func (o *BTMParameterReferenceWithConfiguration3028) GetMicroversioId() string`
+`func (o *BTMParameterReferenceWithConfiguration3028) GetMicroversionId() string`
 
-GetMicroversioId returns the MicroversioId field if non-nil, zero value otherwise.
+GetMicroversionId returns the MicroversionId field if non-nil, zero value otherwise.
 
-### GetMicroversioIdOk
+### GetMicroversionIdOk
 
-`func (o *BTMParameterReferenceWithConfiguration3028) GetMicroversioIdOk() (*string, bool)`
+`func (o *BTMParameterReferenceWithConfiguration3028) GetMicroversionIdOk() (*string, bool)`
 
-GetMicroversioIdOk returns a tuple with the MicroversioId field if it's non-nil, zero value otherwise
+GetMicroversionIdOk returns a tuple with the MicroversionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetMicroversioId
+### SetMicroversionId
 
-`func (o *BTMParameterReferenceWithConfiguration3028) SetMicroversioId(v string)`
+`func (o *BTMParameterReferenceWithConfiguration3028) SetMicroversionId(v string)`
 
-SetMicroversioId sets MicroversioId field to given value.
+SetMicroversionId sets MicroversionId field to given value.
 
-### HasMicroversioId
+### HasMicroversionId
 
-`func (o *BTMParameterReferenceWithConfiguration3028) HasMicroversioId() bool`
+`func (o *BTMParameterReferenceWithConfiguration3028) HasMicroversionId() bool`
 
-HasMicroversioId returns a boolean if a field has been set.
+HasMicroversionId returns a boolean if a field has been set.
 
 ### GetNamespace
 

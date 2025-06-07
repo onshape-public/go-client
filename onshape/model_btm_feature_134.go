@@ -782,6 +782,56 @@ func (o *BTMFeature134) SetSuppressionConfigured(v bool) {
 	o.GetActualInstance().(getResult).SetSuppressionConfigured(v)
 }
 
+// GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
+func (o *BTMFeature134) GetSuppressionState() BTMSuppressionState1924 {
+	type getResult interface {
+		GetSuppressionState() BTMSuppressionState1924
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionState()
+	} else {
+		var de BTMSuppressionState1924
+		return de
+	}
+}
+
+// GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMFeature134) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+	type getResult interface {
+		GetSuppressionStateOk() (*BTMSuppressionState1924, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionStateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSuppressionState returns a boolean if a field has been set.
+func (o *BTMFeature134) HasSuppressionState() bool {
+	type getResult interface {
+		HasSuppressionState() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSuppressionState()
+	} else {
+		return false
+	}
+}
+
+// SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
+func (o *BTMFeature134) SetSuppressionState(v BTMSuppressionState1924) {
+	type getResult interface {
+		SetSuppressionState(v BTMSuppressionState1924)
+	}
+
+	o.GetActualInstance().(getResult).SetSuppressionState(v)
+}
+
 // GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
 func (o *BTMFeature134) GetVariableStudioReference() bool {
 	type getResult interface {
@@ -1198,7 +1248,8 @@ type base_BTMFeature134 struct {
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured *bool `json:"suppressionConfigured,omitempty"`
+	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 	// If `true`, the feature references a Variable Studio.
 	VariableStudioReference *bool `json:"variableStudioReference,omitempty"`
 }
@@ -1636,6 +1687,38 @@ func (o *base_BTMFeature134) SetSuppressionConfigured(v bool) {
 	o.SuppressionConfigured = &v
 }
 
+// GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
+func (o *base_BTMFeature134) GetSuppressionState() BTMSuppressionState1924 {
+	if o == nil || o.SuppressionState == nil {
+		var ret BTMSuppressionState1924
+		return ret
+	}
+	return *o.SuppressionState
+}
+
+// GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMFeature134) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+	if o == nil || o.SuppressionState == nil {
+		return nil, false
+	}
+	return o.SuppressionState, true
+}
+
+// HasSuppressionState returns a boolean if a field has been set.
+func (o *base_BTMFeature134) HasSuppressionState() bool {
+	if o != nil && o.SuppressionState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
+func (o *base_BTMFeature134) SetSuppressionState(v BTMSuppressionState1924) {
+	o.SuppressionState = &v
+}
+
 // GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
 func (o *base_BTMFeature134) GetVariableStudioReference() bool {
 	if o == nil || o.VariableStudioReference == nil {
@@ -1708,6 +1791,9 @@ func (o base_BTMFeature134) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressionConfigured != nil {
 		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
+	}
+	if o.SuppressionState != nil {
+		toSerialize["suppressionState"] = o.SuppressionState
 	}
 	if o.VariableStudioReference != nil {
 		toSerialize["variableStudioReference"] = o.VariableStudioReference

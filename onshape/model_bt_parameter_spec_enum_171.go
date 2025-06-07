@@ -34,6 +34,7 @@ type BTParameterSpecEnum171 struct {
 	UiHints                        []GBTUIHint                                   `json:"uiHints,omitempty"`
 	VisibilityCondition            *BTParameterVisibilityCondition177            `json:"visibilityCondition,omitempty"`
 	EnumName                       *string                                       `json:"enumName,omitempty"`
+	EnumOptionVisibilityConditions *BTEnumOptionVisibilityConditionList2936      `json:"enumOptionVisibilityConditions,omitempty"`
 	EnumValueToVisibilityCondition *map[string]BTParameterVisibilityCondition177 `json:"enumValueToVisibilityCondition,omitempty"`
 	Namespace                      *string                                       `json:"namespace,omitempty"`
 	OptionIconUris                 []string                                      `json:"optionIconUris,omitempty"`
@@ -602,6 +603,38 @@ func (o *BTParameterSpecEnum171) SetEnumName(v string) {
 	o.EnumName = &v
 }
 
+// GetEnumOptionVisibilityConditions returns the EnumOptionVisibilityConditions field value if set, zero value otherwise.
+func (o *BTParameterSpecEnum171) GetEnumOptionVisibilityConditions() BTEnumOptionVisibilityConditionList2936 {
+	if o == nil || o.EnumOptionVisibilityConditions == nil {
+		var ret BTEnumOptionVisibilityConditionList2936
+		return ret
+	}
+	return *o.EnumOptionVisibilityConditions
+}
+
+// GetEnumOptionVisibilityConditionsOk returns a tuple with the EnumOptionVisibilityConditions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecEnum171) GetEnumOptionVisibilityConditionsOk() (*BTEnumOptionVisibilityConditionList2936, bool) {
+	if o == nil || o.EnumOptionVisibilityConditions == nil {
+		return nil, false
+	}
+	return o.EnumOptionVisibilityConditions, true
+}
+
+// HasEnumOptionVisibilityConditions returns a boolean if a field has been set.
+func (o *BTParameterSpecEnum171) HasEnumOptionVisibilityConditions() bool {
+	if o != nil && o.EnumOptionVisibilityConditions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnumOptionVisibilityConditions gets a reference to the given BTEnumOptionVisibilityConditionList2936 and assigns it to the EnumOptionVisibilityConditions field.
+func (o *BTParameterSpecEnum171) SetEnumOptionVisibilityConditions(v BTEnumOptionVisibilityConditionList2936) {
+	o.EnumOptionVisibilityConditions = &v
+}
+
 // GetEnumValueToVisibilityCondition returns the EnumValueToVisibilityCondition field value if set, zero value otherwise.
 func (o *BTParameterSpecEnum171) GetEnumValueToVisibilityCondition() map[string]BTParameterVisibilityCondition177 {
 	if o == nil || o.EnumValueToVisibilityCondition == nil {
@@ -822,6 +855,9 @@ func (o BTParameterSpecEnum171) MarshalJSON() ([]byte, error) {
 	}
 	if o.EnumName != nil {
 		toSerialize["enumName"] = o.EnumName
+	}
+	if o.EnumOptionVisibilityConditions != nil {
+		toSerialize["enumOptionVisibilityConditions"] = o.EnumOptionVisibilityConditions
 	}
 	if o.EnumValueToVisibilityCondition != nil {
 		toSerialize["enumValueToVisibilityCondition"] = o.EnumValueToVisibilityCondition

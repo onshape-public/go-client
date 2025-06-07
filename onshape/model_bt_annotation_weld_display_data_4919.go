@@ -23,8 +23,10 @@ type BTAnnotationWeldDisplayData4919 struct {
 	DeterministicId  *string                `json:"deterministicId,omitempty"`
 	DxdySegments     []BTVector2d1812       `json:"dxdySegments,omitempty"`
 	IsDeletion       *bool                  `json:"isDeletion,omitempty"`
+	AllAround        *bool                  `json:"allAround,omitempty"`
 	IsoFlip          *bool                  `json:"isoFlip,omitempty"`
 	JointType        *GBTWeldJointType      `json:"jointType,omitempty"`
+	LowerFlag        *bool                  `json:"lowerFlag,omitempty"`
 	LowerGroove      *float64               `json:"lowerGroove,omitempty"`
 	LowerRootOpening *float64               `json:"lowerRootOpening,omitempty"`
 	LowerValueFour   *float64               `json:"lowerValueFour,omitempty"`
@@ -33,6 +35,7 @@ type BTAnnotationWeldDisplayData4919 struct {
 	LowerValueTwo    *float64               `json:"lowerValueTwo,omitempty"`
 	LowerWeldType    *GBTWeldType           `json:"lowerWeldType,omitempty"`
 	Reference        *string                `json:"reference,omitempty"`
+	UpperFlag        *bool                  `json:"upperFlag,omitempty"`
 	UpperGroove      *float64               `json:"upperGroove,omitempty"`
 	UpperRootOpening *float64               `json:"upperRootOpening,omitempty"`
 	UpperValueFour   *float64               `json:"upperValueFour,omitempty"`
@@ -251,6 +254,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetIsDeletion(v bool) {
 	o.IsDeletion = &v
 }
 
+// GetAllAround returns the AllAround field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetAllAround() bool {
+	if o == nil || o.AllAround == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllAround
+}
+
+// GetAllAroundOk returns a tuple with the AllAround field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetAllAroundOk() (*bool, bool) {
+	if o == nil || o.AllAround == nil {
+		return nil, false
+	}
+	return o.AllAround, true
+}
+
+// HasAllAround returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasAllAround() bool {
+	if o != nil && o.AllAround != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllAround gets a reference to the given bool and assigns it to the AllAround field.
+func (o *BTAnnotationWeldDisplayData4919) SetAllAround(v bool) {
+	o.AllAround = &v
+}
+
 // GetIsoFlip returns the IsoFlip field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetIsoFlip() bool {
 	if o == nil || o.IsoFlip == nil {
@@ -313,6 +348,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasJointType() bool {
 // SetJointType gets a reference to the given GBTWeldJointType and assigns it to the JointType field.
 func (o *BTAnnotationWeldDisplayData4919) SetJointType(v GBTWeldJointType) {
 	o.JointType = &v
+}
+
+// GetLowerFlag returns the LowerFlag field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerFlag() bool {
+	if o == nil || o.LowerFlag == nil {
+		var ret bool
+		return ret
+	}
+	return *o.LowerFlag
+}
+
+// GetLowerFlagOk returns a tuple with the LowerFlag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerFlagOk() (*bool, bool) {
+	if o == nil || o.LowerFlag == nil {
+		return nil, false
+	}
+	return o.LowerFlag, true
+}
+
+// HasLowerFlag returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasLowerFlag() bool {
+	if o != nil && o.LowerFlag != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLowerFlag gets a reference to the given bool and assigns it to the LowerFlag field.
+func (o *BTAnnotationWeldDisplayData4919) SetLowerFlag(v bool) {
+	o.LowerFlag = &v
 }
 
 // GetLowerGroove returns the LowerGroove field value if set, zero value otherwise.
@@ -571,6 +638,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetReference(v string) {
 	o.Reference = &v
 }
 
+// GetUpperFlag returns the UpperFlag field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperFlag() bool {
+	if o == nil || o.UpperFlag == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UpperFlag
+}
+
+// GetUpperFlagOk returns a tuple with the UpperFlag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperFlagOk() (*bool, bool) {
+	if o == nil || o.UpperFlag == nil {
+		return nil, false
+	}
+	return o.UpperFlag, true
+}
+
+// HasUpperFlag returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasUpperFlag() bool {
+	if o != nil && o.UpperFlag != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpperFlag gets a reference to the given bool and assigns it to the UpperFlag field.
+func (o *BTAnnotationWeldDisplayData4919) SetUpperFlag(v bool) {
+	o.UpperFlag = &v
+}
+
 // GetUpperGroove returns the UpperGroove field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetUpperGroove() float64 {
 	if o == nil || o.UpperGroove == nil {
@@ -823,11 +922,17 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.IsDeletion != nil {
 		toSerialize["isDeletion"] = o.IsDeletion
 	}
+	if o.AllAround != nil {
+		toSerialize["allAround"] = o.AllAround
+	}
 	if o.IsoFlip != nil {
 		toSerialize["isoFlip"] = o.IsoFlip
 	}
 	if o.JointType != nil {
 		toSerialize["jointType"] = o.JointType
+	}
+	if o.LowerFlag != nil {
+		toSerialize["lowerFlag"] = o.LowerFlag
 	}
 	if o.LowerGroove != nil {
 		toSerialize["lowerGroove"] = o.LowerGroove
@@ -852,6 +957,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
+	}
+	if o.UpperFlag != nil {
+		toSerialize["upperFlag"] = o.UpperFlag
 	}
 	if o.UpperGroove != nil {
 		toSerialize["upperGroove"] = o.UpperGroove

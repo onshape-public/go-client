@@ -40,7 +40,8 @@ type BTMMate64 struct {
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured *bool `json:"suppressionConfigured,omitempty"`
+	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 	// If `true`, the feature references a Variable Studio.
 	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
 	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
@@ -489,6 +490,38 @@ func (o *BTMMate64) SetSuppressionConfigured(v bool) {
 	o.SuppressionConfigured = &v
 }
 
+// GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
+func (o *BTMMate64) GetSuppressionState() BTMSuppressionState1924 {
+	if o == nil || o.SuppressionState == nil {
+		var ret BTMSuppressionState1924
+		return ret
+	}
+	return *o.SuppressionState
+}
+
+// GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMMate64) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+	if o == nil || o.SuppressionState == nil {
+		return nil, false
+	}
+	return o.SuppressionState, true
+}
+
+// HasSuppressionState returns a boolean if a field has been set.
+func (o *BTMMate64) HasSuppressionState() bool {
+	if o != nil && o.SuppressionState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
+func (o *BTMMate64) SetSuppressionState(v BTMSuppressionState1924) {
+	o.SuppressionState = &v
+}
+
 // GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
 func (o *BTMMate64) GetVariableStudioReference() bool {
 	if o == nil || o.VariableStudioReference == nil {
@@ -921,6 +954,9 @@ func (o BTMMate64) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressionConfigured != nil {
 		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
+	}
+	if o.SuppressionState != nil {
+		toSerialize["suppressionState"] = o.SuppressionState
 	}
 	if o.VariableStudioReference != nil {
 		toSerialize["variableStudioReference"] = o.VariableStudioReference

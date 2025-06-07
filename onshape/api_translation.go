@@ -58,6 +58,9 @@ type ApiCreateTranslationRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	versionId                            *string
+	versionName                          *string
+	versionDescription                   *string
 	repointAppElementVersionRefs         *bool
 }
 
@@ -230,6 +233,21 @@ func (r ApiCreateTranslationRequest) DocumentId(documentId string) ApiCreateTran
 	return r
 }
 
+func (r ApiCreateTranslationRequest) VersionId(versionId string) ApiCreateTranslationRequest {
+	r.versionId = &versionId
+	return r
+}
+
+func (r ApiCreateTranslationRequest) VersionName(versionName string) ApiCreateTranslationRequest {
+	r.versionName = &versionName
+	return r
+}
+
+func (r ApiCreateTranslationRequest) VersionDescription(versionDescription string) ApiCreateTranslationRequest {
+	r.versionDescription = &versionDescription
+	return r
+}
+
 // Re-point the version references in APP elements to initial version in the new document
 func (r ApiCreateTranslationRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiCreateTranslationRequest {
 	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
@@ -397,6 +415,15 @@ func (a *TranslationApiService) CreateTranslationExecute(r ApiCreateTranslationR
 	}
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
+	if r.versionId != nil {
+		localVarFormParams.Add("versionId", parameterToString(*r.versionId, ""))
+	}
+	if r.versionName != nil {
+		localVarFormParams.Add("versionName", parameterToString(*r.versionName, ""))
+	}
+	if r.versionDescription != nil {
+		localVarFormParams.Add("versionDescription", parameterToString(*r.versionDescription, ""))
 	}
 	if r.repointAppElementVersionRefs != nil {
 		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))

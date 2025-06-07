@@ -15,35 +15,35 @@ import (
 	"fmt"
 )
 
-// Item - struct for Item
-type Item struct {
-	implItem interface{}
+// BTPublicationInfoItem - struct for BTPublicationInfoItem
+type BTPublicationInfoItem struct {
+	implBTPublicationInfoItem interface{}
 }
 
-// BlobItemAsItem is a convenience function that returns BlobItem wrapped in Item
-func (o *BlobItem) AsItem() *Item {
-	return &Item{o}
+// BlobItemAsBTPublicationInfoItem is a convenience function that returns BlobItem wrapped in BTPublicationInfoItem
+func (o *BlobItem) AsBTPublicationInfoItem() *BTPublicationInfoItem {
+	return &BTPublicationInfoItem{o}
 }
 
-// NewItem instantiates a new Item object
+// NewBTPublicationInfoItem instantiates a new BTPublicationInfoItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewItem(jsonType string) *Item {
-	this := Item{Newbase_Item(jsonType)}
+func NewBTPublicationInfoItem(jsonType string) *BTPublicationInfoItem {
+	this := BTPublicationInfoItem{Newbase_BTPublicationInfoItem(jsonType)}
 	return &this
 }
 
-// NewItemWithDefaults instantiates a new Item object
+// NewBTPublicationInfoItemWithDefaults instantiates a new BTPublicationInfoItem object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewItemWithDefaults() *Item {
-	this := Item{Newbase_ItemWithDefaults()}
+func NewBTPublicationInfoItemWithDefaults() *BTPublicationInfoItem {
+	this := BTPublicationInfoItem{Newbase_BTPublicationInfoItemWithDefaults()}
 	return &this
 }
 
 // GetApplicationTarget returns the ApplicationTarget field value if set, zero value otherwise.
-func (o *Item) GetApplicationTarget() BTApplicationTargetInfo {
+func (o *BTPublicationInfoItem) GetApplicationTarget() BTApplicationTargetInfo {
 	type getResult interface {
 		GetApplicationTarget() BTApplicationTargetInfo
 	}
@@ -58,7 +58,7 @@ func (o *Item) GetApplicationTarget() BTApplicationTargetInfo {
 
 // GetApplicationTargetOk returns a tuple with the ApplicationTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
+func (o *BTPublicationInfoItem) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
 	type getResult interface {
 		GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)
 	}
@@ -71,7 +71,7 @@ func (o *Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
 }
 
 // HasApplicationTarget returns a boolean if a field has been set.
-func (o *Item) HasApplicationTarget() bool {
+func (o *BTPublicationInfoItem) HasApplicationTarget() bool {
 	type getResult interface {
 		HasApplicationTarget() bool
 	}
@@ -84,7 +84,7 @@ func (o *Item) HasApplicationTarget() bool {
 }
 
 // SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
-func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo) {
+func (o *BTPublicationInfoItem) SetApplicationTarget(v BTApplicationTargetInfo) {
 	type getResult interface {
 		SetApplicationTarget(v BTApplicationTargetInfo)
 	}
@@ -93,7 +93,7 @@ func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo) {
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *Item) GetDataType() string {
+func (o *BTPublicationInfoItem) GetDataType() string {
 	type getResult interface {
 		GetDataType() string
 	}
@@ -108,7 +108,7 @@ func (o *Item) GetDataType() string {
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetDataTypeOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetDataTypeOk() (*string, bool) {
 	type getResult interface {
 		GetDataTypeOk() (*string, bool)
 	}
@@ -121,7 +121,7 @@ func (o *Item) GetDataTypeOk() (*string, bool) {
 }
 
 // HasDataType returns a boolean if a field has been set.
-func (o *Item) HasDataType() bool {
+func (o *BTPublicationInfoItem) HasDataType() bool {
 	type getResult interface {
 		HasDataType() bool
 	}
@@ -134,7 +134,7 @@ func (o *Item) HasDataType() bool {
 }
 
 // SetDataType gets a reference to the given string and assigns it to the DataType field.
-func (o *Item) SetDataType(v string) {
+func (o *BTPublicationInfoItem) SetDataType(v string) {
 	type getResult interface {
 		SetDataType(v string)
 	}
@@ -143,7 +143,7 @@ func (o *Item) SetDataType(v string) {
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
-func (o *Item) GetDocumentId() string {
+func (o *BTPublicationInfoItem) GetDocumentId() string {
 	type getResult interface {
 		GetDocumentId() string
 	}
@@ -158,7 +158,7 @@ func (o *Item) GetDocumentId() string {
 
 // GetDocumentIdOk returns a tuple with the DocumentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetDocumentIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetDocumentIdOk() (*string, bool) {
 	type getResult interface {
 		GetDocumentIdOk() (*string, bool)
 	}
@@ -171,7 +171,7 @@ func (o *Item) GetDocumentIdOk() (*string, bool) {
 }
 
 // HasDocumentId returns a boolean if a field has been set.
-func (o *Item) HasDocumentId() bool {
+func (o *BTPublicationInfoItem) HasDocumentId() bool {
 	type getResult interface {
 		HasDocumentId() bool
 	}
@@ -184,7 +184,7 @@ func (o *Item) HasDocumentId() bool {
 }
 
 // SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
-func (o *Item) SetDocumentId(v string) {
+func (o *BTPublicationInfoItem) SetDocumentId(v string) {
 	type getResult interface {
 		SetDocumentId(v string)
 	}
@@ -193,7 +193,7 @@ func (o *Item) SetDocumentId(v string) {
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
-func (o *Item) GetElementId() string {
+func (o *BTPublicationInfoItem) GetElementId() string {
 	type getResult interface {
 		GetElementId() string
 	}
@@ -208,7 +208,7 @@ func (o *Item) GetElementId() string {
 
 // GetElementIdOk returns a tuple with the ElementId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetElementIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetElementIdOk() (*string, bool) {
 	type getResult interface {
 		GetElementIdOk() (*string, bool)
 	}
@@ -221,7 +221,7 @@ func (o *Item) GetElementIdOk() (*string, bool) {
 }
 
 // HasElementId returns a boolean if a field has been set.
-func (o *Item) HasElementId() bool {
+func (o *BTPublicationInfoItem) HasElementId() bool {
 	type getResult interface {
 		HasElementId() bool
 	}
@@ -234,7 +234,7 @@ func (o *Item) HasElementId() bool {
 }
 
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
-func (o *Item) SetElementId(v string) {
+func (o *BTPublicationInfoItem) SetElementId(v string) {
 	type getResult interface {
 		SetElementId(v string)
 	}
@@ -243,7 +243,7 @@ func (o *Item) SetElementId(v string) {
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *Item) GetElementType() GBTElementType {
+func (o *BTPublicationInfoItem) GetElementType() GBTElementType {
 	type getResult interface {
 		GetElementType() GBTElementType
 	}
@@ -258,7 +258,7 @@ func (o *Item) GetElementType() GBTElementType {
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetElementTypeOk() (*GBTElementType, bool) {
+func (o *BTPublicationInfoItem) GetElementTypeOk() (*GBTElementType, bool) {
 	type getResult interface {
 		GetElementTypeOk() (*GBTElementType, bool)
 	}
@@ -271,7 +271,7 @@ func (o *Item) GetElementTypeOk() (*GBTElementType, bool) {
 }
 
 // HasElementType returns a boolean if a field has been set.
-func (o *Item) HasElementType() bool {
+func (o *BTPublicationInfoItem) HasElementType() bool {
 	type getResult interface {
 		HasElementType() bool
 	}
@@ -284,7 +284,7 @@ func (o *Item) HasElementType() bool {
 }
 
 // SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
-func (o *Item) SetElementType(v GBTElementType) {
+func (o *BTPublicationInfoItem) SetElementType(v GBTElementType) {
 	type getResult interface {
 		SetElementType(v GBTElementType)
 	}
@@ -293,7 +293,7 @@ func (o *Item) SetElementType(v GBTElementType) {
 }
 
 // GetEncodedConfiguration returns the EncodedConfiguration field value if set, zero value otherwise.
-func (o *Item) GetEncodedConfiguration() string {
+func (o *BTPublicationInfoItem) GetEncodedConfiguration() string {
 	type getResult interface {
 		GetEncodedConfiguration() string
 	}
@@ -308,7 +308,7 @@ func (o *Item) GetEncodedConfiguration() string {
 
 // GetEncodedConfigurationOk returns a tuple with the EncodedConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetEncodedConfigurationOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetEncodedConfigurationOk() (*string, bool) {
 	type getResult interface {
 		GetEncodedConfigurationOk() (*string, bool)
 	}
@@ -321,7 +321,7 @@ func (o *Item) GetEncodedConfigurationOk() (*string, bool) {
 }
 
 // HasEncodedConfiguration returns a boolean if a field has been set.
-func (o *Item) HasEncodedConfiguration() bool {
+func (o *BTPublicationInfoItem) HasEncodedConfiguration() bool {
 	type getResult interface {
 		HasEncodedConfiguration() bool
 	}
@@ -334,7 +334,7 @@ func (o *Item) HasEncodedConfiguration() bool {
 }
 
 // SetEncodedConfiguration gets a reference to the given string and assigns it to the EncodedConfiguration field.
-func (o *Item) SetEncodedConfiguration(v string) {
+func (o *BTPublicationInfoItem) SetEncodedConfiguration(v string) {
 	type getResult interface {
 		SetEncodedConfiguration(v string)
 	}
@@ -343,7 +343,7 @@ func (o *Item) SetEncodedConfiguration(v string) {
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *Item) GetId() string {
+func (o *BTPublicationInfoItem) GetId() string {
 	type getResult interface {
 		GetId() string
 	}
@@ -358,7 +358,7 @@ func (o *Item) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetIdOk() (*string, bool) {
 	type getResult interface {
 		GetIdOk() (*string, bool)
 	}
@@ -371,7 +371,7 @@ func (o *Item) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *Item) HasId() bool {
+func (o *BTPublicationInfoItem) HasId() bool {
 	type getResult interface {
 		HasId() bool
 	}
@@ -384,7 +384,7 @@ func (o *Item) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *Item) SetId(v string) {
+func (o *BTPublicationInfoItem) SetId(v string) {
 	type getResult interface {
 		SetId(v string)
 	}
@@ -393,7 +393,7 @@ func (o *Item) SetId(v string) {
 }
 
 // GetJsonType returns the JsonType field value
-func (o *Item) GetJsonType() string {
+func (o *BTPublicationInfoItem) GetJsonType() string {
 	type getResult interface {
 		GetJsonType() string
 	}
@@ -408,7 +408,7 @@ func (o *Item) GetJsonType() string {
 
 // GetJsonTypeOk returns a tuple with the JsonType field value
 // and a boolean to check if the value has been set.
-func (o *Item) GetJsonTypeOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetJsonTypeOk() (*string, bool) {
 	type getResult interface {
 		GetJsonTypeOk() (*string, bool)
 	}
@@ -421,7 +421,7 @@ func (o *Item) GetJsonTypeOk() (*string, bool) {
 }
 
 // SetJsonType sets field value
-func (o *Item) SetJsonType(v string) {
+func (o *BTPublicationInfoItem) SetJsonType(v string) {
 	type getResult interface {
 		SetJsonType(v string)
 	}
@@ -430,7 +430,7 @@ func (o *Item) SetJsonType(v string) {
 }
 
 // GetPartId returns the PartId field value if set, zero value otherwise.
-func (o *Item) GetPartId() string {
+func (o *BTPublicationInfoItem) GetPartId() string {
 	type getResult interface {
 		GetPartId() string
 	}
@@ -445,7 +445,7 @@ func (o *Item) GetPartId() string {
 
 // GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetPartIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetPartIdOk() (*string, bool) {
 	type getResult interface {
 		GetPartIdOk() (*string, bool)
 	}
@@ -458,7 +458,7 @@ func (o *Item) GetPartIdOk() (*string, bool) {
 }
 
 // HasPartId returns a boolean if a field has been set.
-func (o *Item) HasPartId() bool {
+func (o *BTPublicationInfoItem) HasPartId() bool {
 	type getResult interface {
 		HasPartId() bool
 	}
@@ -471,7 +471,7 @@ func (o *Item) HasPartId() bool {
 }
 
 // SetPartId gets a reference to the given string and assigns it to the PartId field.
-func (o *Item) SetPartId(v string) {
+func (o *BTPublicationInfoItem) SetPartId(v string) {
 	type getResult interface {
 		SetPartId(v string)
 	}
@@ -480,7 +480,7 @@ func (o *Item) SetPartId(v string) {
 }
 
 // GetPartName returns the PartName field value if set, zero value otherwise.
-func (o *Item) GetPartName() string {
+func (o *BTPublicationInfoItem) GetPartName() string {
 	type getResult interface {
 		GetPartName() string
 	}
@@ -495,7 +495,7 @@ func (o *Item) GetPartName() string {
 
 // GetPartNameOk returns a tuple with the PartName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetPartNameOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetPartNameOk() (*string, bool) {
 	type getResult interface {
 		GetPartNameOk() (*string, bool)
 	}
@@ -508,7 +508,7 @@ func (o *Item) GetPartNameOk() (*string, bool) {
 }
 
 // HasPartName returns a boolean if a field has been set.
-func (o *Item) HasPartName() bool {
+func (o *BTPublicationInfoItem) HasPartName() bool {
 	type getResult interface {
 		HasPartName() bool
 	}
@@ -521,7 +521,7 @@ func (o *Item) HasPartName() bool {
 }
 
 // SetPartName gets a reference to the given string and assigns it to the PartName field.
-func (o *Item) SetPartName(v string) {
+func (o *BTPublicationInfoItem) SetPartName(v string) {
 	type getResult interface {
 		SetPartName(v string)
 	}
@@ -530,7 +530,7 @@ func (o *Item) SetPartName(v string) {
 }
 
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
-func (o *Item) GetPartNumber() string {
+func (o *BTPublicationInfoItem) GetPartNumber() string {
 	type getResult interface {
 		GetPartNumber() string
 	}
@@ -545,7 +545,7 @@ func (o *Item) GetPartNumber() string {
 
 // GetPartNumberOk returns a tuple with the PartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetPartNumberOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetPartNumberOk() (*string, bool) {
 	type getResult interface {
 		GetPartNumberOk() (*string, bool)
 	}
@@ -558,7 +558,7 @@ func (o *Item) GetPartNumberOk() (*string, bool) {
 }
 
 // HasPartNumber returns a boolean if a field has been set.
-func (o *Item) HasPartNumber() bool {
+func (o *BTPublicationInfoItem) HasPartNumber() bool {
 	type getResult interface {
 		HasPartNumber() bool
 	}
@@ -571,7 +571,7 @@ func (o *Item) HasPartNumber() bool {
 }
 
 // SetPartNumber gets a reference to the given string and assigns it to the PartNumber field.
-func (o *Item) SetPartNumber(v string) {
+func (o *BTPublicationInfoItem) SetPartNumber(v string) {
 	type getResult interface {
 		SetPartNumber(v string)
 	}
@@ -580,7 +580,7 @@ func (o *Item) SetPartNumber(v string) {
 }
 
 // GetRevision returns the Revision field value if set, zero value otherwise.
-func (o *Item) GetRevision() string {
+func (o *BTPublicationInfoItem) GetRevision() string {
 	type getResult interface {
 		GetRevision() string
 	}
@@ -595,7 +595,7 @@ func (o *Item) GetRevision() string {
 
 // GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetRevisionOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetRevisionOk() (*string, bool) {
 	type getResult interface {
 		GetRevisionOk() (*string, bool)
 	}
@@ -608,7 +608,7 @@ func (o *Item) GetRevisionOk() (*string, bool) {
 }
 
 // HasRevision returns a boolean if a field has been set.
-func (o *Item) HasRevision() bool {
+func (o *BTPublicationInfoItem) HasRevision() bool {
 	type getResult interface {
 		HasRevision() bool
 	}
@@ -621,7 +621,7 @@ func (o *Item) HasRevision() bool {
 }
 
 // SetRevision gets a reference to the given string and assigns it to the Revision field.
-func (o *Item) SetRevision(v string) {
+func (o *BTPublicationInfoItem) SetRevision(v string) {
 	type getResult interface {
 		SetRevision(v string)
 	}
@@ -630,7 +630,7 @@ func (o *Item) SetRevision(v string) {
 }
 
 // GetRevisionId returns the RevisionId field value if set, zero value otherwise.
-func (o *Item) GetRevisionId() string {
+func (o *BTPublicationInfoItem) GetRevisionId() string {
 	type getResult interface {
 		GetRevisionId() string
 	}
@@ -645,7 +645,7 @@ func (o *Item) GetRevisionId() string {
 
 // GetRevisionIdOk returns a tuple with the RevisionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetRevisionIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetRevisionIdOk() (*string, bool) {
 	type getResult interface {
 		GetRevisionIdOk() (*string, bool)
 	}
@@ -658,7 +658,7 @@ func (o *Item) GetRevisionIdOk() (*string, bool) {
 }
 
 // HasRevisionId returns a boolean if a field has been set.
-func (o *Item) HasRevisionId() bool {
+func (o *BTPublicationInfoItem) HasRevisionId() bool {
 	type getResult interface {
 		HasRevisionId() bool
 	}
@@ -671,7 +671,7 @@ func (o *Item) HasRevisionId() bool {
 }
 
 // SetRevisionId gets a reference to the given string and assigns it to the RevisionId field.
-func (o *Item) SetRevisionId(v string) {
+func (o *BTPublicationInfoItem) SetRevisionId(v string) {
 	type getResult interface {
 		SetRevisionId(v string)
 	}
@@ -680,7 +680,7 @@ func (o *Item) SetRevisionId(v string) {
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *Item) GetState() int32 {
+func (o *BTPublicationInfoItem) GetState() int32 {
 	type getResult interface {
 		GetState() int32
 	}
@@ -695,7 +695,7 @@ func (o *Item) GetState() int32 {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetStateOk() (*int32, bool) {
+func (o *BTPublicationInfoItem) GetStateOk() (*int32, bool) {
 	type getResult interface {
 		GetStateOk() (*int32, bool)
 	}
@@ -708,7 +708,7 @@ func (o *Item) GetStateOk() (*int32, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *Item) HasState() bool {
+func (o *BTPublicationInfoItem) HasState() bool {
 	type getResult interface {
 		HasState() bool
 	}
@@ -721,7 +721,7 @@ func (o *Item) HasState() bool {
 }
 
 // SetState gets a reference to the given int32 and assigns it to the State field.
-func (o *Item) SetState(v int32) {
+func (o *BTPublicationInfoItem) SetState(v int32) {
 	type getResult interface {
 		SetState(v int32)
 	}
@@ -730,7 +730,7 @@ func (o *Item) SetState(v int32) {
 }
 
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
-func (o *Item) GetVersionId() string {
+func (o *BTPublicationInfoItem) GetVersionId() string {
 	type getResult interface {
 		GetVersionId() string
 	}
@@ -745,7 +745,7 @@ func (o *Item) GetVersionId() string {
 
 // GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetVersionIdOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetVersionIdOk() (*string, bool) {
 	type getResult interface {
 		GetVersionIdOk() (*string, bool)
 	}
@@ -758,7 +758,7 @@ func (o *Item) GetVersionIdOk() (*string, bool) {
 }
 
 // HasVersionId returns a boolean if a field has been set.
-func (o *Item) HasVersionId() bool {
+func (o *BTPublicationInfoItem) HasVersionId() bool {
 	type getResult interface {
 		HasVersionId() bool
 	}
@@ -771,7 +771,7 @@ func (o *Item) HasVersionId() bool {
 }
 
 // SetVersionId gets a reference to the given string and assigns it to the VersionId field.
-func (o *Item) SetVersionId(v string) {
+func (o *BTPublicationInfoItem) SetVersionId(v string) {
 	type getResult interface {
 		SetVersionId(v string)
 	}
@@ -780,7 +780,7 @@ func (o *Item) SetVersionId(v string) {
 }
 
 // GetVersionName returns the VersionName field value if set, zero value otherwise.
-func (o *Item) GetVersionName() string {
+func (o *BTPublicationInfoItem) GetVersionName() string {
 	type getResult interface {
 		GetVersionName() string
 	}
@@ -795,7 +795,7 @@ func (o *Item) GetVersionName() string {
 
 // GetVersionNameOk returns a tuple with the VersionName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *Item) GetVersionNameOk() (*string, bool) {
+func (o *BTPublicationInfoItem) GetVersionNameOk() (*string, bool) {
 	type getResult interface {
 		GetVersionNameOk() (*string, bool)
 	}
@@ -808,7 +808,7 @@ func (o *Item) GetVersionNameOk() (*string, bool) {
 }
 
 // HasVersionName returns a boolean if a field has been set.
-func (o *Item) HasVersionName() bool {
+func (o *BTPublicationInfoItem) HasVersionName() bool {
 	type getResult interface {
 		HasVersionName() bool
 	}
@@ -821,7 +821,7 @@ func (o *Item) HasVersionName() bool {
 }
 
 // SetVersionName gets a reference to the given string and assigns it to the VersionName field.
-func (o *Item) SetVersionName(v string) {
+func (o *BTPublicationInfoItem) SetVersionName(v string) {
 	type getResult interface {
 		SetVersionName(v string)
 	}
@@ -830,7 +830,7 @@ func (o *Item) SetVersionName(v string) {
 }
 
 // Unmarshal JSON data into one of the pointers in the struct
-func (dst *Item) UnmarshalJSON(data []byte) error {
+func (dst *BTPublicationInfoItem) UnmarshalJSON(data []byte) error {
 	var err error
 	// use discriminator value to speed up the lookup
 	var jsonDict map[string]interface{}
@@ -845,27 +845,27 @@ func (dst *Item) UnmarshalJSON(data []byte) error {
 		var qr *BlobItem
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
-			dst.implItem = qr
+			dst.implBTPublicationInfoItem = qr
 			return nil // data stored, return on the first match
 		} else {
-			dst.implItem = nil
-			return fmt.Errorf("failed to unmarshal Item as BlobItem: %s", err.Error())
+			dst.implBTPublicationInfoItem = nil
+			return fmt.Errorf("failed to unmarshal BTPublicationInfoItem as BlobItem: %s", err.Error())
 		}
 	}
 
-	var qtx *base_Item
+	var qtx *base_BTPublicationInfoItem
 	err = json.Unmarshal(data, &qtx)
 	if err == nil {
-		dst.implItem = qtx
-		return nil // data stored in dst.base_Item, return on the first match
+		dst.implBTPublicationInfoItem = qtx
+		return nil // data stored in dst.base_BTPublicationInfoItem, return on the first match
 	} else {
-		dst.implItem = nil
-		return fmt.Errorf("failed to unmarshal Item as base_Item: %s", err.Error())
+		dst.implBTPublicationInfoItem = nil
+		return fmt.Errorf("failed to unmarshal BTPublicationInfoItem as base_BTPublicationInfoItem: %s", err.Error())
 	}
 }
 
 // Marshal data from the first non-nil pointers in the struct to JSON
-func (src Item) MarshalJSON() ([]byte, error) {
+func (src BTPublicationInfoItem) MarshalJSON() ([]byte, error) {
 	ret := src.GetActualInstance()
 	if ret == nil {
 		return nil, nil // no data in oneOf schemas
@@ -875,50 +875,50 @@ func (src Item) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *Item) GetActualInstance() interface{} {
+func (obj *BTPublicationInfoItem) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
-	return obj.implItem
+	return obj.implBTPublicationInfoItem
 }
 
-type NullableItem struct {
-	value *Item
+type NullableBTPublicationInfoItem struct {
+	value *BTPublicationInfoItem
 	isSet bool
 }
 
-func (v NullableItem) Get() *Item {
+func (v NullableBTPublicationInfoItem) Get() *BTPublicationInfoItem {
 	return v.value
 }
 
-func (v *NullableItem) Set(val *Item) {
+func (v *NullableBTPublicationInfoItem) Set(val *BTPublicationInfoItem) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableItem) IsSet() bool {
+func (v NullableBTPublicationInfoItem) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableItem) Unset() {
+func (v *NullableBTPublicationInfoItem) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableItem(val *Item) *NullableItem {
-	return &NullableItem{value: val, isSet: true}
+func NewNullableBTPublicationInfoItem(val *BTPublicationInfoItem) *NullableBTPublicationInfoItem {
+	return &NullableBTPublicationInfoItem{value: val, isSet: true}
 }
 
-func (v NullableItem) MarshalJSON() ([]byte, error) {
+func (v NullableBTPublicationInfoItem) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableItem) UnmarshalJSON(src []byte) error {
+func (v *NullableBTPublicationInfoItem) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
 
-type base_Item struct {
+type base_BTPublicationInfoItem struct {
 	ApplicationTarget    *BTApplicationTargetInfo `json:"applicationTarget,omitempty"`
 	DataType             *string                  `json:"dataType,omitempty"`
 	DocumentId           *string                  `json:"documentId,omitempty"`
@@ -937,26 +937,26 @@ type base_Item struct {
 	VersionName          *string                  `json:"versionName,omitempty"`
 }
 
-// Newbase_Item instantiates a new base_Item object
+// Newbase_BTPublicationInfoItem instantiates a new base_BTPublicationInfoItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_Item(jsonType string) *base_Item {
-	this := base_Item{}
+func Newbase_BTPublicationInfoItem(jsonType string) *base_BTPublicationInfoItem {
+	this := base_BTPublicationInfoItem{}
 	this.JsonType = jsonType
 	return &this
 }
 
-// Newbase_ItemWithDefaults instantiates a new base_Item object
+// Newbase_BTPublicationInfoItemWithDefaults instantiates a new base_BTPublicationInfoItem object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func Newbase_ItemWithDefaults() *base_Item {
-	this := base_Item{}
+func Newbase_BTPublicationInfoItemWithDefaults() *base_BTPublicationInfoItem {
+	this := base_BTPublicationInfoItem{}
 	return &this
 }
 
 // GetApplicationTarget returns the ApplicationTarget field value if set, zero value otherwise.
-func (o *base_Item) GetApplicationTarget() BTApplicationTargetInfo {
+func (o *base_BTPublicationInfoItem) GetApplicationTarget() BTApplicationTargetInfo {
 	if o == nil || o.ApplicationTarget == nil {
 		var ret BTApplicationTargetInfo
 		return ret
@@ -966,7 +966,7 @@ func (o *base_Item) GetApplicationTarget() BTApplicationTargetInfo {
 
 // GetApplicationTargetOk returns a tuple with the ApplicationTarget field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
+func (o *base_BTPublicationInfoItem) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
 	if o == nil || o.ApplicationTarget == nil {
 		return nil, false
 	}
@@ -974,7 +974,7 @@ func (o *base_Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool) {
 }
 
 // HasApplicationTarget returns a boolean if a field has been set.
-func (o *base_Item) HasApplicationTarget() bool {
+func (o *base_BTPublicationInfoItem) HasApplicationTarget() bool {
 	if o != nil && o.ApplicationTarget != nil {
 		return true
 	}
@@ -983,12 +983,12 @@ func (o *base_Item) HasApplicationTarget() bool {
 }
 
 // SetApplicationTarget gets a reference to the given BTApplicationTargetInfo and assigns it to the ApplicationTarget field.
-func (o *base_Item) SetApplicationTarget(v BTApplicationTargetInfo) {
+func (o *base_BTPublicationInfoItem) SetApplicationTarget(v BTApplicationTargetInfo) {
 	o.ApplicationTarget = &v
 }
 
 // GetDataType returns the DataType field value if set, zero value otherwise.
-func (o *base_Item) GetDataType() string {
+func (o *base_BTPublicationInfoItem) GetDataType() string {
 	if o == nil || o.DataType == nil {
 		var ret string
 		return ret
@@ -998,7 +998,7 @@ func (o *base_Item) GetDataType() string {
 
 // GetDataTypeOk returns a tuple with the DataType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetDataTypeOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetDataTypeOk() (*string, bool) {
 	if o == nil || o.DataType == nil {
 		return nil, false
 	}
@@ -1006,7 +1006,7 @@ func (o *base_Item) GetDataTypeOk() (*string, bool) {
 }
 
 // HasDataType returns a boolean if a field has been set.
-func (o *base_Item) HasDataType() bool {
+func (o *base_BTPublicationInfoItem) HasDataType() bool {
 	if o != nil && o.DataType != nil {
 		return true
 	}
@@ -1015,12 +1015,12 @@ func (o *base_Item) HasDataType() bool {
 }
 
 // SetDataType gets a reference to the given string and assigns it to the DataType field.
-func (o *base_Item) SetDataType(v string) {
+func (o *base_BTPublicationInfoItem) SetDataType(v string) {
 	o.DataType = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
-func (o *base_Item) GetDocumentId() string {
+func (o *base_BTPublicationInfoItem) GetDocumentId() string {
 	if o == nil || o.DocumentId == nil {
 		var ret string
 		return ret
@@ -1030,7 +1030,7 @@ func (o *base_Item) GetDocumentId() string {
 
 // GetDocumentIdOk returns a tuple with the DocumentId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetDocumentIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetDocumentIdOk() (*string, bool) {
 	if o == nil || o.DocumentId == nil {
 		return nil, false
 	}
@@ -1038,7 +1038,7 @@ func (o *base_Item) GetDocumentIdOk() (*string, bool) {
 }
 
 // HasDocumentId returns a boolean if a field has been set.
-func (o *base_Item) HasDocumentId() bool {
+func (o *base_BTPublicationInfoItem) HasDocumentId() bool {
 	if o != nil && o.DocumentId != nil {
 		return true
 	}
@@ -1047,12 +1047,12 @@ func (o *base_Item) HasDocumentId() bool {
 }
 
 // SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
-func (o *base_Item) SetDocumentId(v string) {
+func (o *base_BTPublicationInfoItem) SetDocumentId(v string) {
 	o.DocumentId = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
-func (o *base_Item) GetElementId() string {
+func (o *base_BTPublicationInfoItem) GetElementId() string {
 	if o == nil || o.ElementId == nil {
 		var ret string
 		return ret
@@ -1062,7 +1062,7 @@ func (o *base_Item) GetElementId() string {
 
 // GetElementIdOk returns a tuple with the ElementId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetElementIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetElementIdOk() (*string, bool) {
 	if o == nil || o.ElementId == nil {
 		return nil, false
 	}
@@ -1070,7 +1070,7 @@ func (o *base_Item) GetElementIdOk() (*string, bool) {
 }
 
 // HasElementId returns a boolean if a field has been set.
-func (o *base_Item) HasElementId() bool {
+func (o *base_BTPublicationInfoItem) HasElementId() bool {
 	if o != nil && o.ElementId != nil {
 		return true
 	}
@@ -1079,12 +1079,12 @@ func (o *base_Item) HasElementId() bool {
 }
 
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
-func (o *base_Item) SetElementId(v string) {
+func (o *base_BTPublicationInfoItem) SetElementId(v string) {
 	o.ElementId = &v
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
-func (o *base_Item) GetElementType() GBTElementType {
+func (o *base_BTPublicationInfoItem) GetElementType() GBTElementType {
 	if o == nil || o.ElementType == nil {
 		var ret GBTElementType
 		return ret
@@ -1094,7 +1094,7 @@ func (o *base_Item) GetElementType() GBTElementType {
 
 // GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetElementTypeOk() (*GBTElementType, bool) {
+func (o *base_BTPublicationInfoItem) GetElementTypeOk() (*GBTElementType, bool) {
 	if o == nil || o.ElementType == nil {
 		return nil, false
 	}
@@ -1102,7 +1102,7 @@ func (o *base_Item) GetElementTypeOk() (*GBTElementType, bool) {
 }
 
 // HasElementType returns a boolean if a field has been set.
-func (o *base_Item) HasElementType() bool {
+func (o *base_BTPublicationInfoItem) HasElementType() bool {
 	if o != nil && o.ElementType != nil {
 		return true
 	}
@@ -1111,12 +1111,12 @@ func (o *base_Item) HasElementType() bool {
 }
 
 // SetElementType gets a reference to the given GBTElementType and assigns it to the ElementType field.
-func (o *base_Item) SetElementType(v GBTElementType) {
+func (o *base_BTPublicationInfoItem) SetElementType(v GBTElementType) {
 	o.ElementType = &v
 }
 
 // GetEncodedConfiguration returns the EncodedConfiguration field value if set, zero value otherwise.
-func (o *base_Item) GetEncodedConfiguration() string {
+func (o *base_BTPublicationInfoItem) GetEncodedConfiguration() string {
 	if o == nil || o.EncodedConfiguration == nil {
 		var ret string
 		return ret
@@ -1126,7 +1126,7 @@ func (o *base_Item) GetEncodedConfiguration() string {
 
 // GetEncodedConfigurationOk returns a tuple with the EncodedConfiguration field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetEncodedConfigurationOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetEncodedConfigurationOk() (*string, bool) {
 	if o == nil || o.EncodedConfiguration == nil {
 		return nil, false
 	}
@@ -1134,7 +1134,7 @@ func (o *base_Item) GetEncodedConfigurationOk() (*string, bool) {
 }
 
 // HasEncodedConfiguration returns a boolean if a field has been set.
-func (o *base_Item) HasEncodedConfiguration() bool {
+func (o *base_BTPublicationInfoItem) HasEncodedConfiguration() bool {
 	if o != nil && o.EncodedConfiguration != nil {
 		return true
 	}
@@ -1143,12 +1143,12 @@ func (o *base_Item) HasEncodedConfiguration() bool {
 }
 
 // SetEncodedConfiguration gets a reference to the given string and assigns it to the EncodedConfiguration field.
-func (o *base_Item) SetEncodedConfiguration(v string) {
+func (o *base_BTPublicationInfoItem) SetEncodedConfiguration(v string) {
 	o.EncodedConfiguration = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *base_Item) GetId() string {
+func (o *base_BTPublicationInfoItem) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -1158,7 +1158,7 @@ func (o *base_Item) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -1166,7 +1166,7 @@ func (o *base_Item) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *base_Item) HasId() bool {
+func (o *base_BTPublicationInfoItem) HasId() bool {
 	if o != nil && o.Id != nil {
 		return true
 	}
@@ -1175,12 +1175,12 @@ func (o *base_Item) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *base_Item) SetId(v string) {
+func (o *base_BTPublicationInfoItem) SetId(v string) {
 	o.Id = &v
 }
 
 // GetJsonType returns the JsonType field value
-func (o *base_Item) GetJsonType() string {
+func (o *base_BTPublicationInfoItem) GetJsonType() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -1191,7 +1191,7 @@ func (o *base_Item) GetJsonType() string {
 
 // GetJsonTypeOk returns a tuple with the JsonType field value
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetJsonTypeOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetJsonTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -1199,12 +1199,12 @@ func (o *base_Item) GetJsonTypeOk() (*string, bool) {
 }
 
 // SetJsonType sets field value
-func (o *base_Item) SetJsonType(v string) {
+func (o *base_BTPublicationInfoItem) SetJsonType(v string) {
 	o.JsonType = v
 }
 
 // GetPartId returns the PartId field value if set, zero value otherwise.
-func (o *base_Item) GetPartId() string {
+func (o *base_BTPublicationInfoItem) GetPartId() string {
 	if o == nil || o.PartId == nil {
 		var ret string
 		return ret
@@ -1214,7 +1214,7 @@ func (o *base_Item) GetPartId() string {
 
 // GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetPartIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetPartIdOk() (*string, bool) {
 	if o == nil || o.PartId == nil {
 		return nil, false
 	}
@@ -1222,7 +1222,7 @@ func (o *base_Item) GetPartIdOk() (*string, bool) {
 }
 
 // HasPartId returns a boolean if a field has been set.
-func (o *base_Item) HasPartId() bool {
+func (o *base_BTPublicationInfoItem) HasPartId() bool {
 	if o != nil && o.PartId != nil {
 		return true
 	}
@@ -1231,12 +1231,12 @@ func (o *base_Item) HasPartId() bool {
 }
 
 // SetPartId gets a reference to the given string and assigns it to the PartId field.
-func (o *base_Item) SetPartId(v string) {
+func (o *base_BTPublicationInfoItem) SetPartId(v string) {
 	o.PartId = &v
 }
 
 // GetPartName returns the PartName field value if set, zero value otherwise.
-func (o *base_Item) GetPartName() string {
+func (o *base_BTPublicationInfoItem) GetPartName() string {
 	if o == nil || o.PartName == nil {
 		var ret string
 		return ret
@@ -1246,7 +1246,7 @@ func (o *base_Item) GetPartName() string {
 
 // GetPartNameOk returns a tuple with the PartName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetPartNameOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetPartNameOk() (*string, bool) {
 	if o == nil || o.PartName == nil {
 		return nil, false
 	}
@@ -1254,7 +1254,7 @@ func (o *base_Item) GetPartNameOk() (*string, bool) {
 }
 
 // HasPartName returns a boolean if a field has been set.
-func (o *base_Item) HasPartName() bool {
+func (o *base_BTPublicationInfoItem) HasPartName() bool {
 	if o != nil && o.PartName != nil {
 		return true
 	}
@@ -1263,12 +1263,12 @@ func (o *base_Item) HasPartName() bool {
 }
 
 // SetPartName gets a reference to the given string and assigns it to the PartName field.
-func (o *base_Item) SetPartName(v string) {
+func (o *base_BTPublicationInfoItem) SetPartName(v string) {
 	o.PartName = &v
 }
 
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
-func (o *base_Item) GetPartNumber() string {
+func (o *base_BTPublicationInfoItem) GetPartNumber() string {
 	if o == nil || o.PartNumber == nil {
 		var ret string
 		return ret
@@ -1278,7 +1278,7 @@ func (o *base_Item) GetPartNumber() string {
 
 // GetPartNumberOk returns a tuple with the PartNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetPartNumberOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetPartNumberOk() (*string, bool) {
 	if o == nil || o.PartNumber == nil {
 		return nil, false
 	}
@@ -1286,7 +1286,7 @@ func (o *base_Item) GetPartNumberOk() (*string, bool) {
 }
 
 // HasPartNumber returns a boolean if a field has been set.
-func (o *base_Item) HasPartNumber() bool {
+func (o *base_BTPublicationInfoItem) HasPartNumber() bool {
 	if o != nil && o.PartNumber != nil {
 		return true
 	}
@@ -1295,12 +1295,12 @@ func (o *base_Item) HasPartNumber() bool {
 }
 
 // SetPartNumber gets a reference to the given string and assigns it to the PartNumber field.
-func (o *base_Item) SetPartNumber(v string) {
+func (o *base_BTPublicationInfoItem) SetPartNumber(v string) {
 	o.PartNumber = &v
 }
 
 // GetRevision returns the Revision field value if set, zero value otherwise.
-func (o *base_Item) GetRevision() string {
+func (o *base_BTPublicationInfoItem) GetRevision() string {
 	if o == nil || o.Revision == nil {
 		var ret string
 		return ret
@@ -1310,7 +1310,7 @@ func (o *base_Item) GetRevision() string {
 
 // GetRevisionOk returns a tuple with the Revision field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetRevisionOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetRevisionOk() (*string, bool) {
 	if o == nil || o.Revision == nil {
 		return nil, false
 	}
@@ -1318,7 +1318,7 @@ func (o *base_Item) GetRevisionOk() (*string, bool) {
 }
 
 // HasRevision returns a boolean if a field has been set.
-func (o *base_Item) HasRevision() bool {
+func (o *base_BTPublicationInfoItem) HasRevision() bool {
 	if o != nil && o.Revision != nil {
 		return true
 	}
@@ -1327,12 +1327,12 @@ func (o *base_Item) HasRevision() bool {
 }
 
 // SetRevision gets a reference to the given string and assigns it to the Revision field.
-func (o *base_Item) SetRevision(v string) {
+func (o *base_BTPublicationInfoItem) SetRevision(v string) {
 	o.Revision = &v
 }
 
 // GetRevisionId returns the RevisionId field value if set, zero value otherwise.
-func (o *base_Item) GetRevisionId() string {
+func (o *base_BTPublicationInfoItem) GetRevisionId() string {
 	if o == nil || o.RevisionId == nil {
 		var ret string
 		return ret
@@ -1342,7 +1342,7 @@ func (o *base_Item) GetRevisionId() string {
 
 // GetRevisionIdOk returns a tuple with the RevisionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetRevisionIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetRevisionIdOk() (*string, bool) {
 	if o == nil || o.RevisionId == nil {
 		return nil, false
 	}
@@ -1350,7 +1350,7 @@ func (o *base_Item) GetRevisionIdOk() (*string, bool) {
 }
 
 // HasRevisionId returns a boolean if a field has been set.
-func (o *base_Item) HasRevisionId() bool {
+func (o *base_BTPublicationInfoItem) HasRevisionId() bool {
 	if o != nil && o.RevisionId != nil {
 		return true
 	}
@@ -1359,12 +1359,12 @@ func (o *base_Item) HasRevisionId() bool {
 }
 
 // SetRevisionId gets a reference to the given string and assigns it to the RevisionId field.
-func (o *base_Item) SetRevisionId(v string) {
+func (o *base_BTPublicationInfoItem) SetRevisionId(v string) {
 	o.RevisionId = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
-func (o *base_Item) GetState() int32 {
+func (o *base_BTPublicationInfoItem) GetState() int32 {
 	if o == nil || o.State == nil {
 		var ret int32
 		return ret
@@ -1374,7 +1374,7 @@ func (o *base_Item) GetState() int32 {
 
 // GetStateOk returns a tuple with the State field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetStateOk() (*int32, bool) {
+func (o *base_BTPublicationInfoItem) GetStateOk() (*int32, bool) {
 	if o == nil || o.State == nil {
 		return nil, false
 	}
@@ -1382,7 +1382,7 @@ func (o *base_Item) GetStateOk() (*int32, bool) {
 }
 
 // HasState returns a boolean if a field has been set.
-func (o *base_Item) HasState() bool {
+func (o *base_BTPublicationInfoItem) HasState() bool {
 	if o != nil && o.State != nil {
 		return true
 	}
@@ -1391,12 +1391,12 @@ func (o *base_Item) HasState() bool {
 }
 
 // SetState gets a reference to the given int32 and assigns it to the State field.
-func (o *base_Item) SetState(v int32) {
+func (o *base_BTPublicationInfoItem) SetState(v int32) {
 	o.State = &v
 }
 
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
-func (o *base_Item) GetVersionId() string {
+func (o *base_BTPublicationInfoItem) GetVersionId() string {
 	if o == nil || o.VersionId == nil {
 		var ret string
 		return ret
@@ -1406,7 +1406,7 @@ func (o *base_Item) GetVersionId() string {
 
 // GetVersionIdOk returns a tuple with the VersionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetVersionIdOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetVersionIdOk() (*string, bool) {
 	if o == nil || o.VersionId == nil {
 		return nil, false
 	}
@@ -1414,7 +1414,7 @@ func (o *base_Item) GetVersionIdOk() (*string, bool) {
 }
 
 // HasVersionId returns a boolean if a field has been set.
-func (o *base_Item) HasVersionId() bool {
+func (o *base_BTPublicationInfoItem) HasVersionId() bool {
 	if o != nil && o.VersionId != nil {
 		return true
 	}
@@ -1423,12 +1423,12 @@ func (o *base_Item) HasVersionId() bool {
 }
 
 // SetVersionId gets a reference to the given string and assigns it to the VersionId field.
-func (o *base_Item) SetVersionId(v string) {
+func (o *base_BTPublicationInfoItem) SetVersionId(v string) {
 	o.VersionId = &v
 }
 
 // GetVersionName returns the VersionName field value if set, zero value otherwise.
-func (o *base_Item) GetVersionName() string {
+func (o *base_BTPublicationInfoItem) GetVersionName() string {
 	if o == nil || o.VersionName == nil {
 		var ret string
 		return ret
@@ -1438,7 +1438,7 @@ func (o *base_Item) GetVersionName() string {
 
 // GetVersionNameOk returns a tuple with the VersionName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_Item) GetVersionNameOk() (*string, bool) {
+func (o *base_BTPublicationInfoItem) GetVersionNameOk() (*string, bool) {
 	if o == nil || o.VersionName == nil {
 		return nil, false
 	}
@@ -1446,7 +1446,7 @@ func (o *base_Item) GetVersionNameOk() (*string, bool) {
 }
 
 // HasVersionName returns a boolean if a field has been set.
-func (o *base_Item) HasVersionName() bool {
+func (o *base_BTPublicationInfoItem) HasVersionName() bool {
 	if o != nil && o.VersionName != nil {
 		return true
 	}
@@ -1455,11 +1455,11 @@ func (o *base_Item) HasVersionName() bool {
 }
 
 // SetVersionName gets a reference to the given string and assigns it to the VersionName field.
-func (o *base_Item) SetVersionName(v string) {
+func (o *base_BTPublicationInfoItem) SetVersionName(v string) {
 	o.VersionName = &v
 }
 
-func (o base_Item) MarshalJSON() ([]byte, error) {
+func (o base_BTPublicationInfoItem) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ApplicationTarget != nil {
 		toSerialize["applicationTarget"] = o.ApplicationTarget

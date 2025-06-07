@@ -49,6 +49,7 @@ type BTCommentInfo struct {
 	Thumbnail        *BTCommentAttachmentInfo `json:"thumbnail,omitempty"`
 	TopLevel         *bool                    `json:"topLevel,omitempty"`
 	User             *BTUserSummaryInfo       `json:"user,omitempty"`
+	UserCompany      *string                  `json:"userCompany,omitempty"`
 	VersionId        *string                  `json:"versionId,omitempty"`
 	ViewData         *BTViewDataInfo          `json:"viewData,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
@@ -1033,6 +1034,38 @@ func (o *BTCommentInfo) SetUser(v BTUserSummaryInfo) {
 	o.User = &v
 }
 
+// GetUserCompany returns the UserCompany field value if set, zero value otherwise.
+func (o *BTCommentInfo) GetUserCompany() string {
+	if o == nil || o.UserCompany == nil {
+		var ret string
+		return ret
+	}
+	return *o.UserCompany
+}
+
+// GetUserCompanyOk returns a tuple with the UserCompany field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentInfo) GetUserCompanyOk() (*string, bool) {
+	if o == nil || o.UserCompany == nil {
+		return nil, false
+	}
+	return o.UserCompany, true
+}
+
+// HasUserCompany returns a boolean if a field has been set.
+func (o *BTCommentInfo) HasUserCompany() bool {
+	if o != nil && o.UserCompany != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUserCompany gets a reference to the given string and assigns it to the UserCompany field.
+func (o *BTCommentInfo) SetUserCompany(v string) {
+	o.UserCompany = &v
+}
+
 // GetVersionId returns the VersionId field value if set, zero value otherwise.
 func (o *BTCommentInfo) GetVersionId() string {
 	if o == nil || o.VersionId == nil {
@@ -1252,6 +1285,9 @@ func (o BTCommentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
+	}
+	if o.UserCompany != nil {
+		toSerialize["userCompany"] = o.UserCompany
 	}
 	if o.VersionId != nil {
 		toSerialize["versionId"] = o.VersionId

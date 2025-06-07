@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **ItemParams** | Pointer to [**[]BTTaskItemParams**](BTTaskItemParams.md) | References to add to the task. | [optional] 
 **NameParamValue** | Pointer to **string** |  | [optional] 
 **PropertyValues** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) | Task metadata properties. | [optional] 
+**WorkflowId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetPropertyValues sets PropertyValues field to given value.
 `func (o *BTUpdateTaskParams) HasPropertyValues() bool`
 
 HasPropertyValues returns a boolean if a field has been set.
+
+### GetWorkflowId
+
+`func (o *BTUpdateTaskParams) GetWorkflowId() string`
+
+GetWorkflowId returns the WorkflowId field if non-nil, zero value otherwise.
+
+### GetWorkflowIdOk
+
+`func (o *BTUpdateTaskParams) GetWorkflowIdOk() (*string, bool)`
+
+GetWorkflowIdOk returns a tuple with the WorkflowId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWorkflowId
+
+`func (o *BTUpdateTaskParams) SetWorkflowId(v string)`
+
+SetWorkflowId sets WorkflowId field to given value.
+
+### HasWorkflowId
+
+`func (o *BTUpdateTaskParams) HasWorkflowId() bool`
+
+HasWorkflowId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

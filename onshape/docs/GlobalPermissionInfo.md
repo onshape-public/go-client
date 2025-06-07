@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **ManageWorkflows** | Pointer to **bool** |  | [optional] 
 **ShareForAnonymousAccess** | Pointer to **bool** |  | [optional] 
 **TransferDocumentsFromEnterprise** | Pointer to **bool** |  | [optional] 
+**UseRevisionTools** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -543,6 +544,31 @@ SetTransferDocumentsFromEnterprise sets TransferDocumentsFromEnterprise field to
 `func (o *GlobalPermissionInfo) HasTransferDocumentsFromEnterprise() bool`
 
 HasTransferDocumentsFromEnterprise returns a boolean if a field has been set.
+
+### GetUseRevisionTools
+
+`func (o *GlobalPermissionInfo) GetUseRevisionTools() bool`
+
+GetUseRevisionTools returns the UseRevisionTools field if non-nil, zero value otherwise.
+
+### GetUseRevisionToolsOk
+
+`func (o *GlobalPermissionInfo) GetUseRevisionToolsOk() (*bool, bool)`
+
+GetUseRevisionToolsOk returns a tuple with the UseRevisionTools field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseRevisionTools
+
+`func (o *GlobalPermissionInfo) SetUseRevisionTools(v bool)`
+
+SetUseRevisionTools sets UseRevisionTools field to given value.
+
+### HasUseRevisionTools
+
+`func (o *GlobalPermissionInfo) HasUseRevisionTools() bool`
+
+HasUseRevisionTools returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

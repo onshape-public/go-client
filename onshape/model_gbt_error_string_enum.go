@@ -1679,6 +1679,8 @@ const (
 	GBTErrorStringEnumSheetMetalNoConeApex                                        GBTErrorStringEnum = "SHEET_METAL_NO_CONE_APEX"
 	GBTErrorStringEnumSimulationMaterialPropertyOutsideRequiredBounds             GBTErrorStringEnum = "SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS"
 	GBTErrorStringEnumFgsConnectionsAssemblyTooComplex                            GBTErrorStringEnum = "FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX"
+	GBTErrorStringEnumThinExtrudeNotParallelPlanes                                GBTErrorStringEnum = "THIN_EXTRUDE_NOT_PARALLEL_PLANES"
+	GBTErrorStringEnumWidthAndTabMateconnectorsOnSameOccurrence                   GBTErrorStringEnum = "WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3343,6 +3345,8 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SHEET_METAL_NO_CONE_APEX",
 	"SIMULATION_MATERIAL_PROPERTY_OUTSIDE_REQUIRED_BOUNDS",
 	"FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX",
+	"THIN_EXTRUDE_NOT_PARALLEL_PLANES",
+	"WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE",
 	"UNKNOWN",
 }
 

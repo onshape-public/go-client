@@ -16,16 +16,17 @@ import (
 
 // BTAPIApplicationExtensionInfo struct for BTAPIApplicationExtensionInfo
 type BTAPIApplicationExtensionInfo struct {
-	ActionBody        *string `json:"actionBody,omitempty"`
-	ActionType        *int32  `json:"actionType,omitempty"`
-	ActionUrl         *string `json:"actionUrl,omitempty"`
-	ApplicationId     *string `json:"applicationId,omitempty"`
-	ClientId          *string `json:"clientId,omitempty"`
-	Description       *string `json:"description,omitempty"`
-	ExtensionContext  *int64  `json:"extensionContext,omitempty"`
-	ExtensionLocation *int64  `json:"extensionLocation,omitempty"`
-	HasIcon           *bool   `json:"hasIcon,omitempty"`
-	HasPendingIcon    *bool   `json:"hasPendingIcon,omitempty"`
+	ActionBody          *string `json:"actionBody,omitempty"`
+	ActionType          *int32  `json:"actionType,omitempty"`
+	ActionUrl           *string `json:"actionUrl,omitempty"`
+	ApplicationId       *string `json:"applicationId,omitempty"`
+	ClientId            *string `json:"clientId,omitempty"`
+	Description         *string `json:"description,omitempty"`
+	ElementMenuIconName *string `json:"elementMenuIconName,omitempty"`
+	ExtensionContext    *int64  `json:"extensionContext,omitempty"`
+	ExtensionLocation   *int64  `json:"extensionLocation,omitempty"`
+	HasIcon             *bool   `json:"hasIcon,omitempty"`
+	HasPendingIcon      *bool   `json:"hasPendingIcon,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href    *string `json:"href,omitempty"`
 	IconUrl *string `json:"iconUrl,omitempty"`
@@ -34,7 +35,11 @@ type BTAPIApplicationExtensionInfo struct {
 	// Name of the resource.
 	Name                   *string `json:"name,omitempty"`
 	ParentAppPrimaryFormat *string `json:"parentAppPrimaryFormat,omitempty"`
+	PlusMenuApp            *bool   `json:"plusMenuApp,omitempty"`
+	ShowBetaLabel          *bool   `json:"showBetaLabel,omitempty"`
 	ShowResponse           *bool   `json:"showResponse,omitempty"`
+	ShowUpgradeLabel       *bool   `json:"showUpgradeLabel,omitempty"`
+	SystemAppExtension     *bool   `json:"systemAppExtension,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef        *string `json:"viewRef,omitempty"`
 	VisibilityRule *string `json:"visibilityRule,omitempty"`
@@ -247,6 +252,38 @@ func (o *BTAPIApplicationExtensionInfo) HasDescription() bool {
 // SetDescription gets a reference to the given string and assigns it to the Description field.
 func (o *BTAPIApplicationExtensionInfo) SetDescription(v string) {
 	o.Description = &v
+}
+
+// GetElementMenuIconName returns the ElementMenuIconName field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetElementMenuIconName() string {
+	if o == nil || o.ElementMenuIconName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ElementMenuIconName
+}
+
+// GetElementMenuIconNameOk returns a tuple with the ElementMenuIconName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetElementMenuIconNameOk() (*string, bool) {
+	if o == nil || o.ElementMenuIconName == nil {
+		return nil, false
+	}
+	return o.ElementMenuIconName, true
+}
+
+// HasElementMenuIconName returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasElementMenuIconName() bool {
+	if o != nil && o.ElementMenuIconName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementMenuIconName gets a reference to the given string and assigns it to the ElementMenuIconName field.
+func (o *BTAPIApplicationExtensionInfo) SetElementMenuIconName(v string) {
+	o.ElementMenuIconName = &v
 }
 
 // GetExtensionContext returns the ExtensionContext field value if set, zero value otherwise.
@@ -537,6 +574,70 @@ func (o *BTAPIApplicationExtensionInfo) SetParentAppPrimaryFormat(v string) {
 	o.ParentAppPrimaryFormat = &v
 }
 
+// GetPlusMenuApp returns the PlusMenuApp field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetPlusMenuApp() bool {
+	if o == nil || o.PlusMenuApp == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PlusMenuApp
+}
+
+// GetPlusMenuAppOk returns a tuple with the PlusMenuApp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetPlusMenuAppOk() (*bool, bool) {
+	if o == nil || o.PlusMenuApp == nil {
+		return nil, false
+	}
+	return o.PlusMenuApp, true
+}
+
+// HasPlusMenuApp returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasPlusMenuApp() bool {
+	if o != nil && o.PlusMenuApp != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPlusMenuApp gets a reference to the given bool and assigns it to the PlusMenuApp field.
+func (o *BTAPIApplicationExtensionInfo) SetPlusMenuApp(v bool) {
+	o.PlusMenuApp = &v
+}
+
+// GetShowBetaLabel returns the ShowBetaLabel field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetShowBetaLabel() bool {
+	if o == nil || o.ShowBetaLabel == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowBetaLabel
+}
+
+// GetShowBetaLabelOk returns a tuple with the ShowBetaLabel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetShowBetaLabelOk() (*bool, bool) {
+	if o == nil || o.ShowBetaLabel == nil {
+		return nil, false
+	}
+	return o.ShowBetaLabel, true
+}
+
+// HasShowBetaLabel returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasShowBetaLabel() bool {
+	if o != nil && o.ShowBetaLabel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowBetaLabel gets a reference to the given bool and assigns it to the ShowBetaLabel field.
+func (o *BTAPIApplicationExtensionInfo) SetShowBetaLabel(v bool) {
+	o.ShowBetaLabel = &v
+}
+
 // GetShowResponse returns the ShowResponse field value if set, zero value otherwise.
 func (o *BTAPIApplicationExtensionInfo) GetShowResponse() bool {
 	if o == nil || o.ShowResponse == nil {
@@ -567,6 +668,70 @@ func (o *BTAPIApplicationExtensionInfo) HasShowResponse() bool {
 // SetShowResponse gets a reference to the given bool and assigns it to the ShowResponse field.
 func (o *BTAPIApplicationExtensionInfo) SetShowResponse(v bool) {
 	o.ShowResponse = &v
+}
+
+// GetShowUpgradeLabel returns the ShowUpgradeLabel field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetShowUpgradeLabel() bool {
+	if o == nil || o.ShowUpgradeLabel == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowUpgradeLabel
+}
+
+// GetShowUpgradeLabelOk returns a tuple with the ShowUpgradeLabel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetShowUpgradeLabelOk() (*bool, bool) {
+	if o == nil || o.ShowUpgradeLabel == nil {
+		return nil, false
+	}
+	return o.ShowUpgradeLabel, true
+}
+
+// HasShowUpgradeLabel returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasShowUpgradeLabel() bool {
+	if o != nil && o.ShowUpgradeLabel != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowUpgradeLabel gets a reference to the given bool and assigns it to the ShowUpgradeLabel field.
+func (o *BTAPIApplicationExtensionInfo) SetShowUpgradeLabel(v bool) {
+	o.ShowUpgradeLabel = &v
+}
+
+// GetSystemAppExtension returns the SystemAppExtension field value if set, zero value otherwise.
+func (o *BTAPIApplicationExtensionInfo) GetSystemAppExtension() bool {
+	if o == nil || o.SystemAppExtension == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SystemAppExtension
+}
+
+// GetSystemAppExtensionOk returns a tuple with the SystemAppExtension field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAPIApplicationExtensionInfo) GetSystemAppExtensionOk() (*bool, bool) {
+	if o == nil || o.SystemAppExtension == nil {
+		return nil, false
+	}
+	return o.SystemAppExtension, true
+}
+
+// HasSystemAppExtension returns a boolean if a field has been set.
+func (o *BTAPIApplicationExtensionInfo) HasSystemAppExtension() bool {
+	if o != nil && o.SystemAppExtension != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSystemAppExtension gets a reference to the given bool and assigns it to the SystemAppExtension field.
+func (o *BTAPIApplicationExtensionInfo) SetSystemAppExtension(v bool) {
+	o.SystemAppExtension = &v
 }
 
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
@@ -653,6 +818,9 @@ func (o BTAPIApplicationExtensionInfo) MarshalJSON() ([]byte, error) {
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}
+	if o.ElementMenuIconName != nil {
+		toSerialize["elementMenuIconName"] = o.ElementMenuIconName
+	}
 	if o.ExtensionContext != nil {
 		toSerialize["extensionContext"] = o.ExtensionContext
 	}
@@ -680,8 +848,20 @@ func (o BTAPIApplicationExtensionInfo) MarshalJSON() ([]byte, error) {
 	if o.ParentAppPrimaryFormat != nil {
 		toSerialize["parentAppPrimaryFormat"] = o.ParentAppPrimaryFormat
 	}
+	if o.PlusMenuApp != nil {
+		toSerialize["plusMenuApp"] = o.PlusMenuApp
+	}
+	if o.ShowBetaLabel != nil {
+		toSerialize["showBetaLabel"] = o.ShowBetaLabel
+	}
 	if o.ShowResponse != nil {
 		toSerialize["showResponse"] = o.ShowResponse
+	}
+	if o.ShowUpgradeLabel != nil {
+		toSerialize["showUpgradeLabel"] = o.ShowUpgradeLabel
+	}
+	if o.SystemAppExtension != nil {
+		toSerialize["systemAppExtension"] = o.SystemAppExtension
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

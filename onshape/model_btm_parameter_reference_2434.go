@@ -572,54 +572,54 @@ func (o *BTMParameterReference2434) SetIds(v []string) {
 	o.GetActualInstance().(getResult).SetIds(v)
 }
 
-// GetMicroversioId returns the MicroversioId field value if set, zero value otherwise.
-func (o *BTMParameterReference2434) GetMicroversioId() string {
+// GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
+func (o *BTMParameterReference2434) GetMicroversionId() string {
 	type getResult interface {
-		GetMicroversioId() string
+		GetMicroversionId() string
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetMicroversioId()
+		return tx.GetMicroversionId()
 	} else {
 		var de string
 		return de
 	}
 }
 
-// GetMicroversioIdOk returns a tuple with the MicroversioId field value if set, nil otherwise
+// GetMicroversionIdOk returns a tuple with the MicroversionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMParameterReference2434) GetMicroversioIdOk() (*string, bool) {
+func (o *BTMParameterReference2434) GetMicroversionIdOk() (*string, bool) {
 	type getResult interface {
-		GetMicroversioIdOk() (*string, bool)
+		GetMicroversionIdOk() (*string, bool)
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetMicroversioIdOk()
+		return tx.GetMicroversionIdOk()
 	} else {
 		return nil, false
 	}
 }
 
-// HasMicroversioId returns a boolean if a field has been set.
-func (o *BTMParameterReference2434) HasMicroversioId() bool {
+// HasMicroversionId returns a boolean if a field has been set.
+func (o *BTMParameterReference2434) HasMicroversionId() bool {
 	type getResult interface {
-		HasMicroversioId() bool
+		HasMicroversionId() bool
 	}
 
 	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasMicroversioId()
+		return tx.HasMicroversionId()
 	} else {
 		return false
 	}
 }
 
-// SetMicroversioId gets a reference to the given string and assigns it to the MicroversioId field.
-func (o *BTMParameterReference2434) SetMicroversioId(v string) {
+// SetMicroversionId gets a reference to the given string and assigns it to the MicroversionId field.
+func (o *BTMParameterReference2434) SetMicroversionId(v string) {
 	type getResult interface {
-		SetMicroversioId(v string)
+		SetMicroversionId(v string)
 	}
 
-	o.GetActualInstance().(getResult).SetMicroversioId(v)
+	o.GetActualInstance().(getResult).SetMicroversionId(v)
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -860,7 +860,7 @@ type base_BTMParameterReference2434 struct {
 	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
 	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
 	Ids                []string                           `json:"ids,omitempty"`
-	MicroversioId      *string                            `json:"microversioId,omitempty"`
+	MicroversionId     *string                            `json:"microversionId,omitempty"`
 	Namespace          *string                            `json:"namespace,omitempty"`
 }
 
@@ -1201,36 +1201,36 @@ func (o *base_BTMParameterReference2434) SetIds(v []string) {
 	o.Ids = v
 }
 
-// GetMicroversioId returns the MicroversioId field value if set, zero value otherwise.
-func (o *base_BTMParameterReference2434) GetMicroversioId() string {
-	if o == nil || o.MicroversioId == nil {
+// GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
+func (o *base_BTMParameterReference2434) GetMicroversionId() string {
+	if o == nil || o.MicroversionId == nil {
 		var ret string
 		return ret
 	}
-	return *o.MicroversioId
+	return *o.MicroversionId
 }
 
-// GetMicroversioIdOk returns a tuple with the MicroversioId field value if set, nil otherwise
+// GetMicroversionIdOk returns a tuple with the MicroversionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *base_BTMParameterReference2434) GetMicroversioIdOk() (*string, bool) {
-	if o == nil || o.MicroversioId == nil {
+func (o *base_BTMParameterReference2434) GetMicroversionIdOk() (*string, bool) {
+	if o == nil || o.MicroversionId == nil {
 		return nil, false
 	}
-	return o.MicroversioId, true
+	return o.MicroversionId, true
 }
 
-// HasMicroversioId returns a boolean if a field has been set.
-func (o *base_BTMParameterReference2434) HasMicroversioId() bool {
-	if o != nil && o.MicroversioId != nil {
+// HasMicroversionId returns a boolean if a field has been set.
+func (o *base_BTMParameterReference2434) HasMicroversionId() bool {
+	if o != nil && o.MicroversionId != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetMicroversioId gets a reference to the given string and assigns it to the MicroversioId field.
-func (o *base_BTMParameterReference2434) SetMicroversioId(v string) {
-	o.MicroversioId = &v
+// SetMicroversionId gets a reference to the given string and assigns it to the MicroversionId field.
+func (o *base_BTMParameterReference2434) SetMicroversionId(v string) {
+	o.MicroversionId = &v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -1305,8 +1305,8 @@ func (o base_BTMParameterReference2434) MarshalJSON() ([]byte, error) {
 	if o.Ids != nil {
 		toSerialize["ids"] = o.Ids
 	}
-	if o.MicroversioId != nil {
-		toSerialize["microversioId"] = o.MicroversioId
+	if o.MicroversionId != nil {
+		toSerialize["microversionId"] = o.MicroversionId
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace

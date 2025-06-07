@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailLink** | **bool** | Use &#39;true&#39; if a link in an email should be sent. | [default to false]
+**EmailLink** | **bool** | Use &#x60;true&#x60; if a link in an email should be sent. | [default to false]
 **EmailMessage** | Pointer to **string** | Message to send in the email body along with the download link. | [optional] 
 **EmailSubject** | Pointer to **string** | Subject to send the email with. | [optional] [default to "User sent you a file exported from Onshape"]
-**EmailTo** | **[]string** | List of emails to send the email to. | 
+**EmailTo** | **[]string** | List of email addresses to send the email to. | 
 **FromUserId** | **string** | Id of the user who does the export. | 
 **Password** | Pointer to **string** | A password to protect the email with. | [optional] [default to "false"]
-**PasswordRequired** | Pointer to **bool** | Use &#39;true&#39; if the email should be protected with a password. | [optional] [default to false]
-**SendCopyToMe** | Pointer to **bool** | Use &#39;true&#39; if email copy should be sent to the user who does the export. | [optional] [default to false]
+**PasswordRequired** | Pointer to **bool** | Use &#x60;true&#x60; if the email should be protected with a password. | [optional] [default to false]
+**SendCopyToMe** | Pointer to **bool** | Use &#x60;true&#x60; if email copy should be sent to the user who does the export. | [optional] [default to false]
 **ValidForDays** | Pointer to **int32** | Number of days to keep the link valid for. | [optional] [default to 3]
 
 ## Methods

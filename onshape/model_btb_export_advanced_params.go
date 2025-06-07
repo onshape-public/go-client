@@ -23,7 +23,7 @@ type BTBExportAdvancedParams struct {
 	ElementIds []string `json:"elementIds,omitempty"`
 	// Set to `true` to evaluate the export rule for the given `formatName` and to include an `exportRuleFileName` value in the response.
 	EvaluateExportRule *bool `json:"evaluateExportRule,omitempty"`
-	// For multiple elements export, use 'true' if export rule shouldn't be applied for all elements.
+	// For multiple elements export, use `true` if export rule shouldn't be applied for all elements.
 	IgnoreExportRulesForContents *bool `json:"ignoreExportRulesForContents,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentId *string `json:"linkDocumentId,omitempty"`

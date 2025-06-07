@@ -275,6 +275,542 @@ func (a *AssemblyApiService) CreateAssemblyExecute(r ApiCreateAssemblyRequest) (
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiCreateAssemblyExportGltfRequest struct {
+	ctx                 context.Context
+	ApiService          *AssemblyApiService
+	did                 string
+	wv                  string
+	wvid                string
+	eid                 string
+	bTBGltfExportParams *BTBGltfExportParams
+}
+
+func (r ApiCreateAssemblyExportGltfRequest) BTBGltfExportParams(bTBGltfExportParams BTBGltfExportParams) ApiCreateAssemblyExportGltfRequest {
+	r.bTBGltfExportParams = &bTBGltfExportParams
+	return r
+}
+
+func (r ApiCreateAssemblyExportGltfRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreateAssemblyExportGltfExecute(r)
+}
+
+/*
+CreateAssemblyExportGltf Export the assembly to glTF.
+
+Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreateAssemblyExportGltfRequest
+*/
+func (a *AssemblyApiService) CreateAssemblyExportGltf(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateAssemblyExportGltfRequest {
+	return ApiCreateAssemblyExportGltfRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *AssemblyApiService) CreateAssemblyExportGltfExecute(r ApiCreateAssemblyExportGltfRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssemblyApiService.CreateAssemblyExportGltf")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/gltf"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBGltfExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBGltfExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBGltfExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateAssemblyExportObjRequest struct {
+	ctx                context.Context
+	ApiService         *AssemblyApiService
+	did                string
+	wv                 string
+	wvid               string
+	eid                string
+	bTBObjExportParams *BTBObjExportParams
+}
+
+func (r ApiCreateAssemblyExportObjRequest) BTBObjExportParams(bTBObjExportParams BTBObjExportParams) ApiCreateAssemblyExportObjRequest {
+	r.bTBObjExportParams = &bTBObjExportParams
+	return r
+}
+
+func (r ApiCreateAssemblyExportObjRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreateAssemblyExportObjExecute(r)
+}
+
+/*
+CreateAssemblyExportObj Export the assembly to OBJ.
+
+Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreateAssemblyExportObjRequest
+*/
+func (a *AssemblyApiService) CreateAssemblyExportObj(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateAssemblyExportObjRequest {
+	return ApiCreateAssemblyExportObjRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *AssemblyApiService) CreateAssemblyExportObjExecute(r ApiCreateAssemblyExportObjRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssemblyApiService.CreateAssemblyExportObj")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/obj"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBObjExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBObjExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBObjExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateAssemblyExportSolidworksRequest struct {
+	ctx                       context.Context
+	ApiService                *AssemblyApiService
+	did                       string
+	wv                        string
+	wvid                      string
+	eid                       string
+	bTBSolidworksExportParams *BTBSolidworksExportParams
+}
+
+func (r ApiCreateAssemblyExportSolidworksRequest) BTBSolidworksExportParams(bTBSolidworksExportParams BTBSolidworksExportParams) ApiCreateAssemblyExportSolidworksRequest {
+	r.bTBSolidworksExportParams = &bTBSolidworksExportParams
+	return r
+}
+
+func (r ApiCreateAssemblyExportSolidworksRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreateAssemblyExportSolidworksExecute(r)
+}
+
+/*
+CreateAssemblyExportSolidworks Export the assembly to Solidworks.
+
+Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreateAssemblyExportSolidworksRequest
+*/
+func (a *AssemblyApiService) CreateAssemblyExportSolidworks(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateAssemblyExportSolidworksRequest {
+	return ApiCreateAssemblyExportSolidworksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *AssemblyApiService) CreateAssemblyExportSolidworksExecute(r ApiCreateAssemblyExportSolidworksRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssemblyApiService.CreateAssemblyExportSolidworks")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/solidworks"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBSolidworksExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBSolidworksExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBSolidworksExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiCreateAssemblyExportStepRequest struct {
+	ctx                 context.Context
+	ApiService          *AssemblyApiService
+	did                 string
+	wv                  string
+	wvid                string
+	eid                 string
+	bTBStepExportParams *BTBStepExportParams
+}
+
+func (r ApiCreateAssemblyExportStepRequest) BTBStepExportParams(bTBStepExportParams BTBStepExportParams) ApiCreateAssemblyExportStepRequest {
+	r.bTBStepExportParams = &bTBStepExportParams
+	return r
+}
+
+func (r ApiCreateAssemblyExportStepRequest) Execute() (*BTTranslationRequestInfo, *http.Response, error) {
+	return r.ApiService.CreateAssemblyExportStepExecute(r)
+}
+
+/*
+CreateAssemblyExportStep Export the assembly to STEP.
+
+Creates an asynchronous export of the assembly. See [API Guide: Import & Export](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-gltf-obj-solidworks-or-step) for details.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@return ApiCreateAssemblyExportStepRequest
+*/
+func (a *AssemblyApiService) CreateAssemblyExportStep(ctx context.Context, did string, wv string, wvid string, eid string) ApiCreateAssemblyExportStepRequest {
+	return ApiCreateAssemblyExportStepRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+		wv:         wv,
+		wvid:       wvid,
+		eid:        eid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTTranslationRequestInfo
+func (a *AssemblyApiService) CreateAssemblyExportStepExecute(r ApiCreateAssemblyExportStepRequest) (*BTTranslationRequestInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTTranslationRequestInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssemblyApiService.CreateAssemblyExportStep")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/assemblies/d/{did}/{wv}/{wvid}/e/{eid}/export/step"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wv"+"}", url.PathEscape(parameterToString(r.wv, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wvid"+"}", url.PathEscape(parameterToString(r.wvid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eid"+"}", url.PathEscape(parameterToString(r.eid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTBStepExportParams == nil {
+		return localVarReturnValue, nil, reportError("bTBStepExportParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTBStepExportParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTTranslationRequestInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
 type ApiCreateInstanceRequest struct {
 	ctx                                context.Context
 	ApiService                         *AssemblyApiService
@@ -3172,9 +3708,10 @@ func (r ApiTranslateFormatRequest) Execute() (*BTTranslationRequestInfo, *http.R
 /*
 TranslateFormat Export the assembly to another format.
 
-* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`
+Creates an asynchronous export. Use format-specific export endpoints where available.
+* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](#/Translation/getAllTranslatorFormats) to get a list of valid export file formats. Confirm that `couldBeAssembly=true.`
 * Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
-* See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
+* See [API Guide: Import & Export ](https://onshape-public.github.io/docs/api-adv/translation/#export-an-assembly-to-another-format) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did

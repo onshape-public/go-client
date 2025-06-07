@@ -50,7 +50,7 @@ func (r ApiCreateBlobTranslationRequest) Execute() (*BTTranslationRequestInfo, *
 /*
 CreateBlobTranslation Export a blob element to another format.
 
-* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats](https://cad.onshape.com/glassworks/explorer/#/Translation/getAllTranslatorFormats) to get a list of valid export file formats.
+* Use `formatName` in the JSON request body to specify the export file type. Use [Translations/getAllTranslatorFormats]#/Translation/getAllTranslatorFormats) to get a list of valid export file formats.
 * Set `storeInDocument` to `false` to export to a data file. Set to `true` to export to a blob element in the same document.
 * See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
@@ -492,6 +492,9 @@ type ApiUploadFileCreateElementRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	versionId                            *string
+	versionName                          *string
+	versionDescription                   *string
 	repointAppElementVersionRefs         *bool
 }
 
@@ -670,6 +673,21 @@ func (r ApiUploadFileCreateElementRequest) DocumentId(documentId string) ApiUplo
 	return r
 }
 
+func (r ApiUploadFileCreateElementRequest) VersionId(versionId string) ApiUploadFileCreateElementRequest {
+	r.versionId = &versionId
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) VersionName(versionName string) ApiUploadFileCreateElementRequest {
+	r.versionName = &versionName
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) VersionDescription(versionDescription string) ApiUploadFileCreateElementRequest {
+	r.versionDescription = &versionDescription
+	return r
+}
+
 // Re-point the version references in APP elements to initial version in the new document
 func (r ApiUploadFileCreateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileCreateElementRequest {
 	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
@@ -839,6 +857,15 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
 	}
+	if r.versionId != nil {
+		localVarFormParams.Add("versionId", parameterToString(*r.versionId, ""))
+	}
+	if r.versionName != nil {
+		localVarFormParams.Add("versionName", parameterToString(*r.versionName, ""))
+	}
+	if r.versionDescription != nil {
+		localVarFormParams.Add("versionDescription", parameterToString(*r.versionDescription, ""))
+	}
 	if r.repointAppElementVersionRefs != nil {
 		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
 	}
@@ -926,6 +953,9 @@ type ApiUploadFileUpdateElementRequest struct {
 	upgradeFeatureScriptVersion          *bool
 	preserveSourceIds                    *bool
 	documentId                           *string
+	versionId                            *string
+	versionName                          *string
+	versionDescription                   *string
 	repointAppElementVersionRefs         *bool
 }
 
@@ -1110,6 +1140,21 @@ func (r ApiUploadFileUpdateElementRequest) DocumentId(documentId string) ApiUplo
 	return r
 }
 
+func (r ApiUploadFileUpdateElementRequest) VersionId(versionId string) ApiUploadFileUpdateElementRequest {
+	r.versionId = &versionId
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) VersionName(versionName string) ApiUploadFileUpdateElementRequest {
+	r.versionName = &versionName
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) VersionDescription(versionDescription string) ApiUploadFileUpdateElementRequest {
+	r.versionDescription = &versionDescription
+	return r
+}
+
 // Re-point the version references in APP elements to initial version in the new document
 func (r ApiUploadFileUpdateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileUpdateElementRequest {
 	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
@@ -1284,6 +1329,15 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	}
 	if r.documentId != nil {
 		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
+	if r.versionId != nil {
+		localVarFormParams.Add("versionId", parameterToString(*r.versionId, ""))
+	}
+	if r.versionName != nil {
+		localVarFormParams.Add("versionName", parameterToString(*r.versionName, ""))
+	}
+	if r.versionDescription != nil {
+		localVarFormParams.Add("versionDescription", parameterToString(*r.versionDescription, ""))
 	}
 	if r.repointAppElementVersionRefs != nil {
 		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))

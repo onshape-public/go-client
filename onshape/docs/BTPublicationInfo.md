@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DefaultWorkspaceId** | Pointer to **string** |  | [optional] 
-**Items** | Pointer to [**[]Item**](Item.md) |  | [optional] 
+**Items** | Pointer to [**[]BTPublicationInfoItem**](BTPublicationInfoItem.md) |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
 **Sequence** | Pointer to **string** |  | [optional] 
 
@@ -55,20 +55,20 @@ HasDefaultWorkspaceId returns a boolean if a field has been set.
 
 ### GetItems
 
-`func (o *BTPublicationInfo) GetItems() []Item`
+`func (o *BTPublicationInfo) GetItems() []BTPublicationInfoItem`
 
 GetItems returns the Items field if non-nil, zero value otherwise.
 
 ### GetItemsOk
 
-`func (o *BTPublicationInfo) GetItemsOk() (*[]Item, bool)`
+`func (o *BTPublicationInfo) GetItemsOk() (*[]BTPublicationInfoItem, bool)`
 
 GetItemsOk returns a tuple with the Items field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetItems
 
-`func (o *BTPublicationInfo) SetItems(v []Item)`
+`func (o *BTPublicationInfo) SetItems(v []BTPublicationInfoItem)`
 
 SetItems sets Items field to given value.
 

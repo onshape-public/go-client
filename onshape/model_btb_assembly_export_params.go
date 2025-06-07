@@ -16,7 +16,7 @@ import (
 
 // BTBAssemblyExportParams Options for exporting assemblies.
 type BTBAssemblyExportParams struct {
-	// IDs of the instances to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).
+	// IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).
 	OccurrencesToExport *string `json:"occurrencesToExport,omitempty"`
 }
 

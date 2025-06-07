@@ -19,28 +19,38 @@ type BTTranslateFormatParams struct {
 	// If true, parts with faults are imported. If false, faulty parts are omitted.
 	AllowFaultyParts *bool `json:"allowFaultyParts,omitempty"`
 	// Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	AngularTolerance      *float64 `json:"angularTolerance,omitempty"`
-	BlobElementId         *string  `json:"blobElementId,omitempty"`
-	BlobMicroversionId    *string  `json:"blobMicroversionId,omitempty"`
-	CloudObjectId         *string  `json:"cloudObjectId,omitempty"`
-	CloudStorageAccountId *string  `json:"cloudStorageAccountId,omitempty"`
-	ColorMethod           *string  `json:"colorMethod,omitempty"`
-	Configuration         *string  `json:"configuration,omitempty"`
-	ConnectionId          *string  `json:"connectionId,omitempty"`
-	CreateComposite       *bool    `json:"createComposite,omitempty"`
-	CurrentSheetOnly      *bool    `json:"currentSheetOnly,omitempty"`
-	DestinationName       *string  `json:"destinationName,omitempty"`
-	DistanceTolerance     *float64 `json:"distanceTolerance,omitempty"`
+	AngularTolerance   *float64 `json:"angularTolerance,omitempty"`
+	BlobElementId      *string  `json:"blobElementId,omitempty"`
+	BlobMicroversionId *string  `json:"blobMicroversionId,omitempty"`
+	// Folder id where to store the exported model.
+	CloudObjectId *string `json:"cloudObjectId,omitempty"`
+	// Account id to access the cloud storage.
+	CloudStorageAccountId *string `json:"cloudStorageAccountId,omitempty"`
+	ColorMethod           *string `json:"colorMethod,omitempty"`
+	// URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
+	Configuration    *string `json:"configuration,omitempty"`
+	ConnectionId     *string `json:"connectionId,omitempty"`
+	CreateComposite  *bool   `json:"createComposite,omitempty"`
+	CurrentSheetOnly *bool   `json:"currentSheetOnly,omitempty"`
+	// The name of the exported file.
+	DestinationName *string `json:"destinationName,omitempty"`
+	// Determines the maximum distance deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
+	DistanceTolerance *float64 `json:"distanceTolerance,omitempty"`
 	// The id of the element in which to perform the operation.
 	ElementId *string `json:"elementId,omitempty"`
 	// An array of element ids for multi-element export.
-	ElementIds   []string `json:"elementIds,omitempty"`
-	EmailLink    *bool    `json:"emailLink,omitempty"`
-	EmailMessage *string  `json:"emailMessage,omitempty"`
-	EmailSubject *string  `json:"emailSubject,omitempty"`
-	EmailTo      []string `json:"emailTo,omitempty"`
+	ElementIds []string `json:"elementIds,omitempty"`
+	// Use `true` if a link in an email should be sent.
+	EmailLink *bool `json:"emailLink,omitempty"`
+	// Message to send in the email body along with the download link.
+	EmailMessage *string `json:"emailMessage,omitempty"`
+	// Subject to send the email with.
+	EmailSubject *string `json:"emailSubject,omitempty"`
+	// List of email addresses to send the email to.
+	EmailTo []string `json:"emailTo,omitempty"`
 	// Set to `true` to evaluate the export rule for the given `formatName` and to include an `exportRuleFileName` value in the response.
-	EvaluateExportRule       *bool   `json:"evaluateExportRule,omitempty"`
+	EvaluateExportRule *bool `json:"evaluateExportRule,omitempty"`
+	// Whether or not to exclude hidden parts from export.
 	ExcludeHiddenEntities    *bool   `json:"excludeHiddenEntities,omitempty"`
 	ExcludeOffSheetContent   *bool   `json:"excludeOffSheetContent,omitempty"`
 	ExtractAssemblyHierarchy *bool   `json:"extractAssemblyHierarchy,omitempty"`
@@ -48,46 +58,57 @@ type BTTranslateFormatParams struct {
 	FlattenAssemblies        *bool   `json:"flattenAssemblies,omitempty"`
 	ForeignId                *string `json:"foreignId,omitempty"`
 	// The name of the file format.
-	FormatName                   string  `json:"formatName"`
-	FromUserId                   *string `json:"fromUserId,omitempty"`
-	GetyAxisIsUp                 *bool   `json:"getyAxisIsUp,omitempty"`
-	Grouping                     *bool   `json:"grouping,omitempty"`
-	HideInspectionItems          *bool   `json:"hideInspectionItems,omitempty"`
-	IgnoreExportRulesForContents *bool   `json:"ignoreExportRulesForContents,omitempty"`
-	ImageHeight                  *int32  `json:"imageHeight,omitempty"`
-	ImageWidth                   *int32  `json:"imageWidth,omitempty"`
-	ImportAppearances            *bool   `json:"importAppearances,omitempty"`
-	ImportInBackground           *bool   `json:"importInBackground,omitempty"`
-	ImportMaterialDensity        *bool   `json:"importMaterialDensity,omitempty"`
-	ImportWithinDocument         *bool   `json:"importWithinDocument,omitempty"`
-	IncludeExportIds             *bool   `json:"includeExportIds,omitempty"`
-	JoinAdjacentSurfaces         *bool   `json:"joinAdjacentSurfaces,omitempty"`
-	Level                        *string `json:"level,omitempty"`
+	FormatName string `json:"formatName"`
+	// Id of the user who does the export.
+	FromUserId   *string `json:"fromUserId,omitempty"`
+	GetyAxisIsUp *bool   `json:"getyAxisIsUp,omitempty"`
+	// Whether parts should be exported as a group or individually in a .zip file.
+	Grouping            *bool `json:"grouping,omitempty"`
+	HideInspectionItems *bool `json:"hideInspectionItems,omitempty"`
+	// For multiple elements export, use `true` if export rule shouldn't be applied for all elements.
+	IgnoreExportRulesForContents *bool  `json:"ignoreExportRulesForContents,omitempty"`
+	ImageHeight                  *int32 `json:"imageHeight,omitempty"`
+	ImageWidth                   *int32 `json:"imageWidth,omitempty"`
+	ImportAppearances            *bool  `json:"importAppearances,omitempty"`
+	ImportInBackground           *bool  `json:"importInBackground,omitempty"`
+	ImportMaterialDensity        *bool  `json:"importMaterialDensity,omitempty"`
+	ImportWithinDocument         *bool  `json:"importWithinDocument,omitempty"`
+	// Whether topology ids should be exported as parasolid attributes.
+	IncludeExportIds     *bool   `json:"includeExportIds,omitempty"`
+	JoinAdjacentSurfaces *bool   `json:"joinAdjacentSurfaces,omitempty"`
+	Level                *string `json:"level,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
-	LinkDocumentId          *string `json:"linkDocumentId,omitempty"`
+	LinkDocumentId *string `json:"linkDocumentId,omitempty"`
+	// The id of the workspace through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentWorkspaceId *string `json:"linkDocumentWorkspaceId,omitempty"`
-	// Determines the maximum distance, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	MaximumChordLength      *float64                 `json:"maximumChordLength,omitempty"`
-	NotifyUser              *bool                    `json:"notifyUser,omitempty"`
-	OccurrencesToExport     *string                  `json:"occurrencesToExport,omitempty"`
-	OnePartPerDoc           *bool                    `json:"onePartPerDoc,omitempty"`
-	OriginalForeignId       *string                  `json:"originalForeignId,omitempty"`
-	ParentId                *string                  `json:"parentId,omitempty"`
-	PartIds                 *string                  `json:"partIds,omitempty"`
-	PartsExportFilter       *BTPartsExportFilter4308 `json:"partsExportFilter,omitempty"`
-	Password                *string                  `json:"password,omitempty"`
-	PasswordRequired        *bool                    `json:"passwordRequired,omitempty"`
-	PdfVersion              *string                  `json:"pdfVersion,omitempty"`
-	ProcessedForeignId      *string                  `json:"processedForeignId,omitempty"`
-	ProjectId               *string                  `json:"projectId,omitempty"`
-	ProxyDocumentId         *string                  `json:"proxyDocumentId,omitempty"`
-	ProxyElementId          *string                  `json:"proxyElementId,omitempty"`
-	ProxyWorkspaceVersion   *string                  `json:"proxyWorkspaceVersion,omitempty"`
-	ProxyWorkspaceVersionId *string                  `json:"proxyWorkspaceVersionId,omitempty"`
+	// Determines the maximum of a triangle edge length. Lower values result in a finer geometry and higher values result in coarser geometry.
+	MaximumChordLength *float64 `json:"maximumChordLength,omitempty"`
+	// Send notification to the user client.
+	NotifyUser *bool `json:"notifyUser,omitempty"`
+	// IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).
+	OccurrencesToExport *string `json:"occurrencesToExport,omitempty"`
+	OnePartPerDoc       *bool   `json:"onePartPerDoc,omitempty"`
+	OriginalForeignId   *string `json:"originalForeignId,omitempty"`
+	ParentId            *string `json:"parentId,omitempty"`
+	// IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds=JHK,JHD).
+	PartIds           *string                  `json:"partIds,omitempty"`
+	PartsExportFilter *BTPartsExportFilter4308 `json:"partsExportFilter,omitempty"`
+	// A password to protect the email with.
+	Password *string `json:"password,omitempty"`
+	// Use `true` if the email should be protected with a password.
+	PasswordRequired        *bool   `json:"passwordRequired,omitempty"`
+	PdfVersion              *string `json:"pdfVersion,omitempty"`
+	ProcessedForeignId      *string `json:"processedForeignId,omitempty"`
+	ProjectId               *string `json:"projectId,omitempty"`
+	ProxyDocumentId         *string `json:"proxyDocumentId,omitempty"`
+	ProxyElementId          *string `json:"proxyElementId,omitempty"`
+	ProxyWorkspaceVersion   *string `json:"proxyWorkspaceVersion,omitempty"`
+	ProxyWorkspaceVersionId *string `json:"proxyWorkspaceVersionId,omitempty"`
 	// Determines export resolution of fine, medium, or coarse
-	Resolution                           *string                       `json:"resolution,omitempty"`
-	RhinoVersion                         *GBTRhinoVersions             `json:"rhinoVersion,omitempty"`
-	SelectablePdfText                    *bool                         `json:"selectablePdfText,omitempty"`
+	Resolution        *string           `json:"resolution,omitempty"`
+	RhinoVersion      *GBTRhinoVersions `json:"rhinoVersion,omitempty"`
+	SelectablePdfText *bool             `json:"selectablePdfText,omitempty"`
+	// Use `true` if email copy should be sent to the user who does the export.
 	SendCopyToMe                         *bool                         `json:"sendCopyToMe,omitempty"`
 	SheetIndices                         []int32                       `json:"sheetIndices,omitempty"`
 	ShowOverriddenDimensions             *bool                         `json:"showOverriddenDimensions,omitempty"`
@@ -98,20 +119,25 @@ type BTTranslateFormatParams struct {
 	SplinesAsPolylines                   *bool                         `json:"splinesAsPolylines,omitempty"`
 	SplitAssembliesIntoMultipleDocuments *bool                         `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
 	StepParasolidPreprocessingOption     *GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption,omitempty"`
-	StepVersionString                    *string                       `json:"stepVersionString,omitempty"`
-	StlMode                              *GBTStlEncodingType           `json:"stlMode,omitempty"`
-	StoreInDocument                      *bool                         `json:"storeInDocument,omitempty"`
-	TextAsGeometry                       *bool                         `json:"textAsGeometry,omitempty"`
-	TextOption                           *string                       `json:"textOption,omitempty"`
-	TriggerAutoDownload                  *bool                         `json:"triggerAutoDownload,omitempty"`
-	Unit                                 *string                       `json:"unit,omitempty"`
-	UploadId                             *string                       `json:"uploadId,omitempty"`
-	UseFileNameToSetSinglePartName       *bool                         `json:"useFileNameToSetSinglePartName,omitempty"`
-	UseGltfCompression                   *bool                         `json:"useGltfCompression,omitempty"`
-	UseIGESImportPostProcessing          *bool                         `json:"useIGESImportPostProcessing,omitempty"`
-	UseIgesCompatibilityMode             *bool                         `json:"useIgesCompatibilityMode,omitempty"`
-	ValidForDays                         *int32                        `json:"validForDays,omitempty"`
-	VersionString                        *string                       `json:"versionString,omitempty"`
+	// Export STEP in version: `AP242` | `AP203` | `AP214`
+	StepVersionString *string             `json:"stepVersionString,omitempty"`
+	StlMode           *GBTStlEncodingType `json:"stlMode,omitempty"`
+	// Create a blob with exported file in the source document.
+	StoreInDocument *bool   `json:"storeInDocument,omitempty"`
+	TextAsGeometry  *bool   `json:"textAsGeometry,omitempty"`
+	TextOption      *string `json:"textOption,omitempty"`
+	// Automatically download a translated file.
+	TriggerAutoDownload            *bool   `json:"triggerAutoDownload,omitempty"`
+	Unit                           *string `json:"unit,omitempty"`
+	UploadId                       *string `json:"uploadId,omitempty"`
+	UseFileNameToSetSinglePartName *bool   `json:"useFileNameToSetSinglePartName,omitempty"`
+	UseGltfCompression             *bool   `json:"useGltfCompression,omitempty"`
+	UseIGESImportPostProcessing    *bool   `json:"useIGESImportPostProcessing,omitempty"`
+	UseIgesCompatibilityMode       *bool   `json:"useIgesCompatibilityMode,omitempty"`
+	// Number of days to keep the link valid for.
+	ValidForDays *int32 `json:"validForDays,omitempty"`
+	// Parasolid version number as string. Use '0' for the latest.
+	VersionString *string `json:"versionString,omitempty"`
 }
 
 // NewBTTranslateFormatParams instantiates a new BTTranslateFormatParams object
@@ -125,8 +151,12 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
 	this.FormatName = formatName
+	var stepVersionString string = "AP242"
+	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
 	this.StlMode = &stlMode
+	var versionString string = "0"
+	this.VersionString = &versionString
 	return &this
 }
 
@@ -139,8 +169,12 @@ func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this.AllowFaultyParts = &allowFaultyParts
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
+	var stepVersionString string = "AP242"
+	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
 	this.StlMode = &stlMode
+	var versionString string = "0"
+	this.VersionString = &versionString
 	return &this
 }
 

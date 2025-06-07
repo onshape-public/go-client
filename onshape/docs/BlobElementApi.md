@@ -1,6 +1,6 @@
 # \BlobElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v10*
+All URIs are relative to *https://cad.onshape.com/api/v11*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileCreateElement
 
-> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
 
 Upload a file and create a blob element from it.
 
@@ -311,11 +311,14 @@ func main() {
     upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
     preserveSourceIds := true // bool |  (optional) (default to false)
     documentId := "documentId_example" // string |  (optional)
+    versionId := "versionId_example" // string |  (optional)
+    versionName := "versionName_example" // string |  (optional)
+    versionDescription := "versionDescription_example" // string |  (optional)
     repointAppElementVersionRefs := true // bool | Re-point the version references in APP elements to initial version in the new document (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileCreateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,6 +379,9 @@ Name | Type | Description  | Notes
  **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
  **preserveSourceIds** | **bool** |  | [default to false]
  **documentId** | **string** |  | 
+ **versionId** | **string** |  | 
+ **versionName** | **string** |  | 
+ **versionDescription** | **string** |  | 
  **repointAppElementVersionRefs** | **bool** | Re-point the version references in APP elements to initial version in the new document | [default to false]
 
 ### Return type
@@ -398,7 +404,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileUpdateElement
 
-> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
 
 Update a blob element by uploading a file.
 
@@ -454,11 +460,14 @@ func main() {
     upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
     preserveSourceIds := true // bool |  (optional) (default to false)
     documentId := "documentId_example" // string |  (optional)
+    versionId := "versionId_example" // string |  (optional)
+    versionName := "versionName_example" // string |  (optional)
+    versionDescription := "versionDescription_example" // string |  (optional)
     repointAppElementVersionRefs := true // bool | Re-point the version references in APP elements to initial version in the new document (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileUpdateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -522,6 +531,9 @@ Name | Type | Description  | Notes
  **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
  **preserveSourceIds** | **bool** |  | [default to false]
  **documentId** | **string** |  | 
+ **versionId** | **string** |  | 
+ **versionName** | **string** |  | 
+ **versionDescription** | **string** |  | 
  **repointAppElementVersionRefs** | **bool** | Re-point the version references in APP elements to initial version in the new document | [default to false]
 
 ### Return type

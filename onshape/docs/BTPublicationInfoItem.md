@@ -1,4 +1,4 @@
-# Item
+# BTPublicationInfoItem
 
 ## Properties
 
@@ -23,415 +23,415 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewItem
+### NewBTPublicationInfoItem
 
-`func NewItem(jsonType string, ) *Item`
+`func NewBTPublicationInfoItem(jsonType string, ) *BTPublicationInfoItem`
 
-NewItem instantiates a new Item object
+NewBTPublicationInfoItem instantiates a new BTPublicationInfoItem object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewItemWithDefaults
+### NewBTPublicationInfoItemWithDefaults
 
-`func NewItemWithDefaults() *Item`
+`func NewBTPublicationInfoItemWithDefaults() *BTPublicationInfoItem`
 
-NewItemWithDefaults instantiates a new Item object
+NewBTPublicationInfoItemWithDefaults instantiates a new BTPublicationInfoItem object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetApplicationTarget
 
-`func (o *Item) GetApplicationTarget() BTApplicationTargetInfo`
+`func (o *BTPublicationInfoItem) GetApplicationTarget() BTApplicationTargetInfo`
 
 GetApplicationTarget returns the ApplicationTarget field if non-nil, zero value otherwise.
 
 ### GetApplicationTargetOk
 
-`func (o *Item) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)`
+`func (o *BTPublicationInfoItem) GetApplicationTargetOk() (*BTApplicationTargetInfo, bool)`
 
 GetApplicationTargetOk returns a tuple with the ApplicationTarget field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetApplicationTarget
 
-`func (o *Item) SetApplicationTarget(v BTApplicationTargetInfo)`
+`func (o *BTPublicationInfoItem) SetApplicationTarget(v BTApplicationTargetInfo)`
 
 SetApplicationTarget sets ApplicationTarget field to given value.
 
 ### HasApplicationTarget
 
-`func (o *Item) HasApplicationTarget() bool`
+`func (o *BTPublicationInfoItem) HasApplicationTarget() bool`
 
 HasApplicationTarget returns a boolean if a field has been set.
 
 ### GetDataType
 
-`func (o *Item) GetDataType() string`
+`func (o *BTPublicationInfoItem) GetDataType() string`
 
 GetDataType returns the DataType field if non-nil, zero value otherwise.
 
 ### GetDataTypeOk
 
-`func (o *Item) GetDataTypeOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetDataTypeOk() (*string, bool)`
 
 GetDataTypeOk returns a tuple with the DataType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDataType
 
-`func (o *Item) SetDataType(v string)`
+`func (o *BTPublicationInfoItem) SetDataType(v string)`
 
 SetDataType sets DataType field to given value.
 
 ### HasDataType
 
-`func (o *Item) HasDataType() bool`
+`func (o *BTPublicationInfoItem) HasDataType() bool`
 
 HasDataType returns a boolean if a field has been set.
 
 ### GetDocumentId
 
-`func (o *Item) GetDocumentId() string`
+`func (o *BTPublicationInfoItem) GetDocumentId() string`
 
 GetDocumentId returns the DocumentId field if non-nil, zero value otherwise.
 
 ### GetDocumentIdOk
 
-`func (o *Item) GetDocumentIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetDocumentIdOk() (*string, bool)`
 
 GetDocumentIdOk returns a tuple with the DocumentId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDocumentId
 
-`func (o *Item) SetDocumentId(v string)`
+`func (o *BTPublicationInfoItem) SetDocumentId(v string)`
 
 SetDocumentId sets DocumentId field to given value.
 
 ### HasDocumentId
 
-`func (o *Item) HasDocumentId() bool`
+`func (o *BTPublicationInfoItem) HasDocumentId() bool`
 
 HasDocumentId returns a boolean if a field has been set.
 
 ### GetElementId
 
-`func (o *Item) GetElementId() string`
+`func (o *BTPublicationInfoItem) GetElementId() string`
 
 GetElementId returns the ElementId field if non-nil, zero value otherwise.
 
 ### GetElementIdOk
 
-`func (o *Item) GetElementIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetElementIdOk() (*string, bool)`
 
 GetElementIdOk returns a tuple with the ElementId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementId
 
-`func (o *Item) SetElementId(v string)`
+`func (o *BTPublicationInfoItem) SetElementId(v string)`
 
 SetElementId sets ElementId field to given value.
 
 ### HasElementId
 
-`func (o *Item) HasElementId() bool`
+`func (o *BTPublicationInfoItem) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
 
 ### GetElementType
 
-`func (o *Item) GetElementType() GBTElementType`
+`func (o *BTPublicationInfoItem) GetElementType() GBTElementType`
 
 GetElementType returns the ElementType field if non-nil, zero value otherwise.
 
 ### GetElementTypeOk
 
-`func (o *Item) GetElementTypeOk() (*GBTElementType, bool)`
+`func (o *BTPublicationInfoItem) GetElementTypeOk() (*GBTElementType, bool)`
 
 GetElementTypeOk returns a tuple with the ElementType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetElementType
 
-`func (o *Item) SetElementType(v GBTElementType)`
+`func (o *BTPublicationInfoItem) SetElementType(v GBTElementType)`
 
 SetElementType sets ElementType field to given value.
 
 ### HasElementType
 
-`func (o *Item) HasElementType() bool`
+`func (o *BTPublicationInfoItem) HasElementType() bool`
 
 HasElementType returns a boolean if a field has been set.
 
 ### GetEncodedConfiguration
 
-`func (o *Item) GetEncodedConfiguration() string`
+`func (o *BTPublicationInfoItem) GetEncodedConfiguration() string`
 
 GetEncodedConfiguration returns the EncodedConfiguration field if non-nil, zero value otherwise.
 
 ### GetEncodedConfigurationOk
 
-`func (o *Item) GetEncodedConfigurationOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetEncodedConfigurationOk() (*string, bool)`
 
 GetEncodedConfigurationOk returns a tuple with the EncodedConfiguration field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEncodedConfiguration
 
-`func (o *Item) SetEncodedConfiguration(v string)`
+`func (o *BTPublicationInfoItem) SetEncodedConfiguration(v string)`
 
 SetEncodedConfiguration sets EncodedConfiguration field to given value.
 
 ### HasEncodedConfiguration
 
-`func (o *Item) HasEncodedConfiguration() bool`
+`func (o *BTPublicationInfoItem) HasEncodedConfiguration() bool`
 
 HasEncodedConfiguration returns a boolean if a field has been set.
 
 ### GetId
 
-`func (o *Item) GetId() string`
+`func (o *BTPublicationInfoItem) GetId() string`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *Item) GetIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetIdOk() (*string, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *Item) SetId(v string)`
+`func (o *BTPublicationInfoItem) SetId(v string)`
 
 SetId sets Id field to given value.
 
 ### HasId
 
-`func (o *Item) HasId() bool`
+`func (o *BTPublicationInfoItem) HasId() bool`
 
 HasId returns a boolean if a field has been set.
 
 ### GetJsonType
 
-`func (o *Item) GetJsonType() string`
+`func (o *BTPublicationInfoItem) GetJsonType() string`
 
 GetJsonType returns the JsonType field if non-nil, zero value otherwise.
 
 ### GetJsonTypeOk
 
-`func (o *Item) GetJsonTypeOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetJsonTypeOk() (*string, bool)`
 
 GetJsonTypeOk returns a tuple with the JsonType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetJsonType
 
-`func (o *Item) SetJsonType(v string)`
+`func (o *BTPublicationInfoItem) SetJsonType(v string)`
 
 SetJsonType sets JsonType field to given value.
 
 
 ### GetPartId
 
-`func (o *Item) GetPartId() string`
+`func (o *BTPublicationInfoItem) GetPartId() string`
 
 GetPartId returns the PartId field if non-nil, zero value otherwise.
 
 ### GetPartIdOk
 
-`func (o *Item) GetPartIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetPartIdOk() (*string, bool)`
 
 GetPartIdOk returns a tuple with the PartId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPartId
 
-`func (o *Item) SetPartId(v string)`
+`func (o *BTPublicationInfoItem) SetPartId(v string)`
 
 SetPartId sets PartId field to given value.
 
 ### HasPartId
 
-`func (o *Item) HasPartId() bool`
+`func (o *BTPublicationInfoItem) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
 
 ### GetPartName
 
-`func (o *Item) GetPartName() string`
+`func (o *BTPublicationInfoItem) GetPartName() string`
 
 GetPartName returns the PartName field if non-nil, zero value otherwise.
 
 ### GetPartNameOk
 
-`func (o *Item) GetPartNameOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetPartNameOk() (*string, bool)`
 
 GetPartNameOk returns a tuple with the PartName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPartName
 
-`func (o *Item) SetPartName(v string)`
+`func (o *BTPublicationInfoItem) SetPartName(v string)`
 
 SetPartName sets PartName field to given value.
 
 ### HasPartName
 
-`func (o *Item) HasPartName() bool`
+`func (o *BTPublicationInfoItem) HasPartName() bool`
 
 HasPartName returns a boolean if a field has been set.
 
 ### GetPartNumber
 
-`func (o *Item) GetPartNumber() string`
+`func (o *BTPublicationInfoItem) GetPartNumber() string`
 
 GetPartNumber returns the PartNumber field if non-nil, zero value otherwise.
 
 ### GetPartNumberOk
 
-`func (o *Item) GetPartNumberOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetPartNumberOk() (*string, bool)`
 
 GetPartNumberOk returns a tuple with the PartNumber field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPartNumber
 
-`func (o *Item) SetPartNumber(v string)`
+`func (o *BTPublicationInfoItem) SetPartNumber(v string)`
 
 SetPartNumber sets PartNumber field to given value.
 
 ### HasPartNumber
 
-`func (o *Item) HasPartNumber() bool`
+`func (o *BTPublicationInfoItem) HasPartNumber() bool`
 
 HasPartNumber returns a boolean if a field has been set.
 
 ### GetRevision
 
-`func (o *Item) GetRevision() string`
+`func (o *BTPublicationInfoItem) GetRevision() string`
 
 GetRevision returns the Revision field if non-nil, zero value otherwise.
 
 ### GetRevisionOk
 
-`func (o *Item) GetRevisionOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetRevisionOk() (*string, bool)`
 
 GetRevisionOk returns a tuple with the Revision field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevision
 
-`func (o *Item) SetRevision(v string)`
+`func (o *BTPublicationInfoItem) SetRevision(v string)`
 
 SetRevision sets Revision field to given value.
 
 ### HasRevision
 
-`func (o *Item) HasRevision() bool`
+`func (o *BTPublicationInfoItem) HasRevision() bool`
 
 HasRevision returns a boolean if a field has been set.
 
 ### GetRevisionId
 
-`func (o *Item) GetRevisionId() string`
+`func (o *BTPublicationInfoItem) GetRevisionId() string`
 
 GetRevisionId returns the RevisionId field if non-nil, zero value otherwise.
 
 ### GetRevisionIdOk
 
-`func (o *Item) GetRevisionIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetRevisionIdOk() (*string, bool)`
 
 GetRevisionIdOk returns a tuple with the RevisionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRevisionId
 
-`func (o *Item) SetRevisionId(v string)`
+`func (o *BTPublicationInfoItem) SetRevisionId(v string)`
 
 SetRevisionId sets RevisionId field to given value.
 
 ### HasRevisionId
 
-`func (o *Item) HasRevisionId() bool`
+`func (o *BTPublicationInfoItem) HasRevisionId() bool`
 
 HasRevisionId returns a boolean if a field has been set.
 
 ### GetState
 
-`func (o *Item) GetState() int32`
+`func (o *BTPublicationInfoItem) GetState() int32`
 
 GetState returns the State field if non-nil, zero value otherwise.
 
 ### GetStateOk
 
-`func (o *Item) GetStateOk() (*int32, bool)`
+`func (o *BTPublicationInfoItem) GetStateOk() (*int32, bool)`
 
 GetStateOk returns a tuple with the State field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetState
 
-`func (o *Item) SetState(v int32)`
+`func (o *BTPublicationInfoItem) SetState(v int32)`
 
 SetState sets State field to given value.
 
 ### HasState
 
-`func (o *Item) HasState() bool`
+`func (o *BTPublicationInfoItem) HasState() bool`
 
 HasState returns a boolean if a field has been set.
 
 ### GetVersionId
 
-`func (o *Item) GetVersionId() string`
+`func (o *BTPublicationInfoItem) GetVersionId() string`
 
 GetVersionId returns the VersionId field if non-nil, zero value otherwise.
 
 ### GetVersionIdOk
 
-`func (o *Item) GetVersionIdOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetVersionIdOk() (*string, bool)`
 
 GetVersionIdOk returns a tuple with the VersionId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersionId
 
-`func (o *Item) SetVersionId(v string)`
+`func (o *BTPublicationInfoItem) SetVersionId(v string)`
 
 SetVersionId sets VersionId field to given value.
 
 ### HasVersionId
 
-`func (o *Item) HasVersionId() bool`
+`func (o *BTPublicationInfoItem) HasVersionId() bool`
 
 HasVersionId returns a boolean if a field has been set.
 
 ### GetVersionName
 
-`func (o *Item) GetVersionName() string`
+`func (o *BTPublicationInfoItem) GetVersionName() string`
 
 GetVersionName returns the VersionName field if non-nil, zero value otherwise.
 
 ### GetVersionNameOk
 
-`func (o *Item) GetVersionNameOk() (*string, bool)`
+`func (o *BTPublicationInfoItem) GetVersionNameOk() (*string, bool)`
 
 GetVersionNameOk returns a tuple with the VersionName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetVersionName
 
-`func (o *Item) SetVersionName(v string)`
+`func (o *BTPublicationInfoItem) SetVersionName(v string)`
 
 SetVersionName sets VersionName field to given value.
 
 ### HasVersionName
 
-`func (o *Item) HasVersionName() bool`
+`func (o *BTPublicationInfoItem) HasVersionName() bool`
 
 HasVersionName returns a boolean if a field has been set.
 

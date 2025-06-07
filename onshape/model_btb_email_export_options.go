@@ -16,21 +16,21 @@ import (
 
 // BTBEmailExportOptions Options for exporting elements as a link in an email.
 type BTBEmailExportOptions struct {
-	// Use 'true' if a link in an email should be sent.
+	// Use `true` if a link in an email should be sent.
 	EmailLink bool `json:"emailLink"`
 	// Message to send in the email body along with the download link.
 	EmailMessage *string `json:"emailMessage,omitempty"`
 	// Subject to send the email with.
 	EmailSubject *string `json:"emailSubject,omitempty"`
-	// List of emails to send the email to.
+	// List of email addresses to send the email to.
 	EmailTo []string `json:"emailTo"`
 	// Id of the user who does the export.
 	FromUserId string `json:"fromUserId"`
 	// A password to protect the email with.
 	Password *string `json:"password,omitempty"`
-	// Use 'true' if the email should be protected with a password.
+	// Use `true` if the email should be protected with a password.
 	PasswordRequired *bool `json:"passwordRequired,omitempty"`
-	// Use 'true' if email copy should be sent to the user who does the export.
+	// Use `true` if email copy should be sent to the user who does the export.
 	SendCopyToMe *bool `json:"sendCopyToMe,omitempty"`
 	// Number of days to keep the link valid for.
 	ValidForDays *int32 `json:"validForDays,omitempty"`

@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// GBTPreProcessParasolidOption the model 'GBTPreProcessParasolidOption'
+// GBTPreProcessParasolidOption Original geometry processing mode to improve results of translation to STEP.
 type GBTPreProcessParasolidOption string
 
 // List of GBTPreProcessParasolidOption
