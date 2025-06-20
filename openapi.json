@@ -43084,12 +43084,6 @@
               "type" : "integer",
               "format" : "int32"
             },
-            "parameters" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/BTParameterSpec-6"
-              }
-            },
             "showLabelsOnly" : {
               "type" : "boolean"
             }
