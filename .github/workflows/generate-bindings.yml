@@ -2,7 +2,8 @@ name: Generate Bindings
 on:
   push:
     branches:
-      - 'master'
+      # Example 'onshape-1.198.56003-1d9a9adcc29e_25871'
+      - onshape-[0-9]+.[0-9]+.[0-9]+-[0-9a-f]+_[0-9]+
     paths:
       - 'openapi.json'
   workflow_dispatch:
