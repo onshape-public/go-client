@@ -11,7 +11,8 @@ on:
 
 jobs:
   generate:
-    uses: onshape-public/openapi-utilities/.github/workflows/generate-bindings.yml@main
+    # TODO: Revert to main
+    uses: onshape-public/openapi-utilities/.github/workflows/generate-bindings.yml@bugfix/fix-definition-not-on-master
     secrets:
       BOT_ACCESS_TOKEN: ${{ secrets.GH_PAT }}
       ONSHAPE_API_ACCESS_KEY: ${{ secrets.ONSHAPE_API_KEY_DEMO_C }}
