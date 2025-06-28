@@ -16,8 +16,9 @@ import (
 
 // BTMetadataElementInfo struct for BTMetadataElementInfo
 type BTMetadataElementInfo struct {
-	Href        *string                                     `json:"href,omitempty"`
-	JsonType    string                                      `json:"jsonType"`
+	Href     *string `json:"href,omitempty"`
+	JsonType string  `json:"jsonType"`
+	// Properties associated with this metadata object
 	Properties  []BTMetadataPropertyInfo                    `json:"properties,omitempty"`
 	Thumbnail   *BTThumbnailInfo                            `json:"thumbnail,omitempty"`
 	ElementId   *string                                     `json:"elementId,omitempty"`

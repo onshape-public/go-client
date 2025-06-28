@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectId** | Pointer to **string** |  | [optional] 
 **Properties** | Pointer to [**[]BTMetadataPropertyInfo**](BTMetadataPropertyInfo.md) |  | [optional] 
+**PublishedWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ResolvedAt** | Pointer to **JSONTime** |  | [optional] 
 **ResolvedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Roles** | Pointer to [**[]BTTaskRbacRoleInfo**](BTTaskRbacRoleInfo.md) |  | [optional] 
@@ -509,6 +510,31 @@ SetProperties sets Properties field to given value.
 `func (o *BTTaskInfo) HasProperties() bool`
 
 HasProperties returns a boolean if a field has been set.
+
+### GetPublishedWorkflow
+
+`func (o *BTTaskInfo) GetPublishedWorkflow() BTPublishedWorkflowInfo`
+
+GetPublishedWorkflow returns the PublishedWorkflow field if non-nil, zero value otherwise.
+
+### GetPublishedWorkflowOk
+
+`func (o *BTTaskInfo) GetPublishedWorkflowOk() (*BTPublishedWorkflowInfo, bool)`
+
+GetPublishedWorkflowOk returns a tuple with the PublishedWorkflow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublishedWorkflow
+
+`func (o *BTTaskInfo) SetPublishedWorkflow(v BTPublishedWorkflowInfo)`
+
+SetPublishedWorkflow sets PublishedWorkflow field to given value.
+
+### HasPublishedWorkflow
+
+`func (o *BTTaskInfo) HasPublishedWorkflow() bool`
+
+HasPublishedWorkflow returns a boolean if a field has been set.
 
 ### GetResolvedAt
 

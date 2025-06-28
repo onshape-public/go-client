@@ -305,7 +305,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBGltfExportParams | 
+    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams() // BTBGltfExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -386,7 +386,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBObjExportParams := *openapiclient.NewBTBObjExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBObjExportParams | 
+    bTBObjExportParams := *openapiclient.NewBTBObjExportParams() // BTBObjExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -548,7 +548,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBStepExportParams := *openapiclient.NewBTBStepExportParams(openapiclient.GBTPreProcessParasolidOption("NO_PRE_PROCESSING"), "StepVersionString_example") // BTBStepExportParams | 
+    bTBStepExportParams := *openapiclient.NewBTBStepExportParams() // BTBStepExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)

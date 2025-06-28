@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **OccurrencesToExport** | Pointer to **string** | IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport&#x3D;JHK,JHD). | [optional] 
 **OnePartPerDoc** | Pointer to **bool** |  | [optional] 
 **OriginalForeignId** | Pointer to **string** |  | [optional] 
+**ParasolidMode** | Pointer to [**GBTParasolidEncodingType**](GBTParasolidEncodingType.md) |  | [optional] [default to GBTParasolidEncodingTypeText]
 **ParentId** | Pointer to **string** |  | [optional] 
 **PartIds** | Pointer to **string** | IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds&#x3D;JHK,JHD). | [optional] 
 **PartsExportFilter** | Pointer to [**BTPartsExportFilter4308**](BTPartsExportFilter4308.md) |  | [optional] 
@@ -1305,6 +1306,31 @@ SetOriginalForeignId sets OriginalForeignId field to given value.
 `func (o *BTTranslateFormatParams) HasOriginalForeignId() bool`
 
 HasOriginalForeignId returns a boolean if a field has been set.
+
+### GetParasolidMode
+
+`func (o *BTTranslateFormatParams) GetParasolidMode() GBTParasolidEncodingType`
+
+GetParasolidMode returns the ParasolidMode field if non-nil, zero value otherwise.
+
+### GetParasolidModeOk
+
+`func (o *BTTranslateFormatParams) GetParasolidModeOk() (*GBTParasolidEncodingType, bool)`
+
+GetParasolidModeOk returns a tuple with the ParasolidMode field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParasolidMode
+
+`func (o *BTTranslateFormatParams) SetParasolidMode(v GBTParasolidEncodingType)`
+
+SetParasolidMode sets ParasolidMode field to given value.
+
+### HasParasolidMode
+
+`func (o *BTTranslateFormatParams) HasParasolidMode() bool`
+
+HasParasolidMode returns a boolean if a field has been set.
 
 ### GetParentId
 

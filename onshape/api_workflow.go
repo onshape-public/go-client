@@ -461,10 +461,8 @@ func (r ApiGetAuditLogRequest) Execute() (*BTWorkflowAuditLogInfo, *http.Respons
 /*
 GetAuditLog Get all audit log entries for a workflowable object.
 
-Get identities (users and/or teams) allowed to be approvers on a workflow object for the company. Not object- or property-specific; used for delegation and company settings
-
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param objectId
+	@param objectId Id of a workflowable object like release package, task etc.
 	@return ApiGetAuditLogRequest
 */
 func (a *WorkflowApiService) GetAuditLog(ctx context.Context, objectId string) ApiGetAuditLogRequest {
@@ -535,6 +533,117 @@ func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWor
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTWorkflowAuditLogInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetWorkflowByIdRequest struct {
+	ctx        context.Context
+	ApiService *WorkflowApiService
+	objectId   string
+}
+
+func (r ApiGetWorkflowByIdRequest) Execute() (*BTObjectWorkflowInfo, *http.Response, error) {
+	return r.ApiService.GetWorkflowByIdExecute(r)
+}
+
+/*
+GetWorkflowById Lightweight information about the current state of a workflowable object like release package.
+
+Caller must be a company admin as this api allows access to all company owned workflowable objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param objectId Id of a workflowable object like release package, task etc.
+	@return ApiGetWorkflowByIdRequest
+*/
+func (a *WorkflowApiService) GetWorkflowById(ctx context.Context, objectId string) ApiGetWorkflowByIdRequest {
+	return ApiGetWorkflowByIdRequest{
+		ApiService: a,
+		ctx:        ctx,
+		objectId:   objectId,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTObjectWorkflowInfo
+func (a *WorkflowApiService) GetWorkflowByIdExecute(r ApiGetWorkflowByIdRequest) (*BTObjectWorkflowInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTObjectWorkflowInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetWorkflowById")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/workflow/obj/{objectId}"
+	localVarPath = strings.Replace(localVarPath, "{"+"objectId"+"}", url.PathEscape(parameterToString(r.objectId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTObjectWorkflowInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

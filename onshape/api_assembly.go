@@ -1211,7 +1211,7 @@ func (r ApiGetAssemblyBoundingBoxesRequest) IncludeHidden(includeHidden bool) Ap
 	return r
 }
 
-// Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s).
+// Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s).
 func (r ApiGetAssemblyBoundingBoxesRequest) DisplayStateId(displayStateId string) ApiGetAssemblyBoundingBoxesRequest {
 	r.displayStateId = &displayStateId
 	return r
@@ -1784,7 +1784,7 @@ func (r ApiGetAssemblyShadedViewsRequest) IncludeWires(includeWires bool) ApiGet
 	return r
 }
 
-// Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s).
+// Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s).
 func (r ApiGetAssemblyShadedViewsRequest) DisplayStateId(displayStateId string) ApiGetAssemblyShadedViewsRequest {
 	r.displayStateId = &displayStateId
 	return r

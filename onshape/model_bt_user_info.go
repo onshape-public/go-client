@@ -829,6 +829,56 @@ func (o *BTUserInfo) SetInvitationState(v int32) {
 	o.GetActualInstance().(getResult).SetInvitationState(v)
 }
 
+// GetIsExternal returns the IsExternal field value if set, zero value otherwise.
+func (o *BTUserInfo) GetIsExternal() bool {
+	type getResult interface {
+		GetIsExternal() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternal()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsExternalOk returns a tuple with the IsExternal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserInfo) GetIsExternalOk() (*bool, bool) {
+	type getResult interface {
+		GetIsExternalOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternalOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsExternal returns a boolean if a field has been set.
+func (o *BTUserInfo) HasIsExternal() bool {
+	type getResult interface {
+		HasIsExternal() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsExternal()
+	} else {
+		return false
+	}
+}
+
+// SetIsExternal gets a reference to the given bool and assigns it to the IsExternal field.
+func (o *BTUserInfo) SetIsExternal(v bool) {
+	type getResult interface {
+		SetIsExternal(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsExternal(v)
+}
+
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
 func (o *BTUserInfo) GetIsGuest() bool {
 	type getResult interface {
@@ -3039,6 +3089,7 @@ type base_BTUserInfo struct {
 	DocumentationNameOverride  *string                  `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions          *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
 	InvitationState            *int32                   `json:"invitationState,omitempty"`
+	IsExternal                 *bool                    `json:"isExternal,omitempty"`
 	IsGuest                    *bool                    `json:"isGuest,omitempty"`
 	IsLight                    *bool                    `json:"isLight,omitempty"`
 	LastLoginTime              *JSONTime                `json:"lastLoginTime,omitempty"`
@@ -3603,6 +3654,38 @@ func (o *base_BTUserInfo) HasInvitationState() bool {
 // SetInvitationState gets a reference to the given int32 and assigns it to the InvitationState field.
 func (o *base_BTUserInfo) SetInvitationState(v int32) {
 	o.InvitationState = &v
+}
+
+// GetIsExternal returns the IsExternal field value if set, zero value otherwise.
+func (o *base_BTUserInfo) GetIsExternal() bool {
+	if o == nil || o.IsExternal == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternal
+}
+
+// GetIsExternalOk returns a tuple with the IsExternal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserInfo) GetIsExternalOk() (*bool, bool) {
+	if o == nil || o.IsExternal == nil {
+		return nil, false
+	}
+	return o.IsExternal, true
+}
+
+// HasIsExternal returns a boolean if a field has been set.
+func (o *base_BTUserInfo) HasIsExternal() bool {
+	if o != nil && o.IsExternal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternal gets a reference to the given bool and assigns it to the IsExternal field.
+func (o *base_BTUserInfo) SetIsExternal(v bool) {
+	o.IsExternal = &v
 }
 
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
@@ -4998,6 +5081,9 @@ func (o base_BTUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.InvitationState != nil {
 		toSerialize["invitationState"] = o.InvitationState
+	}
+	if o.IsExternal != nil {
+		toSerialize["isExternal"] = o.IsExternal
 	}
 	if o.IsGuest != nil {
 		toSerialize["isGuest"] = o.IsGuest

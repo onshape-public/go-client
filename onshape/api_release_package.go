@@ -174,7 +174,9 @@ func (r ApiCreateReleasePackageRequest) Execute() (map[string]interface{}, *http
 /*
 CreateReleasePackage Create a new release package for one or more items.
 
-All revisionable items must be from the same document. Once a release package is successfully created, use `updateReleasePackage` to update all desired item/package properties, and transition it to the desired state.
+Once a release package is successfully created, use `updateReleasePackage` to update all desired item/package properties, and transition it to the desired state.
+
+To add items from other documents, you must select `Allow adding items from other documents` in your [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog).
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param wfid

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Acted** | Pointer to **bool** |  | [optional] 
 **Active** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
+**ConnectionName** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -120,6 +121,31 @@ SetCanMove sets CanMove field to given value.
 `func (o *BTTaskTeamSummaryInfo) HasCanMove() bool`
 
 HasCanMove returns a boolean if a field has been set.
+
+### GetConnectionName
+
+`func (o *BTTaskTeamSummaryInfo) GetConnectionName() string`
+
+GetConnectionName returns the ConnectionName field if non-nil, zero value otherwise.
+
+### GetConnectionNameOk
+
+`func (o *BTTaskTeamSummaryInfo) GetConnectionNameOk() (*string, bool)`
+
+GetConnectionNameOk returns a tuple with the ConnectionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionName
+
+`func (o *BTTaskTeamSummaryInfo) SetConnectionName(v string)`
+
+SetConnectionName sets ConnectionName field to given value.
+
+### HasConnectionName
+
+`func (o *BTTaskTeamSummaryInfo) HasConnectionName() bool`
+
+HasConnectionName returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

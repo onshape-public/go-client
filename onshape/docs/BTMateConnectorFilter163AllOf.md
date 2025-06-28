@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowImplicitMateConnector** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**IsMateConnectorInferenceEnabledByDefault** | Pointer to **bool** |  | [optional] 
 **RequiresOccurrence** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMateConnectorFilter163AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetIsMateConnectorInferenceEnabledByDefault
+
+`func (o *BTMateConnectorFilter163AllOf) GetIsMateConnectorInferenceEnabledByDefault() bool`
+
+GetIsMateConnectorInferenceEnabledByDefault returns the IsMateConnectorInferenceEnabledByDefault field if non-nil, zero value otherwise.
+
+### GetIsMateConnectorInferenceEnabledByDefaultOk
+
+`func (o *BTMateConnectorFilter163AllOf) GetIsMateConnectorInferenceEnabledByDefaultOk() (*bool, bool)`
+
+GetIsMateConnectorInferenceEnabledByDefaultOk returns a tuple with the IsMateConnectorInferenceEnabledByDefault field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsMateConnectorInferenceEnabledByDefault
+
+`func (o *BTMateConnectorFilter163AllOf) SetIsMateConnectorInferenceEnabledByDefault(v bool)`
+
+SetIsMateConnectorInferenceEnabledByDefault sets IsMateConnectorInferenceEnabledByDefault field to given value.
+
+### HasIsMateConnectorInferenceEnabledByDefault
+
+`func (o *BTMateConnectorFilter163AllOf) HasIsMateConnectorInferenceEnabledByDefault() bool`
+
+HasIsMateConnectorInferenceEnabledByDefault returns a boolean if a field has been set.
 
 ### GetRequiresOccurrence
 

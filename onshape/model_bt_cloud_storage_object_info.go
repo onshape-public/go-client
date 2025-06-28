@@ -20,6 +20,7 @@ type BTCloudStorageObjectInfo struct {
 	CloudStorageAccountId *string                 `json:"cloudStorageAccountId,omitempty"`
 	CloudStorageObjectId  *string                 `json:"cloudStorageObjectId,omitempty"`
 	CloudStorageProvider  *int32                  `json:"cloudStorageProvider,omitempty"`
+	ConnectionName        *string                 `json:"connectionName,omitempty"`
 	CreatedAt             *JSONTime               `json:"createdAt,omitempty"`
 	CreatedBy             *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
 	CreatedById           *string                 `json:"createdById,omitempty"`
@@ -194,6 +195,38 @@ func (o *BTCloudStorageObjectInfo) HasCloudStorageProvider() bool {
 // SetCloudStorageProvider gets a reference to the given int32 and assigns it to the CloudStorageProvider field.
 func (o *BTCloudStorageObjectInfo) SetCloudStorageProvider(v int32) {
 	o.CloudStorageProvider = &v
+}
+
+// GetConnectionName returns the ConnectionName field value if set, zero value otherwise.
+func (o *BTCloudStorageObjectInfo) GetConnectionName() string {
+	if o == nil || o.ConnectionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionName
+}
+
+// GetConnectionNameOk returns a tuple with the ConnectionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCloudStorageObjectInfo) GetConnectionNameOk() (*string, bool) {
+	if o == nil || o.ConnectionName == nil {
+		return nil, false
+	}
+	return o.ConnectionName, true
+}
+
+// HasConnectionName returns a boolean if a field has been set.
+func (o *BTCloudStorageObjectInfo) HasConnectionName() bool {
+	if o != nil && o.ConnectionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
+func (o *BTCloudStorageObjectInfo) SetConnectionName(v string) {
+	o.ConnectionName = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -1009,6 +1042,9 @@ func (o BTCloudStorageObjectInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CloudStorageProvider != nil {
 		toSerialize["cloudStorageProvider"] = o.CloudStorageProvider
+	}
+	if o.ConnectionName != nil {
+		toSerialize["connectionName"] = o.ConnectionName
 	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt

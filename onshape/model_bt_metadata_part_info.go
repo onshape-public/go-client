@@ -16,8 +16,9 @@ import (
 
 // BTMetadataPartInfo struct for BTMetadataPartInfo
 type BTMetadataPartInfo struct {
-	Href            *string                  `json:"href,omitempty"`
-	JsonType        string                   `json:"jsonType"`
+	Href     *string `json:"href,omitempty"`
+	JsonType string  `json:"jsonType"`
+	// Properties associated with this metadata object
 	Properties      []BTMetadataPropertyInfo `json:"properties,omitempty"`
 	Thumbnail       *BTThumbnailInfo         `json:"thumbnail,omitempty"`
 	IsFlattenedBody *bool                    `json:"isFlattenedBody,omitempty"`

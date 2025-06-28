@@ -16,32 +16,42 @@ import (
 
 // BTActiveWorkflowInfo struct for BTActiveWorkflowInfo
 type BTActiveWorkflowInfo struct {
-	AllowReleaseItemsFromOtherDocuments         *bool                     `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
-	CanCurrentUserCreateReleases                *bool                     `json:"canCurrentUserCreateReleases,omitempty"`
-	CanCurrentUserEditStandardContent           *bool                     `json:"canCurrentUserEditStandardContent,omitempty"`
-	CanCurrentUserManageWorkflows               *bool                     `json:"canCurrentUserManageWorkflows,omitempty"`
-	CanCurrentUserSeeArenaItemLink              *bool                     `json:"canCurrentUserSeeArenaItemLink,omitempty"`
-	CanCurrentUserSyncBomToArena                *bool                     `json:"canCurrentUserSyncBomToArena,omitempty"`
-	CanCurrentUserSyncRevisionsToArena          *bool                     `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
-	CanCurrentUserSyncStandardContentToArena    *bool                     `json:"canCurrentUserSyncStandardContentToArena,omitempty"`
-	CanCurrentUserSyncToArena                   *bool                     `json:"canCurrentUserSyncToArena,omitempty"`
-	CompanyId                                   *string                   `json:"companyId,omitempty"`
-	DocumentId                                  *string                   `json:"documentId,omitempty"`
-	DrawingCanDuplicatePartNumber               *bool                     `json:"drawingCanDuplicatePartNumber,omitempty"`
-	EnabledActiveMultipleWorkflows              *bool                     `json:"enabledActiveMultipleWorkflows,omitempty"`
-	HasInactiveCustomWorkflows                  *bool                     `json:"hasInactiveCustomWorkflows,omitempty"`
-	ObsoletionWorkflow                          *BTPublishedWorkflowInfo  `json:"obsoletionWorkflow,omitempty"`
-	ObsoletionWorkflowId                        *string                   `json:"obsoletionWorkflowId,omitempty"`
-	OsCategoryIdToArenaNumberFormatId           *map[string]string        `json:"osCategoryIdToArenaNumberFormatId,omitempty"`
-	PartNumberingSchemeId                       *string                   `json:"partNumberingSchemeId,omitempty"`
-	PickableWorkflows                           []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
-	ReleaseWorkflow                             *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
-	ReleaseWorkflowId                           *string                   `json:"releaseWorkflowId,omitempty"`
+	AllowReleaseItemsFromOtherDocuments      *bool   `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
+	CanCurrentUserCreateReleases             *bool   `json:"canCurrentUserCreateReleases,omitempty"`
+	CanCurrentUserEditStandardContent        *bool   `json:"canCurrentUserEditStandardContent,omitempty"`
+	CanCurrentUserManageWorkflows            *bool   `json:"canCurrentUserManageWorkflows,omitempty"`
+	CanCurrentUserSeeArenaItemLink           *bool   `json:"canCurrentUserSeeArenaItemLink,omitempty"`
+	CanCurrentUserSyncBomToArena             *bool   `json:"canCurrentUserSyncBomToArena,omitempty"`
+	CanCurrentUserSyncRevisionsToArena       *bool   `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
+	CanCurrentUserSyncStandardContentToArena *bool   `json:"canCurrentUserSyncStandardContentToArena,omitempty"`
+	CanCurrentUserSyncToArena                *bool   `json:"canCurrentUserSyncToArena,omitempty"`
+	CompanyId                                *string `json:"companyId,omitempty"`
+	DocumentId                               *string `json:"documentId,omitempty"`
+	DrawingCanDuplicatePartNumber            *bool   `json:"drawingCanDuplicatePartNumber,omitempty"`
+	// Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows > 1
+	EnabledActiveMultipleWorkflows *bool `json:"enabledActiveMultipleWorkflows,omitempty"`
+	// Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object
+	HasInactiveCustomWorkflows *bool                    `json:"hasInactiveCustomWorkflows,omitempty"`
+	ObsoletionWorkflow         *BTPublishedWorkflowInfo `json:"obsoletionWorkflow,omitempty"`
+	// Deprecated, use obsoletionWorkflowInfo.workflow.id instead
+	ObsoletionWorkflowId   *string                   `json:"obsoletionWorkflowId,omitempty"`
+	ObsoletionWorkflowInfo *BTActiveWorkflowTypeInfo `json:"obsoletionWorkflowInfo,omitempty"`
+	// Deprecated, no current alternative
+	OsCategoryIdToArenaNumberFormatId *map[string]string `json:"osCategoryIdToArenaNumberFormatId,omitempty"`
+	PartNumberingSchemeId             *string            `json:"partNumberingSchemeId,omitempty"`
+	// Deprecated, use the pickableWorkflows field on the workflowInfo object
+	PickableWorkflows []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
+	ReleaseWorkflow   *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
+	// Deprecated, use releaseWorkflowInfo.workflow.id instead
+	ReleaseWorkflowId   *string                   `json:"releaseWorkflowId,omitempty"`
+	ReleaseWorkflowInfo *BTActiveWorkflowTypeInfo `json:"releaseWorkflowInfo,omitempty"`
+	// Deprecated, no current alternative
 	ReleaseableApplications                     []string                  `json:"releaseableApplications,omitempty"`
 	StandardContentNumberingSchemeId            *string                   `json:"standardContentNumberingSchemeId,omitempty"`
 	StandardContentUsingAutoNumbering           *bool                     `json:"standardContentUsingAutoNumbering,omitempty"`
 	StandardContentUsingThirdPartyPartNumbering *bool                     `json:"standardContentUsingThirdPartyPartNumbering,omitempty"`
 	TaskWorkflow                                *BTPublishedWorkflowInfo  `json:"taskWorkflow,omitempty"`
+	TaskWorkflowInfo                            *BTActiveWorkflowTypeInfo `json:"taskWorkflowInfo,omitempty"`
 	UsingAutoPartNumbering                      *bool                     `json:"usingAutoPartNumbering,omitempty"`
 	UsingManagedWorkflow                        *bool                     `json:"usingManagedWorkflow,omitempty"`
 	UsingThirdPartyPartNumbering                *bool                     `json:"usingThirdPartyPartNumbering,omitempty"`
@@ -576,6 +586,38 @@ func (o *BTActiveWorkflowInfo) SetObsoletionWorkflowId(v string) {
 	o.ObsoletionWorkflowId = &v
 }
 
+// GetObsoletionWorkflowInfo returns the ObsoletionWorkflowInfo field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetObsoletionWorkflowInfo() BTActiveWorkflowTypeInfo {
+	if o == nil || o.ObsoletionWorkflowInfo == nil {
+		var ret BTActiveWorkflowTypeInfo
+		return ret
+	}
+	return *o.ObsoletionWorkflowInfo
+}
+
+// GetObsoletionWorkflowInfoOk returns a tuple with the ObsoletionWorkflowInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetObsoletionWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool) {
+	if o == nil || o.ObsoletionWorkflowInfo == nil {
+		return nil, false
+	}
+	return o.ObsoletionWorkflowInfo, true
+}
+
+// HasObsoletionWorkflowInfo returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasObsoletionWorkflowInfo() bool {
+	if o != nil && o.ObsoletionWorkflowInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetObsoletionWorkflowInfo gets a reference to the given BTActiveWorkflowTypeInfo and assigns it to the ObsoletionWorkflowInfo field.
+func (o *BTActiveWorkflowInfo) SetObsoletionWorkflowInfo(v BTActiveWorkflowTypeInfo) {
+	o.ObsoletionWorkflowInfo = &v
+}
+
 // GetOsCategoryIdToArenaNumberFormatId returns the OsCategoryIdToArenaNumberFormatId field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatId() map[string]string {
 	if o == nil || o.OsCategoryIdToArenaNumberFormatId == nil {
@@ -734,6 +776,38 @@ func (o *BTActiveWorkflowInfo) HasReleaseWorkflowId() bool {
 // SetReleaseWorkflowId gets a reference to the given string and assigns it to the ReleaseWorkflowId field.
 func (o *BTActiveWorkflowInfo) SetReleaseWorkflowId(v string) {
 	o.ReleaseWorkflowId = &v
+}
+
+// GetReleaseWorkflowInfo returns the ReleaseWorkflowInfo field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetReleaseWorkflowInfo() BTActiveWorkflowTypeInfo {
+	if o == nil || o.ReleaseWorkflowInfo == nil {
+		var ret BTActiveWorkflowTypeInfo
+		return ret
+	}
+	return *o.ReleaseWorkflowInfo
+}
+
+// GetReleaseWorkflowInfoOk returns a tuple with the ReleaseWorkflowInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetReleaseWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool) {
+	if o == nil || o.ReleaseWorkflowInfo == nil {
+		return nil, false
+	}
+	return o.ReleaseWorkflowInfo, true
+}
+
+// HasReleaseWorkflowInfo returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasReleaseWorkflowInfo() bool {
+	if o != nil && o.ReleaseWorkflowInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReleaseWorkflowInfo gets a reference to the given BTActiveWorkflowTypeInfo and assigns it to the ReleaseWorkflowInfo field.
+func (o *BTActiveWorkflowInfo) SetReleaseWorkflowInfo(v BTActiveWorkflowTypeInfo) {
+	o.ReleaseWorkflowInfo = &v
 }
 
 // GetReleaseableApplications returns the ReleaseableApplications field value if set, zero value otherwise.
@@ -896,6 +970,38 @@ func (o *BTActiveWorkflowInfo) SetTaskWorkflow(v BTPublishedWorkflowInfo) {
 	o.TaskWorkflow = &v
 }
 
+// GetTaskWorkflowInfo returns the TaskWorkflowInfo field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetTaskWorkflowInfo() BTActiveWorkflowTypeInfo {
+	if o == nil || o.TaskWorkflowInfo == nil {
+		var ret BTActiveWorkflowTypeInfo
+		return ret
+	}
+	return *o.TaskWorkflowInfo
+}
+
+// GetTaskWorkflowInfoOk returns a tuple with the TaskWorkflowInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetTaskWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool) {
+	if o == nil || o.TaskWorkflowInfo == nil {
+		return nil, false
+	}
+	return o.TaskWorkflowInfo, true
+}
+
+// HasTaskWorkflowInfo returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasTaskWorkflowInfo() bool {
+	if o != nil && o.TaskWorkflowInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTaskWorkflowInfo gets a reference to the given BTActiveWorkflowTypeInfo and assigns it to the TaskWorkflowInfo field.
+func (o *BTActiveWorkflowInfo) SetTaskWorkflowInfo(v BTActiveWorkflowTypeInfo) {
+	o.TaskWorkflowInfo = &v
+}
+
 // GetUsingAutoPartNumbering returns the UsingAutoPartNumbering field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetUsingAutoPartNumbering() bool {
 	if o == nil || o.UsingAutoPartNumbering == nil {
@@ -1042,6 +1148,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.ObsoletionWorkflowId != nil {
 		toSerialize["obsoletionWorkflowId"] = o.ObsoletionWorkflowId
 	}
+	if o.ObsoletionWorkflowInfo != nil {
+		toSerialize["obsoletionWorkflowInfo"] = o.ObsoletionWorkflowInfo
+	}
 	if o.OsCategoryIdToArenaNumberFormatId != nil {
 		toSerialize["osCategoryIdToArenaNumberFormatId"] = o.OsCategoryIdToArenaNumberFormatId
 	}
@@ -1057,6 +1166,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.ReleaseWorkflowId != nil {
 		toSerialize["releaseWorkflowId"] = o.ReleaseWorkflowId
 	}
+	if o.ReleaseWorkflowInfo != nil {
+		toSerialize["releaseWorkflowInfo"] = o.ReleaseWorkflowInfo
+	}
 	if o.ReleaseableApplications != nil {
 		toSerialize["releaseableApplications"] = o.ReleaseableApplications
 	}
@@ -1071,6 +1183,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TaskWorkflow != nil {
 		toSerialize["taskWorkflow"] = o.TaskWorkflow
+	}
+	if o.TaskWorkflowInfo != nil {
+		toSerialize["taskWorkflowInfo"] = o.TaskWorkflowInfo
 	}
 	if o.UsingAutoPartNumbering != nil {
 		toSerialize["usingAutoPartNumbering"] = o.UsingAutoPartNumbering

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **User** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
+**UserRolePriority** | Pointer to [**UserRolePriority**](UserRolePriority.md) |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
@@ -336,6 +337,31 @@ SetUser sets User field to given value.
 `func (o *BTCompanyUserInfo) HasUser() bool`
 
 HasUser returns a boolean if a field has been set.
+
+### GetUserRolePriority
+
+`func (o *BTCompanyUserInfo) GetUserRolePriority() UserRolePriority`
+
+GetUserRolePriority returns the UserRolePriority field if non-nil, zero value otherwise.
+
+### GetUserRolePriorityOk
+
+`func (o *BTCompanyUserInfo) GetUserRolePriorityOk() (*UserRolePriority, bool)`
+
+GetUserRolePriorityOk returns a tuple with the UserRolePriority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUserRolePriority
+
+`func (o *BTCompanyUserInfo) SetUserRolePriority(v UserRolePriority)`
+
+SetUserRolePriority sets UserRolePriority field to given value.
+
+### HasUserRolePriority
+
+`func (o *BTCompanyUserInfo) HasUserRolePriority() bool`
+
+HasUserRolePriority returns a boolean if a field has been set.
 
 ### GetViewRef
 

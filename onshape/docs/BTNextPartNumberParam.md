@@ -5,17 +5,17 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Categories** | Pointer to [**[]BTCategoryParam**](BTCategoryParam.md) |  | [optional] 
-**Configuration** | Pointer to **string** |  | [optional] 
-**DocumentId** | Pointer to **string** |  | [optional] 
-**ElementId** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **int32** |  | [optional] 
+**Configuration** | Pointer to **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [optional] 
+**DocumentId** | Pointer to **string** | Document ID | [optional] 
+**ElementId** | Pointer to **string** | Element (tab) ID | [optional] 
+**ElementType** | Pointer to **int32** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **MimeType** | Pointer to **string** |  | [optional] 
-**NumberSchemeResourceTypeId** | Pointer to **string** |  | [optional] 
-**PartId** | Pointer to **string** |  | [optional] 
-**PartNumber** | Pointer to **string** |  | [optional] 
-**VersionId** | Pointer to **string** |  | [optional] 
-**WorkspaceId** | Pointer to **string** |  | [optional] 
+**NumberSchemeResourceTypeId** | Pointer to **string** | Must be one of: &#x60;8c96700620f77935a0b2cddc&#x60;: Part Studio, assembly, or drawing, &#x60;29cd738cc6a8819fe84864e0&#x60;: Non-geometric items, &#x60;10f29fc285510ebc648108e6&#x60;: Standard content | [optional] 
+**PartId** | Pointer to **string** | Part ID | [optional] 
+**PartNumber** | Pointer to **string** | Current part number | [optional] 
+**VersionId** | Pointer to **string** | Version ID | [optional] 
+**WorkspaceId** | Pointer to **string** | Workspace ID | [optional] 
 
 ## Methods
 

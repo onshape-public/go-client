@@ -28,9 +28,10 @@ type BTCompanyUserInfo struct {
 	LastLoginTime *JSONTime `json:"lastLoginTime,omitempty"`
 	Light         *bool     `json:"light,omitempty"`
 	// Name of the resource.
-	Name  *string                 `json:"name,omitempty"`
-	State *int32                  `json:"state,omitempty"`
-	User  *BTUserBasicSummaryInfo `json:"user,omitempty"`
+	Name             *string                 `json:"name,omitempty"`
+	State            *int32                  `json:"state,omitempty"`
+	User             *BTUserBasicSummaryInfo `json:"user,omitempty"`
+	UserRolePriority *UserRolePriority       `json:"userRolePriority,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -436,6 +437,38 @@ func (o *BTCompanyUserInfo) SetUser(v BTUserBasicSummaryInfo) {
 	o.User = &v
 }
 
+// GetUserRolePriority returns the UserRolePriority field value if set, zero value otherwise.
+func (o *BTCompanyUserInfo) GetUserRolePriority() UserRolePriority {
+	if o == nil || o.UserRolePriority == nil {
+		var ret UserRolePriority
+		return ret
+	}
+	return *o.UserRolePriority
+}
+
+// GetUserRolePriorityOk returns a tuple with the UserRolePriority field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserInfo) GetUserRolePriorityOk() (*UserRolePriority, bool) {
+	if o == nil || o.UserRolePriority == nil {
+		return nil, false
+	}
+	return o.UserRolePriority, true
+}
+
+// HasUserRolePriority returns a boolean if a field has been set.
+func (o *BTCompanyUserInfo) HasUserRolePriority() bool {
+	if o != nil && o.UserRolePriority != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUserRolePriority gets a reference to the given UserRolePriority and assigns it to the UserRolePriority field.
+func (o *BTCompanyUserInfo) SetUserRolePriority(v UserRolePriority) {
+	o.UserRolePriority = &v
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *BTCompanyUserInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
@@ -505,6 +538,9 @@ func (o BTCompanyUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.User != nil {
 		toSerialize["user"] = o.User
+	}
+	if o.UserRolePriority != nil {
+		toSerialize["userRolePriority"] = o.UserRolePriority
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

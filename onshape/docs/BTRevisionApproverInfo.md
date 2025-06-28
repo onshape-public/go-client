@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Date** | Pointer to **JSONTime** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
+**Date** | Pointer to **JSONTime** | Date the revision was created. | [optional] 
+**Id** | Pointer to **string** | User ID of the user who approved the revision. | [optional] 
+**Name** | Pointer to **string** | Name of the user who approved the revision. | [optional] 
 
 ## Methods
 

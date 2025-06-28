@@ -338,8 +338,9 @@ func (v *NullableBTMetadataObjectInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTMetadataObjectInfo struct {
-	Href       *string                  `json:"href,omitempty"`
-	JsonType   string                   `json:"jsonType"`
+	Href     *string `json:"href,omitempty"`
+	JsonType string  `json:"jsonType"`
+	// Properties associated with this metadata object
 	Properties []BTMetadataPropertyInfo `json:"properties,omitempty"`
 	Thumbnail  *BTThumbnailInfo         `json:"thumbnail,omitempty"`
 }

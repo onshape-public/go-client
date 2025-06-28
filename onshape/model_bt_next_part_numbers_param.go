@@ -17,7 +17,8 @@ import (
 // BTNextPartNumbersParam struct for BTNextPartNumbersParam
 type BTNextPartNumbersParam struct {
 	ItemPartNumbers []BTNextPartNumberParam `json:"itemPartNumbers,omitempty"`
-	SkipPartNumbers []string                `json:"skipPartNumbers,omitempty"`
+	// Comma-separated list of part numbers to skip creating new part numbers for.
+	SkipPartNumbers []string `json:"skipPartNumbers,omitempty"`
 }
 
 // NewBTNextPartNumbersParam instantiates a new BTNextPartNumbersParam object

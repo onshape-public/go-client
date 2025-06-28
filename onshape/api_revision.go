@@ -30,6 +30,7 @@ type ApiDeleteRevisionHistoryRequest struct {
 	ignoreLinkedDocuments *bool
 }
 
+// By default, revisions will be deleted for the part number in the specified, and all linked documents. Set to &#x60;true&#x60; to only delete revisions in the specified document.
 func (r ApiDeleteRevisionHistoryRequest) IgnoreLinkedDocuments(ignoreLinkedDocuments bool) ApiDeleteRevisionHistoryRequest {
 	r.ignoreLinkedDocuments = &ignoreLinkedDocuments
 	return r
@@ -45,9 +46,9 @@ DeleteRevisionHistory Delete all revisions for a part number.
 Only company admins can call this API. All documents that contain or use the part number must be deleted first. This operation cannot be undone.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid
-	@param pnum
-	@param et
+	@param cid The company or enterprise ID that owns the resource.
+	@param pnum Part number.
+	@param et Element Type. Must be one of: `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob
 	@return ApiDeleteRevisionHistoryRequest
 */
 func (a *RevisionApiService) DeleteRevisionHistory(ctx context.Context, cid string, pnum string, et string) ApiDeleteRevisionHistoryRequest {
@@ -159,7 +160,7 @@ type ApiEnumerateRevisionsRequest struct {
 	after       *JSONTime
 }
 
-// 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+// Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio
 func (r ApiEnumerateRevisionsRequest) ElementType(elementType int32) ApiEnumerateRevisionsRequest {
 	r.elementType = &elementType
 	return r
@@ -188,10 +189,13 @@ func (r ApiEnumerateRevisionsRequest) Execute() (*BTListResponseBTRevisionInfo, 
 }
 
 /*
-EnumerateRevisions Enumerate all of a company's revisions.
+EnumerateRevisions Get all revisions for a company.
 
-* Returns a slice of all revisions per API call.
+See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.
+* Returns a list of `limit` size of all objects per API call.
 * To get the next set of results, use the `next` URL from the response body.
+* Do not change any other query parameters during subsequent enumeration.
+* Persist `after` query param value and use it to begin a fresh enumeration at a later date.
 * This API can only be called by company admins.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
@@ -313,9 +317,9 @@ func (r ApiGetAllInDocumentRequest) Execute() (*BTListResponseBTRevisionInfo, *h
 }
 
 /*
-GetAllInDocument Get all revisions for the specified document.
+GetAllInDocument Get all revisions for a document.
 
-Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.
+Retrieve a list of all revisions that exist in a document and are owned by the document's owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
@@ -427,11 +431,11 @@ func (r ApiGetAllInDocumentVersionRequest) Execute() (*BTListResponseBTRevisionI
 /*
 GetAllInDocumentVersion Get all revisions for a version.
 
-Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.
+Retrieve a list of all revisions that exist in a document version and are owned by the document's owning company.  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param vid
+	@param did Document ID.
+	@param vid Version ID.
 	@return ApiGetAllInDocumentVersionRequest
 */
 func (a *RevisionApiService) GetAllInDocumentVersion(ctx context.Context, did string, vid string) ApiGetAllInDocumentVersionRequest {
@@ -537,7 +541,7 @@ type ApiGetLatestInDocumentOrCompanyRequest struct {
 	et         *string
 }
 
-// 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+// Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio
 func (r ApiGetLatestInDocumentOrCompanyRequest) Et(et string) ApiGetLatestInDocumentOrCompanyRequest {
 	r.et = &et
 	return r
@@ -548,14 +552,14 @@ func (r ApiGetLatestInDocumentOrCompanyRequest) Execute() (*BTRevisionInfo, *htt
 }
 
 /*
-GetLatestInDocumentOrCompany Get the latest revision for a part number in a document or company.
+GetLatestInDocumentOrCompany Get the latest revision information for a part.
 
-Returns 204 if no revisions are found.
+See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details. Returns 204 if no revisions are found.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cd
-	@param cdid
-	@param pnum
+	@param cd Use `c` to specify a company ID or `d` to specify a document ID.
+	@param cdid Company ID or document ID
+	@param pnum Part number.
 	@return ApiGetLatestInDocumentOrCompanyRequest
 */
 func (a *RevisionApiService) GetLatestInDocumentOrCompany(ctx context.Context, cd string, cdid string, pnum string) ApiGetLatestInDocumentOrCompanyRequest {
@@ -667,13 +671,13 @@ type ApiGetRevisionByPartNumberRequest struct {
 	elementType *int32
 }
 
-// Revision
+// ID of the revision to get
 func (r ApiGetRevisionByPartNumberRequest) Revision(revision string) ApiGetRevisionByPartNumberRequest {
 	r.revision = &revision
 	return r
 }
 
-// 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+// Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio
 func (r ApiGetRevisionByPartNumberRequest) ElementType(elementType int32) ApiGetRevisionByPartNumberRequest {
 	r.elementType = &elementType
 	return r
@@ -684,11 +688,13 @@ func (r ApiGetRevisionByPartNumberRequest) Execute() (*BTRevisionInfo, *http.Res
 }
 
 /*
-GetRevisionByPartNumber Get a list of revisions by part number.
+GetRevisionByPartNumber Get details for the specified revision.
+
+If the `revision` parameter is left blank, the latest revision information is returned. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid Company id
-	@param pnum Part Number
+	@param cid The company or enterprise ID that owns the resource.
+	@param pnum Part number.
 	@return ApiGetRevisionByPartNumberRequest
 */
 func (a *RevisionApiService) GetRevisionByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionByPartNumberRequest {
@@ -807,6 +813,7 @@ type ApiGetRevisionHistoryInCompanyByElementIdRequest struct {
 	supportChangeType    *bool
 }
 
+// Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) ElementType(elementType string) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.elementType = &elementType
 	return r
@@ -830,11 +837,13 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) FillApprovers(fillAppr
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.fillExportPermission = &fillExportPermission
 	return r
 }
 
+// Whether the revision can change object type. Used in reuse part number flow.
 func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByElementIdRequest {
 	r.supportChangeType = &supportChangeType
 	return r
@@ -845,10 +854,12 @@ func (r ApiGetRevisionHistoryInCompanyByElementIdRequest) Execute() (*BTRevision
 }
 
 /*
-GetRevisionHistoryInCompanyByElementId Get a list of all revisions for an element in a company-owned document.
+GetRevisionHistoryInCompanyByElementId Get all revisions for an element (tab).
+
+See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid
+	@param cid The company or enterprise ID that owns the resource.
 	@param did The id of the document in which to perform the operation.
 	@param wv Indicates which of workspace (w) or version (v) id is specified below.
 	@param wvid The id of the workspace, version in which the operation should be performed.
@@ -990,11 +1001,13 @@ type ApiGetRevisionHistoryInCompanyByPartIdRequest struct {
 	supportChangeType    *bool
 }
 
+// URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) Configuration(configuration string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.configuration = &configuration
 	return r
 }
 
+// Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter.
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) LinkDocumentId(linkDocumentId string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.linkDocumentId = &linkDocumentId
 	return r
@@ -1006,11 +1019,13 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) FillApprovers(fillApprove
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.fillExportPermission = &fillExportPermission
 	return r
 }
 
+// Whether the revision can change object type. Used in reuse part number flow.
 func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByPartIdRequest {
 	r.supportChangeType = &supportChangeType
 	return r
@@ -1021,15 +1036,17 @@ func (r ApiGetRevisionHistoryInCompanyByPartIdRequest) Execute() (*BTRevisionLis
 }
 
 /*
-GetRevisionHistoryInCompanyByPartId Get a list of all revisions for a part in a company-owned document by part ID.
+GetRevisionHistoryInCompanyByPartId Get all revisions for a part ID.
+
+See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-latest-revision-info) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid
-	@param did
-	@param wv
-	@param wvid
-	@param eid
-	@param pid
+	@param cid The company or enterprise ID that owns the resource.
+	@param did Document ID.
+	@param wv One of w or v corresponding to whether a workspace or version was specified.
+	@param wvid Workspace (w) or Version (v) ID.
+	@param eid Element ID.
+	@param pid Part ID.
 	@return ApiGetRevisionHistoryInCompanyByPartIdRequest
 */
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartId(ctx context.Context, cid string, did string, wv string, wvid string, eid string, pid string) ApiGetRevisionHistoryInCompanyByPartIdRequest {
@@ -1160,6 +1177,7 @@ type ApiGetRevisionHistoryInCompanyByPartNumberRequest struct {
 	supportChangeType    *bool
 }
 
+// Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) ElementType(elementType string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	r.elementType = &elementType
 	return r
@@ -1171,11 +1189,13 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) FillApprovers(fillApp
 	return r
 }
 
+// Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;.
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) FillExportPermission(fillExportPermission bool) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	r.fillExportPermission = &fillExportPermission
 	return r
 }
 
+// Whether the revision can change object type. Used in reuse part number flow.
 func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) SupportChangeType(supportChangeType bool) ApiGetRevisionHistoryInCompanyByPartNumberRequest {
 	r.supportChangeType = &supportChangeType
 	return r
@@ -1186,13 +1206,13 @@ func (r ApiGetRevisionHistoryInCompanyByPartNumberRequest) Execute() (*BTRevisio
 }
 
 /*
-GetRevisionHistoryInCompanyByPartNumber Get a list of all revisions for a part or element in a company-owned document by part number.
+GetRevisionHistoryInCompanyByPartNumber Get all revisions for a part number.
 
-You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType` = -1 | UNKNOWN. Available element types are: -1: Unknown, 0: Part Studio, 1: Assembly, 2: Drawing, 4: Blob, 5: Application, 8: Variable Studio 10: Unknown
+You can also request `elementType` in addition to `partNumber` since companies may or may not allow drawings to share part numbers with their parts/assemblies. To perform search without `elementType`, use `elementType = -1` (UNKNOWN).  See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-all-revisions) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid
-	@param pnum
+	@param cid The company or enterprise ID that owns the resource.
+	@param pnum Part number.
 	@return ApiGetRevisionHistoryInCompanyByPartNumberRequest
 */
 func (a *RevisionApiService) GetRevisionHistoryInCompanyByPartNumber(ctx context.Context, cid string, pnum string) ApiGetRevisionHistoryInCompanyByPartNumberRequest {

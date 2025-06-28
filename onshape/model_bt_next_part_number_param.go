@@ -14,20 +14,29 @@ import (
 	"encoding/json"
 )
 
-// BTNextPartNumberParam struct for BTNextPartNumberParam
+// BTNextPartNumberParam Parameters for creating a part number.
 type BTNextPartNumberParam struct {
-	Categories                 []BTCategoryParam `json:"categories,omitempty"`
-	Configuration              *string           `json:"configuration,omitempty"`
-	DocumentId                 *string           `json:"documentId,omitempty"`
-	ElementId                  *string           `json:"elementId,omitempty"`
-	ElementType                *int32            `json:"elementType,omitempty"`
-	Id                         *string           `json:"id,omitempty"`
-	MimeType                   *string           `json:"mimeType,omitempty"`
-	NumberSchemeResourceTypeId *string           `json:"numberSchemeResourceTypeId,omitempty"`
-	PartId                     *string           `json:"partId,omitempty"`
-	PartNumber                 *string           `json:"partNumber,omitempty"`
-	VersionId                  *string           `json:"versionId,omitempty"`
-	WorkspaceId                *string           `json:"workspaceId,omitempty"`
+	Categories []BTCategoryParam `json:"categories,omitempty"`
+	// URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
+	Configuration *string `json:"configuration,omitempty"`
+	// Document ID
+	DocumentId *string `json:"documentId,omitempty"`
+	// Element (tab) ID
+	ElementId *string `json:"elementId,omitempty"`
+	// Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio
+	ElementType *int32  `json:"elementType,omitempty"`
+	Id          *string `json:"id,omitempty"`
+	MimeType    *string `json:"mimeType,omitempty"`
+	// Must be one of: `8c96700620f77935a0b2cddc`: Part Studio, assembly, or drawing, `29cd738cc6a8819fe84864e0`: Non-geometric items, `10f29fc285510ebc648108e6`: Standard content
+	NumberSchemeResourceTypeId *string `json:"numberSchemeResourceTypeId,omitempty"`
+	// Part ID
+	PartId *string `json:"partId,omitempty"`
+	// Current part number
+	PartNumber *string `json:"partNumber,omitempty"`
+	// Version ID
+	VersionId *string `json:"versionId,omitempty"`
+	// Workspace ID
+	WorkspaceId *string `json:"workspaceId,omitempty"`
 }
 
 // NewBTNextPartNumberParam instantiates a new BTNextPartNumberParam object

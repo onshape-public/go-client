@@ -30,11 +30,11 @@ type BTBStepExportParams struct {
 	// Rotate model from Z-axis-up orientation to Y-axis-up.
 	IsYAxisUp *bool `json:"isYAxisUp,omitempty"`
 	// Send notification to the user client.
-	NotifyUser                       *bool                        `json:"notifyUser,omitempty"`
-	StepParasolidPreprocessingOption GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption"`
-	StepUnit                         *GBTExportUnit               `json:"stepUnit,omitempty"`
+	NotifyUser                       *bool                         `json:"notifyUser,omitempty"`
+	StepParasolidPreprocessingOption *GBTPreProcessParasolidOption `json:"stepParasolidPreprocessingOption,omitempty"`
+	StepUnit                         *GBTExportUnit                `json:"stepUnit,omitempty"`
 	// Export STEP in version: `AP242` | `AP203` | `AP214`
-	StepVersionString string `json:"stepVersionString"`
+	StepVersionString *string `json:"stepVersionString,omitempty"`
 	// Create a blob with exported file in the source document.
 	StoreInDocument *bool `json:"storeInDocument,omitempty"`
 	// Automatically download a translated file.
@@ -45,7 +45,7 @@ type BTBStepExportParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTBStepExportParams(stepParasolidPreprocessingOption GBTPreProcessParasolidOption, stepVersionString string) *BTBStepExportParams {
+func NewBTBStepExportParams() *BTBStepExportParams {
 	this := BTBStepExportParams{}
 	var destinationName string = "Untitled"
 	this.DestinationName = &destinationName
@@ -59,10 +59,10 @@ func NewBTBStepExportParams(stepParasolidPreprocessingOption GBTPreProcessParaso
 	this.IsYAxisUp = &isYAxisUp
 	var notifyUser bool = true
 	this.NotifyUser = &notifyUser
-	this.StepParasolidPreprocessingOption = stepParasolidPreprocessingOption
 	var stepUnit GBTExportUnit = GBTExportUnitMeter
 	this.StepUnit = &stepUnit
-	this.StepVersionString = stepVersionString
+	var stepVersionString string = "AP242"
+	this.StepVersionString = &stepVersionString
 	var storeInDocument bool = true
 	this.StoreInDocument = &storeInDocument
 	var triggerAutoDownload bool = false
@@ -90,7 +90,7 @@ func NewBTBStepExportParamsWithDefaults() *BTBStepExportParams {
 	var stepUnit GBTExportUnit = GBTExportUnitMeter
 	this.StepUnit = &stepUnit
 	var stepVersionString string = "AP242"
-	this.StepVersionString = stepVersionString
+	this.StepVersionString = &stepVersionString
 	var storeInDocument bool = true
 	this.StoreInDocument = &storeInDocument
 	var triggerAutoDownload bool = false
@@ -386,28 +386,36 @@ func (o *BTBStepExportParams) SetNotifyUser(v bool) {
 	o.NotifyUser = &v
 }
 
-// GetStepParasolidPreprocessingOption returns the StepParasolidPreprocessingOption field value
+// GetStepParasolidPreprocessingOption returns the StepParasolidPreprocessingOption field value if set, zero value otherwise.
 func (o *BTBStepExportParams) GetStepParasolidPreprocessingOption() GBTPreProcessParasolidOption {
-	if o == nil {
+	if o == nil || o.StepParasolidPreprocessingOption == nil {
 		var ret GBTPreProcessParasolidOption
 		return ret
 	}
-
-	return o.StepParasolidPreprocessingOption
+	return *o.StepParasolidPreprocessingOption
 }
 
-// GetStepParasolidPreprocessingOptionOk returns a tuple with the StepParasolidPreprocessingOption field value
+// GetStepParasolidPreprocessingOptionOk returns a tuple with the StepParasolidPreprocessingOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTBStepExportParams) GetStepParasolidPreprocessingOptionOk() (*GBTPreProcessParasolidOption, bool) {
-	if o == nil {
+	if o == nil || o.StepParasolidPreprocessingOption == nil {
 		return nil, false
 	}
-	return &o.StepParasolidPreprocessingOption, true
+	return o.StepParasolidPreprocessingOption, true
 }
 
-// SetStepParasolidPreprocessingOption sets field value
+// HasStepParasolidPreprocessingOption returns a boolean if a field has been set.
+func (o *BTBStepExportParams) HasStepParasolidPreprocessingOption() bool {
+	if o != nil && o.StepParasolidPreprocessingOption != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStepParasolidPreprocessingOption gets a reference to the given GBTPreProcessParasolidOption and assigns it to the StepParasolidPreprocessingOption field.
 func (o *BTBStepExportParams) SetStepParasolidPreprocessingOption(v GBTPreProcessParasolidOption) {
-	o.StepParasolidPreprocessingOption = v
+	o.StepParasolidPreprocessingOption = &v
 }
 
 // GetStepUnit returns the StepUnit field value if set, zero value otherwise.
@@ -442,28 +450,36 @@ func (o *BTBStepExportParams) SetStepUnit(v GBTExportUnit) {
 	o.StepUnit = &v
 }
 
-// GetStepVersionString returns the StepVersionString field value
+// GetStepVersionString returns the StepVersionString field value if set, zero value otherwise.
 func (o *BTBStepExportParams) GetStepVersionString() string {
-	if o == nil {
+	if o == nil || o.StepVersionString == nil {
 		var ret string
 		return ret
 	}
-
-	return o.StepVersionString
+	return *o.StepVersionString
 }
 
-// GetStepVersionStringOk returns a tuple with the StepVersionString field value
+// GetStepVersionStringOk returns a tuple with the StepVersionString field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTBStepExportParams) GetStepVersionStringOk() (*string, bool) {
-	if o == nil {
+	if o == nil || o.StepVersionString == nil {
 		return nil, false
 	}
-	return &o.StepVersionString, true
+	return o.StepVersionString, true
 }
 
-// SetStepVersionString sets field value
+// HasStepVersionString returns a boolean if a field has been set.
+func (o *BTBStepExportParams) HasStepVersionString() bool {
+	if o != nil && o.StepVersionString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStepVersionString gets a reference to the given string and assigns it to the StepVersionString field.
 func (o *BTBStepExportParams) SetStepVersionString(v string) {
-	o.StepVersionString = v
+	o.StepVersionString = &v
 }
 
 // GetStoreInDocument returns the StoreInDocument field value if set, zero value otherwise.
@@ -559,13 +575,13 @@ func (o BTBStepExportParams) MarshalJSON() ([]byte, error) {
 	if o.NotifyUser != nil {
 		toSerialize["notifyUser"] = o.NotifyUser
 	}
-	if true {
+	if o.StepParasolidPreprocessingOption != nil {
 		toSerialize["stepParasolidPreprocessingOption"] = o.StepParasolidPreprocessingOption
 	}
 	if o.StepUnit != nil {
 		toSerialize["stepUnit"] = o.StepUnit
 	}
-	if true {
+	if o.StepVersionString != nil {
 		toSerialize["stepVersionString"] = o.StepVersionString
 	}
 	if o.StoreInDocument != nil {

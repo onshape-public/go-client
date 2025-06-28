@@ -28,8 +28,8 @@ type BTBObjExportParams struct {
 	// Whether topology ids should be exported as parasolid attributes.
 	IncludeExportIds *bool `json:"includeExportIds,omitempty"`
 	// Rotate model from Z-axis-up orientation to Y-axis-up.
-	IsYAxisUp  *bool               `json:"isYAxisUp,omitempty"`
-	MeshParams BTBExportMeshParams `json:"meshParams"`
+	IsYAxisUp  *bool                `json:"isYAxisUp,omitempty"`
+	MeshParams *BTBExportMeshParams `json:"meshParams,omitempty"`
 	// Send notification to the user client.
 	NotifyUser *bool `json:"notifyUser,omitempty"`
 	// Create a blob with exported file in the source document.
@@ -42,7 +42,7 @@ type BTBObjExportParams struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTBObjExportParams(meshParams BTBExportMeshParams) *BTBObjExportParams {
+func NewBTBObjExportParams() *BTBObjExportParams {
 	this := BTBObjExportParams{}
 	var destinationName string = "Untitled"
 	this.DestinationName = &destinationName
@@ -54,7 +54,6 @@ func NewBTBObjExportParams(meshParams BTBExportMeshParams) *BTBObjExportParams {
 	this.IncludeExportIds = &includeExportIds
 	var isYAxisUp bool = false
 	this.IsYAxisUp = &isYAxisUp
-	this.MeshParams = meshParams
 	var notifyUser bool = true
 	this.NotifyUser = &notifyUser
 	var storeInDocument bool = true
@@ -344,28 +343,36 @@ func (o *BTBObjExportParams) SetIsYAxisUp(v bool) {
 	o.IsYAxisUp = &v
 }
 
-// GetMeshParams returns the MeshParams field value
+// GetMeshParams returns the MeshParams field value if set, zero value otherwise.
 func (o *BTBObjExportParams) GetMeshParams() BTBExportMeshParams {
-	if o == nil {
+	if o == nil || o.MeshParams == nil {
 		var ret BTBExportMeshParams
 		return ret
 	}
-
-	return o.MeshParams
+	return *o.MeshParams
 }
 
-// GetMeshParamsOk returns a tuple with the MeshParams field value
+// GetMeshParamsOk returns a tuple with the MeshParams field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTBObjExportParams) GetMeshParamsOk() (*BTBExportMeshParams, bool) {
-	if o == nil {
+	if o == nil || o.MeshParams == nil {
 		return nil, false
 	}
-	return &o.MeshParams, true
+	return o.MeshParams, true
 }
 
-// SetMeshParams sets field value
+// HasMeshParams returns a boolean if a field has been set.
+func (o *BTBObjExportParams) HasMeshParams() bool {
+	if o != nil && o.MeshParams != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMeshParams gets a reference to the given BTBExportMeshParams and assigns it to the MeshParams field.
 func (o *BTBObjExportParams) SetMeshParams(v BTBExportMeshParams) {
-	o.MeshParams = v
+	o.MeshParams = &v
 }
 
 // GetNotifyUser returns the NotifyUser field value if set, zero value otherwise.
@@ -490,7 +497,7 @@ func (o BTBObjExportParams) MarshalJSON() ([]byte, error) {
 	if o.IsYAxisUp != nil {
 		toSerialize["isYAxisUp"] = o.IsYAxisUp
 	}
-	if true {
+	if o.MeshParams != nil {
 		toSerialize["meshParams"] = o.MeshParams
 	}
 	if o.NotifyUser != nil {

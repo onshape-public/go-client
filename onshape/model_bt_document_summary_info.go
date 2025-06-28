@@ -102,6 +102,56 @@ func (o *BTDocumentSummaryInfo) SetCanMove(v bool) {
 	o.GetActualInstance().(getResult).SetCanMove(v)
 }
 
+// GetConnectionName returns the ConnectionName field value if set, zero value otherwise.
+func (o *BTDocumentSummaryInfo) GetConnectionName() string {
+	type getResult interface {
+		GetConnectionName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetConnectionNameOk returns a tuple with the ConnectionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummaryInfo) GetConnectionNameOk() (*string, bool) {
+	type getResult interface {
+		GetConnectionNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasConnectionName returns a boolean if a field has been set.
+func (o *BTDocumentSummaryInfo) HasConnectionName() bool {
+	type getResult interface {
+		HasConnectionName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasConnectionName()
+	} else {
+		return false
+	}
+}
+
+// SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
+func (o *BTDocumentSummaryInfo) SetConnectionName(v string) {
+	type getResult interface {
+		SetConnectionName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetConnectionName(v)
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *BTDocumentSummaryInfo) GetCreatedAt() JSONTime {
 	type getResult interface {
@@ -2957,10 +3007,11 @@ func (v *NullableBTDocumentSummaryInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDocumentSummaryInfo struct {
-	CanMove     *bool                   `json:"canMove,omitempty"`
-	CreatedAt   *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy   *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description *string                 `json:"description,omitempty"`
+	CanMove        *bool                   `json:"canMove,omitempty"`
+	ConnectionName *string                 `json:"connectionName,omitempty"`
+	CreatedAt      *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy      *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description    *string                 `json:"description,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -3067,6 +3118,38 @@ func (o *base_BTDocumentSummaryInfo) HasCanMove() bool {
 // SetCanMove gets a reference to the given bool and assigns it to the CanMove field.
 func (o *base_BTDocumentSummaryInfo) SetCanMove(v bool) {
 	o.CanMove = &v
+}
+
+// GetConnectionName returns the ConnectionName field value if set, zero value otherwise.
+func (o *base_BTDocumentSummaryInfo) GetConnectionName() string {
+	if o == nil || o.ConnectionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionName
+}
+
+// GetConnectionNameOk returns a tuple with the ConnectionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentSummaryInfo) GetConnectionNameOk() (*string, bool) {
+	if o == nil || o.ConnectionName == nil {
+		return nil, false
+	}
+	return o.ConnectionName, true
+}
+
+// HasConnectionName returns a boolean if a field has been set.
+func (o *base_BTDocumentSummaryInfo) HasConnectionName() bool {
+	if o != nil && o.ConnectionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
+func (o *base_BTDocumentSummaryInfo) SetConnectionName(v string) {
+	o.ConnectionName = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -4825,6 +4908,9 @@ func (o base_BTDocumentSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
 		toSerialize["canMove"] = o.CanMove
+	}
+	if o.ConnectionName != nil {
+		toSerialize["connectionName"] = o.ConnectionName
 	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt

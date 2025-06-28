@@ -3325,6 +3325,8 @@
 
 * `GBTErrorStringEnumWidthAndTabMateconnectorsOnSameOccurrence` (value: `"WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE"`)
 
+* `GBTErrorStringEnumMirrorInvalidSeedAssembly` (value: `"MIRROR_INVALID_SEED_ASSEMBLY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

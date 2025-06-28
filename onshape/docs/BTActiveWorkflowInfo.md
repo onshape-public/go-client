@@ -16,20 +16,23 @@ Name | Type | Description | Notes
 **CompanyId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
-**EnabledActiveMultipleWorkflows** | Pointer to **bool** |  | [optional] 
-**HasInactiveCustomWorkflows** | Pointer to **bool** |  | [optional] 
+**EnabledActiveMultipleWorkflows** | Pointer to **bool** | Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows &gt; 1 | [optional] 
+**HasInactiveCustomWorkflows** | Pointer to **bool** | Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
-**ObsoletionWorkflowId** | Pointer to **string** |  | [optional] 
-**OsCategoryIdToArenaNumberFormatId** | Pointer to **map[string]string** |  | [optional] 
+**ObsoletionWorkflowId** | Pointer to **string** | Deprecated, use obsoletionWorkflowInfo.workflow.id instead | [optional] 
+**ObsoletionWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
+**OsCategoryIdToArenaNumberFormatId** | Pointer to **map[string]string** | Deprecated, no current alternative | [optional] 
 **PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
-**PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
+**PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) | Deprecated, use the pickableWorkflows field on the workflowInfo object | [optional] 
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
-**ReleaseWorkflowId** | Pointer to **string** |  | [optional] 
-**ReleaseableApplications** | Pointer to **[]string** |  | [optional] 
+**ReleaseWorkflowId** | Pointer to **string** | Deprecated, use releaseWorkflowInfo.workflow.id instead | [optional] 
+**ReleaseWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
+**ReleaseableApplications** | Pointer to **[]string** | Deprecated, no current alternative | [optional] 
 **StandardContentNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **StandardContentUsingAutoNumbering** | Pointer to **bool** |  | [optional] 
 **StandardContentUsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
 **TaskWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
+**TaskWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
 **UsingAutoPartNumbering** | Pointer to **bool** |  | [optional] 
 **UsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **UsingThirdPartyPartNumbering** | Pointer to **bool** |  | [optional] 
@@ -453,6 +456,31 @@ SetObsoletionWorkflowId sets ObsoletionWorkflowId field to given value.
 
 HasObsoletionWorkflowId returns a boolean if a field has been set.
 
+### GetObsoletionWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) GetObsoletionWorkflowInfo() BTActiveWorkflowTypeInfo`
+
+GetObsoletionWorkflowInfo returns the ObsoletionWorkflowInfo field if non-nil, zero value otherwise.
+
+### GetObsoletionWorkflowInfoOk
+
+`func (o *BTActiveWorkflowInfo) GetObsoletionWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool)`
+
+GetObsoletionWorkflowInfoOk returns a tuple with the ObsoletionWorkflowInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetObsoletionWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) SetObsoletionWorkflowInfo(v BTActiveWorkflowTypeInfo)`
+
+SetObsoletionWorkflowInfo sets ObsoletionWorkflowInfo field to given value.
+
+### HasObsoletionWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) HasObsoletionWorkflowInfo() bool`
+
+HasObsoletionWorkflowInfo returns a boolean if a field has been set.
+
 ### GetOsCategoryIdToArenaNumberFormatId
 
 `func (o *BTActiveWorkflowInfo) GetOsCategoryIdToArenaNumberFormatId() map[string]string`
@@ -578,6 +606,31 @@ SetReleaseWorkflowId sets ReleaseWorkflowId field to given value.
 
 HasReleaseWorkflowId returns a boolean if a field has been set.
 
+### GetReleaseWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) GetReleaseWorkflowInfo() BTActiveWorkflowTypeInfo`
+
+GetReleaseWorkflowInfo returns the ReleaseWorkflowInfo field if non-nil, zero value otherwise.
+
+### GetReleaseWorkflowInfoOk
+
+`func (o *BTActiveWorkflowInfo) GetReleaseWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool)`
+
+GetReleaseWorkflowInfoOk returns a tuple with the ReleaseWorkflowInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) SetReleaseWorkflowInfo(v BTActiveWorkflowTypeInfo)`
+
+SetReleaseWorkflowInfo sets ReleaseWorkflowInfo field to given value.
+
+### HasReleaseWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) HasReleaseWorkflowInfo() bool`
+
+HasReleaseWorkflowInfo returns a boolean if a field has been set.
+
 ### GetReleaseableApplications
 
 `func (o *BTActiveWorkflowInfo) GetReleaseableApplications() []string`
@@ -702,6 +755,31 @@ SetTaskWorkflow sets TaskWorkflow field to given value.
 `func (o *BTActiveWorkflowInfo) HasTaskWorkflow() bool`
 
 HasTaskWorkflow returns a boolean if a field has been set.
+
+### GetTaskWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) GetTaskWorkflowInfo() BTActiveWorkflowTypeInfo`
+
+GetTaskWorkflowInfo returns the TaskWorkflowInfo field if non-nil, zero value otherwise.
+
+### GetTaskWorkflowInfoOk
+
+`func (o *BTActiveWorkflowInfo) GetTaskWorkflowInfoOk() (*BTActiveWorkflowTypeInfo, bool)`
+
+GetTaskWorkflowInfoOk returns a tuple with the TaskWorkflowInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTaskWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) SetTaskWorkflowInfo(v BTActiveWorkflowTypeInfo)`
+
+SetTaskWorkflowInfo sets TaskWorkflowInfo field to given value.
+
+### HasTaskWorkflowInfo
+
+`func (o *BTActiveWorkflowInfo) HasTaskWorkflowInfo() bool`
+
+HasTaskWorkflowInfo returns a boolean if a field has been set.
 
 ### GetUsingAutoPartNumbering
 
