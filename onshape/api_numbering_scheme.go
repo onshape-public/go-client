@@ -50,6 +50,8 @@ func (r ApiNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, *http.
 /*
 NextNumbers Send the items to generate numbers for, and return the next valid available part numbers.
 
+Get the next available part number. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiNextNumbersRequest
 */

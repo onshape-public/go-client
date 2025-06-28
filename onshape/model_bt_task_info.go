@@ -37,6 +37,7 @@ type BTTaskInfo struct {
 	Name                         *string                  `json:"name,omitempty"`
 	ObjectId                     *string                  `json:"objectId,omitempty"`
 	Properties                   []BTMetadataPropertyInfo `json:"properties,omitempty"`
+	PublishedWorkflow            *BTPublishedWorkflowInfo `json:"publishedWorkflow,omitempty"`
 	ResolvedAt                   *JSONTime                `json:"resolvedAt,omitempty"`
 	ResolvedBy                   *BTUserSummaryInfo       `json:"resolvedBy,omitempty"`
 	Roles                        []BTTaskRbacRoleInfo     `json:"roles,omitempty"`
@@ -649,6 +650,38 @@ func (o *BTTaskInfo) HasProperties() bool {
 // SetProperties gets a reference to the given []BTMetadataPropertyInfo and assigns it to the Properties field.
 func (o *BTTaskInfo) SetProperties(v []BTMetadataPropertyInfo) {
 	o.Properties = v
+}
+
+// GetPublishedWorkflow returns the PublishedWorkflow field value if set, zero value otherwise.
+func (o *BTTaskInfo) GetPublishedWorkflow() BTPublishedWorkflowInfo {
+	if o == nil || o.PublishedWorkflow == nil {
+		var ret BTPublishedWorkflowInfo
+		return ret
+	}
+	return *o.PublishedWorkflow
+}
+
+// GetPublishedWorkflowOk returns a tuple with the PublishedWorkflow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTaskInfo) GetPublishedWorkflowOk() (*BTPublishedWorkflowInfo, bool) {
+	if o == nil || o.PublishedWorkflow == nil {
+		return nil, false
+	}
+	return o.PublishedWorkflow, true
+}
+
+// HasPublishedWorkflow returns a boolean if a field has been set.
+func (o *BTTaskInfo) HasPublishedWorkflow() bool {
+	if o != nil && o.PublishedWorkflow != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublishedWorkflow gets a reference to the given BTPublishedWorkflowInfo and assigns it to the PublishedWorkflow field.
+func (o *BTTaskInfo) SetPublishedWorkflow(v BTPublishedWorkflowInfo) {
+	o.PublishedWorkflow = &v
 }
 
 // GetResolvedAt returns the ResolvedAt field value if set, zero value otherwise.
@@ -1282,6 +1315,9 @@ func (o BTTaskInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Properties != nil {
 		toSerialize["properties"] = o.Properties
+	}
+	if o.PublishedWorkflow != nil {
+		toSerialize["publishedWorkflow"] = o.PublishedWorkflow
 	}
 	if o.ResolvedAt != nil {
 		toSerialize["resolvedAt"] = o.ResolvedAt

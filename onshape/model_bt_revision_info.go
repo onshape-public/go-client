@@ -14,13 +14,13 @@ import (
 	"encoding/json"
 )
 
-// BTRevisionInfo A revision of PART/ASSEMBLY etc created by release management.
+// BTRevisionInfo Revision details.
 type BTRevisionInfo struct {
 	// The users who approved the release package that created this revision.
 	Approvers                 []BTRevisionApproverInfo `json:"approvers,omitempty"`
 	AutoObsoletionReleaseId   *string                  `json:"autoObsoletionReleaseId,omitempty"`
 	AutoObsoletionReleaseName *string                  `json:"autoObsoletionReleaseName,omitempty"`
-	// Whether the revision can change object type. Used in reuse part number flow
+	// Whether the revision can change object type. Used in reuse part number flow.
 	CanChangeType *bool `json:"canChangeType,omitempty"`
 	CanExport     *bool `json:"canExport,omitempty"`
 	// The company or enterprise ID that owns the resource.
@@ -29,15 +29,15 @@ type BTRevisionInfo struct {
 	CreatedAt     *JSONTime `json:"createdAt,omitempty"`
 	// The Revision Description metadata property if revision is of a drawing.
 	Description *string `json:"description,omitempty"`
-	// The document that contains the item.
+	// The document that contains the revision object.
 	DocumentId *string `json:"documentId,omitempty"`
-	// The name of the document that contains the item.
+	// The name of the document that contains the revision object.
 	DocumentName *string `json:"documentName,omitempty"`
 	// The state of document containing this revision. Used in reuse part number flow
 	DocumentState *int32 `json:"documentState,omitempty"`
-	// The element that contains the item.
+	// The element that contains the revision object.
 	ElementId *string `json:"elementId,omitempty"`
-	// The type of item 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+	// The type of item Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio
 	ElementType          *int32  `json:"elementType,omitempty"`
 	ErrorMessage         *string `json:"errorMessage,omitempty"`
 	FlatPartInsertableId *string `json:"flatPartInsertableId,omitempty"`
@@ -60,7 +60,7 @@ type BTRevisionInfo struct {
 	ObsoletionPackageId *string `json:"obsoletionPackageId,omitempty"`
 	PartId              *string `json:"partId,omitempty"`
 	PartIdentity        *string `json:"partIdentity,omitempty"`
-	// The Part Number with which the item was revised.
+	// The part number with which the object was revised.
 	PartNumber *string `json:"partNumber,omitempty"`
 	// The previous revision if applicable. null for first revision.
 	PreviousRevisionId *string   `json:"previousRevisionId,omitempty"`

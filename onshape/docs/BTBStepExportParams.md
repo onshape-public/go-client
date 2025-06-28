@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **IncludeExportIds** | Pointer to **bool** | Whether topology ids should be exported as parasolid attributes. | [optional] [default to false]
 **IsYAxisUp** | Pointer to **bool** | Rotate model from Z-axis-up orientation to Y-axis-up. | [optional] [default to false]
 **NotifyUser** | Pointer to **bool** | Send notification to the user client. | [optional] [default to true]
-**StepParasolidPreprocessingOption** | [**GBTPreProcessParasolidOption**](GBTPreProcessParasolidOption.md) |  | 
+**StepParasolidPreprocessingOption** | Pointer to [**GBTPreProcessParasolidOption**](GBTPreProcessParasolidOption.md) |  | [optional] 
 **StepUnit** | Pointer to [**GBTExportUnit**](GBTExportUnit.md) |  | [optional] [default to GBTExportUnitMeter]
-**StepVersionString** | **string** | Export STEP in version: &#x60;AP242&#x60; | &#x60;AP203&#x60; | &#x60;AP214&#x60; | [default to "AP242"]
+**StepVersionString** | Pointer to **string** | Export STEP in version: &#x60;AP242&#x60; | &#x60;AP203&#x60; | &#x60;AP214&#x60; | [optional] [default to "AP242"]
 **StoreInDocument** | Pointer to **bool** | Create a blob with exported file in the source document. | [optional] [default to true]
 **TriggerAutoDownload** | Pointer to **bool** | Automatically download a translated file. | [optional] [default to false]
 
@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 
 ### NewBTBStepExportParams
 
-`func NewBTBStepExportParams(stepParasolidPreprocessingOption GBTPreProcessParasolidOption, stepVersionString string, ) *BTBStepExportParams`
+`func NewBTBStepExportParams() *BTBStepExportParams`
 
 NewBTBStepExportParams instantiates a new BTBStepExportParams object
 This constructor will assign default values to properties that have it defined,
@@ -282,6 +282,11 @@ and a boolean to check if the value has been set.
 
 SetStepParasolidPreprocessingOption sets StepParasolidPreprocessingOption field to given value.
 
+### HasStepParasolidPreprocessingOption
+
+`func (o *BTBStepExportParams) HasStepParasolidPreprocessingOption() bool`
+
+HasStepParasolidPreprocessingOption returns a boolean if a field has been set.
 
 ### GetStepUnit
 
@@ -327,6 +332,11 @@ and a boolean to check if the value has been set.
 
 SetStepVersionString sets StepVersionString field to given value.
 
+### HasStepVersionString
+
+`func (o *BTBStepExportParams) HasStepVersionString() bool`
+
+HasStepVersionString returns a boolean if a field has been set.
 
 ### GetStoreInDocument
 

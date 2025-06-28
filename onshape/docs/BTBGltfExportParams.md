@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **Grouping** | Pointer to **bool** | Whether parts should be exported as a group or individually in a .zip file. | [optional] [default to true]
 **IncludeExportIds** | Pointer to **bool** | Whether topology ids should be exported as parasolid attributes. | [optional] [default to false]
 **IsYAxisUp** | Pointer to **bool** | Rotate model from Z-axis-up orientation to Y-axis-up. | [optional] [default to false]
-**MeshParams** | [**BTBExportMeshParams**](BTBExportMeshParams.md) |  | 
+**MeshParams** | Pointer to [**BTBExportMeshParams**](BTBExportMeshParams.md) |  | [optional] 
 **NotifyUser** | Pointer to **bool** | Send notification to the user client. | [optional] [default to true]
 **StoreInDocument** | Pointer to **bool** | Create a blob with exported file in the source document. | [optional] [default to true]
 **TriggerAutoDownload** | Pointer to **bool** | Automatically download a translated file. | [optional] [default to false]
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewBTBGltfExportParams
 
-`func NewBTBGltfExportParams(meshParams BTBExportMeshParams, ) *BTBGltfExportParams`
+`func NewBTBGltfExportParams() *BTBGltfExportParams`
 
 NewBTBGltfExportParams instantiates a new BTBGltfExportParams object
 This constructor will assign default values to properties that have it defined,
@@ -255,6 +255,11 @@ and a boolean to check if the value has been set.
 
 SetMeshParams sets MeshParams field to given value.
 
+### HasMeshParams
+
+`func (o *BTBGltfExportParams) HasMeshParams() bool`
+
+HasMeshParams returns a boolean if a field has been set.
 
 ### GetNotifyUser
 

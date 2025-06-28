@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **InvitationState** | Pointer to **int32** |  | [optional] 
+**IsExternal** | Pointer to **bool** |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
 **IsOnshapeSupport** | Pointer to **bool** |  | [optional] 
@@ -319,6 +320,31 @@ SetInvitationState sets InvitationState field to given value.
 `func (o *BTTaskUserSummaryInfo) HasInvitationState() bool`
 
 HasInvitationState returns a boolean if a field has been set.
+
+### GetIsExternal
+
+`func (o *BTTaskUserSummaryInfo) GetIsExternal() bool`
+
+GetIsExternal returns the IsExternal field if non-nil, zero value otherwise.
+
+### GetIsExternalOk
+
+`func (o *BTTaskUserSummaryInfo) GetIsExternalOk() (*bool, bool)`
+
+GetIsExternalOk returns a tuple with the IsExternal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExternal
+
+`func (o *BTTaskUserSummaryInfo) SetIsExternal(v bool)`
+
+SetIsExternal sets IsExternal field to given value.
+
+### HasIsExternal
+
+`func (o *BTTaskUserSummaryInfo) HasIsExternal() bool`
+
+HasIsExternal returns a boolean if a field has been set.
 
 ### GetIsGuest
 

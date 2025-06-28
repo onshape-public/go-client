@@ -72,6 +72,7 @@ docs/BTAclParams.md
 docs/BTActiveSheetMetalFilter2944.md
 docs/BTActiveSheetMetalFilter2944AllOf.md
 docs/BTActiveWorkflowInfo.md
+docs/BTActiveWorkflowTypeInfo.md
 docs/BTAddressInfo.md
 docs/BTAliasEntryInfo.md
 docs/BTAliasEntryParams.md
@@ -1416,6 +1417,7 @@ docs/GBTErrorStringEnum.md
 docs/GBTExportResolution.md
 docs/GBTExportUnit.md
 docs/GBTFeatureFilterExclusion.md
+docs/GBTFieldWeldFlag.md
 docs/GBTFilterFlattenedGeometryOptions.md
 docs/GBTGTolConstraintType.md
 docs/GBTGeometryType.md
@@ -1435,6 +1437,7 @@ docs/GBTPDefinitionType.md
 docs/GBTPOperator.md
 docs/GBTPType.md
 docs/GBTParameterVisibilityLogicalOp.md
+docs/GBTParasolidEncodingType.md
 docs/GBTPartColorCycleVersion.md
 docs/GBTPartStudioDisplayDataVersion.md
 docs/GBTPartStudioInstanceType.md
@@ -1462,6 +1465,7 @@ docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
 docs/GBTValueUse.md
 docs/GBTVariableType.md
+docs/GBTWeldContourType.md
 docs/GBTWeldJointType.md
 docs/GBTWeldType.md
 docs/GlTF.md
@@ -1533,6 +1537,7 @@ docs/TranslationApi.md
 docs/Type.md
 docs/UpdateParams.md
 docs/UserApi.md
+docs/UserRolePriority.md
 docs/VariablesApi.md
 docs/VersionAlias.md
 docs/VersionApi.md
@@ -1560,6 +1565,7 @@ model_bt_acl_info.go
 model_bt_acl_params.go
 model_bt_active_sheet_metal_filter_2944.go
 model_bt_active_workflow_info.go
+model_bt_active_workflow_type_info.go
 model_bt_address_info.go
 model_bt_alias_entry_info.go
 model_bt_alias_entry_params.go
@@ -2568,6 +2574,7 @@ model_gbt_error_string_enum.go
 model_gbt_export_resolution.go
 model_gbt_export_unit.go
 model_gbt_feature_filter_exclusion.go
+model_gbt_field_weld_flag.go
 model_gbt_filter_flattened_geometry_options.go
 model_gbt_geometry_type.go
 model_gbt_graphics_buffer_target.go
@@ -2582,6 +2589,7 @@ model_gbt_node_status_type.go
 model_gbt_notice_level.go
 model_gbt_notice_type.go
 model_gbt_parameter_visibility_logical_op.go
+model_gbt_parasolid_encoding_type.go
 model_gbt_part_color_cycle_version.go
 model_gbt_part_studio_display_data_version.go
 model_gbt_part_studio_instance_type.go
@@ -2607,6 +2615,7 @@ model_gbt_tolerance_precision.go
 model_gbt_tolerance_type.go
 model_gbt_value_use.go
 model_gbt_variable_type.go
+model_gbt_weld_contour_type.go
 model_gbt_weld_joint_type.go
 model_gbt_weld_type.go
 model_gbtbs_feature_visibility.go
@@ -2667,6 +2676,7 @@ model_texture_info.go
 model_transform_group.go
 model_type.go
 model_update_params.go
+model_user_role_priority.go
 model_version_alias.go
 model_versions.go
 model_xml.go

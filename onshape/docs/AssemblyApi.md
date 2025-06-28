@@ -212,7 +212,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBGltfExportParams | 
+    bTBGltfExportParams := *openapiclient.NewBTBGltfExportParams() // BTBGltfExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -293,7 +293,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBObjExportParams := *openapiclient.NewBTBObjExportParams(*openapiclient.NewBTBExportMeshParams()) // BTBObjExportParams | 
+    bTBObjExportParams := *openapiclient.NewBTBObjExportParams() // BTBObjExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -455,7 +455,7 @@ func main() {
     wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
     wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
     eid := "eid_example" // string | Element ID.
-    bTBStepExportParams := *openapiclient.NewBTBStepExportParams(openapiclient.GBTPreProcessParasolidOption("NO_PRE_PROCESSING"), "StepVersionString_example") // BTBStepExportParams | 
+    bTBStepExportParams := *openapiclient.NewBTBStepExportParams() // BTBStepExportParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -770,7 +770,7 @@ func main() {
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     explodedViewId := "explodedViewId_example" // string |  (optional)
     includeHidden := true // bool |  (optional)
-    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
+    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
     namedPositionId := "namedPositionId_example" // string |  (optional)
     includeSketches := true // bool |  (optional) (default to false)
 
@@ -812,7 +812,7 @@ Name | Type | Description  | Notes
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **explodedViewId** | **string** |  | 
  **includeHidden** | **bool** |  | 
- **displayStateId** | **string** | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
+ **displayStateId** | **string** | Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
  **namedPositionId** | **string** |  | 
  **includeSketches** | **bool** |  | [default to false]
 
@@ -1045,7 +1045,7 @@ func main() {
     includeSurfaces := true // bool |  (optional) (default to true)
     useAntiAliasing := true // bool |  (optional) (default to false)
     includeWires := true // bool |  (optional) (default to false)
-    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
+    displayStateId := "displayStateId_example" // string | Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s). (optional)
     namedPositionId := "namedPositionId_example" // string |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -1094,7 +1094,7 @@ Name | Type | Description  | Notes
  **includeSurfaces** | **bool** |  | [default to true]
  **useAntiAliasing** | **bool** |  | [default to false]
  **includeWires** | **bool** |  | [default to false]
- **displayStateId** | **string** | Call the [getDisplayStates](https://cad.onshape.com/glassworks/explorer/#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
+ **displayStateId** | **string** | Call the [getDisplayStates](#/Assembly/getDisplayStates) endpoint to get display state ID(s). | 
  **namedPositionId** | **string** |  | 
 
 ### Return type

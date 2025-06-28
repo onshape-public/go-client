@@ -32,10 +32,10 @@ type BTUserSettingsInfo struct {
 	ImportOptions                        *string                                `json:"importOptions,omitempty"`
 	IsolateEnableSelectionDesire         *bool                                  `json:"isolateEnableSelectionDesire,omitempty"`
 	IsolateHideTransparent               *string                                `json:"isolateHideTransparent,omitempty"`
-	IsolateOpacitySliderValue            *int32                                 `json:"isolateOpacitySliderValue,omitempty"`
+	IsolateOpacitySliderValue            *float32                               `json:"isolateOpacitySliderValue,omitempty"`
 	Locale                               *string                                `json:"locale,omitempty"`
 	MakeTransparentEnableSelectionDesire *bool                                  `json:"makeTransparentEnableSelectionDesire,omitempty"`
-	MakeTransparentOpacitySliderValue    *int32                                 `json:"makeTransparentOpacitySliderValue,omitempty"`
+	MakeTransparentOpacitySliderValue    *float32                               `json:"makeTransparentOpacitySliderValue,omitempty"`
 	MaterialLibrarySettings              *BTMaterialLibrarySettingsInfo         `json:"materialLibrarySettings,omitempty"`
 	MiniToolbarSettings                  *string                                `json:"miniToolbarSettings,omitempty"`
 	MouseActions                         *string                                `json:"mouseActions,omitempty"`
@@ -584,9 +584,9 @@ func (o *BTUserSettingsInfo) SetIsolateHideTransparent(v string) {
 }
 
 // GetIsolateOpacitySliderValue returns the IsolateOpacitySliderValue field value if set, zero value otherwise.
-func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValue() int32 {
+func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValue() float32 {
 	if o == nil || o.IsolateOpacitySliderValue == nil {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.IsolateOpacitySliderValue
@@ -594,7 +594,7 @@ func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValue() int32 {
 
 // GetIsolateOpacitySliderValueOk returns a tuple with the IsolateOpacitySliderValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValueOk() (*int32, bool) {
+func (o *BTUserSettingsInfo) GetIsolateOpacitySliderValueOk() (*float32, bool) {
 	if o == nil || o.IsolateOpacitySliderValue == nil {
 		return nil, false
 	}
@@ -610,8 +610,8 @@ func (o *BTUserSettingsInfo) HasIsolateOpacitySliderValue() bool {
 	return false
 }
 
-// SetIsolateOpacitySliderValue gets a reference to the given int32 and assigns it to the IsolateOpacitySliderValue field.
-func (o *BTUserSettingsInfo) SetIsolateOpacitySliderValue(v int32) {
+// SetIsolateOpacitySliderValue gets a reference to the given float32 and assigns it to the IsolateOpacitySliderValue field.
+func (o *BTUserSettingsInfo) SetIsolateOpacitySliderValue(v float32) {
 	o.IsolateOpacitySliderValue = &v
 }
 
@@ -680,9 +680,9 @@ func (o *BTUserSettingsInfo) SetMakeTransparentEnableSelectionDesire(v bool) {
 }
 
 // GetMakeTransparentOpacitySliderValue returns the MakeTransparentOpacitySliderValue field value if set, zero value otherwise.
-func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValue() int32 {
+func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValue() float32 {
 	if o == nil || o.MakeTransparentOpacitySliderValue == nil {
-		var ret int32
+		var ret float32
 		return ret
 	}
 	return *o.MakeTransparentOpacitySliderValue
@@ -690,7 +690,7 @@ func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValue() int32 {
 
 // GetMakeTransparentOpacitySliderValueOk returns a tuple with the MakeTransparentOpacitySliderValue field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValueOk() (*int32, bool) {
+func (o *BTUserSettingsInfo) GetMakeTransparentOpacitySliderValueOk() (*float32, bool) {
 	if o == nil || o.MakeTransparentOpacitySliderValue == nil {
 		return nil, false
 	}
@@ -706,8 +706,8 @@ func (o *BTUserSettingsInfo) HasMakeTransparentOpacitySliderValue() bool {
 	return false
 }
 
-// SetMakeTransparentOpacitySliderValue gets a reference to the given int32 and assigns it to the MakeTransparentOpacitySliderValue field.
-func (o *BTUserSettingsInfo) SetMakeTransparentOpacitySliderValue(v int32) {
+// SetMakeTransparentOpacitySliderValue gets a reference to the given float32 and assigns it to the MakeTransparentOpacitySliderValue field.
+func (o *BTUserSettingsInfo) SetMakeTransparentOpacitySliderValue(v float32) {
 	o.MakeTransparentOpacitySliderValue = &v
 }
 

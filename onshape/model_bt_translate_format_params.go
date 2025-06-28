@@ -86,10 +86,11 @@ type BTTranslateFormatParams struct {
 	// Send notification to the user client.
 	NotifyUser *bool `json:"notifyUser,omitempty"`
 	// IDs of the occurrences to retrieve. Use comma-separated IDs for multiple instances (example: occurrencesToExport=JHK,JHD).
-	OccurrencesToExport *string `json:"occurrencesToExport,omitempty"`
-	OnePartPerDoc       *bool   `json:"onePartPerDoc,omitempty"`
-	OriginalForeignId   *string `json:"originalForeignId,omitempty"`
-	ParentId            *string `json:"parentId,omitempty"`
+	OccurrencesToExport *string                   `json:"occurrencesToExport,omitempty"`
+	OnePartPerDoc       *bool                     `json:"onePartPerDoc,omitempty"`
+	OriginalForeignId   *string                   `json:"originalForeignId,omitempty"`
+	ParasolidMode       *GBTParasolidEncodingType `json:"parasolidMode,omitempty"`
+	ParentId            *string                   `json:"parentId,omitempty"`
 	// IDs of the parts to retrieve. Use comma-separated IDs for multiple parts (example: partIds=JHK,JHD).
 	PartIds           *string                  `json:"partIds,omitempty"`
 	PartsExportFilter *BTPartsExportFilter4308 `json:"partsExportFilter,omitempty"`
@@ -151,6 +152,8 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
 	this.FormatName = formatName
+	var parasolidMode GBTParasolidEncodingType = GBTParasolidEncodingTypeText
+	this.ParasolidMode = &parasolidMode
 	var stepVersionString string = "AP242"
 	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
@@ -169,6 +172,8 @@ func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this.AllowFaultyParts = &allowFaultyParts
 	var evaluateExportRule bool = false
 	this.EvaluateExportRule = &evaluateExportRule
+	var parasolidMode GBTParasolidEncodingType = GBTParasolidEncodingTypeText
+	this.ParasolidMode = &parasolidMode
 	var stepVersionString string = "AP242"
 	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
@@ -1706,6 +1711,38 @@ func (o *BTTranslateFormatParams) SetOriginalForeignId(v string) {
 	o.OriginalForeignId = &v
 }
 
+// GetParasolidMode returns the ParasolidMode field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetParasolidMode() GBTParasolidEncodingType {
+	if o == nil || o.ParasolidMode == nil {
+		var ret GBTParasolidEncodingType
+		return ret
+	}
+	return *o.ParasolidMode
+}
+
+// GetParasolidModeOk returns a tuple with the ParasolidMode field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetParasolidModeOk() (*GBTParasolidEncodingType, bool) {
+	if o == nil || o.ParasolidMode == nil {
+		return nil, false
+	}
+	return o.ParasolidMode, true
+}
+
+// HasParasolidMode returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasParasolidMode() bool {
+	if o != nil && o.ParasolidMode != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParasolidMode gets a reference to the given GBTParasolidEncodingType and assigns it to the ParasolidMode field.
+func (o *BTTranslateFormatParams) SetParasolidMode(v GBTParasolidEncodingType) {
+	o.ParasolidMode = &v
+}
+
 // GetParentId returns the ParentId field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetParentId() string {
 	if o == nil || o.ParentId == nil {
@@ -3099,6 +3136,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.OriginalForeignId != nil {
 		toSerialize["originalForeignId"] = o.OriginalForeignId
+	}
+	if o.ParasolidMode != nil {
+		toSerialize["parasolidMode"] = o.ParasolidMode
 	}
 	if o.ParentId != nil {
 		toSerialize["parentId"] = o.ParentId

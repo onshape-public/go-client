@@ -17,9 +17,10 @@ import (
 // BTMateConnectorFilter163 struct for BTMateConnectorFilter163
 type BTMateConnectorFilter163 struct {
 	BTQueryFilter183
-	BtType                     *string `json:"btType,omitempty"`
-	AllowImplicitMateConnector *bool   `json:"allowImplicitMateConnector,omitempty"`
-	RequiresOccurrence         *bool   `json:"requiresOccurrence,omitempty"`
+	BtType                                   *string `json:"btType,omitempty"`
+	AllowImplicitMateConnector               *bool   `json:"allowImplicitMateConnector,omitempty"`
+	IsMateConnectorInferenceEnabledByDefault *bool   `json:"isMateConnectorInferenceEnabledByDefault,omitempty"`
+	RequiresOccurrence                       *bool   `json:"requiresOccurrence,omitempty"`
 }
 
 // NewBTMateConnectorFilter163 instantiates a new BTMateConnectorFilter163 object
@@ -103,6 +104,38 @@ func (o *BTMateConnectorFilter163) SetAllowImplicitMateConnector(v bool) {
 	o.AllowImplicitMateConnector = &v
 }
 
+// GetIsMateConnectorInferenceEnabledByDefault returns the IsMateConnectorInferenceEnabledByDefault field value if set, zero value otherwise.
+func (o *BTMateConnectorFilter163) GetIsMateConnectorInferenceEnabledByDefault() bool {
+	if o == nil || o.IsMateConnectorInferenceEnabledByDefault == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsMateConnectorInferenceEnabledByDefault
+}
+
+// GetIsMateConnectorInferenceEnabledByDefaultOk returns a tuple with the IsMateConnectorInferenceEnabledByDefault field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMateConnectorFilter163) GetIsMateConnectorInferenceEnabledByDefaultOk() (*bool, bool) {
+	if o == nil || o.IsMateConnectorInferenceEnabledByDefault == nil {
+		return nil, false
+	}
+	return o.IsMateConnectorInferenceEnabledByDefault, true
+}
+
+// HasIsMateConnectorInferenceEnabledByDefault returns a boolean if a field has been set.
+func (o *BTMateConnectorFilter163) HasIsMateConnectorInferenceEnabledByDefault() bool {
+	if o != nil && o.IsMateConnectorInferenceEnabledByDefault != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsMateConnectorInferenceEnabledByDefault gets a reference to the given bool and assigns it to the IsMateConnectorInferenceEnabledByDefault field.
+func (o *BTMateConnectorFilter163) SetIsMateConnectorInferenceEnabledByDefault(v bool) {
+	o.IsMateConnectorInferenceEnabledByDefault = &v
+}
+
 // GetRequiresOccurrence returns the RequiresOccurrence field value if set, zero value otherwise.
 func (o *BTMateConnectorFilter163) GetRequiresOccurrence() bool {
 	if o == nil || o.RequiresOccurrence == nil {
@@ -150,6 +183,9 @@ func (o BTMateConnectorFilter163) MarshalJSON() ([]byte, error) {
 	}
 	if o.AllowImplicitMateConnector != nil {
 		toSerialize["allowImplicitMateConnector"] = o.AllowImplicitMateConnector
+	}
+	if o.IsMateConnectorInferenceEnabledByDefault != nil {
+		toSerialize["isMateConnectorInferenceEnabledByDefault"] = o.IsMateConnectorInferenceEnabledByDefault
 	}
 	if o.RequiresOccurrence != nil {
 		toSerialize["requiresOccurrence"] = o.RequiresOccurrence

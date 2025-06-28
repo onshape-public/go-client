@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**GetActiveWorkflows**](WorkflowApi.md#GetActiveWorkflows) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
 [**GetAllowedApprovers**](WorkflowApi.md#GetAllowedApprovers) | **Get** /workflow/c/{companyId}/approvers | Get all identities allowed to be approvers on a workflow object.
 [**GetAuditLog**](WorkflowApi.md#GetAuditLog) | **Get** /workflow/obj/{objectId}/auditlog | Get all audit log entries for a workflowable object.
+[**GetWorkflowById**](WorkflowApi.md#GetWorkflowById) | **Get** /workflow/obj/{objectId} | Lightweight information about the current state of a workflowable object like release package.
 
 
 
@@ -238,8 +239,6 @@ Name | Type | Description  | Notes
 
 Get all audit log entries for a workflowable object.
 
-
-
 ### Example
 
 ```go
@@ -253,7 +252,7 @@ import (
 )
 
 func main() {
-    objectId := "objectId_example" // string | 
+    objectId := "objectId_example" // string | Id of a workflowable object like release package, task etc.
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -273,7 +272,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**objectId** | **string** |  | 
+**objectId** | **string** | Id of a workflowable object like release package, task etc. | 
 
 ### Other Parameters
 
@@ -287,6 +286,76 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**BTWorkflowAuditLogInfo**](BTWorkflowAuditLogInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetWorkflowById
+
+> BTObjectWorkflowInfo GetWorkflowById(ctx, objectId).Execute()
+
+Lightweight information about the current state of a workflowable object like release package.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    objectId := "objectId_example" // string | Id of a workflowable object like release package, task etc.
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.WorkflowApi.GetWorkflowById(context.Background(), objectId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetWorkflowById`: BTObjectWorkflowInfo
+    fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.GetWorkflowById`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**objectId** | **string** | Id of a workflowable object like release package, task etc. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetWorkflowByIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**BTObjectWorkflowInfo**](BTObjectWorkflowInfo.md)
 
 ### Authorization
 

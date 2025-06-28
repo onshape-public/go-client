@@ -24,8 +24,10 @@ type BTAnnotationWeldDisplayData4919 struct {
 	DxdySegments     []BTVector2d1812       `json:"dxdySegments,omitempty"`
 	IsDeletion       *bool                  `json:"isDeletion,omitempty"`
 	AllAround        *bool                  `json:"allAround,omitempty"`
+	Flag             *GBTFieldWeldFlag      `json:"flag,omitempty"`
 	IsoFlip          *bool                  `json:"isoFlip,omitempty"`
 	JointType        *GBTWeldJointType      `json:"jointType,omitempty"`
+	LowerContourType *GBTWeldContourType    `json:"lowerContourType,omitempty"`
 	LowerFlag        *bool                  `json:"lowerFlag,omitempty"`
 	LowerGroove      *float64               `json:"lowerGroove,omitempty"`
 	LowerRootOpening *float64               `json:"lowerRootOpening,omitempty"`
@@ -35,6 +37,7 @@ type BTAnnotationWeldDisplayData4919 struct {
 	LowerValueTwo    *float64               `json:"lowerValueTwo,omitempty"`
 	LowerWeldType    *GBTWeldType           `json:"lowerWeldType,omitempty"`
 	Reference        *string                `json:"reference,omitempty"`
+	UpperContourType *GBTWeldContourType    `json:"upperContourType,omitempty"`
 	UpperFlag        *bool                  `json:"upperFlag,omitempty"`
 	UpperGroove      *float64               `json:"upperGroove,omitempty"`
 	UpperRootOpening *float64               `json:"upperRootOpening,omitempty"`
@@ -286,6 +289,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetAllAround(v bool) {
 	o.AllAround = &v
 }
 
+// GetFlag returns the Flag field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetFlag() GBTFieldWeldFlag {
+	if o == nil || o.Flag == nil {
+		var ret GBTFieldWeldFlag
+		return ret
+	}
+	return *o.Flag
+}
+
+// GetFlagOk returns a tuple with the Flag field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetFlagOk() (*GBTFieldWeldFlag, bool) {
+	if o == nil || o.Flag == nil {
+		return nil, false
+	}
+	return o.Flag, true
+}
+
+// HasFlag returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasFlag() bool {
+	if o != nil && o.Flag != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFlag gets a reference to the given GBTFieldWeldFlag and assigns it to the Flag field.
+func (o *BTAnnotationWeldDisplayData4919) SetFlag(v GBTFieldWeldFlag) {
+	o.Flag = &v
+}
+
 // GetIsoFlip returns the IsoFlip field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetIsoFlip() bool {
 	if o == nil || o.IsoFlip == nil {
@@ -348,6 +383,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasJointType() bool {
 // SetJointType gets a reference to the given GBTWeldJointType and assigns it to the JointType field.
 func (o *BTAnnotationWeldDisplayData4919) SetJointType(v GBTWeldJointType) {
 	o.JointType = &v
+}
+
+// GetLowerContourType returns the LowerContourType field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerContourType() GBTWeldContourType {
+	if o == nil || o.LowerContourType == nil {
+		var ret GBTWeldContourType
+		return ret
+	}
+	return *o.LowerContourType
+}
+
+// GetLowerContourTypeOk returns a tuple with the LowerContourType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerContourTypeOk() (*GBTWeldContourType, bool) {
+	if o == nil || o.LowerContourType == nil {
+		return nil, false
+	}
+	return o.LowerContourType, true
+}
+
+// HasLowerContourType returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasLowerContourType() bool {
+	if o != nil && o.LowerContourType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLowerContourType gets a reference to the given GBTWeldContourType and assigns it to the LowerContourType field.
+func (o *BTAnnotationWeldDisplayData4919) SetLowerContourType(v GBTWeldContourType) {
+	o.LowerContourType = &v
 }
 
 // GetLowerFlag returns the LowerFlag field value if set, zero value otherwise.
@@ -638,6 +705,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetReference(v string) {
 	o.Reference = &v
 }
 
+// GetUpperContourType returns the UpperContourType field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperContourType() GBTWeldContourType {
+	if o == nil || o.UpperContourType == nil {
+		var ret GBTWeldContourType
+		return ret
+	}
+	return *o.UpperContourType
+}
+
+// GetUpperContourTypeOk returns a tuple with the UpperContourType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperContourTypeOk() (*GBTWeldContourType, bool) {
+	if o == nil || o.UpperContourType == nil {
+		return nil, false
+	}
+	return o.UpperContourType, true
+}
+
+// HasUpperContourType returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasUpperContourType() bool {
+	if o != nil && o.UpperContourType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpperContourType gets a reference to the given GBTWeldContourType and assigns it to the UpperContourType field.
+func (o *BTAnnotationWeldDisplayData4919) SetUpperContourType(v GBTWeldContourType) {
+	o.UpperContourType = &v
+}
+
 // GetUpperFlag returns the UpperFlag field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetUpperFlag() bool {
 	if o == nil || o.UpperFlag == nil {
@@ -925,11 +1024,17 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.AllAround != nil {
 		toSerialize["allAround"] = o.AllAround
 	}
+	if o.Flag != nil {
+		toSerialize["flag"] = o.Flag
+	}
 	if o.IsoFlip != nil {
 		toSerialize["isoFlip"] = o.IsoFlip
 	}
 	if o.JointType != nil {
 		toSerialize["jointType"] = o.JointType
+	}
+	if o.LowerContourType != nil {
+		toSerialize["lowerContourType"] = o.LowerContourType
 	}
 	if o.LowerFlag != nil {
 		toSerialize["lowerFlag"] = o.LowerFlag
@@ -957,6 +1062,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
+	}
+	if o.UpperContourType != nil {
+		toSerialize["upperContourType"] = o.UpperContourType
 	}
 	if o.UpperFlag != nil {
 		toSerialize["upperFlag"] = o.UpperFlag

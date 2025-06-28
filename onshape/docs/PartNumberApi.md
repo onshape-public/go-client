@@ -14,6 +14,8 @@ Method | HTTP request | Description
 
 Send the items to generate numbers for, and return the next valid available part numbers.
 
+
+
 ### Example
 
 ```go
@@ -28,8 +30,8 @@ import (
 
 func main() {
     bTNextPartNumbersParam := *openapiclient.NewBTNextPartNumbersParam() // BTNextPartNumbersParam | 
-    cid := "cid_example" // string |  (optional)
-    did := "did_example" // string |  (optional)
+    cid := "cid_example" // string | The ID of the company or enterprise that owns this resource and/or is making the request to Onshape. (optional)
+    did := "did_example" // string | Document ID. (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -55,8 +57,8 @@ Other parameters are passed through a pointer to a apiUpdateNextNumbersRequest s
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bTNextPartNumbersParam** | [**BTNextPartNumbersParam**](BTNextPartNumbersParam.md) |  | 
- **cid** | **string** |  | 
- **did** | **string** |  | 
+ **cid** | **string** | The ID of the company or enterprise that owns this resource and/or is making the request to Onshape. | 
+ **did** | **string** | Document ID. | 
 
 ### Return type
 

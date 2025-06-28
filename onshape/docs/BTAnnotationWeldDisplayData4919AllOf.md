@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllAround** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**Flag** | Pointer to [**GBTFieldWeldFlag**](GBTFieldWeldFlag.md) |  | [optional] 
 **IsoFlip** | Pointer to **bool** |  | [optional] 
 **JointType** | Pointer to [**GBTWeldJointType**](GBTWeldJointType.md) |  | [optional] 
+**LowerContourType** | Pointer to [**GBTWeldContourType**](GBTWeldContourType.md) |  | [optional] 
 **LowerFlag** | Pointer to **bool** |  | [optional] 
 **LowerGroove** | Pointer to **float64** |  | [optional] 
 **LowerRootOpening** | Pointer to **float64** |  | [optional] 
@@ -17,6 +19,7 @@ Name | Type | Description | Notes
 **LowerValueTwo** | Pointer to **float64** |  | [optional] 
 **LowerWeldType** | Pointer to [**GBTWeldType**](GBTWeldType.md) |  | [optional] 
 **Reference** | Pointer to **string** |  | [optional] 
+**UpperContourType** | Pointer to [**GBTWeldContourType**](GBTWeldContourType.md) |  | [optional] 
 **UpperFlag** | Pointer to **bool** |  | [optional] 
 **UpperGroove** | Pointer to **float64** |  | [optional] 
 **UpperRootOpening** | Pointer to **float64** |  | [optional] 
@@ -95,6 +98,31 @@ SetBtType sets BtType field to given value.
 
 HasBtType returns a boolean if a field has been set.
 
+### GetFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetFlag() GBTFieldWeldFlag`
+
+GetFlag returns the Flag field if non-nil, zero value otherwise.
+
+### GetFlagOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetFlagOk() (*GBTFieldWeldFlag, bool)`
+
+GetFlagOk returns a tuple with the Flag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetFlag(v GBTFieldWeldFlag)`
+
+SetFlag sets Flag field to given value.
+
+### HasFlag
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasFlag() bool`
+
+HasFlag returns a boolean if a field has been set.
+
 ### GetIsoFlip
 
 `func (o *BTAnnotationWeldDisplayData4919AllOf) GetIsoFlip() bool`
@@ -144,6 +172,31 @@ SetJointType sets JointType field to given value.
 `func (o *BTAnnotationWeldDisplayData4919AllOf) HasJointType() bool`
 
 HasJointType returns a boolean if a field has been set.
+
+### GetLowerContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetLowerContourType() GBTWeldContourType`
+
+GetLowerContourType returns the LowerContourType field if non-nil, zero value otherwise.
+
+### GetLowerContourTypeOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetLowerContourTypeOk() (*GBTWeldContourType, bool)`
+
+GetLowerContourTypeOk returns a tuple with the LowerContourType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLowerContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetLowerContourType(v GBTWeldContourType)`
+
+SetLowerContourType sets LowerContourType field to given value.
+
+### HasLowerContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasLowerContourType() bool`
+
+HasLowerContourType returns a boolean if a field has been set.
 
 ### GetLowerFlag
 
@@ -369,6 +422,31 @@ SetReference sets Reference field to given value.
 `func (o *BTAnnotationWeldDisplayData4919AllOf) HasReference() bool`
 
 HasReference returns a boolean if a field has been set.
+
+### GetUpperContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetUpperContourType() GBTWeldContourType`
+
+GetUpperContourType returns the UpperContourType field if non-nil, zero value otherwise.
+
+### GetUpperContourTypeOk
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) GetUpperContourTypeOk() (*GBTWeldContourType, bool)`
+
+GetUpperContourTypeOk returns a tuple with the UpperContourType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpperContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) SetUpperContourType(v GBTWeldContourType)`
+
+SetUpperContourType sets UpperContourType field to given value.
+
+### HasUpperContourType
+
+`func (o *BTAnnotationWeldDisplayData4919AllOf) HasUpperContourType() bool`
+
+HasUpperContourType returns a boolean if a field has been set.
 
 ### GetUpperFlag
 

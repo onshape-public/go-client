@@ -5,14 +5,14 @@ All URIs are relative to *https://cad.onshape.com/api/v11*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteRevisionHistory**](RevisionApi.md#DeleteRevisionHistory) | **Delete** /revisions/companies/{cid}/partnumber/{pnum}/elementType/{et} | Delete all revisions for a part number.
-[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Enumerate all of a company&#39;s revisions.
-[**GetAllInDocument**](RevisionApi.md#GetAllInDocument) | **Get** /revisions/d/{did} | Get all revisions for the specified document.
+[**EnumerateRevisions**](RevisionApi.md#EnumerateRevisions) | **Get** /revisions/companies/{cid} | Get all revisions for a company.
+[**GetAllInDocument**](RevisionApi.md#GetAllInDocument) | **Get** /revisions/d/{did} | Get all revisions for a document.
 [**GetAllInDocumentVersion**](RevisionApi.md#GetAllInDocumentVersion) | **Get** /revisions/d/{did}/v/{vid} | Get all revisions for a version.
-[**GetLatestInDocumentOrCompany**](RevisionApi.md#GetLatestInDocumentOrCompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Get the latest revision for a part number in a document or company.
-[**GetRevisionByPartNumber**](RevisionApi.md#GetRevisionByPartNumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get a list of revisions by part number.
-[**GetRevisionHistoryInCompanyByElementId**](RevisionApi.md#GetRevisionHistoryInCompanyByElementId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Get a list of all revisions for an element in a company-owned document.
-[**GetRevisionHistoryInCompanyByPartId**](RevisionApi.md#GetRevisionHistoryInCompanyByPartId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Get a list of all revisions for a part in a company-owned document by part ID.
-[**GetRevisionHistoryInCompanyByPartNumber**](RevisionApi.md#GetRevisionHistoryInCompanyByPartNumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Get a list of all revisions for a part or element in a company-owned document by part number.
+[**GetLatestInDocumentOrCompany**](RevisionApi.md#GetLatestInDocumentOrCompany) | **Get** /revisions/{cd}/{cdid}/p/{pnum}/latest | Get the latest revision information for a part.
+[**GetRevisionByPartNumber**](RevisionApi.md#GetRevisionByPartNumber) | **Get** /revisions/c/{cid}/partnumber/{pnum} | Get details for the specified revision.
+[**GetRevisionHistoryInCompanyByElementId**](RevisionApi.md#GetRevisionHistoryInCompanyByElementId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid} | Get all revisions for an element (tab).
+[**GetRevisionHistoryInCompanyByPartId**](RevisionApi.md#GetRevisionHistoryInCompanyByPartId) | **Get** /revisions/companies/{cid}/d/{did}/{wv}/{wvid}/e/{eid}/p/{pid} | Get all revisions for a part ID.
+[**GetRevisionHistoryInCompanyByPartNumber**](RevisionApi.md#GetRevisionHistoryInCompanyByPartNumber) | **Get** /revisions/companies/{cid}/partnumber/{pnum} | Get all revisions for a part number.
 
 
 
@@ -37,10 +37,10 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | 
-    pnum := "pnum_example" // string | 
-    et := "et_example" // string | 
-    ignoreLinkedDocuments := true // bool |  (optional) (default to false)
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    pnum := "pnum_example" // string | Part number.
+    et := "et_example" // string | Element Type. Must be one of: `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob
+    ignoreLinkedDocuments := true // bool | By default, revisions will be deleted for the part number in the specified, and all linked documents. Set to `true` to only delete revisions in the specified document. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -60,9 +60,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** |  | 
-**pnum** | **string** |  | 
-**et** | **string** |  | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
+**pnum** | **string** | Part number. | 
+**et** | **string** | Element Type. Must be one of: &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob | 
 
 ### Other Parameters
 
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 
 
- **ignoreLinkedDocuments** | **bool** |  | [default to false]
+ **ignoreLinkedDocuments** | **bool** | By default, revisions will be deleted for the part number in the specified, and all linked documents. Set to &#x60;true&#x60; to only delete revisions in the specified document. | [default to false]
 
 ### Return type
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTRevisionInfo EnumerateRevisions(ctx, cid).ElementType(elementType).Limit(limit).LatestOnly(latestOnly).After(after).Execute()
 
-Enumerate all of a company's revisions.
+Get all revisions for a company.
 
 
 
@@ -117,7 +117,7 @@ import (
 
 func main() {
     cid := "cid_example" // string | The company or enterprise ID that owns the resource.
-    elementType := int32(56) // int32 | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob (optional)
+    elementType := int32(56) // int32 | Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio (optional)
     limit := int32(56) // int32 | The number of list entries to return in a single API call. (optional) (default to 20)
     latestOnly := true // bool | Whether to limit search to only latest revisions. (optional) (default to false)
     after := time.Now() // JSONTime | The earliest creation date of the revision to find. (optional) (default to "2000-01-01T00:00Z")
@@ -150,7 +150,7 @@ Other parameters are passed through a pointer to a apiEnumerateRevisionsRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **elementType** | **int32** | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | 
+ **elementType** | **int32** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | 
  **limit** | **int32** | The number of list entries to return in a single API call. | [default to 20]
  **latestOnly** | **bool** | Whether to limit search to only latest revisions. | [default to false]
  **after** | **JSONTime** | The earliest creation date of the revision to find. | [default to &quot;2000-01-01T00:00Z&quot;]
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 > BTListResponseBTRevisionInfo GetAllInDocument(ctx, did).Execute()
 
-Get all revisions for the specified document.
+Get all revisions for a document.
 
 
 
@@ -264,8 +264,8 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    vid := "vid_example" // string | 
+    did := "did_example" // string | Document ID.
+    vid := "vid_example" // string | Version ID.
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -285,8 +285,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**vid** | **string** |  | 
+**did** | **string** | Document ID. | 
+**vid** | **string** | Version ID. | 
 
 ### Other Parameters
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 > BTRevisionInfo GetLatestInDocumentOrCompany(ctx, cd, cdid, pnum).Et(et).Execute()
 
-Get the latest revision for a part number in a document or company.
+Get the latest revision information for a part.
 
 
 
@@ -337,10 +337,10 @@ import (
 )
 
 func main() {
-    cd := "cd_example" // string | 
-    cdid := "cdid_example" // string | 
-    pnum := "pnum_example" // string | 
-    et := "et_example" // string | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob
+    cd := "cd_example" // string | Use `c` to specify a company ID or `d` to specify a document ID.
+    cdid := "cdid_example" // string | Company ID or document ID
+    pnum := "pnum_example" // string | Part number.
+    et := "et_example" // string | Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -360,9 +360,9 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cd** | **string** |  | 
-**cdid** | **string** |  | 
-**pnum** | **string** |  | 
+**cd** | **string** | Use &#x60;c&#x60; to specify a company ID or &#x60;d&#x60; to specify a document ID. | 
+**cdid** | **string** | Company ID or document ID | 
+**pnum** | **string** | Part number. | 
 
 ### Other Parameters
 
@@ -374,7 +374,7 @@ Name | Type | Description  | Notes
 
 
 
- **et** | **string** | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | 
+ **et** | **string** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | 
 
 ### Return type
 
@@ -398,7 +398,9 @@ Name | Type | Description  | Notes
 
 > BTRevisionInfo GetRevisionByPartNumber(ctx, cid, pnum).Revision(revision).ElementType(elementType).Execute()
 
-Get a list of revisions by part number.
+Get details for the specified revision.
+
+
 
 ### Example
 
@@ -413,10 +415,10 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | Company id
-    pnum := "pnum_example" // string | Part Number
-    revision := "revision_example" // string | Revision (optional)
-    elementType := int32(56) // int32 | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob (optional)
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    pnum := "pnum_example" // string | Part number.
+    revision := "revision_example" // string | ID of the revision to get (optional)
+    elementType := int32(56) // int32 | Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -436,8 +438,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** | Company id | 
-**pnum** | **string** | Part Number | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
+**pnum** | **string** | Part number. | 
 
 ### Other Parameters
 
@@ -448,8 +450,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **revision** | **string** | Revision | 
- **elementType** | **int32** | 0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob | 
+ **revision** | **string** | ID of the revision to get | 
+ **elementType** | **int32** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | 
 
 ### Return type
 
@@ -473,7 +475,9 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByElementId(ctx, cid, did, wv, wvid, eid).ElementType(elementType).LinkDocumentId(linkDocumentId).Configuration(configuration).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
-Get a list of all revisions for an element in a company-owned document.
+Get all revisions for an element (tab).
+
+
 
 ### Example
 
@@ -488,17 +492,17 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | 
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
     did := "did_example" // string | The id of the document in which to perform the operation.
     wv := "wv_example" // string | Indicates which of workspace (w) or version (v) id is specified below.
     wvid := "wvid_example" // string | The id of the workspace, version in which the operation should be performed.
     eid := "eid_example" // string | The id of the element in which to perform the operation.
-    elementType := "elementType_example" // string | 
+    elementType := "elementType_example" // string | Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional) (default to "")
     fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
-    fillExportPermission := true // bool |  (optional) (default to false)
-    supportChangeType := true // bool |  (optional) (default to false)
+    fillExportPermission := true // bool | Set to `true` to return a list of export permissions. Default is `false` and will return `null`. (optional) (default to false)
+    supportChangeType := true // bool | Whether the revision can change object type. Used in reuse part number flow. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -518,7 +522,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** |  | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
 **did** | **string** | The id of the document in which to perform the operation. | 
 **wv** | **string** | Indicates which of workspace (w) or version (v) id is specified below. | 
 **wvid** | **string** | The id of the workspace, version in which the operation should be performed. | 
@@ -536,12 +540,12 @@ Name | Type | Description  | Notes
 
 
 
- **elementType** | **string** |  | 
+ **elementType** | **string** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | [default to &quot;&quot;]
  **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
- **fillExportPermission** | **bool** |  | [default to false]
- **supportChangeType** | **bool** |  | [default to false]
+ **fillExportPermission** | **bool** | Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
+ **supportChangeType** | **bool** | Whether the revision can change object type. Used in reuse part number flow. | [default to false]
 
 ### Return type
 
@@ -565,7 +569,9 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByPartId(ctx, cid, did, wv, wvid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
-Get a list of all revisions for a part in a company-owned document by part ID.
+Get all revisions for a part ID.
+
+
 
 ### Example
 
@@ -580,17 +586,17 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | 
-    did := "did_example" // string | 
-    wv := "wv_example" // string | 
-    wvid := "wvid_example" // string | 
-    eid := "eid_example" // string | 
-    pid := "pid_example" // string | 
-    configuration := "configuration_example" // string |  (optional)
-    linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    did := "did_example" // string | Document ID.
+    wv := "wv_example" // string | One of w or v corresponding to whether a workspace or version was specified.
+    wvid := "wvid_example" // string | Workspace (w) or Version (v) ID.
+    eid := "eid_example" // string | Element ID.
+    pid := "pid_example" // string | Part ID.
+    configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
+    linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
     fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
-    fillExportPermission := true // bool |  (optional) (default to false)
-    supportChangeType := true // bool |  (optional) (default to false)
+    fillExportPermission := true // bool | Set to `true` to return a list of export permissions. Default is `false` and will return `null`. (optional) (default to false)
+    supportChangeType := true // bool | Whether the revision can change object type. Used in reuse part number flow. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -610,12 +616,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** |  | 
-**did** | **string** |  | 
-**wv** | **string** |  | 
-**wvid** | **string** |  | 
-**eid** | **string** |  | 
-**pid** | **string** |  | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
+**did** | **string** | Document ID. | 
+**wv** | **string** | One of w or v corresponding to whether a workspace or version was specified. | 
+**wvid** | **string** | Workspace (w) or Version (v) ID. | 
+**eid** | **string** | Element ID. | 
+**pid** | **string** | Part ID. | 
 
 ### Other Parameters
 
@@ -630,11 +636,11 @@ Name | Type | Description  | Notes
 
 
 
- **configuration** | **string** |  | 
- **linkDocumentId** | **string** |  | 
+ **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
+ **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 
  **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
- **fillExportPermission** | **bool** |  | [default to false]
- **supportChangeType** | **bool** |  | [default to false]
+ **fillExportPermission** | **bool** | Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
+ **supportChangeType** | **bool** | Whether the revision can change object type. Used in reuse part number flow. | [default to false]
 
 ### Return type
 
@@ -658,7 +664,7 @@ Name | Type | Description  | Notes
 
 > BTRevisionListResponse GetRevisionHistoryInCompanyByPartNumber(ctx, cid, pnum).ElementType(elementType).FillApprovers(fillApprovers).FillExportPermission(fillExportPermission).SupportChangeType(supportChangeType).Execute()
 
-Get a list of all revisions for a part or element in a company-owned document by part number.
+Get all revisions for a part number.
 
 
 
@@ -675,12 +681,12 @@ import (
 )
 
 func main() {
-    cid := "cid_example" // string | 
-    pnum := "pnum_example" // string | 
-    elementType := "elementType_example" // string | 
+    cid := "cid_example" // string | The company or enterprise ID that owns the resource.
+    pnum := "pnum_example" // string | Part number.
+    elementType := "elementType_example" // string | Element Type. Must be one of: `-1`: Unknown, `0`: Part Studio, `1`: Assembly, `2`: Drawing. `4` : Blob, `8`: Variable Studio
     fillApprovers := true // bool | Set to `true` to return a list of approvers. Default is `false` and will return `null`. (optional) (default to false)
-    fillExportPermission := true // bool |  (optional) (default to false)
-    supportChangeType := true // bool |  (optional) (default to false)
+    fillExportPermission := true // bool | Set to `true` to return a list of export permissions. Default is `false` and will return `null`. (optional) (default to false)
+    supportChangeType := true // bool | Whether the revision can change object type. Used in reuse part number flow. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -700,8 +706,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cid** | **string** |  | 
-**pnum** | **string** |  | 
+**cid** | **string** | The company or enterprise ID that owns the resource. | 
+**pnum** | **string** | Part number. | 
 
 ### Other Parameters
 
@@ -712,10 +718,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
 
- **elementType** | **string** |  | 
+ **elementType** | **string** | Element Type. Must be one of: &#x60;-1&#x60;: Unknown, &#x60;0&#x60;: Part Studio, &#x60;1&#x60;: Assembly, &#x60;2&#x60;: Drawing. &#x60;4&#x60; : Blob, &#x60;8&#x60;: Variable Studio | 
  **fillApprovers** | **bool** | Set to &#x60;true&#x60; to return a list of approvers. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
- **fillExportPermission** | **bool** |  | [default to false]
- **supportChangeType** | **bool** |  | [default to false]
+ **fillExportPermission** | **bool** | Set to &#x60;true&#x60; to return a list of export permissions. Default is &#x60;false&#x60; and will return &#x60;null&#x60;. | [default to false]
+ **supportChangeType** | **bool** | Whether the revision can change object type. Used in reuse part number flow. | [default to false]
 
 ### Return type
 

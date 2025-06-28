@@ -16,9 +16,12 @@ import (
 
 // BTRevisionApproverInfo The users who approved the release package that created this revision.
 type BTRevisionApproverInfo struct {
+	// Date the revision was created.
 	Date *JSONTime `json:"date,omitempty"`
-	Id   *string   `json:"id,omitempty"`
-	Name *string   `json:"name,omitempty"`
+	// User ID of the user who approved the revision.
+	Id *string `json:"id,omitempty"`
+	// Name of the user who approved the revision.
+	Name *string `json:"name,omitempty"`
 }
 
 // NewBTRevisionApproverInfo instantiates a new BTRevisionApproverInfo object

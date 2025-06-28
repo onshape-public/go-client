@@ -16,10 +16,11 @@ import (
 
 // BTDocumentSummarySearchInfo struct for BTDocumentSummarySearchInfo
 type BTDocumentSummarySearchInfo struct {
-	CanMove     *bool                   `json:"canMove,omitempty"`
-	CreatedAt   *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy   *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description *string                 `json:"description,omitempty"`
+	CanMove        *bool                   `json:"canMove,omitempty"`
+	ConnectionName *string                 `json:"connectionName,omitempty"`
+	CreatedAt      *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy      *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description    *string                 `json:"description,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -127,6 +128,38 @@ func (o *BTDocumentSummarySearchInfo) HasCanMove() bool {
 // SetCanMove gets a reference to the given bool and assigns it to the CanMove field.
 func (o *BTDocumentSummarySearchInfo) SetCanMove(v bool) {
 	o.CanMove = &v
+}
+
+// GetConnectionName returns the ConnectionName field value if set, zero value otherwise.
+func (o *BTDocumentSummarySearchInfo) GetConnectionName() string {
+	if o == nil || o.ConnectionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionName
+}
+
+// GetConnectionNameOk returns a tuple with the ConnectionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummarySearchInfo) GetConnectionNameOk() (*string, bool) {
+	if o == nil || o.ConnectionName == nil {
+		return nil, false
+	}
+	return o.ConnectionName, true
+}
+
+// HasConnectionName returns a boolean if a field has been set.
+func (o *BTDocumentSummarySearchInfo) HasConnectionName() bool {
+	if o != nil && o.ConnectionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
+func (o *BTDocumentSummarySearchInfo) SetConnectionName(v string) {
+	o.ConnectionName = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -1917,6 +1950,9 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
 		toSerialize["canMove"] = o.CanMove
+	}
+	if o.ConnectionName != nil {
+		toSerialize["connectionName"] = o.ConnectionName
 	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
 **InvitationState** | Pointer to **int32** |  | [optional] 
+**IsExternal** | Pointer to **bool** |  | [optional] 
 **IsGuest** | Pointer to **bool** |  | [optional] 
 **IsLight** | Pointer to **bool** |  | [optional] 
 **LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
@@ -132,6 +133,31 @@ SetInvitationState sets InvitationState field to given value.
 `func (o *BTUserSummaryInfoAllOf) HasInvitationState() bool`
 
 HasInvitationState returns a boolean if a field has been set.
+
+### GetIsExternal
+
+`func (o *BTUserSummaryInfoAllOf) GetIsExternal() bool`
+
+GetIsExternal returns the IsExternal field if non-nil, zero value otherwise.
+
+### GetIsExternalOk
+
+`func (o *BTUserSummaryInfoAllOf) GetIsExternalOk() (*bool, bool)`
+
+GetIsExternalOk returns a tuple with the IsExternal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExternal
+
+`func (o *BTUserSummaryInfoAllOf) SetIsExternal(v bool)`
+
+SetIsExternal sets IsExternal field to given value.
+
+### HasIsExternal
+
+`func (o *BTUserSummaryInfoAllOf) HasIsExternal() bool`
+
+HasIsExternal returns a boolean if a field has been set.
 
 ### GetIsGuest
 

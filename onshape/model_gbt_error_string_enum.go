@@ -1681,6 +1681,7 @@ const (
 	GBTErrorStringEnumFgsConnectionsAssemblyTooComplex                            GBTErrorStringEnum = "FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX"
 	GBTErrorStringEnumThinExtrudeNotParallelPlanes                                GBTErrorStringEnum = "THIN_EXTRUDE_NOT_PARALLEL_PLANES"
 	GBTErrorStringEnumWidthAndTabMateconnectorsOnSameOccurrence                   GBTErrorStringEnum = "WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE"
+	GBTErrorStringEnumMirrorInvalidSeedAssembly                                   GBTErrorStringEnum = "MIRROR_INVALID_SEED_ASSEMBLY"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3347,6 +3348,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"FGS_CONNECTIONS_ASSEMBLY_TOO_COMPLEX",
 	"THIN_EXTRUDE_NOT_PARALLEL_PLANES",
 	"WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE",
+	"MIRROR_INVALID_SEED_ASSEMBLY",
 	"UNKNOWN",
 }
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **CloudStorageAccountId** | Pointer to **string** |  | [optional] 
 **CloudStorageObjectId** | Pointer to **string** |  | [optional] 
 **CloudStorageProvider** | Pointer to **int32** |  | [optional] 
+**ConnectionName** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **CreatedById** | Pointer to **string** |  | [optional] 
@@ -152,6 +153,31 @@ SetCloudStorageProvider sets CloudStorageProvider field to given value.
 `func (o *BTCloudStorageObjectInfo) HasCloudStorageProvider() bool`
 
 HasCloudStorageProvider returns a boolean if a field has been set.
+
+### GetConnectionName
+
+`func (o *BTCloudStorageObjectInfo) GetConnectionName() string`
+
+GetConnectionName returns the ConnectionName field if non-nil, zero value otherwise.
+
+### GetConnectionNameOk
+
+`func (o *BTCloudStorageObjectInfo) GetConnectionNameOk() (*string, bool)`
+
+GetConnectionNameOk returns a tuple with the ConnectionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionName
+
+`func (o *BTCloudStorageObjectInfo) SetConnectionName(v string)`
+
+SetConnectionName sets ConnectionName field to given value.
+
+### HasConnectionName
+
+`func (o *BTCloudStorageObjectInfo) HasConnectionName() bool`
+
+HasConnectionName returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

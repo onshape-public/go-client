@@ -33,11 +33,13 @@ func (r ApiUpdateNextNumbersRequest) BTNextPartNumbersParam(bTNextPartNumbersPar
 	return r
 }
 
+// The ID of the company or enterprise that owns this resource and/or is making the request to Onshape.
 func (r ApiUpdateNextNumbersRequest) Cid(cid string) ApiUpdateNextNumbersRequest {
 	r.cid = &cid
 	return r
 }
 
+// Document ID.
 func (r ApiUpdateNextNumbersRequest) Did(did string) ApiUpdateNextNumbersRequest {
 	r.did = &did
 	return r
@@ -49,6 +51,8 @@ func (r ApiUpdateNextNumbersRequest) Execute() (*map[string][]BTNextPartNumber, 
 
 /*
 UpdateNextNumbers Send the items to generate numbers for, and return the next valid available part numbers.
+
+Get the next available part number. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/#get-the-next-available-part-number) for more details.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiUpdateNextNumbersRequest

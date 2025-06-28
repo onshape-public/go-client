@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ItemPartNumbers** | Pointer to [**[]BTNextPartNumberParam**](BTNextPartNumberParam.md) |  | [optional] 
-**SkipPartNumbers** | Pointer to **[]string** |  | [optional] 
+**SkipPartNumbers** | Pointer to **[]string** | Comma-separated list of part numbers to skip creating new part numbers for. | [optional] 
 
 ## Methods
 

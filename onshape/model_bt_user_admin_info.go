@@ -36,6 +36,7 @@ type BTUserAdminInfo struct {
 	DocumentationNameOverride  *string                  `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions          *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
 	InvitationState            *int32                   `json:"invitationState,omitempty"`
+	IsExternal                 *bool                    `json:"isExternal,omitempty"`
 	IsGuest                    *bool                    `json:"isGuest,omitempty"`
 	IsLight                    *bool                    `json:"isLight,omitempty"`
 	LastLoginTime              *JSONTime                `json:"lastLoginTime,omitempty"`
@@ -607,6 +608,38 @@ func (o *BTUserAdminInfo) HasInvitationState() bool {
 // SetInvitationState gets a reference to the given int32 and assigns it to the InvitationState field.
 func (o *BTUserAdminInfo) SetInvitationState(v int32) {
 	o.InvitationState = &v
+}
+
+// GetIsExternal returns the IsExternal field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetIsExternal() bool {
+	if o == nil || o.IsExternal == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternal
+}
+
+// GetIsExternalOk returns a tuple with the IsExternal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetIsExternalOk() (*bool, bool) {
+	if o == nil || o.IsExternal == nil {
+		return nil, false
+	}
+	return o.IsExternal, true
+}
+
+// HasIsExternal returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasIsExternal() bool {
+	if o != nil && o.IsExternal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternal gets a reference to the given bool and assigns it to the IsExternal field.
+func (o *BTUserAdminInfo) SetIsExternal(v bool) {
+	o.IsExternal = &v
 }
 
 // GetIsGuest returns the IsGuest field value if set, zero value otherwise.
@@ -2226,6 +2259,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.InvitationState != nil {
 		toSerialize["invitationState"] = o.InvitationState
+	}
+	if o.IsExternal != nil {
+		toSerialize["isExternal"] = o.IsExternal
 	}
 	if o.IsGuest != nil {
 		toSerialize["isGuest"] = o.IsGuest
