@@ -1657,7 +1657,7 @@
 
 * `GBTErrorStringEnumSmFlatOpFacesNotCoplanar` (value: `"SM_FLAT_OP_FACES_NOT_COPLANAR"`)
 
-* `GBTErrorStringEnumFlattenedSheetMetalSketchProhibted` (value: `"FLATTENED_SHEET_METAL_SKETCH_PROHIBTED"`)
+* `GBTErrorStringEnumFlattenedSheetMetalSketchProhibited` (value: `"FLATTENED_SHEET_METAL_SKETCH_PROHIBITED"`)
 
 * `GBTErrorStringEnumDraftSelectPullDirectionEntity` (value: `"DRAFT_SELECT_PULL_DIRECTION_ENTITY"`)
 
@@ -3161,7 +3161,7 @@
 
 * `GBTErrorStringEnumEditCurveNoBestFit` (value: `"EDIT_CURVE_NO_BEST_FIT"`)
 
-* `GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg` (value: `"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"`)
+* `GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarge` (value: `"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARGE"`)
 
 * `GBTErrorStringEnumAssemblyMirrorInvalidSeed` (value: `"ASSEMBLY_MIRROR_INVALID_SEED"`)
 

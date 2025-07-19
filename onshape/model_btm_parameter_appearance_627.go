@@ -24,6 +24,7 @@ type BTMParameterAppearance627 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string                   `json:"parameterId,omitempty"`
+	ValueString *string                   `json:"valueString,omitempty"`
 	Appearance  *BTGraphicsAppearance1152 `json:"appearance,omitempty"`
 }
 
@@ -172,6 +173,38 @@ func (o *BTMParameterAppearance627) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterAppearance627) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterAppearance627) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterAppearance627) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterAppearance627) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetAppearance returns the Appearance field value if set, zero value otherwise.
 func (o *BTMParameterAppearance627) GetAppearance() BTGraphicsAppearance1152 {
 	if o == nil || o.Appearance == nil {
@@ -225,6 +258,9 @@ func (o BTMParameterAppearance627) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.Appearance != nil {
 		toSerialize["appearance"] = o.Appearance

@@ -32,6 +32,7 @@ const (
 	BTApiVersionV9IncludeDeterministicIdsToQueryResponses       BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
 	BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams BTApiVersion = "V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"
 	BTApiVersionV11ExcludeZipContentsByDefault                  BTApiVersion = "V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"
+	BTApiVersionV12ValidateElementTypeForTranslations           BTApiVersion = "V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"
 )
 
 // All allowed values of BTApiVersion enum
@@ -48,6 +49,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES",
 	"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS",
 	"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT",
+	"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

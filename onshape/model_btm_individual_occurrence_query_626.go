@@ -28,8 +28,10 @@ type BTMIndividualOccurrenceQuery626 struct {
 	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString                *string                    `json:"queryString,omitempty"`
 	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
+	NodeIdFromCurrentQuery     *string                    `json:"nodeIdFromCurrentQuery,omitempty"`
 	Occurrence                 *BTOccurrence74            `json:"occurrence,omitempty"`
 	Path                       []string                   `json:"path,omitempty"`
+	QueryPath                  []string                   `json:"queryPath,omitempty"`
 }
 
 // NewBTMIndividualOccurrenceQuery626 instantiates a new BTMIndividualOccurrenceQuery626 object
@@ -369,6 +371,38 @@ func (o *BTMIndividualOccurrenceQuery626) SetFullPathAsString(v string) {
 	o.FullPathAsString = &v
 }
 
+// GetNodeIdFromCurrentQuery returns the NodeIdFromCurrentQuery field value if set, zero value otherwise.
+func (o *BTMIndividualOccurrenceQuery626) GetNodeIdFromCurrentQuery() string {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeIdFromCurrentQuery
+}
+
+// GetNodeIdFromCurrentQueryOk returns a tuple with the NodeIdFromCurrentQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualOccurrenceQuery626) GetNodeIdFromCurrentQueryOk() (*string, bool) {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		return nil, false
+	}
+	return o.NodeIdFromCurrentQuery, true
+}
+
+// HasNodeIdFromCurrentQuery returns a boolean if a field has been set.
+func (o *BTMIndividualOccurrenceQuery626) HasNodeIdFromCurrentQuery() bool {
+	if o != nil && o.NodeIdFromCurrentQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeIdFromCurrentQuery gets a reference to the given string and assigns it to the NodeIdFromCurrentQuery field.
+func (o *BTMIndividualOccurrenceQuery626) SetNodeIdFromCurrentQuery(v string) {
+	o.NodeIdFromCurrentQuery = &v
+}
+
 // GetOccurrence returns the Occurrence field value if set, zero value otherwise.
 func (o *BTMIndividualOccurrenceQuery626) GetOccurrence() BTOccurrence74 {
 	if o == nil || o.Occurrence == nil {
@@ -433,6 +467,38 @@ func (o *BTMIndividualOccurrenceQuery626) SetPath(v []string) {
 	o.Path = v
 }
 
+// GetQueryPath returns the QueryPath field value if set, zero value otherwise.
+func (o *BTMIndividualOccurrenceQuery626) GetQueryPath() []string {
+	if o == nil || o.QueryPath == nil {
+		var ret []string
+		return ret
+	}
+	return o.QueryPath
+}
+
+// GetQueryPathOk returns a tuple with the QueryPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualOccurrenceQuery626) GetQueryPathOk() ([]string, bool) {
+	if o == nil || o.QueryPath == nil {
+		return nil, false
+	}
+	return o.QueryPath, true
+}
+
+// HasQueryPath returns a boolean if a field has been set.
+func (o *BTMIndividualOccurrenceQuery626) HasQueryPath() bool {
+	if o != nil && o.QueryPath != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryPath gets a reference to the given []string and assigns it to the QueryPath field.
+func (o *BTMIndividualOccurrenceQuery626) SetQueryPath(v []string) {
+	o.QueryPath = v
+}
+
 func (o BTMIndividualOccurrenceQuery626) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMIndividualQueryWithOccurrenceBase904, errBTMIndividualQueryWithOccurrenceBase904 := json.Marshal(o.BTMIndividualQueryWithOccurrenceBase904)
@@ -473,11 +539,17 @@ func (o BTMIndividualOccurrenceQuery626) MarshalJSON() ([]byte, error) {
 	if o.FullPathAsString != nil {
 		toSerialize["fullPathAsString"] = o.FullPathAsString
 	}
+	if o.NodeIdFromCurrentQuery != nil {
+		toSerialize["nodeIdFromCurrentQuery"] = o.NodeIdFromCurrentQuery
+	}
 	if o.Occurrence != nil {
 		toSerialize["occurrence"] = o.Occurrence
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
+	}
+	if o.QueryPath != nil {
+		toSerialize["queryPath"] = o.QueryPath
 	}
 	return json.Marshal(toSerialize)
 }

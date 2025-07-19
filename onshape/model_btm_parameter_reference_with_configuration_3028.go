@@ -702,6 +702,56 @@ func (o *BTMParameterReferenceWithConfiguration3028) SetParameterId(v string) {
 	o.GetActualInstance().(getResult).SetParameterId(v)
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterReferenceWithConfiguration3028) GetValueString() string {
+	type getResult interface {
+		GetValueString() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueString()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) GetValueStringOk() (*string, bool) {
+	type getResult interface {
+		GetValueStringOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueStringOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) HasValueString() bool {
+	type getResult interface {
+		HasValueString() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasValueString()
+	} else {
+		return false
+	}
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterReferenceWithConfiguration3028) SetValueString(v string) {
+	type getResult interface {
+		SetValueString(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetValueString(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMParameterReferenceWithConfiguration3028) UnmarshalJSON(data []byte) error {
 	var err error
@@ -837,6 +887,7 @@ type base_BTMParameterReferenceWithConfiguration3028 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string `json:"parameterId,omitempty"`
+	ValueString *string `json:"valueString,omitempty"`
 }
 
 // Newbase_BTMParameterReferenceWithConfiguration3028 instantiates a new base_BTMParameterReferenceWithConfiguration3028 object
@@ -1272,6 +1323,38 @@ func (o *base_BTMParameterReferenceWithConfiguration3028) SetParameterId(v strin
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *base_BTMParameterReferenceWithConfiguration3028) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 func (o base_BTMParameterReferenceWithConfiguration3028) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -1312,6 +1395,9 @@ func (o base_BTMParameterReferenceWithConfiguration3028) MarshalJSON() ([]byte, 
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	return json.Marshal(toSerialize)
 }

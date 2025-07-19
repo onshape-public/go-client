@@ -16,10 +16,12 @@ import (
 
 // BTMAssemblyMirrorFeature3037 struct for BTMAssemblyMirrorFeature3037
 type BTMAssemblyMirrorFeature3037 struct {
-	AuxiliaryTreeFeature *bool `json:"auxiliaryTreeFeature,omitempty"`
+	ArrayParameterFromFeature *BTMParameterArray2025 `json:"arrayParameterFromFeature,omitempty"`
+	AuxiliaryTreeFeature      *bool                  `json:"auxiliaryTreeFeature,omitempty"`
 	// Type of JSON object.
-	BtType        *string `json:"btType,omitempty"`
-	FeatureFolder *bool   `json:"featureFolder,omitempty"`
+	BtType        *string                `json:"btType,omitempty"`
+	Feature       *BTMAssemblyFeature887 `json:"feature,omitempty"`
+	FeatureFolder *bool                  `json:"featureFolder,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
 	FeatureId             *string `json:"featureId,omitempty"`
 	FeatureListFieldIndex *int32  `json:"featureListFieldIndex,omitempty"`
@@ -68,6 +70,38 @@ func NewBTMAssemblyMirrorFeature3037() *BTMAssemblyMirrorFeature3037 {
 func NewBTMAssemblyMirrorFeature3037WithDefaults() *BTMAssemblyMirrorFeature3037 {
 	this := BTMAssemblyMirrorFeature3037{}
 	return &this
+}
+
+// GetArrayParameterFromFeature returns the ArrayParameterFromFeature field value if set, zero value otherwise.
+func (o *BTMAssemblyMirrorFeature3037) GetArrayParameterFromFeature() BTMParameterArray2025 {
+	if o == nil || o.ArrayParameterFromFeature == nil {
+		var ret BTMParameterArray2025
+		return ret
+	}
+	return *o.ArrayParameterFromFeature
+}
+
+// GetArrayParameterFromFeatureOk returns a tuple with the ArrayParameterFromFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyMirrorFeature3037) GetArrayParameterFromFeatureOk() (*BTMParameterArray2025, bool) {
+	if o == nil || o.ArrayParameterFromFeature == nil {
+		return nil, false
+	}
+	return o.ArrayParameterFromFeature, true
+}
+
+// HasArrayParameterFromFeature returns a boolean if a field has been set.
+func (o *BTMAssemblyMirrorFeature3037) HasArrayParameterFromFeature() bool {
+	if o != nil && o.ArrayParameterFromFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetArrayParameterFromFeature gets a reference to the given BTMParameterArray2025 and assigns it to the ArrayParameterFromFeature field.
+func (o *BTMAssemblyMirrorFeature3037) SetArrayParameterFromFeature(v BTMParameterArray2025) {
+	o.ArrayParameterFromFeature = &v
 }
 
 // GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
@@ -132,6 +166,38 @@ func (o *BTMAssemblyMirrorFeature3037) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTMAssemblyMirrorFeature3037) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetFeature returns the Feature field value if set, zero value otherwise.
+func (o *BTMAssemblyMirrorFeature3037) GetFeature() BTMAssemblyFeature887 {
+	if o == nil || o.Feature == nil {
+		var ret BTMAssemblyFeature887
+		return ret
+	}
+	return *o.Feature
+}
+
+// GetFeatureOk returns a tuple with the Feature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyMirrorFeature3037) GetFeatureOk() (*BTMAssemblyFeature887, bool) {
+	if o == nil || o.Feature == nil {
+		return nil, false
+	}
+	return o.Feature, true
+}
+
+// HasFeature returns a boolean if a field has been set.
+func (o *BTMAssemblyMirrorFeature3037) HasFeature() bool {
+	if o != nil && o.Feature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeature gets a reference to the given BTMAssemblyFeature887 and assigns it to the Feature field.
+func (o *BTMAssemblyMirrorFeature3037) SetFeature(v BTMAssemblyFeature887) {
+	o.Feature = &v
 }
 
 // GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
@@ -808,11 +874,17 @@ func (o *BTMAssemblyMirrorFeature3037) SetVersion(v int32) {
 
 func (o BTMAssemblyMirrorFeature3037) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ArrayParameterFromFeature != nil {
+		toSerialize["arrayParameterFromFeature"] = o.ArrayParameterFromFeature
+	}
 	if o.AuxiliaryTreeFeature != nil {
 		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Feature != nil {
+		toSerialize["feature"] = o.Feature
 	}
 	if o.FeatureFolder != nil {
 		toSerialize["featureFolder"] = o.FeatureFolder

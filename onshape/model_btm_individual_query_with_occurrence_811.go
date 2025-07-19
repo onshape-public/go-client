@@ -542,6 +542,56 @@ func (o *BTMIndividualQueryWithOccurrence811) SetFullPathAsString(v string) {
 	o.GetActualInstance().(getResult).SetFullPathAsString(v)
 }
 
+// GetNodeIdFromCurrentQuery returns the NodeIdFromCurrentQuery field value if set, zero value otherwise.
+func (o *BTMIndividualQueryWithOccurrence811) GetNodeIdFromCurrentQuery() string {
+	type getResult interface {
+		GetNodeIdFromCurrentQuery() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeIdFromCurrentQuery()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNodeIdFromCurrentQueryOk returns a tuple with the NodeIdFromCurrentQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryWithOccurrence811) GetNodeIdFromCurrentQueryOk() (*string, bool) {
+	type getResult interface {
+		GetNodeIdFromCurrentQueryOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNodeIdFromCurrentQueryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasNodeIdFromCurrentQuery returns a boolean if a field has been set.
+func (o *BTMIndividualQueryWithOccurrence811) HasNodeIdFromCurrentQuery() bool {
+	type getResult interface {
+		HasNodeIdFromCurrentQuery() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasNodeIdFromCurrentQuery()
+	} else {
+		return false
+	}
+}
+
+// SetNodeIdFromCurrentQuery gets a reference to the given string and assigns it to the NodeIdFromCurrentQuery field.
+func (o *BTMIndividualQueryWithOccurrence811) SetNodeIdFromCurrentQuery(v string) {
+	type getResult interface {
+		SetNodeIdFromCurrentQuery(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetNodeIdFromCurrentQuery(v)
+}
+
 // GetOccurrence returns the Occurrence field value if set, zero value otherwise.
 func (o *BTMIndividualQueryWithOccurrence811) GetOccurrence() BTOccurrence74 {
 	type getResult interface {
@@ -640,6 +690,56 @@ func (o *BTMIndividualQueryWithOccurrence811) SetPath(v []string) {
 	}
 
 	o.GetActualInstance().(getResult).SetPath(v)
+}
+
+// GetQueryPath returns the QueryPath field value if set, zero value otherwise.
+func (o *BTMIndividualQueryWithOccurrence811) GetQueryPath() []string {
+	type getResult interface {
+		GetQueryPath() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQueryPath()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetQueryPathOk returns a tuple with the QueryPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualQueryWithOccurrence811) GetQueryPathOk() ([]string, bool) {
+	type getResult interface {
+		GetQueryPathOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetQueryPathOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasQueryPath returns a boolean if a field has been set.
+func (o *BTMIndividualQueryWithOccurrence811) HasQueryPath() bool {
+	type getResult interface {
+		HasQueryPath() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasQueryPath()
+	} else {
+		return false
+	}
+}
+
+// SetQueryPath gets a reference to the given []string and assigns it to the QueryPath field.
+func (o *BTMIndividualQueryWithOccurrence811) SetQueryPath(v []string) {
+	type getResult interface {
+		SetQueryPath(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetQueryPath(v)
 }
 
 // GetEntityQuery returns the EntityQuery field value if set, zero value otherwise.
@@ -794,8 +894,10 @@ type base_BTMIndividualQueryWithOccurrence811 struct {
 	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString                *string                    `json:"queryString,omitempty"`
 	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
+	NodeIdFromCurrentQuery     *string                    `json:"nodeIdFromCurrentQuery,omitempty"`
 	Occurrence                 *BTOccurrence74            `json:"occurrence,omitempty"`
 	Path                       []string                   `json:"path,omitempty"`
+	QueryPath                  []string                   `json:"queryPath,omitempty"`
 	EntityQuery                *string                    `json:"entityQuery,omitempty"`
 }
 
@@ -1136,6 +1238,38 @@ func (o *base_BTMIndividualQueryWithOccurrence811) SetFullPathAsString(v string)
 	o.FullPathAsString = &v
 }
 
+// GetNodeIdFromCurrentQuery returns the NodeIdFromCurrentQuery field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryWithOccurrence811) GetNodeIdFromCurrentQuery() string {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeIdFromCurrentQuery
+}
+
+// GetNodeIdFromCurrentQueryOk returns a tuple with the NodeIdFromCurrentQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryWithOccurrence811) GetNodeIdFromCurrentQueryOk() (*string, bool) {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		return nil, false
+	}
+	return o.NodeIdFromCurrentQuery, true
+}
+
+// HasNodeIdFromCurrentQuery returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryWithOccurrence811) HasNodeIdFromCurrentQuery() bool {
+	if o != nil && o.NodeIdFromCurrentQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeIdFromCurrentQuery gets a reference to the given string and assigns it to the NodeIdFromCurrentQuery field.
+func (o *base_BTMIndividualQueryWithOccurrence811) SetNodeIdFromCurrentQuery(v string) {
+	o.NodeIdFromCurrentQuery = &v
+}
+
 // GetOccurrence returns the Occurrence field value if set, zero value otherwise.
 func (o *base_BTMIndividualQueryWithOccurrence811) GetOccurrence() BTOccurrence74 {
 	if o == nil || o.Occurrence == nil {
@@ -1198,6 +1332,38 @@ func (o *base_BTMIndividualQueryWithOccurrence811) HasPath() bool {
 // SetPath gets a reference to the given []string and assigns it to the Path field.
 func (o *base_BTMIndividualQueryWithOccurrence811) SetPath(v []string) {
 	o.Path = v
+}
+
+// GetQueryPath returns the QueryPath field value if set, zero value otherwise.
+func (o *base_BTMIndividualQueryWithOccurrence811) GetQueryPath() []string {
+	if o == nil || o.QueryPath == nil {
+		var ret []string
+		return ret
+	}
+	return o.QueryPath
+}
+
+// GetQueryPathOk returns a tuple with the QueryPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMIndividualQueryWithOccurrence811) GetQueryPathOk() ([]string, bool) {
+	if o == nil || o.QueryPath == nil {
+		return nil, false
+	}
+	return o.QueryPath, true
+}
+
+// HasQueryPath returns a boolean if a field has been set.
+func (o *base_BTMIndividualQueryWithOccurrence811) HasQueryPath() bool {
+	if o != nil && o.QueryPath != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryPath gets a reference to the given []string and assigns it to the QueryPath field.
+func (o *base_BTMIndividualQueryWithOccurrence811) SetQueryPath(v []string) {
+	o.QueryPath = v
 }
 
 // GetEntityQuery returns the EntityQuery field value if set, zero value otherwise.
@@ -1272,11 +1438,17 @@ func (o base_BTMIndividualQueryWithOccurrence811) MarshalJSON() ([]byte, error) 
 	if o.FullPathAsString != nil {
 		toSerialize["fullPathAsString"] = o.FullPathAsString
 	}
+	if o.NodeIdFromCurrentQuery != nil {
+		toSerialize["nodeIdFromCurrentQuery"] = o.NodeIdFromCurrentQuery
+	}
 	if o.Occurrence != nil {
 		toSerialize["occurrence"] = o.Occurrence
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
+	}
+	if o.QueryPath != nil {
+		toSerialize["queryPath"] = o.QueryPath
 	}
 	if o.EntityQuery != nil {
 		toSerialize["entityQuery"] = o.EntityQuery

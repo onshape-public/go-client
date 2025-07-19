@@ -17,6 +17,7 @@ import (
 // BTLegacySearchHit struct for BTLegacySearchHit
 type BTLegacySearchHit struct {
 	DocumentId        *string                `json:"documentId,omitempty"`
+	FolderId          *string                `json:"folderId,omitempty"`
 	HighlightedFields *map[string][]string   `json:"highlightedFields,omitempty"`
 	HitId             *string                `json:"hitId,omitempty"`
 	Name              *string                `json:"name,omitempty"`
@@ -72,6 +73,38 @@ func (o *BTLegacySearchHit) HasDocumentId() bool {
 // SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
 func (o *BTLegacySearchHit) SetDocumentId(v string) {
 	o.DocumentId = &v
+}
+
+// GetFolderId returns the FolderId field value if set, zero value otherwise.
+func (o *BTLegacySearchHit) GetFolderId() string {
+	if o == nil || o.FolderId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FolderId
+}
+
+// GetFolderIdOk returns a tuple with the FolderId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLegacySearchHit) GetFolderIdOk() (*string, bool) {
+	if o == nil || o.FolderId == nil {
+		return nil, false
+	}
+	return o.FolderId, true
+}
+
+// HasFolderId returns a boolean if a field has been set.
+func (o *BTLegacySearchHit) HasFolderId() bool {
+	if o != nil && o.FolderId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFolderId gets a reference to the given string and assigns it to the FolderId field.
+func (o *BTLegacySearchHit) SetFolderId(v string) {
+	o.FolderId = &v
 }
 
 // GetHighlightedFields returns the HighlightedFields field value if set, zero value otherwise.
@@ -270,6 +303,9 @@ func (o BTLegacySearchHit) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
+	}
+	if o.FolderId != nil {
+		toSerialize["folderId"] = o.FolderId
 	}
 	if o.HighlightedFields != nil {
 		toSerialize["highlightedFields"] = o.HighlightedFields

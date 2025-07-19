@@ -28,11 +28,11 @@ type ApiFindRequest struct {
 	filter                   *int32
 	uid                      *string
 	companyId                *string
-	offset                   *int32
-	limit                    *int32
 	sortColumn               *string
 	sortOrder                *string
 	includeCompanyOwnedTeams *bool
+	offset                   *int32
+	limit                    *int32
 }
 
 func (r ApiFindRequest) Query(query string) ApiFindRequest {
@@ -55,16 +55,6 @@ func (r ApiFindRequest) CompanyId(companyId string) ApiFindRequest {
 	return r
 }
 
-func (r ApiFindRequest) Offset(offset int32) ApiFindRequest {
-	r.offset = &offset
-	return r
-}
-
-func (r ApiFindRequest) Limit(limit int32) ApiFindRequest {
-	r.limit = &limit
-	return r
-}
-
 func (r ApiFindRequest) SortColumn(sortColumn string) ApiFindRequest {
 	r.sortColumn = &sortColumn
 	return r
@@ -77,6 +67,16 @@ func (r ApiFindRequest) SortOrder(sortOrder string) ApiFindRequest {
 
 func (r ApiFindRequest) IncludeCompanyOwnedTeams(includeCompanyOwnedTeams bool) ApiFindRequest {
 	r.includeCompanyOwnedTeams = &includeCompanyOwnedTeams
+	return r
+}
+
+func (r ApiFindRequest) Offset(offset int32) ApiFindRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiFindRequest) Limit(limit int32) ApiFindRequest {
+	r.limit = &limit
 	return r
 }
 
@@ -131,12 +131,6 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	if r.companyId != nil {
 		localVarQueryParams.Add("companyId", parameterToString(*r.companyId, ""))
 	}
-	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	}
-	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	}
 	if r.sortColumn != nil {
 		localVarQueryParams.Add("sortColumn", parameterToString(*r.sortColumn, ""))
 	}
@@ -145,6 +139,12 @@ func (a *TeamApiService) FindExecute(r ApiFindRequest) (*BTGlobalTreeNodeListRes
 	}
 	if r.includeCompanyOwnedTeams != nil {
 		localVarQueryParams.Add("includeCompanyOwnedTeams", parameterToString(*r.includeCompanyOwnedTeams, ""))
+	}
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -213,9 +213,9 @@ type ApiGetMembersRequest struct {
 	tid        string
 	sortColumn *string
 	sortOrder  *string
+	q          *string
 	offset     *int32
 	limit      *int32
-	q          *string
 }
 
 func (r ApiGetMembersRequest) SortColumn(sortColumn string) ApiGetMembersRequest {
@@ -228,6 +228,11 @@ func (r ApiGetMembersRequest) SortOrder(sortOrder string) ApiGetMembersRequest {
 	return r
 }
 
+func (r ApiGetMembersRequest) Q(q string) ApiGetMembersRequest {
+	r.q = &q
+	return r
+}
+
 func (r ApiGetMembersRequest) Offset(offset int32) ApiGetMembersRequest {
 	r.offset = &offset
 	return r
@@ -235,11 +240,6 @@ func (r ApiGetMembersRequest) Offset(offset int32) ApiGetMembersRequest {
 
 func (r ApiGetMembersRequest) Limit(limit int32) ApiGetMembersRequest {
 	r.limit = &limit
-	return r
-}
-
-func (r ApiGetMembersRequest) Q(q string) ApiGetMembersRequest {
-	r.q = &q
 	return r
 }
 
@@ -293,14 +293,14 @@ func (a *TeamApiService) GetMembersExecute(r ApiGetMembersRequest) (*BTListRespo
 	if r.sortOrder != nil {
 		localVarQueryParams.Add("sortOrder", parameterToString(*r.sortOrder, ""))
 	}
+	if r.q != nil {
+		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+	}
 	if r.offset != nil {
 		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	}
-	if r.q != nil {
-		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

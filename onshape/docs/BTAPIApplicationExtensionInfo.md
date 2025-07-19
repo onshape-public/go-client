@@ -10,7 +10,6 @@ Name | Type | Description | Notes
 **ApplicationId** | Pointer to **string** |  | [optional] 
 **ClientId** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
-**ElementMenuIconName** | Pointer to **string** |  | [optional] 
 **ExtensionContext** | Pointer to **int64** |  | [optional] 
 **ExtensionLocation** | Pointer to **int64** |  | [optional] 
 **HasIcon** | Pointer to **bool** |  | [optional] 
@@ -25,6 +24,7 @@ Name | Type | Description | Notes
 **ShowResponse** | Pointer to **bool** |  | [optional] 
 **ShowUpgradeLabel** | Pointer to **bool** |  | [optional] 
 **SystemAppExtension** | Pointer to **bool** |  | [optional] 
+**SystemAppIconName** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 **VisibilityRule** | Pointer to **string** |  | [optional] 
 
@@ -196,31 +196,6 @@ SetDescription sets Description field to given value.
 `func (o *BTAPIApplicationExtensionInfo) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
-
-### GetElementMenuIconName
-
-`func (o *BTAPIApplicationExtensionInfo) GetElementMenuIconName() string`
-
-GetElementMenuIconName returns the ElementMenuIconName field if non-nil, zero value otherwise.
-
-### GetElementMenuIconNameOk
-
-`func (o *BTAPIApplicationExtensionInfo) GetElementMenuIconNameOk() (*string, bool)`
-
-GetElementMenuIconNameOk returns a tuple with the ElementMenuIconName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetElementMenuIconName
-
-`func (o *BTAPIApplicationExtensionInfo) SetElementMenuIconName(v string)`
-
-SetElementMenuIconName sets ElementMenuIconName field to given value.
-
-### HasElementMenuIconName
-
-`func (o *BTAPIApplicationExtensionInfo) HasElementMenuIconName() bool`
-
-HasElementMenuIconName returns a boolean if a field has been set.
 
 ### GetExtensionContext
 
@@ -571,6 +546,31 @@ SetSystemAppExtension sets SystemAppExtension field to given value.
 `func (o *BTAPIApplicationExtensionInfo) HasSystemAppExtension() bool`
 
 HasSystemAppExtension returns a boolean if a field has been set.
+
+### GetSystemAppIconName
+
+`func (o *BTAPIApplicationExtensionInfo) GetSystemAppIconName() string`
+
+GetSystemAppIconName returns the SystemAppIconName field if non-nil, zero value otherwise.
+
+### GetSystemAppIconNameOk
+
+`func (o *BTAPIApplicationExtensionInfo) GetSystemAppIconNameOk() (*string, bool)`
+
+GetSystemAppIconNameOk returns a tuple with the SystemAppIconName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSystemAppIconName
+
+`func (o *BTAPIApplicationExtensionInfo) SetSystemAppIconName(v string)`
+
+SetSystemAppIconName sets SystemAppIconName field to given value.
+
+### HasSystemAppIconName
+
+`func (o *BTAPIApplicationExtensionInfo) HasSystemAppIconName() bool`
+
+HasSystemAppIconName returns a boolean if a field has been set.
 
 ### GetViewRef
 

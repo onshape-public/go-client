@@ -21,6 +21,7 @@ type BTCloudStorageObjectInfo struct {
 	CloudStorageObjectId  *string                 `json:"cloudStorageObjectId,omitempty"`
 	CloudStorageProvider  *int32                  `json:"cloudStorageProvider,omitempty"`
 	ConnectionName        *string                 `json:"connectionName,omitempty"`
+	ConnectionNames       []string                `json:"connectionNames,omitempty"`
 	CreatedAt             *JSONTime               `json:"createdAt,omitempty"`
 	CreatedBy             *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
 	CreatedById           *string                 `json:"createdById,omitempty"`
@@ -29,14 +30,15 @@ type BTCloudStorageObjectInfo struct {
 	Href     *string `json:"href,omitempty"`
 	IconLink *string `json:"iconLink,omitempty"`
 	// Id of the resource.
-	Id                *string                 `json:"id,omitempty"`
-	IsContainer       *bool                   `json:"isContainer,omitempty"`
-	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
-	IsMutable         *bool                   `json:"isMutable,omitempty"`
-	MimeType          *string                 `json:"mimeType,omitempty"`
-	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
-	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
-	ModifiedById      *string                 `json:"modifiedById,omitempty"`
+	Id                           *string                 `json:"id,omitempty"`
+	IsContainer                  *bool                   `json:"isContainer,omitempty"`
+	IsEnterpriseOwned            *bool                   `json:"isEnterpriseOwned,omitempty"`
+	IsExternalConnectionResource *bool                   `json:"isExternalConnectionResource,omitempty"`
+	IsMutable                    *bool                   `json:"isMutable,omitempty"`
+	MimeType                     *string                 `json:"mimeType,omitempty"`
+	ModifiedAt                   *JSONTime               `json:"modifiedAt,omitempty"`
+	ModifiedBy                   *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
+	ModifiedById                 *string                 `json:"modifiedById,omitempty"`
 	// Name of the resource.
 	Name          *string          `json:"name,omitempty"`
 	Owner         *BTOwnerInfo     `json:"owner,omitempty"`
@@ -227,6 +229,38 @@ func (o *BTCloudStorageObjectInfo) HasConnectionName() bool {
 // SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
 func (o *BTCloudStorageObjectInfo) SetConnectionName(v string) {
 	o.ConnectionName = &v
+}
+
+// GetConnectionNames returns the ConnectionNames field value if set, zero value otherwise.
+func (o *BTCloudStorageObjectInfo) GetConnectionNames() []string {
+	if o == nil || o.ConnectionNames == nil {
+		var ret []string
+		return ret
+	}
+	return o.ConnectionNames
+}
+
+// GetConnectionNamesOk returns a tuple with the ConnectionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCloudStorageObjectInfo) GetConnectionNamesOk() ([]string, bool) {
+	if o == nil || o.ConnectionNames == nil {
+		return nil, false
+	}
+	return o.ConnectionNames, true
+}
+
+// HasConnectionNames returns a boolean if a field has been set.
+func (o *BTCloudStorageObjectInfo) HasConnectionNames() bool {
+	if o != nil && o.ConnectionNames != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionNames gets a reference to the given []string and assigns it to the ConnectionNames field.
+func (o *BTCloudStorageObjectInfo) SetConnectionNames(v []string) {
+	o.ConnectionNames = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -515,6 +549,38 @@ func (o *BTCloudStorageObjectInfo) HasIsEnterpriseOwned() bool {
 // SetIsEnterpriseOwned gets a reference to the given bool and assigns it to the IsEnterpriseOwned field.
 func (o *BTCloudStorageObjectInfo) SetIsEnterpriseOwned(v bool) {
 	o.IsEnterpriseOwned = &v
+}
+
+// GetIsExternalConnectionResource returns the IsExternalConnectionResource field value if set, zero value otherwise.
+func (o *BTCloudStorageObjectInfo) GetIsExternalConnectionResource() bool {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternalConnectionResource
+}
+
+// GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCloudStorageObjectInfo) GetIsExternalConnectionResourceOk() (*bool, bool) {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		return nil, false
+	}
+	return o.IsExternalConnectionResource, true
+}
+
+// HasIsExternalConnectionResource returns a boolean if a field has been set.
+func (o *BTCloudStorageObjectInfo) HasIsExternalConnectionResource() bool {
+	if o != nil && o.IsExternalConnectionResource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternalConnectionResource gets a reference to the given bool and assigns it to the IsExternalConnectionResource field.
+func (o *BTCloudStorageObjectInfo) SetIsExternalConnectionResource(v bool) {
+	o.IsExternalConnectionResource = &v
 }
 
 // GetIsMutable returns the IsMutable field value if set, zero value otherwise.
@@ -1046,6 +1112,9 @@ func (o BTCloudStorageObjectInfo) MarshalJSON() ([]byte, error) {
 	if o.ConnectionName != nil {
 		toSerialize["connectionName"] = o.ConnectionName
 	}
+	if o.ConnectionNames != nil {
+		toSerialize["connectionNames"] = o.ConnectionNames
+	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt
 	}
@@ -1072,6 +1141,9 @@ func (o BTCloudStorageObjectInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsEnterpriseOwned != nil {
 		toSerialize["isEnterpriseOwned"] = o.IsEnterpriseOwned
+	}
+	if o.IsExternalConnectionResource != nil {
+		toSerialize["isExternalConnectionResource"] = o.IsExternalConnectionResource
 	}
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable

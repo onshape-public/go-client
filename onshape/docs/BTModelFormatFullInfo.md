@@ -4,11 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CouldBeAssembly** | Pointer to **bool** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**TranslatorName** | Pointer to **string** |  | [optional] 
-**ValidDestinationFormat** | Pointer to **bool** |  | [optional] 
-**ValidSourceFormat** | Pointer to **bool** |  | [optional] 
+**ContentType** | Pointer to **string** | Content-Type for this file format. | [optional] 
+**CouldBeAssembly** | Pointer to **bool** | Indicates if this format could be an assembly. | [optional] 
+**FileExtensions** | Pointer to **[]string** | Supported file extensions for this format. | [optional] 
+**Name** | Pointer to **string** | Name of the format. | [optional] 
+**TranslatorName** | Pointer to **string** | The name of the translator for the format. | [optional] 
+**ValidDestinationFormat** | Pointer to **bool** | Indicates if this format is a valid destination format for translation. | [optional] 
+**ValidSourceFormat** | Pointer to **bool** | Indicates if this format is a valid source format for translation. | [optional] 
 
 ## Methods
 
@@ -28,6 +30,31 @@ will change when the set of required properties is changed
 NewBTModelFormatFullInfoWithDefaults instantiates a new BTModelFormatFullInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetContentType
+
+`func (o *BTModelFormatFullInfo) GetContentType() string`
+
+GetContentType returns the ContentType field if non-nil, zero value otherwise.
+
+### GetContentTypeOk
+
+`func (o *BTModelFormatFullInfo) GetContentTypeOk() (*string, bool)`
+
+GetContentTypeOk returns a tuple with the ContentType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContentType
+
+`func (o *BTModelFormatFullInfo) SetContentType(v string)`
+
+SetContentType sets ContentType field to given value.
+
+### HasContentType
+
+`func (o *BTModelFormatFullInfo) HasContentType() bool`
+
+HasContentType returns a boolean if a field has been set.
 
 ### GetCouldBeAssembly
 
@@ -53,6 +80,31 @@ SetCouldBeAssembly sets CouldBeAssembly field to given value.
 `func (o *BTModelFormatFullInfo) HasCouldBeAssembly() bool`
 
 HasCouldBeAssembly returns a boolean if a field has been set.
+
+### GetFileExtensions
+
+`func (o *BTModelFormatFullInfo) GetFileExtensions() []string`
+
+GetFileExtensions returns the FileExtensions field if non-nil, zero value otherwise.
+
+### GetFileExtensionsOk
+
+`func (o *BTModelFormatFullInfo) GetFileExtensionsOk() (*[]string, bool)`
+
+GetFileExtensionsOk returns a tuple with the FileExtensions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFileExtensions
+
+`func (o *BTModelFormatFullInfo) SetFileExtensions(v []string)`
+
+SetFileExtensions sets FileExtensions field to given value.
+
+### HasFileExtensions
+
+`func (o *BTModelFormatFullInfo) HasFileExtensions() bool`
+
+HasFileExtensions returns a boolean if a field has been set.
 
 ### GetName
 

@@ -24,6 +24,8 @@ type BTMParameterQueryList148 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string                     `json:"parameterId,omitempty"`
+	ValueString *string                     `json:"valueString,omitempty"`
+	Filter      *BTQueryFilter183           `json:"filter,omitempty"`
 	Queries     []BTMIndividualQueryBase139 `json:"queries,omitempty"`
 }
 
@@ -172,6 +174,70 @@ func (o *BTMParameterQueryList148) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterQueryList148) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterQueryList148) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterQueryList148) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterQueryList148) SetValueString(v string) {
+	o.ValueString = &v
+}
+
+// GetFilter returns the Filter field value if set, zero value otherwise.
+func (o *BTMParameterQueryList148) GetFilter() BTQueryFilter183 {
+	if o == nil || o.Filter == nil {
+		var ret BTQueryFilter183
+		return ret
+	}
+	return *o.Filter
+}
+
+// GetFilterOk returns a tuple with the Filter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterQueryList148) GetFilterOk() (*BTQueryFilter183, bool) {
+	if o == nil || o.Filter == nil {
+		return nil, false
+	}
+	return o.Filter, true
+}
+
+// HasFilter returns a boolean if a field has been set.
+func (o *BTMParameterQueryList148) HasFilter() bool {
+	if o != nil && o.Filter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFilter gets a reference to the given BTQueryFilter183 and assigns it to the Filter field.
+func (o *BTMParameterQueryList148) SetFilter(v BTQueryFilter183) {
+	o.Filter = &v
+}
+
 // GetQueries returns the Queries field value if set, zero value otherwise.
 func (o *BTMParameterQueryList148) GetQueries() []BTMIndividualQueryBase139 {
 	if o == nil || o.Queries == nil {
@@ -225,6 +291,12 @@ func (o BTMParameterQueryList148) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
+	}
+	if o.Filter != nil {
+		toSerialize["filter"] = o.Filter
 	}
 	if o.Queries != nil {
 		toSerialize["queries"] = o.Queries

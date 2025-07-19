@@ -24,6 +24,7 @@ type BTMParameterConfigured2222 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId                        *string                  `json:"parameterId,omitempty"`
+	ValueString                        *string                  `json:"valueString,omitempty"`
 	ConfigurationParameterId           *string                  `json:"configurationParameterId,omitempty"`
 	ConfigurationParameterIdFieldIndex *int32                   `json:"configurationParameterIdFieldIndex,omitempty"`
 	Values                             []BTMConfiguredValue1341 `json:"values,omitempty"`
@@ -175,6 +176,38 @@ func (o *BTMParameterConfigured2222) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterConfigured2222) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterConfigured2222) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterConfigured2222) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterConfigured2222) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetConfigurationParameterId returns the ConfigurationParameterId field value if set, zero value otherwise.
 func (o *BTMParameterConfigured2222) GetConfigurationParameterId() string {
 	if o == nil || o.ConfigurationParameterId == nil {
@@ -324,6 +357,9 @@ func (o BTMParameterConfigured2222) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.ConfigurationParameterId != nil {
 		toSerialize["configurationParameterId"] = o.ConfigurationParameterId

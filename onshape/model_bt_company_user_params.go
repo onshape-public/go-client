@@ -24,7 +24,7 @@ type BTCompanyUserParams struct {
 	DocumentationNameOverride *string `json:"documentationNameOverride,omitempty"`
 	// Email ID of the company user.
 	Email *string `json:"email,omitempty"`
-	// List of global permissions to grant.
+	// List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * `0`: Manage role based access control   * `1`: Manage users, teams, and aliases   * `2`: Enterprise administrator   * `3`: Permanently delete   * `4`: Analytics administrator   * `5`: Invite guest users   * `6`: Create projects   * `7`: Approve releases   * `8`: Enable link sharing   * `9`: Create releases   * `10`: Allow access to the App Store   * `11`: Create documents and folders in the Enterprise root   * `12`: Allow access to public documents   * `17`: Manage non-geometric items   * `18`: Manage workflows   * `19`: Transfer documents out of Enterprise   * `20`: Sync to Arena   * `21`: Create tasks   * `22`: Manage standard content metadata   * `23`: Workspace protection permissions   * `24`: Import files   * `25`: Use revision tools
 	GlobalPermissions []int32 `json:"globalPermissions,omitempty"`
 	// Indicates the user is a guest user if true.
 	Guest *bool `json:"guest,omitempty"`

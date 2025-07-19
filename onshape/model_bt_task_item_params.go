@@ -32,7 +32,7 @@ type BTTaskItemParams struct {
 	MimeType *string `json:"mimeType,omitempty"`
 	// Name of the reference.
 	Name *string `json:"name,omitempty"`
-	// Determinstic Id of a part. Used when referencing parts.
+	// Deterministic Id of a part. Used when referencing parts.
 	PartId *string `json:"partId,omitempty"`
 	// Id of a revision to reference from a task.
 	RevisionId *string `json:"revisionId,omitempty"`

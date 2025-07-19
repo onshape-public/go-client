@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
 **NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
 **ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
+**ValueString** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetParameterId sets ParameterId field to given value.
 `func (o *BTMParameter1) HasParameterId() bool`
 
 HasParameterId returns a boolean if a field has been set.
+
+### GetValueString
+
+`func (o *BTMParameter1) GetValueString() string`
+
+GetValueString returns the ValueString field if non-nil, zero value otherwise.
+
+### GetValueStringOk
+
+`func (o *BTMParameter1) GetValueStringOk() (*string, bool)`
+
+GetValueStringOk returns a tuple with the ValueString field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueString
+
+`func (o *BTMParameter1) SetValueString(v string)`
+
+SetValueString sets ValueString field to given value.
+
+### HasValueString
+
+`func (o *BTMParameter1) HasValueString() bool`
+
+HasValueString returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
