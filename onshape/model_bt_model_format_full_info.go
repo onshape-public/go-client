@@ -16,11 +16,20 @@ import (
 
 // BTModelFormatFullInfo struct for BTModelFormatFullInfo
 type BTModelFormatFullInfo struct {
-	CouldBeAssembly        *bool   `json:"couldBeAssembly,omitempty"`
-	Name                   *string `json:"name,omitempty"`
-	TranslatorName         *string `json:"translatorName,omitempty"`
-	ValidDestinationFormat *bool   `json:"validDestinationFormat,omitempty"`
-	ValidSourceFormat      *bool   `json:"validSourceFormat,omitempty"`
+	// Content-Type for this file format.
+	ContentType *string `json:"contentType,omitempty"`
+	// Indicates if this format could be an assembly.
+	CouldBeAssembly *bool `json:"couldBeAssembly,omitempty"`
+	// Supported file extensions for this format.
+	FileExtensions []string `json:"fileExtensions,omitempty"`
+	// Name of the format.
+	Name *string `json:"name,omitempty"`
+	// The name of the translator for the format.
+	TranslatorName *string `json:"translatorName,omitempty"`
+	// Indicates if this format is a valid destination format for translation.
+	ValidDestinationFormat *bool `json:"validDestinationFormat,omitempty"`
+	// Indicates if this format is a valid source format for translation.
+	ValidSourceFormat *bool `json:"validSourceFormat,omitempty"`
 }
 
 // NewBTModelFormatFullInfo instantiates a new BTModelFormatFullInfo object
@@ -38,6 +47,38 @@ func NewBTModelFormatFullInfo() *BTModelFormatFullInfo {
 func NewBTModelFormatFullInfoWithDefaults() *BTModelFormatFullInfo {
 	this := BTModelFormatFullInfo{}
 	return &this
+}
+
+// GetContentType returns the ContentType field value if set, zero value otherwise.
+func (o *BTModelFormatFullInfo) GetContentType() string {
+	if o == nil || o.ContentType == nil {
+		var ret string
+		return ret
+	}
+	return *o.ContentType
+}
+
+// GetContentTypeOk returns a tuple with the ContentType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTModelFormatFullInfo) GetContentTypeOk() (*string, bool) {
+	if o == nil || o.ContentType == nil {
+		return nil, false
+	}
+	return o.ContentType, true
+}
+
+// HasContentType returns a boolean if a field has been set.
+func (o *BTModelFormatFullInfo) HasContentType() bool {
+	if o != nil && o.ContentType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetContentType gets a reference to the given string and assigns it to the ContentType field.
+func (o *BTModelFormatFullInfo) SetContentType(v string) {
+	o.ContentType = &v
 }
 
 // GetCouldBeAssembly returns the CouldBeAssembly field value if set, zero value otherwise.
@@ -70,6 +111,38 @@ func (o *BTModelFormatFullInfo) HasCouldBeAssembly() bool {
 // SetCouldBeAssembly gets a reference to the given bool and assigns it to the CouldBeAssembly field.
 func (o *BTModelFormatFullInfo) SetCouldBeAssembly(v bool) {
 	o.CouldBeAssembly = &v
+}
+
+// GetFileExtensions returns the FileExtensions field value if set, zero value otherwise.
+func (o *BTModelFormatFullInfo) GetFileExtensions() []string {
+	if o == nil || o.FileExtensions == nil {
+		var ret []string
+		return ret
+	}
+	return o.FileExtensions
+}
+
+// GetFileExtensionsOk returns a tuple with the FileExtensions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTModelFormatFullInfo) GetFileExtensionsOk() ([]string, bool) {
+	if o == nil || o.FileExtensions == nil {
+		return nil, false
+	}
+	return o.FileExtensions, true
+}
+
+// HasFileExtensions returns a boolean if a field has been set.
+func (o *BTModelFormatFullInfo) HasFileExtensions() bool {
+	if o != nil && o.FileExtensions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFileExtensions gets a reference to the given []string and assigns it to the FileExtensions field.
+func (o *BTModelFormatFullInfo) SetFileExtensions(v []string) {
+	o.FileExtensions = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -202,8 +275,14 @@ func (o *BTModelFormatFullInfo) SetValidSourceFormat(v bool) {
 
 func (o BTModelFormatFullInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.ContentType != nil {
+		toSerialize["contentType"] = o.ContentType
+	}
 	if o.CouldBeAssembly != nil {
 		toSerialize["couldBeAssembly"] = o.CouldBeAssembly
+	}
+	if o.FileExtensions != nil {
+		toSerialize["fileExtensions"] = o.FileExtensions
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

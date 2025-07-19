@@ -27,6 +27,8 @@
 
 * `BTApiVersionV11ExcludeZipContentsByDefault` (value: `"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"`)
 
+* `BTApiVersionV12ValidateElementTypeForTranslations` (value: `"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

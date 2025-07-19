@@ -1,6 +1,6 @@
 # \DocumentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v11*
+All URIs are relative to *https://cad.onshape.com/api/v12*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -831,7 +831,7 @@ Name | Type | Description  | Notes
 
 ## GetDocumentContents
 
-> BTDocumentContentsInfo GetDocumentContents(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
+> BTDocumentContentsInfo GetDocumentContents(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithZipContents(withZipContents).Execute()
 
 Retrieve tabs and folders by document ID and workspace or version or microversion ID.
 
@@ -856,12 +856,11 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     elementType := openapiclient.GBTElementType("PARTSTUDIO") // GBTElementType | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. (optional)
     elementId := "elementId_example" // string | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. (optional)
-    withThumbnails := true // bool | Whether or not to include thumbnails (not supported for microversion) (optional) (default to false)
     withZipContents := true // bool | Returns the names of the files inside a zip file tab. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.DocumentApi.GetDocumentContents(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithThumbnails(withThumbnails).WithZipContents(withZipContents).Execute()
+    resp, r, err := apiClient.DocumentApi.GetDocumentContents(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).ElementType(elementType).ElementId(elementId).WithZipContents(withZipContents).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocumentContents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -894,7 +893,6 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **elementType** | [**GBTElementType**](GBTElementType.md) | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. | 
  **elementId** | **string** | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. | 
- **withThumbnails** | **bool** | Whether or not to include thumbnails (not supported for microversion) | [default to false]
  **withZipContents** | **bool** | Returns the names of the files inside a zip file tab. | [default to false]
 
 ### Return type
@@ -1199,7 +1197,7 @@ Name | Type | Description  | Notes
 
 ## GetDocuments
 
-> BTGlobalTreeNodeListResponse GetDocuments(ctx).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
+> BTGlobalTreeNodeListResponse GetDocuments(ctx).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Label(label).Project(project).ParentId(parentId).Offset(offset).Limit(limit).Execute()
 
 Get a list of documents that meet the criteria you specify.
 
@@ -1222,15 +1220,15 @@ func main() {
     ownerType := int32(56) // int32 | Type of owner. `0: User | 1: Company | 2: Onshape`. If the owner is a teamId, leave this unspecified. (optional) (default to 1)
     sortColumn := "sortColumn_example" // string | Column by which to sort search results. `name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt` (optional) (default to "createdAt")
     sortOrder := "sortOrder_example" // string | Sort order. `desc` (descending, default), or `asc` (ascending). (optional) (default to "desc")
-    offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
-    limit := int32(56) // int32 | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the `next` URL in the response to fetch the next page. (optional) (default to 20)
     label := "label_example" // string | Label (optional)
     project := "project_example" // string | Project (optional)
     parentId := "parentId_example" // string | Parent Id (optional)
+    offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
+    limit := int32(56) // int32 | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the `next` URL in the response to fetch the next page. (optional) (default to 20)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.DocumentApi.GetDocuments(context.Background()).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Label(label).Project(project).ParentId(parentId).Execute()
+    resp, r, err := apiClient.DocumentApi.GetDocuments(context.Background()).Q(q).Filter(filter).Owner(owner).OwnerType(ownerType).SortColumn(sortColumn).SortOrder(sortOrder).Label(label).Project(project).ParentId(parentId).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.GetDocuments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1257,11 +1255,11 @@ Name | Type | Description  | Notes
  **ownerType** | **int32** | Type of owner. &#x60;0: User | 1: Company | 2: Onshape&#x60;. If the owner is a teamId, leave this unspecified. | [default to 1]
  **sortColumn** | **string** | Column by which to sort search results. &#x60;name | modifiedAt | createdAt (default) | email | modifiedBy | promotedAt&#x60; | [default to &quot;createdAt&quot;]
  **sortOrder** | **string** | Sort order. &#x60;desc&#x60; (descending, default), or &#x60;asc&#x60; (ascending). | [default to &quot;desc&quot;]
- **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
- **limit** | **int32** | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page. | [default to 20]
  **label** | **string** | Label | 
  **project** | **string** | Project | 
  **parentId** | **string** | Parent Id | 
+ **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
+ **limit** | **int32** | Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page. | [default to 20]
 
 ### Return type
 
@@ -2517,7 +2515,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDocumentAttributes
 
-> BTDocumentSummaryInfo UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
+> BTGlobalTreeNodeSummaryInfo UpdateDocumentAttributes(ctx, did).BTDocumentParams(bTDocumentParams).Execute()
 
 Update document attributes by document ID.
 
@@ -2544,7 +2542,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateDocumentAttributes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateDocumentAttributes`: BTDocumentSummaryInfo
+    // response from `UpdateDocumentAttributes`: BTGlobalTreeNodeSummaryInfo
     fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UpdateDocumentAttributes`: %v\n", resp)
 }
 ```
@@ -2569,7 +2567,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BTDocumentSummaryInfo**](BTDocumentSummaryInfo.md)
+[**BTGlobalTreeNodeSummaryInfo**](BTGlobalTreeNodeSummaryInfo.md)
 
 ### Authorization
 

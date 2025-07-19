@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CouldBeAssembly** | Pointer to **bool** |  | [optional] 
-**Name** | Pointer to **string** |  | [optional] 
-**TranslatorName** | Pointer to **string** |  | [optional] 
+**CouldBeAssembly** | Pointer to **bool** | Indicates if this format could be an assembly. | [optional] 
+**Name** | Pointer to **string** | Name of the format. | [optional] 
+**TranslatorName** | Pointer to **string** | The name of the translator for the format. | [optional] 
 
 ## Methods
 

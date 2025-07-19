@@ -15,11 +15,186 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"reflect"
 	"strings"
 )
 
 // CompanyApiService CompanyApi service
 type CompanyApiService service
+
+type ApiAddGlobalPermissionsForIdentityRequest struct {
+	ctx         context.Context
+	ApiService  *CompanyApiService
+	cid         string
+	type_       int32
+	id          string
+	requestBody *[]int32
+}
+
+func (r ApiAddGlobalPermissionsForIdentityRequest) RequestBody(requestBody []int32) ApiAddGlobalPermissionsForIdentityRequest {
+	r.requestBody = &requestBody
+	return r
+}
+
+func (r ApiAddGlobalPermissionsForIdentityRequest) Execute() (*BTGlobalPermissionInfo, *http.Response, error) {
+	return r.ApiService.AddGlobalPermissionsForIdentityExecute(r)
+}
+
+/*
+AddGlobalPermissionsForIdentity Add one or more global permissions to company user or team.
+
+List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.
+
+  - `0`: Manage role based access control
+
+  - `1`: Manage users, teams, and aliases
+
+  - `2`: Enterprise administrator
+
+  - `3`: Permanently delete
+
+  - `4`: Analytics administrator
+
+  - `5`: Invite guest users
+
+  - `6`: Create projects
+
+  - `7`: Approve releases
+
+  - `8`: Enable link sharing
+
+  - `9`: Create releases
+
+  - `10`: Allow access to the App Store
+
+  - `11`: Create documents and folders in the Enterprise root
+
+  - `12`: Allow access to public documents
+
+  - `17`: Manage non-geometric items
+
+  - `18`: Manage workflows
+
+  - `19`: Transfer documents out of Enterprise
+
+  - `20`: Sync to Arena
+
+  - `21`: Create tasks
+
+  - `22`: Manage standard content metadata
+
+  - `23`: Workspace protection permissions
+
+  - `24`: Import files
+
+  - `25`: Use revision tools
+
+    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+    @param cid Company ID
+    @param type_ `0`: USER | `1`: TEAM
+    @param id User ID or Team ID, depending on `type`
+    @return ApiAddGlobalPermissionsForIdentityRequest
+*/
+func (a *CompanyApiService) AddGlobalPermissionsForIdentity(ctx context.Context, cid string, type_ int32, id string) ApiAddGlobalPermissionsForIdentityRequest {
+	return ApiAddGlobalPermissionsForIdentityRequest{
+		ApiService: a,
+		ctx:        ctx,
+		cid:        cid,
+		type_:      type_,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTGlobalPermissionInfo
+func (a *CompanyApiService) AddGlobalPermissionsForIdentityExecute(r ApiAddGlobalPermissionsForIdentityRequest) (*BTGlobalPermissionInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTGlobalPermissionInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompanyApiService.AddGlobalPermissionsForIdentity")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/companies/{cid}/globalpermission/{type}/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"cid"+"}", url.PathEscape(parameterToString(r.cid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.requestBody == nil {
+		return localVarReturnValue, nil, reportError("requestBody is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.requestBody
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTGlobalPermissionInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
 
 type ApiAddUserToCompanyRequest struct {
 	ctx                 context.Context
@@ -119,6 +294,143 @@ func (a *CompanyApiService) AddUserToCompanyExecute(r ApiAddUserToCompanyRequest
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTCompanyUserInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiClearGlobalPermissionsRequest struct {
+	ctx        context.Context
+	ApiService *CompanyApiService
+	cid        string
+	type_      int32
+	id         string
+	permission *[]int32
+}
+
+// List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * &#x60;0&#x60;: Manage role based access control   * &#x60;1&#x60;: Manage users, teams, and aliases   * &#x60;2&#x60;: Enterprise administrator   * &#x60;3&#x60;: Permanently delete   * &#x60;4&#x60;: Analytics administrator   * &#x60;5&#x60;: Invite guest users   * &#x60;6&#x60;: Create projects   * &#x60;7&#x60;: Approve releases   * &#x60;8&#x60;: Enable link sharing   * &#x60;9&#x60;: Create releases   * &#x60;10&#x60;: Allow access to the App Store   * &#x60;11&#x60;: Create documents and folders in the Enterprise root   * &#x60;12&#x60;: Allow access to public documents   * &#x60;17&#x60;: Manage non-geometric items   * &#x60;18&#x60;: Manage workflows   * &#x60;19&#x60;: Transfer documents out of Enterprise   * &#x60;20&#x60;: Sync to Arena   * &#x60;21&#x60;: Create tasks   * &#x60;22&#x60;: Manage standard content metadata   * &#x60;23&#x60;: Workspace protection permissions   * &#x60;24&#x60;: Import files   * &#x60;25&#x60;: Use revision tools
+func (r ApiClearGlobalPermissionsRequest) Permission(permission []int32) ApiClearGlobalPermissionsRequest {
+	r.permission = &permission
+	return r
+}
+
+func (r ApiClearGlobalPermissionsRequest) Execute() (map[string]interface{}, *http.Response, error) {
+	return r.ApiService.ClearGlobalPermissionsExecute(r)
+}
+
+/*
+ClearGlobalPermissions Remove global permissions for a company user or team.
+
+Clear all or some of a user's global permissions
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid Company ID
+	@param type_ `0`: USER | `1`: TEAM
+	@param id User ID or Team ID, depending on `type`
+	@return ApiClearGlobalPermissionsRequest
+*/
+func (a *CompanyApiService) ClearGlobalPermissions(ctx context.Context, cid string, type_ int32, id string) ApiClearGlobalPermissionsRequest {
+	return ApiClearGlobalPermissionsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		cid:        cid,
+		type_:      type_,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return map[string]interface{}
+func (a *CompanyApiService) ClearGlobalPermissionsExecute(r ApiClearGlobalPermissionsRequest) (map[string]interface{}, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodDelete
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue map[string]interface{}
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompanyApiService.ClearGlobalPermissions")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/companies/{cid}/globalpermission/{type}/{id}"
+	localVarPath = strings.Replace(localVarPath, "{"+"cid"+"}", url.PathEscape(parameterToString(r.cid, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"type"+"}", url.PathEscape(parameterToString(r.type_, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.permission != nil {
+		t := *r.permission
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("permission", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("permission", parameterToString(t, "multi"))
+		}
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v map[string]interface{}
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
@@ -398,7 +710,7 @@ func (r ApiGetDocumentsByNameRequest) Name(name string) ApiGetDocumentsByNameReq
 	return r
 }
 
-func (r ApiGetDocumentsByNameRequest) Execute() ([]BTDocumentSummaryInfo, *http.Response, error) {
+func (r ApiGetDocumentsByNameRequest) Execute() ([]BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
 	return r.ApiService.GetDocumentsByNameExecute(r)
 }
 
@@ -421,13 +733,13 @@ func (a *CompanyApiService) GetDocumentsByName(ctx context.Context, cid string) 
 
 // Execute executes the request
 //
-//	@return []BTDocumentSummaryInfo
-func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameRequest) ([]BTDocumentSummaryInfo, *http.Response, error) {
+//	@return []BTGlobalTreeNodeSummaryInfo
+func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameRequest) ([]BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue []BTDocumentSummaryInfo
+		localVarReturnValue []BTGlobalTreeNodeSummaryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompanyApiService.GetDocumentsByName")
@@ -482,7 +794,7 @@ func (a *CompanyApiService) GetDocumentsByNameExecute(r ApiGetDocumentsByNameReq
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v []BTDocumentSummaryInfo
+		var v []BTGlobalTreeNodeSummaryInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()
@@ -658,11 +970,13 @@ func (r ApiUpdateCompanyUserRequest) Execute() (*BTCompanyUserInfo, *http.Respon
 /*
 UpdateCompanyUser Update the company's information for a user.
 
-Returns updated company user info. Global permissions can only be updated by the company admin.
+Returns updated company user info. `globalPermissions` field is deprecated. Please use the following:
+* [addGlobalPermissionsForIdentity](#/Company/addGlobalPermissionsForIdentity)
+* [clearGlobalPermissions](#/Company/clearGlobalPermissions)
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param cid
-	@param uid
+	@param cid Company ID
+	@param uid User ID
 	@return ApiUpdateCompanyUserRequest
 */
 func (a *CompanyApiService) UpdateCompanyUser(ctx context.Context, cid string, uid string) ApiUpdateCompanyUserRequest {

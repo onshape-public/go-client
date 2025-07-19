@@ -101,11 +101,11 @@ type APIConfiguration struct {
 func NewAPIConfiguration() *APIConfiguration {
 	cfg := &APIConfiguration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator/1.200.59760-39696ca8059f/go",
+		UserAgent:     "OpenAPI-Generator/1.201.59918-1e61aeb87f43/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{
-				URL:         "https://cad.onshape.com/api/v11",
+				URL:         "https://cad.onshape.com/api/v12",
 				Description: "Current",
 			},
 		},

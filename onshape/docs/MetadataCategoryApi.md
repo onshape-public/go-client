@@ -1,6 +1,6 @@
 # \MetadataCategoryApi
 
-All URIs are relative to *https://cad.onshape.com/api/v11*
+All URIs are relative to *https://cad.onshape.com/api/v12*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

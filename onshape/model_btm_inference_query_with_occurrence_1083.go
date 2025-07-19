@@ -28,8 +28,10 @@ type BTMInferenceQueryWithOccurrence1083 struct {
 	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString                *string                    `json:"queryString,omitempty"`
 	FullPathAsString           *string                    `json:"fullPathAsString,omitempty"`
+	NodeIdFromCurrentQuery     *string                    `json:"nodeIdFromCurrentQuery,omitempty"`
 	Occurrence                 *BTOccurrence74            `json:"occurrence,omitempty"`
 	Path                       []string                   `json:"path,omitempty"`
+	QueryPath                  []string                   `json:"queryPath,omitempty"`
 	EntityQuery                *string                    `json:"entityQuery,omitempty"`
 	InferenceType              *GBTEntityInferenceType    `json:"inferenceType,omitempty"`
 	SecondDeterministicId      *string                    `json:"secondDeterministicId,omitempty"`
@@ -373,6 +375,38 @@ func (o *BTMInferenceQueryWithOccurrence1083) SetFullPathAsString(v string) {
 	o.FullPathAsString = &v
 }
 
+// GetNodeIdFromCurrentQuery returns the NodeIdFromCurrentQuery field value if set, zero value otherwise.
+func (o *BTMInferenceQueryWithOccurrence1083) GetNodeIdFromCurrentQuery() string {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeIdFromCurrentQuery
+}
+
+// GetNodeIdFromCurrentQueryOk returns a tuple with the NodeIdFromCurrentQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInferenceQueryWithOccurrence1083) GetNodeIdFromCurrentQueryOk() (*string, bool) {
+	if o == nil || o.NodeIdFromCurrentQuery == nil {
+		return nil, false
+	}
+	return o.NodeIdFromCurrentQuery, true
+}
+
+// HasNodeIdFromCurrentQuery returns a boolean if a field has been set.
+func (o *BTMInferenceQueryWithOccurrence1083) HasNodeIdFromCurrentQuery() bool {
+	if o != nil && o.NodeIdFromCurrentQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeIdFromCurrentQuery gets a reference to the given string and assigns it to the NodeIdFromCurrentQuery field.
+func (o *BTMInferenceQueryWithOccurrence1083) SetNodeIdFromCurrentQuery(v string) {
+	o.NodeIdFromCurrentQuery = &v
+}
+
 // GetOccurrence returns the Occurrence field value if set, zero value otherwise.
 func (o *BTMInferenceQueryWithOccurrence1083) GetOccurrence() BTOccurrence74 {
 	if o == nil || o.Occurrence == nil {
@@ -435,6 +469,38 @@ func (o *BTMInferenceQueryWithOccurrence1083) HasPath() bool {
 // SetPath gets a reference to the given []string and assigns it to the Path field.
 func (o *BTMInferenceQueryWithOccurrence1083) SetPath(v []string) {
 	o.Path = v
+}
+
+// GetQueryPath returns the QueryPath field value if set, zero value otherwise.
+func (o *BTMInferenceQueryWithOccurrence1083) GetQueryPath() []string {
+	if o == nil || o.QueryPath == nil {
+		var ret []string
+		return ret
+	}
+	return o.QueryPath
+}
+
+// GetQueryPathOk returns a tuple with the QueryPath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInferenceQueryWithOccurrence1083) GetQueryPathOk() ([]string, bool) {
+	if o == nil || o.QueryPath == nil {
+		return nil, false
+	}
+	return o.QueryPath, true
+}
+
+// HasQueryPath returns a boolean if a field has been set.
+func (o *BTMInferenceQueryWithOccurrence1083) HasQueryPath() bool {
+	if o != nil && o.QueryPath != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetQueryPath gets a reference to the given []string and assigns it to the QueryPath field.
+func (o *BTMInferenceQueryWithOccurrence1083) SetQueryPath(v []string) {
+	o.QueryPath = v
 }
 
 // GetEntityQuery returns the EntityQuery field value if set, zero value otherwise.
@@ -605,11 +671,17 @@ func (o BTMInferenceQueryWithOccurrence1083) MarshalJSON() ([]byte, error) {
 	if o.FullPathAsString != nil {
 		toSerialize["fullPathAsString"] = o.FullPathAsString
 	}
+	if o.NodeIdFromCurrentQuery != nil {
+		toSerialize["nodeIdFromCurrentQuery"] = o.NodeIdFromCurrentQuery
+	}
 	if o.Occurrence != nil {
 		toSerialize["occurrence"] = o.Occurrence
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
+	}
+	if o.QueryPath != nil {
+		toSerialize["queryPath"] = o.QueryPath
 	}
 	if o.EntityQuery != nil {
 		toSerialize["entityQuery"] = o.EntityQuery

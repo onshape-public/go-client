@@ -247,6 +247,56 @@ func (o *BTMParameterQuantity147) SetParameterId(v string) {
 	o.GetActualInstance().(getResult).SetParameterId(v)
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterQuantity147) GetValueString() string {
+	type getResult interface {
+		GetValueString() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueString()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterQuantity147) GetValueStringOk() (*string, bool) {
+	type getResult interface {
+		GetValueStringOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueStringOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterQuantity147) HasValueString() bool {
+	type getResult interface {
+		HasValueString() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasValueString()
+	} else {
+		return false
+	}
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterQuantity147) SetValueString(v string) {
+	type getResult interface {
+		SetValueString(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetValueString(v)
+}
+
 // GetExpression returns the Expression field value if set, zero value otherwise.
 func (o *BTMParameterQuantity147) GetExpression() string {
 	type getResult interface {
@@ -559,6 +609,7 @@ type base_BTMParameterQuantity147 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string  `json:"parameterId,omitempty"`
+	ValueString *string  `json:"valueString,omitempty"`
 	Expression  *string  `json:"expression,omitempty"`
 	IsInteger   *bool    `json:"isInteger,omitempty"`
 	Units       *string  `json:"units,omitempty"`
@@ -710,6 +761,38 @@ func (o *base_BTMParameterQuantity147) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *base_BTMParameterQuantity147) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameterQuantity147) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *base_BTMParameterQuantity147) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *base_BTMParameterQuantity147) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetExpression returns the Expression field value if set, zero value otherwise.
 func (o *base_BTMParameterQuantity147) GetExpression() string {
 	if o == nil || o.Expression == nil {
@@ -859,6 +942,9 @@ func (o base_BTMParameterQuantity147) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.Expression != nil {
 		toSerialize["expression"] = o.Expression

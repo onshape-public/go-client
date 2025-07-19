@@ -1,6 +1,6 @@
 # \TaskApi
 
-All URIs are relative to *https://cad.onshape.com/api/v11*
+All URIs are relative to *https://cad.onshape.com/api/v12*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## GetActionItems
 
-> BTTaskListResponse GetActionItems(ctx).UserId(userId).Offset(offset).Limit(limit).Status(status).Role(role).Order(order).Type_(type_).DocumentId(documentId).Execute()
+> BTTaskListResponse GetActionItems(ctx).UserId(userId).Status(status).Role(role).Order(order).Type_(type_).DocumentId(documentId).Offset(offset).Limit(limit).Execute()
 
 Lists tasks assigned to the specified user
 
@@ -98,17 +98,17 @@ import (
 
 func main() {
     userId := "userId_example" // string |  (optional)
-    offset := int32(56) // int32 |  (optional) (default to 0)
-    limit := int32(56) // int32 |  (optional) (default to 50)
     status := int32(56) // int32 |  (optional) (default to 2)
     role := int32(56) // int32 |  (optional) (default to 1)
     order := int32(56) // int32 |  (optional) (default to 1)
     type_ := []string{"Inner_example"} // []string |  (optional)
     documentId := "documentId_example" // string |  (optional)
+    offset := int32(56) // int32 |  (optional) (default to 0)
+    limit := int32(56) // int32 |  (optional) (default to 50)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.TaskApi.GetActionItems(context.Background()).UserId(userId).Offset(offset).Limit(limit).Status(status).Role(role).Order(order).Type_(type_).DocumentId(documentId).Execute()
+    resp, r, err := apiClient.TaskApi.GetActionItems(context.Background()).UserId(userId).Status(status).Role(role).Order(order).Type_(type_).DocumentId(documentId).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaskApi.GetActionItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,13 +130,13 @@ Other parameters are passed through a pointer to a apiGetActionItemsRequest stru
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string** |  | 
- **offset** | **int32** |  | [default to 0]
- **limit** | **int32** |  | [default to 50]
  **status** | **int32** |  | [default to 2]
  **role** | **int32** |  | [default to 1]
  **order** | **int32** |  | [default to 1]
  **type_** | **[]string** |  | 
  **documentId** | **string** |  | 
+ **offset** | **int32** |  | [default to 0]
+ **limit** | **int32** |  | [default to 50]
 
 ### Return type
 

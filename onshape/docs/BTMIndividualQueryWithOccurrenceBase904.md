@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FullPathAsString** | Pointer to **string** |  | [optional] 
+**NodeIdFromCurrentQuery** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
+**QueryPath** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -78,6 +80,31 @@ SetFullPathAsString sets FullPathAsString field to given value.
 
 HasFullPathAsString returns a boolean if a field has been set.
 
+### GetNodeIdFromCurrentQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetNodeIdFromCurrentQuery() string`
+
+GetNodeIdFromCurrentQuery returns the NodeIdFromCurrentQuery field if non-nil, zero value otherwise.
+
+### GetNodeIdFromCurrentQueryOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetNodeIdFromCurrentQueryOk() (*string, bool)`
+
+GetNodeIdFromCurrentQueryOk returns a tuple with the NodeIdFromCurrentQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeIdFromCurrentQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetNodeIdFromCurrentQuery(v string)`
+
+SetNodeIdFromCurrentQuery sets NodeIdFromCurrentQuery field to given value.
+
+### HasNodeIdFromCurrentQuery
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasNodeIdFromCurrentQuery() bool`
+
+HasNodeIdFromCurrentQuery returns a boolean if a field has been set.
+
 ### GetOccurrence
 
 `func (o *BTMIndividualQueryWithOccurrenceBase904) GetOccurrence() BTOccurrence74`
@@ -127,6 +154,31 @@ SetPath sets Path field to given value.
 `func (o *BTMIndividualQueryWithOccurrenceBase904) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+### GetQueryPath
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQueryPath() []string`
+
+GetQueryPath returns the QueryPath field if non-nil, zero value otherwise.
+
+### GetQueryPathOk
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) GetQueryPathOk() (*[]string, bool)`
+
+GetQueryPathOk returns a tuple with the QueryPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetQueryPath
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) SetQueryPath(v []string)`
+
+SetQueryPath sets QueryPath field to given value.
+
+### HasQueryPath
+
+`func (o *BTMIndividualQueryWithOccurrenceBase904) HasQueryPath() bool`
+
+HasQueryPath returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

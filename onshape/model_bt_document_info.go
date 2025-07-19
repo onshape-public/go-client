@@ -142,6 +142,56 @@ func (o *BTDocumentInfo) SetConnectionName(v string) {
 	o.GetActualInstance().(getResult).SetConnectionName(v)
 }
 
+// GetConnectionNames returns the ConnectionNames field value if set, zero value otherwise.
+func (o *BTDocumentInfo) GetConnectionNames() []string {
+	type getResult interface {
+		GetConnectionNames() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionNames()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetConnectionNamesOk returns a tuple with the ConnectionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentInfo) GetConnectionNamesOk() ([]string, bool) {
+	type getResult interface {
+		GetConnectionNamesOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionNamesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasConnectionNames returns a boolean if a field has been set.
+func (o *BTDocumentInfo) HasConnectionNames() bool {
+	type getResult interface {
+		HasConnectionNames() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasConnectionNames()
+	} else {
+		return false
+	}
+}
+
+// SetConnectionNames gets a reference to the given []string and assigns it to the ConnectionNames field.
+func (o *BTDocumentInfo) SetConnectionNames(v []string) {
+	type getResult interface {
+		SetConnectionNames(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetConnectionNames(v)
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetCreatedAt() JSONTime {
 	type getResult interface {
@@ -490,6 +540,56 @@ func (o *BTDocumentInfo) SetIsEnterpriseOwned(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsEnterpriseOwned(v)
+}
+
+// GetIsExternalConnectionResource returns the IsExternalConnectionResource field value if set, zero value otherwise.
+func (o *BTDocumentInfo) GetIsExternalConnectionResource() bool {
+	type getResult interface {
+		GetIsExternalConnectionResource() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternalConnectionResource()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentInfo) GetIsExternalConnectionResourceOk() (*bool, bool) {
+	type getResult interface {
+		GetIsExternalConnectionResourceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternalConnectionResourceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsExternalConnectionResource returns a boolean if a field has been set.
+func (o *BTDocumentInfo) HasIsExternalConnectionResource() bool {
+	type getResult interface {
+		HasIsExternalConnectionResource() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsExternalConnectionResource()
+	} else {
+		return false
+	}
+}
+
+// SetIsExternalConnectionResource gets a reference to the given bool and assigns it to the IsExternalConnectionResource field.
+func (o *BTDocumentInfo) SetIsExternalConnectionResource(v bool) {
+	type getResult interface {
+		SetIsExternalConnectionResource(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsExternalConnectionResource(v)
 }
 
 // GetIsMutable returns the IsMutable field value if set, zero value otherwise.
@@ -2879,6 +2979,56 @@ func (o *BTDocumentInfo) SetUserAccountLimitsBreached(v bool) {
 	o.GetActualInstance().(getResult).SetUserAccountLimitsBreached(v)
 }
 
+// GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
+func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermission() bool {
+	type getResult interface {
+		GetCanImportViaConnectionGlobalPermission() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCanImportViaConnectionGlobalPermission()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetCanImportViaConnectionGlobalPermissionOk returns a tuple with the CanImportViaConnectionGlobalPermission field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool) {
+	type getResult interface {
+		GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCanImportViaConnectionGlobalPermissionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCanImportViaConnectionGlobalPermission returns a boolean if a field has been set.
+func (o *BTDocumentInfo) HasCanImportViaConnectionGlobalPermission() bool {
+	type getResult interface {
+		HasCanImportViaConnectionGlobalPermission() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCanImportViaConnectionGlobalPermission()
+	} else {
+		return false
+	}
+}
+
+// SetCanImportViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanImportViaConnectionGlobalPermission field.
+func (o *BTDocumentInfo) SetCanImportViaConnectionGlobalPermission(v bool) {
+	type getResult interface {
+		SetCanImportViaConnectionGlobalPermission(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetCanImportViaConnectionGlobalPermission(v)
+}
+
 // GetDocumentThumbnailElementId returns the DocumentThumbnailElementId field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetDocumentThumbnailElementId() string {
 	type getResult interface {
@@ -3169,21 +3319,23 @@ func (v *NullableBTDocumentInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDocumentInfo struct {
-	CanMove        *bool                   `json:"canMove,omitempty"`
-	ConnectionName *string                 `json:"connectionName,omitempty"`
-	CreatedAt      *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy      *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description    *string                 `json:"description,omitempty"`
+	CanMove         *bool                   `json:"canMove,omitempty"`
+	ConnectionName  *string                 `json:"connectionName,omitempty"`
+	ConnectionNames []string                `json:"connectionNames,omitempty"`
+	CreatedAt       *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy       *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description     *string                 `json:"description,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id                *string                 `json:"id,omitempty"`
-	IsContainer       *bool                   `json:"isContainer,omitempty"`
-	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
-	IsMutable         *bool                   `json:"isMutable,omitempty"`
-	JsonType          string                  `json:"jsonType"`
-	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
-	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
+	Id                           *string                 `json:"id,omitempty"`
+	IsContainer                  *bool                   `json:"isContainer,omitempty"`
+	IsEnterpriseOwned            *bool                   `json:"isEnterpriseOwned,omitempty"`
+	IsExternalConnectionResource *bool                   `json:"isExternalConnectionResource,omitempty"`
+	IsMutable                    *bool                   `json:"isMutable,omitempty"`
+	JsonType                     string                  `json:"jsonType"`
+	ModifiedAt                   *JSONTime               `json:"modifiedAt,omitempty"`
+	ModifiedBy                   *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
@@ -3192,48 +3344,49 @@ type base_BTDocumentInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                             *string               `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed              *bool                 `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport               *bool                 `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                          *bool                 `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan            *bool                 `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                    *string               `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode             *BTVersionGraphMode   `json:"defaultVersionGraphMode,omitempty"`
-	DefaultVersionGraphShowAutoVersions *bool                 `json:"defaultVersionGraphShowAutoVersions,omitempty"`
-	DefaultVersionGraphShowMerges       *bool                 `json:"defaultVersionGraphShowMerges,omitempty"`
-	DefaultWorkspace                    *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                      []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
-	DocumentType                        *int32                `json:"documentType,omitempty"`
-	ForceExportRules                    *bool                 `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects       *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables              *bool                 `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                          *bool                 `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow              *bool                 `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                  *bool                 `json:"likedByCurrentUser,omitempty"`
-	Likes                               *int64                `json:"likes,omitempty"`
-	NotRevisionManaged                  *bool                 `json:"notRevisionManaged,omitempty"`
-	Notes                               *string               `json:"notes,omitempty"`
-	NumberOfTimesCopied                 *int64                `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced             *int64                `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                            *string               `json:"parentId,omitempty"`
-	Permission                          *BTOldPermission      `json:"permission,omitempty"`
-	PermissionSet                       []string              `json:"permissionSet,omitempty"`
-	Public                              *bool                 `json:"public,omitempty"`
-	PublishedVersionId                  *string               `json:"publishedVersionId,omitempty"`
-	RecentVersion                       *BTBaseInfo           `json:"recentVersion,omitempty"`
-	Sequence                            *string               `json:"sequence,omitempty"`
-	SupportTeamUserAndShared            *bool                 `json:"supportTeamUserAndShared,omitempty"`
-	Tags                                []string              `json:"tags,omitempty"`
-	Thumbnail                           *BTThumbnailInfo      `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate   *int32                `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating             *int32                `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                               *bool                 `json:"trash,omitempty"`
-	TrashedAt                           *JSONTime             `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached           *bool                 `json:"userAccountLimitsBreached,omitempty"`
-	DocumentThumbnailElementId          *string               `json:"documentThumbnailElementId,omitempty"`
-	DuplicateNameViolationError         *string               `json:"duplicateNameViolationError,omitempty"`
-	IsUpgradedToLatestVersion           *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
-	TracingEnabled                      *bool                 `json:"tracingEnabled,omitempty"`
+	ViewRef                                *string               `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed                 *bool                 `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport                  *bool                 `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                             *bool                 `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan               *bool                 `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId                       *string               `json:"defaultElementId,omitempty"`
+	DefaultVersionGraphMode                *BTVersionGraphMode   `json:"defaultVersionGraphMode,omitempty"`
+	DefaultVersionGraphShowAutoVersions    *bool                 `json:"defaultVersionGraphShowAutoVersions,omitempty"`
+	DefaultVersionGraphShowMerges          *bool                 `json:"defaultVersionGraphShowMerges,omitempty"`
+	DefaultWorkspace                       *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                         []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
+	DocumentType                           *int32                `json:"documentType,omitempty"`
+	ForceExportRules                       *bool                 `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects          *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables                 *bool                 `json:"hasRelevantInsertables,omitempty"`
+	IsOrphaned                             *bool                 `json:"isOrphaned,omitempty"`
+	IsUsingManagedWorkflow                 *bool                 `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser                     *bool                 `json:"likedByCurrentUser,omitempty"`
+	Likes                                  *int64                `json:"likes,omitempty"`
+	NotRevisionManaged                     *bool                 `json:"notRevisionManaged,omitempty"`
+	Notes                                  *string               `json:"notes,omitempty"`
+	NumberOfTimesCopied                    *int64                `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced                *int64                `json:"numberOfTimesReferenced,omitempty"`
+	ParentId                               *string               `json:"parentId,omitempty"`
+	Permission                             *BTOldPermission      `json:"permission,omitempty"`
+	PermissionSet                          []string              `json:"permissionSet,omitempty"`
+	Public                                 *bool                 `json:"public,omitempty"`
+	PublishedVersionId                     *string               `json:"publishedVersionId,omitempty"`
+	RecentVersion                          *BTBaseInfo           `json:"recentVersion,omitempty"`
+	Sequence                               *string               `json:"sequence,omitempty"`
+	SupportTeamUserAndShared               *bool                 `json:"supportTeamUserAndShared,omitempty"`
+	Tags                                   []string              `json:"tags,omitempty"`
+	Thumbnail                              *BTThumbnailInfo      `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate      *int32                `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating                *int32                `json:"totalWorkspacesUpdating,omitempty"`
+	Trash                                  *bool                 `json:"trash,omitempty"`
+	TrashedAt                              *JSONTime             `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached              *bool                 `json:"userAccountLimitsBreached,omitempty"`
+	CanImportViaConnectionGlobalPermission *bool                 `json:"canImportViaConnectionGlobalPermission,omitempty"`
+	DocumentThumbnailElementId             *string               `json:"documentThumbnailElementId,omitempty"`
+	DuplicateNameViolationError            *string               `json:"duplicateNameViolationError,omitempty"`
+	IsUpgradedToLatestVersion              *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
+	TracingEnabled                         *bool                 `json:"tracingEnabled,omitempty"`
 }
 
 // Newbase_BTDocumentInfo instantiates a new base_BTDocumentInfo object
@@ -3316,6 +3469,38 @@ func (o *base_BTDocumentInfo) HasConnectionName() bool {
 // SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
 func (o *base_BTDocumentInfo) SetConnectionName(v string) {
 	o.ConnectionName = &v
+}
+
+// GetConnectionNames returns the ConnectionNames field value if set, zero value otherwise.
+func (o *base_BTDocumentInfo) GetConnectionNames() []string {
+	if o == nil || o.ConnectionNames == nil {
+		var ret []string
+		return ret
+	}
+	return o.ConnectionNames
+}
+
+// GetConnectionNamesOk returns a tuple with the ConnectionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentInfo) GetConnectionNamesOk() ([]string, bool) {
+	if o == nil || o.ConnectionNames == nil {
+		return nil, false
+	}
+	return o.ConnectionNames, true
+}
+
+// HasConnectionNames returns a boolean if a field has been set.
+func (o *base_BTDocumentInfo) HasConnectionNames() bool {
+	if o != nil && o.ConnectionNames != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionNames gets a reference to the given []string and assigns it to the ConnectionNames field.
+func (o *base_BTDocumentInfo) SetConnectionNames(v []string) {
+	o.ConnectionNames = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -3540,6 +3725,38 @@ func (o *base_BTDocumentInfo) HasIsEnterpriseOwned() bool {
 // SetIsEnterpriseOwned gets a reference to the given bool and assigns it to the IsEnterpriseOwned field.
 func (o *base_BTDocumentInfo) SetIsEnterpriseOwned(v bool) {
 	o.IsEnterpriseOwned = &v
+}
+
+// GetIsExternalConnectionResource returns the IsExternalConnectionResource field value if set, zero value otherwise.
+func (o *base_BTDocumentInfo) GetIsExternalConnectionResource() bool {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternalConnectionResource
+}
+
+// GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentInfo) GetIsExternalConnectionResourceOk() (*bool, bool) {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		return nil, false
+	}
+	return o.IsExternalConnectionResource, true
+}
+
+// HasIsExternalConnectionResource returns a boolean if a field has been set.
+func (o *base_BTDocumentInfo) HasIsExternalConnectionResource() bool {
+	if o != nil && o.IsExternalConnectionResource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternalConnectionResource gets a reference to the given bool and assigns it to the IsExternalConnectionResource field.
+func (o *base_BTDocumentInfo) SetIsExternalConnectionResource(v bool) {
+	o.IsExternalConnectionResource = &v
 }
 
 // GetIsMutable returns the IsMutable field value if set, zero value otherwise.
@@ -5070,6 +5287,38 @@ func (o *base_BTDocumentInfo) SetUserAccountLimitsBreached(v bool) {
 	o.UserAccountLimitsBreached = &v
 }
 
+// GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
+func (o *base_BTDocumentInfo) GetCanImportViaConnectionGlobalPermission() bool {
+	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanImportViaConnectionGlobalPermission
+}
+
+// GetCanImportViaConnectionGlobalPermissionOk returns a tuple with the CanImportViaConnectionGlobalPermission field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentInfo) GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool) {
+	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
+		return nil, false
+	}
+	return o.CanImportViaConnectionGlobalPermission, true
+}
+
+// HasCanImportViaConnectionGlobalPermission returns a boolean if a field has been set.
+func (o *base_BTDocumentInfo) HasCanImportViaConnectionGlobalPermission() bool {
+	if o != nil && o.CanImportViaConnectionGlobalPermission != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanImportViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanImportViaConnectionGlobalPermission field.
+func (o *base_BTDocumentInfo) SetCanImportViaConnectionGlobalPermission(v bool) {
+	o.CanImportViaConnectionGlobalPermission = &v
+}
+
 // GetDocumentThumbnailElementId returns the DocumentThumbnailElementId field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetDocumentThumbnailElementId() string {
 	if o == nil || o.DocumentThumbnailElementId == nil {
@@ -5206,6 +5455,9 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.ConnectionName != nil {
 		toSerialize["connectionName"] = o.ConnectionName
 	}
+	if o.ConnectionNames != nil {
+		toSerialize["connectionNames"] = o.ConnectionNames
+	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt
 	}
@@ -5226,6 +5478,9 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsEnterpriseOwned != nil {
 		toSerialize["isEnterpriseOwned"] = o.IsEnterpriseOwned
+	}
+	if o.IsExternalConnectionResource != nil {
+		toSerialize["isExternalConnectionResource"] = o.IsExternalConnectionResource
 	}
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable
@@ -5370,6 +5625,9 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.UserAccountLimitsBreached != nil {
 		toSerialize["userAccountLimitsBreached"] = o.UserAccountLimitsBreached
+	}
+	if o.CanImportViaConnectionGlobalPermission != nil {
+		toSerialize["canImportViaConnectionGlobalPermission"] = o.CanImportViaConnectionGlobalPermission
 	}
 	if o.DocumentThumbnailElementId != nil {
 		toSerialize["documentThumbnailElementId"] = o.DocumentThumbnailElementId
