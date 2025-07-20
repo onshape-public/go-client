@@ -25,6 +25,11 @@ func (o *BTMSuppressionStateConfigured2598) AsBTMSuppressionState1924() *BTMSupp
 	return &BTMSuppressionState1924{o}
 }
 
+// BTMSuppressionStateExpression1811AsBTMSuppressionState1924 is a convenience function that returns BTMSuppressionStateExpression1811 wrapped in BTMSuppressionState1924
+func (o *BTMSuppressionStateExpression1811) AsBTMSuppressionState1924() *BTMSuppressionState1924 {
+	return &BTMSuppressionState1924{o}
+}
+
 // NewBTMSuppressionState1924 instantiates a new BTMSuppressionState1924 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -213,6 +218,20 @@ func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMSuppressionState1924 = nil
 			return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateConfigured2598: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSuppressionStateExpression-1811'
+	if jsonDict["btType"] == "BTMSuppressionStateExpression-1811" {
+		// try to unmarshal JSON data into BTMSuppressionStateExpression1811
+		var qr *BTMSuppressionStateExpression1811
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSuppressionState1924 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSuppressionState1924 = nil
+			return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateExpression1811: %s", err.Error())
 		}
 	}
 

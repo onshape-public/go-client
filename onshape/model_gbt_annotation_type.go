@@ -20,12 +20,14 @@ type GBTAnnotationType string
 
 // List of GBTAnnotationType
 const (
-	GBTAnnotationTypeDatum             GBTAnnotationType = "DATUM"
-	GBTAnnotationTypeGtol              GBTAnnotationType = "GTOL"
-	GBTAnnotationTypeDimensionPosition GBTAnnotationType = "DIMENSION_POSITION"
-	GBTAnnotationTypeDimension         GBTAnnotationType = "DIMENSION"
-	GBTAnnotationTypeWeld              GBTAnnotationType = "WELD"
-	GBTAnnotationTypeUnknown           GBTAnnotationType = "UNKNOWN"
+	GBTAnnotationTypeDatum               GBTAnnotationType = "DATUM"
+	GBTAnnotationTypeGtol                GBTAnnotationType = "GTOL"
+	GBTAnnotationTypeDimensionPosition   GBTAnnotationType = "DIMENSION_POSITION"
+	GBTAnnotationTypeDimension           GBTAnnotationType = "DIMENSION"
+	GBTAnnotationTypeWeld                GBTAnnotationType = "WELD"
+	GBTAnnotationTypeHoleCallout         GBTAnnotationType = "HOLE_CALLOUT"
+	GBTAnnotationTypeHoleCalloutPosition GBTAnnotationType = "HOLE_CALLOUT_POSITION"
+	GBTAnnotationTypeUnknown             GBTAnnotationType = "UNKNOWN"
 )
 
 // All allowed values of GBTAnnotationType enum
@@ -35,6 +37,8 @@ var AllowedGBTAnnotationTypeEnumValues = []GBTAnnotationType{
 	"DIMENSION_POSITION",
 	"DIMENSION",
 	"WELD",
+	"HOLE_CALLOUT",
+	"HOLE_CALLOUT_POSITION",
 	"UNKNOWN",
 }
 

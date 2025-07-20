@@ -18,6 +18,7 @@ import (
 type BTDocumentSearchHitInfo struct {
 	DocumentId             *string                `json:"documentId,omitempty"`
 	ElementName            *string                `json:"elementName,omitempty"`
+	FolderId               *string                `json:"folderId,omitempty"`
 	HighlightedFields      *map[string][]string   `json:"highlightedFields,omitempty"`
 	Hit                    *BTLegacySearchHit     `json:"hit,omitempty"`
 	HitId                  *string                `json:"hitId,omitempty"`
@@ -108,6 +109,38 @@ func (o *BTDocumentSearchHitInfo) HasElementName() bool {
 // SetElementName gets a reference to the given string and assigns it to the ElementName field.
 func (o *BTDocumentSearchHitInfo) SetElementName(v string) {
 	o.ElementName = &v
+}
+
+// GetFolderId returns the FolderId field value if set, zero value otherwise.
+func (o *BTDocumentSearchHitInfo) GetFolderId() string {
+	if o == nil || o.FolderId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FolderId
+}
+
+// GetFolderIdOk returns a tuple with the FolderId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSearchHitInfo) GetFolderIdOk() (*string, bool) {
+	if o == nil || o.FolderId == nil {
+		return nil, false
+	}
+	return o.FolderId, true
+}
+
+// HasFolderId returns a boolean if a field has been set.
+func (o *BTDocumentSearchHitInfo) HasFolderId() bool {
+	if o != nil && o.FolderId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFolderId gets a reference to the given string and assigns it to the FolderId field.
+func (o *BTDocumentSearchHitInfo) SetFolderId(v string) {
+	o.FolderId = &v
 }
 
 // GetHighlightedFields returns the HighlightedFields field value if set, zero value otherwise.
@@ -405,6 +438,9 @@ func (o BTDocumentSearchHitInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementName != nil {
 		toSerialize["elementName"] = o.ElementName
+	}
+	if o.FolderId != nil {
+		toSerialize["folderId"] = o.FolderId
 	}
 	if o.HighlightedFields != nil {
 		toSerialize["highlightedFields"] = o.HighlightedFields

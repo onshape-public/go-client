@@ -142,27 +142,17 @@ type ApiGetActionItemsRequest struct {
 	ctx        context.Context
 	ApiService *TaskApiService
 	userId     *string
-	offset     *int32
-	limit      *int32
 	status     *int32
 	role       *int32
 	order      *int32
 	type_      *[]string
 	documentId *string
+	offset     *int32
+	limit      *int32
 }
 
 func (r ApiGetActionItemsRequest) UserId(userId string) ApiGetActionItemsRequest {
 	r.userId = &userId
-	return r
-}
-
-func (r ApiGetActionItemsRequest) Offset(offset int32) ApiGetActionItemsRequest {
-	r.offset = &offset
-	return r
-}
-
-func (r ApiGetActionItemsRequest) Limit(limit int32) ApiGetActionItemsRequest {
-	r.limit = &limit
 	return r
 }
 
@@ -188,6 +178,16 @@ func (r ApiGetActionItemsRequest) Type_(type_ []string) ApiGetActionItemsRequest
 
 func (r ApiGetActionItemsRequest) DocumentId(documentId string) ApiGetActionItemsRequest {
 	r.documentId = &documentId
+	return r
+}
+
+func (r ApiGetActionItemsRequest) Offset(offset int32) ApiGetActionItemsRequest {
+	r.offset = &offset
+	return r
+}
+
+func (r ApiGetActionItemsRequest) Limit(limit int32) ApiGetActionItemsRequest {
+	r.limit = &limit
 	return r
 }
 
@@ -235,12 +235,6 @@ func (a *TaskApiService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTT
 	if r.userId != nil {
 		localVarQueryParams.Add("userId", parameterToString(*r.userId, ""))
 	}
-	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	}
-	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	}
 	if r.status != nil {
 		localVarQueryParams.Add("status", parameterToString(*r.status, ""))
 	}
@@ -263,6 +257,12 @@ func (a *TaskApiService) GetActionItemsExecute(r ApiGetActionItemsRequest) (*BTT
 	}
 	if r.documentId != nil {
 		localVarQueryParams.Add("documentId", parameterToString(*r.documentId, ""))
+	}
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

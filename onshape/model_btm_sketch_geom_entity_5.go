@@ -412,6 +412,56 @@ func (o *BTMSketchGeomEntity5) SetIndex(v int32) {
 	o.GetActualInstance().(getResult).SetIndex(v)
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTMSketchGeomEntity5) GetName() string {
+	type getResult interface {
+		GetName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchGeomEntity5) GetNameOk() (*string, bool) {
+	type getResult interface {
+		GetNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTMSketchGeomEntity5) HasName() bool {
+	type getResult interface {
+		HasName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasName()
+	} else {
+		return false
+	}
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTMSketchGeomEntity5) SetName(v string) {
+	type getResult interface {
+		SetName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetName(v)
+}
+
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *BTMSketchGeomEntity5) GetNamespace() string {
 	type getResult interface {
@@ -1017,6 +1067,7 @@ type base_BTMSketchGeomEntity5 struct {
 	EntityId                            *string                   `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
 	Index                               *int32                    `json:"index,omitempty"`
+	Name                                *string                   `json:"name,omitempty"`
 	Namespace                           *string                   `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
 	ControlBoxIds                       []string                  `json:"controlBoxIds,omitempty"`
@@ -1267,6 +1318,38 @@ func (o *base_BTMSketchGeomEntity5) HasIndex() bool {
 // SetIndex gets a reference to the given int32 and assigns it to the Index field.
 func (o *base_BTMSketchGeomEntity5) SetIndex(v int32) {
 	o.Index = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *base_BTMSketchGeomEntity5) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchGeomEntity5) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *base_BTMSketchGeomEntity5) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *base_BTMSketchGeomEntity5) SetName(v string) {
+	o.Name = &v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -1587,6 +1670,9 @@ func (o base_BTMSketchGeomEntity5) MarshalJSON() ([]byte, error) {
 	}
 	if o.Index != nil {
 		toSerialize["index"] = o.Index
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace

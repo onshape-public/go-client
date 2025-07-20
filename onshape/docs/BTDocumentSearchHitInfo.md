@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementName** | Pointer to **string** |  | [optional] 
+**FolderId** | Pointer to **string** |  | [optional] 
 **HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
 **Hit** | Pointer to [**BTLegacySearchHit**](BTLegacySearchHit.md) |  | [optional] 
 **HitId** | Pointer to **string** |  | [optional] 
@@ -84,6 +85,31 @@ SetElementName sets ElementName field to given value.
 `func (o *BTDocumentSearchHitInfo) HasElementName() bool`
 
 HasElementName returns a boolean if a field has been set.
+
+### GetFolderId
+
+`func (o *BTDocumentSearchHitInfo) GetFolderId() string`
+
+GetFolderId returns the FolderId field if non-nil, zero value otherwise.
+
+### GetFolderIdOk
+
+`func (o *BTDocumentSearchHitInfo) GetFolderIdOk() (*string, bool)`
+
+GetFolderIdOk returns a tuple with the FolderId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFolderId
+
+`func (o *BTDocumentSearchHitInfo) SetFolderId(v string)`
+
+SetFolderId sets FolderId field to given value.
+
+### HasFolderId
+
+`func (o *BTDocumentSearchHitInfo) HasFolderId() bool`
+
+HasFolderId returns a boolean if a field has been set.
 
 ### GetHighlightedFields
 

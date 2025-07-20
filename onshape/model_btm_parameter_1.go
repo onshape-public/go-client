@@ -402,6 +402,56 @@ func (o *BTMParameter1) SetParameterId(v string) {
 	o.GetActualInstance().(getResult).SetParameterId(v)
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameter1) GetValueString() string {
+	type getResult interface {
+		GetValueString() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueString()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameter1) GetValueStringOk() (*string, bool) {
+	type getResult interface {
+		GetValueStringOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetValueStringOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameter1) HasValueString() bool {
+	type getResult interface {
+		HasValueString() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasValueString()
+	} else {
+		return false
+	}
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameter1) SetValueString(v string) {
+	type getResult interface {
+		SetValueString(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetValueString(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMParameter1) UnmarshalJSON(data []byte) error {
 	var err error
@@ -948,6 +998,7 @@ type base_BTMParameter1 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string `json:"parameterId,omitempty"`
+	ValueString *string `json:"valueString,omitempty"`
 }
 
 // Newbase_BTMParameter1 instantiates a new base_BTMParameter1 object
@@ -1095,6 +1146,38 @@ func (o *base_BTMParameter1) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *base_BTMParameter1) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameter1) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *base_BTMParameter1) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *base_BTMParameter1) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 func (o base_BTMParameter1) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -1108,6 +1191,9 @@ func (o base_BTMParameter1) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	return json.Marshal(toSerialize)
 }

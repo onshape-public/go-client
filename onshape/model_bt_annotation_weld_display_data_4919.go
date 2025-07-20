@@ -28,6 +28,7 @@ type BTAnnotationWeldDisplayData4919 struct {
 	IsoFlip          *bool                  `json:"isoFlip,omitempty"`
 	JointType        *GBTWeldJointType      `json:"jointType,omitempty"`
 	LowerContourType *GBTWeldContourType    `json:"lowerContourType,omitempty"`
+	LowerFinishing   *GBTWeldFinishing      `json:"lowerFinishing,omitempty"`
 	LowerFlag        *bool                  `json:"lowerFlag,omitempty"`
 	LowerGroove      *float64               `json:"lowerGroove,omitempty"`
 	LowerRootOpening *float64               `json:"lowerRootOpening,omitempty"`
@@ -37,7 +38,9 @@ type BTAnnotationWeldDisplayData4919 struct {
 	LowerValueTwo    *float64               `json:"lowerValueTwo,omitempty"`
 	LowerWeldType    *GBTWeldType           `json:"lowerWeldType,omitempty"`
 	Reference        *string                `json:"reference,omitempty"`
+	Standard         *GBTWeldStandard       `json:"standard,omitempty"`
 	UpperContourType *GBTWeldContourType    `json:"upperContourType,omitempty"`
+	UpperFinishing   *GBTWeldFinishing      `json:"upperFinishing,omitempty"`
 	UpperFlag        *bool                  `json:"upperFlag,omitempty"`
 	UpperGroove      *float64               `json:"upperGroove,omitempty"`
 	UpperRootOpening *float64               `json:"upperRootOpening,omitempty"`
@@ -417,6 +420,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetLowerContourType(v GBTWeldContourTy
 	o.LowerContourType = &v
 }
 
+// GetLowerFinishing returns the LowerFinishing field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerFinishing() GBTWeldFinishing {
+	if o == nil || o.LowerFinishing == nil {
+		var ret GBTWeldFinishing
+		return ret
+	}
+	return *o.LowerFinishing
+}
+
+// GetLowerFinishingOk returns a tuple with the LowerFinishing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetLowerFinishingOk() (*GBTWeldFinishing, bool) {
+	if o == nil || o.LowerFinishing == nil {
+		return nil, false
+	}
+	return o.LowerFinishing, true
+}
+
+// HasLowerFinishing returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasLowerFinishing() bool {
+	if o != nil && o.LowerFinishing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLowerFinishing gets a reference to the given GBTWeldFinishing and assigns it to the LowerFinishing field.
+func (o *BTAnnotationWeldDisplayData4919) SetLowerFinishing(v GBTWeldFinishing) {
+	o.LowerFinishing = &v
+}
+
 // GetLowerFlag returns the LowerFlag field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetLowerFlag() bool {
 	if o == nil || o.LowerFlag == nil {
@@ -705,6 +740,38 @@ func (o *BTAnnotationWeldDisplayData4919) SetReference(v string) {
 	o.Reference = &v
 }
 
+// GetStandard returns the Standard field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetStandard() GBTWeldStandard {
+	if o == nil || o.Standard == nil {
+		var ret GBTWeldStandard
+		return ret
+	}
+	return *o.Standard
+}
+
+// GetStandardOk returns a tuple with the Standard field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetStandardOk() (*GBTWeldStandard, bool) {
+	if o == nil || o.Standard == nil {
+		return nil, false
+	}
+	return o.Standard, true
+}
+
+// HasStandard returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasStandard() bool {
+	if o != nil && o.Standard != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandard gets a reference to the given GBTWeldStandard and assigns it to the Standard field.
+func (o *BTAnnotationWeldDisplayData4919) SetStandard(v GBTWeldStandard) {
+	o.Standard = &v
+}
+
 // GetUpperContourType returns the UpperContourType field value if set, zero value otherwise.
 func (o *BTAnnotationWeldDisplayData4919) GetUpperContourType() GBTWeldContourType {
 	if o == nil || o.UpperContourType == nil {
@@ -735,6 +802,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasUpperContourType() bool {
 // SetUpperContourType gets a reference to the given GBTWeldContourType and assigns it to the UpperContourType field.
 func (o *BTAnnotationWeldDisplayData4919) SetUpperContourType(v GBTWeldContourType) {
 	o.UpperContourType = &v
+}
+
+// GetUpperFinishing returns the UpperFinishing field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperFinishing() GBTWeldFinishing {
+	if o == nil || o.UpperFinishing == nil {
+		var ret GBTWeldFinishing
+		return ret
+	}
+	return *o.UpperFinishing
+}
+
+// GetUpperFinishingOk returns a tuple with the UpperFinishing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetUpperFinishingOk() (*GBTWeldFinishing, bool) {
+	if o == nil || o.UpperFinishing == nil {
+		return nil, false
+	}
+	return o.UpperFinishing, true
+}
+
+// HasUpperFinishing returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasUpperFinishing() bool {
+	if o != nil && o.UpperFinishing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpperFinishing gets a reference to the given GBTWeldFinishing and assigns it to the UpperFinishing field.
+func (o *BTAnnotationWeldDisplayData4919) SetUpperFinishing(v GBTWeldFinishing) {
+	o.UpperFinishing = &v
 }
 
 // GetUpperFlag returns the UpperFlag field value if set, zero value otherwise.
@@ -1036,6 +1135,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.LowerContourType != nil {
 		toSerialize["lowerContourType"] = o.LowerContourType
 	}
+	if o.LowerFinishing != nil {
+		toSerialize["lowerFinishing"] = o.LowerFinishing
+	}
 	if o.LowerFlag != nil {
 		toSerialize["lowerFlag"] = o.LowerFlag
 	}
@@ -1063,8 +1165,14 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
 	}
+	if o.Standard != nil {
+		toSerialize["standard"] = o.Standard
+	}
 	if o.UpperContourType != nil {
 		toSerialize["upperContourType"] = o.UpperContourType
+	}
+	if o.UpperFinishing != nil {
+		toSerialize["upperFinishing"] = o.UpperFinishing
 	}
 	if o.UpperFlag != nil {
 		toSerialize["upperFlag"] = o.UpperFlag

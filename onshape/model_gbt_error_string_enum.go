@@ -847,7 +847,7 @@ const (
 	GBTErrorStringEnumAssemblyPatternRecursiveSeed                                GBTErrorStringEnum = "ASSEMBLY_PATTERN_RECURSIVE_SEED"
 	GBTErrorStringEnumNoLinkPermissionToThisDocument                              GBTErrorStringEnum = "NO_LINK_PERMISSION_TO_THIS_DOCUMENT"
 	GBTErrorStringEnumSmFlatOpFacesNotCoplanar                                    GBTErrorStringEnum = "SM_FLAT_OP_FACES_NOT_COPLANAR"
-	GBTErrorStringEnumFlattenedSheetMetalSketchProhibted                          GBTErrorStringEnum = "FLATTENED_SHEET_METAL_SKETCH_PROHIBTED"
+	GBTErrorStringEnumFlattenedSheetMetalSketchProhibited                         GBTErrorStringEnum = "FLATTENED_SHEET_METAL_SKETCH_PROHIBITED"
 	GBTErrorStringEnumDraftSelectPullDirectionEntity                              GBTErrorStringEnum = "DRAFT_SELECT_PULL_DIRECTION_ENTITY"
 	GBTErrorStringEnumDraftParallelPartingEdge                                    GBTErrorStringEnum = "DRAFT_PARALLEL_PARTING_EDGE"
 	GBTErrorStringEnumFlattenedSheetMetalSketchOneFace                            GBTErrorStringEnum = "FLATTENED_SHEET_METAL_SKETCH_ONE_FACE"
@@ -1599,7 +1599,7 @@ const (
 	GBTErrorStringEnumEditCurveCannotEditSketchWire                               GBTErrorStringEnum = "EDIT_CURVE_CANNOT_EDIT_SKETCH_WIRE"
 	GBTErrorStringEnumEditCurveLockEndsPeriodic                                   GBTErrorStringEnum = "EDIT_CURVE_LOCK_ENDS_PERIODIC"
 	GBTErrorStringEnumEditCurveNoBestFit                                          GBTErrorStringEnum = "EDIT_CURVE_NO_BEST_FIT"
-	GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarg                          GBTErrorStringEnum = "PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG"
+	GBTErrorStringEnumPartialFilletOffsetBoundaryTooLarge                         GBTErrorStringEnum = "PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARGE"
 	GBTErrorStringEnumAssemblyMirrorInvalidSeed                                   GBTErrorStringEnum = "ASSEMBLY_MIRROR_INVALID_SEED"
 	GBTErrorStringEnumFlattenCouldNotFlatten                                      GBTErrorStringEnum = "FLATTEN_COULD_NOT_FLATTEN"
 	GBTErrorStringEnumFlattenSelectContiguousRegion                               GBTErrorStringEnum = "FLATTEN_SELECT_CONTIGUOUS_REGION"
@@ -2514,7 +2514,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ASSEMBLY_PATTERN_RECURSIVE_SEED",
 	"NO_LINK_PERMISSION_TO_THIS_DOCUMENT",
 	"SM_FLAT_OP_FACES_NOT_COPLANAR",
-	"FLATTENED_SHEET_METAL_SKETCH_PROHIBTED",
+	"FLATTENED_SHEET_METAL_SKETCH_PROHIBITED",
 	"DRAFT_SELECT_PULL_DIRECTION_ENTITY",
 	"DRAFT_PARALLEL_PARTING_EDGE",
 	"FLATTENED_SHEET_METAL_SKETCH_ONE_FACE",
@@ -3266,7 +3266,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"EDIT_CURVE_CANNOT_EDIT_SKETCH_WIRE",
 	"EDIT_CURVE_LOCK_ENDS_PERIODIC",
 	"EDIT_CURVE_NO_BEST_FIT",
-	"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARG",
+	"PARTIAL_FILLET_OFFSET_BOUNDARY_TOO_LARGE",
 	"ASSEMBLY_MIRROR_INVALID_SEED",
 	"FLATTEN_COULD_NOT_FLATTEN",
 	"FLATTEN_SELECT_CONTIGUOUS_REGION",

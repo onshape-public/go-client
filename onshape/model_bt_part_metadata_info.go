@@ -40,7 +40,7 @@ type BTPartMetadataInfo struct {
 	PartQuery            *string               `json:"partQuery,omitempty"`
 	ProductLine          *string               `json:"productLine,omitempty"`
 	Project              *string               `json:"project,omitempty"`
-	// `0: AUTOMATIC` Set automatically, like a part name |  `1: MERGED` Merged from another Part Studio | `2: FEATURE` Custom feature | `3: UNCONFIGURED` | `4: CONFIGURED` |  `5: STANDARD_CONTENT` | `6: DEFAULT` Applied from metadata property configuration | `7: COMPUTED` Non-overriden, non-configured, computed property |  `8: COMPUTED_CONFIGURED` Property is computed in this configuration; may also be configured in other configurations  `9: IMPORT` Imported properties are handled separately
+	// `0: AUTOMATIC` Set automatically, like a part name |  `1: MERGED` Merged from another Part Studio | `2: FEATURE` Custom feature | `3: UNCONFIGURED` | `4: CONFIGURED` |  `5: STANDARD_CONTENT` | `6: DEFAULT` Applied from metadata property configuration | `7: COMPUTED` Non-overridden, non-configured, computed property |  `8: COMPUTED_CONFIGURED` Property is computed in this configuration; may also be configured in other configurations  `9: IMPORT` Imported properties are handled separately
 	PropertySourceTypes              *map[string]int32    `json:"propertySourceTypes,omitempty"`
 	ReferencingConfiguredPartNodeIds []string             `json:"referencingConfiguredPartNodeIds,omitempty"`
 	Revision                         *string              `json:"revision,omitempty"`

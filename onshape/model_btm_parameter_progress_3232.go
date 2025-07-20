@@ -24,6 +24,7 @@ type BTMParameterProgress3232 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId   *string           `json:"parameterId,omitempty"`
+	ValueString   *string           `json:"valueString,omitempty"`
 	PercentDone   *float64          `json:"percentDone,omitempty"`
 	Status        *GBTComputeStatus `json:"status,omitempty"`
 	StatusMessage *string           `json:"statusMessage,omitempty"`
@@ -174,6 +175,38 @@ func (o *BTMParameterProgress3232) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterProgress3232) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterProgress3232) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterProgress3232) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterProgress3232) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetPercentDone returns the PercentDone field value if set, zero value otherwise.
 func (o *BTMParameterProgress3232) GetPercentDone() float64 {
 	if o == nil || o.PercentDone == nil {
@@ -291,6 +324,9 @@ func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.PercentDone != nil {
 		toSerialize["percentDone"] = o.PercentDone

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsoFlip** | Pointer to **bool** |  | [optional] 
 **JointType** | Pointer to [**GBTWeldJointType**](GBTWeldJointType.md) |  | [optional] 
 **LowerContourType** | Pointer to [**GBTWeldContourType**](GBTWeldContourType.md) |  | [optional] 
+**LowerFinishing** | Pointer to [**GBTWeldFinishing**](GBTWeldFinishing.md) |  | [optional] 
 **LowerFlag** | Pointer to **bool** |  | [optional] 
 **LowerGroove** | Pointer to **float64** |  | [optional] 
 **LowerRootOpening** | Pointer to **float64** |  | [optional] 
@@ -19,7 +20,9 @@ Name | Type | Description | Notes
 **LowerValueTwo** | Pointer to **float64** |  | [optional] 
 **LowerWeldType** | Pointer to [**GBTWeldType**](GBTWeldType.md) |  | [optional] 
 **Reference** | Pointer to **string** |  | [optional] 
+**Standard** | Pointer to [**GBTWeldStandard**](GBTWeldStandard.md) |  | [optional] 
 **UpperContourType** | Pointer to [**GBTWeldContourType**](GBTWeldContourType.md) |  | [optional] 
+**UpperFinishing** | Pointer to [**GBTWeldFinishing**](GBTWeldFinishing.md) |  | [optional] 
 **UpperFlag** | Pointer to **bool** |  | [optional] 
 **UpperGroove** | Pointer to **float64** |  | [optional] 
 **UpperRootOpening** | Pointer to **float64** |  | [optional] 
@@ -197,6 +200,31 @@ SetLowerContourType sets LowerContourType field to given value.
 `func (o *BTAnnotationWeldDisplayData4919) HasLowerContourType() bool`
 
 HasLowerContourType returns a boolean if a field has been set.
+
+### GetLowerFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) GetLowerFinishing() GBTWeldFinishing`
+
+GetLowerFinishing returns the LowerFinishing field if non-nil, zero value otherwise.
+
+### GetLowerFinishingOk
+
+`func (o *BTAnnotationWeldDisplayData4919) GetLowerFinishingOk() (*GBTWeldFinishing, bool)`
+
+GetLowerFinishingOk returns a tuple with the LowerFinishing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLowerFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) SetLowerFinishing(v GBTWeldFinishing)`
+
+SetLowerFinishing sets LowerFinishing field to given value.
+
+### HasLowerFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) HasLowerFinishing() bool`
+
+HasLowerFinishing returns a boolean if a field has been set.
 
 ### GetLowerFlag
 
@@ -423,6 +451,31 @@ SetReference sets Reference field to given value.
 
 HasReference returns a boolean if a field has been set.
 
+### GetStandard
+
+`func (o *BTAnnotationWeldDisplayData4919) GetStandard() GBTWeldStandard`
+
+GetStandard returns the Standard field if non-nil, zero value otherwise.
+
+### GetStandardOk
+
+`func (o *BTAnnotationWeldDisplayData4919) GetStandardOk() (*GBTWeldStandard, bool)`
+
+GetStandardOk returns a tuple with the Standard field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStandard
+
+`func (o *BTAnnotationWeldDisplayData4919) SetStandard(v GBTWeldStandard)`
+
+SetStandard sets Standard field to given value.
+
+### HasStandard
+
+`func (o *BTAnnotationWeldDisplayData4919) HasStandard() bool`
+
+HasStandard returns a boolean if a field has been set.
+
 ### GetUpperContourType
 
 `func (o *BTAnnotationWeldDisplayData4919) GetUpperContourType() GBTWeldContourType`
@@ -447,6 +500,31 @@ SetUpperContourType sets UpperContourType field to given value.
 `func (o *BTAnnotationWeldDisplayData4919) HasUpperContourType() bool`
 
 HasUpperContourType returns a boolean if a field has been set.
+
+### GetUpperFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) GetUpperFinishing() GBTWeldFinishing`
+
+GetUpperFinishing returns the UpperFinishing field if non-nil, zero value otherwise.
+
+### GetUpperFinishingOk
+
+`func (o *BTAnnotationWeldDisplayData4919) GetUpperFinishingOk() (*GBTWeldFinishing, bool)`
+
+GetUpperFinishingOk returns a tuple with the UpperFinishing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpperFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) SetUpperFinishing(v GBTWeldFinishing)`
+
+SetUpperFinishing sets UpperFinishing field to given value.
+
+### HasUpperFinishing
+
+`func (o *BTAnnotationWeldDisplayData4919) HasUpperFinishing() bool`
+
+HasUpperFinishing returns a boolean if a field has been set.
 
 ### GetUpperFlag
 

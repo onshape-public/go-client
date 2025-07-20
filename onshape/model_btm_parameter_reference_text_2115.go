@@ -24,6 +24,7 @@ type BTMParameterReferenceText2115 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId        *string                            `json:"parameterId,omitempty"`
+	ValueString        *string                            `json:"valueString,omitempty"`
 	DocumentId         *string                            `json:"documentId,omitempty"`
 	DocumentVersionId  *string                            `json:"documentVersionId,omitempty"`
 	ElementId          *string                            `json:"elementId,omitempty"`
@@ -177,6 +178,38 @@ func (o *BTMParameterReferenceText2115) HasParameterId() bool {
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
 func (o *BTMParameterReferenceText2115) SetParameterId(v string) {
 	o.ParameterId = &v
+}
+
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterReferenceText2115) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferenceText2115) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterReferenceText2115) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterReferenceText2115) SetValueString(v string) {
+	o.ValueString = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -456,6 +489,9 @@ func (o BTMParameterReferenceText2115) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId

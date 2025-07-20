@@ -2229,7 +2229,7 @@ type ApiGetFeatureScriptTableRequest struct {
 	linkDocumentId  *string
 }
 
-// May be any standard table type (i.e., &#x60;holeTable&#x60;) or custom table type name defined in FeatureScript.  If using a custom table type, &#x60;tableNamespace&#x60; must also be specified.
+// May be any standard table type (i.e., &#x60;holeTable&#x60; or &#x60;cutlistTable&#x60;) or custom table type name defined in FeatureScript.  If using a custom table type, &#x60;tableNamespace&#x60; must also be specified.
 func (r ApiGetFeatureScriptTableRequest) TableType(tableType string) ApiGetFeatureScriptTableRequest {
 	r.tableType = &tableType
 	return r
@@ -2241,7 +2241,7 @@ func (r ApiGetFeatureScriptTableRequest) Configuration(configuration string) Api
 	return r
 }
 
-// Namespace of the custom table in FS. Must be in the form of:  * &#x60;e{eid}::m{mid}&#x60; if the FS and PS tabs are in the same workspace  * &#x60;d{did}::v{vid}::e{eid}::m{mid}&#x60; if the tabs are in different workspace   Obtain the microversion id (&#x60;{mid}&#x60;) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom &#x60;tableType&#x60;.
+// Namespace of the custom table in FS. Must be in the form of:  * &#x60;e{eid}::m{mid}&#x60; if the FS and PS tabs are in the same workspace.  * &#x60;d{did}::v{vid}::e{eid}::m{mid}&#x60; if the tabs are in different workspaces.   Obtain the microversion id (&#x60;{mid}&#x60;) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom &#x60;tableType&#x60;.
 func (r ApiGetFeatureScriptTableRequest) TableNamespace(tableNamespace string) ApiGetFeatureScriptTableRequest {
 	r.tableNamespace = &tableNamespace
 	return r
