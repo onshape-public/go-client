@@ -24,6 +24,7 @@ type BTMDatabaseParameter2229 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string `json:"parameterId,omitempty"`
+	ValueString *string `json:"valueString,omitempty"`
 	DatabaseId  *string `json:"databaseId,omitempty"`
 }
 
@@ -172,6 +173,38 @@ func (o *BTMDatabaseParameter2229) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMDatabaseParameter2229) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMDatabaseParameter2229) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMDatabaseParameter2229) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMDatabaseParameter2229) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetDatabaseId returns the DatabaseId field value if set, zero value otherwise.
 func (o *BTMDatabaseParameter2229) GetDatabaseId() string {
 	if o == nil || o.DatabaseId == nil {
@@ -225,6 +258,9 @@ func (o BTMDatabaseParameter2229) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.DatabaseId != nil {
 		toSerialize["databaseId"] = o.DatabaseId

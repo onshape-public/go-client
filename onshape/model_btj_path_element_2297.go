@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// BTJPathElement2297 - Identifies a node in the json sturcture, beginning at the specified startNode.
+// BTJPathElement2297 - Identifies a node in the json structure, beginning at the specified startNode.
 type BTJPathElement2297 struct {
 	implBTJPathElement2297 interface{}
 }

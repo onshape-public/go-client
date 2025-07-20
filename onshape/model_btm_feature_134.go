@@ -40,11 +40,6 @@ func (o *BTMMateConnector66) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
-// BTAssemblySimulation2246AsBTMFeature134 is a convenience function that returns BTAssemblySimulation2246 wrapped in BTMFeature134
-func (o *BTAssemblySimulation2246) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
 // BTMAssemblyFeature21022AsBTMFeature134 is a convenience function that returns BTMAssemblyFeature21022 wrapped in BTMFeature134
 func (o *BTMAssemblyFeature21022) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
@@ -92,11 +87,6 @@ func (o *BTMGenerativeDesignFeature3195) AsBTMFeature134() *BTMFeature134 {
 
 // BTMAssemblyFeature887AsBTMFeature134 is a convenience function that returns BTMAssemblyFeature887 wrapped in BTMFeature134
 func (o *BTMAssemblyFeature887) AsBTMFeature134() *BTMFeature134 {
-	return &BTMFeature134{o}
-}
-
-// BTMLoad3538AsBTMFeature134 is a convenience function that returns BTMLoad3538 wrapped in BTMFeature134
-func (o *BTMLoad3538) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
@@ -948,20 +938,6 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTAssemblySimulation-2246'
-	if jsonDict["btType"] == "BTAssemblySimulation-2246" {
-		// try to unmarshal JSON data into BTAssemblySimulation2246
-		var qr *BTAssemblySimulation2246
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTAssemblySimulation2246: %s", err.Error())
-		}
-	}
-
 	// check if the discriminator value is 'BTExplosion-2754'
 	if jsonDict["btType"] == "BTExplosion-2754" {
 		// try to unmarshal JSON data into BTExplosion2754
@@ -1057,20 +1033,6 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMFeature134 = nil
 			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMLoad-3538'
-	if jsonDict["btType"] == "BTMLoad-3538" {
-		// try to unmarshal JSON data into BTMLoad3538
-		var qr *BTMLoad3538
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
 		}
 	}
 

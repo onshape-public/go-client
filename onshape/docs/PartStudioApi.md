@@ -1,6 +1,6 @@
 # \PartStudioApi
 
-All URIs are relative to *https://cad.onshape.com/api/v11*
+All URIs are relative to *https://cad.onshape.com/api/v12*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -1250,9 +1250,9 @@ func main() {
     wvm := "wvm_example" // string | One of w or v or m corresponding to whether a workspace or version or microversion was entered.
     wvmid := "wvmid_example" // string | Workspace (w), Version (v) or Microversion (m) ID.
     eid := "eid_example" // string | Element ID.
-    tableType := "tableType_example" // string | May be any standard table type (i.e., `holeTable`) or custom table type name defined in FeatureScript.  If using a custom table type, `tableNamespace` must also be specified.
+    tableType := "tableType_example" // string | May be any standard table type (i.e., `holeTable` or `cutlistTable`) or custom table type name defined in FeatureScript.  If using a custom table type, `tableNamespace` must also be specified.
     configuration := "configuration_example" // string | URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. (optional)
-    tableNamespace := "tableNamespace_example" // string | Namespace of the custom table in FS. Must be in the form of:  * `e{eid}::m{mid}` if the FS and PS tabs are in the same workspace  * `d{did}::v{vid}::e{eid}::m{mid}` if the tabs are in different workspace   Obtain the microversion id (`{mid}`) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom `tableType`. (optional)
+    tableNamespace := "tableNamespace_example" // string | Namespace of the custom table in FS. Must be in the form of:  * `e{eid}::m{mid}` if the FS and PS tabs are in the same workspace.  * `d{did}::v{vid}::e{eid}::m{mid}` if the tabs are in different workspaces.   Obtain the microversion id (`{mid}`) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom `tableType`. (optional)
     tableParameters := "tableParameters_example" // string | Include all parameters for the table. i.e., `customBool=false` (optional)
     partId := "partId_example" // string | ID of the part to retrieve. (optional)
     linkDocumentId := "linkDocumentId_example" // string | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. (optional)
@@ -1291,9 +1291,9 @@ Name | Type | Description  | Notes
 
 
 
- **tableType** | **string** | May be any standard table type (i.e., &#x60;holeTable&#x60;) or custom table type name defined in FeatureScript.  If using a custom table type, &#x60;tableNamespace&#x60; must also be specified. | 
+ **tableType** | **string** | May be any standard table type (i.e., &#x60;holeTable&#x60; or &#x60;cutlistTable&#x60;) or custom table type name defined in FeatureScript.  If using a custom table type, &#x60;tableNamespace&#x60; must also be specified. | 
  **configuration** | **string** | URL-encoded string of configuration values (separated by &#x60;;&#x60;). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details. | 
- **tableNamespace** | **string** | Namespace of the custom table in FS. Must be in the form of:  * &#x60;e{eid}::m{mid}&#x60; if the FS and PS tabs are in the same workspace  * &#x60;d{did}::v{vid}::e{eid}::m{mid}&#x60; if the tabs are in different workspace   Obtain the microversion id (&#x60;{mid}&#x60;) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom &#x60;tableType&#x60;. | 
+ **tableNamespace** | **string** | Namespace of the custom table in FS. Must be in the form of:  * &#x60;e{eid}::m{mid}&#x60; if the FS and PS tabs are in the same workspace.  * &#x60;d{did}::v{vid}::e{eid}::m{mid}&#x60; if the tabs are in different workspaces.   Obtain the microversion id (&#x60;{mid}&#x60;) with [this endpoint](#/Document/getElementsInDocument) called on the FS tab.  Leave blank if using a standard table. Required if using a custom &#x60;tableType&#x60;. | 
  **tableParameters** | **string** | Include all parameters for the table. i.e., &#x60;customBool&#x3D;false&#x60; | 
  **partId** | **string** | ID of the part to retrieve. | 
  **linkDocumentId** | **string** | Id of document that links to the document being accessed. This may provide additional access rights to the document. Allowed only with version (v) path parameter. | 

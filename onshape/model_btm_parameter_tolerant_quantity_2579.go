@@ -24,6 +24,7 @@ type BTMParameterTolerantQuantity2579 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string  `json:"parameterId,omitempty"`
+	ValueString *string  `json:"valueString,omitempty"`
 	Expression  *string  `json:"expression,omitempty"`
 	IsInteger   *bool    `json:"isInteger,omitempty"`
 	Units       *string  `json:"units,omitempty"`
@@ -175,6 +176,38 @@ func (o *BTMParameterTolerantQuantity2579) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterTolerantQuantity2579) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterTolerantQuantity2579) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterTolerantQuantity2579) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterTolerantQuantity2579) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetExpression returns the Expression field value if set, zero value otherwise.
 func (o *BTMParameterTolerantQuantity2579) GetExpression() string {
 	if o == nil || o.Expression == nil {
@@ -324,6 +357,9 @@ func (o BTMParameterTolerantQuantity2579) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.Expression != nil {
 		toSerialize["expression"] = o.Expression

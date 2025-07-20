@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Active** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
 **ConnectionName** | Pointer to **string** |  | [optional] 
+**ConnectionNames** | Pointer to **[]string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,6 +16,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsContainer** | Pointer to **bool** |  | [optional] 
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
+**IsExternalConnectionResource** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
@@ -146,6 +148,31 @@ SetConnectionName sets ConnectionName field to given value.
 `func (o *BTTaskTeamSummaryInfo) HasConnectionName() bool`
 
 HasConnectionName returns a boolean if a field has been set.
+
+### GetConnectionNames
+
+`func (o *BTTaskTeamSummaryInfo) GetConnectionNames() []string`
+
+GetConnectionNames returns the ConnectionNames field if non-nil, zero value otherwise.
+
+### GetConnectionNamesOk
+
+`func (o *BTTaskTeamSummaryInfo) GetConnectionNamesOk() (*[]string, bool)`
+
+GetConnectionNamesOk returns a tuple with the ConnectionNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionNames
+
+`func (o *BTTaskTeamSummaryInfo) SetConnectionNames(v []string)`
+
+SetConnectionNames sets ConnectionNames field to given value.
+
+### HasConnectionNames
+
+`func (o *BTTaskTeamSummaryInfo) HasConnectionNames() bool`
+
+HasConnectionNames returns a boolean if a field has been set.
 
 ### GetCreatedAt
 
@@ -321,6 +348,31 @@ SetIsEnterpriseOwned sets IsEnterpriseOwned field to given value.
 `func (o *BTTaskTeamSummaryInfo) HasIsEnterpriseOwned() bool`
 
 HasIsEnterpriseOwned returns a boolean if a field has been set.
+
+### GetIsExternalConnectionResource
+
+`func (o *BTTaskTeamSummaryInfo) GetIsExternalConnectionResource() bool`
+
+GetIsExternalConnectionResource returns the IsExternalConnectionResource field if non-nil, zero value otherwise.
+
+### GetIsExternalConnectionResourceOk
+
+`func (o *BTTaskTeamSummaryInfo) GetIsExternalConnectionResourceOk() (*bool, bool)`
+
+GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExternalConnectionResource
+
+`func (o *BTTaskTeamSummaryInfo) SetIsExternalConnectionResource(v bool)`
+
+SetIsExternalConnectionResource sets IsExternalConnectionResource field to given value.
+
+### HasIsExternalConnectionResource
+
+`func (o *BTTaskTeamSummaryInfo) HasIsExternalConnectionResource() bool`
+
+HasIsExternalConnectionResource returns a boolean if a field has been set.
 
 ### GetIsMutable
 

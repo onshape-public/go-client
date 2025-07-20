@@ -24,6 +24,7 @@ type BTMParameterMaterial1388 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string             `json:"parameterId,omitempty"`
+	ValueString *string             `json:"valueString,omitempty"`
 	Material    *BTPartMaterial1445 `json:"material,omitempty"`
 }
 
@@ -172,6 +173,38 @@ func (o *BTMParameterMaterial1388) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterMaterial1388) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterMaterial1388) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterMaterial1388) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterMaterial1388) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetMaterial returns the Material field value if set, zero value otherwise.
 func (o *BTMParameterMaterial1388) GetMaterial() BTPartMaterial1445 {
 	if o == nil || o.Material == nil {
@@ -225,6 +258,9 @@ func (o BTMParameterMaterial1388) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.Material != nil {
 		toSerialize["material"] = o.Material

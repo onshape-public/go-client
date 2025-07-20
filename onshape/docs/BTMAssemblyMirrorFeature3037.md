@@ -4,8 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ArrayParameterFromFeature** | Pointer to [**BTMParameterArray2025**](BTMParameterArray2025.md) |  | [optional] 
 **AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**Feature** | Pointer to [**BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
 **FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureId** | Pointer to **string** | Unique ID of the feature instance within this Part Studio. | [optional] 
 **FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
@@ -46,6 +48,31 @@ will change when the set of required properties is changed
 NewBTMAssemblyMirrorFeature3037WithDefaults instantiates a new BTMAssemblyMirrorFeature3037 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetArrayParameterFromFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) GetArrayParameterFromFeature() BTMParameterArray2025`
+
+GetArrayParameterFromFeature returns the ArrayParameterFromFeature field if non-nil, zero value otherwise.
+
+### GetArrayParameterFromFeatureOk
+
+`func (o *BTMAssemblyMirrorFeature3037) GetArrayParameterFromFeatureOk() (*BTMParameterArray2025, bool)`
+
+GetArrayParameterFromFeatureOk returns a tuple with the ArrayParameterFromFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArrayParameterFromFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) SetArrayParameterFromFeature(v BTMParameterArray2025)`
+
+SetArrayParameterFromFeature sets ArrayParameterFromFeature field to given value.
+
+### HasArrayParameterFromFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) HasArrayParameterFromFeature() bool`
+
+HasArrayParameterFromFeature returns a boolean if a field has been set.
 
 ### GetAuxiliaryTreeFeature
 
@@ -96,6 +123,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMAssemblyMirrorFeature3037) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) GetFeature() BTMAssemblyFeature887`
+
+GetFeature returns the Feature field if non-nil, zero value otherwise.
+
+### GetFeatureOk
+
+`func (o *BTMAssemblyMirrorFeature3037) GetFeatureOk() (*BTMAssemblyFeature887, bool)`
+
+GetFeatureOk returns a tuple with the Feature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) SetFeature(v BTMAssemblyFeature887)`
+
+SetFeature sets Feature field to given value.
+
+### HasFeature
+
+`func (o *BTMAssemblyMirrorFeature3037) HasFeature() bool`
+
+HasFeature returns a boolean if a field has been set.
 
 ### GetFeatureFolder
 

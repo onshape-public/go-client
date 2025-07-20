@@ -16,53 +16,51 @@ import (
 
 // BTMLoad3538 struct for BTMLoad3538
 type BTMLoad3538 struct {
-	BTMAssemblyFeature887
-	BtType *string `json:"btType,omitempty"`
+	AuxiliaryTreeFeature *bool `json:"auxiliaryTreeFeature,omitempty"`
+	// Type of JSON object.
+	BtType              *string `json:"btType,omitempty"`
+	DefinedByComponents *bool   `json:"definedByComponents,omitempty"`
+	DirectionFlipped    *bool   `json:"directionFlipped,omitempty"`
+	FeatureFolder       *bool   `json:"featureFolder,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
-	FeatureId *string `json:"featureId,omitempty"`
+	FeatureId             *string `json:"featureId,omitempty"`
+	FeatureListFieldIndex *int32  `json:"featureListFieldIndex,omitempty"`
 	// The name of the feature spec that this feature instantiates.
-	FeatureType *string `json:"featureType,omitempty"`
+	FeatureType                      *string `json:"featureType,omitempty"`
+	FgsBaseUnits                     *string `json:"fgsBaseUnits,omitempty"`
+	FieldIndexForOwnedMateConnectors *int32  `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
-	MateConnectorFeature *bool   `json:"mateConnectorFeature,omitempty"`
+	ImportMicroversion        *string              `json:"importMicroversion,omitempty"`
+	LoadComponentParameterIds *map[string]string   `json:"loadComponentParameterIds,omitempty"`
+	LoadRegionParameterId     *string              `json:"loadRegionParameterId,omitempty"`
+	LoadType                  *GBTLoadType         `json:"loadType,omitempty"`
+	MagnitudeParameterId      *string              `json:"magnitudeParameterId,omitempty"`
+	MagnitudeQuantityType     *GBTQuantityType     `json:"magnitudeQuantityType,omitempty"`
+	MateConnectorFeature      *bool                `json:"mateConnectorFeature,omitempty"`
+	MateConnectors            []BTMMateConnector66 `json:"mateConnectors,omitempty"`
 	// User-visible name of the feature.
 	Name *string `json:"name,omitempty"`
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
 	Namespace *string `json:"namespace,omitempty"`
 	// ID for the feature node.
-	NodeId *string `json:"nodeId,omitempty"`
-	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-	Parameters []BTMParameter1 `json:"parameters,omitempty"`
+	NodeId                                 *string                                   `json:"nodeId,omitempty"`
+	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
+	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
+	StructuralLoad         *bool `json:"structuralLoad,omitempty"`
 	// List of subfeatures belonging to the feature.
-	SubFeatures []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeatures               []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeaturesNotUsedInQuery []BTMFeature134 `json:"subFeaturesNotUsedInQuery,omitempty"`
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
-	Suppressed *bool `json:"suppressed,omitempty"`
+	Suppressed              *bool             `json:"suppressed,omitempty"`
+	SuppressedInSimulations *map[string]int32 `json:"suppressedInSimulations,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 	// If `true`, the feature references a Variable Studio.
-	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
-	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
-	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
-	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
-	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
-	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
-	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
-	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
-	SubFeaturesNotUsedInQuery              []BTMFeature134                           `json:"subFeaturesNotUsedInQuery,omitempty"`
-	Version                                *int32                                    `json:"version,omitempty"`
-	DefinedByComponents                    *bool                                     `json:"definedByComponents,omitempty"`
-	DirectionFlipped                       *bool                                     `json:"directionFlipped,omitempty"`
-	FgsBaseUnits                           *string                                   `json:"fgsBaseUnits,omitempty"`
-	LoadComponentParameterIds              *map[string]string                        `json:"loadComponentParameterIds,omitempty"`
-	LoadRegionParameterId                  *string                                   `json:"loadRegionParameterId,omitempty"`
-	LoadType                               *GBTLoadType                              `json:"loadType,omitempty"`
-	MagnitudeParameterId                   *string                                   `json:"magnitudeParameterId,omitempty"`
-	MagnitudeQuantityType                  *GBTQuantityType                          `json:"magnitudeQuantityType,omitempty"`
-	StructuralLoad                         *bool                                     `json:"structuralLoad,omitempty"`
-	SuppressedInSimulations                *map[string]int32                         `json:"suppressedInSimulations,omitempty"`
+	VariableStudioReference *bool  `json:"variableStudioReference,omitempty"`
+	Version                 *int32 `json:"version,omitempty"`
 }
 
 // NewBTMLoad3538 instantiates a new BTMLoad3538 object
@@ -80,486 +78,6 @@ func NewBTMLoad3538() *BTMLoad3538 {
 func NewBTMLoad3538WithDefaults() *BTMLoad3538 {
 	this := BTMLoad3538{}
 	return &this
-}
-
-// GetBtType returns the BtType field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
-	}
-	return *o.BtType
-}
-
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
-		return nil, false
-	}
-	return o.BtType, true
-}
-
-// HasBtType returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
-func (o *BTMLoad3538) SetBtType(v string) {
-	o.BtType = &v
-}
-
-// GetFeatureId returns the FeatureId field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFeatureId() string {
-	if o == nil || o.FeatureId == nil {
-		var ret string
-		return ret
-	}
-	return *o.FeatureId
-}
-
-// GetFeatureIdOk returns a tuple with the FeatureId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFeatureIdOk() (*string, bool) {
-	if o == nil || o.FeatureId == nil {
-		return nil, false
-	}
-	return o.FeatureId, true
-}
-
-// HasFeatureId returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFeatureId() bool {
-	if o != nil && o.FeatureId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
-func (o *BTMLoad3538) SetFeatureId(v string) {
-	o.FeatureId = &v
-}
-
-// GetFeatureType returns the FeatureType field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFeatureType() string {
-	if o == nil || o.FeatureType == nil {
-		var ret string
-		return ret
-	}
-	return *o.FeatureType
-}
-
-// GetFeatureTypeOk returns a tuple with the FeatureType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFeatureTypeOk() (*string, bool) {
-	if o == nil || o.FeatureType == nil {
-		return nil, false
-	}
-	return o.FeatureType, true
-}
-
-// HasFeatureType returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFeatureType() bool {
-	if o != nil && o.FeatureType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureType gets a reference to the given string and assigns it to the FeatureType field.
-func (o *BTMLoad3538) SetFeatureType(v string) {
-	o.FeatureType = &v
-}
-
-// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetImportMicroversion() string {
-	if o == nil || o.ImportMicroversion == nil {
-		var ret string
-		return ret
-	}
-	return *o.ImportMicroversion
-}
-
-// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetImportMicroversionOk() (*string, bool) {
-	if o == nil || o.ImportMicroversion == nil {
-		return nil, false
-	}
-	return o.ImportMicroversion, true
-}
-
-// HasImportMicroversion returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasImportMicroversion() bool {
-	if o != nil && o.ImportMicroversion != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
-func (o *BTMLoad3538) SetImportMicroversion(v string) {
-	o.ImportMicroversion = &v
-}
-
-// GetMateConnectorFeature returns the MateConnectorFeature field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetMateConnectorFeature() bool {
-	if o == nil || o.MateConnectorFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.MateConnectorFeature
-}
-
-// GetMateConnectorFeatureOk returns a tuple with the MateConnectorFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetMateConnectorFeatureOk() (*bool, bool) {
-	if o == nil || o.MateConnectorFeature == nil {
-		return nil, false
-	}
-	return o.MateConnectorFeature, true
-}
-
-// HasMateConnectorFeature returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasMateConnectorFeature() bool {
-	if o != nil && o.MateConnectorFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMateConnectorFeature gets a reference to the given bool and assigns it to the MateConnectorFeature field.
-func (o *BTMLoad3538) SetMateConnectorFeature(v bool) {
-	o.MateConnectorFeature = &v
-}
-
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
-		return ret
-	}
-	return *o.Name
-}
-
-// GetNameOk returns a tuple with the Name field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
-		return nil, false
-	}
-	return o.Name, true
-}
-
-// HasName returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasName() bool {
-	if o != nil && o.Name != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *BTMLoad3538) SetName(v string) {
-	o.Name = &v
-}
-
-// GetNamespace returns the Namespace field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetNamespace() string {
-	if o == nil || o.Namespace == nil {
-		var ret string
-		return ret
-	}
-	return *o.Namespace
-}
-
-// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetNamespaceOk() (*string, bool) {
-	if o == nil || o.Namespace == nil {
-		return nil, false
-	}
-	return o.Namespace, true
-}
-
-// HasNamespace returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasNamespace() bool {
-	if o != nil && o.Namespace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
-func (o *BTMLoad3538) SetNamespace(v string) {
-	o.Namespace = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTMLoad3538) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
-		return ret
-	}
-	return o.Parameters
-}
-
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
-		return nil, false
-	}
-	return o.Parameters, true
-}
-
-// HasParameters returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTMLoad3538) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
-}
-
-// GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetReturnAfterSubfeatures() bool {
-	if o == nil || o.ReturnAfterSubfeatures == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ReturnAfterSubfeatures
-}
-
-// GetReturnAfterSubfeaturesOk returns a tuple with the ReturnAfterSubfeatures field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetReturnAfterSubfeaturesOk() (*bool, bool) {
-	if o == nil || o.ReturnAfterSubfeatures == nil {
-		return nil, false
-	}
-	return o.ReturnAfterSubfeatures, true
-}
-
-// HasReturnAfterSubfeatures returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasReturnAfterSubfeatures() bool {
-	if o != nil && o.ReturnAfterSubfeatures != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetReturnAfterSubfeatures gets a reference to the given bool and assigns it to the ReturnAfterSubfeatures field.
-func (o *BTMLoad3538) SetReturnAfterSubfeatures(v bool) {
-	o.ReturnAfterSubfeatures = &v
-}
-
-// GetSubFeatures returns the SubFeatures field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetSubFeatures() []BTMFeature134 {
-	if o == nil || o.SubFeatures == nil {
-		var ret []BTMFeature134
-		return ret
-	}
-	return o.SubFeatures
-}
-
-// GetSubFeaturesOk returns a tuple with the SubFeatures field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetSubFeaturesOk() ([]BTMFeature134, bool) {
-	if o == nil || o.SubFeatures == nil {
-		return nil, false
-	}
-	return o.SubFeatures, true
-}
-
-// HasSubFeatures returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasSubFeatures() bool {
-	if o != nil && o.SubFeatures != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the SubFeatures field.
-func (o *BTMLoad3538) SetSubFeatures(v []BTMFeature134) {
-	o.SubFeatures = v
-}
-
-// GetSuppressed returns the Suppressed field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetSuppressed() bool {
-	if o == nil || o.Suppressed == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Suppressed
-}
-
-// GetSuppressedOk returns a tuple with the Suppressed field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetSuppressedOk() (*bool, bool) {
-	if o == nil || o.Suppressed == nil {
-		return nil, false
-	}
-	return o.Suppressed, true
-}
-
-// HasSuppressed returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasSuppressed() bool {
-	if o != nil && o.Suppressed != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSuppressed gets a reference to the given bool and assigns it to the Suppressed field.
-func (o *BTMLoad3538) SetSuppressed(v bool) {
-	o.Suppressed = &v
-}
-
-// GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetSuppressionConfigured() bool {
-	if o == nil || o.SuppressionConfigured == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SuppressionConfigured
-}
-
-// GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetSuppressionConfiguredOk() (*bool, bool) {
-	if o == nil || o.SuppressionConfigured == nil {
-		return nil, false
-	}
-	return o.SuppressionConfigured, true
-}
-
-// HasSuppressionConfigured returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasSuppressionConfigured() bool {
-	if o != nil && o.SuppressionConfigured != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
-func (o *BTMLoad3538) SetSuppressionConfigured(v bool) {
-	o.SuppressionConfigured = &v
-}
-
-// GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetSuppressionState() BTMSuppressionState1924 {
-	if o == nil || o.SuppressionState == nil {
-		var ret BTMSuppressionState1924
-		return ret
-	}
-	return *o.SuppressionState
-}
-
-// GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
-	if o == nil || o.SuppressionState == nil {
-		return nil, false
-	}
-	return o.SuppressionState, true
-}
-
-// HasSuppressionState returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasSuppressionState() bool {
-	if o != nil && o.SuppressionState != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
-func (o *BTMLoad3538) SetSuppressionState(v BTMSuppressionState1924) {
-	o.SuppressionState = &v
-}
-
-// GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetVariableStudioReference() bool {
-	if o == nil || o.VariableStudioReference == nil {
-		var ret bool
-		return ret
-	}
-	return *o.VariableStudioReference
-}
-
-// GetVariableStudioReferenceOk returns a tuple with the VariableStudioReference field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetVariableStudioReferenceOk() (*bool, bool) {
-	if o == nil || o.VariableStudioReference == nil {
-		return nil, false
-	}
-	return o.VariableStudioReference, true
-}
-
-// HasVariableStudioReference returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasVariableStudioReference() bool {
-	if o != nil && o.VariableStudioReference != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetVariableStudioReference gets a reference to the given bool and assigns it to the VariableStudioReference field.
-func (o *BTMLoad3538) SetVariableStudioReference(v bool) {
-	o.VariableStudioReference = &v
 }
 
 // GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
@@ -594,260 +112,36 @@ func (o *BTMLoad3538) SetAuxiliaryTreeFeature(v bool) {
 	o.AuxiliaryTreeFeature = &v
 }
 
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFeatureFolder() bool {
-	if o == nil || o.FeatureFolder == nil {
-		var ret bool
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
 		return ret
 	}
-	return *o.FeatureFolder
+	return *o.BtType
 }
 
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFeatureFolderOk() (*bool, bool) {
-	if o == nil || o.FeatureFolder == nil {
+func (o *BTMLoad3538) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
 		return nil, false
 	}
-	return o.FeatureFolder, true
+	return o.BtType, true
 }
 
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFeatureFolder() bool {
-	if o != nil && o.FeatureFolder != nil {
+// HasBtType returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasBtType() bool {
+	if o != nil && o.BtType != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *BTMLoad3538) SetFeatureFolder(v bool) {
-	o.FeatureFolder = &v
-}
-
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFeatureListFieldIndex() int32 {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FeatureListFieldIndex
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFeatureListFieldIndexOk() (*int32, bool) {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		return nil, false
-	}
-	return o.FeatureListFieldIndex, true
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFeatureListFieldIndex() bool {
-	if o != nil && o.FeatureListFieldIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *BTMLoad3538) SetFeatureListFieldIndex(v int32) {
-	o.FeatureListFieldIndex = &v
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectors() int32 {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FieldIndexForOwnedMateConnectors
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		return nil, false
-	}
-	return o.FieldIndexForOwnedMateConnectors, true
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFieldIndexForOwnedMateConnectors() bool {
-	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *BTMLoad3538) SetFieldIndexForOwnedMateConnectors(v int32) {
-	o.FieldIndexForOwnedMateConnectors = &v
-}
-
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetMateConnectors() []BTMMateConnector66 {
-	if o == nil || o.MateConnectors == nil {
-		var ret []BTMMateConnector66
-		return ret
-	}
-	return o.MateConnectors
-}
-
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	if o == nil || o.MateConnectors == nil {
-		return nil, false
-	}
-	return o.MateConnectors, true
-}
-
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasMateConnectors() bool {
-	if o != nil && o.MateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *BTMLoad3538) SetMateConnectors(v []BTMMateConnector66) {
-	o.MateConnectors = v
-}
-
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		var ret []BTMIndividualQueryWithOccurrenceBase904
-		return ret
-	}
-	return o.OccurrenceQueriesFromAllConfigurations
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		return nil, false
-	}
-	return o.OccurrenceQueriesFromAllConfigurations, true
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasOccurrenceQueriesFromAllConfigurations() bool {
-	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *BTMLoad3538) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	o.OccurrenceQueriesFromAllConfigurations = v
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetParametricInstanceFeature() bool {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ParametricInstanceFeature
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetParametricInstanceFeatureOk() (*bool, bool) {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		return nil, false
-	}
-	return o.ParametricInstanceFeature, true
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasParametricInstanceFeature() bool {
-	if o != nil && o.ParametricInstanceFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *BTMLoad3538) SetParametricInstanceFeature(v bool) {
-	o.ParametricInstanceFeature = &v
-}
-
-// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		var ret []BTMFeature134
-		return ret
-	}
-	return o.SubFeaturesNotUsedInQuery
-}
-
-// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		return nil, false
-	}
-	return o.SubFeaturesNotUsedInQuery, true
-}
-
-// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasSubFeaturesNotUsedInQuery() bool {
-	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
-func (o *BTMLoad3538) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
-	o.SubFeaturesNotUsedInQuery = v
-}
-
-// GetVersion returns the Version field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetVersion() int32 {
-	if o == nil || o.Version == nil {
-		var ret int32
-		return ret
-	}
-	return *o.Version
-}
-
-// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetVersionOk() (*int32, bool) {
-	if o == nil || o.Version == nil {
-		return nil, false
-	}
-	return o.Version, true
-}
-
-// HasVersion returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasVersion() bool {
-	if o != nil && o.Version != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetVersion gets a reference to the given int32 and assigns it to the Version field.
-func (o *BTMLoad3538) SetVersion(v int32) {
-	o.Version = &v
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *BTMLoad3538) SetBtType(v string) {
+	o.BtType = &v
 }
 
 // GetDefinedByComponents returns the DefinedByComponents field value if set, zero value otherwise.
@@ -914,6 +208,134 @@ func (o *BTMLoad3538) SetDirectionFlipped(v bool) {
 	o.DirectionFlipped = &v
 }
 
+// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFeatureFolder() bool {
+	if o == nil || o.FeatureFolder == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FeatureFolder
+}
+
+// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFeatureFolderOk() (*bool, bool) {
+	if o == nil || o.FeatureFolder == nil {
+		return nil, false
+	}
+	return o.FeatureFolder, true
+}
+
+// HasFeatureFolder returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFeatureFolder() bool {
+	if o != nil && o.FeatureFolder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
+func (o *BTMLoad3538) SetFeatureFolder(v bool) {
+	o.FeatureFolder = &v
+}
+
+// GetFeatureId returns the FeatureId field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFeatureId() string {
+	if o == nil || o.FeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FeatureId
+}
+
+// GetFeatureIdOk returns a tuple with the FeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFeatureIdOk() (*string, bool) {
+	if o == nil || o.FeatureId == nil {
+		return nil, false
+	}
+	return o.FeatureId, true
+}
+
+// HasFeatureId returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFeatureId() bool {
+	if o != nil && o.FeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
+func (o *BTMLoad3538) SetFeatureId(v string) {
+	o.FeatureId = &v
+}
+
+// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFeatureListFieldIndex() int32 {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FeatureListFieldIndex
+}
+
+// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFeatureListFieldIndexOk() (*int32, bool) {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		return nil, false
+	}
+	return o.FeatureListFieldIndex, true
+}
+
+// HasFeatureListFieldIndex returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFeatureListFieldIndex() bool {
+	if o != nil && o.FeatureListFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
+func (o *BTMLoad3538) SetFeatureListFieldIndex(v int32) {
+	o.FeatureListFieldIndex = &v
+}
+
+// GetFeatureType returns the FeatureType field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFeatureType() string {
+	if o == nil || o.FeatureType == nil {
+		var ret string
+		return ret
+	}
+	return *o.FeatureType
+}
+
+// GetFeatureTypeOk returns a tuple with the FeatureType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFeatureTypeOk() (*string, bool) {
+	if o == nil || o.FeatureType == nil {
+		return nil, false
+	}
+	return o.FeatureType, true
+}
+
+// HasFeatureType returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFeatureType() bool {
+	if o != nil && o.FeatureType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureType gets a reference to the given string and assigns it to the FeatureType field.
+func (o *BTMLoad3538) SetFeatureType(v string) {
+	o.FeatureType = &v
+}
+
 // GetFgsBaseUnits returns the FgsBaseUnits field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetFgsBaseUnits() string {
 	if o == nil || o.FgsBaseUnits == nil {
@@ -944,6 +366,70 @@ func (o *BTMLoad3538) HasFgsBaseUnits() bool {
 // SetFgsBaseUnits gets a reference to the given string and assigns it to the FgsBaseUnits field.
 func (o *BTMLoad3538) SetFgsBaseUnits(v string) {
 	o.FgsBaseUnits = &v
+}
+
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTMLoad3538) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
+}
+
+// GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetImportMicroversion() string {
+	if o == nil || o.ImportMicroversion == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImportMicroversion
+}
+
+// GetImportMicroversionOk returns a tuple with the ImportMicroversion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetImportMicroversionOk() (*string, bool) {
+	if o == nil || o.ImportMicroversion == nil {
+		return nil, false
+	}
+	return o.ImportMicroversion, true
+}
+
+// HasImportMicroversion returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasImportMicroversion() bool {
+	if o != nil && o.ImportMicroversion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
+func (o *BTMLoad3538) SetImportMicroversion(v string) {
+	o.ImportMicroversion = &v
 }
 
 // GetLoadComponentParameterIds returns the LoadComponentParameterIds field value if set, zero value otherwise.
@@ -1106,6 +592,262 @@ func (o *BTMLoad3538) SetMagnitudeQuantityType(v GBTQuantityType) {
 	o.MagnitudeQuantityType = &v
 }
 
+// GetMateConnectorFeature returns the MateConnectorFeature field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetMateConnectorFeature() bool {
+	if o == nil || o.MateConnectorFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.MateConnectorFeature
+}
+
+// GetMateConnectorFeatureOk returns a tuple with the MateConnectorFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetMateConnectorFeatureOk() (*bool, bool) {
+	if o == nil || o.MateConnectorFeature == nil {
+		return nil, false
+	}
+	return o.MateConnectorFeature, true
+}
+
+// HasMateConnectorFeature returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasMateConnectorFeature() bool {
+	if o != nil && o.MateConnectorFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectorFeature gets a reference to the given bool and assigns it to the MateConnectorFeature field.
+func (o *BTMLoad3538) SetMateConnectorFeature(v bool) {
+	o.MateConnectorFeature = &v
+}
+
+// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetMateConnectors() []BTMMateConnector66 {
+	if o == nil || o.MateConnectors == nil {
+		var ret []BTMMateConnector66
+		return ret
+	}
+	return o.MateConnectors
+}
+
+// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
+	if o == nil || o.MateConnectors == nil {
+		return nil, false
+	}
+	return o.MateConnectors, true
+}
+
+// HasMateConnectors returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasMateConnectors() bool {
+	if o != nil && o.MateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
+func (o *BTMLoad3538) SetMateConnectors(v []BTMMateConnector66) {
+	o.MateConnectors = v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTMLoad3538) SetName(v string) {
+	o.Name = &v
+}
+
+// GetNamespace returns the Namespace field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetNamespace() string {
+	if o == nil || o.Namespace == nil {
+		var ret string
+		return ret
+	}
+	return *o.Namespace
+}
+
+// GetNamespaceOk returns a tuple with the Namespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetNamespaceOk() (*string, bool) {
+	if o == nil || o.Namespace == nil {
+		return nil, false
+	}
+	return o.Namespace, true
+}
+
+// HasNamespace returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasNamespace() bool {
+	if o != nil && o.Namespace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNamespace gets a reference to the given string and assigns it to the Namespace field.
+func (o *BTMLoad3538) SetNamespace(v string) {
+	o.Namespace = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTMLoad3538) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
+		var ret []BTMIndividualQueryWithOccurrenceBase904
+		return ret
+	}
+	return o.OccurrenceQueriesFromAllConfigurations
+}
+
+// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
+		return nil, false
+	}
+	return o.OccurrenceQueriesFromAllConfigurations, true
+}
+
+// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasOccurrenceQueriesFromAllConfigurations() bool {
+	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
+func (o *BTMLoad3538) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
+	o.OccurrenceQueriesFromAllConfigurations = v
+}
+
+// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetParametricInstanceFeature() bool {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricInstanceFeature
+}
+
+// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetParametricInstanceFeatureOk() (*bool, bool) {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		return nil, false
+	}
+	return o.ParametricInstanceFeature, true
+}
+
+// HasParametricInstanceFeature returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasParametricInstanceFeature() bool {
+	if o != nil && o.ParametricInstanceFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
+func (o *BTMLoad3538) SetParametricInstanceFeature(v bool) {
+	o.ParametricInstanceFeature = &v
+}
+
+// GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetReturnAfterSubfeatures() bool {
+	if o == nil || o.ReturnAfterSubfeatures == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ReturnAfterSubfeatures
+}
+
+// GetReturnAfterSubfeaturesOk returns a tuple with the ReturnAfterSubfeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetReturnAfterSubfeaturesOk() (*bool, bool) {
+	if o == nil || o.ReturnAfterSubfeatures == nil {
+		return nil, false
+	}
+	return o.ReturnAfterSubfeatures, true
+}
+
+// HasReturnAfterSubfeatures returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasReturnAfterSubfeatures() bool {
+	if o != nil && o.ReturnAfterSubfeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReturnAfterSubfeatures gets a reference to the given bool and assigns it to the ReturnAfterSubfeatures field.
+func (o *BTMLoad3538) SetReturnAfterSubfeatures(v bool) {
+	o.ReturnAfterSubfeatures = &v
+}
+
 // GetStructuralLoad returns the StructuralLoad field value if set, zero value otherwise.
 func (o *BTMLoad3538) GetStructuralLoad() bool {
 	if o == nil || o.StructuralLoad == nil {
@@ -1136,6 +878,102 @@ func (o *BTMLoad3538) HasStructuralLoad() bool {
 // SetStructuralLoad gets a reference to the given bool and assigns it to the StructuralLoad field.
 func (o *BTMLoad3538) SetStructuralLoad(v bool) {
 	o.StructuralLoad = &v
+}
+
+// GetSubFeatures returns the SubFeatures field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSubFeatures() []BTMFeature134 {
+	if o == nil || o.SubFeatures == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeatures
+}
+
+// GetSubFeaturesOk returns a tuple with the SubFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSubFeaturesOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeatures == nil {
+		return nil, false
+	}
+	return o.SubFeatures, true
+}
+
+// HasSubFeatures returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSubFeatures() bool {
+	if o != nil && o.SubFeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the SubFeatures field.
+func (o *BTMLoad3538) SetSubFeatures(v []BTMFeature134) {
+	o.SubFeatures = v
+}
+
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeaturesNotUsedInQuery
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		return nil, false
+	}
+	return o.SubFeaturesNotUsedInQuery, true
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSubFeaturesNotUsedInQuery() bool {
+	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *BTMLoad3538) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	o.SubFeaturesNotUsedInQuery = v
+}
+
+// GetSuppressed returns the Suppressed field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSuppressed() bool {
+	if o == nil || o.Suppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Suppressed
+}
+
+// GetSuppressedOk returns a tuple with the Suppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSuppressedOk() (*bool, bool) {
+	if o == nil || o.Suppressed == nil {
+		return nil, false
+	}
+	return o.Suppressed, true
+}
+
+// HasSuppressed returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSuppressed() bool {
+	if o != nil && o.Suppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressed gets a reference to the given bool and assigns it to the Suppressed field.
+func (o *BTMLoad3538) SetSuppressed(v bool) {
+	o.Suppressed = &v
 }
 
 // GetSuppressedInSimulations returns the SuppressedInSimulations field value if set, zero value otherwise.
@@ -1170,87 +1008,141 @@ func (o *BTMLoad3538) SetSuppressedInSimulations(v map[string]int32) {
 	o.SuppressedInSimulations = &v
 }
 
+// GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSuppressionConfigured() bool {
+	if o == nil || o.SuppressionConfigured == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SuppressionConfigured
+}
+
+// GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSuppressionConfiguredOk() (*bool, bool) {
+	if o == nil || o.SuppressionConfigured == nil {
+		return nil, false
+	}
+	return o.SuppressionConfigured, true
+}
+
+// HasSuppressionConfigured returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSuppressionConfigured() bool {
+	if o != nil && o.SuppressionConfigured != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
+func (o *BTMLoad3538) SetSuppressionConfigured(v bool) {
+	o.SuppressionConfigured = &v
+}
+
+// GetSuppressionState returns the SuppressionState field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetSuppressionState() BTMSuppressionState1924 {
+	if o == nil || o.SuppressionState == nil {
+		var ret BTMSuppressionState1924
+		return ret
+	}
+	return *o.SuppressionState
+}
+
+// GetSuppressionStateOk returns a tuple with the SuppressionState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetSuppressionStateOk() (*BTMSuppressionState1924, bool) {
+	if o == nil || o.SuppressionState == nil {
+		return nil, false
+	}
+	return o.SuppressionState, true
+}
+
+// HasSuppressionState returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasSuppressionState() bool {
+	if o != nil && o.SuppressionState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionState gets a reference to the given BTMSuppressionState1924 and assigns it to the SuppressionState field.
+func (o *BTMLoad3538) SetSuppressionState(v BTMSuppressionState1924) {
+	o.SuppressionState = &v
+}
+
+// GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetVariableStudioReference() bool {
+	if o == nil || o.VariableStudioReference == nil {
+		var ret bool
+		return ret
+	}
+	return *o.VariableStudioReference
+}
+
+// GetVariableStudioReferenceOk returns a tuple with the VariableStudioReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetVariableStudioReferenceOk() (*bool, bool) {
+	if o == nil || o.VariableStudioReference == nil {
+		return nil, false
+	}
+	return o.VariableStudioReference, true
+}
+
+// HasVariableStudioReference returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasVariableStudioReference() bool {
+	if o != nil && o.VariableStudioReference != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVariableStudioReference gets a reference to the given bool and assigns it to the VariableStudioReference field.
+func (o *BTMLoad3538) SetVariableStudioReference(v bool) {
+	o.VariableStudioReference = &v
+}
+
+// GetVersion returns the Version field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetVersion() int32 {
+	if o == nil || o.Version == nil {
+		var ret int32
+		return ret
+	}
+	return *o.Version
+}
+
+// GetVersionOk returns a tuple with the Version field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMLoad3538) GetVersionOk() (*int32, bool) {
+	if o == nil || o.Version == nil {
+		return nil, false
+	}
+	return o.Version, true
+}
+
+// HasVersion returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasVersion() bool {
+	if o != nil && o.Version != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersion gets a reference to the given int32 and assigns it to the Version field.
+func (o *BTMLoad3538) SetVersion(v int32) {
+	o.Version = &v
+}
+
 func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
-	if errBTMAssemblyFeature887 != nil {
-		return []byte{}, errBTMAssemblyFeature887
-	}
-	errBTMAssemblyFeature887 = json.Unmarshal([]byte(serializedBTMAssemblyFeature887), &toSerialize)
-	if errBTMAssemblyFeature887 != nil {
-		return []byte{}, errBTMAssemblyFeature887
-	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
-	}
-	if o.FeatureId != nil {
-		toSerialize["featureId"] = o.FeatureId
-	}
-	if o.FeatureType != nil {
-		toSerialize["featureType"] = o.FeatureType
-	}
-	if o.ImportMicroversion != nil {
-		toSerialize["importMicroversion"] = o.ImportMicroversion
-	}
-	if o.MateConnectorFeature != nil {
-		toSerialize["mateConnectorFeature"] = o.MateConnectorFeature
-	}
-	if o.Name != nil {
-		toSerialize["name"] = o.Name
-	}
-	if o.Namespace != nil {
-		toSerialize["namespace"] = o.Namespace
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
-	}
-	if o.ReturnAfterSubfeatures != nil {
-		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures
-	}
-	if o.SubFeatures != nil {
-		toSerialize["subFeatures"] = o.SubFeatures
-	}
-	if o.Suppressed != nil {
-		toSerialize["suppressed"] = o.Suppressed
-	}
-	if o.SuppressionConfigured != nil {
-		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
-	}
-	if o.SuppressionState != nil {
-		toSerialize["suppressionState"] = o.SuppressionState
-	}
-	if o.VariableStudioReference != nil {
-		toSerialize["variableStudioReference"] = o.VariableStudioReference
-	}
 	if o.AuxiliaryTreeFeature != nil {
 		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
 	}
-	if o.FeatureFolder != nil {
-		toSerialize["featureFolder"] = o.FeatureFolder
-	}
-	if o.FeatureListFieldIndex != nil {
-		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
-	}
-	if o.FieldIndexForOwnedMateConnectors != nil {
-		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
-	}
-	if o.MateConnectors != nil {
-		toSerialize["mateConnectors"] = o.MateConnectors
-	}
-	if o.OccurrenceQueriesFromAllConfigurations != nil {
-		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
-	}
-	if o.ParametricInstanceFeature != nil {
-		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
-	}
-	if o.SubFeaturesNotUsedInQuery != nil {
-		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
-	}
-	if o.Version != nil {
-		toSerialize["version"] = o.Version
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
 	}
 	if o.DefinedByComponents != nil {
 		toSerialize["definedByComponents"] = o.DefinedByComponents
@@ -1258,8 +1150,26 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	if o.DirectionFlipped != nil {
 		toSerialize["directionFlipped"] = o.DirectionFlipped
 	}
+	if o.FeatureFolder != nil {
+		toSerialize["featureFolder"] = o.FeatureFolder
+	}
+	if o.FeatureId != nil {
+		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.FeatureListFieldIndex != nil {
+		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
+	}
+	if o.FeatureType != nil {
+		toSerialize["featureType"] = o.FeatureType
+	}
 	if o.FgsBaseUnits != nil {
 		toSerialize["fgsBaseUnits"] = o.FgsBaseUnits
+	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
+	}
+	if o.ImportMicroversion != nil {
+		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.LoadComponentParameterIds != nil {
 		toSerialize["loadComponentParameterIds"] = o.LoadComponentParameterIds
@@ -1276,11 +1186,56 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	if o.MagnitudeQuantityType != nil {
 		toSerialize["magnitudeQuantityType"] = o.MagnitudeQuantityType
 	}
+	if o.MateConnectorFeature != nil {
+		toSerialize["mateConnectorFeature"] = o.MateConnectorFeature
+	}
+	if o.MateConnectors != nil {
+		toSerialize["mateConnectors"] = o.MateConnectors
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.Namespace != nil {
+		toSerialize["namespace"] = o.Namespace
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.OccurrenceQueriesFromAllConfigurations != nil {
+		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
+	}
+	if o.ParametricInstanceFeature != nil {
+		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.ReturnAfterSubfeatures != nil {
+		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures
+	}
 	if o.StructuralLoad != nil {
 		toSerialize["structuralLoad"] = o.StructuralLoad
 	}
+	if o.SubFeatures != nil {
+		toSerialize["subFeatures"] = o.SubFeatures
+	}
+	if o.SubFeaturesNotUsedInQuery != nil {
+		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
+	}
+	if o.Suppressed != nil {
+		toSerialize["suppressed"] = o.Suppressed
+	}
 	if o.SuppressedInSimulations != nil {
 		toSerialize["suppressedInSimulations"] = o.SuppressedInSimulations
+	}
+	if o.SuppressionConfigured != nil {
+		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
+	}
+	if o.SuppressionState != nil {
+		toSerialize["suppressionState"] = o.SuppressionState
+	}
+	if o.VariableStudioReference != nil {
+		toSerialize["variableStudioReference"] = o.VariableStudioReference
+	}
+	if o.Version != nil {
+		toSerialize["version"] = o.Version
 	}
 	return json.Marshal(toSerialize)
 }

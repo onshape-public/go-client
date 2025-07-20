@@ -110,6 +110,11 @@ func (o *BTParametricInstance2641) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTMSuppressionStateExpression1811AsBTMNode19 is a convenience function that returns BTMSuppressionStateExpression1811 wrapped in BTMNode19
+func (o *BTMSuppressionStateExpression1811) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTMConfigurationParameterBoolean2550AsBTMNode19 is a convenience function that returns BTMConfigurationParameterBoolean2550 wrapped in BTMNode19
 func (o *BTMConfigurationParameterBoolean2550) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -1321,6 +1326,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateConfigured2598: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSuppressionStateExpression-1811'
+	if jsonDict["btType"] == "BTMSuppressionStateExpression-1811" {
+		// try to unmarshal JSON data into BTMSuppressionStateExpression1811
+		var qr *BTMSuppressionStateExpression1811
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateExpression1811: %s", err.Error())
 		}
 	}
 

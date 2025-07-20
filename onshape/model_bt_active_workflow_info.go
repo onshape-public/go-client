@@ -16,18 +16,28 @@ import (
 
 // BTActiveWorkflowInfo struct for BTActiveWorkflowInfo
 type BTActiveWorkflowInfo struct {
-	AllowReleaseItemsFromOtherDocuments      *bool   `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
-	CanCurrentUserCreateReleases             *bool   `json:"canCurrentUserCreateReleases,omitempty"`
-	CanCurrentUserEditStandardContent        *bool   `json:"canCurrentUserEditStandardContent,omitempty"`
-	CanCurrentUserManageWorkflows            *bool   `json:"canCurrentUserManageWorkflows,omitempty"`
-	CanCurrentUserSeeArenaItemLink           *bool   `json:"canCurrentUserSeeArenaItemLink,omitempty"`
-	CanCurrentUserSyncBomToArena             *bool   `json:"canCurrentUserSyncBomToArena,omitempty"`
-	CanCurrentUserSyncRevisionsToArena       *bool   `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
-	CanCurrentUserSyncStandardContentToArena *bool   `json:"canCurrentUserSyncStandardContentToArena,omitempty"`
-	CanCurrentUserSyncToArena                *bool   `json:"canCurrentUserSyncToArena,omitempty"`
-	CompanyId                                *string `json:"companyId,omitempty"`
-	DocumentId                               *string `json:"documentId,omitempty"`
-	DrawingCanDuplicatePartNumber            *bool   `json:"drawingCanDuplicatePartNumber,omitempty"`
+	AllowReleaseItemsFromOtherDocuments *bool `json:"allowReleaseItemsFromOtherDocuments,omitempty"`
+	CanCurrentUserCreateReleases        *bool `json:"canCurrentUserCreateReleases,omitempty"`
+	CanCurrentUserEditStandardContent   *bool `json:"canCurrentUserEditStandardContent,omitempty"`
+	CanCurrentUserManageWorkflows       *bool `json:"canCurrentUserManageWorkflows,omitempty"`
+	// Deprecated, use canCurrentUserSeePLMItemLink
+	CanCurrentUserSeeArenaItemLink *bool `json:"canCurrentUserSeeArenaItemLink,omitempty"`
+	CanCurrentUserSeePLMItemLink   *bool `json:"canCurrentUserSeePLMItemLink,omitempty"`
+	// Deprecated, use canCurrentUserSyncBomToPLM
+	CanCurrentUserSyncBomToArena *bool `json:"canCurrentUserSyncBomToArena,omitempty"`
+	CanCurrentUserSyncBomToPLM   *bool `json:"canCurrentUserSyncBomToPLM,omitempty"`
+	// Deprecated, use canCurrentUserSyncRevisionsToPLM
+	CanCurrentUserSyncRevisionsToArena *bool `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
+	CanCurrentUserSyncRevisionsToPLM   *bool `json:"canCurrentUserSyncRevisionsToPLM,omitempty"`
+	// Deprecated, use canCurrentUserSyncStandardContentToPLM
+	CanCurrentUserSyncStandardContentToArena *bool `json:"canCurrentUserSyncStandardContentToArena,omitempty"`
+	CanCurrentUserSyncStandardContentToPLM   *bool `json:"canCurrentUserSyncStandardContentToPLM,omitempty"`
+	// Deprecated, use canCurrentUserSyncToPLM
+	CanCurrentUserSyncToArena     *bool   `json:"canCurrentUserSyncToArena,omitempty"`
+	CanCurrentUserSyncToPLM       *bool   `json:"canCurrentUserSyncToPLM,omitempty"`
+	CompanyId                     *string `json:"companyId,omitempty"`
+	DocumentId                    *string `json:"documentId,omitempty"`
+	DrawingCanDuplicatePartNumber *bool   `json:"drawingCanDuplicatePartNumber,omitempty"`
 	// Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows > 1
 	EnabledActiveMultipleWorkflows *bool `json:"enabledActiveMultipleWorkflows,omitempty"`
 	// Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object
@@ -38,6 +48,8 @@ type BTActiveWorkflowInfo struct {
 	ObsoletionWorkflowInfo *BTActiveWorkflowTypeInfo `json:"obsoletionWorkflowInfo,omitempty"`
 	// Deprecated, no current alternative
 	OsCategoryIdToArenaNumberFormatId *map[string]string `json:"osCategoryIdToArenaNumberFormatId,omitempty"`
+	PLMIntegrationType                *int32             `json:"pLMIntegrationType,omitempty"`
+	PLMName                           *string            `json:"pLMName,omitempty"`
 	PartNumberingSchemeId             *string            `json:"partNumberingSchemeId,omitempty"`
 	// Deprecated, use the pickableWorkflows field on the workflowInfo object
 	PickableWorkflows []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
@@ -234,6 +246,38 @@ func (o *BTActiveWorkflowInfo) SetCanCurrentUserSeeArenaItemLink(v bool) {
 	o.CanCurrentUserSeeArenaItemLink = &v
 }
 
+// GetCanCurrentUserSeePLMItemLink returns the CanCurrentUserSeePLMItemLink field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeePLMItemLink() bool {
+	if o == nil || o.CanCurrentUserSeePLMItemLink == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSeePLMItemLink
+}
+
+// GetCanCurrentUserSeePLMItemLinkOk returns a tuple with the CanCurrentUserSeePLMItemLink field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeePLMItemLinkOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSeePLMItemLink == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSeePLMItemLink, true
+}
+
+// HasCanCurrentUserSeePLMItemLink returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSeePLMItemLink() bool {
+	if o != nil && o.CanCurrentUserSeePLMItemLink != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSeePLMItemLink gets a reference to the given bool and assigns it to the CanCurrentUserSeePLMItemLink field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSeePLMItemLink(v bool) {
+	o.CanCurrentUserSeePLMItemLink = &v
+}
+
 // GetCanCurrentUserSyncBomToArena returns the CanCurrentUserSyncBomToArena field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToArena() bool {
 	if o == nil || o.CanCurrentUserSyncBomToArena == nil {
@@ -264,6 +308,38 @@ func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToArena() bool {
 // SetCanCurrentUserSyncBomToArena gets a reference to the given bool and assigns it to the CanCurrentUserSyncBomToArena field.
 func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToArena(v bool) {
 	o.CanCurrentUserSyncBomToArena = &v
+}
+
+// GetCanCurrentUserSyncBomToPLM returns the CanCurrentUserSyncBomToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToPLM() bool {
+	if o == nil || o.CanCurrentUserSyncBomToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncBomToPLM
+}
+
+// GetCanCurrentUserSyncBomToPLMOk returns a tuple with the CanCurrentUserSyncBomToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToPLMOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncBomToPLM == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncBomToPLM, true
+}
+
+// HasCanCurrentUserSyncBomToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToPLM() bool {
+	if o != nil && o.CanCurrentUserSyncBomToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncBomToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncBomToPLM field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToPLM(v bool) {
+	o.CanCurrentUserSyncBomToPLM = &v
 }
 
 // GetCanCurrentUserSyncRevisionsToArena returns the CanCurrentUserSyncRevisionsToArena field value if set, zero value otherwise.
@@ -298,6 +374,38 @@ func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncRevisionsToArena(v bool) {
 	o.CanCurrentUserSyncRevisionsToArena = &v
 }
 
+// GetCanCurrentUserSyncRevisionsToPLM returns the CanCurrentUserSyncRevisionsToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToPLM() bool {
+	if o == nil || o.CanCurrentUserSyncRevisionsToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncRevisionsToPLM
+}
+
+// GetCanCurrentUserSyncRevisionsToPLMOk returns a tuple with the CanCurrentUserSyncRevisionsToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToPLMOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncRevisionsToPLM == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncRevisionsToPLM, true
+}
+
+// HasCanCurrentUserSyncRevisionsToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncRevisionsToPLM() bool {
+	if o != nil && o.CanCurrentUserSyncRevisionsToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncRevisionsToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncRevisionsToPLM field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncRevisionsToPLM(v bool) {
+	o.CanCurrentUserSyncRevisionsToPLM = &v
+}
+
 // GetCanCurrentUserSyncStandardContentToArena returns the CanCurrentUserSyncStandardContentToArena field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToArena() bool {
 	if o == nil || o.CanCurrentUserSyncStandardContentToArena == nil {
@@ -330,6 +438,38 @@ func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncStandardContentToArena(v boo
 	o.CanCurrentUserSyncStandardContentToArena = &v
 }
 
+// GetCanCurrentUserSyncStandardContentToPLM returns the CanCurrentUserSyncStandardContentToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToPLM() bool {
+	if o == nil || o.CanCurrentUserSyncStandardContentToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncStandardContentToPLM
+}
+
+// GetCanCurrentUserSyncStandardContentToPLMOk returns a tuple with the CanCurrentUserSyncStandardContentToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToPLMOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncStandardContentToPLM == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncStandardContentToPLM, true
+}
+
+// HasCanCurrentUserSyncStandardContentToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncStandardContentToPLM() bool {
+	if o != nil && o.CanCurrentUserSyncStandardContentToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncStandardContentToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncStandardContentToPLM field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncStandardContentToPLM(v bool) {
+	o.CanCurrentUserSyncStandardContentToPLM = &v
+}
+
 // GetCanCurrentUserSyncToArena returns the CanCurrentUserSyncToArena field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToArena() bool {
 	if o == nil || o.CanCurrentUserSyncToArena == nil {
@@ -360,6 +500,38 @@ func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToArena() bool {
 // SetCanCurrentUserSyncToArena gets a reference to the given bool and assigns it to the CanCurrentUserSyncToArena field.
 func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncToArena(v bool) {
 	o.CanCurrentUserSyncToArena = &v
+}
+
+// GetCanCurrentUserSyncToPLM returns the CanCurrentUserSyncToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToPLM() bool {
+	if o == nil || o.CanCurrentUserSyncToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncToPLM
+}
+
+// GetCanCurrentUserSyncToPLMOk returns a tuple with the CanCurrentUserSyncToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToPLMOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncToPLM == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncToPLM, true
+}
+
+// HasCanCurrentUserSyncToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToPLM() bool {
+	if o != nil && o.CanCurrentUserSyncToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncToPLM field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncToPLM(v bool) {
+	o.CanCurrentUserSyncToPLM = &v
 }
 
 // GetCompanyId returns the CompanyId field value if set, zero value otherwise.
@@ -648,6 +820,70 @@ func (o *BTActiveWorkflowInfo) HasOsCategoryIdToArenaNumberFormatId() bool {
 // SetOsCategoryIdToArenaNumberFormatId gets a reference to the given map[string]string and assigns it to the OsCategoryIdToArenaNumberFormatId field.
 func (o *BTActiveWorkflowInfo) SetOsCategoryIdToArenaNumberFormatId(v map[string]string) {
 	o.OsCategoryIdToArenaNumberFormatId = &v
+}
+
+// GetPLMIntegrationType returns the PLMIntegrationType field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetPLMIntegrationType() int32 {
+	if o == nil || o.PLMIntegrationType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.PLMIntegrationType
+}
+
+// GetPLMIntegrationTypeOk returns a tuple with the PLMIntegrationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetPLMIntegrationTypeOk() (*int32, bool) {
+	if o == nil || o.PLMIntegrationType == nil {
+		return nil, false
+	}
+	return o.PLMIntegrationType, true
+}
+
+// HasPLMIntegrationType returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasPLMIntegrationType() bool {
+	if o != nil && o.PLMIntegrationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPLMIntegrationType gets a reference to the given int32 and assigns it to the PLMIntegrationType field.
+func (o *BTActiveWorkflowInfo) SetPLMIntegrationType(v int32) {
+	o.PLMIntegrationType = &v
+}
+
+// GetPLMName returns the PLMName field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetPLMName() string {
+	if o == nil || o.PLMName == nil {
+		var ret string
+		return ret
+	}
+	return *o.PLMName
+}
+
+// GetPLMNameOk returns a tuple with the PLMName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetPLMNameOk() (*string, bool) {
+	if o == nil || o.PLMName == nil {
+		return nil, false
+	}
+	return o.PLMName, true
+}
+
+// HasPLMName returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasPLMName() bool {
+	if o != nil && o.PLMName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPLMName gets a reference to the given string and assigns it to the PLMName field.
+func (o *BTActiveWorkflowInfo) SetPLMName(v string) {
+	o.PLMName = &v
 }
 
 // GetPartNumberingSchemeId returns the PartNumberingSchemeId field value if set, zero value otherwise.
@@ -1115,17 +1351,32 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.CanCurrentUserSeeArenaItemLink != nil {
 		toSerialize["canCurrentUserSeeArenaItemLink"] = o.CanCurrentUserSeeArenaItemLink
 	}
+	if o.CanCurrentUserSeePLMItemLink != nil {
+		toSerialize["canCurrentUserSeePLMItemLink"] = o.CanCurrentUserSeePLMItemLink
+	}
 	if o.CanCurrentUserSyncBomToArena != nil {
 		toSerialize["canCurrentUserSyncBomToArena"] = o.CanCurrentUserSyncBomToArena
+	}
+	if o.CanCurrentUserSyncBomToPLM != nil {
+		toSerialize["canCurrentUserSyncBomToPLM"] = o.CanCurrentUserSyncBomToPLM
 	}
 	if o.CanCurrentUserSyncRevisionsToArena != nil {
 		toSerialize["canCurrentUserSyncRevisionsToArena"] = o.CanCurrentUserSyncRevisionsToArena
 	}
+	if o.CanCurrentUserSyncRevisionsToPLM != nil {
+		toSerialize["canCurrentUserSyncRevisionsToPLM"] = o.CanCurrentUserSyncRevisionsToPLM
+	}
 	if o.CanCurrentUserSyncStandardContentToArena != nil {
 		toSerialize["canCurrentUserSyncStandardContentToArena"] = o.CanCurrentUserSyncStandardContentToArena
 	}
+	if o.CanCurrentUserSyncStandardContentToPLM != nil {
+		toSerialize["canCurrentUserSyncStandardContentToPLM"] = o.CanCurrentUserSyncStandardContentToPLM
+	}
 	if o.CanCurrentUserSyncToArena != nil {
 		toSerialize["canCurrentUserSyncToArena"] = o.CanCurrentUserSyncToArena
+	}
+	if o.CanCurrentUserSyncToPLM != nil {
+		toSerialize["canCurrentUserSyncToPLM"] = o.CanCurrentUserSyncToPLM
 	}
 	if o.CompanyId != nil {
 		toSerialize["companyId"] = o.CompanyId
@@ -1153,6 +1404,12 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.OsCategoryIdToArenaNumberFormatId != nil {
 		toSerialize["osCategoryIdToArenaNumberFormatId"] = o.OsCategoryIdToArenaNumberFormatId
+	}
+	if o.PLMIntegrationType != nil {
+		toSerialize["pLMIntegrationType"] = o.PLMIntegrationType
+	}
+	if o.PLMName != nil {
+		toSerialize["pLMName"] = o.PLMName
 	}
 	if o.PartNumberingSchemeId != nil {
 		toSerialize["partNumberingSchemeId"] = o.PartNumberingSchemeId

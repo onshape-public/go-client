@@ -61,6 +61,7 @@ type BTDerivedAssemblyMirror4204 struct {
 	LockedState                             *BTInstanceWithReference                    `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	MirrorFeature                           *BTMDerivedAssemblyMirrorFeature5094        `json:"mirrorFeature,omitempty"`
+	MirrorFeatureInterface                  *BTAssemblyMirrorFeatureInterface           `json:"mirrorFeatureInterface,omitempty"`
 	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
@@ -1428,6 +1429,38 @@ func (o *BTDerivedAssemblyMirror4204) SetMirrorFeature(v BTMDerivedAssemblyMirro
 	o.MirrorFeature = &v
 }
 
+// GetMirrorFeatureInterface returns the MirrorFeatureInterface field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetMirrorFeatureInterface() BTAssemblyMirrorFeatureInterface {
+	if o == nil || o.MirrorFeatureInterface == nil {
+		var ret BTAssemblyMirrorFeatureInterface
+		return ret
+	}
+	return *o.MirrorFeatureInterface
+}
+
+// GetMirrorFeatureInterfaceOk returns a tuple with the MirrorFeatureInterface field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetMirrorFeatureInterfaceOk() (*BTAssemblyMirrorFeatureInterface, bool) {
+	if o == nil || o.MirrorFeatureInterface == nil {
+		return nil, false
+	}
+	return o.MirrorFeatureInterface, true
+}
+
+// HasMirrorFeatureInterface returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasMirrorFeatureInterface() bool {
+	if o != nil && o.MirrorFeatureInterface != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMirrorFeatureInterface gets a reference to the given BTAssemblyMirrorFeatureInterface and assigns it to the MirrorFeatureInterface field.
+func (o *BTDerivedAssemblyMirror4204) SetMirrorFeatureInterface(v BTAssemblyMirrorFeatureInterface) {
+	o.MirrorFeatureInterface = &v
+}
+
 // GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
 func (o *BTDerivedAssemblyMirror4204) GetNodeWithReferenceList() []BTNodeWithReference {
 	if o == nil || o.NodeWithReferenceList == nil {
@@ -1691,6 +1724,9 @@ func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	}
 	if o.MirrorFeature != nil {
 		toSerialize["mirrorFeature"] = o.MirrorFeature
+	}
+	if o.MirrorFeatureInterface != nil {
+		toSerialize["mirrorFeatureInterface"] = o.MirrorFeatureInterface
 	}
 	if o.NodeWithReferenceList != nil {
 		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList

@@ -18,7 +18,6 @@ Name | Type | Description | Notes
 **PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Timestamp** | Pointer to **JSONTime** |  | [optional] 
-**TranslatationId** | Pointer to **string** |  | [optional] 
 **TranslationId** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -393,31 +392,6 @@ SetTimestamp sets Timestamp field to given value.
 `func (o *BTDocumentMessageBody) HasTimestamp() bool`
 
 HasTimestamp returns a boolean if a field has been set.
-
-### GetTranslatationId
-
-`func (o *BTDocumentMessageBody) GetTranslatationId() string`
-
-GetTranslatationId returns the TranslatationId field if non-nil, zero value otherwise.
-
-### GetTranslatationIdOk
-
-`func (o *BTDocumentMessageBody) GetTranslatationIdOk() (*string, bool)`
-
-GetTranslatationIdOk returns a tuple with the TranslatationId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTranslatationId
-
-`func (o *BTDocumentMessageBody) SetTranslatationId(v string)`
-
-SetTranslatationId sets TranslatationId field to given value.
-
-### HasTranslatationId
-
-`func (o *BTDocumentMessageBody) HasTranslatationId() bool`
-
-HasTranslatationId returns a boolean if a field has been set.
 
 ### GetTranslationId
 

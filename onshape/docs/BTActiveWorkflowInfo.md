@@ -8,11 +8,16 @@ Name | Type | Description | Notes
 **CanCurrentUserCreateReleases** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserEditStandardContent** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserManageWorkflows** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSeeArenaItemLink** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSyncBomToArena** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSyncRevisionsToArena** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSyncStandardContentToArena** | Pointer to **bool** |  | [optional] 
-**CanCurrentUserSyncToArena** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSeeArenaItemLink** | Pointer to **bool** | Deprecated, use canCurrentUserSeePLMItemLink | [optional] 
+**CanCurrentUserSeePLMItemLink** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncBomToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncBomToPLM | [optional] 
+**CanCurrentUserSyncBomToPLM** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncRevisionsToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncRevisionsToPLM | [optional] 
+**CanCurrentUserSyncRevisionsToPLM** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncStandardContentToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncStandardContentToPLM | [optional] 
+**CanCurrentUserSyncStandardContentToPLM** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncToPLM | [optional] 
+**CanCurrentUserSyncToPLM** | Pointer to **bool** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
@@ -22,6 +27,8 @@ Name | Type | Description | Notes
 **ObsoletionWorkflowId** | Pointer to **string** | Deprecated, use obsoletionWorkflowInfo.workflow.id instead | [optional] 
 **ObsoletionWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
 **OsCategoryIdToArenaNumberFormatId** | Pointer to **map[string]string** | Deprecated, no current alternative | [optional] 
+**PLMIntegrationType** | Pointer to **int32** |  | [optional] 
+**PLMName** | Pointer to **string** |  | [optional] 
 **PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) | Deprecated, use the pickableWorkflows field on the workflowInfo object | [optional] 
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
@@ -181,6 +188,31 @@ SetCanCurrentUserSeeArenaItemLink sets CanCurrentUserSeeArenaItemLink field to g
 
 HasCanCurrentUserSeeArenaItemLink returns a boolean if a field has been set.
 
+### GetCanCurrentUserSeePLMItemLink
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeePLMItemLink() bool`
+
+GetCanCurrentUserSeePLMItemLink returns the CanCurrentUserSeePLMItemLink field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSeePLMItemLinkOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSeePLMItemLinkOk() (*bool, bool)`
+
+GetCanCurrentUserSeePLMItemLinkOk returns a tuple with the CanCurrentUserSeePLMItemLink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSeePLMItemLink
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSeePLMItemLink(v bool)`
+
+SetCanCurrentUserSeePLMItemLink sets CanCurrentUserSeePLMItemLink field to given value.
+
+### HasCanCurrentUserSeePLMItemLink
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSeePLMItemLink() bool`
+
+HasCanCurrentUserSeePLMItemLink returns a boolean if a field has been set.
+
 ### GetCanCurrentUserSyncBomToArena
 
 `func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToArena() bool`
@@ -205,6 +237,31 @@ SetCanCurrentUserSyncBomToArena sets CanCurrentUserSyncBomToArena field to given
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToArena() bool`
 
 HasCanCurrentUserSyncBomToArena returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncBomToPLM
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToPLM() bool`
+
+GetCanCurrentUserSyncBomToPLM returns the CanCurrentUserSyncBomToPLM field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncBomToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncBomToPLMOk() (*bool, bool)`
+
+GetCanCurrentUserSyncBomToPLMOk returns a tuple with the CanCurrentUserSyncBomToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncBomToPLM
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToPLM(v bool)`
+
+SetCanCurrentUserSyncBomToPLM sets CanCurrentUserSyncBomToPLM field to given value.
+
+### HasCanCurrentUserSyncBomToPLM
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToPLM() bool`
+
+HasCanCurrentUserSyncBomToPLM returns a boolean if a field has been set.
 
 ### GetCanCurrentUserSyncRevisionsToArena
 
@@ -231,6 +288,31 @@ SetCanCurrentUserSyncRevisionsToArena sets CanCurrentUserSyncRevisionsToArena fi
 
 HasCanCurrentUserSyncRevisionsToArena returns a boolean if a field has been set.
 
+### GetCanCurrentUserSyncRevisionsToPLM
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToPLM() bool`
+
+GetCanCurrentUserSyncRevisionsToPLM returns the CanCurrentUserSyncRevisionsToPLM field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncRevisionsToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncRevisionsToPLMOk() (*bool, bool)`
+
+GetCanCurrentUserSyncRevisionsToPLMOk returns a tuple with the CanCurrentUserSyncRevisionsToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncRevisionsToPLM
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncRevisionsToPLM(v bool)`
+
+SetCanCurrentUserSyncRevisionsToPLM sets CanCurrentUserSyncRevisionsToPLM field to given value.
+
+### HasCanCurrentUserSyncRevisionsToPLM
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncRevisionsToPLM() bool`
+
+HasCanCurrentUserSyncRevisionsToPLM returns a boolean if a field has been set.
+
 ### GetCanCurrentUserSyncStandardContentToArena
 
 `func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToArena() bool`
@@ -256,6 +338,31 @@ SetCanCurrentUserSyncStandardContentToArena sets CanCurrentUserSyncStandardConte
 
 HasCanCurrentUserSyncStandardContentToArena returns a boolean if a field has been set.
 
+### GetCanCurrentUserSyncStandardContentToPLM
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToPLM() bool`
+
+GetCanCurrentUserSyncStandardContentToPLM returns the CanCurrentUserSyncStandardContentToPLM field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncStandardContentToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncStandardContentToPLMOk() (*bool, bool)`
+
+GetCanCurrentUserSyncStandardContentToPLMOk returns a tuple with the CanCurrentUserSyncStandardContentToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncStandardContentToPLM
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncStandardContentToPLM(v bool)`
+
+SetCanCurrentUserSyncStandardContentToPLM sets CanCurrentUserSyncStandardContentToPLM field to given value.
+
+### HasCanCurrentUserSyncStandardContentToPLM
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncStandardContentToPLM() bool`
+
+HasCanCurrentUserSyncStandardContentToPLM returns a boolean if a field has been set.
+
 ### GetCanCurrentUserSyncToArena
 
 `func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToArena() bool`
@@ -280,6 +387,31 @@ SetCanCurrentUserSyncToArena sets CanCurrentUserSyncToArena field to given value
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToArena() bool`
 
 HasCanCurrentUserSyncToArena returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncToPLM
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToPLM() bool`
+
+GetCanCurrentUserSyncToPLM returns the CanCurrentUserSyncToPLM field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncToPLMOk() (*bool, bool)`
+
+GetCanCurrentUserSyncToPLMOk returns a tuple with the CanCurrentUserSyncToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncToPLM
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncToPLM(v bool)`
+
+SetCanCurrentUserSyncToPLM sets CanCurrentUserSyncToPLM field to given value.
+
+### HasCanCurrentUserSyncToPLM
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncToPLM() bool`
+
+HasCanCurrentUserSyncToPLM returns a boolean if a field has been set.
 
 ### GetCompanyId
 
@@ -505,6 +637,56 @@ SetOsCategoryIdToArenaNumberFormatId sets OsCategoryIdToArenaNumberFormatId fiel
 `func (o *BTActiveWorkflowInfo) HasOsCategoryIdToArenaNumberFormatId() bool`
 
 HasOsCategoryIdToArenaNumberFormatId returns a boolean if a field has been set.
+
+### GetPLMIntegrationType
+
+`func (o *BTActiveWorkflowInfo) GetPLMIntegrationType() int32`
+
+GetPLMIntegrationType returns the PLMIntegrationType field if non-nil, zero value otherwise.
+
+### GetPLMIntegrationTypeOk
+
+`func (o *BTActiveWorkflowInfo) GetPLMIntegrationTypeOk() (*int32, bool)`
+
+GetPLMIntegrationTypeOk returns a tuple with the PLMIntegrationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPLMIntegrationType
+
+`func (o *BTActiveWorkflowInfo) SetPLMIntegrationType(v int32)`
+
+SetPLMIntegrationType sets PLMIntegrationType field to given value.
+
+### HasPLMIntegrationType
+
+`func (o *BTActiveWorkflowInfo) HasPLMIntegrationType() bool`
+
+HasPLMIntegrationType returns a boolean if a field has been set.
+
+### GetPLMName
+
+`func (o *BTActiveWorkflowInfo) GetPLMName() string`
+
+GetPLMName returns the PLMName field if non-nil, zero value otherwise.
+
+### GetPLMNameOk
+
+`func (o *BTActiveWorkflowInfo) GetPLMNameOk() (*string, bool)`
+
+GetPLMNameOk returns a tuple with the PLMName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPLMName
+
+`func (o *BTActiveWorkflowInfo) SetPLMName(v string)`
+
+SetPLMName sets PLMName field to given value.
+
+### HasPLMName
+
+`func (o *BTActiveWorkflowInfo) HasPLMName() bool`
+
+HasPLMName returns a boolean if a field has been set.
 
 ### GetPartNumberingSchemeId
 

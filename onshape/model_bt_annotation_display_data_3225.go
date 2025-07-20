@@ -30,6 +30,11 @@ func (o *BTAnnotationWeldDisplayData4919) AsBTAnnotationDisplayData3225() *BTAnn
 	return &BTAnnotationDisplayData3225{o}
 }
 
+// BTHoleCalloutDisplayData3452AsBTAnnotationDisplayData3225 is a convenience function that returns BTHoleCalloutDisplayData3452 wrapped in BTAnnotationDisplayData3225
+func (o *BTHoleCalloutDisplayData3452) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
+	return &BTAnnotationDisplayData3225{o}
+}
+
 // BTAnnotationDeleteDisplayData1815AsBTAnnotationDisplayData3225 is a convenience function that returns BTAnnotationDeleteDisplayData1815 wrapped in BTAnnotationDisplayData3225
 func (o *BTAnnotationDeleteDisplayData1815) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
 	return &BTAnnotationDisplayData3225{o}
@@ -420,6 +425,20 @@ func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTAnnotationDisplayData3225 = nil
 			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTDatumDisplayData3408: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTHoleCalloutDisplayData-3452'
+	if jsonDict["btType"] == "BTHoleCalloutDisplayData-3452" {
+		// try to unmarshal JSON data into BTHoleCalloutDisplayData3452
+		var qr *BTHoleCalloutDisplayData3452
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTAnnotationDisplayData3225 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTAnnotationDisplayData3225 = nil
+			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTHoleCalloutDisplayData3452: %s", err.Error())
 		}
 	}
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**Filter** | Pointer to [**BTQueryFilter183**](BTQueryFilter183.md) |  | [optional] 
 **Queries** | Pointer to [**[]BTMIndividualQueryBase139**](BTMIndividualQueryBase139.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterQueryList148AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetFilter
+
+`func (o *BTMParameterQueryList148AllOf) GetFilter() BTQueryFilter183`
+
+GetFilter returns the Filter field if non-nil, zero value otherwise.
+
+### GetFilterOk
+
+`func (o *BTMParameterQueryList148AllOf) GetFilterOk() (*BTQueryFilter183, bool)`
+
+GetFilterOk returns a tuple with the Filter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFilter
+
+`func (o *BTMParameterQueryList148AllOf) SetFilter(v BTQueryFilter183)`
+
+SetFilter sets Filter field to given value.
+
+### HasFilter
+
+`func (o *BTMParameterQueryList148AllOf) HasFilter() bool`
+
+HasFilter returns a boolean if a field has been set.
 
 ### GetQueries
 

@@ -44,16 +44,17 @@ type BTAssemblyMirror2996 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured       *bool                         `json:"suppressionConfigured,omitempty"`
-	SuppressionState            *BTMSuppressionState1924      `json:"suppressionState,omitempty"`
-	ValidRevisionReference      *bool                         `json:"validRevisionReference,omitempty"`
-	Version                     *int32                        `json:"version,omitempty"`
-	Feature                     *BTMAssemblyFeature887        `json:"feature,omitempty"`
-	FeatureId                   *string                       `json:"featureId,omitempty"`
-	InstanceControlNodes        []BTInstanceControlNode750    `json:"instanceControlNodes,omitempty"`
-	SeedBasedParametricInstance *bool                         `json:"seedBasedParametricInstance,omitempty"`
-	MirrorFeature               *BTMAssemblyMirrorFeature3037 `json:"mirrorFeature,omitempty"`
-	NodeWithReferenceList       []BTNodeWithReference         `json:"nodeWithReferenceList,omitempty"`
+	SuppressionConfigured       *bool                             `json:"suppressionConfigured,omitempty"`
+	SuppressionState            *BTMSuppressionState1924          `json:"suppressionState,omitempty"`
+	ValidRevisionReference      *bool                             `json:"validRevisionReference,omitempty"`
+	Version                     *int32                            `json:"version,omitempty"`
+	Feature                     *BTMAssemblyFeature887            `json:"feature,omitempty"`
+	FeatureId                   *string                           `json:"featureId,omitempty"`
+	InstanceControlNodes        []BTInstanceControlNode750        `json:"instanceControlNodes,omitempty"`
+	SeedBasedParametricInstance *bool                             `json:"seedBasedParametricInstance,omitempty"`
+	MirrorFeature               *BTMAssemblyMirrorFeature3037     `json:"mirrorFeature,omitempty"`
+	MirrorFeatureInterface      *BTAssemblyMirrorFeatureInterface `json:"mirrorFeatureInterface,omitempty"`
+	NodeWithReferenceList       []BTNodeWithReference             `json:"nodeWithReferenceList,omitempty"`
 }
 
 // NewBTAssemblyMirror2996 instantiates a new BTAssemblyMirror2996 object
@@ -1161,6 +1162,38 @@ func (o *BTAssemblyMirror2996) SetMirrorFeature(v BTMAssemblyMirrorFeature3037) 
 	o.MirrorFeature = &v
 }
 
+// GetMirrorFeatureInterface returns the MirrorFeatureInterface field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetMirrorFeatureInterface() BTAssemblyMirrorFeatureInterface {
+	if o == nil || o.MirrorFeatureInterface == nil {
+		var ret BTAssemblyMirrorFeatureInterface
+		return ret
+	}
+	return *o.MirrorFeatureInterface
+}
+
+// GetMirrorFeatureInterfaceOk returns a tuple with the MirrorFeatureInterface field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMirror2996) GetMirrorFeatureInterfaceOk() (*BTAssemblyMirrorFeatureInterface, bool) {
+	if o == nil || o.MirrorFeatureInterface == nil {
+		return nil, false
+	}
+	return o.MirrorFeatureInterface, true
+}
+
+// HasMirrorFeatureInterface returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasMirrorFeatureInterface() bool {
+	if o != nil && o.MirrorFeatureInterface != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMirrorFeatureInterface gets a reference to the given BTAssemblyMirrorFeatureInterface and assigns it to the MirrorFeatureInterface field.
+func (o *BTAssemblyMirror2996) SetMirrorFeatureInterface(v BTAssemblyMirrorFeatureInterface) {
+	o.MirrorFeatureInterface = &v
+}
+
 // GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
 func (o *BTAssemblyMirror2996) GetNodeWithReferenceList() []BTNodeWithReference {
 	if o == nil || o.NodeWithReferenceList == nil {
@@ -1304,6 +1337,9 @@ func (o BTAssemblyMirror2996) MarshalJSON() ([]byte, error) {
 	}
 	if o.MirrorFeature != nil {
 		toSerialize["mirrorFeature"] = o.MirrorFeature
+	}
+	if o.MirrorFeatureInterface != nil {
+		toSerialize["mirrorFeatureInterface"] = o.MirrorFeatureInterface
 	}
 	if o.NodeWithReferenceList != nil {
 		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList

@@ -16,9 +16,12 @@ import (
 
 // BTModelFormatInfo struct for BTModelFormatInfo
 type BTModelFormatInfo struct {
-	CouldBeAssembly *bool   `json:"couldBeAssembly,omitempty"`
-	Name            *string `json:"name,omitempty"`
-	TranslatorName  *string `json:"translatorName,omitempty"`
+	// Indicates if this format could be an assembly.
+	CouldBeAssembly *bool `json:"couldBeAssembly,omitempty"`
+	// Name of the format.
+	Name *string `json:"name,omitempty"`
+	// The name of the translator for the format.
+	TranslatorName *string `json:"translatorName,omitempty"`
 }
 
 // NewBTModelFormatInfo instantiates a new BTModelFormatInfo object
