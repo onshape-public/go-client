@@ -31,7 +31,7 @@ func populateDefaultResultMapper() {
 			"owner":   o.GetOwner().Id,
 			"creator": Ptr(Ptr(o.GetCreatedBy()).GetId()),
 		}
-	})).Add(MapFields(func(o *onshape.BTDocumentSummaryInfo) TestingContext {
+	})).Add(MapFields(func(o *onshape.BTGlobalTreeNodeSummaryInfo) TestingContext {
 		if dw, ok := o.GetDefaultWorkspaceOk(); ok {
 			return TestingContext{
 				"did":     o.GetId(),

@@ -126,9 +126,9 @@ func TestGetDocument(t *testing.T) {
 				cb := item.GetCreatedBy()
 				fmt.Println(item.GetName(), cb.GetName(), item.GetCreatedAt(), item.GetOwner().Id)
 
-				doc := item.GetActualInstance().(*onshape.BTDocumentSummaryInfo)
+				doc := item.GetActualInstance().(*onshape.BTGlobalTreeNodeSummaryInfo)
 				if doc == nil {
-					t.Error("Error: expected item to be BTDocumentSummaryInfo, but it was actually", item.GetActualInstance())
+					t.Error("Error: expected item to be BTGlobalTreeNodeSummaryInfo, but it was actually", item.GetActualInstance())
 				} else {
 					require.True(t, doc.HasDefaultWorkspace())
 				}

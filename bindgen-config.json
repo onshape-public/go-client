@@ -159,7 +159,7 @@
         "type": "remove"
       },
       {
-        "key": "components.schemas.BTDocumentSummaryInfo.discriminator.mapping['document-summary']",
+        "key": "components.schemas.BTGlobalTreeNodeSummaryInfo.discriminator.mapping['document-summary']",
         "type": "remove"
       },
       {

@@ -37,6 +37,8 @@ func main() {
 Could be found [here](./onshape/README.md)
 
 ## Breaking Changes
+### v1.201.59934-5fdafe848d7f
+* Replaces BTDocumentSummaryInfo with BTGlobalTreeNodeSummaryInfo
 ### v1.193.50007-3a3fc4483ede
 * UpdateDocumentAttributes now returns BTDocumentSummaryInfo instead of map[string]interface
 ### v1.171.24257-687de06de652

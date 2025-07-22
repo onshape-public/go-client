@@ -59,7 +59,7 @@ func TestEventAPI(t *testing.T) {
 	}.Execute()
 }
 
-func requestRecentlyOpenedDocument() (*onshape.BTDocumentSummaryInfo, error) {
+func requestRecentlyOpenedDocument() (*onshape.BTGlobalTreeNodeSummaryInfo, error) {
 	doc, _, err := requestMagicTreeNodes()
 
 	if err != nil {
@@ -107,7 +107,7 @@ func requestMagicTreeNodes() ([]onshape.BTGlobalTreeMagicNodeInfo, *http.Respons
 	return nodes.Items, localVarHTTPResponse, err
 }
 
-func requestMagicTreeNode(url string) ([]onshape.BTDocumentSummaryInfo, *http.Response, error) {
+func requestMagicTreeNode(url string) ([]onshape.BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
 	localVarBody, localVarHTTPResponse, err := makeHTTPRequest(url)
 
 	if err != nil {
@@ -115,7 +115,7 @@ func requestMagicTreeNode(url string) ([]onshape.BTDocumentSummaryInfo, *http.Re
 	}
 
 	type bTMagicResponse struct {
-		Items []onshape.BTDocumentSummaryInfo `json:"items"`
+		Items []onshape.BTGlobalTreeNodeSummaryInfo `json:"items"`
 	}
 
 	var nodes bTMagicResponse
