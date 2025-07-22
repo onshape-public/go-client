@@ -16,47 +16,45 @@ import (
 
 // BTAssemblySimulation2246 struct for BTAssemblySimulation2246
 type BTAssemblySimulation2246 struct {
-	BTMAssemblyFeature887
-	BtType *string `json:"btType,omitempty"`
+	AuxiliaryTreeFeature *bool `json:"auxiliaryTreeFeature,omitempty"`
+	// Type of JSON object.
+	BtType        *string `json:"btType,omitempty"`
+	FeatureFolder *bool   `json:"featureFolder,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
-	FeatureId *string `json:"featureId,omitempty"`
+	FeatureId             *string `json:"featureId,omitempty"`
+	FeatureListFieldIndex *int32  `json:"featureListFieldIndex,omitempty"`
 	// The name of the feature spec that this feature instantiates.
-	FeatureType *string `json:"featureType,omitempty"`
+	FeatureType                      *string `json:"featureType,omitempty"`
+	FieldIndexForOwnedMateConnectors *int32  `json:"fieldIndexForOwnedMateConnectors,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
-	MateConnectorFeature *bool   `json:"mateConnectorFeature,omitempty"`
+	ImportMicroversion   *string              `json:"importMicroversion,omitempty"`
+	InertialRelief       *bool                `json:"inertialRelief,omitempty"`
+	MateConnectorFeature *bool                `json:"mateConnectorFeature,omitempty"`
+	MateConnectors       []BTMMateConnector66 `json:"mateConnectors,omitempty"`
+	Modal                *bool                `json:"modal,omitempty"`
 	// User-visible name of the feature.
 	Name *string `json:"name,omitempty"`
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
 	Namespace *string `json:"namespace,omitempty"`
 	// ID for the feature node.
-	NodeId *string `json:"nodeId,omitempty"`
-	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-	Parameters []BTMParameter1 `json:"parameters,omitempty"`
+	NodeId                                 *string                                   `json:"nodeId,omitempty"`
+	NumberOfModes                          *float64                                  `json:"numberOfModes,omitempty"`
+	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
+	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
-	SubFeatures []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeatures               []BTMFeature134 `json:"subFeatures,omitempty"`
+	SubFeaturesNotUsedInQuery []BTMFeature134 `json:"subFeaturesNotUsedInQuery,omitempty"`
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
-	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	SuppressionConfigured *bool                      `json:"suppressionConfigured,omitempty"`
+	SuppressionState      *BTMSuppressionState1924   `json:"suppressionState,omitempty"`
+	Type                  *GBTAssemblySimulationType `json:"type,omitempty"`
 	// If `true`, the feature references a Variable Studio.
-	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
-	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
-	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
-	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
-	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
-	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
-	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
-	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
-	SubFeaturesNotUsedInQuery              []BTMFeature134                           `json:"subFeaturesNotUsedInQuery,omitempty"`
-	Version                                *int32                                    `json:"version,omitempty"`
-	InertialRelief                         *bool                                     `json:"inertialRelief,omitempty"`
-	Modal                                  *bool                                     `json:"modal,omitempty"`
-	NumberOfModes                          *float64                                  `json:"numberOfModes,omitempty"`
-	Type                                   *GBTAssemblySimulationType                `json:"type,omitempty"`
+	VariableStudioReference *bool  `json:"variableStudioReference,omitempty"`
+	Version                 *int32 `json:"version,omitempty"`
 }
 
 // NewBTAssemblySimulation2246 instantiates a new BTAssemblySimulation2246 object
@@ -74,6 +72,38 @@ func NewBTAssemblySimulation2246() *BTAssemblySimulation2246 {
 func NewBTAssemblySimulation2246WithDefaults() *BTAssemblySimulation2246 {
 	this := BTAssemblySimulation2246{}
 	return &this
+}
+
+// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeature() bool {
+	if o == nil || o.AuxiliaryTreeFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AuxiliaryTreeFeature
+}
+
+// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
+	if o == nil || o.AuxiliaryTreeFeature == nil {
+		return nil, false
+	}
+	return o.AuxiliaryTreeFeature, true
+}
+
+// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasAuxiliaryTreeFeature() bool {
+	if o != nil && o.AuxiliaryTreeFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
+func (o *BTAssemblySimulation2246) SetAuxiliaryTreeFeature(v bool) {
+	o.AuxiliaryTreeFeature = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -108,6 +138,38 @@ func (o *BTAssemblySimulation2246) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetFeatureFolder() bool {
+	if o == nil || o.FeatureFolder == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FeatureFolder
+}
+
+// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetFeatureFolderOk() (*bool, bool) {
+	if o == nil || o.FeatureFolder == nil {
+		return nil, false
+	}
+	return o.FeatureFolder, true
+}
+
+// HasFeatureFolder returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasFeatureFolder() bool {
+	if o != nil && o.FeatureFolder != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
+func (o *BTAssemblySimulation2246) SetFeatureFolder(v bool) {
+	o.FeatureFolder = &v
+}
+
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetFeatureId() string {
 	if o == nil || o.FeatureId == nil {
@@ -138,6 +200,38 @@ func (o *BTAssemblySimulation2246) HasFeatureId() bool {
 // SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
 func (o *BTAssemblySimulation2246) SetFeatureId(v string) {
 	o.FeatureId = &v
+}
+
+// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetFeatureListFieldIndex() int32 {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FeatureListFieldIndex
+}
+
+// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetFeatureListFieldIndexOk() (*int32, bool) {
+	if o == nil || o.FeatureListFieldIndex == nil {
+		return nil, false
+	}
+	return o.FeatureListFieldIndex, true
+}
+
+// HasFeatureListFieldIndex returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasFeatureListFieldIndex() bool {
+	if o != nil && o.FeatureListFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
+func (o *BTAssemblySimulation2246) SetFeatureListFieldIndex(v int32) {
+	o.FeatureListFieldIndex = &v
 }
 
 // GetFeatureType returns the FeatureType field value if set, zero value otherwise.
@@ -172,6 +266,38 @@ func (o *BTAssemblySimulation2246) SetFeatureType(v string) {
 	o.FeatureType = &v
 }
 
+// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectors() int32 {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		var ret int32
+		return ret
+	}
+	return *o.FieldIndexForOwnedMateConnectors
+}
+
+// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
+	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
+		return nil, false
+	}
+	return o.FieldIndexForOwnedMateConnectors, true
+}
+
+// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasFieldIndexForOwnedMateConnectors() bool {
+	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
+func (o *BTAssemblySimulation2246) SetFieldIndexForOwnedMateConnectors(v int32) {
+	o.FieldIndexForOwnedMateConnectors = &v
+}
+
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetImportMicroversion() string {
 	if o == nil || o.ImportMicroversion == nil {
@@ -204,6 +330,38 @@ func (o *BTAssemblySimulation2246) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
 }
 
+// GetInertialRelief returns the InertialRelief field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetInertialRelief() bool {
+	if o == nil || o.InertialRelief == nil {
+		var ret bool
+		return ret
+	}
+	return *o.InertialRelief
+}
+
+// GetInertialReliefOk returns a tuple with the InertialRelief field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetInertialReliefOk() (*bool, bool) {
+	if o == nil || o.InertialRelief == nil {
+		return nil, false
+	}
+	return o.InertialRelief, true
+}
+
+// HasInertialRelief returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasInertialRelief() bool {
+	if o != nil && o.InertialRelief != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInertialRelief gets a reference to the given bool and assigns it to the InertialRelief field.
+func (o *BTAssemblySimulation2246) SetInertialRelief(v bool) {
+	o.InertialRelief = &v
+}
+
 // GetMateConnectorFeature returns the MateConnectorFeature field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetMateConnectorFeature() bool {
 	if o == nil || o.MateConnectorFeature == nil {
@@ -234,6 +392,70 @@ func (o *BTAssemblySimulation2246) HasMateConnectorFeature() bool {
 // SetMateConnectorFeature gets a reference to the given bool and assigns it to the MateConnectorFeature field.
 func (o *BTAssemblySimulation2246) SetMateConnectorFeature(v bool) {
 	o.MateConnectorFeature = &v
+}
+
+// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetMateConnectors() []BTMMateConnector66 {
+	if o == nil || o.MateConnectors == nil {
+		var ret []BTMMateConnector66
+		return ret
+	}
+	return o.MateConnectors
+}
+
+// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
+	if o == nil || o.MateConnectors == nil {
+		return nil, false
+	}
+	return o.MateConnectors, true
+}
+
+// HasMateConnectors returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasMateConnectors() bool {
+	if o != nil && o.MateConnectors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
+func (o *BTAssemblySimulation2246) SetMateConnectors(v []BTMMateConnector66) {
+	o.MateConnectors = v
+}
+
+// GetModal returns the Modal field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetModal() bool {
+	if o == nil || o.Modal == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Modal
+}
+
+// GetModalOk returns a tuple with the Modal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetModalOk() (*bool, bool) {
+	if o == nil || o.Modal == nil {
+		return nil, false
+	}
+	return o.Modal, true
+}
+
+// HasModal returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasModal() bool {
+	if o != nil && o.Modal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModal gets a reference to the given bool and assigns it to the Modal field.
+func (o *BTAssemblySimulation2246) SetModal(v bool) {
+	o.Modal = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -332,36 +554,100 @@ func (o *BTAssemblySimulation2246) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetParameters returns the Parameters field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetParameters() []BTMParameter1 {
-	if o == nil || o.Parameters == nil {
-		var ret []BTMParameter1
+// GetNumberOfModes returns the NumberOfModes field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetNumberOfModes() float64 {
+	if o == nil || o.NumberOfModes == nil {
+		var ret float64
 		return ret
 	}
-	return o.Parameters
+	return *o.NumberOfModes
 }
 
-// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// GetNumberOfModesOk returns a tuple with the NumberOfModes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetParametersOk() ([]BTMParameter1, bool) {
-	if o == nil || o.Parameters == nil {
+func (o *BTAssemblySimulation2246) GetNumberOfModesOk() (*float64, bool) {
+	if o == nil || o.NumberOfModes == nil {
 		return nil, false
 	}
-	return o.Parameters, true
+	return o.NumberOfModes, true
 }
 
-// HasParameters returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasParameters() bool {
-	if o != nil && o.Parameters != nil {
+// HasNumberOfModes returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasNumberOfModes() bool {
+	if o != nil && o.NumberOfModes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
-func (o *BTAssemblySimulation2246) SetParameters(v []BTMParameter1) {
-	o.Parameters = v
+// SetNumberOfModes gets a reference to the given float64 and assigns it to the NumberOfModes field.
+func (o *BTAssemblySimulation2246) SetNumberOfModes(v float64) {
+	o.NumberOfModes = &v
+}
+
+// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
+		var ret []BTMIndividualQueryWithOccurrenceBase904
+		return ret
+	}
+	return o.OccurrenceQueriesFromAllConfigurations
+}
+
+// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
+	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
+		return nil, false
+	}
+	return o.OccurrenceQueriesFromAllConfigurations, true
+}
+
+// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasOccurrenceQueriesFromAllConfigurations() bool {
+	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
+func (o *BTAssemblySimulation2246) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
+	o.OccurrenceQueriesFromAllConfigurations = v
+}
+
+// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetParametricInstanceFeature() bool {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParametricInstanceFeature
+}
+
+// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetParametricInstanceFeatureOk() (*bool, bool) {
+	if o == nil || o.ParametricInstanceFeature == nil {
+		return nil, false
+	}
+	return o.ParametricInstanceFeature, true
+}
+
+// HasParametricInstanceFeature returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasParametricInstanceFeature() bool {
+	if o != nil && o.ParametricInstanceFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
+func (o *BTAssemblySimulation2246) SetParametricInstanceFeature(v bool) {
+	o.ParametricInstanceFeature = &v
 }
 
 // GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
@@ -426,6 +712,38 @@ func (o *BTAssemblySimulation2246) HasSubFeatures() bool {
 // SetSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the SubFeatures field.
 func (o *BTAssemblySimulation2246) SetSubFeatures(v []BTMFeature134) {
 	o.SubFeatures = v
+}
+
+// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.SubFeaturesNotUsedInQuery
+}
+
+// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
+	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
+		return nil, false
+	}
+	return o.SubFeaturesNotUsedInQuery, true
+}
+
+// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasSubFeaturesNotUsedInQuery() bool {
+	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
+func (o *BTAssemblySimulation2246) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
+	o.SubFeaturesNotUsedInQuery = v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
@@ -524,6 +842,38 @@ func (o *BTAssemblySimulation2246) SetSuppressionState(v BTMSuppressionState1924
 	o.SuppressionState = &v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *BTAssemblySimulation2246) GetType() GBTAssemblySimulationType {
+	if o == nil || o.Type == nil {
+		var ret GBTAssemblySimulationType
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulation2246) GetTypeOk() (*GBTAssemblySimulationType, bool) {
+	if o == nil || o.Type == nil {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *BTAssemblySimulation2246) HasType() bool {
+	if o != nil && o.Type != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given GBTAssemblySimulationType and assigns it to the Type field.
+func (o *BTAssemblySimulation2246) SetType(v GBTAssemblySimulationType) {
+	o.Type = &v
+}
+
 // GetVariableStudioReference returns the VariableStudioReference field value if set, zero value otherwise.
 func (o *BTAssemblySimulation2246) GetVariableStudioReference() bool {
 	if o == nil || o.VariableStudioReference == nil {
@@ -554,262 +904,6 @@ func (o *BTAssemblySimulation2246) HasVariableStudioReference() bool {
 // SetVariableStudioReference gets a reference to the given bool and assigns it to the VariableStudioReference field.
 func (o *BTAssemblySimulation2246) SetVariableStudioReference(v bool) {
 	o.VariableStudioReference = &v
-}
-
-// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeature() bool {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AuxiliaryTreeFeature
-}
-
-// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		return nil, false
-	}
-	return o.AuxiliaryTreeFeature, true
-}
-
-// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasAuxiliaryTreeFeature() bool {
-	if o != nil && o.AuxiliaryTreeFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
-func (o *BTAssemblySimulation2246) SetAuxiliaryTreeFeature(v bool) {
-	o.AuxiliaryTreeFeature = &v
-}
-
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetFeatureFolder() bool {
-	if o == nil || o.FeatureFolder == nil {
-		var ret bool
-		return ret
-	}
-	return *o.FeatureFolder
-}
-
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetFeatureFolderOk() (*bool, bool) {
-	if o == nil || o.FeatureFolder == nil {
-		return nil, false
-	}
-	return o.FeatureFolder, true
-}
-
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasFeatureFolder() bool {
-	if o != nil && o.FeatureFolder != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *BTAssemblySimulation2246) SetFeatureFolder(v bool) {
-	o.FeatureFolder = &v
-}
-
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetFeatureListFieldIndex() int32 {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FeatureListFieldIndex
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetFeatureListFieldIndexOk() (*int32, bool) {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		return nil, false
-	}
-	return o.FeatureListFieldIndex, true
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasFeatureListFieldIndex() bool {
-	if o != nil && o.FeatureListFieldIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *BTAssemblySimulation2246) SetFeatureListFieldIndex(v int32) {
-	o.FeatureListFieldIndex = &v
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectors() int32 {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FieldIndexForOwnedMateConnectors
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		return nil, false
-	}
-	return o.FieldIndexForOwnedMateConnectors, true
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasFieldIndexForOwnedMateConnectors() bool {
-	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *BTAssemblySimulation2246) SetFieldIndexForOwnedMateConnectors(v int32) {
-	o.FieldIndexForOwnedMateConnectors = &v
-}
-
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetMateConnectors() []BTMMateConnector66 {
-	if o == nil || o.MateConnectors == nil {
-		var ret []BTMMateConnector66
-		return ret
-	}
-	return o.MateConnectors
-}
-
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	if o == nil || o.MateConnectors == nil {
-		return nil, false
-	}
-	return o.MateConnectors, true
-}
-
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasMateConnectors() bool {
-	if o != nil && o.MateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *BTAssemblySimulation2246) SetMateConnectors(v []BTMMateConnector66) {
-	o.MateConnectors = v
-}
-
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		var ret []BTMIndividualQueryWithOccurrenceBase904
-		return ret
-	}
-	return o.OccurrenceQueriesFromAllConfigurations
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		return nil, false
-	}
-	return o.OccurrenceQueriesFromAllConfigurations, true
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasOccurrenceQueriesFromAllConfigurations() bool {
-	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *BTAssemblySimulation2246) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	o.OccurrenceQueriesFromAllConfigurations = v
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetParametricInstanceFeature() bool {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ParametricInstanceFeature
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetParametricInstanceFeatureOk() (*bool, bool) {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		return nil, false
-	}
-	return o.ParametricInstanceFeature, true
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasParametricInstanceFeature() bool {
-	if o != nil && o.ParametricInstanceFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *BTAssemblySimulation2246) SetParametricInstanceFeature(v bool) {
-	o.ParametricInstanceFeature = &v
-}
-
-// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		var ret []BTMFeature134
-		return ret
-	}
-	return o.SubFeaturesNotUsedInQuery
-}
-
-// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		return nil, false
-	}
-	return o.SubFeaturesNotUsedInQuery, true
-}
-
-// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasSubFeaturesNotUsedInQuery() bool {
-	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
-func (o *BTAssemblySimulation2246) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
-	o.SubFeaturesNotUsedInQuery = v
 }
 
 // GetVersion returns the Version field value if set, zero value otherwise.
@@ -844,158 +938,43 @@ func (o *BTAssemblySimulation2246) SetVersion(v int32) {
 	o.Version = &v
 }
 
-// GetInertialRelief returns the InertialRelief field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetInertialRelief() bool {
-	if o == nil || o.InertialRelief == nil {
-		var ret bool
-		return ret
-	}
-	return *o.InertialRelief
-}
-
-// GetInertialReliefOk returns a tuple with the InertialRelief field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetInertialReliefOk() (*bool, bool) {
-	if o == nil || o.InertialRelief == nil {
-		return nil, false
-	}
-	return o.InertialRelief, true
-}
-
-// HasInertialRelief returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasInertialRelief() bool {
-	if o != nil && o.InertialRelief != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetInertialRelief gets a reference to the given bool and assigns it to the InertialRelief field.
-func (o *BTAssemblySimulation2246) SetInertialRelief(v bool) {
-	o.InertialRelief = &v
-}
-
-// GetModal returns the Modal field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetModal() bool {
-	if o == nil || o.Modal == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Modal
-}
-
-// GetModalOk returns a tuple with the Modal field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetModalOk() (*bool, bool) {
-	if o == nil || o.Modal == nil {
-		return nil, false
-	}
-	return o.Modal, true
-}
-
-// HasModal returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasModal() bool {
-	if o != nil && o.Modal != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetModal gets a reference to the given bool and assigns it to the Modal field.
-func (o *BTAssemblySimulation2246) SetModal(v bool) {
-	o.Modal = &v
-}
-
-// GetNumberOfModes returns the NumberOfModes field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetNumberOfModes() float64 {
-	if o == nil || o.NumberOfModes == nil {
-		var ret float64
-		return ret
-	}
-	return *o.NumberOfModes
-}
-
-// GetNumberOfModesOk returns a tuple with the NumberOfModes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetNumberOfModesOk() (*float64, bool) {
-	if o == nil || o.NumberOfModes == nil {
-		return nil, false
-	}
-	return o.NumberOfModes, true
-}
-
-// HasNumberOfModes returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasNumberOfModes() bool {
-	if o != nil && o.NumberOfModes != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNumberOfModes gets a reference to the given float64 and assigns it to the NumberOfModes field.
-func (o *BTAssemblySimulation2246) SetNumberOfModes(v float64) {
-	o.NumberOfModes = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *BTAssemblySimulation2246) GetType() GBTAssemblySimulationType {
-	if o == nil || o.Type == nil {
-		var ret GBTAssemblySimulationType
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAssemblySimulation2246) GetTypeOk() (*GBTAssemblySimulationType, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *BTAssemblySimulation2246) HasType() bool {
-	if o != nil && o.Type != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given GBTAssemblySimulationType and assigns it to the Type field.
-func (o *BTAssemblySimulation2246) SetType(v GBTAssemblySimulationType) {
-	o.Type = &v
-}
-
 func (o BTAssemblySimulation2246) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBTMAssemblyFeature887, errBTMAssemblyFeature887 := json.Marshal(o.BTMAssemblyFeature887)
-	if errBTMAssemblyFeature887 != nil {
-		return []byte{}, errBTMAssemblyFeature887
-	}
-	errBTMAssemblyFeature887 = json.Unmarshal([]byte(serializedBTMAssemblyFeature887), &toSerialize)
-	if errBTMAssemblyFeature887 != nil {
-		return []byte{}, errBTMAssemblyFeature887
+	if o.AuxiliaryTreeFeature != nil {
+		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.FeatureFolder != nil {
+		toSerialize["featureFolder"] = o.FeatureFolder
+	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.FeatureListFieldIndex != nil {
+		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
 	}
 	if o.FeatureType != nil {
 		toSerialize["featureType"] = o.FeatureType
 	}
+	if o.FieldIndexForOwnedMateConnectors != nil {
+		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
+	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
+	if o.InertialRelief != nil {
+		toSerialize["inertialRelief"] = o.InertialRelief
+	}
 	if o.MateConnectorFeature != nil {
 		toSerialize["mateConnectorFeature"] = o.MateConnectorFeature
+	}
+	if o.MateConnectors != nil {
+		toSerialize["mateConnectors"] = o.MateConnectors
+	}
+	if o.Modal != nil {
+		toSerialize["modal"] = o.Modal
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -1006,14 +985,23 @@ func (o BTAssemblySimulation2246) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.Parameters != nil {
-		toSerialize["parameters"] = o.Parameters
+	if o.NumberOfModes != nil {
+		toSerialize["numberOfModes"] = o.NumberOfModes
+	}
+	if o.OccurrenceQueriesFromAllConfigurations != nil {
+		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
+	}
+	if o.ParametricInstanceFeature != nil {
+		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
 	}
 	if o.ReturnAfterSubfeatures != nil {
 		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures
 	}
 	if o.SubFeatures != nil {
 		toSerialize["subFeatures"] = o.SubFeatures
+	}
+	if o.SubFeaturesNotUsedInQuery != nil {
+		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed
@@ -1024,47 +1012,14 @@ func (o BTAssemblySimulation2246) MarshalJSON() ([]byte, error) {
 	if o.SuppressionState != nil {
 		toSerialize["suppressionState"] = o.SuppressionState
 	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
 	if o.VariableStudioReference != nil {
 		toSerialize["variableStudioReference"] = o.VariableStudioReference
 	}
-	if o.AuxiliaryTreeFeature != nil {
-		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
-	}
-	if o.FeatureFolder != nil {
-		toSerialize["featureFolder"] = o.FeatureFolder
-	}
-	if o.FeatureListFieldIndex != nil {
-		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
-	}
-	if o.FieldIndexForOwnedMateConnectors != nil {
-		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
-	}
-	if o.MateConnectors != nil {
-		toSerialize["mateConnectors"] = o.MateConnectors
-	}
-	if o.OccurrenceQueriesFromAllConfigurations != nil {
-		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
-	}
-	if o.ParametricInstanceFeature != nil {
-		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
-	}
-	if o.SubFeaturesNotUsedInQuery != nil {
-		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
-	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
-	}
-	if o.InertialRelief != nil {
-		toSerialize["inertialRelief"] = o.InertialRelief
-	}
-	if o.Modal != nil {
-		toSerialize["modal"] = o.Modal
-	}
-	if o.NumberOfModes != nil {
-		toSerialize["numberOfModes"] = o.NumberOfModes
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

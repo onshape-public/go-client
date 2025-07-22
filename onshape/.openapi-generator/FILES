@@ -161,6 +161,7 @@ docs/BTAssemblyMateValueInfo.md
 docs/BTAssemblyMateValuesInfo.md
 docs/BTAssemblyMirror2996.md
 docs/BTAssemblyMirror2996AllOf.md
+docs/BTAssemblyMirrorFeatureInterface.md
 docs/BTAssemblyModificationParams.md
 docs/BTAssemblyOccurrenceInfo.md
 docs/BTAssemblyPartBodyType.md
@@ -173,7 +174,6 @@ docs/BTAssemblyReferencesDisplayData1562.md
 docs/BTAssemblyReplicate2774.md
 docs/BTAssemblyReplicate2774AllOf.md
 docs/BTAssemblySimulation2246.md
-docs/BTAssemblySimulation2246AllOf.md
 docs/BTAssemblySimulationData978.md
 docs/BTAssemblySimulationData978AllOf.md
 docs/BTAssemblySimulationStructuralLoadsTable3867.md
@@ -344,8 +344,6 @@ docs/BTDocumentSearchHitInfo.md
 docs/BTDocumentSearchParams.md
 docs/BTDocumentSelectorInfo.md
 docs/BTDocumentSelectorParametersInfo.md
-docs/BTDocumentSummaryInfo.md
-docs/BTDocumentSummaryInfoAllOf.md
 docs/BTDocumentSummarySearchInfo.md
 docs/BTDocumentSummarySearchInfoAllOf.md
 docs/BTDocumentVersionElementIds1897.md
@@ -483,16 +481,22 @@ docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
 docs/BTGetJsonResponse2137Tree.md
+docs/BTGlobalPermissionInfo.md
+docs/BTGlobalPermissionInfoItem.md
 docs/BTGlobalTreeMagicNodeInfo.md
 docs/BTGlobalTreeMagicNodeInfoAllOf.md
 docs/BTGlobalTreeNodeInfo.md
 docs/BTGlobalTreeNodeListResponse.md
 docs/BTGlobalTreeNodeListResponseBTTeamInfo.md
+docs/BTGlobalTreeNodeSummaryInfo.md
+docs/BTGlobalTreeNodeSummaryInfoAllOf.md
 docs/BTGraphicsAppearance1152.md
 docs/BTGraphicsBuffer2668.md
 docs/BTGraphicsSectionPlaneData1429.md
 docs/BTGraphicsSectionViewStateData4379.md
 docs/BTGroupOrElementReference2205.md
+docs/BTHoleCalloutDisplayData3452.md
+docs/BTHoleCalloutDisplayData3452AllOf.md
 docs/BTIdTranslationInfo.md
 docs/BTIdTranslationParams.md
 docs/BTIdTranslationResultInfo.md
@@ -654,7 +658,6 @@ docs/BTMIndividualSketchUniqueVerticesQuery1472AllOf.md
 docs/BTMInferenceQueryWithOccurrence1083.md
 docs/BTMInferenceQueryWithOccurrence1083AllOf.md
 docs/BTMLoad3538.md
-docs/BTMLoad3538AllOf.md
 docs/BTMMate64.md
 docs/BTMMate64AllOf.md
 docs/BTMMateConnector66.md
@@ -754,6 +757,8 @@ docs/BTMSketchTextEntity1761.md
 docs/BTMSketchTextEntity1761AllOf.md
 docs/BTMSuppressionState1924.md
 docs/BTMSuppressionStateConfigured2598.md
+docs/BTMSuppressionStateExpression1811.md
+docs/BTMSuppressionStateExpression1811AllOf.md
 docs/BTMUnitsDefault160.md
 docs/BTMUnitsDefault160AllOf.md
 docs/BTMUserCode161.md
@@ -1258,6 +1263,7 @@ docs/BTThumbnailSizeInfo.md
 docs/BTToleranceSpec3441.md
 docs/BTToleranceString3274.md
 docs/BTToleranceString3274AllOf.md
+docs/BTTolerantValueDisplayData3483.md
 docs/BTTorusDescription1834.md
 docs/BTTorusDescription1834AllOf.md
 docs/BTTransitionType.md
@@ -1422,6 +1428,7 @@ docs/GBTFilterFlattenedGeometryOptions.md
 docs/GBTGTolConstraintType.md
 docs/GBTGeometryType.md
 docs/GBTGraphicsBufferTarget.md
+docs/GBTHoleType.md
 docs/GBTInsertableType.md
 docs/GBTLoadType.md
 docs/GBTMGeomStatus.md
@@ -1466,7 +1473,9 @@ docs/GBTUiSelectionType.md
 docs/GBTValueUse.md
 docs/GBTVariableType.md
 docs/GBTWeldContourType.md
+docs/GBTWeldFinishing.md
 docs/GBTWeldJointType.md
+docs/GBTWeldStandard.md
 docs/GBTWeldType.md
 docs/GlTF.md
 docs/GlobalPermissionInfo.md
@@ -1643,6 +1652,7 @@ model_bt_assembly_mate_connector_info.go
 model_bt_assembly_mate_value_info.go
 model_bt_assembly_mate_values_info.go
 model_bt_assembly_mirror_2996.go
+model_bt_assembly_mirror_feature_interface.go
 model_bt_assembly_modification_params.go
 model_bt_assembly_occurrence_info.go
 model_bt_assembly_part_body_type.go
@@ -1776,7 +1786,6 @@ model_bt_document_search_hit_info.go
 model_bt_document_search_params.go
 model_bt_document_selector_info.go
 model_bt_document_selector_parameters_info.go
-model_bt_document_summary_info.go
 model_bt_document_summary_search_info.go
 model_bt_document_version_element_ids_1897.go
 model_bt_document_with_version_and_element_id.go
@@ -1865,15 +1874,19 @@ model_bt_get_json_paths_1697.go
 model_bt_get_json_paths_response_1544.go
 model_bt_get_json_response_2137.go
 model_bt_get_json_response_2137_tree.go
+model_bt_global_permission_info.go
+model_bt_global_permission_info_item.go
 model_bt_global_tree_magic_node_info.go
 model_bt_global_tree_node_info.go
 model_bt_global_tree_node_list_response.go
 model_bt_global_tree_node_list_response_bt_team_info.go
+model_bt_global_tree_node_summary_info.go
 model_bt_graphics_appearance_1152.go
 model_bt_graphics_buffer_2668.go
 model_bt_graphics_section_plane_data_1429.go
 model_bt_graphics_section_view_state_data_4379.go
 model_bt_group_or_element_reference_2205.go
+model_bt_hole_callout_display_data_3452.go
 model_bt_identity_info.go
 model_bt_image_filter_853.go
 model_bt_image_mapping_3821.go
@@ -2214,6 +2227,7 @@ model_bt_thumbnail_info.go
 model_bt_thumbnail_size_info.go
 model_bt_tolerance_spec_3441.go
 model_bt_tolerance_string_3274.go
+model_bt_tolerant_value_display_data_3483.go
 model_bt_torus_description_1834.go
 model_bt_transition_type.go
 model_bt_translate_format_params.go
@@ -2438,6 +2452,7 @@ model_btm_sketch_point_158.go
 model_btm_sketch_text_entity_1761.go
 model_btm_suppression_state_1924.go
 model_btm_suppression_state_configured_2598.go
+model_btm_suppression_state_expression_1811.go
 model_btm_units_default_160.go
 model_btm_user_code_161.go
 model_btm_variable_studio_reference_2764.go
@@ -2578,6 +2593,7 @@ model_gbt_field_weld_flag.go
 model_gbt_filter_flattened_geometry_options.go
 model_gbt_geometry_type.go
 model_gbt_graphics_buffer_target.go
+model_gbt_hole_type.go
 model_gbt_insertable_type.go
 model_gbt_load_type.go
 model_gbt_mate_type.go
@@ -2616,7 +2632,9 @@ model_gbt_tolerance_type.go
 model_gbt_value_use.go
 model_gbt_variable_type.go
 model_gbt_weld_contour_type.go
+model_gbt_weld_finishing.go
 model_gbt_weld_joint_type.go
+model_gbt_weld_standard.go
 model_gbt_weld_type.go
 model_gbtbs_feature_visibility.go
 model_gbtg_tol_constraint_type.go

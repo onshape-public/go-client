@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **MirrorFeature** | Pointer to [**BTMAssemblyMirrorFeature3037**](BTMAssemblyMirrorFeature3037.md) |  | [optional] 
+**MirrorFeatureInterface** | Pointer to [**BTAssemblyMirrorFeatureInterface**](BTAssemblyMirrorFeatureInterface.md) |  | [optional] 
 **NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetMirrorFeature sets MirrorFeature field to given value.
 `func (o *BTAssemblyMirror2996AllOf) HasMirrorFeature() bool`
 
 HasMirrorFeature returns a boolean if a field has been set.
+
+### GetMirrorFeatureInterface
+
+`func (o *BTAssemblyMirror2996AllOf) GetMirrorFeatureInterface() BTAssemblyMirrorFeatureInterface`
+
+GetMirrorFeatureInterface returns the MirrorFeatureInterface field if non-nil, zero value otherwise.
+
+### GetMirrorFeatureInterfaceOk
+
+`func (o *BTAssemblyMirror2996AllOf) GetMirrorFeatureInterfaceOk() (*BTAssemblyMirrorFeatureInterface, bool)`
+
+GetMirrorFeatureInterfaceOk returns a tuple with the MirrorFeatureInterface field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMirrorFeatureInterface
+
+`func (o *BTAssemblyMirror2996AllOf) SetMirrorFeatureInterface(v BTAssemblyMirrorFeatureInterface)`
+
+SetMirrorFeatureInterface sets MirrorFeatureInterface field to given value.
+
+### HasMirrorFeatureInterface
+
+`func (o *BTAssemblyMirror2996AllOf) HasMirrorFeatureInterface() bool`
+
+HasMirrorFeatureInterface returns a boolean if a field has been set.
 
 ### GetNodeWithReferenceList
 

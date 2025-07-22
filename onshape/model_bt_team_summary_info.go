@@ -192,6 +192,56 @@ func (o *BTTeamSummaryInfo) SetConnectionName(v string) {
 	o.GetActualInstance().(getResult).SetConnectionName(v)
 }
 
+// GetConnectionNames returns the ConnectionNames field value if set, zero value otherwise.
+func (o *BTTeamSummaryInfo) GetConnectionNames() []string {
+	type getResult interface {
+		GetConnectionNames() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionNames()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetConnectionNamesOk returns a tuple with the ConnectionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTeamSummaryInfo) GetConnectionNamesOk() ([]string, bool) {
+	type getResult interface {
+		GetConnectionNamesOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConnectionNamesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasConnectionNames returns a boolean if a field has been set.
+func (o *BTTeamSummaryInfo) HasConnectionNames() bool {
+	type getResult interface {
+		HasConnectionNames() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasConnectionNames()
+	} else {
+		return false
+	}
+}
+
+// SetConnectionNames gets a reference to the given []string and assigns it to the ConnectionNames field.
+func (o *BTTeamSummaryInfo) SetConnectionNames(v []string) {
+	type getResult interface {
+		SetConnectionNames(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetConnectionNames(v)
+}
+
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *BTTeamSummaryInfo) GetCreatedAt() JSONTime {
 	type getResult interface {
@@ -540,6 +590,56 @@ func (o *BTTeamSummaryInfo) SetIsEnterpriseOwned(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsEnterpriseOwned(v)
+}
+
+// GetIsExternalConnectionResource returns the IsExternalConnectionResource field value if set, zero value otherwise.
+func (o *BTTeamSummaryInfo) GetIsExternalConnectionResource() bool {
+	type getResult interface {
+		GetIsExternalConnectionResource() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternalConnectionResource()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTeamSummaryInfo) GetIsExternalConnectionResourceOk() (*bool, bool) {
+	type getResult interface {
+		GetIsExternalConnectionResourceOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsExternalConnectionResourceOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsExternalConnectionResource returns a boolean if a field has been set.
+func (o *BTTeamSummaryInfo) HasIsExternalConnectionResource() bool {
+	type getResult interface {
+		HasIsExternalConnectionResource() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsExternalConnectionResource()
+	} else {
+		return false
+	}
+}
+
+// SetIsExternalConnectionResource gets a reference to the given bool and assigns it to the IsExternalConnectionResource field.
+func (o *BTTeamSummaryInfo) SetIsExternalConnectionResource(v bool) {
+	type getResult interface {
+		SetIsExternalConnectionResource(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsExternalConnectionResource(v)
 }
 
 // GetIsMutable returns the IsMutable field value if set, zero value otherwise.
@@ -1232,21 +1332,23 @@ func (v *NullableBTTeamSummaryInfo) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTTeamSummaryInfo struct {
-	Active         *bool                   `json:"active,omitempty"`
-	CanMove        *bool                   `json:"canMove,omitempty"`
-	ConnectionName *string                 `json:"connectionName,omitempty"`
-	CreatedAt      *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy      *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description    *string                 `json:"description,omitempty"`
+	Active          *bool                   `json:"active,omitempty"`
+	CanMove         *bool                   `json:"canMove,omitempty"`
+	ConnectionName  *string                 `json:"connectionName,omitempty"`
+	ConnectionNames []string                `json:"connectionNames,omitempty"`
+	CreatedAt       *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy       *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description     *string                 `json:"description,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id                *string                 `json:"id,omitempty"`
-	IsContainer       *bool                   `json:"isContainer,omitempty"`
-	IsEnterpriseOwned *bool                   `json:"isEnterpriseOwned,omitempty"`
-	IsMutable         *bool                   `json:"isMutable,omitempty"`
-	ModifiedAt        *JSONTime               `json:"modifiedAt,omitempty"`
-	ModifiedBy        *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
+	Id                           *string                 `json:"id,omitempty"`
+	IsContainer                  *bool                   `json:"isContainer,omitempty"`
+	IsEnterpriseOwned            *bool                   `json:"isEnterpriseOwned,omitempty"`
+	IsExternalConnectionResource *bool                   `json:"isExternalConnectionResource,omitempty"`
+	IsMutable                    *bool                   `json:"isMutable,omitempty"`
+	ModifiedAt                   *JSONTime               `json:"modifiedAt,omitempty"`
+	ModifiedBy                   *BTUserBasicSummaryInfo `json:"modifiedBy,omitempty"`
 	// Name of the resource.
 	Name                  *string      `json:"name,omitempty"`
 	Owner                 *BTOwnerInfo `json:"owner,omitempty"`
@@ -1371,6 +1473,38 @@ func (o *base_BTTeamSummaryInfo) HasConnectionName() bool {
 // SetConnectionName gets a reference to the given string and assigns it to the ConnectionName field.
 func (o *base_BTTeamSummaryInfo) SetConnectionName(v string) {
 	o.ConnectionName = &v
+}
+
+// GetConnectionNames returns the ConnectionNames field value if set, zero value otherwise.
+func (o *base_BTTeamSummaryInfo) GetConnectionNames() []string {
+	if o == nil || o.ConnectionNames == nil {
+		var ret []string
+		return ret
+	}
+	return o.ConnectionNames
+}
+
+// GetConnectionNamesOk returns a tuple with the ConnectionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTeamSummaryInfo) GetConnectionNamesOk() ([]string, bool) {
+	if o == nil || o.ConnectionNames == nil {
+		return nil, false
+	}
+	return o.ConnectionNames, true
+}
+
+// HasConnectionNames returns a boolean if a field has been set.
+func (o *base_BTTeamSummaryInfo) HasConnectionNames() bool {
+	if o != nil && o.ConnectionNames != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionNames gets a reference to the given []string and assigns it to the ConnectionNames field.
+func (o *base_BTTeamSummaryInfo) SetConnectionNames(v []string) {
+	o.ConnectionNames = v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -1595,6 +1729,38 @@ func (o *base_BTTeamSummaryInfo) HasIsEnterpriseOwned() bool {
 // SetIsEnterpriseOwned gets a reference to the given bool and assigns it to the IsEnterpriseOwned field.
 func (o *base_BTTeamSummaryInfo) SetIsEnterpriseOwned(v bool) {
 	o.IsEnterpriseOwned = &v
+}
+
+// GetIsExternalConnectionResource returns the IsExternalConnectionResource field value if set, zero value otherwise.
+func (o *base_BTTeamSummaryInfo) GetIsExternalConnectionResource() bool {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternalConnectionResource
+}
+
+// GetIsExternalConnectionResourceOk returns a tuple with the IsExternalConnectionResource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTeamSummaryInfo) GetIsExternalConnectionResourceOk() (*bool, bool) {
+	if o == nil || o.IsExternalConnectionResource == nil {
+		return nil, false
+	}
+	return o.IsExternalConnectionResource, true
+}
+
+// HasIsExternalConnectionResource returns a boolean if a field has been set.
+func (o *base_BTTeamSummaryInfo) HasIsExternalConnectionResource() bool {
+	if o != nil && o.IsExternalConnectionResource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternalConnectionResource gets a reference to the given bool and assigns it to the IsExternalConnectionResource field.
+func (o *base_BTTeamSummaryInfo) SetIsExternalConnectionResource(v bool) {
+	o.IsExternalConnectionResource = &v
 }
 
 // GetIsMutable returns the IsMutable field value if set, zero value otherwise.
@@ -1992,6 +2158,9 @@ func (o base_BTTeamSummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.ConnectionName != nil {
 		toSerialize["connectionName"] = o.ConnectionName
 	}
+	if o.ConnectionNames != nil {
+		toSerialize["connectionNames"] = o.ConnectionNames
+	}
 	if o.CreatedAt != nil {
 		toSerialize["createdAt"] = o.CreatedAt
 	}
@@ -2012,6 +2181,9 @@ func (o base_BTTeamSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsEnterpriseOwned != nil {
 		toSerialize["isEnterpriseOwned"] = o.IsEnterpriseOwned
+	}
+	if o.IsExternalConnectionResource != nil {
+		toSerialize["isExternalConnectionResource"] = o.IsExternalConnectionResource
 	}
 	if o.IsMutable != nil {
 		toSerialize["isMutable"] = o.IsMutable

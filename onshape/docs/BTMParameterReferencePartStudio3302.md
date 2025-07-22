@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **PartQuery** | Pointer to [**BTMParameterQueryList148**](BTMParameterQueryList148.md) |  | [optional] 
 **QueryDataKey** | Pointer to **string** |  | [optional] 
 **StandardContentParametersId** | Pointer to **string** |  | [optional] 
+**ValueString** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -491,6 +492,31 @@ SetStandardContentParametersId sets StandardContentParametersId field to given v
 `func (o *BTMParameterReferencePartStudio3302) HasStandardContentParametersId() bool`
 
 HasStandardContentParametersId returns a boolean if a field has been set.
+
+### GetValueString
+
+`func (o *BTMParameterReferencePartStudio3302) GetValueString() string`
+
+GetValueString returns the ValueString field if non-nil, zero value otherwise.
+
+### GetValueStringOk
+
+`func (o *BTMParameterReferencePartStudio3302) GetValueStringOk() (*string, bool)`
+
+GetValueStringOk returns a tuple with the ValueString field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValueString
+
+`func (o *BTMParameterReferencePartStudio3302) SetValueString(v string)`
+
+SetValueString sets ValueString field to given value.
+
+### HasValueString
+
+`func (o *BTMParameterReferencePartStudio3302) HasValueString() bool`
+
+HasValueString returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

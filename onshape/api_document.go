@@ -1319,7 +1319,6 @@ type ApiGetDocumentContentsRequest struct {
 	linkDocumentId  *string
 	elementType     *GBTElementType
 	elementId       *string
-	withThumbnails  *bool
 	withZipContents *bool
 }
 
@@ -1338,12 +1337,6 @@ func (r ApiGetDocumentContentsRequest) ElementType(elementType GBTElementType) A
 // If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter.
 func (r ApiGetDocumentContentsRequest) ElementId(elementId string) ApiGetDocumentContentsRequest {
 	r.elementId = &elementId
-	return r
-}
-
-// Whether or not to include thumbnails (not supported for microversion)
-func (r ApiGetDocumentContentsRequest) WithThumbnails(withThumbnails bool) ApiGetDocumentContentsRequest {
-	r.withThumbnails = &withThumbnails
 	return r
 }
 
@@ -1411,9 +1404,6 @@ func (a *DocumentApiService) GetDocumentContentsExecute(r ApiGetDocumentContents
 	}
 	if r.elementId != nil {
 		localVarQueryParams.Add("elementId", parameterToString(*r.elementId, ""))
-	}
-	if r.withThumbnails != nil {
-		localVarQueryParams.Add("withThumbnails", parameterToString(*r.withThumbnails, ""))
 	}
 	if r.withZipContents != nil {
 		localVarQueryParams.Add("withZipContents", parameterToString(*r.withZipContents, ""))
@@ -1943,11 +1933,11 @@ type ApiGetDocumentsRequest struct {
 	ownerType  *int32
 	sortColumn *string
 	sortOrder  *string
-	offset     *int32
-	limit      *int32
 	label      *string
 	project    *string
 	parentId   *string
+	offset     *int32
+	limit      *int32
 }
 
 // Search for documents that contain the given string in the name. Search is not case-sensitive.
@@ -1986,18 +1976,6 @@ func (r ApiGetDocumentsRequest) SortOrder(sortOrder string) ApiGetDocumentsReque
 	return r
 }
 
-// Offset. Determines where search results begin. Default value is 0.
-func (r ApiGetDocumentsRequest) Offset(offset int32) ApiGetDocumentsRequest {
-	r.offset = &offset
-	return r
-}
-
-// Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page.
-func (r ApiGetDocumentsRequest) Limit(limit int32) ApiGetDocumentsRequest {
-	r.limit = &limit
-	return r
-}
-
 // Label
 func (r ApiGetDocumentsRequest) Label(label string) ApiGetDocumentsRequest {
 	r.label = &label
@@ -2013,6 +1991,18 @@ func (r ApiGetDocumentsRequest) Project(project string) ApiGetDocumentsRequest {
 // Parent Id
 func (r ApiGetDocumentsRequest) ParentId(parentId string) ApiGetDocumentsRequest {
 	r.parentId = &parentId
+	return r
+}
+
+// Offset. Determines where search results begin. Default value is 0.
+func (r ApiGetDocumentsRequest) Offset(offset int32) ApiGetDocumentsRequest {
+	r.offset = &offset
+	return r
+}
+
+// Maximum number of results to return per page. Default value is 20 (also the maximum). Number of results returned can be less than this value. Use the &#x60;next&#x60; URL in the response to fetch the next page.
+func (r ApiGetDocumentsRequest) Limit(limit int32) ApiGetDocumentsRequest {
+	r.limit = &limit
 	return r
 }
 
@@ -2073,12 +2063,6 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 	if r.sortOrder != nil {
 		localVarQueryParams.Add("sortOrder", parameterToString(*r.sortOrder, ""))
 	}
-	if r.offset != nil {
-		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
-	}
-	if r.limit != nil {
-		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
-	}
 	if r.label != nil {
 		localVarQueryParams.Add("label", parameterToString(*r.label, ""))
 	}
@@ -2087,6 +2071,12 @@ func (a *DocumentApiService) GetDocumentsExecute(r ApiGetDocumentsRequest) (*BTG
 	}
 	if r.parentId != nil {
 		localVarQueryParams.Add("parentId", parameterToString(*r.parentId, ""))
+	}
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -4403,7 +4393,7 @@ func (r ApiUpdateDocumentAttributesRequest) BTDocumentParams(bTDocumentParams BT
 	return r
 }
 
-func (r ApiUpdateDocumentAttributesRequest) Execute() (*BTDocumentSummaryInfo, *http.Response, error) {
+func (r ApiUpdateDocumentAttributesRequest) Execute() (*BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
 	return r.ApiService.UpdateDocumentAttributesExecute(r)
 }
 
@@ -4424,13 +4414,13 @@ func (a *DocumentApiService) UpdateDocumentAttributes(ctx context.Context, did s
 
 // Execute executes the request
 //
-//	@return BTDocumentSummaryInfo
-func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (*BTDocumentSummaryInfo, *http.Response, error) {
+//	@return BTGlobalTreeNodeSummaryInfo
+func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocumentAttributesRequest) (*BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BTDocumentSummaryInfo
+		localVarReturnValue *BTGlobalTreeNodeSummaryInfo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateDocumentAttributes")
@@ -4486,7 +4476,7 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		var v BTDocumentSummaryInfo
+		var v BTGlobalTreeNodeSummaryInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

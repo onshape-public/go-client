@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EntityIdAndReplaceInDependentFields** | Pointer to **string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Index** | Pointer to **int32** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 
@@ -181,6 +182,31 @@ SetIndex sets Index field to given value.
 `func (o *BTMSketchEntity3AllOf) HasIndex() bool`
 
 HasIndex returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *BTMSketchEntity3AllOf) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *BTMSketchEntity3AllOf) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *BTMSketchEntity3AllOf) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *BTMSketchEntity3AllOf) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetNamespace
 

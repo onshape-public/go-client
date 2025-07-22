@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **DefaultHeaderName** | Pointer to **string** |  | [optional] 
 **DefaultTextAlignment** | Pointer to [**GBTTableTextAlignment**](GBTTableTextAlignment.md) |  | [optional] 
 **IsExpandable** | Pointer to **bool** |  | [optional] 
+**IsRenamable** | Pointer to **bool** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetIsExpandable sets IsExpandable field to given value.
 `func (o *BTTableColumnSpec1967) HasIsExpandable() bool`
 
 HasIsExpandable returns a boolean if a field has been set.
+
+### GetIsRenamable
+
+`func (o *BTTableColumnSpec1967) GetIsRenamable() bool`
+
+GetIsRenamable returns the IsRenamable field if non-nil, zero value otherwise.
+
+### GetIsRenamableOk
+
+`func (o *BTTableColumnSpec1967) GetIsRenamableOk() (*bool, bool)`
+
+GetIsRenamableOk returns a tuple with the IsRenamable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsRenamable
+
+`func (o *BTTableColumnSpec1967) SetIsRenamable(v bool)`
+
+SetIsRenamable sets IsRenamable field to given value.
+
+### HasIsRenamable
+
+`func (o *BTTableColumnSpec1967) HasIsRenamable() bool`
+
+HasIsRenamable returns a boolean if a field has been set.
 
 ### GetReadOnly
 

@@ -30,7 +30,6 @@ type BTRevisionMessageBody struct {
 	PartIdentity        *string   `json:"partIdentity,omitempty"`
 	PartNumber          *string   `json:"partNumber,omitempty"`
 	Timestamp           *JSONTime `json:"timestamp,omitempty"`
-	TranslatationId     *string   `json:"translatationId,omitempty"`
 	TranslationId       *string   `json:"translationId,omitempty"`
 	UserId              *string   `json:"userId,omitempty"`
 	VersionId           *string   `json:"versionId,omitempty"`
@@ -510,38 +509,6 @@ func (o *BTRevisionMessageBody) SetTimestamp(v JSONTime) {
 	o.Timestamp = &v
 }
 
-// GetTranslatationId returns the TranslatationId field value if set, zero value otherwise.
-func (o *BTRevisionMessageBody) GetTranslatationId() string {
-	if o == nil || o.TranslatationId == nil {
-		var ret string
-		return ret
-	}
-	return *o.TranslatationId
-}
-
-// GetTranslatationIdOk returns a tuple with the TranslatationId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTRevisionMessageBody) GetTranslatationIdOk() (*string, bool) {
-	if o == nil || o.TranslatationId == nil {
-		return nil, false
-	}
-	return o.TranslatationId, true
-}
-
-// HasTranslatationId returns a boolean if a field has been set.
-func (o *BTRevisionMessageBody) HasTranslatationId() bool {
-	if o != nil && o.TranslatationId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTranslatationId gets a reference to the given string and assigns it to the TranslatationId field.
-func (o *BTRevisionMessageBody) SetTranslatationId(v string) {
-	o.TranslatationId = &v
-}
-
 // GetTranslationId returns the TranslationId field value if set, zero value otherwise.
 func (o *BTRevisionMessageBody) GetTranslationId() string {
 	if o == nil || o.TranslationId == nil {
@@ -969,9 +936,6 @@ func (o BTRevisionMessageBody) MarshalJSON() ([]byte, error) {
 	}
 	if o.Timestamp != nil {
 		toSerialize["timestamp"] = o.Timestamp
-	}
-	if o.TranslatationId != nil {
-		toSerialize["translatationId"] = o.TranslatationId
 	}
 	if o.TranslationId != nil {
 		toSerialize["translationId"] = o.TranslationId

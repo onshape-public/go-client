@@ -1,6 +1,6 @@
 # \TeamApi
 
-All URIs are relative to *https://cad.onshape.com/api/v11*
+All URIs are relative to *https://cad.onshape.com/api/v12*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## Find
 
-> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+> BTGlobalTreeNodeListResponseBTTeamInfo Find(ctx).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Offset(offset).Limit(limit).Execute()
 
 Get a list of all teams the current user belongs to.
 
@@ -33,15 +33,15 @@ func main() {
     filter := int32(56) // int32 |  (optional) (default to 0)
     uid := "uid_example" // string |  (optional)
     companyId := "companyId_example" // string |  (optional)
-    offset := int32(56) // int32 |  (optional) (default to 0)
-    limit := int32(56) // int32 |  (optional) (default to 100)
     sortColumn := "sortColumn_example" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
     includeCompanyOwnedTeams := true // bool |  (optional) (default to true)
+    offset := int32(56) // int32 |  (optional) (default to 0)
+    limit := int32(56) // int32 |  (optional) (default to 100)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.TeamApi.Find(context.Background()).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).Offset(offset).Limit(limit).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Execute()
+    resp, r, err := apiClient.TeamApi.Find(context.Background()).Query(query).Filter(filter).Uid(uid).CompanyId(companyId).SortColumn(sortColumn).SortOrder(sortOrder).IncludeCompanyOwnedTeams(includeCompanyOwnedTeams).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.Find``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
  **filter** | **int32** |  | [default to 0]
  **uid** | **string** |  | 
  **companyId** | **string** |  | 
- **offset** | **int32** |  | [default to 0]
- **limit** | **int32** |  | [default to 100]
  **sortColumn** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
  **includeCompanyOwnedTeams** | **bool** |  | [default to true]
+ **offset** | **int32** |  | [default to 0]
+ **limit** | **int32** |  | [default to 100]
 
 ### Return type
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ## GetMembers
 
-> BTListResponseBTTeamMemberInfo GetMembers(ctx, tid).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Q(q).Execute()
+> BTListResponseBTTeamMemberInfo GetMembers(ctx, tid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).Offset(offset).Limit(limit).Execute()
 
 Get a list of a team's members.
 
@@ -114,13 +114,13 @@ func main() {
     tid := "tid_example" // string | 
     sortColumn := "sortColumn_example" // string |  (optional)
     sortOrder := "sortOrder_example" // string |  (optional) (default to "asc")
+    q := "q_example" // string |  (optional) (default to "")
     offset := int32(56) // int32 |  (optional) (default to 0)
     limit := int32(56) // int32 |  (optional) (default to 20)
-    q := "q_example" // string |  (optional) (default to "")
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.TeamApi.GetMembers(context.Background(), tid).SortColumn(sortColumn).SortOrder(sortOrder).Offset(offset).Limit(limit).Q(q).Execute()
+    resp, r, err := apiClient.TeamApi.GetMembers(context.Background(), tid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).Offset(offset).Limit(limit).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TeamApi.GetMembers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -148,9 +148,9 @@ Name | Type | Description  | Notes
 
  **sortColumn** | **string** |  | 
  **sortOrder** | **string** |  | [default to &quot;asc&quot;]
+ **q** | **string** |  | [default to &quot;&quot;]
  **offset** | **int32** |  | [default to 0]
  **limit** | **int32** |  | [default to 20]
- **q** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 
