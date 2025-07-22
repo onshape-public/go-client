@@ -24,6 +24,7 @@ type BTMParameterMultiEnum3411 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string  `json:"parameterId,omitempty"`
+	ValueString *string  `json:"valueString,omitempty"`
 	EnumName    *string  `json:"enumName,omitempty"`
 	Namespace   *string  `json:"namespace,omitempty"`
 	Values      []string `json:"values,omitempty"`
@@ -174,6 +175,38 @@ func (o *BTMParameterMultiEnum3411) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterMultiEnum3411) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterMultiEnum3411) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterMultiEnum3411) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterMultiEnum3411) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetEnumName returns the EnumName field value if set, zero value otherwise.
 func (o *BTMParameterMultiEnum3411) GetEnumName() string {
 	if o == nil || o.EnumName == nil {
@@ -291,6 +324,9 @@ func (o BTMParameterMultiEnum3411) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.EnumName != nil {
 		toSerialize["enumName"] = o.EnumName

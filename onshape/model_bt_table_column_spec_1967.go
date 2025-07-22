@@ -24,6 +24,7 @@ type BTTableColumnSpec1967 struct {
 	DefaultHeaderName       *string                   `json:"defaultHeaderName,omitempty"`
 	DefaultTextAlignment    *GBTTableTextAlignment    `json:"defaultTextAlignment,omitempty"`
 	IsExpandable            *bool                     `json:"isExpandable,omitempty"`
+	IsRenamable             *bool                     `json:"isRenamable,omitempty"`
 	ReadOnly                *bool                     `json:"readOnly,omitempty"`
 }
 
@@ -268,6 +269,38 @@ func (o *BTTableColumnSpec1967) SetIsExpandable(v bool) {
 	o.IsExpandable = &v
 }
 
+// GetIsRenamable returns the IsRenamable field value if set, zero value otherwise.
+func (o *BTTableColumnSpec1967) GetIsRenamable() bool {
+	if o == nil || o.IsRenamable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsRenamable
+}
+
+// GetIsRenamableOk returns a tuple with the IsRenamable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableColumnSpec1967) GetIsRenamableOk() (*bool, bool) {
+	if o == nil || o.IsRenamable == nil {
+		return nil, false
+	}
+	return o.IsRenamable, true
+}
+
+// HasIsRenamable returns a boolean if a field has been set.
+func (o *BTTableColumnSpec1967) HasIsRenamable() bool {
+	if o != nil && o.IsRenamable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsRenamable gets a reference to the given bool and assigns it to the IsRenamable field.
+func (o *BTTableColumnSpec1967) SetIsRenamable(v bool) {
+	o.IsRenamable = &v
+}
+
 // GetReadOnly returns the ReadOnly field value if set, zero value otherwise.
 func (o *BTTableColumnSpec1967) GetReadOnly() bool {
 	if o == nil || o.ReadOnly == nil {
@@ -322,6 +355,9 @@ func (o BTTableColumnSpec1967) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsExpandable != nil {
 		toSerialize["isExpandable"] = o.IsExpandable
+	}
+	if o.IsRenamable != nil {
+		toSerialize["isRenamable"] = o.IsRenamable
 	}
 	if o.ReadOnly != nil {
 		toSerialize["readOnly"] = o.ReadOnly

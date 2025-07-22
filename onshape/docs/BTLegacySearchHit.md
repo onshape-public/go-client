@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **DocumentId** | Pointer to **string** |  | [optional] 
+**FolderId** | Pointer to **string** |  | [optional] 
 **HighlightedFields** | Pointer to **map[string][]string** |  | [optional] 
 **HitId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -55,6 +56,31 @@ SetDocumentId sets DocumentId field to given value.
 `func (o *BTLegacySearchHit) HasDocumentId() bool`
 
 HasDocumentId returns a boolean if a field has been set.
+
+### GetFolderId
+
+`func (o *BTLegacySearchHit) GetFolderId() string`
+
+GetFolderId returns the FolderId field if non-nil, zero value otherwise.
+
+### GetFolderIdOk
+
+`func (o *BTLegacySearchHit) GetFolderIdOk() (*string, bool)`
+
+GetFolderIdOk returns a tuple with the FolderId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFolderId
+
+`func (o *BTLegacySearchHit) SetFolderId(v string)`
+
+SetFolderId sets FolderId field to given value.
+
+### HasFolderId
+
+`func (o *BTLegacySearchHit) HasFolderId() bool`
+
+HasFolderId returns a boolean if a field has been set.
 
 ### GetHighlightedFields
 

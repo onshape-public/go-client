@@ -24,6 +24,7 @@ type BTMParameterBlobReference1679 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string       `json:"parameterId,omitempty"`
+	ValueString *string       `json:"valueString,omitempty"`
 	BlobImport  *BTMImport136 `json:"blobImport,omitempty"`
 	Namespace   *string       `json:"namespace,omitempty"`
 }
@@ -173,6 +174,38 @@ func (o *BTMParameterBlobReference1679) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterBlobReference1679) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterBlobReference1679) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterBlobReference1679) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterBlobReference1679) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetBlobImport returns the BlobImport field value if set, zero value otherwise.
 func (o *BTMParameterBlobReference1679) GetBlobImport() BTMImport136 {
 	if o == nil || o.BlobImport == nil {
@@ -258,6 +291,9 @@ func (o BTMParameterBlobReference1679) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.BlobImport != nil {
 		toSerialize["blobImport"] = o.BlobImport

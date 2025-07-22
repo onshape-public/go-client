@@ -25,6 +25,7 @@ type BTMSketchImageEntity763 struct {
 	EntityId                            *string                   `json:"entityId,omitempty"`
 	EntityIdAndReplaceInDependentFields *string                   `json:"entityIdAndReplaceInDependentFields,omitempty"`
 	Index                               *int32                    `json:"index,omitempty"`
+	Name                                *string                   `json:"name,omitempty"`
 	Namespace                           *string                   `json:"namespace,omitempty"`
 	Parameters                          []BTMParameter1           `json:"parameters,omitempty"`
 	ControlBoxIds                       []string                  `json:"controlBoxIds,omitempty"`
@@ -280,6 +281,38 @@ func (o *BTMSketchImageEntity763) HasIndex() bool {
 // SetIndex gets a reference to the given int32 and assigns it to the Index field.
 func (o *BTMSketchImageEntity763) SetIndex(v int32) {
 	o.Index = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTMSketchImageEntity763) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchImageEntity763) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTMSketchImageEntity763) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTMSketchImageEntity763) SetName(v string) {
+	o.Name = &v
 }
 
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
@@ -760,6 +793,9 @@ func (o BTMSketchImageEntity763) MarshalJSON() ([]byte, error) {
 	}
 	if o.Index != nil {
 		toSerialize["index"] = o.Index
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace

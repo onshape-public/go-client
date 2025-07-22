@@ -13,6 +13,10 @@
 
 * `GBTAnnotationTypeWeld` (value: `"WELD"`)
 
+* `GBTAnnotationTypeHoleCallout` (value: `"HOLE_CALLOUT"`)
+
+* `GBTAnnotationTypeHoleCalloutPosition` (value: `"HOLE_CALLOUT_POSITION"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 

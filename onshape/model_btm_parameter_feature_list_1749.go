@@ -24,6 +24,7 @@ type BTMParameterFeatureList1749 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId *string  `json:"parameterId,omitempty"`
+	ValueString *string  `json:"valueString,omitempty"`
 	FeatureIds  []string `json:"featureIds,omitempty"`
 }
 
@@ -172,6 +173,38 @@ func (o *BTMParameterFeatureList1749) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetValueString returns the ValueString field value if set, zero value otherwise.
+func (o *BTMParameterFeatureList1749) GetValueString() string {
+	if o == nil || o.ValueString == nil {
+		var ret string
+		return ret
+	}
+	return *o.ValueString
+}
+
+// GetValueStringOk returns a tuple with the ValueString field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterFeatureList1749) GetValueStringOk() (*string, bool) {
+	if o == nil || o.ValueString == nil {
+		return nil, false
+	}
+	return o.ValueString, true
+}
+
+// HasValueString returns a boolean if a field has been set.
+func (o *BTMParameterFeatureList1749) HasValueString() bool {
+	if o != nil && o.ValueString != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValueString gets a reference to the given string and assigns it to the ValueString field.
+func (o *BTMParameterFeatureList1749) SetValueString(v string) {
+	o.ValueString = &v
+}
+
 // GetFeatureIds returns the FeatureIds field value if set, zero value otherwise.
 func (o *BTMParameterFeatureList1749) GetFeatureIds() []string {
 	if o == nil || o.FeatureIds == nil {
@@ -225,6 +258,9 @@ func (o BTMParameterFeatureList1749) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ValueString != nil {
+		toSerialize["valueString"] = o.ValueString
 	}
 	if o.FeatureIds != nil {
 		toSerialize["featureIds"] = o.FeatureIds

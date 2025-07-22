@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **ElementType** | Pointer to **int32** | Type of element reference. Options are 0 (Part Studio), 1 (Assembly), 2 (Drawing), 3 (Feature Studio), 4 (Blob), 5 (Application), 6 (Table), 7 (Bill of Materials),  8 (Variable Studio), or 9 (Publication Item). | [optional] 
 **MimeType** | Pointer to **string** | Mimetype of reference. Used when referencing blob elements. | [optional] 
 **Name** | Pointer to **string** | Name of the reference. | [optional] 
-**PartId** | Pointer to **string** | Determinstic Id of a part. Used when referencing parts. | [optional] 
+**PartId** | Pointer to **string** | Deterministic Id of a part. Used when referencing parts. | [optional] 
 **RevisionId** | Pointer to **string** | Id of a revision to reference from a task. | [optional] 
 **VersionId** | Pointer to **string** | Id of a document version. Used when referencing the version itself or an element or part in it. | [optional] 
 **WorkspaceId** | Pointer to **string** | Id of a document workspace. Used when referencing the workspace itself or an element or part in it. | [optional] 
