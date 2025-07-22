@@ -41,7 +41,7 @@ func TestDocumentAPI(t *testing.T) {
 		Expect: NoAPIErrorAnd(func(result *onshape.BTGlobalTreeNodeListResponse) {
 			require.NotZero(Tester(), len(result.Items))
 			require.GreaterOrEqual(Tester(), slices.IndexFunc(result.Items, func(q onshape.BTGlobalTreeNodeInfo) bool {
-				btd := q.GetActualInstance().(*onshape.BTDocumentSummaryInfo)
+				btd := q.GetActualInstance().(*onshape.BTGlobalTreeNodeSummaryInfo      )
 				return btd.GetId() == Context()["did"] && Ptr(btd.GetCreatedBy()).GetId() == *Context()["creator"].(*string)
 			}), 0)
 		}),
