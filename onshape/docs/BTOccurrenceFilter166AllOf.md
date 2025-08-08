@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **ExcludeFlattenedParts** | Pointer to **bool** |  | [optional] 
+**ExcludeMirroredOrDeriveMirroredInstance** | Pointer to **bool** |  | [optional] 
 **ExcludeParametricPartStudioChildInstance** | Pointer to **bool** |  | [optional] 
 **ExcludeParametricPartStudioInstance** | Pointer to **bool** |  | [optional] 
 **ExcludePatternInstances** | Pointer to **bool** |  | [optional] 
@@ -89,6 +90,31 @@ SetExcludeFlattenedParts sets ExcludeFlattenedParts field to given value.
 `func (o *BTOccurrenceFilter166AllOf) HasExcludeFlattenedParts() bool`
 
 HasExcludeFlattenedParts returns a boolean if a field has been set.
+
+### GetExcludeMirroredOrDeriveMirroredInstance
+
+`func (o *BTOccurrenceFilter166AllOf) GetExcludeMirroredOrDeriveMirroredInstance() bool`
+
+GetExcludeMirroredOrDeriveMirroredInstance returns the ExcludeMirroredOrDeriveMirroredInstance field if non-nil, zero value otherwise.
+
+### GetExcludeMirroredOrDeriveMirroredInstanceOk
+
+`func (o *BTOccurrenceFilter166AllOf) GetExcludeMirroredOrDeriveMirroredInstanceOk() (*bool, bool)`
+
+GetExcludeMirroredOrDeriveMirroredInstanceOk returns a tuple with the ExcludeMirroredOrDeriveMirroredInstance field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExcludeMirroredOrDeriveMirroredInstance
+
+`func (o *BTOccurrenceFilter166AllOf) SetExcludeMirroredOrDeriveMirroredInstance(v bool)`
+
+SetExcludeMirroredOrDeriveMirroredInstance sets ExcludeMirroredOrDeriveMirroredInstance field to given value.
+
+### HasExcludeMirroredOrDeriveMirroredInstance
+
+`func (o *BTOccurrenceFilter166AllOf) HasExcludeMirroredOrDeriveMirroredInstance() bool`
+
+HasExcludeMirroredOrDeriveMirroredInstance returns a boolean if a field has been set.
 
 ### GetExcludeParametricPartStudioChildInstance
 

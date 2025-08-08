@@ -502,6 +502,56 @@ func (o *BTMParameterReferenceWithConfiguration3028) SetImportMicroversion(v str
 	o.GetActualInstance().(getResult).SetImportMicroversion(v)
 }
 
+// GetLibraryRelationType returns the LibraryRelationType field value if set, zero value otherwise.
+func (o *BTMParameterReferenceWithConfiguration3028) GetLibraryRelationType() GBTParameterLibraryRelationType {
+	type getResult interface {
+		GetLibraryRelationType() GBTParameterLibraryRelationType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryRelationType()
+	} else {
+		var de GBTParameterLibraryRelationType
+		return de
+	}
+}
+
+// GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool) {
+	type getResult interface {
+		GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryRelationTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLibraryRelationType returns a boolean if a field has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) HasLibraryRelationType() bool {
+	type getResult interface {
+		HasLibraryRelationType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLibraryRelationType()
+	} else {
+		return false
+	}
+}
+
+// SetLibraryRelationType gets a reference to the given GBTParameterLibraryRelationType and assigns it to the LibraryRelationType field.
+func (o *BTMParameterReferenceWithConfiguration3028) SetLibraryRelationType(v GBTParameterLibraryRelationType) {
+	type getResult interface {
+		SetLibraryRelationType(v GBTParameterLibraryRelationType)
+	}
+
+	o.GetActualInstance().(getResult).SetLibraryRelationType(v)
+}
+
 // GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
 func (o *BTMParameterReferenceWithConfiguration3028) GetMicroversionId() string {
 	type getResult interface {
@@ -880,9 +930,10 @@ type base_BTMParameterReferenceWithConfiguration3028 struct {
 	FeatureScriptType  *string                            `json:"featureScriptType,omitempty"`
 	Ids                []string                           `json:"ids,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	MicroversionId     *string `json:"microversionId,omitempty"`
-	Namespace          *string `json:"namespace,omitempty"`
+	ImportMicroversion  *string                          `json:"importMicroversion,omitempty"`
+	LibraryRelationType *GBTParameterLibraryRelationType `json:"libraryRelationType,omitempty"`
+	MicroversionId      *string                          `json:"microversionId,omitempty"`
+	Namespace           *string                          `json:"namespace,omitempty"`
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
@@ -1195,6 +1246,38 @@ func (o *base_BTMParameterReferenceWithConfiguration3028) SetImportMicroversion(
 	o.ImportMicroversion = &v
 }
 
+// GetLibraryRelationType returns the LibraryRelationType field value if set, zero value otherwise.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetLibraryRelationType() GBTParameterLibraryRelationType {
+	if o == nil || o.LibraryRelationType == nil {
+		var ret GBTParameterLibraryRelationType
+		return ret
+	}
+	return *o.LibraryRelationType
+}
+
+// GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool) {
+	if o == nil || o.LibraryRelationType == nil {
+		return nil, false
+	}
+	return o.LibraryRelationType, true
+}
+
+// HasLibraryRelationType returns a boolean if a field has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) HasLibraryRelationType() bool {
+	if o != nil && o.LibraryRelationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryRelationType gets a reference to the given GBTParameterLibraryRelationType and assigns it to the LibraryRelationType field.
+func (o *base_BTMParameterReferenceWithConfiguration3028) SetLibraryRelationType(v GBTParameterLibraryRelationType) {
+	o.LibraryRelationType = &v
+}
+
 // GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
 func (o *base_BTMParameterReferenceWithConfiguration3028) GetMicroversionId() string {
 	if o == nil || o.MicroversionId == nil {
@@ -1383,6 +1466,9 @@ func (o base_BTMParameterReferenceWithConfiguration3028) MarshalJSON() ([]byte, 
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.LibraryRelationType != nil {
+		toSerialize["libraryRelationType"] = o.LibraryRelationType
 	}
 	if o.MicroversionId != nil {
 		toSerialize["microversionId"] = o.MicroversionId

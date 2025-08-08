@@ -55,6 +55,8 @@ const (
 	GBTUIHintCanBeTolerantDiameter            GBTUIHint = "CAN_BE_TOLERANT_DIAMETER"
 	GBTUIHintPlusMinus                        GBTUIHint = "PLUS_MINUS"
 	GBTUIHintAlwaysUseDependencies            GBTUIHint = "ALWAYS_USE_DEPENDENCIES"
+	GBTUIHintNoQueryVariable                  GBTUIHint = "NO_QUERY_VARIABLE"
+	GBTUIHintAllowFlatSketchSelection         GBTUIHint = "ALLOW_FLAT_SKETCH_SELECTION"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -95,6 +97,8 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"CAN_BE_TOLERANT_DIAMETER",
 	"PLUS_MINUS",
 	"ALWAYS_USE_DEPENDENCIES",
+	"NO_QUERY_VARIABLE",
+	"ALLOW_FLAT_SKETCH_SELECTION",
 	"UNKNOWN",
 }
 

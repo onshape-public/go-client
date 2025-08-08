@@ -302,6 +302,56 @@ func (o *BTMParameter1) SetImportMicroversion(v string) {
 	o.GetActualInstance().(getResult).SetImportMicroversion(v)
 }
 
+// GetLibraryRelationType returns the LibraryRelationType field value if set, zero value otherwise.
+func (o *BTMParameter1) GetLibraryRelationType() GBTParameterLibraryRelationType {
+	type getResult interface {
+		GetLibraryRelationType() GBTParameterLibraryRelationType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryRelationType()
+	} else {
+		var de GBTParameterLibraryRelationType
+		return de
+	}
+}
+
+// GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameter1) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool) {
+	type getResult interface {
+		GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetLibraryRelationTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasLibraryRelationType returns a boolean if a field has been set.
+func (o *BTMParameter1) HasLibraryRelationType() bool {
+	type getResult interface {
+		HasLibraryRelationType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasLibraryRelationType()
+	} else {
+		return false
+	}
+}
+
+// SetLibraryRelationType gets a reference to the given GBTParameterLibraryRelationType and assigns it to the LibraryRelationType field.
+func (o *BTMParameter1) SetLibraryRelationType(v GBTParameterLibraryRelationType) {
+	type getResult interface {
+		SetLibraryRelationType(v GBTParameterLibraryRelationType)
+	}
+
+	o.GetActualInstance().(getResult).SetLibraryRelationType(v)
+}
+
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
 func (o *BTMParameter1) GetNodeId() string {
 	type getResult interface {
@@ -993,7 +1043,8 @@ type base_BTMParameter1 struct {
 	// Type of JSON object.
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
+	ImportMicroversion  *string                          `json:"importMicroversion,omitempty"`
+	LibraryRelationType *GBTParameterLibraryRelationType `json:"libraryRelationType,omitempty"`
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
@@ -1080,6 +1131,38 @@ func (o *base_BTMParameter1) HasImportMicroversion() bool {
 // SetImportMicroversion gets a reference to the given string and assigns it to the ImportMicroversion field.
 func (o *base_BTMParameter1) SetImportMicroversion(v string) {
 	o.ImportMicroversion = &v
+}
+
+// GetLibraryRelationType returns the LibraryRelationType field value if set, zero value otherwise.
+func (o *base_BTMParameter1) GetLibraryRelationType() GBTParameterLibraryRelationType {
+	if o == nil || o.LibraryRelationType == nil {
+		var ret GBTParameterLibraryRelationType
+		return ret
+	}
+	return *o.LibraryRelationType
+}
+
+// GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameter1) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool) {
+	if o == nil || o.LibraryRelationType == nil {
+		return nil, false
+	}
+	return o.LibraryRelationType, true
+}
+
+// HasLibraryRelationType returns a boolean if a field has been set.
+func (o *base_BTMParameter1) HasLibraryRelationType() bool {
+	if o != nil && o.LibraryRelationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLibraryRelationType gets a reference to the given GBTParameterLibraryRelationType and assigns it to the LibraryRelationType field.
+func (o *base_BTMParameter1) SetLibraryRelationType(v GBTParameterLibraryRelationType) {
+	o.LibraryRelationType = &v
 }
 
 // GetNodeId returns the NodeId field value if set, zero value otherwise.
@@ -1185,6 +1268,9 @@ func (o base_BTMParameter1) MarshalJSON() ([]byte, error) {
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
+	}
+	if o.LibraryRelationType != nil {
+		toSerialize["libraryRelationType"] = o.LibraryRelationType
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId

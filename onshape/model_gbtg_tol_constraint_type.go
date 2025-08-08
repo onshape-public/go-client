@@ -25,6 +25,15 @@ const (
 	GBTGTolConstraintTypePerpendicularity GBTGTolConstraintType = "PERPENDICULARITY"
 	GBTGTolConstraintTypeProfileSurface   GBTGTolConstraintType = "PROFILE_SURFACE"
 	GBTGTolConstraintTypeTotalRunout      GBTGTolConstraintType = "TOTAL_RUNOUT"
+	GBTGTolConstraintTypeConcentricity    GBTGTolConstraintType = "CONCENTRICITY"
+	GBTGTolConstraintTypeSymmetry         GBTGTolConstraintType = "SYMMETRY"
+	GBTGTolConstraintTypeAngularity       GBTGTolConstraintType = "ANGULARITY"
+	GBTGTolConstraintTypeCylindricity     GBTGTolConstraintType = "CYLINDRICITY"
+	GBTGTolConstraintTypeFlatness         GBTGTolConstraintType = "FLATNESS"
+	GBTGTolConstraintTypeRoundness        GBTGTolConstraintType = "ROUNDNESS"
+	GBTGTolConstraintTypeStraightness     GBTGTolConstraintType = "STRAIGHTNESS"
+	GBTGTolConstraintTypeProfileLine      GBTGTolConstraintType = "PROFILE_LINE"
+	GBTGTolConstraintTypeCircularRunout   GBTGTolConstraintType = "CIRCULAR_RUNOUT"
 	GBTGTolConstraintTypeUnknown          GBTGTolConstraintType = "UNKNOWN"
 )
 
@@ -35,6 +44,15 @@ var AllowedGBTGTolConstraintTypeEnumValues = []GBTGTolConstraintType{
 	"PERPENDICULARITY",
 	"PROFILE_SURFACE",
 	"TOTAL_RUNOUT",
+	"CONCENTRICITY",
+	"SYMMETRY",
+	"ANGULARITY",
+	"CYLINDRICITY",
+	"FLATNESS",
+	"ROUNDNESS",
+	"STRAIGHTNESS",
+	"PROFILE_LINE",
+	"CIRCULAR_RUNOUT",
 	"UNKNOWN",
 }
 

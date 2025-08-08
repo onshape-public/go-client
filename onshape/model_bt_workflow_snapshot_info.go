@@ -16,19 +16,20 @@ import (
 
 // BTWorkflowSnapshotInfo struct for BTWorkflowSnapshotInfo
 type BTWorkflowSnapshotInfo struct {
-	Actions             []BTWorkflowActionInfo `json:"actions,omitempty"`
-	ApproverIds         []string               `json:"approverIds,omitempty"`
-	CanBeDiscarded      *bool                  `json:"canBeDiscarded,omitempty"`
-	DebugMicroversionId *string                `json:"debugMicroversionId,omitempty"`
-	ErrorMessage        *string                `json:"errorMessage,omitempty"`
-	IsCreator           *bool                  `json:"isCreator,omitempty"`
-	IsDiscarded         *bool                  `json:"isDiscarded,omitempty"`
-	IsFrozen            *bool                  `json:"isFrozen,omitempty"`
-	IsSetup             *bool                  `json:"isSetup,omitempty"`
-	MetadataState       *string                `json:"metadataState,omitempty"`
-	NotifierIds         []string               `json:"notifierIds,omitempty"`
-	State               *BTWorkflowStateInfo   `json:"state,omitempty"`
-	UsesExternalPlm     *bool                  `json:"usesExternalPlm,omitempty"`
+	Actions                 []BTWorkflowActionInfo `json:"actions,omitempty"`
+	ApproverIds             []string               `json:"approverIds,omitempty"`
+	CanBeDiscarded          *bool                  `json:"canBeDiscarded,omitempty"`
+	CurrentStateDisplayName *string                `json:"currentStateDisplayName,omitempty"`
+	DebugMicroversionId     *string                `json:"debugMicroversionId,omitempty"`
+	ErrorMessage            *string                `json:"errorMessage,omitempty"`
+	IsCreator               *bool                  `json:"isCreator,omitempty"`
+	IsDiscarded             *bool                  `json:"isDiscarded,omitempty"`
+	IsFrozen                *bool                  `json:"isFrozen,omitempty"`
+	IsSetup                 *bool                  `json:"isSetup,omitempty"`
+	MetadataState           *string                `json:"metadataState,omitempty"`
+	NotifierIds             []string               `json:"notifierIds,omitempty"`
+	State                   *BTWorkflowStateInfo   `json:"state,omitempty"`
+	UsesExternalPlm         *bool                  `json:"usesExternalPlm,omitempty"`
 }
 
 // NewBTWorkflowSnapshotInfo instantiates a new BTWorkflowSnapshotInfo object
@@ -142,6 +143,38 @@ func (o *BTWorkflowSnapshotInfo) HasCanBeDiscarded() bool {
 // SetCanBeDiscarded gets a reference to the given bool and assigns it to the CanBeDiscarded field.
 func (o *BTWorkflowSnapshotInfo) SetCanBeDiscarded(v bool) {
 	o.CanBeDiscarded = &v
+}
+
+// GetCurrentStateDisplayName returns the CurrentStateDisplayName field value if set, zero value otherwise.
+func (o *BTWorkflowSnapshotInfo) GetCurrentStateDisplayName() string {
+	if o == nil || o.CurrentStateDisplayName == nil {
+		var ret string
+		return ret
+	}
+	return *o.CurrentStateDisplayName
+}
+
+// GetCurrentStateDisplayNameOk returns a tuple with the CurrentStateDisplayName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowSnapshotInfo) GetCurrentStateDisplayNameOk() (*string, bool) {
+	if o == nil || o.CurrentStateDisplayName == nil {
+		return nil, false
+	}
+	return o.CurrentStateDisplayName, true
+}
+
+// HasCurrentStateDisplayName returns a boolean if a field has been set.
+func (o *BTWorkflowSnapshotInfo) HasCurrentStateDisplayName() bool {
+	if o != nil && o.CurrentStateDisplayName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentStateDisplayName gets a reference to the given string and assigns it to the CurrentStateDisplayName field.
+func (o *BTWorkflowSnapshotInfo) SetCurrentStateDisplayName(v string) {
+	o.CurrentStateDisplayName = &v
 }
 
 // GetDebugMicroversionId returns the DebugMicroversionId field value if set, zero value otherwise.
@@ -474,6 +507,9 @@ func (o BTWorkflowSnapshotInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanBeDiscarded != nil {
 		toSerialize["canBeDiscarded"] = o.CanBeDiscarded
+	}
+	if o.CurrentStateDisplayName != nil {
+		toSerialize["currentStateDisplayName"] = o.CurrentStateDisplayName
 	}
 	if o.DebugMicroversionId != nil {
 		toSerialize["debugMicroversionId"] = o.DebugMicroversionId

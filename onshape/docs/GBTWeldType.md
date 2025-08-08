@@ -25,6 +25,12 @@
 
 * `GBTWeldTypeFilletJoint` (value: `"FILLET_JOINT"`)
 
+* `GBTWeldTypePlugOrSlotJoint` (value: `"PLUG_OR_SLOT_JOINT"`)
+
+* `GBTWeldTypeSeamJoint` (value: `"SEAM_JOINT"`)
+
+* `GBTWeldTypeSpotJoint` (value: `"SPOT_JOINT"`)
+
 * `GBTWeldTypeUnknown` (value: `"UNKNOWN"`)
 
 

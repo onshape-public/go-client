@@ -11,12 +11,18 @@ Name | Type | Description | Notes
 **DocumentState** | Pointer to **string** |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**EntryId** | Pointer to **string** |  | [optional] 
+**EntryType** | Pointer to **string** |  | [optional] 
 **Event** | Pointer to **string** |  | [optional] 
 **MessageId** | Pointer to **string** |  | [optional] 
 **MetadataObjectType** | Pointer to **string** |  | [optional] 
+**NewPermissionSet** | Pointer to **[]string** |  | [optional] 
+**OldPermissionSet** | Pointer to **[]string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PartIdentity** | Pointer to **string** |  | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
+**ResourceType** | Pointer to **string** |  | [optional] 
+**ShareAction** | Pointer to **string** |  | [optional] 
 **Timestamp** | Pointer to **JSONTime** |  | [optional] 
 **TranslationId** | Pointer to **string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
@@ -224,6 +230,56 @@ SetElementId sets ElementId field to given value.
 
 HasElementId returns a boolean if a field has been set.
 
+### GetEntryId
+
+`func (o *BTReleaseItemMessageBody) GetEntryId() string`
+
+GetEntryId returns the EntryId field if non-nil, zero value otherwise.
+
+### GetEntryIdOk
+
+`func (o *BTReleaseItemMessageBody) GetEntryIdOk() (*string, bool)`
+
+GetEntryIdOk returns a tuple with the EntryId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEntryId
+
+`func (o *BTReleaseItemMessageBody) SetEntryId(v string)`
+
+SetEntryId sets EntryId field to given value.
+
+### HasEntryId
+
+`func (o *BTReleaseItemMessageBody) HasEntryId() bool`
+
+HasEntryId returns a boolean if a field has been set.
+
+### GetEntryType
+
+`func (o *BTReleaseItemMessageBody) GetEntryType() string`
+
+GetEntryType returns the EntryType field if non-nil, zero value otherwise.
+
+### GetEntryTypeOk
+
+`func (o *BTReleaseItemMessageBody) GetEntryTypeOk() (*string, bool)`
+
+GetEntryTypeOk returns a tuple with the EntryType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEntryType
+
+`func (o *BTReleaseItemMessageBody) SetEntryType(v string)`
+
+SetEntryType sets EntryType field to given value.
+
+### HasEntryType
+
+`func (o *BTReleaseItemMessageBody) HasEntryType() bool`
+
+HasEntryType returns a boolean if a field has been set.
+
 ### GetEvent
 
 `func (o *BTReleaseItemMessageBody) GetEvent() string`
@@ -299,6 +355,56 @@ SetMetadataObjectType sets MetadataObjectType field to given value.
 
 HasMetadataObjectType returns a boolean if a field has been set.
 
+### GetNewPermissionSet
+
+`func (o *BTReleaseItemMessageBody) GetNewPermissionSet() []string`
+
+GetNewPermissionSet returns the NewPermissionSet field if non-nil, zero value otherwise.
+
+### GetNewPermissionSetOk
+
+`func (o *BTReleaseItemMessageBody) GetNewPermissionSetOk() (*[]string, bool)`
+
+GetNewPermissionSetOk returns a tuple with the NewPermissionSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNewPermissionSet
+
+`func (o *BTReleaseItemMessageBody) SetNewPermissionSet(v []string)`
+
+SetNewPermissionSet sets NewPermissionSet field to given value.
+
+### HasNewPermissionSet
+
+`func (o *BTReleaseItemMessageBody) HasNewPermissionSet() bool`
+
+HasNewPermissionSet returns a boolean if a field has been set.
+
+### GetOldPermissionSet
+
+`func (o *BTReleaseItemMessageBody) GetOldPermissionSet() []string`
+
+GetOldPermissionSet returns the OldPermissionSet field if non-nil, zero value otherwise.
+
+### GetOldPermissionSetOk
+
+`func (o *BTReleaseItemMessageBody) GetOldPermissionSetOk() (*[]string, bool)`
+
+GetOldPermissionSetOk returns a tuple with the OldPermissionSet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOldPermissionSet
+
+`func (o *BTReleaseItemMessageBody) SetOldPermissionSet(v []string)`
+
+SetOldPermissionSet sets OldPermissionSet field to given value.
+
+### HasOldPermissionSet
+
+`func (o *BTReleaseItemMessageBody) HasOldPermissionSet() bool`
+
+HasOldPermissionSet returns a boolean if a field has been set.
+
 ### GetPartId
 
 `func (o *BTReleaseItemMessageBody) GetPartId() string`
@@ -373,6 +479,56 @@ SetPartNumber sets PartNumber field to given value.
 `func (o *BTReleaseItemMessageBody) HasPartNumber() bool`
 
 HasPartNumber returns a boolean if a field has been set.
+
+### GetResourceType
+
+`func (o *BTReleaseItemMessageBody) GetResourceType() string`
+
+GetResourceType returns the ResourceType field if non-nil, zero value otherwise.
+
+### GetResourceTypeOk
+
+`func (o *BTReleaseItemMessageBody) GetResourceTypeOk() (*string, bool)`
+
+GetResourceTypeOk returns a tuple with the ResourceType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResourceType
+
+`func (o *BTReleaseItemMessageBody) SetResourceType(v string)`
+
+SetResourceType sets ResourceType field to given value.
+
+### HasResourceType
+
+`func (o *BTReleaseItemMessageBody) HasResourceType() bool`
+
+HasResourceType returns a boolean if a field has been set.
+
+### GetShareAction
+
+`func (o *BTReleaseItemMessageBody) GetShareAction() string`
+
+GetShareAction returns the ShareAction field if non-nil, zero value otherwise.
+
+### GetShareActionOk
+
+`func (o *BTReleaseItemMessageBody) GetShareActionOk() (*string, bool)`
+
+GetShareActionOk returns a tuple with the ShareAction field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShareAction
+
+`func (o *BTReleaseItemMessageBody) SetShareAction(v string)`
+
+SetShareAction sets ShareAction field to given value.
+
+### HasShareAction
+
+`func (o *BTReleaseItemMessageBody) HasShareAction() bool`
+
+HasShareAction returns a boolean if a field has been set.
 
 ### GetTimestamp
 

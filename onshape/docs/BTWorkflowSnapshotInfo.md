@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Actions** | Pointer to [**[]BTWorkflowActionInfo**](BTWorkflowActionInfo.md) |  | [optional] 
 **ApproverIds** | Pointer to **[]string** |  | [optional] 
 **CanBeDiscarded** | Pointer to **bool** |  | [optional] 
+**CurrentStateDisplayName** | Pointer to **string** |  | [optional] 
 **DebugMicroversionId** | Pointer to **string** |  | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
 **IsCreator** | Pointer to **bool** |  | [optional] 
@@ -111,6 +112,31 @@ SetCanBeDiscarded sets CanBeDiscarded field to given value.
 `func (o *BTWorkflowSnapshotInfo) HasCanBeDiscarded() bool`
 
 HasCanBeDiscarded returns a boolean if a field has been set.
+
+### GetCurrentStateDisplayName
+
+`func (o *BTWorkflowSnapshotInfo) GetCurrentStateDisplayName() string`
+
+GetCurrentStateDisplayName returns the CurrentStateDisplayName field if non-nil, zero value otherwise.
+
+### GetCurrentStateDisplayNameOk
+
+`func (o *BTWorkflowSnapshotInfo) GetCurrentStateDisplayNameOk() (*string, bool)`
+
+GetCurrentStateDisplayNameOk returns a tuple with the CurrentStateDisplayName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentStateDisplayName
+
+`func (o *BTWorkflowSnapshotInfo) SetCurrentStateDisplayName(v string)`
+
+SetCurrentStateDisplayName sets CurrentStateDisplayName field to given value.
+
+### HasCurrentStateDisplayName
+
+`func (o *BTWorkflowSnapshotInfo) HasCurrentStateDisplayName() bool`
+
+HasCurrentStateDisplayName returns a boolean if a field has been set.
 
 ### GetDebugMicroversionId
 

@@ -59,6 +59,7 @@ type BTPartInstance81 struct {
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	Name                                    *string                                     `json:"name,omitempty"`
 	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
+	ParameterLibraries                      []BTMParameter1                             `json:"parameterLibraries,omitempty"`
 	Parameters                              []BTMParameter1                             `json:"parameters,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
@@ -1366,6 +1367,38 @@ func (o *BTPartInstance81) SetNodeWithReferenceList(v []BTNodeWithReference) {
 	o.NodeWithReferenceList = v
 }
 
+// GetParameterLibraries returns the ParameterLibraries field value if set, zero value otherwise.
+func (o *BTPartInstance81) GetParameterLibraries() []BTMParameter1 {
+	if o == nil || o.ParameterLibraries == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.ParameterLibraries
+}
+
+// GetParameterLibrariesOk returns a tuple with the ParameterLibraries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartInstance81) GetParameterLibrariesOk() ([]BTMParameter1, bool) {
+	if o == nil || o.ParameterLibraries == nil {
+		return nil, false
+	}
+	return o.ParameterLibraries, true
+}
+
+// HasParameterLibraries returns a boolean if a field has been set.
+func (o *BTPartInstance81) HasParameterLibraries() bool {
+	if o != nil && o.ParameterLibraries != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterLibraries gets a reference to the given []BTMParameter1 and assigns it to the ParameterLibraries field.
+func (o *BTPartInstance81) SetParameterLibraries(v []BTMParameter1) {
+	o.ParameterLibraries = v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTPartInstance81) GetParameters() []BTMParameter1 {
 	if o == nil || o.Parameters == nil {
@@ -1751,6 +1784,9 @@ func (o BTPartInstance81) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeWithReferenceList != nil {
 		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList
+	}
+	if o.ParameterLibraries != nil {
+		toSerialize["parameterLibraries"] = o.ParameterLibraries
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

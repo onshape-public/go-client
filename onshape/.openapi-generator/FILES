@@ -476,7 +476,6 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
-docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -580,7 +579,6 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
-docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -644,6 +642,8 @@ docs/BTMIndividualCoEdgeQuery1332AllOf.md
 docs/BTMIndividualCreatedByQuery137.md
 docs/BTMIndividualCreatedByQuery137AllOf.md
 docs/BTMIndividualOccurrenceQuery626.md
+docs/BTMIndividualParametricQuery3477.md
+docs/BTMIndividualParametricQuery3477AllOf.md
 docs/BTMIndividualQuery138.md
 docs/BTMIndividualQueryBase139.md
 docs/BTMIndividualQueryBase139AllOf.md
@@ -776,11 +776,9 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
-docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
-docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -1189,7 +1187,6 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
-docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1387,7 +1384,6 @@ docs/Encoding.md
 docs/Entry.md
 docs/EventApi.md
 docs/Example.md
-docs/ExpandableState.md
 docs/ExportRuleApi.md
 docs/ExternalDocumentation.md
 docs/FeatureStudioApi.md
@@ -1443,6 +1439,7 @@ docs/GBTNoticeType.md
 docs/GBTPDefinitionType.md
 docs/GBTPOperator.md
 docs/GBTPType.md
+docs/GBTParameterLibraryRelationType.md
 docs/GBTParameterVisibilityLogicalOp.md
 docs/GBTParasolidEncodingType.md
 docs/GBTPartColorCycleVersion.md
@@ -2381,6 +2378,7 @@ model_btm_import_136.go
 model_btm_individual_co_edge_query_1332.go
 model_btm_individual_created_by_query_137.go
 model_btm_individual_occurrence_query_626.go
+model_btm_individual_parametric_query_3477.go
 model_btm_individual_query_138.go
 model_btm_individual_query_base_139.go
 model_btm_individual_query_with_occurrence_811.go
@@ -2557,7 +2555,6 @@ model_element_type.go
 model_encoding.go
 model_entry.go
 model_example.go
-model_expandable_state.go
 model_external_documentation.go
 model_gbt_annotation_type.go
 model_gbt_app_element_associative_data_type.go
@@ -2604,6 +2601,7 @@ model_gbt_node_change.go
 model_gbt_node_status_type.go
 model_gbt_notice_level.go
 model_gbt_notice_type.go
+model_gbt_parameter_library_relation_type.go
 model_gbt_parameter_visibility_logical_op.go
 model_gbt_parasolid_encoding_type.go
 model_gbt_part_color_cycle_version.go

@@ -18,6 +18,7 @@ import (
 type BTShareEntryParams struct {
 	ApplicationId *string `json:"applicationId,omitempty"`
 	CompanyId     *string `json:"companyId,omitempty"`
+	ConnectionId  *string `json:"connectionId,omitempty"`
 	Email         *string `json:"email,omitempty"`
 	EntryType     *int32  `json:"entryType,omitempty"`
 	TeamId        *string `json:"teamId,omitempty"`
@@ -103,6 +104,38 @@ func (o *BTShareEntryParams) HasCompanyId() bool {
 // SetCompanyId gets a reference to the given string and assigns it to the CompanyId field.
 func (o *BTShareEntryParams) SetCompanyId(v string) {
 	o.CompanyId = &v
+}
+
+// GetConnectionId returns the ConnectionId field value if set, zero value otherwise.
+func (o *BTShareEntryParams) GetConnectionId() string {
+	if o == nil || o.ConnectionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ConnectionId
+}
+
+// GetConnectionIdOk returns a tuple with the ConnectionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTShareEntryParams) GetConnectionIdOk() (*string, bool) {
+	if o == nil || o.ConnectionId == nil {
+		return nil, false
+	}
+	return o.ConnectionId, true
+}
+
+// HasConnectionId returns a boolean if a field has been set.
+func (o *BTShareEntryParams) HasConnectionId() bool {
+	if o != nil && o.ConnectionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
+func (o *BTShareEntryParams) SetConnectionId(v string) {
+	o.ConnectionId = &v
 }
 
 // GetEmail returns the Email field value if set, zero value otherwise.
@@ -240,6 +273,9 @@ func (o BTShareEntryParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.CompanyId != nil {
 		toSerialize["companyId"] = o.CompanyId
+	}
+	if o.ConnectionId != nil {
+		toSerialize["connectionId"] = o.ConnectionId
 	}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email

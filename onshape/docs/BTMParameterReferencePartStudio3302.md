@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **FeatureScriptType** | Pointer to **string** |  | [optional] 
 **Ids** | Pointer to **[]string** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
+**LibraryRelationType** | Pointer to [**GBTParameterLibraryRelationType**](GBTParameterLibraryRelationType.md) |  | [optional] 
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
@@ -292,6 +293,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMParameterReferencePartStudio3302) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetLibraryRelationType
+
+`func (o *BTMParameterReferencePartStudio3302) GetLibraryRelationType() GBTParameterLibraryRelationType`
+
+GetLibraryRelationType returns the LibraryRelationType field if non-nil, zero value otherwise.
+
+### GetLibraryRelationTypeOk
+
+`func (o *BTMParameterReferencePartStudio3302) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool)`
+
+GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibraryRelationType
+
+`func (o *BTMParameterReferencePartStudio3302) SetLibraryRelationType(v GBTParameterLibraryRelationType)`
+
+SetLibraryRelationType sets LibraryRelationType field to given value.
+
+### HasLibraryRelationType
+
+`func (o *BTMParameterReferencePartStudio3302) HasLibraryRelationType() bool`
+
+HasLibraryRelationType returns a boolean if a field has been set.
 
 ### GetMicroversionId
 

@@ -3327,6 +3327,36 @@
 
 * `GBTErrorStringEnumMirrorInvalidSeedAssembly` (value: `"MIRROR_INVALID_SEED_ASSEMBLY"`)
 
+* `GBTErrorStringEnumCannotComputeMaxDeviation` (value: `"CANNOT_COMPUTE_MAX_DEVIATION"`)
+
+* `GBTErrorStringEnumCannotComputeMinDeviation` (value: `"CANNOT_COMPUTE_MIN_DEVIATION"`)
+
+* `GBTErrorStringEnumAssemblyMirrorInvolvesFixedOccurrences` (value: `"ASSEMBLY_MIRROR_INVOLVES_FIXED_OCCURRENCES"`)
+
+* `GBTErrorStringEnumQueryVariableEmptyName` (value: `"QUERY_VARIABLE_EMPTY_NAME"`)
+
+* `GBTErrorStringEnumFeaturesWithCyclicDependencyDetected` (value: `"FEATURES_WITH_CYCLIC_DEPENDENCY_DETECTED"`)
+
+* `GBTErrorStringEnumAssemblyMirrorRecursiveSeed` (value: `"ASSEMBLY_MIRROR_RECURSIVE_SEED"`)
+
+* `GBTErrorStringEnumQueryVariableNameAlreadyUsedInNonQueryVariable` (value: `"QUERY_VARIABLE_NAME_ALREADY_USED_IN_NON_QUERY_VARIABLE"`)
+
+* `GBTErrorStringEnumQueryVariableEmptySelection` (value: `"QUERY_VARIABLE_EMPTY_SELECTION"`)
+
+* `GBTErrorStringEnumQueryVariableNameCannotStartWithPound` (value: `"QUERY_VARIABLE_NAME_CANNOT_START_WITH_POUND"`)
+
+* `GBTErrorStringEnumVariableNameAlreadyUsedInQueryVariable` (value: `"VARIABLE_NAME_ALREADY_USED_IN_QUERY_VARIABLE"`)
+
+* `GBTErrorStringEnumAssemblyMirrorTargetPartMissing` (value: `"ASSEMBLY_MIRROR_TARGET_PART_MISSING"`)
+
+* `GBTErrorStringEnumAssemblyMirrorTargetFeatureMissing` (value: `"ASSEMBLY_MIRROR_TARGET_FEATURE_MISSING"`)
+
+* `GBTErrorStringEnumAssemblyMirrorTargetElementMissing` (value: `"ASSEMBLY_MIRROR_TARGET_ELEMENT_MISSING"`)
+
+* `GBTErrorStringEnumAssemblyMirrorDerivedElementConfigurationsInvalid` (value: `"ASSEMBLY_MIRROR_DERIVED_ELEMENT_CONFIGURATIONS_INVALID"`)
+
+* `GBTErrorStringEnumAssemblyDerivedMirrorReferenceMissing` (value: `"ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

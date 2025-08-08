@@ -73,6 +73,10 @@
 
 * `GBTUIHintAlwaysUseDependencies` (value: `"ALWAYS_USE_DEPENDENCIES"`)
 
+* `GBTUIHintNoQueryVariable` (value: `"NO_QUERY_VARIABLE"`)
+
+* `GBTUIHintAllowFlatSketchSelection` (value: `"ALLOW_FLAT_SKETCH_SELECTION"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

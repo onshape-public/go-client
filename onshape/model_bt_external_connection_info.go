@@ -41,14 +41,15 @@ type BTExternalConnectionInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef         *string               `json:"viewRef,omitempty"`
-	ApprovedBy      *BTUserSummaryInfo    `json:"approvedBy,omitempty"`
-	ContactUser     *BTUserSummaryInfo    `json:"contactUser,omitempty"`
-	Icon            *string               `json:"icon,omitempty"`
-	InvitedCompany  *BTCompanySummaryInfo `json:"invitedCompany,omitempty"`
-	Member          *bool                 `json:"member,omitempty"`
-	NumberOfMembers *int64                `json:"numberOfMembers,omitempty"`
-	State           *int32                `json:"state,omitempty"`
+	ViewRef              *string               `json:"viewRef,omitempty"`
+	ApprovedBy           *BTUserSummaryInfo    `json:"approvedBy,omitempty"`
+	ContactUser          *BTUserSummaryInfo    `json:"contactUser,omitempty"`
+	Icon                 *string               `json:"icon,omitempty"`
+	InvitedCompany       *BTCompanySummaryInfo `json:"invitedCompany,omitempty"`
+	IsOwnerEnterpriseEdu *bool                 `json:"isOwnerEnterpriseEdu,omitempty"`
+	Member               *bool                 `json:"member,omitempty"`
+	NumberOfMembers      *int64                `json:"numberOfMembers,omitempty"`
+	State                *int32                `json:"state,omitempty"`
 }
 
 // NewBTExternalConnectionInfo instantiates a new BTExternalConnectionInfo object
@@ -893,6 +894,38 @@ func (o *BTExternalConnectionInfo) SetInvitedCompany(v BTCompanySummaryInfo) {
 	o.InvitedCompany = &v
 }
 
+// GetIsOwnerEnterpriseEdu returns the IsOwnerEnterpriseEdu field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetIsOwnerEnterpriseEdu() bool {
+	if o == nil || o.IsOwnerEnterpriseEdu == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsOwnerEnterpriseEdu
+}
+
+// GetIsOwnerEnterpriseEduOk returns a tuple with the IsOwnerEnterpriseEdu field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetIsOwnerEnterpriseEduOk() (*bool, bool) {
+	if o == nil || o.IsOwnerEnterpriseEdu == nil {
+		return nil, false
+	}
+	return o.IsOwnerEnterpriseEdu, true
+}
+
+// HasIsOwnerEnterpriseEdu returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasIsOwnerEnterpriseEdu() bool {
+	if o != nil && o.IsOwnerEnterpriseEdu != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsOwnerEnterpriseEdu gets a reference to the given bool and assigns it to the IsOwnerEnterpriseEdu field.
+func (o *BTExternalConnectionInfo) SetIsOwnerEnterpriseEdu(v bool) {
+	o.IsOwnerEnterpriseEdu = &v
+}
+
 // GetMember returns the Member field value if set, zero value otherwise.
 func (o *BTExternalConnectionInfo) GetMember() bool {
 	if o == nil || o.Member == nil {
@@ -1068,6 +1101,9 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.InvitedCompany != nil {
 		toSerialize["invitedCompany"] = o.InvitedCompany
+	}
+	if o.IsOwnerEnterpriseEdu != nil {
+		toSerialize["isOwnerEnterpriseEdu"] = o.IsOwnerEnterpriseEdu
 	}
 	if o.Member != nil {
 		toSerialize["member"] = o.Member

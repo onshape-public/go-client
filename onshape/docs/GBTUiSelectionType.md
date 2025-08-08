@@ -47,6 +47,8 @@
 
 * `GBTUiSelectionTypeDimension` (value: `"DIMENSION"`)
 
+* `GBTUiSelectionTypeQueryVariable` (value: `"QUERY_VARIABLE"`)
+
 * `GBTUiSelectionTypeUnknown` (value: `"UNKNOWN"`)
 
 

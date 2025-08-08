@@ -30,6 +30,7 @@ type BTWorkflowableObjectObserver struct {
 	EntryId          *string                      `json:"entryId,omitempty"`
 	EntryType        *BTWorkflowObserverEntryType `json:"entryType,omitempty"`
 	Id               *string                      `json:"id,omitempty"`
+	IsExternal       *bool                        `json:"isExternal,omitempty"`
 	ModifiedAt       *JSONTime                    `json:"modifiedAt,omitempty"`
 	ModifiedBy       *string                      `json:"modifiedBy,omitempty"`
 	Name             *string                      `json:"name,omitempty"`
@@ -506,6 +507,38 @@ func (o *BTWorkflowableObjectObserver) SetId(v string) {
 	o.Id = &v
 }
 
+// GetIsExternal returns the IsExternal field value if set, zero value otherwise.
+func (o *BTWorkflowableObjectObserver) GetIsExternal() bool {
+	if o == nil || o.IsExternal == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsExternal
+}
+
+// GetIsExternalOk returns a tuple with the IsExternal field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowableObjectObserver) GetIsExternalOk() (*bool, bool) {
+	if o == nil || o.IsExternal == nil {
+		return nil, false
+	}
+	return o.IsExternal, true
+}
+
+// HasIsExternal returns a boolean if a field has been set.
+func (o *BTWorkflowableObjectObserver) HasIsExternal() bool {
+	if o != nil && o.IsExternal != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsExternal gets a reference to the given bool and assigns it to the IsExternal field.
+func (o *BTWorkflowableObjectObserver) SetIsExternal(v bool) {
+	o.IsExternal = &v
+}
+
 // GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
 func (o *BTWorkflowableObjectObserver) GetModifiedAt() JSONTime {
 	if o == nil || o.ModifiedAt == nil {
@@ -837,6 +870,9 @@ func (o BTWorkflowableObjectObserver) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.IsExternal != nil {
+		toSerialize["isExternal"] = o.IsExternal
 	}
 	if o.ModifiedAt != nil {
 		toSerialize["modifiedAt"] = o.ModifiedAt

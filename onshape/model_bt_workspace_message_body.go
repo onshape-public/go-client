@@ -23,12 +23,18 @@ type BTWorkspaceMessageBody struct {
 	DocumentState       *string   `json:"documentState,omitempty"`
 	DocumentType        *int32    `json:"documentType,omitempty"`
 	ElementId           *string   `json:"elementId,omitempty"`
+	EntryId             *string   `json:"entryId,omitempty"`
+	EntryType           *string   `json:"entryType,omitempty"`
 	Event               *string   `json:"event,omitempty"`
 	MessageId           *string   `json:"messageId,omitempty"`
 	MetadataObjectType  *string   `json:"metadataObjectType,omitempty"`
+	NewPermissionSet    []string  `json:"newPermissionSet,omitempty"`
+	OldPermissionSet    []string  `json:"oldPermissionSet,omitempty"`
 	PartId              *string   `json:"partId,omitempty"`
 	PartIdentity        *string   `json:"partIdentity,omitempty"`
 	PartNumber          *string   `json:"partNumber,omitempty"`
+	ResourceType        *string   `json:"resourceType,omitempty"`
+	ShareAction         *string   `json:"shareAction,omitempty"`
 	Timestamp           *JSONTime `json:"timestamp,omitempty"`
 	TranslationId       *string   `json:"translationId,omitempty"`
 	UserId              *string   `json:"userId,omitempty"`
@@ -280,6 +286,70 @@ func (o *BTWorkspaceMessageBody) SetElementId(v string) {
 	o.ElementId = &v
 }
 
+// GetEntryId returns the EntryId field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetEntryId() string {
+	if o == nil || o.EntryId == nil {
+		var ret string
+		return ret
+	}
+	return *o.EntryId
+}
+
+// GetEntryIdOk returns a tuple with the EntryId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetEntryIdOk() (*string, bool) {
+	if o == nil || o.EntryId == nil {
+		return nil, false
+	}
+	return o.EntryId, true
+}
+
+// HasEntryId returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasEntryId() bool {
+	if o != nil && o.EntryId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntryId gets a reference to the given string and assigns it to the EntryId field.
+func (o *BTWorkspaceMessageBody) SetEntryId(v string) {
+	o.EntryId = &v
+}
+
+// GetEntryType returns the EntryType field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetEntryType() string {
+	if o == nil || o.EntryType == nil {
+		var ret string
+		return ret
+	}
+	return *o.EntryType
+}
+
+// GetEntryTypeOk returns a tuple with the EntryType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetEntryTypeOk() (*string, bool) {
+	if o == nil || o.EntryType == nil {
+		return nil, false
+	}
+	return o.EntryType, true
+}
+
+// HasEntryType returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasEntryType() bool {
+	if o != nil && o.EntryType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEntryType gets a reference to the given string and assigns it to the EntryType field.
+func (o *BTWorkspaceMessageBody) SetEntryType(v string) {
+	o.EntryType = &v
+}
+
 // GetEvent returns the Event field value if set, zero value otherwise.
 func (o *BTWorkspaceMessageBody) GetEvent() string {
 	if o == nil || o.Event == nil {
@@ -376,6 +446,70 @@ func (o *BTWorkspaceMessageBody) SetMetadataObjectType(v string) {
 	o.MetadataObjectType = &v
 }
 
+// GetNewPermissionSet returns the NewPermissionSet field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetNewPermissionSet() []string {
+	if o == nil || o.NewPermissionSet == nil {
+		var ret []string
+		return ret
+	}
+	return o.NewPermissionSet
+}
+
+// GetNewPermissionSetOk returns a tuple with the NewPermissionSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetNewPermissionSetOk() ([]string, bool) {
+	if o == nil || o.NewPermissionSet == nil {
+		return nil, false
+	}
+	return o.NewPermissionSet, true
+}
+
+// HasNewPermissionSet returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasNewPermissionSet() bool {
+	if o != nil && o.NewPermissionSet != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNewPermissionSet gets a reference to the given []string and assigns it to the NewPermissionSet field.
+func (o *BTWorkspaceMessageBody) SetNewPermissionSet(v []string) {
+	o.NewPermissionSet = v
+}
+
+// GetOldPermissionSet returns the OldPermissionSet field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetOldPermissionSet() []string {
+	if o == nil || o.OldPermissionSet == nil {
+		var ret []string
+		return ret
+	}
+	return o.OldPermissionSet
+}
+
+// GetOldPermissionSetOk returns a tuple with the OldPermissionSet field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetOldPermissionSetOk() ([]string, bool) {
+	if o == nil || o.OldPermissionSet == nil {
+		return nil, false
+	}
+	return o.OldPermissionSet, true
+}
+
+// HasOldPermissionSet returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasOldPermissionSet() bool {
+	if o != nil && o.OldPermissionSet != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOldPermissionSet gets a reference to the given []string and assigns it to the OldPermissionSet field.
+func (o *BTWorkspaceMessageBody) SetOldPermissionSet(v []string) {
+	o.OldPermissionSet = v
+}
+
 // GetPartId returns the PartId field value if set, zero value otherwise.
 func (o *BTWorkspaceMessageBody) GetPartId() string {
 	if o == nil || o.PartId == nil {
@@ -470,6 +604,70 @@ func (o *BTWorkspaceMessageBody) HasPartNumber() bool {
 // SetPartNumber gets a reference to the given string and assigns it to the PartNumber field.
 func (o *BTWorkspaceMessageBody) SetPartNumber(v string) {
 	o.PartNumber = &v
+}
+
+// GetResourceType returns the ResourceType field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetResourceType() string {
+	if o == nil || o.ResourceType == nil {
+		var ret string
+		return ret
+	}
+	return *o.ResourceType
+}
+
+// GetResourceTypeOk returns a tuple with the ResourceType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetResourceTypeOk() (*string, bool) {
+	if o == nil || o.ResourceType == nil {
+		return nil, false
+	}
+	return o.ResourceType, true
+}
+
+// HasResourceType returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasResourceType() bool {
+	if o != nil && o.ResourceType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetResourceType gets a reference to the given string and assigns it to the ResourceType field.
+func (o *BTWorkspaceMessageBody) SetResourceType(v string) {
+	o.ResourceType = &v
+}
+
+// GetShareAction returns the ShareAction field value if set, zero value otherwise.
+func (o *BTWorkspaceMessageBody) GetShareAction() string {
+	if o == nil || o.ShareAction == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShareAction
+}
+
+// GetShareActionOk returns a tuple with the ShareAction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkspaceMessageBody) GetShareActionOk() (*string, bool) {
+	if o == nil || o.ShareAction == nil {
+		return nil, false
+	}
+	return o.ShareAction, true
+}
+
+// HasShareAction returns a boolean if a field has been set.
+func (o *BTWorkspaceMessageBody) HasShareAction() bool {
+	if o != nil && o.ShareAction != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShareAction gets a reference to the given string and assigns it to the ShareAction field.
+func (o *BTWorkspaceMessageBody) SetShareAction(v string) {
+	o.ShareAction = &v
 }
 
 // GetTimestamp returns the Timestamp field value if set, zero value otherwise.
@@ -719,6 +917,12 @@ func (o BTWorkspaceMessageBody) MarshalJSON() ([]byte, error) {
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
 	}
+	if o.EntryId != nil {
+		toSerialize["entryId"] = o.EntryId
+	}
+	if o.EntryType != nil {
+		toSerialize["entryType"] = o.EntryType
+	}
 	if o.Event != nil {
 		toSerialize["event"] = o.Event
 	}
@@ -728,6 +932,12 @@ func (o BTWorkspaceMessageBody) MarshalJSON() ([]byte, error) {
 	if o.MetadataObjectType != nil {
 		toSerialize["metadataObjectType"] = o.MetadataObjectType
 	}
+	if o.NewPermissionSet != nil {
+		toSerialize["newPermissionSet"] = o.NewPermissionSet
+	}
+	if o.OldPermissionSet != nil {
+		toSerialize["oldPermissionSet"] = o.OldPermissionSet
+	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
 	}
@@ -736,6 +946,12 @@ func (o BTWorkspaceMessageBody) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber
+	}
+	if o.ResourceType != nil {
+		toSerialize["resourceType"] = o.ResourceType
+	}
+	if o.ShareAction != nil {
+		toSerialize["shareAction"] = o.ShareAction
 	}
 	if o.Timestamp != nil {
 		toSerialize["timestamp"] = o.Timestamp

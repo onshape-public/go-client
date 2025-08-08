@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApplicationId** | Pointer to **string** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
+**ConnectionId** | Pointer to **string** |  | [optional] 
 **Email** | Pointer to **string** |  | [optional] 
 **EntryType** | Pointer to **int32** |  | [optional] 
 **TeamId** | Pointer to **string** |  | [optional] 
@@ -79,6 +80,31 @@ SetCompanyId sets CompanyId field to given value.
 `func (o *BTShareEntryParams) HasCompanyId() bool`
 
 HasCompanyId returns a boolean if a field has been set.
+
+### GetConnectionId
+
+`func (o *BTShareEntryParams) GetConnectionId() string`
+
+GetConnectionId returns the ConnectionId field if non-nil, zero value otherwise.
+
+### GetConnectionIdOk
+
+`func (o *BTShareEntryParams) GetConnectionIdOk() (*string, bool)`
+
+GetConnectionIdOk returns a tuple with the ConnectionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConnectionId
+
+`func (o *BTShareEntryParams) SetConnectionId(v string)`
+
+SetConnectionId sets ConnectionId field to given value.
+
+### HasConnectionId
+
+`func (o *BTShareEntryParams) HasConnectionId() bool`
+
+HasConnectionId returns a boolean if a field has been set.
 
 ### GetEmail
 

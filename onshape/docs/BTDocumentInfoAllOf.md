@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
+**CanCreateTaskViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
 **CanImportViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **DocumentThumbnailElementId** | Pointer to **string** |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
 **DuplicateNameViolationError** | Pointer to **string** |  | [optional] 
+**ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
@@ -136,6 +138,31 @@ SetAnonymousAllowsExport sets AnonymousAllowsExport field to given value.
 `func (o *BTDocumentInfoAllOf) HasAnonymousAllowsExport() bool`
 
 HasAnonymousAllowsExport returns a boolean if a field has been set.
+
+### GetCanCreateTaskViaConnectionGlobalPermission
+
+`func (o *BTDocumentInfoAllOf) GetCanCreateTaskViaConnectionGlobalPermission() bool`
+
+GetCanCreateTaskViaConnectionGlobalPermission returns the CanCreateTaskViaConnectionGlobalPermission field if non-nil, zero value otherwise.
+
+### GetCanCreateTaskViaConnectionGlobalPermissionOk
+
+`func (o *BTDocumentInfoAllOf) GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool)`
+
+GetCanCreateTaskViaConnectionGlobalPermissionOk returns a tuple with the CanCreateTaskViaConnectionGlobalPermission field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCreateTaskViaConnectionGlobalPermission
+
+`func (o *BTDocumentInfoAllOf) SetCanCreateTaskViaConnectionGlobalPermission(v bool)`
+
+SetCanCreateTaskViaConnectionGlobalPermission sets CanCreateTaskViaConnectionGlobalPermission field to given value.
+
+### HasCanCreateTaskViaConnectionGlobalPermission
+
+`func (o *BTDocumentInfoAllOf) HasCanCreateTaskViaConnectionGlobalPermission() bool`
+
+HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
 
 ### GetCanImportViaConnectionGlobalPermission
 
@@ -586,6 +613,31 @@ SetDuplicateNameViolationError sets DuplicateNameViolationError field to given v
 `func (o *BTDocumentInfoAllOf) HasDuplicateNameViolationError() bool`
 
 HasDuplicateNameViolationError returns a boolean if a field has been set.
+
+### GetElementLibrarySummaryInfo
+
+`func (o *BTDocumentInfoAllOf) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo`
+
+GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field if non-nil, zero value otherwise.
+
+### GetElementLibrarySummaryInfoOk
+
+`func (o *BTDocumentInfoAllOf) GetElementLibrarySummaryInfoOk() (*[]BTElementLibrarySummaryInfo, bool)`
+
+GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementLibrarySummaryInfo
+
+`func (o *BTDocumentInfoAllOf) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)`
+
+SetElementLibrarySummaryInfo sets ElementLibrarySummaryInfo field to given value.
+
+### HasElementLibrarySummaryInfo
+
+`func (o *BTDocumentInfoAllOf) HasElementLibrarySummaryInfo() bool`
+
+HasElementLibrarySummaryInfo returns a boolean if a field has been set.
 
 ### GetForceExportRules
 

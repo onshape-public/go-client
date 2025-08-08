@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) | A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation. | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
@@ -238,6 +239,31 @@ SetNodeId sets NodeId field to given value.
 `func (o *BTMFeature134) HasNodeId() bool`
 
 HasNodeId returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTMFeature134) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTMFeature134) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTMFeature134) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTMFeature134) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParameters
 

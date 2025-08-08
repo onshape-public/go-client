@@ -42,6 +42,7 @@ const (
 	GBTUiSelectionTypeGenerativeDesignItem  GBTUiSelectionType = "GENERATIVE_DESIGN_ITEM"
 	GBTUiSelectionTypeAnnotation            GBTUiSelectionType = "ANNOTATION"
 	GBTUiSelectionTypeDimension             GBTUiSelectionType = "DIMENSION"
+	GBTUiSelectionTypeQueryVariable         GBTUiSelectionType = "QUERY_VARIABLE"
 	GBTUiSelectionTypeUnknown               GBTUiSelectionType = "UNKNOWN"
 )
 
@@ -69,6 +70,7 @@ var AllowedGBTUiSelectionTypeEnumValues = []GBTUiSelectionType{
 	"GENERATIVE_DESIGN_ITEM",
 	"ANNOTATION",
 	"DIMENSION",
+	"QUERY_VARIABLE",
 	"UNKNOWN",
 }
 

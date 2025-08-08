@@ -37,6 +37,7 @@ type BTMAssemblyPatternFeature2241 struct {
 	// ID for the feature node.
 	NodeId                                 *string                                   `json:"nodeId,omitempty"`
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
+	ParameterLibraries                     []BTMParameter1                           `json:"parameterLibraries,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
 	PatternType                            *GBTPatternType                           `json:"patternType,omitempty"`
 	// For internal use only. Should always be `false`.
@@ -519,6 +520,38 @@ func (o *BTMAssemblyPatternFeature2241) SetOccurrenceQueriesFromAllConfiguration
 	o.OccurrenceQueriesFromAllConfigurations = v
 }
 
+// GetParameterLibraries returns the ParameterLibraries field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetParameterLibraries() []BTMParameter1 {
+	if o == nil || o.ParameterLibraries == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.ParameterLibraries
+}
+
+// GetParameterLibrariesOk returns a tuple with the ParameterLibraries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetParameterLibrariesOk() ([]BTMParameter1, bool) {
+	if o == nil || o.ParameterLibraries == nil {
+		return nil, false
+	}
+	return o.ParameterLibraries, true
+}
+
+// HasParameterLibraries returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasParameterLibraries() bool {
+	if o != nil && o.ParameterLibraries != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterLibraries gets a reference to the given []BTMParameter1 and assigns it to the ParameterLibraries field.
+func (o *BTMAssemblyPatternFeature2241) SetParameterLibraries(v []BTMParameter1) {
+	o.ParameterLibraries = v
+}
+
 // GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
 func (o *BTMAssemblyPatternFeature2241) GetParametricInstanceFeature() bool {
 	if o == nil || o.ParametricInstanceFeature == nil {
@@ -882,6 +915,9 @@ func (o BTMAssemblyPatternFeature2241) MarshalJSON() ([]byte, error) {
 	}
 	if o.OccurrenceQueriesFromAllConfigurations != nil {
 		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
+	}
+	if o.ParameterLibraries != nil {
+		toSerialize["parameterLibraries"] = o.ParameterLibraries
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature

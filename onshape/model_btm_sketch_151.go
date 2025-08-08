@@ -30,7 +30,8 @@ type BTMSketch151 struct {
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
 	Namespace *string `json:"namespace,omitempty"`
 	// ID for the feature node.
-	NodeId *string `json:"nodeId,omitempty"`
+	NodeId             *string         `json:"nodeId,omitempty"`
+	ParameterLibraries []BTMParameter1 `json:"parameterLibraries,omitempty"`
 	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
 	Parameters []BTMParameter1 `json:"parameters,omitempty"`
 	// For internal use only. Should always be `false`.
@@ -319,6 +320,38 @@ func (o *BTMSketch151) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTMSketch151) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetParameterLibraries returns the ParameterLibraries field value if set, zero value otherwise.
+func (o *BTMSketch151) GetParameterLibraries() []BTMParameter1 {
+	if o == nil || o.ParameterLibraries == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.ParameterLibraries
+}
+
+// GetParameterLibrariesOk returns a tuple with the ParameterLibraries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketch151) GetParameterLibrariesOk() ([]BTMParameter1, bool) {
+	if o == nil || o.ParameterLibraries == nil {
+		return nil, false
+	}
+	return o.ParameterLibraries, true
+}
+
+// HasParameterLibraries returns a boolean if a field has been set.
+func (o *BTMSketch151) HasParameterLibraries() bool {
+	if o != nil && o.ParameterLibraries != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterLibraries gets a reference to the given []BTMParameter1 and assigns it to the ParameterLibraries field.
+func (o *BTMSketch151) SetParameterLibraries(v []BTMParameter1) {
+	o.ParameterLibraries = v
 }
 
 // GetParameters returns the Parameters field value if set, zero value otherwise.
@@ -642,6 +675,9 @@ func (o BTMSketch151) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ParameterLibraries != nil {
+		toSerialize["parameterLibraries"] = o.ParameterLibraries
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

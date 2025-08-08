@@ -41,51 +41,53 @@ type BTDocumentProcessingInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                                *string               `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed                 *bool                 `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport                  *bool                 `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                             *bool                 `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan               *bool                 `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                       *string               `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode                *BTVersionGraphMode   `json:"defaultVersionGraphMode,omitempty"`
-	DefaultVersionGraphShowAutoVersions    *bool                 `json:"defaultVersionGraphShowAutoVersions,omitempty"`
-	DefaultVersionGraphShowMerges          *bool                 `json:"defaultVersionGraphShowMerges,omitempty"`
-	DefaultWorkspace                       *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                         []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
-	DocumentType                           *int32                `json:"documentType,omitempty"`
-	ForceExportRules                       *bool                 `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects          *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables                 *bool                 `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                             *bool                 `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow                 *bool                 `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                     *bool                 `json:"likedByCurrentUser,omitempty"`
-	Likes                                  *int64                `json:"likes,omitempty"`
-	NotRevisionManaged                     *bool                 `json:"notRevisionManaged,omitempty"`
-	Notes                                  *string               `json:"notes,omitempty"`
-	NumberOfTimesCopied                    *int64                `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced                *int64                `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                               *string               `json:"parentId,omitempty"`
-	Permission                             *BTOldPermission      `json:"permission,omitempty"`
-	PermissionSet                          []string              `json:"permissionSet,omitempty"`
-	Public                                 *bool                 `json:"public,omitempty"`
-	PublishedVersionId                     *string               `json:"publishedVersionId,omitempty"`
-	RecentVersion                          *BTBaseInfo           `json:"recentVersion,omitempty"`
-	Sequence                               *string               `json:"sequence,omitempty"`
-	SupportTeamUserAndShared               *bool                 `json:"supportTeamUserAndShared,omitempty"`
-	Tags                                   []string              `json:"tags,omitempty"`
-	Thumbnail                              *BTThumbnailInfo      `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate      *int32                `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating                *int32                `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                                  *bool                 `json:"trash,omitempty"`
-	TrashedAt                              *JSONTime             `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached              *bool                 `json:"userAccountLimitsBreached,omitempty"`
-	CanImportViaConnectionGlobalPermission *bool                 `json:"canImportViaConnectionGlobalPermission,omitempty"`
-	DocumentThumbnailElementId             *string               `json:"documentThumbnailElementId,omitempty"`
-	DuplicateNameViolationError            *string               `json:"duplicateNameViolationError,omitempty"`
-	IsUpgradedToLatestVersion              *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
-	TracingEnabled                         *bool                 `json:"tracingEnabled,omitempty"`
-	TranslationEventKey                    *string               `json:"translationEventKey,omitempty"`
-	TranslationId                          *string               `json:"translationId,omitempty"`
+	ViewRef                                    *string                       `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed                     *bool                         `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport                      *bool                         `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                                 *bool                         `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan                   *bool                         `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId                           *string                       `json:"defaultElementId,omitempty"`
+	DefaultVersionGraphMode                    *BTVersionGraphMode           `json:"defaultVersionGraphMode,omitempty"`
+	DefaultVersionGraphShowAutoVersions        *bool                         `json:"defaultVersionGraphShowAutoVersions,omitempty"`
+	DefaultVersionGraphShowMerges              *bool                         `json:"defaultVersionGraphShowMerges,omitempty"`
+	DefaultWorkspace                           *BTWorkspaceInfo              `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                             []BTDocumentLabelInfo         `json:"documentLabels,omitempty"`
+	DocumentType                               *int32                        `json:"documentType,omitempty"`
+	ElementLibrarySummaryInfo                  []BTElementLibrarySummaryInfo `json:"elementLibrarySummaryInfo,omitempty"`
+	ForceExportRules                           *bool                         `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects              *bool                         `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables                     *bool                         `json:"hasRelevantInsertables,omitempty"`
+	IsOrphaned                                 *bool                         `json:"isOrphaned,omitempty"`
+	IsUsingManagedWorkflow                     *bool                         `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser                         *bool                         `json:"likedByCurrentUser,omitempty"`
+	Likes                                      *int64                        `json:"likes,omitempty"`
+	NotRevisionManaged                         *bool                         `json:"notRevisionManaged,omitempty"`
+	Notes                                      *string                       `json:"notes,omitempty"`
+	NumberOfTimesCopied                        *int64                        `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced                    *int64                        `json:"numberOfTimesReferenced,omitempty"`
+	ParentId                                   *string                       `json:"parentId,omitempty"`
+	Permission                                 *BTOldPermission              `json:"permission,omitempty"`
+	PermissionSet                              []string                      `json:"permissionSet,omitempty"`
+	Public                                     *bool                         `json:"public,omitempty"`
+	PublishedVersionId                         *string                       `json:"publishedVersionId,omitempty"`
+	RecentVersion                              *BTBaseInfo                   `json:"recentVersion,omitempty"`
+	Sequence                                   *string                       `json:"sequence,omitempty"`
+	SupportTeamUserAndShared                   *bool                         `json:"supportTeamUserAndShared,omitempty"`
+	Tags                                       []string                      `json:"tags,omitempty"`
+	Thumbnail                                  *BTThumbnailInfo              `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate          *int32                        `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating                    *int32                        `json:"totalWorkspacesUpdating,omitempty"`
+	Trash                                      *bool                         `json:"trash,omitempty"`
+	TrashedAt                                  *JSONTime                     `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached                  *bool                         `json:"userAccountLimitsBreached,omitempty"`
+	CanCreateTaskViaConnectionGlobalPermission *bool                         `json:"canCreateTaskViaConnectionGlobalPermission,omitempty"`
+	CanImportViaConnectionGlobalPermission     *bool                         `json:"canImportViaConnectionGlobalPermission,omitempty"`
+	DocumentThumbnailElementId                 *string                       `json:"documentThumbnailElementId,omitempty"`
+	DuplicateNameViolationError                *string                       `json:"duplicateNameViolationError,omitempty"`
+	IsUpgradedToLatestVersion                  *bool                         `json:"isUpgradedToLatestVersion,omitempty"`
+	TracingEnabled                             *bool                         `json:"tracingEnabled,omitempty"`
+	TranslationEventKey                        *string                       `json:"translationEventKey,omitempty"`
+	TranslationId                              *string                       `json:"translationId,omitempty"`
 }
 
 // NewBTDocumentProcessingInfo instantiates a new BTDocumentProcessingInfo object
@@ -1154,6 +1156,38 @@ func (o *BTDocumentProcessingInfo) SetDocumentType(v int32) {
 	o.DocumentType = &v
 }
 
+// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		var ret []BTElementLibrarySummaryInfo
+		return ret
+	}
+	return o.ElementLibrarySummaryInfo
+}
+
+// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool) {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		return nil, false
+	}
+	return o.ElementLibrarySummaryInfo, true
+}
+
+// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasElementLibrarySummaryInfo() bool {
+	if o != nil && o.ElementLibrarySummaryInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementLibrarySummaryInfo gets a reference to the given []BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
+func (o *BTDocumentProcessingInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo) {
+	o.ElementLibrarySummaryInfo = v
+}
+
 // GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
 func (o *BTDocumentProcessingInfo) GetForceExportRules() bool {
 	if o == nil || o.ForceExportRules == nil {
@@ -1986,6 +2020,38 @@ func (o *BTDocumentProcessingInfo) SetUserAccountLimitsBreached(v bool) {
 	o.UserAccountLimitsBreached = &v
 }
 
+// GetCanCreateTaskViaConnectionGlobalPermission returns the CanCreateTaskViaConnectionGlobalPermission field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetCanCreateTaskViaConnectionGlobalPermission() bool {
+	if o == nil || o.CanCreateTaskViaConnectionGlobalPermission == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCreateTaskViaConnectionGlobalPermission
+}
+
+// GetCanCreateTaskViaConnectionGlobalPermissionOk returns a tuple with the CanCreateTaskViaConnectionGlobalPermission field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool) {
+	if o == nil || o.CanCreateTaskViaConnectionGlobalPermission == nil {
+		return nil, false
+	}
+	return o.CanCreateTaskViaConnectionGlobalPermission, true
+}
+
+// HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasCanCreateTaskViaConnectionGlobalPermission() bool {
+	if o != nil && o.CanCreateTaskViaConnectionGlobalPermission != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCreateTaskViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanCreateTaskViaConnectionGlobalPermission field.
+func (o *BTDocumentProcessingInfo) SetCanCreateTaskViaConnectionGlobalPermission(v bool) {
+	o.CanCreateTaskViaConnectionGlobalPermission = &v
+}
+
 // GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
 func (o *BTDocumentProcessingInfo) GetCanImportViaConnectionGlobalPermission() bool {
 	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
@@ -2311,6 +2377,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	if o.DocumentType != nil {
 		toSerialize["documentType"] = o.DocumentType
 	}
+	if o.ElementLibrarySummaryInfo != nil {
+		toSerialize["elementLibrarySummaryInfo"] = o.ElementLibrarySummaryInfo
+	}
 	if o.ForceExportRules != nil {
 		toSerialize["forceExportRules"] = o.ForceExportRules
 	}
@@ -2388,6 +2457,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.UserAccountLimitsBreached != nil {
 		toSerialize["userAccountLimitsBreached"] = o.UserAccountLimitsBreached
+	}
+	if o.CanCreateTaskViaConnectionGlobalPermission != nil {
+		toSerialize["canCreateTaskViaConnectionGlobalPermission"] = o.CanCreateTaskViaConnectionGlobalPermission
 	}
 	if o.CanImportViaConnectionGlobalPermission != nil {
 		toSerialize["canImportViaConnectionGlobalPermission"] = o.CanImportViaConnectionGlobalPermission

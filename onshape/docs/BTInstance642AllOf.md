@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -339,6 +340,31 @@ SetNodeWithReferenceList sets NodeWithReferenceList field to given value.
 `func (o *BTInstance642AllOf) HasNodeWithReferenceList() bool`
 
 HasNodeWithReferenceList returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTInstance642AllOf) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTInstance642AllOf) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTInstance642AllOf) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTInstance642AllOf) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParameters
 

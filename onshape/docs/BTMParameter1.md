@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ImportMicroversion** | Pointer to **string** | Microversion that resulted from the import. | [optional] 
+**LibraryRelationType** | Pointer to [**GBTParameterLibraryRelationType**](GBTParameterLibraryRelationType.md) |  | [optional] 
 **NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
 **ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
 **ValueString** | Pointer to **string** |  | [optional] 
@@ -78,6 +79,31 @@ SetImportMicroversion sets ImportMicroversion field to given value.
 `func (o *BTMParameter1) HasImportMicroversion() bool`
 
 HasImportMicroversion returns a boolean if a field has been set.
+
+### GetLibraryRelationType
+
+`func (o *BTMParameter1) GetLibraryRelationType() GBTParameterLibraryRelationType`
+
+GetLibraryRelationType returns the LibraryRelationType field if non-nil, zero value otherwise.
+
+### GetLibraryRelationTypeOk
+
+`func (o *BTMParameter1) GetLibraryRelationTypeOk() (*GBTParameterLibraryRelationType, bool)`
+
+GetLibraryRelationTypeOk returns a tuple with the LibraryRelationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLibraryRelationType
+
+`func (o *BTMParameter1) SetLibraryRelationType(v GBTParameterLibraryRelationType)`
+
+SetLibraryRelationType sets LibraryRelationType field to given value.
+
+### HasLibraryRelationType
+
+`func (o *BTMParameter1) HasLibraryRelationType() bool`
+
+HasLibraryRelationType returns a boolean if a field has been set.
 
 ### GetNodeId
 
