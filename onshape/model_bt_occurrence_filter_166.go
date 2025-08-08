@@ -19,6 +19,7 @@ type BTOccurrenceFilter166 struct {
 	BTQueryFilter183
 	BtType                                   *string `json:"btType,omitempty"`
 	ExcludeFlattenedParts                    *bool   `json:"excludeFlattenedParts,omitempty"`
+	ExcludeMirroredOrDeriveMirroredInstance  *bool   `json:"excludeMirroredOrDeriveMirroredInstance,omitempty"`
 	ExcludeParametricPartStudioChildInstance *bool   `json:"excludeParametricPartStudioChildInstance,omitempty"`
 	ExcludeParametricPartStudioInstance      *bool   `json:"excludeParametricPartStudioInstance,omitempty"`
 	ExcludePatternInstances                  *bool   `json:"excludePatternInstances,omitempty"`
@@ -114,6 +115,38 @@ func (o *BTOccurrenceFilter166) HasExcludeFlattenedParts() bool {
 // SetExcludeFlattenedParts gets a reference to the given bool and assigns it to the ExcludeFlattenedParts field.
 func (o *BTOccurrenceFilter166) SetExcludeFlattenedParts(v bool) {
 	o.ExcludeFlattenedParts = &v
+}
+
+// GetExcludeMirroredOrDeriveMirroredInstance returns the ExcludeMirroredOrDeriveMirroredInstance field value if set, zero value otherwise.
+func (o *BTOccurrenceFilter166) GetExcludeMirroredOrDeriveMirroredInstance() bool {
+	if o == nil || o.ExcludeMirroredOrDeriveMirroredInstance == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExcludeMirroredOrDeriveMirroredInstance
+}
+
+// GetExcludeMirroredOrDeriveMirroredInstanceOk returns a tuple with the ExcludeMirroredOrDeriveMirroredInstance field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceFilter166) GetExcludeMirroredOrDeriveMirroredInstanceOk() (*bool, bool) {
+	if o == nil || o.ExcludeMirroredOrDeriveMirroredInstance == nil {
+		return nil, false
+	}
+	return o.ExcludeMirroredOrDeriveMirroredInstance, true
+}
+
+// HasExcludeMirroredOrDeriveMirroredInstance returns a boolean if a field has been set.
+func (o *BTOccurrenceFilter166) HasExcludeMirroredOrDeriveMirroredInstance() bool {
+	if o != nil && o.ExcludeMirroredOrDeriveMirroredInstance != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExcludeMirroredOrDeriveMirroredInstance gets a reference to the given bool and assigns it to the ExcludeMirroredOrDeriveMirroredInstance field.
+func (o *BTOccurrenceFilter166) SetExcludeMirroredOrDeriveMirroredInstance(v bool) {
+	o.ExcludeMirroredOrDeriveMirroredInstance = &v
 }
 
 // GetExcludeParametricPartStudioChildInstance returns the ExcludeParametricPartStudioChildInstance field value if set, zero value otherwise.
@@ -579,6 +612,9 @@ func (o BTOccurrenceFilter166) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExcludeFlattenedParts != nil {
 		toSerialize["excludeFlattenedParts"] = o.ExcludeFlattenedParts
+	}
+	if o.ExcludeMirroredOrDeriveMirroredInstance != nil {
+		toSerialize["excludeMirroredOrDeriveMirroredInstance"] = o.ExcludeMirroredOrDeriveMirroredInstance
 	}
 	if o.ExcludeParametricPartStudioChildInstance != nil {
 		toSerialize["excludeParametricPartStudioChildInstance"] = o.ExcludeParametricPartStudioChildInstance

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** |  | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
@@ -52,6 +53,31 @@ SetName sets Name field to given value.
 `func (o *BTConfigurableTreeNode) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTConfigurableTreeNode) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTConfigurableTreeNode) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTConfigurableTreeNode) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTConfigurableTreeNode) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParameters
 

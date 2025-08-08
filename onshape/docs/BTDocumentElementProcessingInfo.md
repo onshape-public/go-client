@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **AreaUnits** | Pointer to **string** |  | [optional] 
 **DataType** | Pointer to **string** |  | [optional] 
 **Deleted** | Pointer to **bool** |  | [optional] 
+**DensityUnits** | Pointer to **string** |  | [optional] 
 **ElementType** | Pointer to [**GBTElementType**](GBTElementType.md) |  | [optional] 
 **EnergyUnits** | Pointer to **string** |  | [optional] 
 **Filename** | Pointer to **string** |  | [optional] 
@@ -229,6 +230,31 @@ SetDeleted sets Deleted field to given value.
 `func (o *BTDocumentElementProcessingInfo) HasDeleted() bool`
 
 HasDeleted returns a boolean if a field has been set.
+
+### GetDensityUnits
+
+`func (o *BTDocumentElementProcessingInfo) GetDensityUnits() string`
+
+GetDensityUnits returns the DensityUnits field if non-nil, zero value otherwise.
+
+### GetDensityUnitsOk
+
+`func (o *BTDocumentElementProcessingInfo) GetDensityUnitsOk() (*string, bool)`
+
+GetDensityUnitsOk returns a tuple with the DensityUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDensityUnits
+
+`func (o *BTDocumentElementProcessingInfo) SetDensityUnits(v string)`
+
+SetDensityUnits sets DensityUnits field to given value.
+
+### HasDensityUnits
+
+`func (o *BTDocumentElementProcessingInfo) HasDensityUnits() bool`
+
+HasDensityUnits returns a boolean if a field has been set.
 
 ### GetElementType
 

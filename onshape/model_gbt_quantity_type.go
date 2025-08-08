@@ -41,6 +41,7 @@ const (
 	GBTQuantityTypeVolume            GBTQuantityType = "VOLUME"
 	GBTQuantityTypeBoolean           GBTQuantityType = "BOOLEAN"
 	GBTQuantityTypeString            GBTQuantityType = "STRING"
+	GBTQuantityTypeDensity           GBTQuantityType = "DENSITY"
 )
 
 // All allowed values of GBTQuantityType enum
@@ -66,6 +67,7 @@ var AllowedGBTQuantityTypeEnumValues = []GBTQuantityType{
 	"VOLUME",
 	"BOOLEAN",
 	"STRING",
+	"DENSITY",
 }
 
 func (v *GBTQuantityType) UnmarshalJSON(src []byte) error {

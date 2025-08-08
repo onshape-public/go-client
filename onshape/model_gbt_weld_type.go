@@ -31,6 +31,9 @@ const (
 	GBTWeldTypeBevelFlareGroove         GBTWeldType = "BEVEL_FLARE_GROOVE"
 	GBTWeldTypeBeadJoint                GBTWeldType = "BEAD_JOINT"
 	GBTWeldTypeFilletJoint              GBTWeldType = "FILLET_JOINT"
+	GBTWeldTypePlugOrSlotJoint          GBTWeldType = "PLUG_OR_SLOT_JOINT"
+	GBTWeldTypeSeamJoint                GBTWeldType = "SEAM_JOINT"
+	GBTWeldTypeSpotJoint                GBTWeldType = "SPOT_JOINT"
 	GBTWeldTypeUnknown                  GBTWeldType = "UNKNOWN"
 )
 
@@ -47,6 +50,9 @@ var AllowedGBTWeldTypeEnumValues = []GBTWeldType{
 	"BEVEL_FLARE_GROOVE",
 	"BEAD_JOINT",
 	"FILLET_JOINT",
+	"PLUG_OR_SLOT_JOINT",
+	"SEAM_JOINT",
+	"SPOT_JOINT",
 	"UNKNOWN",
 }
 

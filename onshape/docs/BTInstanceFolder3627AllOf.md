@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **FolderEnd** | Pointer to **bool** |  | [optional] 
 **FolderStart** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **StartNodeId** | Pointer to **string** |  | [optional] 
 **StartNodeIdRaw** | Pointer to [**BTObjectId**](BTObjectId.md) |  | [optional] 
@@ -156,6 +157,31 @@ SetName sets Name field to given value.
 `func (o *BTInstanceFolder3627AllOf) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTInstanceFolder3627AllOf) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTInstanceFolder3627AllOf) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTInstanceFolder3627AllOf) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTInstanceFolder3627AllOf) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParameters
 

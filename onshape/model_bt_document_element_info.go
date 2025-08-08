@@ -23,6 +23,7 @@ type BTDocumentElementInfo struct {
 	AreaUnits            *string                  `json:"areaUnits,omitempty"`
 	DataType             *string                  `json:"dataType,omitempty"`
 	Deleted              *bool                    `json:"deleted,omitempty"`
+	DensityUnits         *string                  `json:"densityUnits,omitempty"`
 	ElementType          *GBTElementType          `json:"elementType,omitempty"`
 	EnergyUnits          *string                  `json:"energyUnits,omitempty"`
 	Filename             *string                  `json:"filename,omitempty"`
@@ -286,6 +287,38 @@ func (o *BTDocumentElementInfo) HasDeleted() bool {
 // SetDeleted gets a reference to the given bool and assigns it to the Deleted field.
 func (o *BTDocumentElementInfo) SetDeleted(v bool) {
 	o.Deleted = &v
+}
+
+// GetDensityUnits returns the DensityUnits field value if set, zero value otherwise.
+func (o *BTDocumentElementInfo) GetDensityUnits() string {
+	if o == nil || o.DensityUnits == nil {
+		var ret string
+		return ret
+	}
+	return *o.DensityUnits
+}
+
+// GetDensityUnitsOk returns a tuple with the DensityUnits field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementInfo) GetDensityUnitsOk() (*string, bool) {
+	if o == nil || o.DensityUnits == nil {
+		return nil, false
+	}
+	return o.DensityUnits, true
+}
+
+// HasDensityUnits returns a boolean if a field has been set.
+func (o *BTDocumentElementInfo) HasDensityUnits() bool {
+	if o != nil && o.DensityUnits != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDensityUnits gets a reference to the given string and assigns it to the DensityUnits field.
+func (o *BTDocumentElementInfo) SetDensityUnits(v string) {
+	o.DensityUnits = &v
 }
 
 // GetElementType returns the ElementType field value if set, zero value otherwise.
@@ -1014,6 +1047,9 @@ func (o BTDocumentElementInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Deleted != nil {
 		toSerialize["deleted"] = o.Deleted
+	}
+	if o.DensityUnits != nil {
+		toSerialize["densityUnits"] = o.DensityUnits
 	}
 	if o.ElementType != nil {
 		toSerialize["elementType"] = o.ElementType

@@ -30,6 +30,11 @@ func (o *BTMIndividualSketchRegionQuery140) AsBTMIndividualQuery138() *BTMIndivi
 	return &BTMIndividualQuery138{o}
 }
 
+// BTMIndividualParametricQuery3477AsBTMIndividualQuery138 is a convenience function that returns BTMIndividualParametricQuery3477 wrapped in BTMIndividualQuery138
+func (o *BTMIndividualParametricQuery3477) AsBTMIndividualQuery138() *BTMIndividualQuery138 {
+	return &BTMIndividualQuery138{o}
+}
+
 // BTMIndividualCoEdgeQuery1332AsBTMIndividualQuery138 is a convenience function that returns BTMIndividualCoEdgeQuery1332 wrapped in BTMIndividualQuery138
 func (o *BTMIndividualCoEdgeQuery1332) AsBTMIndividualQuery138() *BTMIndividualQuery138 {
 	return &BTMIndividualQuery138{o}
@@ -692,6 +697,20 @@ func (dst *BTMIndividualQuery138) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMIndividualQuery138 = nil
 			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualCreatedByQuery137: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMIndividualParametricQuery-3477'
+	if jsonDict["btType"] == "BTMIndividualParametricQuery-3477" {
+		// try to unmarshal JSON data into BTMIndividualParametricQuery3477
+		var qr *BTMIndividualParametricQuery3477
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMIndividualQuery138 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMIndividualQuery138 = nil
+			return fmt.Errorf("failed to unmarshal BTMIndividualQuery138 as BTMIndividualParametricQuery3477: %s", err.Error())
 		}
 	}
 

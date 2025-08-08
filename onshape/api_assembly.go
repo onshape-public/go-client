@@ -1950,25 +1950,26 @@ func (a *AssemblyApiService) GetAssemblyShadedViewsExecute(r ApiGetAssemblyShade
 }
 
 type ApiGetBillOfMaterialsRequest struct {
-	ctx                          context.Context
-	ApiService                   *AssemblyApiService
-	did                          string
-	wvm                          string
-	wvmid                        string
-	eid                          string
-	linkDocumentId               *string
-	configuration                *string
-	bomColumnIds                 *[]string
-	indented                     *bool
-	multiLevel                   *bool
-	generateIfAbsent             *bool
-	templateId                   *string
-	includeExcluded              *bool
-	onlyVisibleColumns           *bool
-	ignoreSubassemblyBomBehavior *bool
-	includeItemMicroversions     *bool
-	includeTopLevelAssemblyRow   *bool
-	thumbnail                    *bool
+	ctx                           context.Context
+	ApiService                    *AssemblyApiService
+	did                           string
+	wvm                           string
+	wvmid                         string
+	eid                           string
+	linkDocumentId                *string
+	configuration                 *string
+	bomColumnIds                  *[]string
+	indented                      *bool
+	multiLevel                    *bool
+	generateIfAbsent              *bool
+	templateId                    *string
+	includeExcluded               *bool
+	onlyVisibleColumns            *bool
+	ignoreSubassemblyBomBehavior  *bool
+	includeItemMicroversions      *bool
+	includeTopLevelAssemblyRow    *bool
+	thumbnail                     *bool
+	respectSubassemblyBomBehavior *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -2046,6 +2047,12 @@ func (r ApiGetBillOfMaterialsRequest) IncludeTopLevelAssemblyRow(includeTopLevel
 // Return thumbnail info
 func (r ApiGetBillOfMaterialsRequest) Thumbnail(thumbnail bool) ApiGetBillOfMaterialsRequest {
 	r.thumbnail = &thumbnail
+	return r
+}
+
+// Force respect subassembly BOM Behavior Property
+func (r ApiGetBillOfMaterialsRequest) RespectSubassemblyBomBehavior(respectSubassemblyBomBehavior bool) ApiGetBillOfMaterialsRequest {
+	r.respectSubassemblyBomBehavior = &respectSubassemblyBomBehavior
 	return r
 }
 
@@ -2148,6 +2155,9 @@ func (a *AssemblyApiService) GetBillOfMaterialsExecute(r ApiGetBillOfMaterialsRe
 	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
+	}
+	if r.respectSubassemblyBomBehavior != nil {
+		localVarQueryParams.Add("respectSubassemblyBomBehavior", parameterToString(*r.respectSubassemblyBomBehavior, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

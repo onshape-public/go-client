@@ -1682,6 +1682,21 @@ const (
 	GBTErrorStringEnumThinExtrudeNotParallelPlanes                                GBTErrorStringEnum = "THIN_EXTRUDE_NOT_PARALLEL_PLANES"
 	GBTErrorStringEnumWidthAndTabMateconnectorsOnSameOccurrence                   GBTErrorStringEnum = "WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE"
 	GBTErrorStringEnumMirrorInvalidSeedAssembly                                   GBTErrorStringEnum = "MIRROR_INVALID_SEED_ASSEMBLY"
+	GBTErrorStringEnumCannotComputeMaxDeviation                                   GBTErrorStringEnum = "CANNOT_COMPUTE_MAX_DEVIATION"
+	GBTErrorStringEnumCannotComputeMinDeviation                                   GBTErrorStringEnum = "CANNOT_COMPUTE_MIN_DEVIATION"
+	GBTErrorStringEnumAssemblyMirrorInvolvesFixedOccurrences                      GBTErrorStringEnum = "ASSEMBLY_MIRROR_INVOLVES_FIXED_OCCURRENCES"
+	GBTErrorStringEnumQueryVariableEmptyName                                      GBTErrorStringEnum = "QUERY_VARIABLE_EMPTY_NAME"
+	GBTErrorStringEnumFeaturesWithCyclicDependencyDetected                        GBTErrorStringEnum = "FEATURES_WITH_CYCLIC_DEPENDENCY_DETECTED"
+	GBTErrorStringEnumAssemblyMirrorRecursiveSeed                                 GBTErrorStringEnum = "ASSEMBLY_MIRROR_RECURSIVE_SEED"
+	GBTErrorStringEnumQueryVariableNameAlreadyUsedInNonQueryVariable              GBTErrorStringEnum = "QUERY_VARIABLE_NAME_ALREADY_USED_IN_NON_QUERY_VARIABLE"
+	GBTErrorStringEnumQueryVariableEmptySelection                                 GBTErrorStringEnum = "QUERY_VARIABLE_EMPTY_SELECTION"
+	GBTErrorStringEnumQueryVariableNameCannotStartWithPound                       GBTErrorStringEnum = "QUERY_VARIABLE_NAME_CANNOT_START_WITH_POUND"
+	GBTErrorStringEnumVariableNameAlreadyUsedInQueryVariable                      GBTErrorStringEnum = "VARIABLE_NAME_ALREADY_USED_IN_QUERY_VARIABLE"
+	GBTErrorStringEnumAssemblyMirrorTargetPartMissing                             GBTErrorStringEnum = "ASSEMBLY_MIRROR_TARGET_PART_MISSING"
+	GBTErrorStringEnumAssemblyMirrorTargetFeatureMissing                          GBTErrorStringEnum = "ASSEMBLY_MIRROR_TARGET_FEATURE_MISSING"
+	GBTErrorStringEnumAssemblyMirrorTargetElementMissing                          GBTErrorStringEnum = "ASSEMBLY_MIRROR_TARGET_ELEMENT_MISSING"
+	GBTErrorStringEnumAssemblyMirrorDerivedElementConfigurationsInvalid           GBTErrorStringEnum = "ASSEMBLY_MIRROR_DERIVED_ELEMENT_CONFIGURATIONS_INVALID"
+	GBTErrorStringEnumAssemblyDerivedMirrorReferenceMissing                       GBTErrorStringEnum = "ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3349,6 +3364,21 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"THIN_EXTRUDE_NOT_PARALLEL_PLANES",
 	"WIDTH_AND_TAB_MATECONNECTORS_ON_SAME_OCCURRENCE",
 	"MIRROR_INVALID_SEED_ASSEMBLY",
+	"CANNOT_COMPUTE_MAX_DEVIATION",
+	"CANNOT_COMPUTE_MIN_DEVIATION",
+	"ASSEMBLY_MIRROR_INVOLVES_FIXED_OCCURRENCES",
+	"QUERY_VARIABLE_EMPTY_NAME",
+	"FEATURES_WITH_CYCLIC_DEPENDENCY_DETECTED",
+	"ASSEMBLY_MIRROR_RECURSIVE_SEED",
+	"QUERY_VARIABLE_NAME_ALREADY_USED_IN_NON_QUERY_VARIABLE",
+	"QUERY_VARIABLE_EMPTY_SELECTION",
+	"QUERY_VARIABLE_NAME_CANNOT_START_WITH_POUND",
+	"VARIABLE_NAME_ALREADY_USED_IN_QUERY_VARIABLE",
+	"ASSEMBLY_MIRROR_TARGET_PART_MISSING",
+	"ASSEMBLY_MIRROR_TARGET_FEATURE_MISSING",
+	"ASSEMBLY_MIRROR_TARGET_ELEMENT_MISSING",
+	"ASSEMBLY_MIRROR_DERIVED_ELEMENT_CONFIGURATIONS_INVALID",
+	"ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING",
 	"UNKNOWN",
 }
 

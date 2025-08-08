@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
 **OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
@@ -448,6 +449,31 @@ SetOccurrenceQueriesFromAllConfigurations sets OccurrenceQueriesFromAllConfigura
 `func (o *BTMAssemblyMirrorFeature3037) HasOccurrenceQueriesFromAllConfigurations() bool`
 
 HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTMAssemblyMirrorFeature3037) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTMAssemblyMirrorFeature3037) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTMAssemblyMirrorFeature3037) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTMAssemblyMirrorFeature3037) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParametricInstanceFeature
 

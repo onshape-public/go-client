@@ -17,9 +17,10 @@ import (
 // BTMirrorTableRowMetaData5463 struct for BTMirrorTableRowMetaData5463
 type BTMirrorTableRowMetaData5463 struct {
 	BTTableBaseRowMetadata3181
-	BtType                  *string                            `json:"btType,omitempty"`
-	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
-	Occurrences             []BTOccurrence74                   `json:"occurrences,omitempty"`
+	BtType                  *string                                `json:"btType,omitempty"`
+	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609     `json:"crossHighlightDataIfAny,omitempty"`
+	CrossHighlightData      *BTTableAssemblyCrossHighlightData2675 `json:"crossHighlightData,omitempty"`
+	Occurrences             []BTOccurrence74                       `json:"occurrences,omitempty"`
 }
 
 // NewBTMirrorTableRowMetaData5463 instantiates a new BTMirrorTableRowMetaData5463 object
@@ -103,6 +104,38 @@ func (o *BTMirrorTableRowMetaData5463) SetCrossHighlightDataIfAny(v BTTableBaseC
 	o.CrossHighlightDataIfAny = &v
 }
 
+// GetCrossHighlightData returns the CrossHighlightData field value if set, zero value otherwise.
+func (o *BTMirrorTableRowMetaData5463) GetCrossHighlightData() BTTableAssemblyCrossHighlightData2675 {
+	if o == nil || o.CrossHighlightData == nil {
+		var ret BTTableAssemblyCrossHighlightData2675
+		return ret
+	}
+	return *o.CrossHighlightData
+}
+
+// GetCrossHighlightDataOk returns a tuple with the CrossHighlightData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMirrorTableRowMetaData5463) GetCrossHighlightDataOk() (*BTTableAssemblyCrossHighlightData2675, bool) {
+	if o == nil || o.CrossHighlightData == nil {
+		return nil, false
+	}
+	return o.CrossHighlightData, true
+}
+
+// HasCrossHighlightData returns a boolean if a field has been set.
+func (o *BTMirrorTableRowMetaData5463) HasCrossHighlightData() bool {
+	if o != nil && o.CrossHighlightData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossHighlightData gets a reference to the given BTTableAssemblyCrossHighlightData2675 and assigns it to the CrossHighlightData field.
+func (o *BTMirrorTableRowMetaData5463) SetCrossHighlightData(v BTTableAssemblyCrossHighlightData2675) {
+	o.CrossHighlightData = &v
+}
+
 // GetOccurrences returns the Occurrences field value if set, zero value otherwise.
 func (o *BTMirrorTableRowMetaData5463) GetOccurrences() []BTOccurrence74 {
 	if o == nil || o.Occurrences == nil {
@@ -150,6 +183,9 @@ func (o BTMirrorTableRowMetaData5463) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightDataIfAny != nil {
 		toSerialize["crossHighlightDataIfAny"] = o.CrossHighlightDataIfAny
+	}
+	if o.CrossHighlightData != nil {
+		toSerialize["crossHighlightData"] = o.CrossHighlightData
 	}
 	if o.Occurrences != nil {
 		toSerialize["occurrences"] = o.Occurrences

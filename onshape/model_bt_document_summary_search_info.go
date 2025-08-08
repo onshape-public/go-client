@@ -41,45 +41,46 @@ type BTDocumentSummarySearchInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                             *string                   `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed              *bool                     `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport               *bool                     `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                          *bool                     `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan            *bool                     `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                    *string                   `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode             *BTVersionGraphMode       `json:"defaultVersionGraphMode,omitempty"`
-	DefaultVersionGraphShowAutoVersions *bool                     `json:"defaultVersionGraphShowAutoVersions,omitempty"`
-	DefaultVersionGraphShowMerges       *bool                     `json:"defaultVersionGraphShowMerges,omitempty"`
-	DefaultWorkspace                    *BTWorkspaceInfo          `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                      []BTDocumentLabelInfo     `json:"documentLabels,omitempty"`
-	DocumentType                        *int32                    `json:"documentType,omitempty"`
-	ForceExportRules                    *bool                     `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects       *bool                     `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables              *bool                     `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                          *bool                     `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow              *bool                     `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                  *bool                     `json:"likedByCurrentUser,omitempty"`
-	Likes                               *int64                    `json:"likes,omitempty"`
-	NotRevisionManaged                  *bool                     `json:"notRevisionManaged,omitempty"`
-	Notes                               *string                   `json:"notes,omitempty"`
-	NumberOfTimesCopied                 *int64                    `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced             *int64                    `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                            *string                   `json:"parentId,omitempty"`
-	Permission                          *BTOldPermission          `json:"permission,omitempty"`
-	PermissionSet                       []string                  `json:"permissionSet,omitempty"`
-	Public                              *bool                     `json:"public,omitempty"`
-	PublishedVersionId                  *string                   `json:"publishedVersionId,omitempty"`
-	RecentVersion                       *BTBaseInfo               `json:"recentVersion,omitempty"`
-	Sequence                            *string                   `json:"sequence,omitempty"`
-	SupportTeamUserAndShared            *bool                     `json:"supportTeamUserAndShared,omitempty"`
-	Tags                                []string                  `json:"tags,omitempty"`
-	Thumbnail                           *BTThumbnailInfo          `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate   *int32                    `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating             *int32                    `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                               *bool                     `json:"trash,omitempty"`
-	TrashedAt                           *JSONTime                 `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached           *bool                     `json:"userAccountLimitsBreached,omitempty"`
-	SearchHits                          []BTDocumentSearchHitInfo `json:"searchHits,omitempty"`
+	ViewRef                             *string                       `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed              *bool                         `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport               *bool                         `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                          *bool                         `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan            *bool                         `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId                    *string                       `json:"defaultElementId,omitempty"`
+	DefaultVersionGraphMode             *BTVersionGraphMode           `json:"defaultVersionGraphMode,omitempty"`
+	DefaultVersionGraphShowAutoVersions *bool                         `json:"defaultVersionGraphShowAutoVersions,omitempty"`
+	DefaultVersionGraphShowMerges       *bool                         `json:"defaultVersionGraphShowMerges,omitempty"`
+	DefaultWorkspace                    *BTWorkspaceInfo              `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                      []BTDocumentLabelInfo         `json:"documentLabels,omitempty"`
+	DocumentType                        *int32                        `json:"documentType,omitempty"`
+	ElementLibrarySummaryInfo           []BTElementLibrarySummaryInfo `json:"elementLibrarySummaryInfo,omitempty"`
+	ForceExportRules                    *bool                         `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects       *bool                         `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables              *bool                         `json:"hasRelevantInsertables,omitempty"`
+	IsOrphaned                          *bool                         `json:"isOrphaned,omitempty"`
+	IsUsingManagedWorkflow              *bool                         `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser                  *bool                         `json:"likedByCurrentUser,omitempty"`
+	Likes                               *int64                        `json:"likes,omitempty"`
+	NotRevisionManaged                  *bool                         `json:"notRevisionManaged,omitempty"`
+	Notes                               *string                       `json:"notes,omitempty"`
+	NumberOfTimesCopied                 *int64                        `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced             *int64                        `json:"numberOfTimesReferenced,omitempty"`
+	ParentId                            *string                       `json:"parentId,omitempty"`
+	Permission                          *BTOldPermission              `json:"permission,omitempty"`
+	PermissionSet                       []string                      `json:"permissionSet,omitempty"`
+	Public                              *bool                         `json:"public,omitempty"`
+	PublishedVersionId                  *string                       `json:"publishedVersionId,omitempty"`
+	RecentVersion                       *BTBaseInfo                   `json:"recentVersion,omitempty"`
+	Sequence                            *string                       `json:"sequence,omitempty"`
+	SupportTeamUserAndShared            *bool                         `json:"supportTeamUserAndShared,omitempty"`
+	Tags                                []string                      `json:"tags,omitempty"`
+	Thumbnail                           *BTThumbnailInfo              `json:"thumbnail,omitempty"`
+	TotalWorkspacesScheduledForUpdate   *int32                        `json:"totalWorkspacesScheduledForUpdate,omitempty"`
+	TotalWorkspacesUpdating             *int32                        `json:"totalWorkspacesUpdating,omitempty"`
+	Trash                               *bool                         `json:"trash,omitempty"`
+	TrashedAt                           *JSONTime                     `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached           *bool                         `json:"userAccountLimitsBreached,omitempty"`
+	SearchHits                          []BTDocumentSearchHitInfo     `json:"searchHits,omitempty"`
 }
 
 // NewBTDocumentSummarySearchInfo instantiates a new BTDocumentSummarySearchInfo object
@@ -1148,6 +1149,38 @@ func (o *BTDocumentSummarySearchInfo) SetDocumentType(v int32) {
 	o.DocumentType = &v
 }
 
+// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
+func (o *BTDocumentSummarySearchInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		var ret []BTElementLibrarySummaryInfo
+		return ret
+	}
+	return o.ElementLibrarySummaryInfo
+}
+
+// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummarySearchInfo) GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool) {
+	if o == nil || o.ElementLibrarySummaryInfo == nil {
+		return nil, false
+	}
+	return o.ElementLibrarySummaryInfo, true
+}
+
+// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
+func (o *BTDocumentSummarySearchInfo) HasElementLibrarySummaryInfo() bool {
+	if o != nil && o.ElementLibrarySummaryInfo != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementLibrarySummaryInfo gets a reference to the given []BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
+func (o *BTDocumentSummarySearchInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo) {
+	o.ElementLibrarySummaryInfo = v
+}
+
 // GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetForceExportRules() bool {
 	if o == nil || o.ForceExportRules == nil {
@@ -2112,6 +2145,9 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentType != nil {
 		toSerialize["documentType"] = o.DocumentType
+	}
+	if o.ElementLibrarySummaryInfo != nil {
+		toSerialize["elementLibrarySummaryInfo"] = o.ElementLibrarySummaryInfo
 	}
 	if o.ForceExportRules != nil {
 		toSerialize["forceExportRules"] = o.ForceExportRules

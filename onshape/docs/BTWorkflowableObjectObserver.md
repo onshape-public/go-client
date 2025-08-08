@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **EntryId** | Pointer to **string** |  | [optional] 
 **EntryType** | Pointer to [**BTWorkflowObserverEntryType**](BTWorkflowObserverEntryType.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**IsExternal** | Pointer to **bool** |  | [optional] 
 **ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **ModifiedBy** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -396,6 +397,31 @@ SetId sets Id field to given value.
 `func (o *BTWorkflowableObjectObserver) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetIsExternal
+
+`func (o *BTWorkflowableObjectObserver) GetIsExternal() bool`
+
+GetIsExternal returns the IsExternal field if non-nil, zero value otherwise.
+
+### GetIsExternalOk
+
+`func (o *BTWorkflowableObjectObserver) GetIsExternalOk() (*bool, bool)`
+
+GetIsExternalOk returns a tuple with the IsExternal field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExternal
+
+`func (o *BTWorkflowableObjectObserver) SetIsExternal(v bool)`
+
+SetIsExternal sets IsExternal field to given value.
+
+### HasIsExternal
+
+`func (o *BTWorkflowableObjectObserver) HasIsExternal() bool`
+
+HasIsExternal returns a boolean if a field has been set.
 
 ### GetModifiedAt
 

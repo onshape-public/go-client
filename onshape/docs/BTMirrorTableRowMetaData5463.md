@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableAssemblyCrossHighlightData2675**](BTTableAssemblyCrossHighlightData2675.md) |  | [optional] 
 **Occurrences** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMirrorTableRowMetaData5463) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCrossHighlightData
+
+`func (o *BTMirrorTableRowMetaData5463) GetCrossHighlightData() BTTableAssemblyCrossHighlightData2675`
+
+GetCrossHighlightData returns the CrossHighlightData field if non-nil, zero value otherwise.
+
+### GetCrossHighlightDataOk
+
+`func (o *BTMirrorTableRowMetaData5463) GetCrossHighlightDataOk() (*BTTableAssemblyCrossHighlightData2675, bool)`
+
+GetCrossHighlightDataOk returns a tuple with the CrossHighlightData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrossHighlightData
+
+`func (o *BTMirrorTableRowMetaData5463) SetCrossHighlightData(v BTTableAssemblyCrossHighlightData2675)`
+
+SetCrossHighlightData sets CrossHighlightData field to given value.
+
+### HasCrossHighlightData
+
+`func (o *BTMirrorTableRowMetaData5463) HasCrossHighlightData() bool`
+
+HasCrossHighlightData returns a boolean if a field has been set.
 
 ### GetOccurrences
 

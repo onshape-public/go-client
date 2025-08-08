@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **NamespaceIncludingEnums** | Pointer to **string** |  | [optional] 
 **NamespaceTheSource** | Pointer to **bool** |  | [optional] 
 **ParameterIdToSpec** | Pointer to [**map[string]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
+**ParameterLibraryDefinitionIds** | Pointer to **[]string** |  | [optional] 
 **Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **Signature** | Pointer to **string** |  | [optional] 
 **SourceLocation** | Pointer to [**BTLocationInfo226**](BTLocationInfo226.md) |  | [optional] 
@@ -657,6 +658,31 @@ SetParameterIdToSpec sets ParameterIdToSpec field to given value.
 `func (o *BTFeatureSpec129) HasParameterIdToSpec() bool`
 
 HasParameterIdToSpec returns a boolean if a field has been set.
+
+### GetParameterLibraryDefinitionIds
+
+`func (o *BTFeatureSpec129) GetParameterLibraryDefinitionIds() []string`
+
+GetParameterLibraryDefinitionIds returns the ParameterLibraryDefinitionIds field if non-nil, zero value otherwise.
+
+### GetParameterLibraryDefinitionIdsOk
+
+`func (o *BTFeatureSpec129) GetParameterLibraryDefinitionIdsOk() (*[]string, bool)`
+
+GetParameterLibraryDefinitionIdsOk returns a tuple with the ParameterLibraryDefinitionIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraryDefinitionIds
+
+`func (o *BTFeatureSpec129) SetParameterLibraryDefinitionIds(v []string)`
+
+SetParameterLibraryDefinitionIds sets ParameterLibraryDefinitionIds field to given value.
+
+### HasParameterLibraryDefinitionIds
+
+`func (o *BTFeatureSpec129) HasParameterLibraryDefinitionIds() bool`
+
+HasParameterLibraryDefinitionIds returns a boolean if a field has been set.
 
 ### GetParameters
 

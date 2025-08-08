@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
+**ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
@@ -335,6 +336,31 @@ SetDocumentType sets DocumentType field to given value.
 `func (o *BTGlobalTreeNodeSummaryInfoAllOf) HasDocumentType() bool`
 
 HasDocumentType returns a boolean if a field has been set.
+
+### GetElementLibrarySummaryInfo
+
+`func (o *BTGlobalTreeNodeSummaryInfoAllOf) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo`
+
+GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field if non-nil, zero value otherwise.
+
+### GetElementLibrarySummaryInfoOk
+
+`func (o *BTGlobalTreeNodeSummaryInfoAllOf) GetElementLibrarySummaryInfoOk() (*[]BTElementLibrarySummaryInfo, bool)`
+
+GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementLibrarySummaryInfo
+
+`func (o *BTGlobalTreeNodeSummaryInfoAllOf) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)`
+
+SetElementLibrarySummaryInfo sets ElementLibrarySummaryInfo field to given value.
+
+### HasElementLibrarySummaryInfo
+
+`func (o *BTGlobalTreeNodeSummaryInfoAllOf) HasElementLibrarySummaryInfo() bool`
+
+HasElementLibrarySummaryInfo returns a boolean if a field has been set.
 
 ### GetForceExportRules
 

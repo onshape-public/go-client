@@ -17,42 +17,43 @@ import (
 // BTComputedPartPropertySpec1746 struct for BTComputedPartPropertySpec1746
 type BTComputedPartPropertySpec1746 struct {
 	BTFeatureSpec129
-	AdditionalLocalizedStrings  *int32                       `json:"additionalLocalizedStrings,omitempty"`
-	AllParameters               []BTParameterSpec6           `json:"allParameters,omitempty"`
-	BtType                      *string                      `json:"btType,omitempty"`
-	ComputedPartPropertySpec    *bool                        `json:"computedPartPropertySpec,omitempty"`
-	DescriptionImageUri         *string                      `json:"descriptionImageUri,omitempty"`
-	EditingLogic                *BTEditingLogic2350          `json:"editingLogic,omitempty"`
-	FeatureNameTemplate         *string                      `json:"featureNameTemplate,omitempty"`
-	FeatureType                 *string                      `json:"featureType,omitempty"`
-	FeatureTypeDescription      *string                      `json:"featureTypeDescription,omitempty"`
-	FeatureTypeName             *string                      `json:"featureTypeName,omitempty"`
-	FilterSelectors             []string                     `json:"filterSelectors,omitempty"`
-	FullFeatureType             *string                      `json:"fullFeatureType,omitempty"`
-	Groups                      []BTParameterGroupSpec3469   `json:"groups,omitempty"`
-	IconUri                     *string                      `json:"iconUri,omitempty"`
-	LanguageVersion             *int32                       `json:"languageVersion,omitempty"`
-	LinkedLocationName          *string                      `json:"linkedLocationName,omitempty"`
-	LocalizableName             *string                      `json:"localizableName,omitempty"`
-	LocalizedName               *string                      `json:"localizedName,omitempty"`
-	LocationInfos               []BTLocationInfo226          `json:"locationInfos,omitempty"`
-	ManipulatorChangeFunction   *string                      `json:"manipulatorChangeFunction,omitempty"`
-	Namespace                   *string                      `json:"namespace,omitempty"`
-	NamespaceIncludingEnums     *string                      `json:"namespaceIncludingEnums,omitempty"`
-	NamespaceTheSource          *bool                        `json:"namespaceTheSource,omitempty"`
-	ParameterIdToSpec           *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
-	Parameters                  []BTParameterSpec6           `json:"parameters,omitempty"`
-	Signature                   *string                      `json:"signature,omitempty"`
-	SourceLocation              *BTLocationInfo226           `json:"sourceLocation,omitempty"`
-	SourceMicroversionId        *string                      `json:"sourceMicroversionId,omitempty"`
-	StringsToLocalize           []string                     `json:"stringsToLocalize,omitempty"`
-	TableSpec                   *bool                        `json:"tableSpec,omitempty"`
-	ToleranceSpec               *bool                        `json:"toleranceSpec,omitempty"`
-	TooltipTemplate             *string                      `json:"tooltipTemplate,omitempty"`
-	UiHints                     []GBTUIHint                  `json:"uiHints,omitempty"`
-	VariableStudioReferenceSpec *bool                        `json:"variableStudioReferenceSpec,omitempty"`
-	ComputedPartPropertySpecId  *string                      `json:"computedPartPropertySpecId,omitempty"`
-	PropertyFunctionReturnType  *string                      `json:"propertyFunctionReturnType,omitempty"`
+	AdditionalLocalizedStrings    *int32                       `json:"additionalLocalizedStrings,omitempty"`
+	AllParameters                 []BTParameterSpec6           `json:"allParameters,omitempty"`
+	BtType                        *string                      `json:"btType,omitempty"`
+	ComputedPartPropertySpec      *bool                        `json:"computedPartPropertySpec,omitempty"`
+	DescriptionImageUri           *string                      `json:"descriptionImageUri,omitempty"`
+	EditingLogic                  *BTEditingLogic2350          `json:"editingLogic,omitempty"`
+	FeatureNameTemplate           *string                      `json:"featureNameTemplate,omitempty"`
+	FeatureType                   *string                      `json:"featureType,omitempty"`
+	FeatureTypeDescription        *string                      `json:"featureTypeDescription,omitempty"`
+	FeatureTypeName               *string                      `json:"featureTypeName,omitempty"`
+	FilterSelectors               []string                     `json:"filterSelectors,omitempty"`
+	FullFeatureType               *string                      `json:"fullFeatureType,omitempty"`
+	Groups                        []BTParameterGroupSpec3469   `json:"groups,omitempty"`
+	IconUri                       *string                      `json:"iconUri,omitempty"`
+	LanguageVersion               *int32                       `json:"languageVersion,omitempty"`
+	LinkedLocationName            *string                      `json:"linkedLocationName,omitempty"`
+	LocalizableName               *string                      `json:"localizableName,omitempty"`
+	LocalizedName                 *string                      `json:"localizedName,omitempty"`
+	LocationInfos                 []BTLocationInfo226          `json:"locationInfos,omitempty"`
+	ManipulatorChangeFunction     *string                      `json:"manipulatorChangeFunction,omitempty"`
+	Namespace                     *string                      `json:"namespace,omitempty"`
+	NamespaceIncludingEnums       *string                      `json:"namespaceIncludingEnums,omitempty"`
+	NamespaceTheSource            *bool                        `json:"namespaceTheSource,omitempty"`
+	ParameterIdToSpec             *map[string]BTParameterSpec6 `json:"parameterIdToSpec,omitempty"`
+	ParameterLibraryDefinitionIds []string                     `json:"parameterLibraryDefinitionIds,omitempty"`
+	Parameters                    []BTParameterSpec6           `json:"parameters,omitempty"`
+	Signature                     *string                      `json:"signature,omitempty"`
+	SourceLocation                *BTLocationInfo226           `json:"sourceLocation,omitempty"`
+	SourceMicroversionId          *string                      `json:"sourceMicroversionId,omitempty"`
+	StringsToLocalize             []string                     `json:"stringsToLocalize,omitempty"`
+	TableSpec                     *bool                        `json:"tableSpec,omitempty"`
+	ToleranceSpec                 *bool                        `json:"toleranceSpec,omitempty"`
+	TooltipTemplate               *string                      `json:"tooltipTemplate,omitempty"`
+	UiHints                       []GBTUIHint                  `json:"uiHints,omitempty"`
+	VariableStudioReferenceSpec   *bool                        `json:"variableStudioReferenceSpec,omitempty"`
+	ComputedPartPropertySpecId    *string                      `json:"computedPartPropertySpecId,omitempty"`
+	PropertyFunctionReturnType    *string                      `json:"propertyFunctionReturnType,omitempty"`
 }
 
 // NewBTComputedPartPropertySpec1746 instantiates a new BTComputedPartPropertySpec1746 object
@@ -840,6 +841,38 @@ func (o *BTComputedPartPropertySpec1746) SetParameterIdToSpec(v map[string]BTPar
 	o.ParameterIdToSpec = &v
 }
 
+// GetParameterLibraryDefinitionIds returns the ParameterLibraryDefinitionIds field value if set, zero value otherwise.
+func (o *BTComputedPartPropertySpec1746) GetParameterLibraryDefinitionIds() []string {
+	if o == nil || o.ParameterLibraryDefinitionIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.ParameterLibraryDefinitionIds
+}
+
+// GetParameterLibraryDefinitionIdsOk returns a tuple with the ParameterLibraryDefinitionIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTComputedPartPropertySpec1746) GetParameterLibraryDefinitionIdsOk() ([]string, bool) {
+	if o == nil || o.ParameterLibraryDefinitionIds == nil {
+		return nil, false
+	}
+	return o.ParameterLibraryDefinitionIds, true
+}
+
+// HasParameterLibraryDefinitionIds returns a boolean if a field has been set.
+func (o *BTComputedPartPropertySpec1746) HasParameterLibraryDefinitionIds() bool {
+	if o != nil && o.ParameterLibraryDefinitionIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterLibraryDefinitionIds gets a reference to the given []string and assigns it to the ParameterLibraryDefinitionIds field.
+func (o *BTComputedPartPropertySpec1746) SetParameterLibraryDefinitionIds(v []string) {
+	o.ParameterLibraryDefinitionIds = v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTComputedPartPropertySpec1746) GetParameters() []BTParameterSpec6 {
 	if o == nil || o.Parameters == nil {
@@ -1305,6 +1338,9 @@ func (o BTComputedPartPropertySpec1746) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterIdToSpec != nil {
 		toSerialize["parameterIdToSpec"] = o.ParameterIdToSpec
+	}
+	if o.ParameterLibraryDefinitionIds != nil {
+		toSerialize["parameterLibraryDefinitionIds"] = o.ParameterLibraryDefinitionIds
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

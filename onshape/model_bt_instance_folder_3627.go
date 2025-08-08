@@ -52,6 +52,7 @@ type BTInstanceFolder3627 struct {
 	FolderEnd              *bool                    `json:"folderEnd,omitempty"`
 	FolderStart            *bool                    `json:"folderStart,omitempty"`
 	Name                   *string                  `json:"name,omitempty"`
+	ParameterLibraries     []BTMParameter1          `json:"parameterLibraries,omitempty"`
 	Parameters             []BTMParameter1          `json:"parameters,omitempty"`
 	StartNodeId            *string                  `json:"startNodeId,omitempty"`
 	StartNodeIdRaw         *BTObjectId              `json:"startNodeIdRaw,omitempty"`
@@ -1130,6 +1131,38 @@ func (o *BTInstanceFolder3627) SetName(v string) {
 	o.Name = &v
 }
 
+// GetParameterLibraries returns the ParameterLibraries field value if set, zero value otherwise.
+func (o *BTInstanceFolder3627) GetParameterLibraries() []BTMParameter1 {
+	if o == nil || o.ParameterLibraries == nil {
+		var ret []BTMParameter1
+		return ret
+	}
+	return o.ParameterLibraries
+}
+
+// GetParameterLibrariesOk returns a tuple with the ParameterLibraries field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceFolder3627) GetParameterLibrariesOk() ([]BTMParameter1, bool) {
+	if o == nil || o.ParameterLibraries == nil {
+		return nil, false
+	}
+	return o.ParameterLibraries, true
+}
+
+// HasParameterLibraries returns a boolean if a field has been set.
+func (o *BTInstanceFolder3627) HasParameterLibraries() bool {
+	if o != nil && o.ParameterLibraries != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterLibraries gets a reference to the given []BTMParameter1 and assigns it to the ParameterLibraries field.
+func (o *BTInstanceFolder3627) SetParameterLibraries(v []BTMParameter1) {
+	o.ParameterLibraries = v
+}
+
 // GetParameters returns the Parameters field value if set, zero value otherwise.
 func (o *BTInstanceFolder3627) GetParameters() []BTMParameter1 {
 	if o == nil || o.Parameters == nil {
@@ -1334,6 +1367,9 @@ func (o BTInstanceFolder3627) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.ParameterLibraries != nil {
+		toSerialize["parameterLibraries"] = o.ParameterLibraries
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters

@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
 **NumberOfModes** | Pointer to **float64** |  | [optional] 
 **OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
+**ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
@@ -475,6 +476,31 @@ SetOccurrenceQueriesFromAllConfigurations sets OccurrenceQueriesFromAllConfigura
 `func (o *BTAssemblySimulation2246) HasOccurrenceQueriesFromAllConfigurations() bool`
 
 HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
+
+### GetParameterLibraries
+
+`func (o *BTAssemblySimulation2246) GetParameterLibraries() []BTMParameter1`
+
+GetParameterLibraries returns the ParameterLibraries field if non-nil, zero value otherwise.
+
+### GetParameterLibrariesOk
+
+`func (o *BTAssemblySimulation2246) GetParameterLibrariesOk() (*[]BTMParameter1, bool)`
+
+GetParameterLibrariesOk returns a tuple with the ParameterLibraries field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterLibraries
+
+`func (o *BTAssemblySimulation2246) SetParameterLibraries(v []BTMParameter1)`
+
+SetParameterLibraries sets ParameterLibraries field to given value.
+
+### HasParameterLibraries
+
+`func (o *BTAssemblySimulation2246) HasParameterLibraries() bool`
+
+HasParameterLibraries returns a boolean if a field has been set.
 
 ### GetParametricInstanceFeature
 

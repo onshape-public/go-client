@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ContactUser** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Icon** | Pointer to **string** |  | [optional] 
 **InvitedCompany** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
+**IsOwnerEnterpriseEdu** | Pointer to **bool** |  | [optional] 
 **Member** | Pointer to **bool** |  | [optional] 
 **NumberOfMembers** | Pointer to **int64** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
@@ -130,6 +131,31 @@ SetInvitedCompany sets InvitedCompany field to given value.
 `func (o *BTExternalConnectionInfo) HasInvitedCompany() bool`
 
 HasInvitedCompany returns a boolean if a field has been set.
+
+### GetIsOwnerEnterpriseEdu
+
+`func (o *BTExternalConnectionInfo) GetIsOwnerEnterpriseEdu() bool`
+
+GetIsOwnerEnterpriseEdu returns the IsOwnerEnterpriseEdu field if non-nil, zero value otherwise.
+
+### GetIsOwnerEnterpriseEduOk
+
+`func (o *BTExternalConnectionInfo) GetIsOwnerEnterpriseEduOk() (*bool, bool)`
+
+GetIsOwnerEnterpriseEduOk returns a tuple with the IsOwnerEnterpriseEdu field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsOwnerEnterpriseEdu
+
+`func (o *BTExternalConnectionInfo) SetIsOwnerEnterpriseEdu(v bool)`
+
+SetIsOwnerEnterpriseEdu sets IsOwnerEnterpriseEdu field to given value.
+
+### HasIsOwnerEnterpriseEdu
+
+`func (o *BTExternalConnectionInfo) HasIsOwnerEnterpriseEdu() bool`
+
+HasIsOwnerEnterpriseEdu returns a boolean if a field has been set.
 
 ### GetMember
 
