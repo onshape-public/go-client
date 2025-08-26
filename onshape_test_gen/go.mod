@@ -1,6 +1,6 @@
 module github.com/onshape-public/go-client/test-gen
 
-go 1.18
+go 1.24
 
 replace github.com/onshape-public/go-client v1.6.3 => ./..
 
