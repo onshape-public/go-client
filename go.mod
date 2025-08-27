@@ -1,11 +1,11 @@
 module github.com/onshape-public/go-client
 
-go 1.24
+go 1.24.0
 
 require (
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/exp v0.0.0-20250811191247-51f88131bc50
+	golang.org/x/exp v0.0.0-20250819193227-8b4c13bb791b
 	golang.org/x/oauth2 v0.30.0
 )
 
