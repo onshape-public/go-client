@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetAllowedApprovers
 
-> BTListResponseBTWorkflowObserverOptionInfo GetAllowedApprovers(ctx, companyId).Q(q).ExpandTeams(expandTeams).IncludeSelf(includeSelf).Execute()
+> BTListResponseBTWorkflowObserverOptionInfo GetAllowedApprovers(ctx, companyId).Q(q).ExpandTeams(expandTeams).IncludeSelf(includeSelf).ExcludeConnections(excludeConnections).Execute()
 
 Get all identities allowed to be approvers on a workflow object.
 
@@ -182,10 +182,11 @@ func main() {
     q := "q_example" // string |  (optional) (default to "")
     expandTeams := true // bool |  (optional) (default to true)
     includeSelf := true // bool |  (optional) (default to true)
+    excludeConnections := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.WorkflowApi.GetAllowedApprovers(context.Background(), companyId).Q(q).ExpandTeams(expandTeams).IncludeSelf(includeSelf).Execute()
+    resp, r, err := apiClient.WorkflowApi.GetAllowedApprovers(context.Background(), companyId).Q(q).ExpandTeams(expandTeams).IncludeSelf(includeSelf).ExcludeConnections(excludeConnections).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetAllowedApprovers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -214,6 +215,7 @@ Name | Type | Description  | Notes
  **q** | **string** |  | [default to &quot;&quot;]
  **expandTeams** | **bool** |  | [default to true]
  **includeSelf** | **bool** |  | [default to true]
+ **excludeConnections** | **bool** |  | [default to false]
 
 ### Return type
 

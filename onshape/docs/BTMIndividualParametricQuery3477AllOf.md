@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**EscapedQueryVariableName** | Pointer to **string** |  | [optional] 
 **QueryVariableName** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMIndividualParametricQuery3477AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetEscapedQueryVariableName
+
+`func (o *BTMIndividualParametricQuery3477AllOf) GetEscapedQueryVariableName() string`
+
+GetEscapedQueryVariableName returns the EscapedQueryVariableName field if non-nil, zero value otherwise.
+
+### GetEscapedQueryVariableNameOk
+
+`func (o *BTMIndividualParametricQuery3477AllOf) GetEscapedQueryVariableNameOk() (*string, bool)`
+
+GetEscapedQueryVariableNameOk returns a tuple with the EscapedQueryVariableName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEscapedQueryVariableName
+
+`func (o *BTMIndividualParametricQuery3477AllOf) SetEscapedQueryVariableName(v string)`
+
+SetEscapedQueryVariableName sets EscapedQueryVariableName field to given value.
+
+### HasEscapedQueryVariableName
+
+`func (o *BTMIndividualParametricQuery3477AllOf) HasEscapedQueryVariableName() bool`
+
+HasEscapedQueryVariableName returns a boolean if a field has been set.
 
 ### GetQueryVariableName
 

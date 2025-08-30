@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CurrentConfiguration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **CurrentFSValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
 **DefaultConfigurationValues** | Pointer to [**map[string]BTFSValue1888**](BTFSValue1888.md) |  | [optional] 
+**SyncAndPassthroughReferenceNodeId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetDefaultConfigurationValues sets DefaultConfigurationValues field to given val
 `func (o *BTMConfigurationData1560) HasDefaultConfigurationValues() bool`
 
 HasDefaultConfigurationValues returns a boolean if a field has been set.
+
+### GetSyncAndPassthroughReferenceNodeId
+
+`func (o *BTMConfigurationData1560) GetSyncAndPassthroughReferenceNodeId() string`
+
+GetSyncAndPassthroughReferenceNodeId returns the SyncAndPassthroughReferenceNodeId field if non-nil, zero value otherwise.
+
+### GetSyncAndPassthroughReferenceNodeIdOk
+
+`func (o *BTMConfigurationData1560) GetSyncAndPassthroughReferenceNodeIdOk() (*string, bool)`
+
+GetSyncAndPassthroughReferenceNodeIdOk returns a tuple with the SyncAndPassthroughReferenceNodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSyncAndPassthroughReferenceNodeId
+
+`func (o *BTMConfigurationData1560) SetSyncAndPassthroughReferenceNodeId(v string)`
+
+SetSyncAndPassthroughReferenceNodeId sets SyncAndPassthroughReferenceNodeId field to given value.
+
+### HasSyncAndPassthroughReferenceNodeId
+
+`func (o *BTMConfigurationData1560) HasSyncAndPassthroughReferenceNodeId() bool`
+
+HasSyncAndPassthroughReferenceNodeId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

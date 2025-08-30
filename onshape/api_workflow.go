@@ -308,12 +308,13 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 }
 
 type ApiGetAllowedApproversRequest struct {
-	ctx         context.Context
-	ApiService  *WorkflowApiService
-	companyId   string
-	q           *string
-	expandTeams *bool
-	includeSelf *bool
+	ctx                context.Context
+	ApiService         *WorkflowApiService
+	companyId          string
+	q                  *string
+	expandTeams        *bool
+	includeSelf        *bool
+	excludeConnections *bool
 }
 
 func (r ApiGetAllowedApproversRequest) Q(q string) ApiGetAllowedApproversRequest {
@@ -328,6 +329,11 @@ func (r ApiGetAllowedApproversRequest) ExpandTeams(expandTeams bool) ApiGetAllow
 
 func (r ApiGetAllowedApproversRequest) IncludeSelf(includeSelf bool) ApiGetAllowedApproversRequest {
 	r.includeSelf = &includeSelf
+	return r
+}
+
+func (r ApiGetAllowedApproversRequest) ExcludeConnections(excludeConnections bool) ApiGetAllowedApproversRequest {
+	r.excludeConnections = &excludeConnections
 	return r
 }
 
@@ -386,6 +392,9 @@ func (a *WorkflowApiService) GetAllowedApproversExecute(r ApiGetAllowedApprovers
 	}
 	if r.includeSelf != nil {
 		localVarQueryParams.Add("includeSelf", parameterToString(*r.includeSelf, ""))
+	}
+	if r.excludeConnections != nil {
+		localVarQueryParams.Add("excludeConnections", parameterToString(*r.excludeConnections, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

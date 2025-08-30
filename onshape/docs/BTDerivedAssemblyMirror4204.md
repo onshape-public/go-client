@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**AssemblyReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -63,6 +64,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTDerivedAssemblyMirror4204) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204) GetAssemblyReferenceParameter() BTMParameterReferenceWithConfiguration3028`
+
+GetAssemblyReferenceParameter returns the AssemblyReferenceParameter field if non-nil, zero value otherwise.
+
+### GetAssemblyReferenceParameterOk
+
+`func (o *BTDerivedAssemblyMirror4204) GetAssemblyReferenceParameterOk() (*BTMParameterReferenceWithConfiguration3028, bool)`
+
+GetAssemblyReferenceParameterOk returns a tuple with the AssemblyReferenceParameter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204) SetAssemblyReferenceParameter(v BTMParameterReferenceWithConfiguration3028)`
+
+SetAssemblyReferenceParameter sets AssemblyReferenceParameter field to given value.
+
+### HasAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204) HasAssemblyReferenceParameter() bool`
+
+HasAssemblyReferenceParameter returns a boolean if a field has been set.
 
 ### GetConfiguration
 

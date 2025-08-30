@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **LibraryRelationType** | Pointer to [**GBTParameterLibraryRelationType**](GBTParameterLibraryRelationType.md) |  | [optional] 
 **NodeId** | Pointer to **string** | ID of the parameter&#39;s node. | [optional] 
 **ParameterId** | Pointer to **string** | Unique ID of the parameter. | [optional] 
+**ParameterName** | Pointer to **string** |  | [optional] 
 **ValueString** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetParameterId sets ParameterId field to given value.
 `func (o *BTMParameter1) HasParameterId() bool`
 
 HasParameterId returns a boolean if a field has been set.
+
+### GetParameterName
+
+`func (o *BTMParameter1) GetParameterName() string`
+
+GetParameterName returns the ParameterName field if non-nil, zero value otherwise.
+
+### GetParameterNameOk
+
+`func (o *BTMParameter1) GetParameterNameOk() (*string, bool)`
+
+GetParameterNameOk returns a tuple with the ParameterName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameterName
+
+`func (o *BTMParameter1) SetParameterName(v string)`
+
+SetParameterName sets ParameterName field to given value.
+
+### HasParameterName
+
+`func (o *BTMParameter1) HasParameterName() bool`
+
+HasParameterName returns a boolean if a field has been set.
 
 ### GetValueString
 

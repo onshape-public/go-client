@@ -24,13 +24,15 @@ type BTMParameterIcon460 struct {
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
-	ParameterId *string `json:"parameterId,omitempty"`
-	ValueString *string `json:"valueString,omitempty"`
-	HasError    *bool   `json:"hasError,omitempty"`
-	Icon        *string `json:"icon,omitempty"`
-	Label       *string `json:"label,omitempty"`
-	Link        *string `json:"link,omitempty"`
-	Tooltip     *string `json:"tooltip,omitempty"`
+	ParameterId   *string `json:"parameterId,omitempty"`
+	ParameterName *string `json:"parameterName,omitempty"`
+	ValueString   *string `json:"valueString,omitempty"`
+	HasError      *bool   `json:"hasError,omitempty"`
+	HasWarning    *bool   `json:"hasWarning,omitempty"`
+	Icon          *string `json:"icon,omitempty"`
+	Label         *string `json:"label,omitempty"`
+	Link          *string `json:"link,omitempty"`
+	Tooltip       *string `json:"tooltip,omitempty"`
 }
 
 // NewBTMParameterIcon460 instantiates a new BTMParameterIcon460 object
@@ -210,6 +212,38 @@ func (o *BTMParameterIcon460) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetParameterName returns the ParameterName field value if set, zero value otherwise.
+func (o *BTMParameterIcon460) GetParameterName() string {
+	if o == nil || o.ParameterName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParameterName
+}
+
+// GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterIcon460) GetParameterNameOk() (*string, bool) {
+	if o == nil || o.ParameterName == nil {
+		return nil, false
+	}
+	return o.ParameterName, true
+}
+
+// HasParameterName returns a boolean if a field has been set.
+func (o *BTMParameterIcon460) HasParameterName() bool {
+	if o != nil && o.ParameterName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
+func (o *BTMParameterIcon460) SetParameterName(v string) {
+	o.ParameterName = &v
+}
+
 // GetValueString returns the ValueString field value if set, zero value otherwise.
 func (o *BTMParameterIcon460) GetValueString() string {
 	if o == nil || o.ValueString == nil {
@@ -272,6 +306,38 @@ func (o *BTMParameterIcon460) HasHasError() bool {
 // SetHasError gets a reference to the given bool and assigns it to the HasError field.
 func (o *BTMParameterIcon460) SetHasError(v bool) {
 	o.HasError = &v
+}
+
+// GetHasWarning returns the HasWarning field value if set, zero value otherwise.
+func (o *BTMParameterIcon460) GetHasWarning() bool {
+	if o == nil || o.HasWarning == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasWarning
+}
+
+// GetHasWarningOk returns a tuple with the HasWarning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterIcon460) GetHasWarningOk() (*bool, bool) {
+	if o == nil || o.HasWarning == nil {
+		return nil, false
+	}
+	return o.HasWarning, true
+}
+
+// HasHasWarning returns a boolean if a field has been set.
+func (o *BTMParameterIcon460) HasHasWarning() bool {
+	if o != nil && o.HasWarning != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasWarning gets a reference to the given bool and assigns it to the HasWarning field.
+func (o *BTMParameterIcon460) SetHasWarning(v bool) {
+	o.HasWarning = &v
 }
 
 // GetIcon returns the Icon field value if set, zero value otherwise.
@@ -427,11 +493,17 @@ func (o BTMParameterIcon460) MarshalJSON() ([]byte, error) {
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
 	}
+	if o.ParameterName != nil {
+		toSerialize["parameterName"] = o.ParameterName
+	}
 	if o.ValueString != nil {
 		toSerialize["valueString"] = o.ValueString
 	}
 	if o.HasError != nil {
 		toSerialize["hasError"] = o.HasError
+	}
+	if o.HasWarning != nil {
+		toSerialize["hasWarning"] = o.HasWarning
 	}
 	if o.Icon != nil {
 		toSerialize["icon"] = o.Icon

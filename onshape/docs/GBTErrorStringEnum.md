@@ -3357,6 +3357,34 @@
 
 * `GBTErrorStringEnumAssemblyDerivedMirrorReferenceMissing` (value: `"ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING"`)
 
+* `GBTErrorStringEnumInvalidSuppressionExpression` (value: `"INVALID_SUPPRESSION_EXPRESSION"`)
+
+* `GBTErrorStringEnumAssemblyMirrorChildHasReferenceError` (value: `"ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR"`)
+
+* `GBTErrorStringEnumValueWithUnitsError` (value: `"VALUE_WITH_UNITS_ERROR"`)
+
+* `GBTErrorStringEnumRowIndexRangeError` (value: `"ROW_INDEX_RANGE_ERROR"`)
+
+* `GBTErrorStringEnumRowIndexMinError` (value: `"ROW_INDEX_MIN_ERROR"`)
+
+* `GBTErrorStringEnumRowIndexMaxError` (value: `"ROW_INDEX_MAX_ERROR"`)
+
+* `GBTErrorStringEnumRowIndexError` (value: `"ROW_INDEX_ERROR"`)
+
+* `GBTErrorStringEnumRowLabelIndexError` (value: `"ROW_LABEL_INDEX_ERROR"`)
+
+* `GBTErrorStringEnumColIndexRangeError` (value: `"COL_INDEX_RANGE_ERROR"`)
+
+* `GBTErrorStringEnumColIndexMinError` (value: `"COL_INDEX_MIN_ERROR"`)
+
+* `GBTErrorStringEnumColIndexMaxError` (value: `"COL_INDEX_MAX_ERROR"`)
+
+* `GBTErrorStringEnumColIndexError` (value: `"COL_INDEX_ERROR"`)
+
+* `GBTErrorStringEnumColLabelIndexError` (value: `"COL_LABEL_INDEX_ERROR"`)
+
+* `GBTErrorStringEnumQueryVariableNameCannotContainQuote` (value: `"QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

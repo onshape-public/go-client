@@ -27,6 +27,7 @@ type GlobalPermissionInfo struct {
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
 	CreateTasks                     *bool `json:"createTasks,omitempty"`
 	DeletePermanently               *bool `json:"deletePermanently,omitempty"`
+	ExportFiles                     *bool `json:"exportFiles,omitempty"`
 	ImportFiles                     *bool `json:"importFiles,omitempty"`
 	ManageGuestUsers                *bool `json:"manageGuestUsers,omitempty"`
 	ManageNonGeometricItems         *bool `json:"manageNonGeometricItems,omitempty"`
@@ -408,6 +409,38 @@ func (o *GlobalPermissionInfo) SetDeletePermanently(v bool) {
 	o.DeletePermanently = &v
 }
 
+// GetExportFiles returns the ExportFiles field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetExportFiles() bool {
+	if o == nil || o.ExportFiles == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExportFiles
+}
+
+// GetExportFilesOk returns a tuple with the ExportFiles field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetExportFilesOk() (*bool, bool) {
+	if o == nil || o.ExportFiles == nil {
+		return nil, false
+	}
+	return o.ExportFiles, true
+}
+
+// HasExportFiles returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasExportFiles() bool {
+	if o != nil && o.ExportFiles != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExportFiles gets a reference to the given bool and assigns it to the ExportFiles field.
+func (o *GlobalPermissionInfo) SetExportFiles(v bool) {
+	o.ExportFiles = &v
+}
+
 // GetImportFiles returns the ImportFiles field value if set, zero value otherwise.
 func (o *GlobalPermissionInfo) GetImportFiles() bool {
 	if o == nil || o.ImportFiles == nil {
@@ -762,6 +795,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeletePermanently != nil {
 		toSerialize["deletePermanently"] = o.DeletePermanently
+	}
+	if o.ExportFiles != nil {
+		toSerialize["exportFiles"] = o.ExportFiles
 	}
 	if o.ImportFiles != nil {
 		toSerialize["importFiles"] = o.ImportFiles

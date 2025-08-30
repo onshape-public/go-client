@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **CanCurrentUserSeePLMItemLink** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncBomToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncBomToPLM | [optional] 
 **CanCurrentUserSyncBomToPLM** | Pointer to **bool** |  | [optional] 
+**CanCurrentUserSyncDrawingToPLM** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncRevisionsToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncRevisionsToPLM | [optional] 
 **CanCurrentUserSyncRevisionsToPLM** | Pointer to **bool** |  | [optional] 
 **CanCurrentUserSyncStandardContentToArena** | Pointer to **bool** | Deprecated, use canCurrentUserSyncStandardContentToPLM | [optional] 
@@ -262,6 +263,31 @@ SetCanCurrentUserSyncBomToPLM sets CanCurrentUserSyncBomToPLM field to given val
 `func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToPLM() bool`
 
 HasCanCurrentUserSyncBomToPLM returns a boolean if a field has been set.
+
+### GetCanCurrentUserSyncDrawingToPLM
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncDrawingToPLM() bool`
+
+GetCanCurrentUserSyncDrawingToPLM returns the CanCurrentUserSyncDrawingToPLM field if non-nil, zero value otherwise.
+
+### GetCanCurrentUserSyncDrawingToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncDrawingToPLMOk() (*bool, bool)`
+
+GetCanCurrentUserSyncDrawingToPLMOk returns a tuple with the CanCurrentUserSyncDrawingToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCurrentUserSyncDrawingToPLM
+
+`func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncDrawingToPLM(v bool)`
+
+SetCanCurrentUserSyncDrawingToPLM sets CanCurrentUserSyncDrawingToPLM field to given value.
+
+### HasCanCurrentUserSyncDrawingToPLM
+
+`func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncDrawingToPLM() bool`
+
+HasCanCurrentUserSyncDrawingToPLM returns a boolean if a field has been set.
 
 ### GetCanCurrentUserSyncRevisionsToArena
 

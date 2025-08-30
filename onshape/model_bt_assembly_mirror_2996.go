@@ -46,6 +46,7 @@ type BTAssemblyMirror2996 struct {
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured       *bool                             `json:"suppressionConfigured,omitempty"`
 	SuppressionState            *BTMSuppressionState1924          `json:"suppressionState,omitempty"`
+	SuppressionStateFieldIndex  *int32                            `json:"suppressionStateFieldIndex,omitempty"`
 	ValidRevisionReference      *bool                             `json:"validRevisionReference,omitempty"`
 	Version                     *int32                            `json:"version,omitempty"`
 	Feature                     *BTMAssemblyFeature887            `json:"feature,omitempty"`
@@ -938,6 +939,38 @@ func (o *BTAssemblyMirror2996) SetSuppressionState(v BTMSuppressionState1924) {
 	o.SuppressionState = &v
 }
 
+// GetSuppressionStateFieldIndex returns the SuppressionStateFieldIndex field value if set, zero value otherwise.
+func (o *BTAssemblyMirror2996) GetSuppressionStateFieldIndex() int32 {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SuppressionStateFieldIndex
+}
+
+// GetSuppressionStateFieldIndexOk returns a tuple with the SuppressionStateFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMirror2996) GetSuppressionStateFieldIndexOk() (*int32, bool) {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		return nil, false
+	}
+	return o.SuppressionStateFieldIndex, true
+}
+
+// HasSuppressionStateFieldIndex returns a boolean if a field has been set.
+func (o *BTAssemblyMirror2996) HasSuppressionStateFieldIndex() bool {
+	if o != nil && o.SuppressionStateFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionStateFieldIndex gets a reference to the given int32 and assigns it to the SuppressionStateFieldIndex field.
+func (o *BTAssemblyMirror2996) SetSuppressionStateFieldIndex(v int32) {
+	o.SuppressionStateFieldIndex = &v
+}
+
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
 func (o *BTAssemblyMirror2996) GetValidRevisionReference() bool {
 	if o == nil || o.ValidRevisionReference == nil {
@@ -1316,6 +1349,9 @@ func (o BTAssemblyMirror2996) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressionState != nil {
 		toSerialize["suppressionState"] = o.SuppressionState
+	}
+	if o.SuppressionStateFieldIndex != nil {
+		toSerialize["suppressionStateFieldIndex"] = o.SuppressionStateFieldIndex
 	}
 	if o.ValidRevisionReference != nil {
 		toSerialize["validRevisionReference"] = o.ValidRevisionReference

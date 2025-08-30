@@ -1697,6 +1697,20 @@ const (
 	GBTErrorStringEnumAssemblyMirrorTargetElementMissing                          GBTErrorStringEnum = "ASSEMBLY_MIRROR_TARGET_ELEMENT_MISSING"
 	GBTErrorStringEnumAssemblyMirrorDerivedElementConfigurationsInvalid           GBTErrorStringEnum = "ASSEMBLY_MIRROR_DERIVED_ELEMENT_CONFIGURATIONS_INVALID"
 	GBTErrorStringEnumAssemblyDerivedMirrorReferenceMissing                       GBTErrorStringEnum = "ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING"
+	GBTErrorStringEnumInvalidSuppressionExpression                                GBTErrorStringEnum = "INVALID_SUPPRESSION_EXPRESSION"
+	GBTErrorStringEnumAssemblyMirrorChildHasReferenceError                        GBTErrorStringEnum = "ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR"
+	GBTErrorStringEnumValueWithUnitsError                                         GBTErrorStringEnum = "VALUE_WITH_UNITS_ERROR"
+	GBTErrorStringEnumRowIndexRangeError                                          GBTErrorStringEnum = "ROW_INDEX_RANGE_ERROR"
+	GBTErrorStringEnumRowIndexMinError                                            GBTErrorStringEnum = "ROW_INDEX_MIN_ERROR"
+	GBTErrorStringEnumRowIndexMaxError                                            GBTErrorStringEnum = "ROW_INDEX_MAX_ERROR"
+	GBTErrorStringEnumRowIndexError                                               GBTErrorStringEnum = "ROW_INDEX_ERROR"
+	GBTErrorStringEnumRowLabelIndexError                                          GBTErrorStringEnum = "ROW_LABEL_INDEX_ERROR"
+	GBTErrorStringEnumColIndexRangeError                                          GBTErrorStringEnum = "COL_INDEX_RANGE_ERROR"
+	GBTErrorStringEnumColIndexMinError                                            GBTErrorStringEnum = "COL_INDEX_MIN_ERROR"
+	GBTErrorStringEnumColIndexMaxError                                            GBTErrorStringEnum = "COL_INDEX_MAX_ERROR"
+	GBTErrorStringEnumColIndexError                                               GBTErrorStringEnum = "COL_INDEX_ERROR"
+	GBTErrorStringEnumColLabelIndexError                                          GBTErrorStringEnum = "COL_LABEL_INDEX_ERROR"
+	GBTErrorStringEnumQueryVariableNameCannotContainQuote                         GBTErrorStringEnum = "QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3379,6 +3393,20 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ASSEMBLY_MIRROR_TARGET_ELEMENT_MISSING",
 	"ASSEMBLY_MIRROR_DERIVED_ELEMENT_CONFIGURATIONS_INVALID",
 	"ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING",
+	"INVALID_SUPPRESSION_EXPRESSION",
+	"ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR",
+	"VALUE_WITH_UNITS_ERROR",
+	"ROW_INDEX_RANGE_ERROR",
+	"ROW_INDEX_MIN_ERROR",
+	"ROW_INDEX_MAX_ERROR",
+	"ROW_INDEX_ERROR",
+	"ROW_LABEL_INDEX_ERROR",
+	"COL_INDEX_RANGE_ERROR",
+	"COL_INDEX_MIN_ERROR",
+	"COL_INDEX_MAX_ERROR",
+	"COL_INDEX_ERROR",
+	"COL_LABEL_INDEX_ERROR",
+	"QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE",
 	"UNKNOWN",
 }
 

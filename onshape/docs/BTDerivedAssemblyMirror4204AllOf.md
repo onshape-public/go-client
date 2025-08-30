@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AssemblyReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
@@ -38,6 +39,31 @@ will change when the set of required properties is changed
 NewBTDerivedAssemblyMirror4204AllOfWithDefaults instantiates a new BTDerivedAssemblyMirror4204AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) GetAssemblyReferenceParameter() BTMParameterReferenceWithConfiguration3028`
+
+GetAssemblyReferenceParameter returns the AssemblyReferenceParameter field if non-nil, zero value otherwise.
+
+### GetAssemblyReferenceParameterOk
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) GetAssemblyReferenceParameterOk() (*BTMParameterReferenceWithConfiguration3028, bool)`
+
+GetAssemblyReferenceParameterOk returns a tuple with the AssemblyReferenceParameter field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) SetAssemblyReferenceParameter(v BTMParameterReferenceWithConfiguration3028)`
+
+SetAssemblyReferenceParameter sets AssemblyReferenceParameter field to given value.
+
+### HasAssemblyReferenceParameter
+
+`func (o *BTDerivedAssemblyMirror4204AllOf) HasAssemblyReferenceParameter() bool`
+
+HasAssemblyReferenceParameter returns a boolean if a field has been set.
 
 ### GetBtType
 

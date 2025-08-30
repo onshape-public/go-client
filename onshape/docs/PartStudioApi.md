@@ -770,6 +770,8 @@ Name | Type | Description  | Notes
 
 Evaluate the FeatureScript snippet for a Part Studio.
 
+
+
 ### Example
 
 ```go
@@ -1975,7 +1977,7 @@ Name | Type | Description  | Notes
 
 ## GetPartStudioNamedViews
 
-> BTNamedViewsInfo GetPartStudioNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
+> BTNamedViewsInfo GetPartStudioNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Configuration(configuration).Execute()
 
 Get a list of all named views that exist in the Part Studio.
 
@@ -1999,10 +2001,11 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     skipPerspective := true // bool |  (optional) (default to true)
     includeSectionCutViews := true // bool |  (optional) (default to false)
+    configuration := "configuration_example" // string |  (optional) (default to "")
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.PartStudioApi.GetPartStudioNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
+    resp, r, err := apiClient.PartStudioApi.GetPartStudioNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Configuration(configuration).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PartStudioApi.GetPartStudioNamedViews``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2033,6 +2036,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **skipPerspective** | **bool** |  | [default to true]
  **includeSectionCutViews** | **bool** |  | [default to false]
+ **configuration** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 

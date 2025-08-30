@@ -16,14 +16,15 @@ import (
 
 // BTPublicationParams struct for BTPublicationParams
 type BTPublicationParams struct {
-	Description *string                   `json:"description,omitempty"`
-	Items       []BTPublicationItemParams `json:"items,omitempty"`
-	Name        *string                   `json:"name,omitempty"`
-	Notes       *string                   `json:"notes,omitempty"`
-	OwnerId     *string                   `json:"ownerId,omitempty"`
-	OwnerType   *int32                    `json:"ownerType,omitempty"`
-	ParentId    *string                   `json:"parentId,omitempty"`
-	ProjectId   *string                   `json:"projectId,omitempty"`
+	Description    *string                   `json:"description,omitempty"`
+	Items          []BTPublicationItemParams `json:"items,omitempty"`
+	Name           *string                   `json:"name,omitempty"`
+	Notes          *string                   `json:"notes,omitempty"`
+	OldClientNotes *string                   `json:"oldClientNotes,omitempty"`
+	OwnerId        *string                   `json:"ownerId,omitempty"`
+	OwnerType      *int32                    `json:"ownerType,omitempty"`
+	ParentId       *string                   `json:"parentId,omitempty"`
+	ProjectId      *string                   `json:"projectId,omitempty"`
 }
 
 // NewBTPublicationParams instantiates a new BTPublicationParams object
@@ -171,6 +172,38 @@ func (o *BTPublicationParams) SetNotes(v string) {
 	o.Notes = &v
 }
 
+// GetOldClientNotes returns the OldClientNotes field value if set, zero value otherwise.
+func (o *BTPublicationParams) GetOldClientNotes() string {
+	if o == nil || o.OldClientNotes == nil {
+		var ret string
+		return ret
+	}
+	return *o.OldClientNotes
+}
+
+// GetOldClientNotesOk returns a tuple with the OldClientNotes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPublicationParams) GetOldClientNotesOk() (*string, bool) {
+	if o == nil || o.OldClientNotes == nil {
+		return nil, false
+	}
+	return o.OldClientNotes, true
+}
+
+// HasOldClientNotes returns a boolean if a field has been set.
+func (o *BTPublicationParams) HasOldClientNotes() bool {
+	if o != nil && o.OldClientNotes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOldClientNotes gets a reference to the given string and assigns it to the OldClientNotes field.
+func (o *BTPublicationParams) SetOldClientNotes(v string) {
+	o.OldClientNotes = &v
+}
+
 // GetOwnerId returns the OwnerId field value if set, zero value otherwise.
 func (o *BTPublicationParams) GetOwnerId() string {
 	if o == nil || o.OwnerId == nil {
@@ -312,6 +345,9 @@ func (o BTPublicationParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Notes != nil {
 		toSerialize["notes"] = o.Notes
+	}
+	if o.OldClientNotes != nil {
+		toSerialize["oldClientNotes"] = o.OldClientNotes
 	}
 	if o.OwnerId != nil {
 		toSerialize["ownerId"] = o.OwnerId

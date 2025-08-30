@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Area** | Pointer to **float64** |  | [optional] 
 **Box** | Pointer to [**BTBoundingBox1052**](BTBoundingBox1052.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**CosmeticThreadMetadata** | Pointer to [**BTCosmeticThreadMetadata3248**](BTCosmeticThreadMetadata3248.md) |  | [optional] 
 **DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **FaceProperties** | Pointer to [**BTExportModelProperties3216**](BTExportModelProperties3216.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -133,6 +134,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTExportModelFace1363) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCosmeticThreadMetadata
+
+`func (o *BTExportModelFace1363) GetCosmeticThreadMetadata() BTCosmeticThreadMetadata3248`
+
+GetCosmeticThreadMetadata returns the CosmeticThreadMetadata field if non-nil, zero value otherwise.
+
+### GetCosmeticThreadMetadataOk
+
+`func (o *BTExportModelFace1363) GetCosmeticThreadMetadataOk() (*BTCosmeticThreadMetadata3248, bool)`
+
+GetCosmeticThreadMetadataOk returns a tuple with the CosmeticThreadMetadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCosmeticThreadMetadata
+
+`func (o *BTExportModelFace1363) SetCosmeticThreadMetadata(v BTCosmeticThreadMetadata3248)`
+
+SetCosmeticThreadMetadata sets CosmeticThreadMetadata field to given value.
+
+### HasCosmeticThreadMetadata
+
+`func (o *BTExportModelFace1363) HasCosmeticThreadMetadata() bool`
+
+HasCosmeticThreadMetadata returns a boolean if a field has been set.
 
 ### GetDecalIdToDecal
 

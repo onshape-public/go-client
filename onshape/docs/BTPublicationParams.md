@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Items** | Pointer to [**[]BTPublicationItemParams**](BTPublicationItemParams.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Notes** | Pointer to **string** |  | [optional] 
+**OldClientNotes** | Pointer to **string** |  | [optional] 
 **OwnerId** | Pointer to **string** |  | [optional] 
 **OwnerType** | Pointer to **int32** |  | [optional] 
 **ParentId** | Pointer to **string** |  | [optional] 
@@ -131,6 +132,31 @@ SetNotes sets Notes field to given value.
 `func (o *BTPublicationParams) HasNotes() bool`
 
 HasNotes returns a boolean if a field has been set.
+
+### GetOldClientNotes
+
+`func (o *BTPublicationParams) GetOldClientNotes() string`
+
+GetOldClientNotes returns the OldClientNotes field if non-nil, zero value otherwise.
+
+### GetOldClientNotesOk
+
+`func (o *BTPublicationParams) GetOldClientNotesOk() (*string, bool)`
+
+GetOldClientNotesOk returns a tuple with the OldClientNotes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOldClientNotes
+
+`func (o *BTPublicationParams) SetOldClientNotes(v string)`
+
+SetOldClientNotes sets OldClientNotes field to given value.
+
+### HasOldClientNotes
+
+`func (o *BTPublicationParams) HasOldClientNotes() bool`
+
+HasOldClientNotes returns a boolean if a field has been set.
 
 ### GetOwnerId
 

@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **IsPublic** | Pointer to **bool** | Set to &#x60;true&#x60; to make the document public. | [optional] 
 **Name** | Pointer to **string** | Document name. | [optional] 
 **NotRevisionManaged** | Pointer to **bool** | Set to &#x60;true&#x60; to indicate that revisions are not managed for this document. | [optional] 
+**Notes** | Pointer to **string** | Document notes. | [optional] 
+**OldClientNotes** | Pointer to **string** | Historical document notes. | [optional] 
 **OwnerEmail** | Pointer to **string** | The document owner&#39;s email address. | [optional] 
 **OwnerId** | Pointer to **string** | If &#x60;ownerType&#x3D;USER&#x60;, this is the user ID. If &#x60;ownerType&#x3D;COMPANY&#x60;, this is the company ID. | [optional] 
 **OwnerType** | Pointer to **int32** | The document&#39;s owner type. &#x60;USER&#x3D;0&#x60; | &#x60;COMPANY&#x3D;1&#x60; | &#x60;ONSHAPE&#x3D;2&#x60; | [optional] [default to 0]
@@ -237,6 +239,56 @@ SetNotRevisionManaged sets NotRevisionManaged field to given value.
 `func (o *BTDocumentParams) HasNotRevisionManaged() bool`
 
 HasNotRevisionManaged returns a boolean if a field has been set.
+
+### GetNotes
+
+`func (o *BTDocumentParams) GetNotes() string`
+
+GetNotes returns the Notes field if non-nil, zero value otherwise.
+
+### GetNotesOk
+
+`func (o *BTDocumentParams) GetNotesOk() (*string, bool)`
+
+GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotes
+
+`func (o *BTDocumentParams) SetNotes(v string)`
+
+SetNotes sets Notes field to given value.
+
+### HasNotes
+
+`func (o *BTDocumentParams) HasNotes() bool`
+
+HasNotes returns a boolean if a field has been set.
+
+### GetOldClientNotes
+
+`func (o *BTDocumentParams) GetOldClientNotes() string`
+
+GetOldClientNotes returns the OldClientNotes field if non-nil, zero value otherwise.
+
+### GetOldClientNotesOk
+
+`func (o *BTDocumentParams) GetOldClientNotesOk() (*string, bool)`
+
+GetOldClientNotesOk returns a tuple with the OldClientNotes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOldClientNotes
+
+`func (o *BTDocumentParams) SetOldClientNotes(v string)`
+
+SetOldClientNotes sets OldClientNotes field to given value.
+
+### HasOldClientNotes
+
+`func (o *BTDocumentParams) HasOldClientNotes() bool`
+
+HasOldClientNotes returns a boolean if a field has been set.
 
 ### GetOwnerEmail
 

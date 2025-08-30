@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **SuppressedFieldIndex** | Pointer to **int32** |  | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
+**SuppressionStateFieldIndex** | Pointer to **int32** |  | [optional] 
 **ValidRevisionReference** | Pointer to **bool** |  | [optional] 
 **Version** | Pointer to **int32** |  | [optional] 
 
@@ -675,6 +676,31 @@ SetSuppressionState sets SuppressionState field to given value.
 `func (o *BTInstanceBase2263) HasSuppressionState() bool`
 
 HasSuppressionState returns a boolean if a field has been set.
+
+### GetSuppressionStateFieldIndex
+
+`func (o *BTInstanceBase2263) GetSuppressionStateFieldIndex() int32`
+
+GetSuppressionStateFieldIndex returns the SuppressionStateFieldIndex field if non-nil, zero value otherwise.
+
+### GetSuppressionStateFieldIndexOk
+
+`func (o *BTInstanceBase2263) GetSuppressionStateFieldIndexOk() (*int32, bool)`
+
+GetSuppressionStateFieldIndexOk returns a tuple with the SuppressionStateFieldIndex field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressionStateFieldIndex
+
+`func (o *BTInstanceBase2263) SetSuppressionStateFieldIndex(v int32)`
+
+SetSuppressionStateFieldIndex sets SuppressionStateFieldIndex field to given value.
+
+### HasSuppressionStateFieldIndex
+
+`func (o *BTInstanceBase2263) HasSuppressionStateFieldIndex() bool`
+
+HasSuppressionStateFieldIndex returns a boolean if a field has been set.
 
 ### GetValidRevisionReference
 

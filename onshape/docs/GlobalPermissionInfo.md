@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **CreateReleases** | Pointer to **bool** |  | [optional] 
 **CreateTasks** | Pointer to **bool** |  | [optional] 
 **DeletePermanently** | Pointer to **bool** |  | [optional] 
+**ExportFiles** | Pointer to **bool** |  | [optional] 
 **ImportFiles** | Pointer to **bool** |  | [optional] 
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
 **ManageNonGeometricItems** | Pointer to **bool** |  | [optional] 
@@ -319,6 +320,31 @@ SetDeletePermanently sets DeletePermanently field to given value.
 `func (o *GlobalPermissionInfo) HasDeletePermanently() bool`
 
 HasDeletePermanently returns a boolean if a field has been set.
+
+### GetExportFiles
+
+`func (o *GlobalPermissionInfo) GetExportFiles() bool`
+
+GetExportFiles returns the ExportFiles field if non-nil, zero value otherwise.
+
+### GetExportFilesOk
+
+`func (o *GlobalPermissionInfo) GetExportFilesOk() (*bool, bool)`
+
+GetExportFilesOk returns a tuple with the ExportFiles field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExportFiles
+
+`func (o *GlobalPermissionInfo) SetExportFiles(v bool)`
+
+SetExportFiles sets ExportFiles field to given value.
+
+### HasExportFiles
+
+`func (o *GlobalPermissionInfo) HasExportFiles() bool`
+
+HasExportFiles returns a boolean if a field has been set.
 
 ### GetImportFiles
 

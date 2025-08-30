@@ -20,6 +20,7 @@ type BTReleasePackageItemParams struct {
 	Configuration      *string                `json:"configuration,omitempty"`
 	DocumentId         *string                `json:"documentId,omitempty"`
 	ElementId          *string                `json:"elementId,omitempty"`
+	ElementType        *int32                 `json:"elementType,omitempty"`
 	Href               *string                `json:"href,omitempty"`
 	Id                 *string                `json:"id,omitempty"`
 	IsIncluded         *bool                  `json:"isIncluded,omitempty"`
@@ -176,6 +177,38 @@ func (o *BTReleasePackageItemParams) HasElementId() bool {
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
 func (o *BTReleasePackageItemParams) SetElementId(v string) {
 	o.ElementId = &v
+}
+
+// GetElementType returns the ElementType field value if set, zero value otherwise.
+func (o *BTReleasePackageItemParams) GetElementType() int32 {
+	if o == nil || o.ElementType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.ElementType
+}
+
+// GetElementTypeOk returns a tuple with the ElementType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemParams) GetElementTypeOk() (*int32, bool) {
+	if o == nil || o.ElementType == nil {
+		return nil, false
+	}
+	return o.ElementType, true
+}
+
+// HasElementType returns a boolean if a field has been set.
+func (o *BTReleasePackageItemParams) HasElementType() bool {
+	if o != nil && o.ElementType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementType gets a reference to the given int32 and assigns it to the ElementType field.
+func (o *BTReleasePackageItemParams) SetElementType(v int32) {
+	o.ElementType = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -543,6 +576,9 @@ func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
+	}
+	if o.ElementType != nil {
+		toSerialize["elementType"] = o.ElementType
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href

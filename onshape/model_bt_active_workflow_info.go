@@ -24,8 +24,9 @@ type BTActiveWorkflowInfo struct {
 	CanCurrentUserSeeArenaItemLink *bool `json:"canCurrentUserSeeArenaItemLink,omitempty"`
 	CanCurrentUserSeePLMItemLink   *bool `json:"canCurrentUserSeePLMItemLink,omitempty"`
 	// Deprecated, use canCurrentUserSyncBomToPLM
-	CanCurrentUserSyncBomToArena *bool `json:"canCurrentUserSyncBomToArena,omitempty"`
-	CanCurrentUserSyncBomToPLM   *bool `json:"canCurrentUserSyncBomToPLM,omitempty"`
+	CanCurrentUserSyncBomToArena   *bool `json:"canCurrentUserSyncBomToArena,omitempty"`
+	CanCurrentUserSyncBomToPLM     *bool `json:"canCurrentUserSyncBomToPLM,omitempty"`
+	CanCurrentUserSyncDrawingToPLM *bool `json:"canCurrentUserSyncDrawingToPLM,omitempty"`
 	// Deprecated, use canCurrentUserSyncRevisionsToPLM
 	CanCurrentUserSyncRevisionsToArena *bool `json:"canCurrentUserSyncRevisionsToArena,omitempty"`
 	CanCurrentUserSyncRevisionsToPLM   *bool `json:"canCurrentUserSyncRevisionsToPLM,omitempty"`
@@ -340,6 +341,38 @@ func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncBomToPLM() bool {
 // SetCanCurrentUserSyncBomToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncBomToPLM field.
 func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncBomToPLM(v bool) {
 	o.CanCurrentUserSyncBomToPLM = &v
+}
+
+// GetCanCurrentUserSyncDrawingToPLM returns the CanCurrentUserSyncDrawingToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncDrawingToPLM() bool {
+	if o == nil || o.CanCurrentUserSyncDrawingToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCurrentUserSyncDrawingToPLM
+}
+
+// GetCanCurrentUserSyncDrawingToPLMOk returns a tuple with the CanCurrentUserSyncDrawingToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetCanCurrentUserSyncDrawingToPLMOk() (*bool, bool) {
+	if o == nil || o.CanCurrentUserSyncDrawingToPLM == nil {
+		return nil, false
+	}
+	return o.CanCurrentUserSyncDrawingToPLM, true
+}
+
+// HasCanCurrentUserSyncDrawingToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasCanCurrentUserSyncDrawingToPLM() bool {
+	if o != nil && o.CanCurrentUserSyncDrawingToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCurrentUserSyncDrawingToPLM gets a reference to the given bool and assigns it to the CanCurrentUserSyncDrawingToPLM field.
+func (o *BTActiveWorkflowInfo) SetCanCurrentUserSyncDrawingToPLM(v bool) {
+	o.CanCurrentUserSyncDrawingToPLM = &v
 }
 
 // GetCanCurrentUserSyncRevisionsToArena returns the CanCurrentUserSyncRevisionsToArena field value if set, zero value otherwise.
@@ -1359,6 +1392,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanCurrentUserSyncBomToPLM != nil {
 		toSerialize["canCurrentUserSyncBomToPLM"] = o.CanCurrentUserSyncBomToPLM
+	}
+	if o.CanCurrentUserSyncDrawingToPLM != nil {
+		toSerialize["canCurrentUserSyncDrawingToPLM"] = o.CanCurrentUserSyncDrawingToPLM
 	}
 	if o.CanCurrentUserSyncRevisionsToArena != nil {
 		toSerialize["canCurrentUserSyncRevisionsToArena"] = o.CanCurrentUserSyncRevisionsToArena

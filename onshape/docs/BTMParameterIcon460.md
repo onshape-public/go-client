@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **HasError** | Pointer to **bool** |  | [optional] 
+**HasWarning** | Pointer to **bool** |  | [optional] 
 **Icon** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** |  | [optional] 
 **Link** | Pointer to **string** |  | [optional] 
@@ -79,6 +80,31 @@ SetHasError sets HasError field to given value.
 `func (o *BTMParameterIcon460) HasHasError() bool`
 
 HasHasError returns a boolean if a field has been set.
+
+### GetHasWarning
+
+`func (o *BTMParameterIcon460) GetHasWarning() bool`
+
+GetHasWarning returns the HasWarning field if non-nil, zero value otherwise.
+
+### GetHasWarningOk
+
+`func (o *BTMParameterIcon460) GetHasWarningOk() (*bool, bool)`
+
+GetHasWarningOk returns a tuple with the HasWarning field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasWarning
+
+`func (o *BTMParameterIcon460) SetHasWarning(v bool)`
+
+SetHasWarning sets HasWarning field to given value.
+
+### HasHasWarning
+
+`func (o *BTMParameterIcon460) HasHasWarning() bool`
+
+HasHasWarning returns a boolean if a field has been set.
 
 ### GetIcon
 
