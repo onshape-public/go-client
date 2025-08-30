@@ -32,6 +32,10 @@ type BTDocumentParams struct {
 	Name *string `json:"name,omitempty"`
 	// Set to `true` to indicate that revisions are not managed for this document.
 	NotRevisionManaged *bool `json:"notRevisionManaged,omitempty"`
+	// Document notes.
+	Notes *string `json:"notes,omitempty"`
+	// Historical document notes.
+	OldClientNotes *string `json:"oldClientNotes,omitempty"`
 	// The document owner's email address.
 	OwnerEmail *string `json:"ownerEmail,omitempty"`
 	// If `ownerType=USER`, this is the user ID. If `ownerType=COMPANY`, this is the company ID.
@@ -323,6 +327,70 @@ func (o *BTDocumentParams) SetNotRevisionManaged(v bool) {
 	o.NotRevisionManaged = &v
 }
 
+// GetNotes returns the Notes field value if set, zero value otherwise.
+func (o *BTDocumentParams) GetNotes() string {
+	if o == nil || o.Notes == nil {
+		var ret string
+		return ret
+	}
+	return *o.Notes
+}
+
+// GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentParams) GetNotesOk() (*string, bool) {
+	if o == nil || o.Notes == nil {
+		return nil, false
+	}
+	return o.Notes, true
+}
+
+// HasNotes returns a boolean if a field has been set.
+func (o *BTDocumentParams) HasNotes() bool {
+	if o != nil && o.Notes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNotes gets a reference to the given string and assigns it to the Notes field.
+func (o *BTDocumentParams) SetNotes(v string) {
+	o.Notes = &v
+}
+
+// GetOldClientNotes returns the OldClientNotes field value if set, zero value otherwise.
+func (o *BTDocumentParams) GetOldClientNotes() string {
+	if o == nil || o.OldClientNotes == nil {
+		var ret string
+		return ret
+	}
+	return *o.OldClientNotes
+}
+
+// GetOldClientNotesOk returns a tuple with the OldClientNotes field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentParams) GetOldClientNotesOk() (*string, bool) {
+	if o == nil || o.OldClientNotes == nil {
+		return nil, false
+	}
+	return o.OldClientNotes, true
+}
+
+// HasOldClientNotes returns a boolean if a field has been set.
+func (o *BTDocumentParams) HasOldClientNotes() bool {
+	if o != nil && o.OldClientNotes != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOldClientNotes gets a reference to the given string and assigns it to the OldClientNotes field.
+func (o *BTDocumentParams) SetOldClientNotes(v string) {
+	o.OldClientNotes = &v
+}
+
 // GetOwnerEmail returns the OwnerEmail field value if set, zero value otherwise.
 func (o *BTDocumentParams) GetOwnerEmail() string {
 	if o == nil || o.OwnerEmail == nil {
@@ -540,6 +608,12 @@ func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.NotRevisionManaged != nil {
 		toSerialize["notRevisionManaged"] = o.NotRevisionManaged
+	}
+	if o.Notes != nil {
+		toSerialize["notes"] = o.Notes
+	}
+	if o.OldClientNotes != nil {
+		toSerialize["oldClientNotes"] = o.OldClientNotes
 	}
 	if o.OwnerEmail != nil {
 		toSerialize["ownerEmail"] = o.OwnerEmail

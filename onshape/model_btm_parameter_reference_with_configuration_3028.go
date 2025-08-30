@@ -752,6 +752,56 @@ func (o *BTMParameterReferenceWithConfiguration3028) SetParameterId(v string) {
 	o.GetActualInstance().(getResult).SetParameterId(v)
 }
 
+// GetParameterName returns the ParameterName field value if set, zero value otherwise.
+func (o *BTMParameterReferenceWithConfiguration3028) GetParameterName() string {
+	type getResult interface {
+		GetParameterName() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParameterName()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) GetParameterNameOk() (*string, bool) {
+	type getResult interface {
+		GetParameterNameOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParameterNameOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParameterName returns a boolean if a field has been set.
+func (o *BTMParameterReferenceWithConfiguration3028) HasParameterName() bool {
+	type getResult interface {
+		HasParameterName() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParameterName()
+	} else {
+		return false
+	}
+}
+
+// SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
+func (o *BTMParameterReferenceWithConfiguration3028) SetParameterName(v string) {
+	type getResult interface {
+		SetParameterName(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetParameterName(v)
+}
+
 // GetValueString returns the ValueString field value if set, zero value otherwise.
 func (o *BTMParameterReferenceWithConfiguration3028) GetValueString() string {
 	type getResult interface {
@@ -937,8 +987,9 @@ type base_BTMParameterReferenceWithConfiguration3028 struct {
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
-	ParameterId *string `json:"parameterId,omitempty"`
-	ValueString *string `json:"valueString,omitempty"`
+	ParameterId   *string `json:"parameterId,omitempty"`
+	ParameterName *string `json:"parameterName,omitempty"`
+	ValueString   *string `json:"valueString,omitempty"`
 }
 
 // Newbase_BTMParameterReferenceWithConfiguration3028 instantiates a new base_BTMParameterReferenceWithConfiguration3028 object
@@ -1406,6 +1457,38 @@ func (o *base_BTMParameterReferenceWithConfiguration3028) SetParameterId(v strin
 	o.ParameterId = &v
 }
 
+// GetParameterName returns the ParameterName field value if set, zero value otherwise.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetParameterName() string {
+	if o == nil || o.ParameterName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParameterName
+}
+
+// GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) GetParameterNameOk() (*string, bool) {
+	if o == nil || o.ParameterName == nil {
+		return nil, false
+	}
+	return o.ParameterName, true
+}
+
+// HasParameterName returns a boolean if a field has been set.
+func (o *base_BTMParameterReferenceWithConfiguration3028) HasParameterName() bool {
+	if o != nil && o.ParameterName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
+func (o *base_BTMParameterReferenceWithConfiguration3028) SetParameterName(v string) {
+	o.ParameterName = &v
+}
+
 // GetValueString returns the ValueString field value if set, zero value otherwise.
 func (o *base_BTMParameterReferenceWithConfiguration3028) GetValueString() string {
 	if o == nil || o.ValueString == nil {
@@ -1481,6 +1564,9 @@ func (o base_BTMParameterReferenceWithConfiguration3028) MarshalJSON() ([]byte, 
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ParameterName != nil {
+		toSerialize["parameterName"] = o.ParameterName
 	}
 	if o.ValueString != nil {
 		toSerialize["valueString"] = o.ValueString

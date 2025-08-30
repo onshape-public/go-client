@@ -46,12 +46,14 @@ type BTDerivedAssemblyMirror4204 struct {
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured                   *bool                                       `json:"suppressionConfigured,omitempty"`
 	SuppressionState                        *BTMSuppressionState1924                    `json:"suppressionState,omitempty"`
+	SuppressionStateFieldIndex              *int32                                      `json:"suppressionStateFieldIndex,omitempty"`
 	ValidRevisionReference                  *bool                                       `json:"validRevisionReference,omitempty"`
 	Version                                 *int32                                      `json:"version,omitempty"`
 	Feature                                 *BTMAssemblyFeature887                      `json:"feature,omitempty"`
 	FeatureId                               *string                                     `json:"featureId,omitempty"`
 	InstanceControlNodes                    []BTInstanceControlNode750                  `json:"instanceControlNodes,omitempty"`
 	SeedBasedParametricInstance             *bool                                       `json:"seedBasedParametricInstance,omitempty"`
+	AssemblyReferenceParameter              *BTMParameterReferenceWithConfiguration3028 `json:"assemblyReferenceParameter,omitempty"`
 	Configuration                           []BTMParameter1                             `json:"configuration,omitempty"`
 	DocumentId                              *string                                     `json:"documentId,omitempty"`
 	ElementId                               *string                                     `json:"elementId,omitempty"`
@@ -949,6 +951,38 @@ func (o *BTDerivedAssemblyMirror4204) SetSuppressionState(v BTMSuppressionState1
 	o.SuppressionState = &v
 }
 
+// GetSuppressionStateFieldIndex returns the SuppressionStateFieldIndex field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionStateFieldIndex() int32 {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SuppressionStateFieldIndex
+}
+
+// GetSuppressionStateFieldIndexOk returns a tuple with the SuppressionStateFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetSuppressionStateFieldIndexOk() (*int32, bool) {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		return nil, false
+	}
+	return o.SuppressionStateFieldIndex, true
+}
+
+// HasSuppressionStateFieldIndex returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasSuppressionStateFieldIndex() bool {
+	if o != nil && o.SuppressionStateFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionStateFieldIndex gets a reference to the given int32 and assigns it to the SuppressionStateFieldIndex field.
+func (o *BTDerivedAssemblyMirror4204) SetSuppressionStateFieldIndex(v int32) {
+	o.SuppressionStateFieldIndex = &v
+}
+
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
 func (o *BTDerivedAssemblyMirror4204) GetValidRevisionReference() bool {
 	if o == nil || o.ValidRevisionReference == nil {
@@ -1139,6 +1173,38 @@ func (o *BTDerivedAssemblyMirror4204) HasSeedBasedParametricInstance() bool {
 // SetSeedBasedParametricInstance gets a reference to the given bool and assigns it to the SeedBasedParametricInstance field.
 func (o *BTDerivedAssemblyMirror4204) SetSeedBasedParametricInstance(v bool) {
 	o.SeedBasedParametricInstance = &v
+}
+
+// GetAssemblyReferenceParameter returns the AssemblyReferenceParameter field value if set, zero value otherwise.
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
+	if o == nil || o.AssemblyReferenceParameter == nil {
+		var ret BTMParameterReferenceWithConfiguration3028
+		return ret
+	}
+	return *o.AssemblyReferenceParameter
+}
+
+// GetAssemblyReferenceParameterOk returns a tuple with the AssemblyReferenceParameter field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDerivedAssemblyMirror4204) GetAssemblyReferenceParameterOk() (*BTMParameterReferenceWithConfiguration3028, bool) {
+	if o == nil || o.AssemblyReferenceParameter == nil {
+		return nil, false
+	}
+	return o.AssemblyReferenceParameter, true
+}
+
+// HasAssemblyReferenceParameter returns a boolean if a field has been set.
+func (o *BTDerivedAssemblyMirror4204) HasAssemblyReferenceParameter() bool {
+	if o != nil && o.AssemblyReferenceParameter != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyReferenceParameter gets a reference to the given BTMParameterReferenceWithConfiguration3028 and assigns it to the AssemblyReferenceParameter field.
+func (o *BTDerivedAssemblyMirror4204) SetAssemblyReferenceParameter(v BTMParameterReferenceWithConfiguration3028) {
+	o.AssemblyReferenceParameter = &v
 }
 
 // GetConfiguration returns the Configuration field value if set, zero value otherwise.
@@ -1680,6 +1746,9 @@ func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	if o.SuppressionState != nil {
 		toSerialize["suppressionState"] = o.SuppressionState
 	}
+	if o.SuppressionStateFieldIndex != nil {
+		toSerialize["suppressionStateFieldIndex"] = o.SuppressionStateFieldIndex
+	}
 	if o.ValidRevisionReference != nil {
 		toSerialize["validRevisionReference"] = o.ValidRevisionReference
 	}
@@ -1697,6 +1766,9 @@ func (o BTDerivedAssemblyMirror4204) MarshalJSON() ([]byte, error) {
 	}
 	if o.SeedBasedParametricInstance != nil {
 		toSerialize["seedBasedParametricInstance"] = o.SeedBasedParametricInstance
+	}
+	if o.AssemblyReferenceParameter != nil {
+		toSerialize["assemblyReferenceParameter"] = o.AssemblyReferenceParameter
 	}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration

@@ -21,13 +21,14 @@ type BTExportModelFace1363 struct {
 	Area                     *float64           `json:"area,omitempty"`
 	Box                      *BTBoundingBox1052 `json:"box,omitempty"`
 	// Type of JSON object.
-	BtType         *string                      `json:"btType,omitempty"`
-	DecalIdToDecal *map[string]BTDecal2404      `json:"decalIdToDecal,omitempty"`
-	FaceProperties *BTExportModelProperties3216 `json:"faceProperties,omitempty"`
-	Id             *string                      `json:"id,omitempty"`
-	Loops          []BTExportModelLoop1182      `json:"loops,omitempty"`
-	Orientation    *bool                        `json:"orientation,omitempty"`
-	Surface        *BTSurfaceDescription1564    `json:"surface,omitempty"`
+	BtType                 *string                       `json:"btType,omitempty"`
+	CosmeticThreadMetadata *BTCosmeticThreadMetadata3248 `json:"cosmeticThreadMetadata,omitempty"`
+	DecalIdToDecal         *map[string]BTDecal2404       `json:"decalIdToDecal,omitempty"`
+	FaceProperties         *BTExportModelProperties3216  `json:"faceProperties,omitempty"`
+	Id                     *string                       `json:"id,omitempty"`
+	Loops                  []BTExportModelLoop1182       `json:"loops,omitempty"`
+	Orientation            *bool                         `json:"orientation,omitempty"`
+	Surface                *BTSurfaceDescription1564     `json:"surface,omitempty"`
 }
 
 // NewBTExportModelFace1363 instantiates a new BTExportModelFace1363 object
@@ -173,6 +174,38 @@ func (o *BTExportModelFace1363) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTExportModelFace1363) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCosmeticThreadMetadata returns the CosmeticThreadMetadata field value if set, zero value otherwise.
+func (o *BTExportModelFace1363) GetCosmeticThreadMetadata() BTCosmeticThreadMetadata3248 {
+	if o == nil || o.CosmeticThreadMetadata == nil {
+		var ret BTCosmeticThreadMetadata3248
+		return ret
+	}
+	return *o.CosmeticThreadMetadata
+}
+
+// GetCosmeticThreadMetadataOk returns a tuple with the CosmeticThreadMetadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExportModelFace1363) GetCosmeticThreadMetadataOk() (*BTCosmeticThreadMetadata3248, bool) {
+	if o == nil || o.CosmeticThreadMetadata == nil {
+		return nil, false
+	}
+	return o.CosmeticThreadMetadata, true
+}
+
+// HasCosmeticThreadMetadata returns a boolean if a field has been set.
+func (o *BTExportModelFace1363) HasCosmeticThreadMetadata() bool {
+	if o != nil && o.CosmeticThreadMetadata != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCosmeticThreadMetadata gets a reference to the given BTCosmeticThreadMetadata3248 and assigns it to the CosmeticThreadMetadata field.
+func (o *BTExportModelFace1363) SetCosmeticThreadMetadata(v BTCosmeticThreadMetadata3248) {
+	o.CosmeticThreadMetadata = &v
 }
 
 // GetDecalIdToDecal returns the DecalIdToDecal field value if set, zero value otherwise.
@@ -380,6 +413,9 @@ func (o BTExportModelFace1363) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CosmeticThreadMetadata != nil {
+		toSerialize["cosmeticThreadMetadata"] = o.CosmeticThreadMetadata
 	}
 	if o.DecalIdToDecal != nil {
 		toSerialize["decalIdToDecal"] = o.DecalIdToDecal

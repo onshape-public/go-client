@@ -236,6 +236,7 @@ docs/BTClassroomInfo.md
 docs/BTClassroomInfoAllOf.md
 docs/BTClonedInstance2505.md
 docs/BTClonedInstance2505AllOf.md
+docs/BTClosedCompositeConstituentFilter2804.md
 docs/BTClosedConstituentPartData2911.md
 docs/BTClosedCurveFilter1206.md
 docs/BTClosedCurveFilter1206AllOf.md
@@ -476,6 +477,7 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
+docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -579,6 +581,7 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
+docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -776,9 +779,11 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
+docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
+docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -1187,7 +1192,6 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
-docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1700,6 +1704,7 @@ model_bt_centerline_dimension_display_data_1798.go
 model_bt_circle_description_1145.go
 model_bt_classroom_info.go
 model_bt_cloned_instance_2505.go
+model_bt_closed_composite_constituent_filter_2804.go
 model_bt_closed_constituent_part_data_2911.go
 model_bt_closed_curve_filter_1206.go
 model_bt_cloud_storage_account_info.go

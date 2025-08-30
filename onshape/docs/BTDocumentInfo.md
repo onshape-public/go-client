@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
 **CanCreateTaskViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
+**CanExportViaConnectionGlobalPermisison** | Pointer to **bool** |  | [optional] 
 **CanImportViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
@@ -55,6 +56,7 @@ Name | Type | Description | Notes
 **Public** | Pointer to **bool** |  | [optional] 
 **PublishedVersionId** | Pointer to **string** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
+**RequireApprovedDrawingTemplatesPreference** | Pointer to **bool** |  | [optional] 
 **ResourceType** | Pointer to **string** |  | [optional] 
 **Sequence** | Pointer to **string** |  | [optional] 
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
@@ -163,6 +165,31 @@ SetCanCreateTaskViaConnectionGlobalPermission sets CanCreateTaskViaConnectionGlo
 `func (o *BTDocumentInfo) HasCanCreateTaskViaConnectionGlobalPermission() bool`
 
 HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
+
+### GetCanExportViaConnectionGlobalPermisison
+
+`func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisison() bool`
+
+GetCanExportViaConnectionGlobalPermisison returns the CanExportViaConnectionGlobalPermisison field if non-nil, zero value otherwise.
+
+### GetCanExportViaConnectionGlobalPermisisonOk
+
+`func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool)`
+
+GetCanExportViaConnectionGlobalPermisisonOk returns a tuple with the CanExportViaConnectionGlobalPermisison field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanExportViaConnectionGlobalPermisison
+
+`func (o *BTDocumentInfo) SetCanExportViaConnectionGlobalPermisison(v bool)`
+
+SetCanExportViaConnectionGlobalPermisison sets CanExportViaConnectionGlobalPermisison field to given value.
+
+### HasCanExportViaConnectionGlobalPermisison
+
+`func (o *BTDocumentInfo) HasCanExportViaConnectionGlobalPermisison() bool`
+
+HasCanExportViaConnectionGlobalPermisison returns a boolean if a field has been set.
 
 ### GetCanImportViaConnectionGlobalPermission
 
@@ -1363,6 +1390,31 @@ SetRecentVersion sets RecentVersion field to given value.
 `func (o *BTDocumentInfo) HasRecentVersion() bool`
 
 HasRecentVersion returns a boolean if a field has been set.
+
+### GetRequireApprovedDrawingTemplatesPreference
+
+`func (o *BTDocumentInfo) GetRequireApprovedDrawingTemplatesPreference() bool`
+
+GetRequireApprovedDrawingTemplatesPreference returns the RequireApprovedDrawingTemplatesPreference field if non-nil, zero value otherwise.
+
+### GetRequireApprovedDrawingTemplatesPreferenceOk
+
+`func (o *BTDocumentInfo) GetRequireApprovedDrawingTemplatesPreferenceOk() (*bool, bool)`
+
+GetRequireApprovedDrawingTemplatesPreferenceOk returns a tuple with the RequireApprovedDrawingTemplatesPreference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequireApprovedDrawingTemplatesPreference
+
+`func (o *BTDocumentInfo) SetRequireApprovedDrawingTemplatesPreference(v bool)`
+
+SetRequireApprovedDrawingTemplatesPreference sets RequireApprovedDrawingTemplatesPreference field to given value.
+
+### HasRequireApprovedDrawingTemplatesPreference
+
+`func (o *BTDocumentInfo) HasRequireApprovedDrawingTemplatesPreference() bool`
+
+HasRequireApprovedDrawingTemplatesPreference returns a boolean if a field has been set.
 
 ### GetResourceType
 

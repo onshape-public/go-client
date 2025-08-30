@@ -81,10 +81,12 @@ type BTDocumentProcessingInfo struct {
 	TrashedAt                                  *JSONTime                     `json:"trashedAt,omitempty"`
 	UserAccountLimitsBreached                  *bool                         `json:"userAccountLimitsBreached,omitempty"`
 	CanCreateTaskViaConnectionGlobalPermission *bool                         `json:"canCreateTaskViaConnectionGlobalPermission,omitempty"`
+	CanExportViaConnectionGlobalPermisison     *bool                         `json:"canExportViaConnectionGlobalPermisison,omitempty"`
 	CanImportViaConnectionGlobalPermission     *bool                         `json:"canImportViaConnectionGlobalPermission,omitempty"`
 	DocumentThumbnailElementId                 *string                       `json:"documentThumbnailElementId,omitempty"`
 	DuplicateNameViolationError                *string                       `json:"duplicateNameViolationError,omitempty"`
 	IsUpgradedToLatestVersion                  *bool                         `json:"isUpgradedToLatestVersion,omitempty"`
+	RequireApprovedDrawingTemplatesPreference  *bool                         `json:"requireApprovedDrawingTemplatesPreference,omitempty"`
 	TracingEnabled                             *bool                         `json:"tracingEnabled,omitempty"`
 	TranslationEventKey                        *string                       `json:"translationEventKey,omitempty"`
 	TranslationId                              *string                       `json:"translationId,omitempty"`
@@ -2052,6 +2054,38 @@ func (o *BTDocumentProcessingInfo) SetCanCreateTaskViaConnectionGlobalPermission
 	o.CanCreateTaskViaConnectionGlobalPermission = &v
 }
 
+// GetCanExportViaConnectionGlobalPermisison returns the CanExportViaConnectionGlobalPermisison field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetCanExportViaConnectionGlobalPermisison() bool {
+	if o == nil || o.CanExportViaConnectionGlobalPermisison == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanExportViaConnectionGlobalPermisison
+}
+
+// GetCanExportViaConnectionGlobalPermisisonOk returns a tuple with the CanExportViaConnectionGlobalPermisison field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool) {
+	if o == nil || o.CanExportViaConnectionGlobalPermisison == nil {
+		return nil, false
+	}
+	return o.CanExportViaConnectionGlobalPermisison, true
+}
+
+// HasCanExportViaConnectionGlobalPermisison returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasCanExportViaConnectionGlobalPermisison() bool {
+	if o != nil && o.CanExportViaConnectionGlobalPermisison != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanExportViaConnectionGlobalPermisison gets a reference to the given bool and assigns it to the CanExportViaConnectionGlobalPermisison field.
+func (o *BTDocumentProcessingInfo) SetCanExportViaConnectionGlobalPermisison(v bool) {
+	o.CanExportViaConnectionGlobalPermisison = &v
+}
+
 // GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
 func (o *BTDocumentProcessingInfo) GetCanImportViaConnectionGlobalPermission() bool {
 	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
@@ -2178,6 +2212,38 @@ func (o *BTDocumentProcessingInfo) HasIsUpgradedToLatestVersion() bool {
 // SetIsUpgradedToLatestVersion gets a reference to the given bool and assigns it to the IsUpgradedToLatestVersion field.
 func (o *BTDocumentProcessingInfo) SetIsUpgradedToLatestVersion(v bool) {
 	o.IsUpgradedToLatestVersion = &v
+}
+
+// GetRequireApprovedDrawingTemplatesPreference returns the RequireApprovedDrawingTemplatesPreference field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetRequireApprovedDrawingTemplatesPreference() bool {
+	if o == nil || o.RequireApprovedDrawingTemplatesPreference == nil {
+		var ret bool
+		return ret
+	}
+	return *o.RequireApprovedDrawingTemplatesPreference
+}
+
+// GetRequireApprovedDrawingTemplatesPreferenceOk returns a tuple with the RequireApprovedDrawingTemplatesPreference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetRequireApprovedDrawingTemplatesPreferenceOk() (*bool, bool) {
+	if o == nil || o.RequireApprovedDrawingTemplatesPreference == nil {
+		return nil, false
+	}
+	return o.RequireApprovedDrawingTemplatesPreference, true
+}
+
+// HasRequireApprovedDrawingTemplatesPreference returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasRequireApprovedDrawingTemplatesPreference() bool {
+	if o != nil && o.RequireApprovedDrawingTemplatesPreference != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireApprovedDrawingTemplatesPreference gets a reference to the given bool and assigns it to the RequireApprovedDrawingTemplatesPreference field.
+func (o *BTDocumentProcessingInfo) SetRequireApprovedDrawingTemplatesPreference(v bool) {
+	o.RequireApprovedDrawingTemplatesPreference = &v
 }
 
 // GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
@@ -2461,6 +2527,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	if o.CanCreateTaskViaConnectionGlobalPermission != nil {
 		toSerialize["canCreateTaskViaConnectionGlobalPermission"] = o.CanCreateTaskViaConnectionGlobalPermission
 	}
+	if o.CanExportViaConnectionGlobalPermisison != nil {
+		toSerialize["canExportViaConnectionGlobalPermisison"] = o.CanExportViaConnectionGlobalPermisison
+	}
 	if o.CanImportViaConnectionGlobalPermission != nil {
 		toSerialize["canImportViaConnectionGlobalPermission"] = o.CanImportViaConnectionGlobalPermission
 	}
@@ -2472,6 +2541,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsUpgradedToLatestVersion != nil {
 		toSerialize["isUpgradedToLatestVersion"] = o.IsUpgradedToLatestVersion
+	}
+	if o.RequireApprovedDrawingTemplatesPreference != nil {
+		toSerialize["requireApprovedDrawingTemplatesPreference"] = o.RequireApprovedDrawingTemplatesPreference
 	}
 	if o.TracingEnabled != nil {
 		toSerialize["tracingEnabled"] = o.TracingEnabled

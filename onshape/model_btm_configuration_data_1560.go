@@ -19,13 +19,14 @@ type BTMConfigurationData1560 struct {
 	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion         *string                        `json:"importMicroversion,omitempty"`
-	NodeId                     *string                        `json:"nodeId,omitempty"`
-	ConfigurationParameters    []BTMConfigurationParameter819 `json:"configurationParameters,omitempty"`
-	CosmeticParameterIds       []string                       `json:"cosmeticParameterIds,omitempty"`
-	CurrentConfiguration       []BTMParameter1                `json:"currentConfiguration,omitempty"`
-	CurrentFSValues            *map[string]BTFSValue1888      `json:"currentFSValues,omitempty"`
-	DefaultConfigurationValues *map[string]BTFSValue1888      `json:"defaultConfigurationValues,omitempty"`
+	ImportMicroversion                *string                        `json:"importMicroversion,omitempty"`
+	NodeId                            *string                        `json:"nodeId,omitempty"`
+	ConfigurationParameters           []BTMConfigurationParameter819 `json:"configurationParameters,omitempty"`
+	CosmeticParameterIds              []string                       `json:"cosmeticParameterIds,omitempty"`
+	CurrentConfiguration              []BTMParameter1                `json:"currentConfiguration,omitempty"`
+	CurrentFSValues                   *map[string]BTFSValue1888      `json:"currentFSValues,omitempty"`
+	DefaultConfigurationValues        *map[string]BTFSValue1888      `json:"defaultConfigurationValues,omitempty"`
+	SyncAndPassthroughReferenceNodeId *string                        `json:"syncAndPassthroughReferenceNodeId,omitempty"`
 }
 
 // NewBTMConfigurationData1560 instantiates a new BTMConfigurationData1560 object
@@ -301,6 +302,38 @@ func (o *BTMConfigurationData1560) SetDefaultConfigurationValues(v map[string]BT
 	o.DefaultConfigurationValues = &v
 }
 
+// GetSyncAndPassthroughReferenceNodeId returns the SyncAndPassthroughReferenceNodeId field value if set, zero value otherwise.
+func (o *BTMConfigurationData1560) GetSyncAndPassthroughReferenceNodeId() string {
+	if o == nil || o.SyncAndPassthroughReferenceNodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SyncAndPassthroughReferenceNodeId
+}
+
+// GetSyncAndPassthroughReferenceNodeIdOk returns a tuple with the SyncAndPassthroughReferenceNodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationData1560) GetSyncAndPassthroughReferenceNodeIdOk() (*string, bool) {
+	if o == nil || o.SyncAndPassthroughReferenceNodeId == nil {
+		return nil, false
+	}
+	return o.SyncAndPassthroughReferenceNodeId, true
+}
+
+// HasSyncAndPassthroughReferenceNodeId returns a boolean if a field has been set.
+func (o *BTMConfigurationData1560) HasSyncAndPassthroughReferenceNodeId() bool {
+	if o != nil && o.SyncAndPassthroughReferenceNodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSyncAndPassthroughReferenceNodeId gets a reference to the given string and assigns it to the SyncAndPassthroughReferenceNodeId field.
+func (o *BTMConfigurationData1560) SetSyncAndPassthroughReferenceNodeId(v string) {
+	o.SyncAndPassthroughReferenceNodeId = &v
+}
+
 func (o BTMConfigurationData1560) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -334,6 +367,9 @@ func (o BTMConfigurationData1560) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultConfigurationValues != nil {
 		toSerialize["defaultConfigurationValues"] = o.DefaultConfigurationValues
+	}
+	if o.SyncAndPassthroughReferenceNodeId != nil {
+		toSerialize["syncAndPassthroughReferenceNodeId"] = o.SyncAndPassthroughReferenceNodeId
 	}
 	return json.Marshal(toSerialize)
 }

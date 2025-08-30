@@ -40,6 +40,11 @@ func (o *BTAllowFlattenedGeometryFilter2140) AsBTQueryFilter183() *BTQueryFilter
 	return &BTQueryFilter183{o}
 }
 
+// BTClosedCompositeConstituentFilter2804AsBTQueryFilter183 is a convenience function that returns BTClosedCompositeConstituentFilter2804 wrapped in BTQueryFilter183
+func (o *BTClosedCompositeConstituentFilter2804) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
 // BTSketchSolveStatusFilter3657AsBTQueryFilter183 is a convenience function that returns BTSketchSolveStatusFilter3657 wrapped in BTQueryFilter183
 func (o *BTSketchSolveStatusFilter3657) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
@@ -362,6 +367,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTBodyTypeFilter112: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTClosedCompositeConstituentFilter-2804'
+	if jsonDict["btType"] == "BTClosedCompositeConstituentFilter-2804" {
+		// try to unmarshal JSON data into BTClosedCompositeConstituentFilter2804
+		var qr *BTClosedCompositeConstituentFilter2804
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTClosedCompositeConstituentFilter2804: %s", err.Error())
 		}
 	}
 

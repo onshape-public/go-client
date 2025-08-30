@@ -41,6 +41,14 @@
 
 * `BTSearchEntityTypeFolder` (value: `"folder"`)
 
+* `BTSearchEntityTypeClassroomItem` (value: `"classroom_item"`)
+
+* `BTSearchEntityTypeClassroom` (value: `"classroom"`)
+
+* `BTSearchEntityTypeAssignment` (value: `"assignment"`)
+
+* `BTSearchEntityTypeSubmission` (value: `"submission"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -23,14 +23,15 @@ type BTMIndividualParametricQuery3477 struct {
 	GenerateSectionEntityQuery *bool                      `json:"generateSectionEntityQuery,omitempty"`
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string                    `json:"importMicroversion,omitempty"`
-	NodeId             *string                    `json:"nodeId,omitempty"`
-	PersistentQuery    *BTPStatement269           `json:"persistentQuery,omitempty"`
-	Query              *BTMIndividualQueryBase139 `json:"query,omitempty"`
-	QueryStatement     *BTPStatement269           `json:"queryStatement,omitempty"`
-	QueryString        *string                    `json:"queryString,omitempty"`
-	VariableName       *BTMIndividualQuery138     `json:"variableName,omitempty"`
-	QueryVariableName  *string                    `json:"queryVariableName,omitempty"`
+	ImportMicroversion       *string                    `json:"importMicroversion,omitempty"`
+	NodeId                   *string                    `json:"nodeId,omitempty"`
+	PersistentQuery          *BTPStatement269           `json:"persistentQuery,omitempty"`
+	Query                    *BTMIndividualQueryBase139 `json:"query,omitempty"`
+	QueryStatement           *BTPStatement269           `json:"queryStatement,omitempty"`
+	QueryString              *string                    `json:"queryString,omitempty"`
+	VariableName             *BTMIndividualQuery138     `json:"variableName,omitempty"`
+	EscapedQueryVariableName *string                    `json:"escapedQueryVariableName,omitempty"`
+	QueryVariableName        *string                    `json:"queryVariableName,omitempty"`
 }
 
 // NewBTMIndividualParametricQuery3477 instantiates a new BTMIndividualParametricQuery3477 object
@@ -434,6 +435,38 @@ func (o *BTMIndividualParametricQuery3477) SetVariableName(v BTMIndividualQuery1
 	o.VariableName = &v
 }
 
+// GetEscapedQueryVariableName returns the EscapedQueryVariableName field value if set, zero value otherwise.
+func (o *BTMIndividualParametricQuery3477) GetEscapedQueryVariableName() string {
+	if o == nil || o.EscapedQueryVariableName == nil {
+		var ret string
+		return ret
+	}
+	return *o.EscapedQueryVariableName
+}
+
+// GetEscapedQueryVariableNameOk returns a tuple with the EscapedQueryVariableName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMIndividualParametricQuery3477) GetEscapedQueryVariableNameOk() (*string, bool) {
+	if o == nil || o.EscapedQueryVariableName == nil {
+		return nil, false
+	}
+	return o.EscapedQueryVariableName, true
+}
+
+// HasEscapedQueryVariableName returns a boolean if a field has been set.
+func (o *BTMIndividualParametricQuery3477) HasEscapedQueryVariableName() bool {
+	if o != nil && o.EscapedQueryVariableName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEscapedQueryVariableName gets a reference to the given string and assigns it to the EscapedQueryVariableName field.
+func (o *BTMIndividualParametricQuery3477) SetEscapedQueryVariableName(v string) {
+	o.EscapedQueryVariableName = &v
+}
+
 // GetQueryVariableName returns the QueryVariableName field value if set, zero value otherwise.
 func (o *BTMIndividualParametricQuery3477) GetQueryVariableName() string {
 	if o == nil || o.QueryVariableName == nil {
@@ -511,6 +544,9 @@ func (o BTMIndividualParametricQuery3477) MarshalJSON() ([]byte, error) {
 	}
 	if o.VariableName != nil {
 		toSerialize["variableName"] = o.VariableName
+	}
+	if o.EscapedQueryVariableName != nil {
+		toSerialize["escapedQueryVariableName"] = o.EscapedQueryVariableName
 	}
 	if o.QueryVariableName != nil {
 		toSerialize["queryVariableName"] = o.QueryVariableName

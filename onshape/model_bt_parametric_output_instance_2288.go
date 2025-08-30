@@ -1397,6 +1397,56 @@ func (o *BTParametricOutputInstance2288) SetSuppressionState(v BTMSuppressionSta
 	o.GetActualInstance().(getResult).SetSuppressionState(v)
 }
 
+// GetSuppressionStateFieldIndex returns the SuppressionStateFieldIndex field value if set, zero value otherwise.
+func (o *BTParametricOutputInstance2288) GetSuppressionStateFieldIndex() int32 {
+	type getResult interface {
+		GetSuppressionStateFieldIndex() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionStateFieldIndex()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetSuppressionStateFieldIndexOk returns a tuple with the SuppressionStateFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricOutputInstance2288) GetSuppressionStateFieldIndexOk() (*int32, bool) {
+	type getResult interface {
+		GetSuppressionStateFieldIndexOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionStateFieldIndexOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSuppressionStateFieldIndex returns a boolean if a field has been set.
+func (o *BTParametricOutputInstance2288) HasSuppressionStateFieldIndex() bool {
+	type getResult interface {
+		HasSuppressionStateFieldIndex() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSuppressionStateFieldIndex()
+	} else {
+		return false
+	}
+}
+
+// SetSuppressionStateFieldIndex gets a reference to the given int32 and assigns it to the SuppressionStateFieldIndex field.
+func (o *BTParametricOutputInstance2288) SetSuppressionStateFieldIndex(v int32) {
+	type getResult interface {
+		SetSuppressionStateFieldIndex(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetSuppressionStateFieldIndex(v)
+}
+
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
 func (o *BTParametricOutputInstance2288) GetValidRevisionReference() bool {
 	type getResult interface {
@@ -1629,10 +1679,11 @@ type base_BTParametricOutputInstance2288 struct {
 	Suppressed                        *bool                                 `json:"suppressed,omitempty"`
 	SuppressedFieldIndex              *int32                                `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
-	SuppressionConfigured  *bool                    `json:"suppressionConfigured,omitempty"`
-	SuppressionState       *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
-	ValidRevisionReference *bool                    `json:"validRevisionReference,omitempty"`
-	Version                *int32                   `json:"version,omitempty"`
+	SuppressionConfigured      *bool                    `json:"suppressionConfigured,omitempty"`
+	SuppressionState           *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
+	SuppressionStateFieldIndex *int32                   `json:"suppressionStateFieldIndex,omitempty"`
+	ValidRevisionReference     *bool                    `json:"validRevisionReference,omitempty"`
+	Version                    *int32                   `json:"version,omitempty"`
 }
 
 // Newbase_BTParametricOutputInstance2288 instantiates a new base_BTParametricOutputInstance2288 object
@@ -2516,6 +2567,38 @@ func (o *base_BTParametricOutputInstance2288) SetSuppressionState(v BTMSuppressi
 	o.SuppressionState = &v
 }
 
+// GetSuppressionStateFieldIndex returns the SuppressionStateFieldIndex field value if set, zero value otherwise.
+func (o *base_BTParametricOutputInstance2288) GetSuppressionStateFieldIndex() int32 {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SuppressionStateFieldIndex
+}
+
+// GetSuppressionStateFieldIndexOk returns a tuple with the SuppressionStateFieldIndex field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParametricOutputInstance2288) GetSuppressionStateFieldIndexOk() (*int32, bool) {
+	if o == nil || o.SuppressionStateFieldIndex == nil {
+		return nil, false
+	}
+	return o.SuppressionStateFieldIndex, true
+}
+
+// HasSuppressionStateFieldIndex returns a boolean if a field has been set.
+func (o *base_BTParametricOutputInstance2288) HasSuppressionStateFieldIndex() bool {
+	if o != nil && o.SuppressionStateFieldIndex != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionStateFieldIndex gets a reference to the given int32 and assigns it to the SuppressionStateFieldIndex field.
+func (o *base_BTParametricOutputInstance2288) SetSuppressionStateFieldIndex(v int32) {
+	o.SuppressionStateFieldIndex = &v
+}
+
 // GetValidRevisionReference returns the ValidRevisionReference field value if set, zero value otherwise.
 func (o *base_BTParametricOutputInstance2288) GetValidRevisionReference() bool {
 	if o == nil || o.ValidRevisionReference == nil {
@@ -2670,6 +2753,9 @@ func (o base_BTParametricOutputInstance2288) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressionState != nil {
 		toSerialize["suppressionState"] = o.SuppressionState
+	}
+	if o.SuppressionStateFieldIndex != nil {
+		toSerialize["suppressionStateFieldIndex"] = o.SuppressionStateFieldIndex
 	}
 	if o.ValidRevisionReference != nil {
 		toSerialize["validRevisionReference"] = o.ValidRevisionReference

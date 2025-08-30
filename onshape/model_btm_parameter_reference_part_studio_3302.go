@@ -35,6 +35,7 @@ type BTMParameterReferencePartStudio3302 struct {
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
 	ParameterId                 *string                   `json:"parameterId,omitempty"`
+	ParameterName               *string                   `json:"parameterName,omitempty"`
 	PartIdentity                *BTPSOIdentity2741        `json:"partIdentity,omitempty"`
 	PartQuery                   *BTMParameterQueryList148 `json:"partQuery,omitempty"`
 	QueryDataKey                *string                   `json:"queryDataKey,omitempty"`
@@ -539,6 +540,38 @@ func (o *BTMParameterReferencePartStudio3302) SetParameterId(v string) {
 	o.ParameterId = &v
 }
 
+// GetParameterName returns the ParameterName field value if set, zero value otherwise.
+func (o *BTMParameterReferencePartStudio3302) GetParameterName() string {
+	if o == nil || o.ParameterName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParameterName
+}
+
+// GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterReferencePartStudio3302) GetParameterNameOk() (*string, bool) {
+	if o == nil || o.ParameterName == nil {
+		return nil, false
+	}
+	return o.ParameterName, true
+}
+
+// HasParameterName returns a boolean if a field has been set.
+func (o *BTMParameterReferencePartStudio3302) HasParameterName() bool {
+	if o != nil && o.ParameterName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
+func (o *BTMParameterReferencePartStudio3302) SetParameterName(v string) {
+	o.ParameterName = &v
+}
+
 // GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
 func (o *BTMParameterReferencePartStudio3302) GetPartIdentity() BTPSOIdentity2741 {
 	if o == nil || o.PartIdentity == nil {
@@ -745,6 +778,9 @@ func (o BTMParameterReferencePartStudio3302) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ParameterName != nil {
+		toSerialize["parameterName"] = o.ParameterName
 	}
 	if o.PartIdentity != nil {
 		toSerialize["partIdentity"] = o.PartIdentity

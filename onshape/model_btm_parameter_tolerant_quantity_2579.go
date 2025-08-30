@@ -24,12 +24,13 @@ type BTMParameterTolerantQuantity2579 struct {
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
-	ParameterId *string  `json:"parameterId,omitempty"`
-	ValueString *string  `json:"valueString,omitempty"`
-	Expression  *string  `json:"expression,omitempty"`
-	IsInteger   *bool    `json:"isInteger,omitempty"`
-	Units       *string  `json:"units,omitempty"`
-	Value       *float64 `json:"value,omitempty"`
+	ParameterId   *string  `json:"parameterId,omitempty"`
+	ParameterName *string  `json:"parameterName,omitempty"`
+	ValueString   *string  `json:"valueString,omitempty"`
+	Expression    *string  `json:"expression,omitempty"`
+	IsInteger     *bool    `json:"isInteger,omitempty"`
+	Units         *string  `json:"units,omitempty"`
+	Value         *float64 `json:"value,omitempty"`
 }
 
 // NewBTMParameterTolerantQuantity2579 instantiates a new BTMParameterTolerantQuantity2579 object
@@ -207,6 +208,38 @@ func (o *BTMParameterTolerantQuantity2579) HasParameterId() bool {
 // SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
 func (o *BTMParameterTolerantQuantity2579) SetParameterId(v string) {
 	o.ParameterId = &v
+}
+
+// GetParameterName returns the ParameterName field value if set, zero value otherwise.
+func (o *BTMParameterTolerantQuantity2579) GetParameterName() string {
+	if o == nil || o.ParameterName == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParameterName
+}
+
+// GetParameterNameOk returns a tuple with the ParameterName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterTolerantQuantity2579) GetParameterNameOk() (*string, bool) {
+	if o == nil || o.ParameterName == nil {
+		return nil, false
+	}
+	return o.ParameterName, true
+}
+
+// HasParameterName returns a boolean if a field has been set.
+func (o *BTMParameterTolerantQuantity2579) HasParameterName() bool {
+	if o != nil && o.ParameterName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterName gets a reference to the given string and assigns it to the ParameterName field.
+func (o *BTMParameterTolerantQuantity2579) SetParameterName(v string) {
+	o.ParameterName = &v
 }
 
 // GetValueString returns the ValueString field value if set, zero value otherwise.
@@ -393,6 +426,9 @@ func (o BTMParameterTolerantQuantity2579) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
+	}
+	if o.ParameterName != nil {
+		toSerialize["parameterName"] = o.ParameterName
 	}
 	if o.ValueString != nil {
 		toSerialize["valueString"] = o.ValueString
