@@ -1710,7 +1710,7 @@ Name | Type | Description  | Notes
 
 ## GetNamedViews
 
-> BTNamedViewsInfo GetNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Configuration(configuration).Execute()
+> BTNamedViewsInfo GetNamedViews(ctx, did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
 
 Get the view data for all named views for the specified element.
 
@@ -1732,11 +1732,10 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     skipPerspective := true // bool |  (optional) (default to true)
     includeSectionCutViews := true // bool |  (optional) (default to false)
-    configuration := "configuration_example" // string |  (optional) (default to "")
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.AssemblyApi.GetNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Configuration(configuration).Execute()
+    resp, r, err := apiClient.AssemblyApi.GetNamedViews(context.Background(), did, eid).LinkDocumentId(linkDocumentId).SkipPerspective(skipPerspective).IncludeSectionCutViews(includeSectionCutViews).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AssemblyApi.GetNamedViews``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1767,7 +1766,6 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **skipPerspective** | **bool** |  | [default to true]
  **includeSectionCutViews** | **bool** |  | [default to false]
- **configuration** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 

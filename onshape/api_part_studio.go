@@ -3838,7 +3838,6 @@ type ApiGetPartStudioNamedViewsRequest struct {
 	linkDocumentId         *string
 	skipPerspective        *bool
 	includeSectionCutViews *bool
-	configuration          *string
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -3854,11 +3853,6 @@ func (r ApiGetPartStudioNamedViewsRequest) SkipPerspective(skipPerspective bool)
 
 func (r ApiGetPartStudioNamedViewsRequest) IncludeSectionCutViews(includeSectionCutViews bool) ApiGetPartStudioNamedViewsRequest {
 	r.includeSectionCutViews = &includeSectionCutViews
-	return r
-}
-
-func (r ApiGetPartStudioNamedViewsRequest) Configuration(configuration string) ApiGetPartStudioNamedViewsRequest {
-	r.configuration = &configuration
 	return r
 }
 
@@ -3917,9 +3911,6 @@ func (a *PartStudioApiService) GetPartStudioNamedViewsExecute(r ApiGetPartStudio
 	}
 	if r.includeSectionCutViews != nil {
 		localVarQueryParams.Add("includeSectionCutViews", parameterToString(*r.includeSectionCutViews, ""))
-	}
-	if r.configuration != nil {
-		localVarQueryParams.Add("configuration", parameterToString(*r.configuration, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
