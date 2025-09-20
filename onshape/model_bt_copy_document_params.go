@@ -14,15 +14,22 @@ import (
 	"encoding/json"
 )
 
-// BTCopyDocumentParams struct for BTCopyDocumentParams
+// BTCopyDocumentParams Options for the new copied document.
 type BTCopyDocumentParams struct {
-	IsPublic                     *bool   `json:"isPublic,omitempty"`
-	NewName                      *string `json:"newName,omitempty"`
-	OwnerId                      *string `json:"ownerId,omitempty"`
-	OwnerTypeIndex               *int32  `json:"ownerTypeIndex,omitempty"`
-	ParentId                     *string `json:"parentId,omitempty"`
-	ProjectId                    *string `json:"projectId,omitempty"`
-	RepointAppElementVersionRefs *bool   `json:"repointAppElementVersionRefs,omitempty"`
+	// `true` to make the new document public.
+	IsPublic *bool `json:"isPublic,omitempty"`
+	// Name for the new document.
+	NewName *string `json:"newName,omitempty"`
+	// Owner of the new document. Can be a [user ID](#/User/sessionInfo) or [company ID](#/Company/findCompany), depending on `ownerTypeIndex`.
+	OwnerId *string `json:"ownerId,omitempty"`
+	// Type of owner. `0: User, 1: Company`
+	OwnerTypeIndex *int32 `json:"ownerTypeIndex,omitempty"`
+	// Optionally add the new document to the specified folder. Provide the folder ID as the parent ID.
+	ParentId *string `json:"parentId,omitempty"`
+	// Optionally add the new document to the specified project.
+	ProjectId *string `json:"projectId,omitempty"`
+	// `true` to re-point version references in application elements to the initial version in the new document.
+	RepointAppElementVersionRefs *bool `json:"repointAppElementVersionRefs,omitempty"`
 }
 
 // NewBTCopyDocumentParams instantiates a new BTCopyDocumentParams object

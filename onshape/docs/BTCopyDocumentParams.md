@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IsPublic** | Pointer to **bool** |  | [optional] 
-**NewName** | Pointer to **string** |  | [optional] 
-**OwnerId** | Pointer to **string** |  | [optional] 
-**OwnerTypeIndex** | Pointer to **int32** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**ProjectId** | Pointer to **string** |  | [optional] 
-**RepointAppElementVersionRefs** | Pointer to **bool** |  | [optional] 
+**IsPublic** | Pointer to **bool** | &#x60;true&#x60; to make the new document public. | [optional] 
+**NewName** | Pointer to **string** | Name for the new document. | [optional] 
+**OwnerId** | Pointer to **string** | Owner of the new document. Can be a [user ID](#/User/sessionInfo) or [company ID](#/Company/findCompany), depending on &#x60;ownerTypeIndex&#x60;. | [optional] 
+**OwnerTypeIndex** | Pointer to **int32** | Type of owner. &#x60;0: User, 1: Company&#x60; | [optional] 
+**ParentId** | Pointer to **string** | Optionally add the new document to the specified folder. Provide the folder ID as the parent ID. | [optional] 
+**ProjectId** | Pointer to **string** | Optionally add the new document to the specified project. | [optional] 
+**RepointAppElementVersionRefs** | Pointer to **bool** | &#x60;true&#x60; to re-point version references in application elements to the initial version in the new document. | [optional] 
 
 ## Methods
 

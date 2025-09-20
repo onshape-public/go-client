@@ -24,6 +24,7 @@ type BTBillOfMaterialsItemSourceInfo struct {
 	IsStandardContent                      *bool            `json:"isStandardContent,omitempty"`
 	NonGeometricItemId                     *string          `json:"nonGeometricItemId,omitempty"`
 	PartId                                 *string          `json:"partId,omitempty"`
+	PartIdentity                           *string          `json:"partIdentity,omitempty"`
 	SourceElementMicroversionId            *string          `json:"sourceElementMicroversionId,omitempty"`
 	ThumbnailInfo                          *BTThumbnailInfo `json:"thumbnailInfo,omitempty"`
 	VersionMetadataWorkspaceMicroversionId *string          `json:"versionMetadataWorkspaceMicroversionId,omitempty"`
@@ -305,6 +306,38 @@ func (o *BTBillOfMaterialsItemSourceInfo) SetPartId(v string) {
 	o.PartId = &v
 }
 
+// GetPartIdentity returns the PartIdentity field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsItemSourceInfo) GetPartIdentity() string {
+	if o == nil || o.PartIdentity == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartIdentity
+}
+
+// GetPartIdentityOk returns a tuple with the PartIdentity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) GetPartIdentityOk() (*string, bool) {
+	if o == nil || o.PartIdentity == nil {
+		return nil, false
+	}
+	return o.PartIdentity, true
+}
+
+// HasPartIdentity returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) HasPartIdentity() bool {
+	if o != nil && o.PartIdentity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartIdentity gets a reference to the given string and assigns it to the PartIdentity field.
+func (o *BTBillOfMaterialsItemSourceInfo) SetPartIdentity(v string) {
+	o.PartIdentity = &v
+}
+
 // GetSourceElementMicroversionId returns the SourceElementMicroversionId field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsItemSourceInfo) GetSourceElementMicroversionId() string {
 	if o == nil || o.SourceElementMicroversionId == nil {
@@ -522,6 +555,9 @@ func (o BTBillOfMaterialsItemSourceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartId != nil {
 		toSerialize["partId"] = o.PartId
+	}
+	if o.PartIdentity != nil {
+		toSerialize["partIdentity"] = o.PartIdentity
 	}
 	if o.SourceElementMicroversionId != nil {
 		toSerialize["sourceElementMicroversionId"] = o.SourceElementMicroversionId

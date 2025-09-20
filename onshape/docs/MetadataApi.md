@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ## GetVEOPStandardContentMetadata
 
-> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for a standard content part.
 
@@ -130,11 +130,12 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetVEOPStandardContentMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -170,6 +171,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** |  | 
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
@@ -192,7 +194,7 @@ Name | Type | Description  | Notes
 
 ## GetWMVEMetadata
 
-> BTMetadataObjectInfo GetWMVEMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWMVEMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for an element.
 
@@ -221,11 +223,12 @@ func main() {
     depth := "depth_example" // string |  (optional) (default to "1")
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetWMVEMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWMVEMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -263,6 +266,7 @@ Name | Type | Description  | Notes
  **depth** | **string** |  | [default to &quot;1&quot;]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
@@ -285,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## GetWMVEPMetadata
 
-> BTMetadataObjectInfo GetWMVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWMVEPMetadata(ctx, did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for a part.
 
@@ -317,11 +321,12 @@ func main() {
     inferMetadataOwner := true // bool |  (optional) (default to false)
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetWMVEPMetadata(context.Background(), did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWMVEPMetadata(context.Background(), did, wvm, wvmid, eid, iden, pid).LinkDocumentId(linkDocumentId).Configuration(configuration).RollbackBarIndex(rollbackBarIndex).ElementMicroversionId(elementMicroversionId).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEPMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -364,6 +369,7 @@ Name | Type | Description  | Notes
  **inferMetadataOwner** | **bool** |  | [default to false]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
@@ -386,7 +392,7 @@ Name | Type | Description  | Notes
 
 ## GetWMVEPsMetadata
 
-> BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectListInfoBTMetadataPartInfo GetWMVEPsMetadata(ctx, did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for all parts in a document.
 
@@ -414,11 +420,12 @@ func main() {
     inferMetadataOwner := true // bool |  (optional) (default to false)
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetWMVEPsMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWMVEPsMetadata(context.Background(), did, wvm, wvmid, eid).LinkDocumentId(linkDocumentId).Configuration(configuration).InferMetadataOwner(inferMetadataOwner).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEPsMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -455,6 +462,7 @@ Name | Type | Description  | Notes
  **inferMetadataOwner** | **bool** |  | [default to false]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
@@ -477,7 +485,7 @@ Name | Type | Description  | Notes
 
 ## GetWMVEsMetadata
 
-> BTMetadataObjectListInfoBTMetadataElementInfo GetWMVEsMetadata(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectListInfoBTMetadataElementInfo GetWMVEsMetadata(ctx, did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for all elements in a document.
 
@@ -504,11 +512,12 @@ func main() {
     depth := "depth_example" // string |  (optional) (default to "1")
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetWMVEsMetadata(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWMVEsMetadata(context.Background(), did, wvm, wvmid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWMVEsMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -543,6 +552,7 @@ Name | Type | Description  | Notes
  **depth** | **string** |  | [default to &quot;1&quot;]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type
@@ -565,7 +575,7 @@ Name | Type | Description  | Notes
 
 ## GetWVMetadata
 
-> BTMetadataObjectInfo GetWVMetadata(ctx, did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetWVMetadata(ctx, did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for a workspace or version.
 
@@ -592,11 +602,12 @@ func main() {
     depth := "depth_example" // string |  (optional) (default to "1")
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
+    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetWVMetadata(context.Background(), did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetWVMetadata(context.Background(), did, wv, wvid).LinkDocumentId(linkDocumentId).InferMetadataOwner(inferMetadataOwner).Depth(depth).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetWVMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -631,6 +642,7 @@ Name | Type | Description  | Notes
  **depth** | **string** |  | [default to &quot;1&quot;]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
+ **includeApiOnlyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
 
 ### Return type

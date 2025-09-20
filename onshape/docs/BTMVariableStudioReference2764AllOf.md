@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **ReferenceId** | Pointer to **string** |  | [optional] 
 **ReferenceNamespace** | Pointer to **string** |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
+**ReferencingAnything** | Pointer to **bool** |  | [optional] 
 **UnsetAutomaticEdit** | Pointer to [**BTTreeEdit13**](BTTreeEdit13.md) |  | [optional] 
 **ValidRevisionReference** | Pointer to **bool** |  | [optional] 
 **VariableNames** | Pointer to **[]string** |  | [optional] 
@@ -339,6 +340,31 @@ SetReferenceParameter sets ReferenceParameter field to given value.
 `func (o *BTMVariableStudioReference2764AllOf) HasReferenceParameter() bool`
 
 HasReferenceParameter returns a boolean if a field has been set.
+
+### GetReferencingAnything
+
+`func (o *BTMVariableStudioReference2764AllOf) GetReferencingAnything() bool`
+
+GetReferencingAnything returns the ReferencingAnything field if non-nil, zero value otherwise.
+
+### GetReferencingAnythingOk
+
+`func (o *BTMVariableStudioReference2764AllOf) GetReferencingAnythingOk() (*bool, bool)`
+
+GetReferencingAnythingOk returns a tuple with the ReferencingAnything field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferencingAnything
+
+`func (o *BTMVariableStudioReference2764AllOf) SetReferencingAnything(v bool)`
+
+SetReferencingAnything sets ReferencingAnything field to given value.
+
+### HasReferencingAnything
+
+`func (o *BTMVariableStudioReference2764AllOf) HasReferencingAnything() bool`
+
+HasReferencingAnything returns a boolean if a field has been set.
 
 ### GetUnsetAutomaticEdit
 

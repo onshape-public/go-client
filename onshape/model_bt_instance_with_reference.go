@@ -18,6 +18,7 @@ import (
 type BTInstanceWithReference struct {
 	Configuration                           []BTMParameter1                             `json:"configuration,omitempty"`
 	CustomData                              *map[string]BTReferenceCustomData1551       `json:"customData,omitempty"`
+	DerivedAssemblyMirror                   *bool                                       `json:"derivedAssemblyMirror,omitempty"`
 	DocumentId                              *string                                     `json:"documentId,omitempty"`
 	ElementId                               *string                                     `json:"elementId,omitempty"`
 	ElementReference                        *BTElementReference725                      `json:"elementReference,omitempty"`
@@ -115,6 +116,38 @@ func (o *BTInstanceWithReference) HasCustomData() bool {
 // SetCustomData gets a reference to the given map[string]BTReferenceCustomData1551 and assigns it to the CustomData field.
 func (o *BTInstanceWithReference) SetCustomData(v map[string]BTReferenceCustomData1551) {
 	o.CustomData = &v
+}
+
+// GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field value if set, zero value otherwise.
+func (o *BTInstanceWithReference) GetDerivedAssemblyMirror() bool {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		var ret bool
+		return ret
+	}
+	return *o.DerivedAssemblyMirror
+}
+
+// GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceWithReference) GetDerivedAssemblyMirrorOk() (*bool, bool) {
+	if o == nil || o.DerivedAssemblyMirror == nil {
+		return nil, false
+	}
+	return o.DerivedAssemblyMirror, true
+}
+
+// HasDerivedAssemblyMirror returns a boolean if a field has been set.
+func (o *BTInstanceWithReference) HasDerivedAssemblyMirror() bool {
+	if o != nil && o.DerivedAssemblyMirror != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDerivedAssemblyMirror gets a reference to the given bool and assigns it to the DerivedAssemblyMirror field.
+func (o *BTInstanceWithReference) SetDerivedAssemblyMirror(v bool) {
+	o.DerivedAssemblyMirror = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -636,6 +669,9 @@ func (o BTInstanceWithReference) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomData != nil {
 		toSerialize["customData"] = o.CustomData
+	}
+	if o.DerivedAssemblyMirror != nil {
+		toSerialize["derivedAssemblyMirror"] = o.DerivedAssemblyMirror
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId

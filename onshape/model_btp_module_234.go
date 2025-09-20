@@ -28,6 +28,7 @@ type BTPModule234 struct {
 	SpaceDefault           *bool                           `json:"spaceDefault,omitempty"`
 	StartSourceLocation    *int32                          `json:"startSourceLocation,omitempty"`
 	DeepImports            *map[string][]BTImport          `json:"deepImports,omitempty"`
+	FullyParsed            *bool                           `json:"fullyParsed,omitempty"`
 	Imports                []BTPTopLevelImport285          `json:"imports,omitempty"`
 	IsBlob                 *bool                           `json:"isBlob,omitempty"`
 	IsInternalModule       *bool                           `json:"isInternalModule,omitempty"`
@@ -408,6 +409,38 @@ func (o *BTPModule234) SetDeepImports(v map[string][]BTImport) {
 	o.DeepImports = &v
 }
 
+// GetFullyParsed returns the FullyParsed field value if set, zero value otherwise.
+func (o *BTPModule234) GetFullyParsed() bool {
+	if o == nil || o.FullyParsed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FullyParsed
+}
+
+// GetFullyParsedOk returns a tuple with the FullyParsed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPModule234) GetFullyParsedOk() (*bool, bool) {
+	if o == nil || o.FullyParsed == nil {
+		return nil, false
+	}
+	return o.FullyParsed, true
+}
+
+// HasFullyParsed returns a boolean if a field has been set.
+func (o *BTPModule234) HasFullyParsed() bool {
+	if o != nil && o.FullyParsed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFullyParsed gets a reference to the given bool and assigns it to the FullyParsed field.
+func (o *BTPModule234) SetFullyParsed(v bool) {
+	o.FullyParsed = &v
+}
+
 // GetImports returns the Imports field value if set, zero value otherwise.
 func (o *BTPModule234) GetImports() []BTPTopLevelImport285 {
 	if o == nil || o.Imports == nil {
@@ -738,6 +771,9 @@ func (o BTPModule234) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeepImports != nil {
 		toSerialize["deepImports"] = o.DeepImports
+	}
+	if o.FullyParsed != nil {
+		toSerialize["fullyParsed"] = o.FullyParsed
 	}
 	if o.Imports != nil {
 		toSerialize["imports"] = o.Imports

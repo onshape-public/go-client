@@ -1699,6 +1699,7 @@ const (
 	GBTErrorStringEnumAssemblyDerivedMirrorReferenceMissing                       GBTErrorStringEnum = "ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING"
 	GBTErrorStringEnumInvalidSuppressionExpression                                GBTErrorStringEnum = "INVALID_SUPPRESSION_EXPRESSION"
 	GBTErrorStringEnumAssemblyMirrorChildHasReferenceError                        GBTErrorStringEnum = "ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR"
+	GBTErrorStringEnumThicknessNoClosedComposites                                 GBTErrorStringEnum = "THICKNESS_NO_CLOSED_COMPOSITES"
 	GBTErrorStringEnumValueWithUnitsError                                         GBTErrorStringEnum = "VALUE_WITH_UNITS_ERROR"
 	GBTErrorStringEnumRowIndexRangeError                                          GBTErrorStringEnum = "ROW_INDEX_RANGE_ERROR"
 	GBTErrorStringEnumRowIndexMinError                                            GBTErrorStringEnum = "ROW_INDEX_MIN_ERROR"
@@ -1711,6 +1712,8 @@ const (
 	GBTErrorStringEnumColIndexError                                               GBTErrorStringEnum = "COL_INDEX_ERROR"
 	GBTErrorStringEnumColLabelIndexError                                          GBTErrorStringEnum = "COL_LABEL_INDEX_ERROR"
 	GBTErrorStringEnumQueryVariableNameCannotContainQuote                         GBTErrorStringEnum = "QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE"
+	GBTErrorStringEnumDrawingEmptySectionTargetBody                               GBTErrorStringEnum = "DRAWING_EMPTY_SECTION_TARGET_BODY"
+	GBTErrorStringEnumSketchCannotEvaluatePatternParameter                        GBTErrorStringEnum = "SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3395,6 +3398,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"ASSEMBLY_DERIVED_MIRROR_REFERENCE_MISSING",
 	"INVALID_SUPPRESSION_EXPRESSION",
 	"ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR",
+	"THICKNESS_NO_CLOSED_COMPOSITES",
 	"VALUE_WITH_UNITS_ERROR",
 	"ROW_INDEX_RANGE_ERROR",
 	"ROW_INDEX_MIN_ERROR",
@@ -3407,6 +3411,8 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"COL_INDEX_ERROR",
 	"COL_LABEL_INDEX_ERROR",
 	"QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE",
+	"DRAWING_EMPTY_SECTION_TARGET_BODY",
+	"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER",
 	"UNKNOWN",
 }
 

@@ -22,6 +22,8 @@ type BTBDrawingOperationParams struct {
 	FormatVersion string `json:"formatVersion"`
 	// Type of drawing modification operation: `onshapeCreateAnnotations` | `onshapeEditAnnotations`
 	MessageName string `json:"messageName"`
+	// Other entity creation or modification parameters.
+	OtherFields map[string]interface{} `json:"otherFields,omitempty"`
 }
 
 // NewBTBDrawingOperationParams instantiates a new BTBDrawingOperationParams object
@@ -123,6 +125,38 @@ func (o *BTBDrawingOperationParams) SetMessageName(v string) {
 	o.MessageName = v
 }
 
+// GetOtherFields returns the OtherFields field value if set, zero value otherwise.
+func (o *BTBDrawingOperationParams) GetOtherFields() map[string]interface{} {
+	if o == nil || o.OtherFields == nil {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.OtherFields
+}
+
+// GetOtherFieldsOk returns a tuple with the OtherFields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBDrawingOperationParams) GetOtherFieldsOk() (map[string]interface{}, bool) {
+	if o == nil || o.OtherFields == nil {
+		return nil, false
+	}
+	return o.OtherFields, true
+}
+
+// HasOtherFields returns a boolean if a field has been set.
+func (o *BTBDrawingOperationParams) HasOtherFields() bool {
+	if o != nil && o.OtherFields != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOtherFields gets a reference to the given map[string]interface{} and assigns it to the OtherFields field.
+func (o *BTBDrawingOperationParams) SetOtherFields(v map[string]interface{}) {
+	o.OtherFields = v
+}
+
 func (o BTBDrawingOperationParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Description != nil {
@@ -133,6 +167,9 @@ func (o BTBDrawingOperationParams) MarshalJSON() ([]byte, error) {
 	}
 	if true {
 		toSerialize["messageName"] = o.MessageName
+	}
+	if o.OtherFields != nil {
+		toSerialize["otherFields"] = o.OtherFields
 	}
 	return json.Marshal(toSerialize)
 }

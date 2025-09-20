@@ -56,6 +56,7 @@ type BTMVariableStudioReference2764 struct {
 	ReferenceId             *string                                     `json:"referenceId,omitempty"`
 	ReferenceNamespace      *string                                     `json:"referenceNamespace,omitempty"`
 	ReferenceParameter      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
+	ReferencingAnything     *bool                                       `json:"referencingAnything,omitempty"`
 	UnsetAutomaticEdit      *BTTreeEdit13                               `json:"unsetAutomaticEdit,omitempty"`
 	ValidRevisionReference  *bool                                       `json:"validRevisionReference,omitempty"`
 	VariableNames           []string                                    `json:"variableNames,omitempty"`
@@ -943,6 +944,38 @@ func (o *BTMVariableStudioReference2764) SetReferenceParameter(v BTMParameterRef
 	o.ReferenceParameter = &v
 }
 
+// GetReferencingAnything returns the ReferencingAnything field value if set, zero value otherwise.
+func (o *BTMVariableStudioReference2764) GetReferencingAnything() bool {
+	if o == nil || o.ReferencingAnything == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ReferencingAnything
+}
+
+// GetReferencingAnythingOk returns a tuple with the ReferencingAnything field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMVariableStudioReference2764) GetReferencingAnythingOk() (*bool, bool) {
+	if o == nil || o.ReferencingAnything == nil {
+		return nil, false
+	}
+	return o.ReferencingAnything, true
+}
+
+// HasReferencingAnything returns a boolean if a field has been set.
+func (o *BTMVariableStudioReference2764) HasReferencingAnything() bool {
+	if o != nil && o.ReferencingAnything != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReferencingAnything gets a reference to the given bool and assigns it to the ReferencingAnything field.
+func (o *BTMVariableStudioReference2764) SetReferencingAnything(v bool) {
+	o.ReferencingAnything = &v
+}
+
 // GetUnsetAutomaticEdit returns the UnsetAutomaticEdit field value if set, zero value otherwise.
 func (o *BTMVariableStudioReference2764) GetUnsetAutomaticEdit() BTTreeEdit13 {
 	if o == nil || o.UnsetAutomaticEdit == nil {
@@ -1161,6 +1194,9 @@ func (o BTMVariableStudioReference2764) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter
+	}
+	if o.ReferencingAnything != nil {
+		toSerialize["referencingAnything"] = o.ReferencingAnything
 	}
 	if o.UnsetAutomaticEdit != nil {
 		toSerialize["unsetAutomaticEdit"] = o.UnsetAutomaticEdit

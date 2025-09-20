@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** | Operation description | [optional] 
 **FormatVersion** | **string** | Version of drawing entity format. | 
 **MessageName** | **string** | Type of drawing modification operation: &#x60;onshapeCreateAnnotations&#x60; | &#x60;onshapeEditAnnotations&#x60; | 
+**OtherFields** | Pointer to **map[string]map[string]interface{}** | Other entity creation or modification parameters. | [optional] 
 
 ## Methods
 
@@ -91,6 +92,31 @@ and a boolean to check if the value has been set.
 
 SetMessageName sets MessageName field to given value.
 
+
+### GetOtherFields
+
+`func (o *BTBDrawingOperationParams) GetOtherFields() map[string]interface{}`
+
+GetOtherFields returns the OtherFields field if non-nil, zero value otherwise.
+
+### GetOtherFieldsOk
+
+`func (o *BTBDrawingOperationParams) GetOtherFieldsOk() (*map[string]interface{}, bool)`
+
+GetOtherFieldsOk returns a tuple with the OtherFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOtherFields
+
+`func (o *BTBDrawingOperationParams) SetOtherFields(v map[string]interface{})`
+
+SetOtherFields sets OtherFields field to given value.
+
+### HasOtherFields
+
+`func (o *BTBDrawingOperationParams) HasOtherFields() bool`
+
+HasOtherFields returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

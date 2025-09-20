@@ -19,9 +19,10 @@ type BTModelAnnotations3945 struct {
 	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string             `json:"importMicroversion,omitempty"`
-	NodeId             *string             `json:"nodeId,omitempty"`
-	Annotations        []BTMAnnotation4664 `json:"annotations,omitempty"`
+	ImportMicroversion      *string                `json:"importMicroversion,omitempty"`
+	NodeId                  *string                `json:"nodeId,omitempty"`
+	Annotations             []BTMAnnotation4664    `json:"annotations,omitempty"`
+	ToleranceSchemaForParts *BTMParameterArray2025 `json:"toleranceSchemaForParts,omitempty"`
 }
 
 // NewBTModelAnnotations3945 instantiates a new BTModelAnnotations3945 object
@@ -169,6 +170,38 @@ func (o *BTModelAnnotations3945) SetAnnotations(v []BTMAnnotation4664) {
 	o.Annotations = v
 }
 
+// GetToleranceSchemaForParts returns the ToleranceSchemaForParts field value if set, zero value otherwise.
+func (o *BTModelAnnotations3945) GetToleranceSchemaForParts() BTMParameterArray2025 {
+	if o == nil || o.ToleranceSchemaForParts == nil {
+		var ret BTMParameterArray2025
+		return ret
+	}
+	return *o.ToleranceSchemaForParts
+}
+
+// GetToleranceSchemaForPartsOk returns a tuple with the ToleranceSchemaForParts field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTModelAnnotations3945) GetToleranceSchemaForPartsOk() (*BTMParameterArray2025, bool) {
+	if o == nil || o.ToleranceSchemaForParts == nil {
+		return nil, false
+	}
+	return o.ToleranceSchemaForParts, true
+}
+
+// HasToleranceSchemaForParts returns a boolean if a field has been set.
+func (o *BTModelAnnotations3945) HasToleranceSchemaForParts() bool {
+	if o != nil && o.ToleranceSchemaForParts != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSchemaForParts gets a reference to the given BTMParameterArray2025 and assigns it to the ToleranceSchemaForParts field.
+func (o *BTModelAnnotations3945) SetToleranceSchemaForParts(v BTMParameterArray2025) {
+	o.ToleranceSchemaForParts = &v
+}
+
 func (o BTModelAnnotations3945) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -190,6 +223,9 @@ func (o BTModelAnnotations3945) MarshalJSON() ([]byte, error) {
 	}
 	if o.Annotations != nil {
 		toSerialize["annotations"] = o.Annotations
+	}
+	if o.ToleranceSchemaForParts != nil {
+		toSerialize["toleranceSchemaForParts"] = o.ToleranceSchemaForParts
 	}
 	return json.Marshal(toSerialize)
 }

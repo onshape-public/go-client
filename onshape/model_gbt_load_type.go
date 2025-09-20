@@ -20,12 +20,13 @@ type GBTLoadType string
 
 // List of GBTLoadType
 const (
-	GBTLoadTypeForce        GBTLoadType = "FORCE"
-	GBTLoadTypeMoment       GBTLoadType = "MOMENT"
-	GBTLoadTypeBearingLoad  GBTLoadType = "BEARING_LOAD"
-	GBTLoadTypeAcceleration GBTLoadType = "ACCELERATION"
-	GBTLoadTypePressure     GBTLoadType = "PRESSURE"
-	GBTLoadTypeUnknown      GBTLoadType = "UNKNOWN"
+	GBTLoadTypeForce           GBTLoadType = "FORCE"
+	GBTLoadTypeMoment          GBTLoadType = "MOMENT"
+	GBTLoadTypeBearingLoad     GBTLoadType = "BEARING_LOAD"
+	GBTLoadTypeAcceleration    GBTLoadType = "ACCELERATION"
+	GBTLoadTypePressure        GBTLoadType = "PRESSURE"
+	GBTLoadTypeAngularVelocity GBTLoadType = "ANGULAR_VELOCITY"
+	GBTLoadTypeUnknown         GBTLoadType = "UNKNOWN"
 )
 
 // All allowed values of GBTLoadType enum
@@ -35,6 +36,7 @@ var AllowedGBTLoadTypeEnumValues = []GBTLoadType{
 	"BEARING_LOAD",
 	"ACCELERATION",
 	"PRESSURE",
+	"ANGULAR_VELOCITY",
 	"UNKNOWN",
 }
 

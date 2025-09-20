@@ -179,6 +179,7 @@ type ApiGetVEOPStandardContentMetadataRequest struct {
 	linkDocumentId                    *string
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -199,6 +200,11 @@ func (r ApiGetVEOPStandardContentMetadataRequest) IncludeComputedProperties(incl
 
 func (r ApiGetVEOPStandardContentMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetVEOPStandardContentMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetVEOPStandardContentMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetVEOPStandardContentMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -277,6 +283,9 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
+	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -354,6 +363,7 @@ type ApiGetWMVEMetadataRequest struct {
 	depth                             *string
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -385,6 +395,11 @@ func (r ApiGetWMVEMetadataRequest) IncludeComputedProperties(includeComputedProp
 
 func (r ApiGetWMVEMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetWMVEMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetWMVEMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -470,6 +485,9 @@ func (a *MetadataApiService) GetWMVEMetadataExecute(r ApiGetWMVEMetadataRequest)
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
+	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -550,6 +568,7 @@ type ApiGetWMVEPMetadataRequest struct {
 	inferMetadataOwner                *bool
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -589,6 +608,11 @@ func (r ApiGetWMVEPMetadataRequest) IncludeComputedProperties(includeComputedPro
 
 func (r ApiGetWMVEPMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEPMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetWMVEPMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetWMVEPMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -683,6 +707,9 @@ func (a *MetadataApiService) GetWMVEPMetadataExecute(r ApiGetWMVEPMetadataReques
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
+	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -759,6 +786,7 @@ type ApiGetWMVEPsMetadataRequest struct {
 	inferMetadataOwner                *bool
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -786,6 +814,11 @@ func (r ApiGetWMVEPsMetadataRequest) IncludeComputedProperties(includeComputedPr
 
 func (r ApiGetWMVEPsMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEPsMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetWMVEPsMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetWMVEPsMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -868,6 +901,9 @@ func (a *MetadataApiService) GetWMVEPsMetadataExecute(r ApiGetWMVEPsMetadataRequ
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
+	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -943,6 +979,7 @@ type ApiGetWMVEsMetadataRequest struct {
 	depth                             *string
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -968,6 +1005,11 @@ func (r ApiGetWMVEsMetadataRequest) IncludeComputedProperties(includeComputedPro
 
 func (r ApiGetWMVEsMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWMVEsMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetWMVEsMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetWMVEsMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -1046,6 +1088,9 @@ func (a *MetadataApiService) GetWMVEsMetadataExecute(r ApiGetWMVEsMetadataReques
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
 	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
+	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
 	}
@@ -1121,6 +1166,7 @@ type ApiGetWVMetadataRequest struct {
 	depth                             *string
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
+	includeApiOnlyProperties          *bool
 	thumbnail                         *bool
 }
 
@@ -1146,6 +1192,11 @@ func (r ApiGetWVMetadataRequest) IncludeComputedProperties(includeComputedProper
 
 func (r ApiGetWVMetadataRequest) IncludeComputedAssemblyProperties(includeComputedAssemblyProperties bool) ApiGetWVMetadataRequest {
 	r.includeComputedAssemblyProperties = &includeComputedAssemblyProperties
+	return r
+}
+
+func (r ApiGetWVMetadataRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetWVMetadataRequest {
+	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -1223,6 +1274,9 @@ func (a *MetadataApiService) GetWVMetadataExecute(r ApiGetWVMetadataRequest) (*B
 	}
 	if r.includeComputedAssemblyProperties != nil {
 		localVarQueryParams.Add("includeComputedAssemblyProperties", parameterToString(*r.includeComputedAssemblyProperties, ""))
+	}
+	if r.includeApiOnlyProperties != nil {
+		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
 	}
 	if r.thumbnail != nil {
 		localVarQueryParams.Add("thumbnail", parameterToString(*r.thumbnail, ""))
