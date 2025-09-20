@@ -62,8 +62,8 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    wid := "wid_example" // string | 
+    did := "did_example" // string | ID of the document to copy.
+    wid := "wid_example" // string | ID of the workspace to copy.
     bTCopyDocumentParams := *openapiclient.NewBTCopyDocumentParams() // BTCopyDocumentParams | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -84,8 +84,8 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
-**wid** | **string** |  | 
+**did** | **string** | ID of the document to copy. | 
+**wid** | **string** | ID of the workspace to copy. | 
 
 ### Other Parameters
 

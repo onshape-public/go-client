@@ -23,6 +23,7 @@ type BTInspectionTableRowMetadata2485 struct {
 	ConstraintId            *string                        `json:"constraintId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
+	HoleCalloutId           *string                        `json:"holeCalloutId,omitempty"`
 	ParameterId             *string                        `json:"parameterId,omitempty"`
 	PartId                  *string                        `json:"partId,omitempty"`
 	Precision               *GBTTolerancePrecision         `json:"precision,omitempty"`
@@ -237,6 +238,38 @@ func (o *BTInspectionTableRowMetadata2485) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetHoleCalloutId returns the HoleCalloutId field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetHoleCalloutId() string {
+	if o == nil || o.HoleCalloutId == nil {
+		var ret string
+		return ret
+	}
+	return *o.HoleCalloutId
+}
+
+// GetHoleCalloutIdOk returns a tuple with the HoleCalloutId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetHoleCalloutIdOk() (*string, bool) {
+	if o == nil || o.HoleCalloutId == nil {
+		return nil, false
+	}
+	return o.HoleCalloutId, true
+}
+
+// HasHoleCalloutId returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasHoleCalloutId() bool {
+	if o != nil && o.HoleCalloutId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHoleCalloutId gets a reference to the given string and assigns it to the HoleCalloutId field.
+func (o *BTInspectionTableRowMetadata2485) SetHoleCalloutId(v string) {
+	o.HoleCalloutId = &v
+}
+
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
 func (o *BTInspectionTableRowMetadata2485) GetParameterId() string {
 	if o == nil || o.ParameterId == nil {
@@ -360,6 +393,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.HoleCalloutId != nil {
+		toSerialize["holeCalloutId"] = o.HoleCalloutId
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId

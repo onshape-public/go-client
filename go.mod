@@ -7,7 +7,7 @@ toolchain go1.24.6
 require (
 	github.com/google/uuid v1.3.0
 	github.com/stretchr/testify v1.8.1
-	golang.org/x/exp v0.0.0-20250819193227-8b4c13bb791b
+	golang.org/x/exp v0.0.0-20250911091902-df9299821621
 	golang.org/x/oauth2 v0.31.0
 )
 

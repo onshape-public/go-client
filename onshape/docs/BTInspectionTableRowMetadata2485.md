@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**HoleCalloutId** | Pointer to **string** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
@@ -182,6 +183,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTInspectionTableRowMetadata2485) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetHoleCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485) GetHoleCalloutId() string`
+
+GetHoleCalloutId returns the HoleCalloutId field if non-nil, zero value otherwise.
+
+### GetHoleCalloutIdOk
+
+`func (o *BTInspectionTableRowMetadata2485) GetHoleCalloutIdOk() (*string, bool)`
+
+GetHoleCalloutIdOk returns a tuple with the HoleCalloutId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHoleCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485) SetHoleCalloutId(v string)`
+
+SetHoleCalloutId sets HoleCalloutId field to given value.
+
+### HasHoleCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485) HasHoleCalloutId() bool`
+
+HasHoleCalloutId returns a boolean if a field has been set.
 
 ### GetParameterId
 

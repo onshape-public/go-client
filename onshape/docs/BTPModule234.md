@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DeepImports** | Pointer to [**map[string][]BTImport**](array.md) |  | [optional] 
+**FullyParsed** | Pointer to **bool** |  | [optional] 
 **Imports** | Pointer to [**[]BTPTopLevelImport285**](BTPTopLevelImport285.md) |  | [optional] 
 **IsBlob** | Pointer to **bool** |  | [optional] 
 **IsInternalModule** | Pointer to **bool** |  | [optional] 
@@ -84,6 +85,31 @@ SetDeepImports sets DeepImports field to given value.
 `func (o *BTPModule234) HasDeepImports() bool`
 
 HasDeepImports returns a boolean if a field has been set.
+
+### GetFullyParsed
+
+`func (o *BTPModule234) GetFullyParsed() bool`
+
+GetFullyParsed returns the FullyParsed field if non-nil, zero value otherwise.
+
+### GetFullyParsedOk
+
+`func (o *BTPModule234) GetFullyParsedOk() (*bool, bool)`
+
+GetFullyParsedOk returns a tuple with the FullyParsed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFullyParsed
+
+`func (o *BTPModule234) SetFullyParsed(v bool)`
+
+SetFullyParsed sets FullyParsed field to given value.
+
+### HasFullyParsed
+
+`func (o *BTPModule234) HasFullyParsed() bool`
+
+HasFullyParsed returns a boolean if a field has been set.
 
 ### GetImports
 

@@ -3361,6 +3361,8 @@
 
 * `GBTErrorStringEnumAssemblyMirrorChildHasReferenceError` (value: `"ASSEMBLY_MIRROR_CHILD_HAS_REFERENCE_ERROR"`)
 
+* `GBTErrorStringEnumThicknessNoClosedComposites` (value: `"THICKNESS_NO_CLOSED_COMPOSITES"`)
+
 * `GBTErrorStringEnumValueWithUnitsError` (value: `"VALUE_WITH_UNITS_ERROR"`)
 
 * `GBTErrorStringEnumRowIndexRangeError` (value: `"ROW_INDEX_RANGE_ERROR"`)
@@ -3384,6 +3386,10 @@
 * `GBTErrorStringEnumColLabelIndexError` (value: `"COL_LABEL_INDEX_ERROR"`)
 
 * `GBTErrorStringEnumQueryVariableNameCannotContainQuote` (value: `"QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE"`)
+
+* `GBTErrorStringEnumDrawingEmptySectionTargetBody` (value: `"DRAWING_EMPTY_SECTION_TARGET_BODY"`)
+
+* `GBTErrorStringEnumSketchCannotEvaluatePatternParameter` (value: `"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

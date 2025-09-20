@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Configuration** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **CustomData** | Pointer to [**map[string]BTReferenceCustomData1551**](BTReferenceCustomData1551.md) |  | [optional] 
+**DerivedAssemblyMirror** | Pointer to **bool** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementReference** | Pointer to [**BTElementReference725**](BTElementReference725.md) |  | [optional] 
@@ -91,6 +92,31 @@ SetCustomData sets CustomData field to given value.
 `func (o *BTInstanceWithReference) HasCustomData() bool`
 
 HasCustomData returns a boolean if a field has been set.
+
+### GetDerivedAssemblyMirror
+
+`func (o *BTInstanceWithReference) GetDerivedAssemblyMirror() bool`
+
+GetDerivedAssemblyMirror returns the DerivedAssemblyMirror field if non-nil, zero value otherwise.
+
+### GetDerivedAssemblyMirrorOk
+
+`func (o *BTInstanceWithReference) GetDerivedAssemblyMirrorOk() (*bool, bool)`
+
+GetDerivedAssemblyMirrorOk returns a tuple with the DerivedAssemblyMirror field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDerivedAssemblyMirror
+
+`func (o *BTInstanceWithReference) SetDerivedAssemblyMirror(v bool)`
+
+SetDerivedAssemblyMirror sets DerivedAssemblyMirror field to given value.
+
+### HasDerivedAssemblyMirror
+
+`func (o *BTInstanceWithReference) HasDerivedAssemblyMirror() bool`
+
+HasDerivedAssemblyMirror returns a boolean if a field has been set.
 
 ### GetDocumentId
 

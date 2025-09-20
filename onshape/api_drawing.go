@@ -853,7 +853,7 @@ func (r ApiModifyDrawingRequest) Execute() (*BTAppModificationRequestInfo, *http
 /*
 ModifyDrawing Modify a drawing via JSON payload.
 
-See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.
+See [API Guide: Drawings](https://onshape-public.github.io/docs/api-adv/drawings/) for more information.When polling for drawing modifications to complete, use a reasonable interval (e.g., avoid polling multiple times a second, use an exponential backoff strategy, etc.). See [Rate Limiting](/docs/api-adv/errors/#429) and [API Limits](/docs/auth/limits) for more information.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did The id of the document in which to perform the operation.

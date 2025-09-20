@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **IsStandardContent** | Pointer to **bool** |  | [optional] 
 **NonGeometricItemId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
+**PartIdentity** | Pointer to **string** |  | [optional] 
 **SourceElementMicroversionId** | Pointer to **string** |  | [optional] 
 **ThumbnailInfo** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
 **VersionMetadataWorkspaceMicroversionId** | Pointer to **string** |  | [optional] 
@@ -237,6 +238,31 @@ SetPartId sets PartId field to given value.
 `func (o *BTBillOfMaterialsItemSourceInfo) HasPartId() bool`
 
 HasPartId returns a boolean if a field has been set.
+
+### GetPartIdentity
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetPartIdentity() string`
+
+GetPartIdentity returns the PartIdentity field if non-nil, zero value otherwise.
+
+### GetPartIdentityOk
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetPartIdentityOk() (*string, bool)`
+
+GetPartIdentityOk returns a tuple with the PartIdentity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartIdentity
+
+`func (o *BTBillOfMaterialsItemSourceInfo) SetPartIdentity(v string)`
+
+SetPartIdentity sets PartIdentity field to given value.
+
+### HasPartIdentity
+
+`func (o *BTBillOfMaterialsItemSourceInfo) HasPartIdentity() bool`
+
+HasPartIdentity returns a boolean if a field has been set.
 
 ### GetSourceElementMicroversionId
 

@@ -13,6 +13,8 @@
 
 * `GBTLoadTypePressure` (value: `"PRESSURE"`)
 
+* `GBTLoadTypeAngularVelocity` (value: `"ANGULAR_VELOCITY"`)
+
 * `GBTLoadTypeUnknown` (value: `"UNKNOWN"`)
 
 

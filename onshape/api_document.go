@@ -42,8 +42,8 @@ func (r ApiCopyWorkspaceRequest) Execute() (*BTCopyDocumentInfo, *http.Response,
 CopyWorkspace Copy workspace by document ID and workspace ID.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
-	@param wid
+	@param did ID of the document to copy.
+	@param wid ID of the workspace to copy.
 	@return ApiCopyWorkspaceRequest
 */
 func (a *DocumentApiService) CopyWorkspace(ctx context.Context, did string, wid string) ApiCopyWorkspaceRequest {

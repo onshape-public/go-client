@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Annotations** | Pointer to [**[]BTMAnnotation4664**](BTMAnnotation4664.md) |  | [optional] 
+**ToleranceSchemaForParts** | Pointer to [**BTMParameterArray2025**](BTMParameterArray2025.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetAnnotations sets Annotations field to given value.
 `func (o *BTModelAnnotations3945) HasAnnotations() bool`
 
 HasAnnotations returns a boolean if a field has been set.
+
+### GetToleranceSchemaForParts
+
+`func (o *BTModelAnnotations3945) GetToleranceSchemaForParts() BTMParameterArray2025`
+
+GetToleranceSchemaForParts returns the ToleranceSchemaForParts field if non-nil, zero value otherwise.
+
+### GetToleranceSchemaForPartsOk
+
+`func (o *BTModelAnnotations3945) GetToleranceSchemaForPartsOk() (*BTMParameterArray2025, bool)`
+
+GetToleranceSchemaForPartsOk returns a tuple with the ToleranceSchemaForParts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToleranceSchemaForParts
+
+`func (o *BTModelAnnotations3945) SetToleranceSchemaForParts(v BTMParameterArray2025)`
+
+SetToleranceSchemaForParts sets ToleranceSchemaForParts field to given value.
+
+### HasToleranceSchemaForParts
+
+`func (o *BTModelAnnotations3945) HasToleranceSchemaForParts() bool`
+
+HasToleranceSchemaForParts returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

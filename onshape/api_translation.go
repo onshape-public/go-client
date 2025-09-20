@@ -830,6 +830,8 @@ GetTranslation Get information on an in-progress or completed translation by tra
 
 When the translation is complete, `requestState` changes from `ACTIVE` to `DONE` or `FAILED`. See [API Guide: Model Translation](https://onshape-public.github.io/docs/api-adv/translation/) for more details.
 
+When polling for translations to complete, use a reasonable interval (e.g., avoid polling multiple times a second, use an exponential backoff strategy, etc.) or use [Webhooks](/docs/app-dev/webhook). See [Rate Limiting](/docs/api-adv/errors/#429) and [API Limits](/docs/auth/limits) for more information.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param tid
 	@return ApiGetTranslationRequest
