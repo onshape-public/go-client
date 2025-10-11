@@ -33,7 +33,6 @@ type ApiGetCategoryPropertiesRequest struct {
 	includeObjectTypeDefaults                *bool
 	includeComputedProperties                *bool
 	includePartPropertiesTableOnlyProperties *bool
-	includeApiOnlyProperties                 *bool
 	onlyActive                               *bool
 	onlyObjectTypeDefaults                   *bool
 }
@@ -80,11 +79,6 @@ func (r ApiGetCategoryPropertiesRequest) IncludeComputedProperties(includeComput
 
 func (r ApiGetCategoryPropertiesRequest) IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties bool) ApiGetCategoryPropertiesRequest {
 	r.includePartPropertiesTableOnlyProperties = &includePartPropertiesTableOnlyProperties
-	return r
-}
-
-func (r ApiGetCategoryPropertiesRequest) IncludeApiOnlyProperties(includeApiOnlyProperties bool) ApiGetCategoryPropertiesRequest {
-	r.includeApiOnlyProperties = &includeApiOnlyProperties
 	return r
 }
 
@@ -173,9 +167,6 @@ func (a *MetadataCategoryApiService) GetCategoryPropertiesExecute(r ApiGetCatego
 	}
 	if r.includePartPropertiesTableOnlyProperties != nil {
 		localVarQueryParams.Add("includePartPropertiesTableOnlyProperties", parameterToString(*r.includePartPropertiesTableOnlyProperties, ""))
-	}
-	if r.includeApiOnlyProperties != nil {
-		localVarQueryParams.Add("includeApiOnlyProperties", parameterToString(*r.includeApiOnlyProperties, ""))
 	}
 	if r.onlyActive != nil {
 		localVarQueryParams.Add("onlyActive", parameterToString(*r.onlyActive, ""))

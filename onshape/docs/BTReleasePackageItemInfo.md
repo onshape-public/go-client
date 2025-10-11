@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **ReferenceIdsFromOriginalWorkspace** | Pointer to **[]string** |  | [optional] 
 **Rpid** | Pointer to **string** |  | [optional] 
 **SmallThumbnailHref** | Pointer to **string** |  | [optional] 
+**SubassemblyBomBehavior** | Pointer to **string** |  | [optional] 
 **SyncedWithPLM** | Pointer to **bool** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -859,6 +860,31 @@ SetSmallThumbnailHref sets SmallThumbnailHref field to given value.
 `func (o *BTReleasePackageItemInfo) HasSmallThumbnailHref() bool`
 
 HasSmallThumbnailHref returns a boolean if a field has been set.
+
+### GetSubassemblyBomBehavior
+
+`func (o *BTReleasePackageItemInfo) GetSubassemblyBomBehavior() string`
+
+GetSubassemblyBomBehavior returns the SubassemblyBomBehavior field if non-nil, zero value otherwise.
+
+### GetSubassemblyBomBehaviorOk
+
+`func (o *BTReleasePackageItemInfo) GetSubassemblyBomBehaviorOk() (*string, bool)`
+
+GetSubassemblyBomBehaviorOk returns a tuple with the SubassemblyBomBehavior field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubassemblyBomBehavior
+
+`func (o *BTReleasePackageItemInfo) SetSubassemblyBomBehavior(v string)`
+
+SetSubassemblyBomBehavior sets SubassemblyBomBehavior field to given value.
+
+### HasSubassemblyBomBehavior
+
+`func (o *BTReleasePackageItemInfo) HasSubassemblyBomBehavior() bool`
+
+HasSubassemblyBomBehavior returns a boolean if a field has been set.
 
 ### GetSyncedWithPLM
 

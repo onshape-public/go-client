@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetCategoryProperties
 
-> BTListResponseBTCategoryPropertyInfo GetCategoryProperties(ctx).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
+> BTListResponseBTCategoryPropertyInfo GetCategoryProperties(ctx).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
 
 Get properties associated with the specified metadata categories.
 
@@ -38,13 +38,12 @@ func main() {
     includeObjectTypeDefaults := true // bool |  (optional) (default to false)
     includeComputedProperties := true // bool |  (optional) (default to true)
     includePartPropertiesTableOnlyProperties := true // bool |  (optional) (default to true)
-    includeApiOnlyProperties := true // bool |  (optional) (default to false)
     onlyActive := true // bool |  (optional) (default to false)
     onlyObjectTypeDefaults := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataCategoryApi.GetCategoryProperties(context.Background()).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).IncludeApiOnlyProperties(includeApiOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
+    resp, r, err := apiClient.MetadataCategoryApi.GetCategoryProperties(context.Background()).OwnerId(ownerId).OwnerType(ownerType).DocumentId(documentId).CategoryIds(categoryIds).ObjectType(objectType).Strict(strict).IncludeObjectTypeDefaults(includeObjectTypeDefaults).IncludeComputedProperties(includeComputedProperties).IncludePartPropertiesTableOnlyProperties(includePartPropertiesTableOnlyProperties).OnlyActive(onlyActive).OnlyObjectTypeDefaults(onlyObjectTypeDefaults).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataCategoryApi.GetCategoryProperties``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -74,7 +73,6 @@ Name | Type | Description  | Notes
  **includeObjectTypeDefaults** | **bool** |  | [default to false]
  **includeComputedProperties** | **bool** |  | [default to true]
  **includePartPropertiesTableOnlyProperties** | **bool** |  | [default to true]
- **includeApiOnlyProperties** | **bool** |  | [default to false]
  **onlyActive** | **bool** |  | [default to false]
  **onlyObjectTypeDefaults** | **bool** |  | [default to false]
 

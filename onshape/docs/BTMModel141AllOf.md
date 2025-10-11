@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AllFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndOtherReferences** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **AllFeaturesAndSubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
+**AllFeaturesAndSubFeaturesAndOtherReferences** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **ChildNodeIdToIndex** | Pointer to **map[string]int32** |  | [optional] 
 **ConfigurableTreeNodes** | Pointer to [**[]BTConfigurableTreeNode**](BTConfigurableTreeNode.md) |  | [optional] 
@@ -123,6 +124,31 @@ SetAllFeaturesAndSubFeatures sets AllFeaturesAndSubFeatures field to given value
 `func (o *BTMModel141AllOf) HasAllFeaturesAndSubFeatures() bool`
 
 HasAllFeaturesAndSubFeatures returns a boolean if a field has been set.
+
+### GetAllFeaturesAndSubFeaturesAndOtherReferences
+
+`func (o *BTMModel141AllOf) GetAllFeaturesAndSubFeaturesAndOtherReferences() []BTMFeature134`
+
+GetAllFeaturesAndSubFeaturesAndOtherReferences returns the AllFeaturesAndSubFeaturesAndOtherReferences field if non-nil, zero value otherwise.
+
+### GetAllFeaturesAndSubFeaturesAndOtherReferencesOk
+
+`func (o *BTMModel141AllOf) GetAllFeaturesAndSubFeaturesAndOtherReferencesOk() (*[]BTMFeature134, bool)`
+
+GetAllFeaturesAndSubFeaturesAndOtherReferencesOk returns a tuple with the AllFeaturesAndSubFeaturesAndOtherReferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllFeaturesAndSubFeaturesAndOtherReferences
+
+`func (o *BTMModel141AllOf) SetAllFeaturesAndSubFeaturesAndOtherReferences(v []BTMFeature134)`
+
+SetAllFeaturesAndSubFeaturesAndOtherReferences sets AllFeaturesAndSubFeaturesAndOtherReferences field to given value.
+
+### HasAllFeaturesAndSubFeaturesAndOtherReferences
+
+`func (o *BTMModel141AllOf) HasAllFeaturesAndSubFeaturesAndOtherReferences() bool`
+
+HasAllFeaturesAndSubFeaturesAndOtherReferences returns a boolean if a field has been set.
 
 ### GetBtType
 

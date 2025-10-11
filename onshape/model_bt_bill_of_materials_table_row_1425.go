@@ -17,24 +17,25 @@ import (
 // BTBillOfMaterialsTableRow1425 struct for BTBillOfMaterialsTableRow1425
 type BTBillOfMaterialsTableRow1425 struct {
 	BTTableRow1054
-	BtType                 *string                              `json:"btType,omitempty"`
-	ColumnIdToCell         *map[string]BTTableCell1114          `json:"columnIdToCell,omitempty"`
-	Id                     *string                              `json:"id,omitempty"`
-	MetaData               *BTTreeNode20                        `json:"metaData,omitempty"`
-	NodeId                 *string                              `json:"nodeId,omitempty"`
-	RowMetadata            *BTTableBaseRowMetadata3181          `json:"rowMetadata,omitempty"`
-	ExcludeIsEditable      *bool                                `json:"excludeIsEditable,omitempty"`
-	ExclusionStatus        *GBTBillOfMaterialsExclusionStatus   `json:"exclusionStatus,omitempty"`
-	ExpansionStatus        *GBTBillOfMaterialsExpansionStatus   `json:"expansionStatus,omitempty"`
-	IndentLevel            *int32                               `json:"indentLevel,omitempty"`
-	IsComponentsOnly       *bool                                `json:"isComponentsOnly,omitempty"`
-	IsSuppressed           *bool                                `json:"isSuppressed,omitempty"`
-	MetadataObjectType     *int32                               `json:"metadataObjectType,omitempty"`
-	MetadataUpdateHref     *string                              `json:"metadataUpdateHref,omitempty"`
-	Name                   *string                              `json:"name,omitempty"`
-	RelatedOccurrencePaths []string                             `json:"relatedOccurrencePaths,omitempty"`
-	SuppressionStatus      *GBTBillOfMaterialsSuppressionStatus `json:"suppressionStatus,omitempty"`
-	UniqueItemId           *BTBillOfMaterialsUniqueItemId2029   `json:"uniqueItemId,omitempty"`
+	BtType                     *string                              `json:"btType,omitempty"`
+	ColumnIdToCell             *map[string]BTTableCell1114          `json:"columnIdToCell,omitempty"`
+	Id                         *string                              `json:"id,omitempty"`
+	MetaData                   *BTTreeNode20                        `json:"metaData,omitempty"`
+	NodeId                     *string                              `json:"nodeId,omitempty"`
+	RowMetadata                *BTTableBaseRowMetadata3181          `json:"rowMetadata,omitempty"`
+	ExcludeIsEditable          *bool                                `json:"excludeIsEditable,omitempty"`
+	ExclusionStatus            *GBTBillOfMaterialsExclusionStatus   `json:"exclusionStatus,omitempty"`
+	ExpansionStatus            *GBTBillOfMaterialsExpansionStatus   `json:"expansionStatus,omitempty"`
+	IndentLevel                *int32                               `json:"indentLevel,omitempty"`
+	IsComponentsOnly           *bool                                `json:"isComponentsOnly,omitempty"`
+	IsSuppressed               *bool                                `json:"isSuppressed,omitempty"`
+	MetadataObjectType         *int32                               `json:"metadataObjectType,omitempty"`
+	MetadataUpdateHref         *string                              `json:"metadataUpdateHref,omitempty"`
+	Name                       *string                              `json:"name,omitempty"`
+	RelatedOccurrencePaths     []string                             `json:"relatedOccurrencePaths,omitempty"`
+	SubassemblyBomBehaviorName *string                              `json:"subassemblyBomBehaviorName,omitempty"`
+	SuppressionStatus          *GBTBillOfMaterialsSuppressionStatus `json:"suppressionStatus,omitempty"`
+	UniqueItemId               *BTBillOfMaterialsUniqueItemId2029   `json:"uniqueItemId,omitempty"`
 }
 
 // NewBTBillOfMaterialsTableRow1425 instantiates a new BTBillOfMaterialsTableRow1425 object
@@ -566,6 +567,38 @@ func (o *BTBillOfMaterialsTableRow1425) SetRelatedOccurrencePaths(v []string) {
 	o.RelatedOccurrencePaths = v
 }
 
+// GetSubassemblyBomBehaviorName returns the SubassemblyBomBehaviorName field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTableRow1425) GetSubassemblyBomBehaviorName() string {
+	if o == nil || o.SubassemblyBomBehaviorName == nil {
+		var ret string
+		return ret
+	}
+	return *o.SubassemblyBomBehaviorName
+}
+
+// GetSubassemblyBomBehaviorNameOk returns a tuple with the SubassemblyBomBehaviorName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTableRow1425) GetSubassemblyBomBehaviorNameOk() (*string, bool) {
+	if o == nil || o.SubassemblyBomBehaviorName == nil {
+		return nil, false
+	}
+	return o.SubassemblyBomBehaviorName, true
+}
+
+// HasSubassemblyBomBehaviorName returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTableRow1425) HasSubassemblyBomBehaviorName() bool {
+	if o != nil && o.SubassemblyBomBehaviorName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubassemblyBomBehaviorName gets a reference to the given string and assigns it to the SubassemblyBomBehaviorName field.
+func (o *BTBillOfMaterialsTableRow1425) SetSubassemblyBomBehaviorName(v string) {
+	o.SubassemblyBomBehaviorName = &v
+}
+
 // GetSuppressionStatus returns the SuppressionStatus field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsTableRow1425) GetSuppressionStatus() GBTBillOfMaterialsSuppressionStatus {
 	if o == nil || o.SuppressionStatus == nil {
@@ -687,6 +720,9 @@ func (o BTBillOfMaterialsTableRow1425) MarshalJSON() ([]byte, error) {
 	}
 	if o.RelatedOccurrencePaths != nil {
 		toSerialize["relatedOccurrencePaths"] = o.RelatedOccurrencePaths
+	}
+	if o.SubassemblyBomBehaviorName != nil {
+		toSerialize["subassemblyBomBehaviorName"] = o.SubassemblyBomBehaviorName
 	}
 	if o.SuppressionStatus != nil {
 		toSerialize["suppressionStatus"] = o.SuppressionStatus

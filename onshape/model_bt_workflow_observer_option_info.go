@@ -16,7 +16,8 @@ import (
 
 // BTWorkflowObserverOptionInfo Array of items in the current page.
 type BTWorkflowObserverOptionInfo struct {
-	Alias *BTAliasInfo `json:"alias,omitempty"`
+	Alias   *BTAliasInfo          `json:"alias,omitempty"`
+	Company *BTCompanySummaryInfo `json:"company,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -76,6 +77,38 @@ func (o *BTWorkflowObserverOptionInfo) HasAlias() bool {
 // SetAlias gets a reference to the given BTAliasInfo and assigns it to the Alias field.
 func (o *BTWorkflowObserverOptionInfo) SetAlias(v BTAliasInfo) {
 	o.Alias = &v
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *BTWorkflowObserverOptionInfo) GetCompany() BTCompanySummaryInfo {
+	if o == nil || o.Company == nil {
+		var ret BTCompanySummaryInfo
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowObserverOptionInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *BTWorkflowObserverOptionInfo) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
+func (o *BTWorkflowObserverOptionInfo) SetCompany(v BTCompanySummaryInfo) {
+	o.Company = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -306,6 +339,9 @@ func (o BTWorkflowObserverOptionInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Alias != nil {
 		toSerialize["alias"] = o.Alias
+	}
+	if o.Company != nil {
+		toSerialize["company"] = o.Company
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href

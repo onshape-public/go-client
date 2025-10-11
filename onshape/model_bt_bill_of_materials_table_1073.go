@@ -37,6 +37,7 @@ type BTBillOfMaterialsTable1073 struct {
 	PartNumber                              *string                 `json:"partNumber,omitempty"`
 	Revision                                *string                 `json:"revision,omitempty"`
 	ShowingExcluded                         *bool                   `json:"showingExcluded,omitempty"`
+	SubassemblyBomBehaviorName              *string                 `json:"subassemblyBomBehaviorName,omitempty"`
 }
 
 // NewBTBillOfMaterialsTable1073 instantiates a new BTBillOfMaterialsTable1073 object
@@ -696,6 +697,38 @@ func (o *BTBillOfMaterialsTable1073) SetShowingExcluded(v bool) {
 	o.ShowingExcluded = &v
 }
 
+// GetSubassemblyBomBehaviorName returns the SubassemblyBomBehaviorName field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTable1073) GetSubassemblyBomBehaviorName() string {
+	if o == nil || o.SubassemblyBomBehaviorName == nil {
+		var ret string
+		return ret
+	}
+	return *o.SubassemblyBomBehaviorName
+}
+
+// GetSubassemblyBomBehaviorNameOk returns a tuple with the SubassemblyBomBehaviorName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTable1073) GetSubassemblyBomBehaviorNameOk() (*string, bool) {
+	if o == nil || o.SubassemblyBomBehaviorName == nil {
+		return nil, false
+	}
+	return o.SubassemblyBomBehaviorName, true
+}
+
+// HasSubassemblyBomBehaviorName returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTable1073) HasSubassemblyBomBehaviorName() bool {
+	if o != nil && o.SubassemblyBomBehaviorName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubassemblyBomBehaviorName gets a reference to the given string and assigns it to the SubassemblyBomBehaviorName field.
+func (o *BTBillOfMaterialsTable1073) SetSubassemblyBomBehaviorName(v string) {
+	o.SubassemblyBomBehaviorName = &v
+}
+
 func (o BTBillOfMaterialsTable1073) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTable1825, errBTTable1825 := json.Marshal(o.BTTable1825)
@@ -765,6 +798,9 @@ func (o BTBillOfMaterialsTable1073) MarshalJSON() ([]byte, error) {
 	}
 	if o.ShowingExcluded != nil {
 		toSerialize["showingExcluded"] = o.ShowingExcluded
+	}
+	if o.SubassemblyBomBehaviorName != nil {
+		toSerialize["subassemblyBomBehaviorName"] = o.SubassemblyBomBehaviorName
 	}
 	return json.Marshal(toSerialize)
 }

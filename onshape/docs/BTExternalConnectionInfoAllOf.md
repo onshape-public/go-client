@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ApprovedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
-**ContactUser** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Icon** | Pointer to **string** |  | [optional] 
 **InvitedCompany** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **IsOwnerEnterpriseEdu** | Pointer to **bool** |  | [optional] 
@@ -56,31 +55,6 @@ SetApprovedBy sets ApprovedBy field to given value.
 `func (o *BTExternalConnectionInfoAllOf) HasApprovedBy() bool`
 
 HasApprovedBy returns a boolean if a field has been set.
-
-### GetContactUser
-
-`func (o *BTExternalConnectionInfoAllOf) GetContactUser() BTUserSummaryInfo`
-
-GetContactUser returns the ContactUser field if non-nil, zero value otherwise.
-
-### GetContactUserOk
-
-`func (o *BTExternalConnectionInfoAllOf) GetContactUserOk() (*BTUserSummaryInfo, bool)`
-
-GetContactUserOk returns a tuple with the ContactUser field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetContactUser
-
-`func (o *BTExternalConnectionInfoAllOf) SetContactUser(v BTUserSummaryInfo)`
-
-SetContactUser sets ContactUser field to given value.
-
-### HasContactUser
-
-`func (o *BTExternalConnectionInfoAllOf) HasContactUser() bool`
-
-HasContactUser returns a boolean if a field has been set.
 
 ### GetIcon
 

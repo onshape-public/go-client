@@ -34,6 +34,7 @@ type BTMConfigurationParameterEnum105 struct {
 	EnumOptionVisibilityConditions *BTEnumOptionVisibilityConditionList2936 `json:"enumOptionVisibilityConditions,omitempty"`
 	Namespace                      *string                                  `json:"namespace,omitempty"`
 	OptionIds                      []string                                 `json:"optionIds,omitempty"`
+	OptionNames                    []string                                 `json:"optionNames,omitempty"`
 	Options                        []BTMEnumOption592                       `json:"options,omitempty"`
 }
 
@@ -566,6 +567,38 @@ func (o *BTMConfigurationParameterEnum105) SetOptionIds(v []string) {
 	o.OptionIds = v
 }
 
+// GetOptionNames returns the OptionNames field value if set, zero value otherwise.
+func (o *BTMConfigurationParameterEnum105) GetOptionNames() []string {
+	if o == nil || o.OptionNames == nil {
+		var ret []string
+		return ret
+	}
+	return o.OptionNames
+}
+
+// GetOptionNamesOk returns a tuple with the OptionNames field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMConfigurationParameterEnum105) GetOptionNamesOk() ([]string, bool) {
+	if o == nil || o.OptionNames == nil {
+		return nil, false
+	}
+	return o.OptionNames, true
+}
+
+// HasOptionNames returns a boolean if a field has been set.
+func (o *BTMConfigurationParameterEnum105) HasOptionNames() bool {
+	if o != nil && o.OptionNames != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOptionNames gets a reference to the given []string and assigns it to the OptionNames field.
+func (o *BTMConfigurationParameterEnum105) SetOptionNames(v []string) {
+	o.OptionNames = v
+}
+
 // GetOptions returns the Options field value if set, zero value otherwise.
 func (o *BTMConfigurationParameterEnum105) GetOptions() []BTMEnumOption592 {
 	if o == nil || o.Options == nil {
@@ -655,6 +688,9 @@ func (o BTMConfigurationParameterEnum105) MarshalJSON() ([]byte, error) {
 	}
 	if o.OptionIds != nil {
 		toSerialize["optionIds"] = o.OptionIds
+	}
+	if o.OptionNames != nil {
+		toSerialize["optionNames"] = o.OptionNames
 	}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options

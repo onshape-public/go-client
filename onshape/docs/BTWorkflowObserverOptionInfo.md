@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Alias** | Pointer to [**BTAliasInfo**](BTAliasInfo.md) |  | [optional] 
+**Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IdentityType** | Pointer to **int32** |  | [optional] 
@@ -56,6 +57,31 @@ SetAlias sets Alias field to given value.
 `func (o *BTWorkflowObserverOptionInfo) HasAlias() bool`
 
 HasAlias returns a boolean if a field has been set.
+
+### GetCompany
+
+`func (o *BTWorkflowObserverOptionInfo) GetCompany() BTCompanySummaryInfo`
+
+GetCompany returns the Company field if non-nil, zero value otherwise.
+
+### GetCompanyOk
+
+`func (o *BTWorkflowObserverOptionInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool)`
+
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompany
+
+`func (o *BTWorkflowObserverOptionInfo) SetCompany(v BTCompanySummaryInfo)`
+
+SetCompany sets Company field to given value.
+
+### HasCompany
+
+`func (o *BTWorkflowObserverOptionInfo) HasCompany() bool`
+
+HasCompany returns a boolean if a field has been set.
 
 ### GetHref
 

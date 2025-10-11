@@ -1714,6 +1714,7 @@ const (
 	GBTErrorStringEnumQueryVariableNameCannotContainQuote                         GBTErrorStringEnum = "QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE"
 	GBTErrorStringEnumDrawingEmptySectionTargetBody                               GBTErrorStringEnum = "DRAWING_EMPTY_SECTION_TARGET_BODY"
 	GBTErrorStringEnumSketchCannotEvaluatePatternParameter                        GBTErrorStringEnum = "SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"
+	GBTErrorStringEnumTlSelfIntersectingBody                                      GBTErrorStringEnum = "TL_SELF_INTERSECTING_BODY"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3413,6 +3414,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"QUERY_VARIABLE_NAME_CANNOT_CONTAIN_QUOTE",
 	"DRAWING_EMPTY_SECTION_TARGET_BODY",
 	"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER",
+	"TL_SELF_INTERSECTING_BODY",
 	"UNKNOWN",
 }
 

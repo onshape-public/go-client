@@ -3391,6 +3391,8 @@
 
 * `GBTErrorStringEnumSketchCannotEvaluatePatternParameter` (value: `"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"`)
 
+* `GBTErrorStringEnumTlSelfIntersectingBody` (value: `"TL_SELF_INTERSECTING_BODY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 
