@@ -16,20 +16,24 @@ import (
 
 // BTPurchaseInfo struct for BTPurchaseInfo
 type BTPurchaseInfo struct {
-	AccountId             *string                      `json:"accountId,omitempty"`
-	ActualAmountPaidCents *int64                       `json:"actualAmountPaidCents,omitempty"`
-	AmountCents           *int64                       `json:"amountCents,omitempty"`
-	Application           *BTAPIApplicationSummaryInfo `json:"application,omitempty"`
-	CanceledAt            *JSONTime                    `json:"canceledAt,omitempty"`
-	Card                  *BTCardInfo                  `json:"card,omitempty"`
-	ClientId              *string                      `json:"clientId,omitempty"`
-	CouponAmountOff       *int64                       `json:"couponAmountOff,omitempty"`
-	CouponPercentOff      *int32                       `json:"couponPercentOff,omitempty"`
-	CreatedBy             *string                      `json:"createdBy,omitempty"`
-	Currency              *string                      `json:"currency,omitempty"`
-	Duration              *int32                       `json:"duration,omitempty"`
-	DurationMonths        *int32                       `json:"durationMonths,omitempty"`
-	Group                 *string                      `json:"group,omitempty"`
+	AccountId              *string                      `json:"accountId,omitempty"`
+	ActualAmountPaidCents  *int64                       `json:"actualAmountPaidCents,omitempty"`
+	AmountCents            *int64                       `json:"amountCents,omitempty"`
+	ApiAllocationByPlan    *int64                       `json:"apiAllocationByPlan,omitempty"`
+	ApiAllocationEndDate   *JSONTime                    `json:"apiAllocationEndDate,omitempty"`
+	ApiAllocationOverride  *int64                       `json:"apiAllocationOverride,omitempty"`
+	ApiAllocationStartDate *JSONTime                    `json:"apiAllocationStartDate,omitempty"`
+	Application            *BTAPIApplicationSummaryInfo `json:"application,omitempty"`
+	CanceledAt             *JSONTime                    `json:"canceledAt,omitempty"`
+	Card                   *BTCardInfo                  `json:"card,omitempty"`
+	ClientId               *string                      `json:"clientId,omitempty"`
+	CouponAmountOff        *int64                       `json:"couponAmountOff,omitempty"`
+	CouponPercentOff       *int32                       `json:"couponPercentOff,omitempty"`
+	CreatedBy              *string                      `json:"createdBy,omitempty"`
+	Currency               *string                      `json:"currency,omitempty"`
+	Duration               *int32                       `json:"duration,omitempty"`
+	DurationMonths         *int32                       `json:"durationMonths,omitempty"`
+	Group                  *string                      `json:"group,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -176,6 +180,134 @@ func (o *BTPurchaseInfo) HasAmountCents() bool {
 // SetAmountCents gets a reference to the given int64 and assigns it to the AmountCents field.
 func (o *BTPurchaseInfo) SetAmountCents(v int64) {
 	o.AmountCents = &v
+}
+
+// GetApiAllocationByPlan returns the ApiAllocationByPlan field value if set, zero value otherwise.
+func (o *BTPurchaseInfo) GetApiAllocationByPlan() int64 {
+	if o == nil || o.ApiAllocationByPlan == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ApiAllocationByPlan
+}
+
+// GetApiAllocationByPlanOk returns a tuple with the ApiAllocationByPlan field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPurchaseInfo) GetApiAllocationByPlanOk() (*int64, bool) {
+	if o == nil || o.ApiAllocationByPlan == nil {
+		return nil, false
+	}
+	return o.ApiAllocationByPlan, true
+}
+
+// HasApiAllocationByPlan returns a boolean if a field has been set.
+func (o *BTPurchaseInfo) HasApiAllocationByPlan() bool {
+	if o != nil && o.ApiAllocationByPlan != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApiAllocationByPlan gets a reference to the given int64 and assigns it to the ApiAllocationByPlan field.
+func (o *BTPurchaseInfo) SetApiAllocationByPlan(v int64) {
+	o.ApiAllocationByPlan = &v
+}
+
+// GetApiAllocationEndDate returns the ApiAllocationEndDate field value if set, zero value otherwise.
+func (o *BTPurchaseInfo) GetApiAllocationEndDate() JSONTime {
+	if o == nil || o.ApiAllocationEndDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ApiAllocationEndDate
+}
+
+// GetApiAllocationEndDateOk returns a tuple with the ApiAllocationEndDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPurchaseInfo) GetApiAllocationEndDateOk() (*JSONTime, bool) {
+	if o == nil || o.ApiAllocationEndDate == nil {
+		return nil, false
+	}
+	return o.ApiAllocationEndDate, true
+}
+
+// HasApiAllocationEndDate returns a boolean if a field has been set.
+func (o *BTPurchaseInfo) HasApiAllocationEndDate() bool {
+	if o != nil && o.ApiAllocationEndDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApiAllocationEndDate gets a reference to the given JSONTime and assigns it to the ApiAllocationEndDate field.
+func (o *BTPurchaseInfo) SetApiAllocationEndDate(v JSONTime) {
+	o.ApiAllocationEndDate = &v
+}
+
+// GetApiAllocationOverride returns the ApiAllocationOverride field value if set, zero value otherwise.
+func (o *BTPurchaseInfo) GetApiAllocationOverride() int64 {
+	if o == nil || o.ApiAllocationOverride == nil {
+		var ret int64
+		return ret
+	}
+	return *o.ApiAllocationOverride
+}
+
+// GetApiAllocationOverrideOk returns a tuple with the ApiAllocationOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPurchaseInfo) GetApiAllocationOverrideOk() (*int64, bool) {
+	if o == nil || o.ApiAllocationOverride == nil {
+		return nil, false
+	}
+	return o.ApiAllocationOverride, true
+}
+
+// HasApiAllocationOverride returns a boolean if a field has been set.
+func (o *BTPurchaseInfo) HasApiAllocationOverride() bool {
+	if o != nil && o.ApiAllocationOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApiAllocationOverride gets a reference to the given int64 and assigns it to the ApiAllocationOverride field.
+func (o *BTPurchaseInfo) SetApiAllocationOverride(v int64) {
+	o.ApiAllocationOverride = &v
+}
+
+// GetApiAllocationStartDate returns the ApiAllocationStartDate field value if set, zero value otherwise.
+func (o *BTPurchaseInfo) GetApiAllocationStartDate() JSONTime {
+	if o == nil || o.ApiAllocationStartDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ApiAllocationStartDate
+}
+
+// GetApiAllocationStartDateOk returns a tuple with the ApiAllocationStartDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPurchaseInfo) GetApiAllocationStartDateOk() (*JSONTime, bool) {
+	if o == nil || o.ApiAllocationStartDate == nil {
+		return nil, false
+	}
+	return o.ApiAllocationStartDate, true
+}
+
+// HasApiAllocationStartDate returns a boolean if a field has been set.
+func (o *BTPurchaseInfo) HasApiAllocationStartDate() bool {
+	if o != nil && o.ApiAllocationStartDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetApiAllocationStartDate gets a reference to the given JSONTime and assigns it to the ApiAllocationStartDate field.
+func (o *BTPurchaseInfo) SetApiAllocationStartDate(v JSONTime) {
+	o.ApiAllocationStartDate = &v
 }
 
 // GetApplication returns the Application field value if set, zero value otherwise.
@@ -1468,6 +1600,18 @@ func (o BTPurchaseInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.AmountCents != nil {
 		toSerialize["amountCents"] = o.AmountCents
+	}
+	if o.ApiAllocationByPlan != nil {
+		toSerialize["apiAllocationByPlan"] = o.ApiAllocationByPlan
+	}
+	if o.ApiAllocationEndDate != nil {
+		toSerialize["apiAllocationEndDate"] = o.ApiAllocationEndDate
+	}
+	if o.ApiAllocationOverride != nil {
+		toSerialize["apiAllocationOverride"] = o.ApiAllocationOverride
+	}
+	if o.ApiAllocationStartDate != nil {
+		toSerialize["apiAllocationStartDate"] = o.ApiAllocationStartDate
 	}
 	if o.Application != nil {
 		toSerialize["application"] = o.Application

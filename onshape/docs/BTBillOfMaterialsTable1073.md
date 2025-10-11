@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
 **ShowingExcluded** | Pointer to **bool** |  | [optional] 
+**SubassemblyBomBehaviorName** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -231,6 +232,31 @@ SetShowingExcluded sets ShowingExcluded field to given value.
 `func (o *BTBillOfMaterialsTable1073) HasShowingExcluded() bool`
 
 HasShowingExcluded returns a boolean if a field has been set.
+
+### GetSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTable1073) GetSubassemblyBomBehaviorName() string`
+
+GetSubassemblyBomBehaviorName returns the SubassemblyBomBehaviorName field if non-nil, zero value otherwise.
+
+### GetSubassemblyBomBehaviorNameOk
+
+`func (o *BTBillOfMaterialsTable1073) GetSubassemblyBomBehaviorNameOk() (*string, bool)`
+
+GetSubassemblyBomBehaviorNameOk returns a tuple with the SubassemblyBomBehaviorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTable1073) SetSubassemblyBomBehaviorName(v string)`
+
+SetSubassemblyBomBehaviorName sets SubassemblyBomBehaviorName field to given value.
+
+### HasSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTable1073) HasSubassemblyBomBehaviorName() bool`
+
+HasSubassemblyBomBehaviorName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

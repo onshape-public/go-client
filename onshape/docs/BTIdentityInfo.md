@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IdentityType** | Pointer to **int32** |  | [optional] 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewBTIdentityInfoWithDefaults instantiates a new BTIdentityInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCompany
+
+`func (o *BTIdentityInfo) GetCompany() BTCompanySummaryInfo`
+
+GetCompany returns the Company field if non-nil, zero value otherwise.
+
+### GetCompanyOk
+
+`func (o *BTIdentityInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool)`
+
+GetCompanyOk returns a tuple with the Company field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompany
+
+`func (o *BTIdentityInfo) SetCompany(v BTCompanySummaryInfo)`
+
+SetCompany sets Company field to given value.
+
+### HasCompany
+
+`func (o *BTIdentityInfo) HasCompany() bool`
+
+HasCompany returns a boolean if a field has been set.
 
 ### GetHref
 

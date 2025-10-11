@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **MetadataUpdateHref** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **RelatedOccurrencePaths** | Pointer to **[]string** |  | [optional] 
+**SubassemblyBomBehaviorName** | Pointer to **string** |  | [optional] 
 **SuppressionStatus** | Pointer to [**GBTBillOfMaterialsSuppressionStatus**](GBTBillOfMaterialsSuppressionStatus.md) |  | [optional] 
 **UniqueItemId** | Pointer to [**BTBillOfMaterialsUniqueItemId2029**](BTBillOfMaterialsUniqueItemId2029.md) |  | [optional] 
 
@@ -311,6 +312,31 @@ SetRelatedOccurrencePaths sets RelatedOccurrencePaths field to given value.
 `func (o *BTBillOfMaterialsTableRow1425) HasRelatedOccurrencePaths() bool`
 
 HasRelatedOccurrencePaths returns a boolean if a field has been set.
+
+### GetSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTableRow1425) GetSubassemblyBomBehaviorName() string`
+
+GetSubassemblyBomBehaviorName returns the SubassemblyBomBehaviorName field if non-nil, zero value otherwise.
+
+### GetSubassemblyBomBehaviorNameOk
+
+`func (o *BTBillOfMaterialsTableRow1425) GetSubassemblyBomBehaviorNameOk() (*string, bool)`
+
+GetSubassemblyBomBehaviorNameOk returns a tuple with the SubassemblyBomBehaviorName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTableRow1425) SetSubassemblyBomBehaviorName(v string)`
+
+SetSubassemblyBomBehaviorName sets SubassemblyBomBehaviorName field to given value.
+
+### HasSubassemblyBomBehaviorName
+
+`func (o *BTBillOfMaterialsTableRow1425) HasSubassemblyBomBehaviorName() bool`
+
+HasSubassemblyBomBehaviorName returns a boolean if a field has been set.
 
 ### GetSuppressionStatus
 

@@ -43,7 +43,6 @@ type BTExternalConnectionInfo struct {
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef              *string               `json:"viewRef,omitempty"`
 	ApprovedBy           *BTUserSummaryInfo    `json:"approvedBy,omitempty"`
-	ContactUser          *BTUserSummaryInfo    `json:"contactUser,omitempty"`
 	Icon                 *string               `json:"icon,omitempty"`
 	InvitedCompany       *BTCompanySummaryInfo `json:"invitedCompany,omitempty"`
 	IsOwnerEnterpriseEdu *bool                 `json:"isOwnerEnterpriseEdu,omitempty"`
@@ -798,38 +797,6 @@ func (o *BTExternalConnectionInfo) SetApprovedBy(v BTUserSummaryInfo) {
 	o.ApprovedBy = &v
 }
 
-// GetContactUser returns the ContactUser field value if set, zero value otherwise.
-func (o *BTExternalConnectionInfo) GetContactUser() BTUserSummaryInfo {
-	if o == nil || o.ContactUser == nil {
-		var ret BTUserSummaryInfo
-		return ret
-	}
-	return *o.ContactUser
-}
-
-// GetContactUserOk returns a tuple with the ContactUser field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTExternalConnectionInfo) GetContactUserOk() (*BTUserSummaryInfo, bool) {
-	if o == nil || o.ContactUser == nil {
-		return nil, false
-	}
-	return o.ContactUser, true
-}
-
-// HasContactUser returns a boolean if a field has been set.
-func (o *BTExternalConnectionInfo) HasContactUser() bool {
-	if o != nil && o.ContactUser != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetContactUser gets a reference to the given BTUserSummaryInfo and assigns it to the ContactUser field.
-func (o *BTExternalConnectionInfo) SetContactUser(v BTUserSummaryInfo) {
-	o.ContactUser = &v
-}
-
 // GetIcon returns the Icon field value if set, zero value otherwise.
 func (o *BTExternalConnectionInfo) GetIcon() string {
 	if o == nil || o.Icon == nil {
@@ -1092,9 +1059,6 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ApprovedBy != nil {
 		toSerialize["approvedBy"] = o.ApprovedBy
-	}
-	if o.ContactUser != nil {
-		toSerialize["contactUser"] = o.ContactUser
 	}
 	if o.Icon != nil {
 		toSerialize["icon"] = o.Icon

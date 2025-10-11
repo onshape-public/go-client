@@ -19,32 +19,33 @@ type BTMModel141 struct {
 	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion            *string                          `json:"importMicroversion,omitempty"`
-	NodeId                        *string                          `json:"nodeId,omitempty"`
-	AllFeatures                   []BTMFeature134                  `json:"allFeatures,omitempty"`
-	AllFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
-	AllFeaturesAndSubFeatures     []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
-	ChildNodeIdToIndex            *map[string]int32                `json:"childNodeIdToIndex,omitempty"`
-	ConfigurableTreeNodes         []BTConfigurableTreeNode         `json:"configurableTreeNodes,omitempty"`
-	ConfigurationData             *BTMConfigurationData1560        `json:"configurationData,omitempty"`
-	Configured                    *bool                            `json:"configured,omitempty"`
-	DeepImports                   *map[string][]BTImport           `json:"deepImports,omitempty"`
-	DefaultFeatures               *BTDefaultFeatures119            `json:"defaultFeatures,omitempty"`
-	DefaultUnits                  *BTMUnitsDefault160              `json:"defaultUnits,omitempty"`
-	FeatureImports                *map[string][]BTImport           `json:"featureImports,omitempty"`
-	FirstRollbackIndex            *int32                           `json:"firstRollbackIndex,omitempty"`
-	ImportSet                     []BTPModuleId235                 `json:"importSet,omitempty"`
-	Imports                       []BTMImport136                   `json:"imports,omitempty"`
-	IsVariableStudio              *bool                            `json:"isVariableStudio,omitempty"`
-	LastFeatureBeforeRollBack     *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
-	ModelAnnotations              *BTModelAnnotations3945          `json:"modelAnnotations,omitempty"`
-	Name                          *string                          `json:"name,omitempty"`
-	PartProperties                *BTPartProperties293             `json:"partProperties,omitempty"`
-	PathToCache                   *BTCacheDataPath191              `json:"pathToCache,omitempty"`
-	Properties                    *BTModelProperties1258           `json:"properties,omitempty"`
-	RollbackBar                   *BTMRollback150                  `json:"rollbackBar,omitempty"`
-	RolledBackToEnd               *bool                            `json:"rolledBackToEnd,omitempty"`
-	VariableStudios               []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
+	ImportMicroversion                          *string                          `json:"importMicroversion,omitempty"`
+	NodeId                                      *string                          `json:"nodeId,omitempty"`
+	AllFeatures                                 []BTMFeature134                  `json:"allFeatures,omitempty"`
+	AllFeaturesAndOtherReferences               []BTMFeature134                  `json:"allFeaturesAndOtherReferences,omitempty"`
+	AllFeaturesAndSubFeatures                   []BTMFeature134                  `json:"allFeaturesAndSubFeatures,omitempty"`
+	AllFeaturesAndSubFeaturesAndOtherReferences []BTMFeature134                  `json:"allFeaturesAndSubFeaturesAndOtherReferences,omitempty"`
+	ChildNodeIdToIndex                          *map[string]int32                `json:"childNodeIdToIndex,omitempty"`
+	ConfigurableTreeNodes                       []BTConfigurableTreeNode         `json:"configurableTreeNodes,omitempty"`
+	ConfigurationData                           *BTMConfigurationData1560        `json:"configurationData,omitempty"`
+	Configured                                  *bool                            `json:"configured,omitempty"`
+	DeepImports                                 *map[string][]BTImport           `json:"deepImports,omitempty"`
+	DefaultFeatures                             *BTDefaultFeatures119            `json:"defaultFeatures,omitempty"`
+	DefaultUnits                                *BTMUnitsDefault160              `json:"defaultUnits,omitempty"`
+	FeatureImports                              *map[string][]BTImport           `json:"featureImports,omitempty"`
+	FirstRollbackIndex                          *int32                           `json:"firstRollbackIndex,omitempty"`
+	ImportSet                                   []BTPModuleId235                 `json:"importSet,omitempty"`
+	Imports                                     []BTMImport136                   `json:"imports,omitempty"`
+	IsVariableStudio                            *bool                            `json:"isVariableStudio,omitempty"`
+	LastFeatureBeforeRollBack                   *BTMFeature134                   `json:"lastFeatureBeforeRollBack,omitempty"`
+	ModelAnnotations                            *BTModelAnnotations3945          `json:"modelAnnotations,omitempty"`
+	Name                                        *string                          `json:"name,omitempty"`
+	PartProperties                              *BTPartProperties293             `json:"partProperties,omitempty"`
+	PathToCache                                 *BTCacheDataPath191              `json:"pathToCache,omitempty"`
+	Properties                                  *BTModelProperties1258           `json:"properties,omitempty"`
+	RollbackBar                                 *BTMRollback150                  `json:"rollbackBar,omitempty"`
+	RolledBackToEnd                             *bool                            `json:"rolledBackToEnd,omitempty"`
+	VariableStudios                             []BTMVariableStudioReference2764 `json:"variableStudios,omitempty"`
 }
 
 // NewBTMModel141 instantiates a new BTMModel141 object
@@ -254,6 +255,38 @@ func (o *BTMModel141) HasAllFeaturesAndSubFeatures() bool {
 // SetAllFeaturesAndSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the AllFeaturesAndSubFeatures field.
 func (o *BTMModel141) SetAllFeaturesAndSubFeatures(v []BTMFeature134) {
 	o.AllFeaturesAndSubFeatures = v
+}
+
+// GetAllFeaturesAndSubFeaturesAndOtherReferences returns the AllFeaturesAndSubFeaturesAndOtherReferences field value if set, zero value otherwise.
+func (o *BTMModel141) GetAllFeaturesAndSubFeaturesAndOtherReferences() []BTMFeature134 {
+	if o == nil || o.AllFeaturesAndSubFeaturesAndOtherReferences == nil {
+		var ret []BTMFeature134
+		return ret
+	}
+	return o.AllFeaturesAndSubFeaturesAndOtherReferences
+}
+
+// GetAllFeaturesAndSubFeaturesAndOtherReferencesOk returns a tuple with the AllFeaturesAndSubFeaturesAndOtherReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMModel141) GetAllFeaturesAndSubFeaturesAndOtherReferencesOk() ([]BTMFeature134, bool) {
+	if o == nil || o.AllFeaturesAndSubFeaturesAndOtherReferences == nil {
+		return nil, false
+	}
+	return o.AllFeaturesAndSubFeaturesAndOtherReferences, true
+}
+
+// HasAllFeaturesAndSubFeaturesAndOtherReferences returns a boolean if a field has been set.
+func (o *BTMModel141) HasAllFeaturesAndSubFeaturesAndOtherReferences() bool {
+	if o != nil && o.AllFeaturesAndSubFeaturesAndOtherReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllFeaturesAndSubFeaturesAndOtherReferences gets a reference to the given []BTMFeature134 and assigns it to the AllFeaturesAndSubFeaturesAndOtherReferences field.
+func (o *BTMModel141) SetAllFeaturesAndSubFeaturesAndOtherReferences(v []BTMFeature134) {
+	o.AllFeaturesAndSubFeaturesAndOtherReferences = v
 }
 
 // GetChildNodeIdToIndex returns the ChildNodeIdToIndex field value if set, zero value otherwise.
@@ -955,6 +988,9 @@ func (o BTMModel141) MarshalJSON() ([]byte, error) {
 	}
 	if o.AllFeaturesAndSubFeatures != nil {
 		toSerialize["allFeaturesAndSubFeatures"] = o.AllFeaturesAndSubFeatures
+	}
+	if o.AllFeaturesAndSubFeaturesAndOtherReferences != nil {
+		toSerialize["allFeaturesAndSubFeaturesAndOtherReferences"] = o.AllFeaturesAndSubFeaturesAndOtherReferences
 	}
 	if o.ChildNodeIdToIndex != nil {
 		toSerialize["childNodeIdToIndex"] = o.ChildNodeIdToIndex

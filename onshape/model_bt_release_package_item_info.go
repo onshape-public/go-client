@@ -51,6 +51,7 @@ type BTReleasePackageItemInfo struct {
 	ReferenceIdsFromOriginalWorkspace []string                 `json:"referenceIdsFromOriginalWorkspace,omitempty"`
 	Rpid                              *string                  `json:"rpid,omitempty"`
 	SmallThumbnailHref                *string                  `json:"smallThumbnailHref,omitempty"`
+	SubassemblyBomBehavior            *string                  `json:"subassemblyBomBehavior,omitempty"`
 	SyncedWithPLM                     *bool                    `json:"syncedWithPLM,omitempty"`
 	VersionId                         *string                  `json:"versionId,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
@@ -1099,6 +1100,38 @@ func (o *BTReleasePackageItemInfo) SetSmallThumbnailHref(v string) {
 	o.SmallThumbnailHref = &v
 }
 
+// GetSubassemblyBomBehavior returns the SubassemblyBomBehavior field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetSubassemblyBomBehavior() string {
+	if o == nil || o.SubassemblyBomBehavior == nil {
+		var ret string
+		return ret
+	}
+	return *o.SubassemblyBomBehavior
+}
+
+// GetSubassemblyBomBehaviorOk returns a tuple with the SubassemblyBomBehavior field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetSubassemblyBomBehaviorOk() (*string, bool) {
+	if o == nil || o.SubassemblyBomBehavior == nil {
+		return nil, false
+	}
+	return o.SubassemblyBomBehavior, true
+}
+
+// HasSubassemblyBomBehavior returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasSubassemblyBomBehavior() bool {
+	if o != nil && o.SubassemblyBomBehavior != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubassemblyBomBehavior gets a reference to the given string and assigns it to the SubassemblyBomBehavior field.
+func (o *BTReleasePackageItemInfo) SetSubassemblyBomBehavior(v string) {
+	o.SubassemblyBomBehavior = &v
+}
+
 // GetSyncedWithPLM returns the SyncedWithPLM field value if set, zero value otherwise.
 func (o *BTReleasePackageItemInfo) GetSyncedWithPLM() bool {
 	if o == nil || o.SyncedWithPLM == nil {
@@ -1324,6 +1357,9 @@ func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SmallThumbnailHref != nil {
 		toSerialize["smallThumbnailHref"] = o.SmallThumbnailHref
+	}
+	if o.SubassemblyBomBehavior != nil {
+		toSerialize["subassemblyBomBehavior"] = o.SubassemblyBomBehavior
 	}
 	if o.SyncedWithPLM != nil {
 		toSerialize["syncedWithPLM"] = o.SyncedWithPLM

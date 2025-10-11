@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **EnumOptionVisibilityConditions** | Pointer to [**BTEnumOptionVisibilityConditionList2936**](BTEnumOptionVisibilityConditionList2936.md) |  | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 **OptionIds** | Pointer to **[]string** |  | [optional] 
+**OptionNames** | Pointer to **[]string** |  | [optional] 
 **Options** | Pointer to [**[]BTMEnumOption592**](BTMEnumOption592.md) |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetOptionIds sets OptionIds field to given value.
 `func (o *BTMConfigurationParameterEnum105) HasOptionIds() bool`
 
 HasOptionIds returns a boolean if a field has been set.
+
+### GetOptionNames
+
+`func (o *BTMConfigurationParameterEnum105) GetOptionNames() []string`
+
+GetOptionNames returns the OptionNames field if non-nil, zero value otherwise.
+
+### GetOptionNamesOk
+
+`func (o *BTMConfigurationParameterEnum105) GetOptionNamesOk() (*[]string, bool)`
+
+GetOptionNamesOk returns a tuple with the OptionNames field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptionNames
+
+`func (o *BTMConfigurationParameterEnum105) SetOptionNames(v []string)`
+
+SetOptionNames sets OptionNames field to given value.
+
+### HasOptionNames
+
+`func (o *BTMConfigurationParameterEnum105) HasOptionNames() bool`
+
+HasOptionNames returns a boolean if a field has been set.
 
 ### GetOptions
 

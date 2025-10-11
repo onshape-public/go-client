@@ -16,6 +16,7 @@ import (
 
 // BTIdentityInfo struct for BTIdentityInfo
 type BTIdentityInfo struct {
+	Company *BTCompanySummaryInfo `json:"company,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -42,6 +43,38 @@ func NewBTIdentityInfo() *BTIdentityInfo {
 func NewBTIdentityInfoWithDefaults() *BTIdentityInfo {
 	this := BTIdentityInfo{}
 	return &this
+}
+
+// GetCompany returns the Company field value if set, zero value otherwise.
+func (o *BTIdentityInfo) GetCompany() BTCompanySummaryInfo {
+	if o == nil || o.Company == nil {
+		var ret BTCompanySummaryInfo
+		return ret
+	}
+	return *o.Company
+}
+
+// GetCompanyOk returns a tuple with the Company field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTIdentityInfo) GetCompanyOk() (*BTCompanySummaryInfo, bool) {
+	if o == nil || o.Company == nil {
+		return nil, false
+	}
+	return o.Company, true
+}
+
+// HasCompany returns a boolean if a field has been set.
+func (o *BTIdentityInfo) HasCompany() bool {
+	if o != nil && o.Company != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
+func (o *BTIdentityInfo) SetCompany(v BTCompanySummaryInfo) {
+	o.Company = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -238,6 +271,9 @@ func (o *BTIdentityInfo) SetViewRef(v string) {
 
 func (o BTIdentityInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Company != nil {
+		toSerialize["company"] = o.Company
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

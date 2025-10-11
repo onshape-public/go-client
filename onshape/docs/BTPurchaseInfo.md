@@ -7,6 +7,10 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **string** |  | [optional] 
 **ActualAmountPaidCents** | Pointer to **int64** |  | [optional] 
 **AmountCents** | Pointer to **int64** |  | [optional] 
+**ApiAllocationByPlan** | Pointer to **int64** |  | [optional] 
+**ApiAllocationEndDate** | Pointer to **JSONTime** |  | [optional] 
+**ApiAllocationOverride** | Pointer to **int64** |  | [optional] 
+**ApiAllocationStartDate** | Pointer to **JSONTime** |  | [optional] 
 **Application** | Pointer to [**BTAPIApplicationSummaryInfo**](BTAPIApplicationSummaryInfo.md) |  | [optional] 
 **CanceledAt** | Pointer to **JSONTime** |  | [optional] 
 **Card** | Pointer to [**BTCardInfo**](BTCardInfo.md) |  | [optional] 
@@ -141,6 +145,106 @@ SetAmountCents sets AmountCents field to given value.
 `func (o *BTPurchaseInfo) HasAmountCents() bool`
 
 HasAmountCents returns a boolean if a field has been set.
+
+### GetApiAllocationByPlan
+
+`func (o *BTPurchaseInfo) GetApiAllocationByPlan() int64`
+
+GetApiAllocationByPlan returns the ApiAllocationByPlan field if non-nil, zero value otherwise.
+
+### GetApiAllocationByPlanOk
+
+`func (o *BTPurchaseInfo) GetApiAllocationByPlanOk() (*int64, bool)`
+
+GetApiAllocationByPlanOk returns a tuple with the ApiAllocationByPlan field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiAllocationByPlan
+
+`func (o *BTPurchaseInfo) SetApiAllocationByPlan(v int64)`
+
+SetApiAllocationByPlan sets ApiAllocationByPlan field to given value.
+
+### HasApiAllocationByPlan
+
+`func (o *BTPurchaseInfo) HasApiAllocationByPlan() bool`
+
+HasApiAllocationByPlan returns a boolean if a field has been set.
+
+### GetApiAllocationEndDate
+
+`func (o *BTPurchaseInfo) GetApiAllocationEndDate() JSONTime`
+
+GetApiAllocationEndDate returns the ApiAllocationEndDate field if non-nil, zero value otherwise.
+
+### GetApiAllocationEndDateOk
+
+`func (o *BTPurchaseInfo) GetApiAllocationEndDateOk() (*JSONTime, bool)`
+
+GetApiAllocationEndDateOk returns a tuple with the ApiAllocationEndDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiAllocationEndDate
+
+`func (o *BTPurchaseInfo) SetApiAllocationEndDate(v JSONTime)`
+
+SetApiAllocationEndDate sets ApiAllocationEndDate field to given value.
+
+### HasApiAllocationEndDate
+
+`func (o *BTPurchaseInfo) HasApiAllocationEndDate() bool`
+
+HasApiAllocationEndDate returns a boolean if a field has been set.
+
+### GetApiAllocationOverride
+
+`func (o *BTPurchaseInfo) GetApiAllocationOverride() int64`
+
+GetApiAllocationOverride returns the ApiAllocationOverride field if non-nil, zero value otherwise.
+
+### GetApiAllocationOverrideOk
+
+`func (o *BTPurchaseInfo) GetApiAllocationOverrideOk() (*int64, bool)`
+
+GetApiAllocationOverrideOk returns a tuple with the ApiAllocationOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiAllocationOverride
+
+`func (o *BTPurchaseInfo) SetApiAllocationOverride(v int64)`
+
+SetApiAllocationOverride sets ApiAllocationOverride field to given value.
+
+### HasApiAllocationOverride
+
+`func (o *BTPurchaseInfo) HasApiAllocationOverride() bool`
+
+HasApiAllocationOverride returns a boolean if a field has been set.
+
+### GetApiAllocationStartDate
+
+`func (o *BTPurchaseInfo) GetApiAllocationStartDate() JSONTime`
+
+GetApiAllocationStartDate returns the ApiAllocationStartDate field if non-nil, zero value otherwise.
+
+### GetApiAllocationStartDateOk
+
+`func (o *BTPurchaseInfo) GetApiAllocationStartDateOk() (*JSONTime, bool)`
+
+GetApiAllocationStartDateOk returns a tuple with the ApiAllocationStartDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApiAllocationStartDate
+
+`func (o *BTPurchaseInfo) SetApiAllocationStartDate(v JSONTime)`
+
+SetApiAllocationStartDate sets ApiAllocationStartDate field to given value.
+
+### HasApiAllocationStartDate
+
+`func (o *BTPurchaseInfo) HasApiAllocationStartDate() bool`
+
+HasApiAllocationStartDate returns a boolean if a field has been set.
 
 ### GetApplication
 

@@ -33,6 +33,7 @@ api_publication.go
 api_release_package.go
 api_revision.go
 api_sketch.go
+api_standard_content.go
 api_task.go
 api_team.go
 api_thumbnail.go
@@ -1198,6 +1199,15 @@ docs/BTSplineInternalPointFilter4101.md
 docs/BTSplineInternalPointFilter4101AllOf.md
 docs/BTSpunDescription657.md
 docs/BTSpunDescription657AllOf.md
+docs/BTStandardContentHierarchyItem.md
+docs/BTStandardContentParameterDescriptor.md
+docs/BTStandardContentParameterIdAndValue.md
+docs/BTStandardContentPropertyIdAndValue.md
+docs/BTStandardContentSetCustomParameterSpecifier.md
+docs/BTStandardContentSetCustomParametersBatchRequest.md
+docs/BTStandardContentSetCustomParametersBatchResponse.md
+docs/BTStandardContentSetCustomParametersError.md
+docs/BTStandardContentSetCustomParametersResponse.md
 docs/BTStringFormatBlockPattern1755.md
 docs/BTStringFormatBlockPattern1755AllOf.md
 docs/BTStringFormatCondition683.md
@@ -1535,6 +1545,7 @@ docs/ServerVariable.md
 docs/ServerVariables.md
 docs/SketchApi.md
 docs/Skin.md
+docs/StandardContentApi.md
 docs/Status.md
 docs/StyleEnum.md
 docs/Tag.md
@@ -2181,6 +2192,15 @@ model_bt_spline_description_2118.go
 model_bt_spline_handle_filter_2971.go
 model_bt_spline_internal_point_filter_4101.go
 model_bt_spun_description_657.go
+model_bt_standard_content_hierarchy_item.go
+model_bt_standard_content_parameter_descriptor.go
+model_bt_standard_content_parameter_id_and_value.go
+model_bt_standard_content_property_id_and_value.go
+model_bt_standard_content_set_custom_parameter_specifier.go
+model_bt_standard_content_set_custom_parameters_batch_request.go
+model_bt_standard_content_set_custom_parameters_batch_response.go
+model_bt_standard_content_set_custom_parameters_error.go
+model_bt_standard_content_set_custom_parameters_response.go
 model_bt_string_format_block_pattern_1755.go
 model_bt_string_format_condition_683.go
 model_bt_string_format_match_pattern_2446.go
