@@ -1536,6 +1536,7 @@ Class | Method | HTTP request | Description
  - [BTSplineControlPolygonFilter1130](docs/BTSplineControlPolygonFilter1130.md)
  - [BTSplineControlPolygonFilter1130AllOf](docs/BTSplineControlPolygonFilter1130AllOf.md)
  - [BTSplineDescription2118](docs/BTSplineDescription2118.md)
+ - [BTSplineDescription2118AllOf](docs/BTSplineDescription2118AllOf.md)
  - [BTSplineHandleFilter2971](docs/BTSplineHandleFilter2971.md)
  - [BTSplineHandleFilter2971AllOf](docs/BTSplineHandleFilter2971AllOf.md)
  - [BTSplineInternalPointFilter4101](docs/BTSplineInternalPointFilter4101.md)
