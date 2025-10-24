@@ -16,7 +16,7 @@ import (
 
 // BTDiffInfo struct for BTDiffInfo
 type BTDiffInfo struct {
-	CollectionChanges      *map[string][]BTDiffInfo  `json:"collectionChanges,omitempty"`
+	Changes                *map[string]BTDiffInfo    `json:"changes,omitempty"`
 	EntityType             *BTDiffInfoCollectionType `json:"entityType,omitempty"`
 	GeometryChangeMessages []string                  `json:"geometryChangeMessages,omitempty"`
 	SourceId               *string                   `json:"sourceId,omitempty"`
@@ -43,36 +43,36 @@ func NewBTDiffInfoWithDefaults() *BTDiffInfo {
 	return &this
 }
 
-// GetCollectionChanges returns the CollectionChanges field value if set, zero value otherwise.
-func (o *BTDiffInfo) GetCollectionChanges() map[string][]BTDiffInfo {
-	if o == nil || o.CollectionChanges == nil {
-		var ret map[string][]BTDiffInfo
+// GetChanges returns the Changes field value if set, zero value otherwise.
+func (o *BTDiffInfo) GetChanges() map[string]BTDiffInfo {
+	if o == nil || o.Changes == nil {
+		var ret map[string]BTDiffInfo
 		return ret
 	}
-	return *o.CollectionChanges
+	return *o.Changes
 }
 
-// GetCollectionChangesOk returns a tuple with the CollectionChanges field value if set, nil otherwise
+// GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiffInfo) GetCollectionChangesOk() (*map[string][]BTDiffInfo, bool) {
-	if o == nil || o.CollectionChanges == nil {
+func (o *BTDiffInfo) GetChangesOk() (*map[string]BTDiffInfo, bool) {
+	if o == nil || o.Changes == nil {
 		return nil, false
 	}
-	return o.CollectionChanges, true
+	return o.Changes, true
 }
 
-// HasCollectionChanges returns a boolean if a field has been set.
-func (o *BTDiffInfo) HasCollectionChanges() bool {
-	if o != nil && o.CollectionChanges != nil {
+// HasChanges returns a boolean if a field has been set.
+func (o *BTDiffInfo) HasChanges() bool {
+	if o != nil && o.Changes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCollectionChanges gets a reference to the given map[string][]BTDiffInfo and assigns it to the CollectionChanges field.
-func (o *BTDiffInfo) SetCollectionChanges(v map[string][]BTDiffInfo) {
-	o.CollectionChanges = &v
+// SetChanges gets a reference to the given map[string]BTDiffInfo and assigns it to the Changes field.
+func (o *BTDiffInfo) SetChanges(v map[string]BTDiffInfo) {
+	o.Changes = &v
 }
 
 // GetEntityType returns the EntityType field value if set, zero value otherwise.
@@ -301,8 +301,8 @@ func (o *BTDiffInfo) SetType(v GBTNodeChange) {
 
 func (o BTDiffInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.CollectionChanges != nil {
-		toSerialize["collectionChanges"] = o.CollectionChanges
+	if o.Changes != nil {
+		toSerialize["changes"] = o.Changes
 	}
 	if o.EntityType != nil {
 		toSerialize["entityType"] = o.EntityType
