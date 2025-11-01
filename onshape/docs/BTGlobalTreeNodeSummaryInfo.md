@@ -27,7 +27,6 @@ Name | Type | Description | Notes
 **Notes** | Pointer to **string** |  | [optional] 
 **NumberOfTimesCopied** | Pointer to **int64** |  | [optional] 
 **NumberOfTimesReferenced** | Pointer to **int64** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
 **Permission** | Pointer to [**BTOldPermission**](BTOldPermission.md) |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
@@ -636,31 +635,6 @@ SetNumberOfTimesReferenced sets NumberOfTimesReferenced field to given value.
 `func (o *BTGlobalTreeNodeSummaryInfo) HasNumberOfTimesReferenced() bool`
 
 HasNumberOfTimesReferenced returns a boolean if a field has been set.
-
-### GetParentId
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetParentId() string`
-
-GetParentId returns the ParentId field if non-nil, zero value otherwise.
-
-### GetParentIdOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetParentIdOk() (*string, bool)`
-
-GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentId
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetParentId(v string)`
-
-SetParentId sets ParentId field to given value.
-
-### HasParentId
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasParentId() bool`
-
-HasParentId returns a boolean if a field has been set.
 
 ### GetPermission
 
