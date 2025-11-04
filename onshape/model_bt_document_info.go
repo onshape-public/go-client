@@ -879,6 +879,56 @@ func (o *BTDocumentInfo) SetOwner(v BTOwnerInfo) {
 	o.GetActualInstance().(getResult).SetOwner(v)
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTDocumentInfo) GetParentId() string {
+	type getResult interface {
+		GetParentId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentInfo) GetParentIdOk() (*string, bool) {
+	type getResult interface {
+		GetParentIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTDocumentInfo) HasParentId() bool {
+	type getResult interface {
+		HasParentId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParentId()
+	} else {
+		return false
+	}
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTDocumentInfo) SetParentId(v string) {
+	type getResult interface {
+		SetParentId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetParentId(v)
+}
+
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetProjectId() string {
 	type getResult interface {
@@ -2279,56 +2329,6 @@ func (o *BTDocumentInfo) SetNumberOfTimesReferenced(v int64) {
 	o.GetActualInstance().(getResult).SetNumberOfTimesReferenced(v)
 }
 
-// GetParentId returns the ParentId field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetParentId() string {
-	type getResult interface {
-		GetParentId() string
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParentId()
-	} else {
-		var de string
-		return de
-	}
-}
-
-// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetParentIdOk() (*string, bool) {
-	type getResult interface {
-		GetParentIdOk() (*string, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParentIdOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasParentId returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasParentId() bool {
-	type getResult interface {
-		HasParentId() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasParentId()
-	} else {
-		return false
-	}
-}
-
-// SetParentId gets a reference to the given string and assigns it to the ParentId field.
-func (o *BTDocumentInfo) SetParentId(v string) {
-	type getResult interface {
-		SetParentId(v string)
-	}
-
-	o.GetActualInstance().(getResult).SetParentId(v)
-}
-
 // GetPermission returns the Permission field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetPermission() BTOldPermission {
 	type getResult interface {
@@ -3539,6 +3539,7 @@ type base_BTDocumentInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -3568,7 +3569,6 @@ type base_BTDocumentInfo struct {
 	Notes                                      *string                       `json:"notes,omitempty"`
 	NumberOfTimesCopied                        *int64                        `json:"numberOfTimesCopied,omitempty"`
 	NumberOfTimesReferenced                    *int64                        `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                                   *string                       `json:"parentId,omitempty"`
 	Permission                                 *BTOldPermission              `json:"permission,omitempty"`
 	PermissionSet                              []string                      `json:"permissionSet,omitempty"`
 	Public                                     *bool                         `json:"public,omitempty"`
@@ -4145,6 +4145,38 @@ func (o *base_BTDocumentInfo) HasOwner() bool {
 // SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
 func (o *base_BTDocumentInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
+}
+
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *base_BTDocumentInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *base_BTDocumentInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *base_BTDocumentInfo) SetParentId(v string) {
+	o.ParentId = &v
 }
 
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
@@ -5043,38 +5075,6 @@ func (o *base_BTDocumentInfo) SetNumberOfTimesReferenced(v int64) {
 	o.NumberOfTimesReferenced = &v
 }
 
-// GetParentId returns the ParentId field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetParentId() string {
-	if o == nil || o.ParentId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ParentId
-}
-
-// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetParentIdOk() (*string, bool) {
-	if o == nil || o.ParentId == nil {
-		return nil, false
-	}
-	return o.ParentId, true
-}
-
-// HasParentId returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasParentId() bool {
-	if o != nil && o.ParentId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParentId gets a reference to the given string and assigns it to the ParentId field.
-func (o *base_BTDocumentInfo) SetParentId(v string) {
-	o.ParentId = &v
-}
-
 // GetPermission returns the Permission field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetPermission() BTOldPermission {
 	if o == nil || o.Permission == nil {
@@ -5832,6 +5832,9 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
+	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
@@ -5915,9 +5918,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.NumberOfTimesReferenced != nil {
 		toSerialize["numberOfTimesReferenced"] = o.NumberOfTimesReferenced
-	}
-	if o.ParentId != nil {
-		toSerialize["parentId"] = o.ParentId
 	}
 	if o.Permission != nil {
 		toSerialize["permission"] = o.Permission
