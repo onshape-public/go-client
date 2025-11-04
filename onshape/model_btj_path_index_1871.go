@@ -17,16 +17,17 @@ import (
 // BTJPathIndex1871 Identifies a value in a json array. For insert and move edit destinations, -1 can be used to indicate 'end'.
 type BTJPathIndex1871 struct {
 	BTJPathElement2297
-	BtType *string `json:"btType,omitempty"`
-	Index  *int32  `json:"index,omitempty"`
+	BtType string `json:"btType"`
+	Index  *int32 `json:"index,omitempty"`
 }
 
 // NewBTJPathIndex1871 instantiates a new BTJPathIndex1871 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJPathIndex1871() *BTJPathIndex1871 {
+func NewBTJPathIndex1871(btType string) *BTJPathIndex1871 {
 	this := BTJPathIndex1871{}
+	this.BtType = btType
 	return &this
 }
 
@@ -38,36 +39,28 @@ func NewBTJPathIndex1871WithDefaults() *BTJPathIndex1871 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJPathIndex1871) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJPathIndex1871) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJPathIndex1871) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJPathIndex1871) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetIndex returns the Index field value if set, zero value otherwise.
@@ -112,7 +105,7 @@ func (o BTJPathIndex1871) MarshalJSON() ([]byte, error) {
 	if errBTJPathElement2297 != nil {
 		return []byte{}, errBTJPathElement2297
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Index != nil {
