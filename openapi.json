@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.206.66546-2b68d80236d7",
+    "version" : "1.206.66766-5be5fb5f0d8e",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -44366,12 +44366,6 @@
             "maxNumberOfPicks" : {
               "type" : "integer",
               "format" : "int32"
-            },
-            "parameters" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/BTParameterSpec-6"
-              }
             },
             "showLabelsOnly" : {
               "type" : "boolean"
