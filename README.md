@@ -12,13 +12,19 @@ import (
 )
 
 func main() {
-	config := onshape.NewConfiguration()
+	config := onshape.NewAPIConfiguration()
 	config.Debug = true
 
 	client := onshape.NewAPIClient(config)
 
-	ctx := context.WithValue(context.Background(), onshape.ContextAPIKeys,
-		onshape.APIKeys{"Your_Secret_Key", "Your_Access_Key"})
+    // Option 1: API keys
+	ctx := context.WithValue(context.Background(), onshape.ContextBasicAuth,
+		onshape.BasicAuth{UserName: "your api key", Password: "your secret key"})
+
+    // Option 2: Just set ONSHAPE_API_SECRET_KEY and ONSHAPE_API_ACCESS_KEY in ENV
+
+    // Option 3: Auth token
+    // ctx := context.WithValue(ctx, "accesstoken", "your access token")
 
 	docParams := onshape.NewBTDocumentParams()
 	docParams.SetName("Name For Your Document")
