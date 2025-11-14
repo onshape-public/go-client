@@ -36,6 +36,7 @@ type BTExternalConnectionInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -48,6 +49,7 @@ type BTExternalConnectionInfo struct {
 	IsOwnerEnterpriseEdu *bool                 `json:"isOwnerEnterpriseEdu,omitempty"`
 	Member               *bool                 `json:"member,omitempty"`
 	NumberOfMembers      *int64                `json:"numberOfMembers,omitempty"`
+	RejectedBy           *string               `json:"rejectedBy,omitempty"`
 	State                *int32                `json:"state,omitempty"`
 }
 
@@ -605,6 +607,38 @@ func (o *BTExternalConnectionInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTExternalConnectionInfo) SetParentId(v string) {
+	o.ParentId = &v
+}
+
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
 func (o *BTExternalConnectionInfo) GetProjectId() string {
 	if o == nil || o.ProjectId == nil {
@@ -957,6 +991,38 @@ func (o *BTExternalConnectionInfo) SetNumberOfMembers(v int64) {
 	o.NumberOfMembers = &v
 }
 
+// GetRejectedBy returns the RejectedBy field value if set, zero value otherwise.
+func (o *BTExternalConnectionInfo) GetRejectedBy() string {
+	if o == nil || o.RejectedBy == nil {
+		var ret string
+		return ret
+	}
+	return *o.RejectedBy
+}
+
+// GetRejectedByOk returns a tuple with the RejectedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTExternalConnectionInfo) GetRejectedByOk() (*string, bool) {
+	if o == nil || o.RejectedBy == nil {
+		return nil, false
+	}
+	return o.RejectedBy, true
+}
+
+// HasRejectedBy returns a boolean if a field has been set.
+func (o *BTExternalConnectionInfo) HasRejectedBy() bool {
+	if o != nil && o.RejectedBy != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetRejectedBy gets a reference to the given string and assigns it to the RejectedBy field.
+func (o *BTExternalConnectionInfo) SetRejectedBy(v string) {
+	o.RejectedBy = &v
+}
+
 // GetState returns the State field value if set, zero value otherwise.
 func (o *BTExternalConnectionInfo) GetState() int32 {
 	if o == nil || o.State == nil {
@@ -1042,6 +1108,9 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
+	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
@@ -1074,6 +1143,9 @@ func (o BTExternalConnectionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.NumberOfMembers != nil {
 		toSerialize["numberOfMembers"] = o.NumberOfMembers
+	}
+	if o.RejectedBy != nil {
+		toSerialize["rejectedBy"] = o.RejectedBy
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

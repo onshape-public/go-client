@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **CanUnshare** | Pointer to **bool** |  | [optional] 
 **ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **IsOrphaned** | Pointer to **bool** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
@@ -131,31 +130,6 @@ SetIsOrphaned sets IsOrphaned field to given value.
 `func (o *BTFolderInfo) HasIsOrphaned() bool`
 
 HasIsOrphaned returns a boolean if a field has been set.
-
-### GetParentId
-
-`func (o *BTFolderInfo) GetParentId() string`
-
-GetParentId returns the ParentId field if non-nil, zero value otherwise.
-
-### GetParentIdOk
-
-`func (o *BTFolderInfo) GetParentIdOk() (*string, bool)`
-
-GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParentId
-
-`func (o *BTFolderInfo) SetParentId(v string)`
-
-SetParentId sets ParentId field to given value.
-
-### HasParentId
-
-`func (o *BTFolderInfo) HasParentId() bool`
-
-HasParentId returns a boolean if a field has been set.
 
 ### GetPermissionSet
 

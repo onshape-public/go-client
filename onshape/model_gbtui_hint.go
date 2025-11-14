@@ -57,6 +57,7 @@ const (
 	GBTUIHintAlwaysUseDependencies            GBTUIHint = "ALWAYS_USE_DEPENDENCIES"
 	GBTUIHintNoQueryVariable                  GBTUIHint = "NO_QUERY_VARIABLE"
 	GBTUIHintAllowFlatSketchSelection         GBTUIHint = "ALLOW_FLAT_SKETCH_SELECTION"
+	GBTUIHintQueryVariableName                GBTUIHint = "QUERY_VARIABLE_NAME"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -99,6 +100,7 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"ALWAYS_USE_DEPENDENCIES",
 	"NO_QUERY_VARIABLE",
 	"ALLOW_FLAT_SKETCH_SELECTION",
+	"QUERY_VARIABLE_NAME",
 	"UNKNOWN",
 }
 
