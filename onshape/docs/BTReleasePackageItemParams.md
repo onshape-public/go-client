@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ElementType** | Pointer to **int32** |  | [optional] 
+**FlatPartId** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **IsIncluded** | Pointer to **bool** |  | [optional] 
@@ -164,6 +165,31 @@ SetElementType sets ElementType field to given value.
 `func (o *BTReleasePackageItemParams) HasElementType() bool`
 
 HasElementType returns a boolean if a field has been set.
+
+### GetFlatPartId
+
+`func (o *BTReleasePackageItemParams) GetFlatPartId() string`
+
+GetFlatPartId returns the FlatPartId field if non-nil, zero value otherwise.
+
+### GetFlatPartIdOk
+
+`func (o *BTReleasePackageItemParams) GetFlatPartIdOk() (*string, bool)`
+
+GetFlatPartIdOk returns a tuple with the FlatPartId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlatPartId
+
+`func (o *BTReleasePackageItemParams) SetFlatPartId(v string)`
+
+SetFlatPartId sets FlatPartId field to given value.
+
+### HasFlatPartId
+
+`func (o *BTReleasePackageItemParams) HasFlatPartId() bool`
+
+HasFlatPartId returns a boolean if a field has been set.
 
 ### GetHref
 

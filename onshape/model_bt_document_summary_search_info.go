@@ -36,6 +36,7 @@ type BTDocumentSummarySearchInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -65,7 +66,6 @@ type BTDocumentSummarySearchInfo struct {
 	Notes                               *string                       `json:"notes,omitempty"`
 	NumberOfTimesCopied                 *int64                        `json:"numberOfTimesCopied,omitempty"`
 	NumberOfTimesReferenced             *int64                        `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                            *string                       `json:"parentId,omitempty"`
 	Permission                          *BTOldPermission              `json:"permission,omitempty"`
 	PermissionSet                       []string                      `json:"permissionSet,omitempty"`
 	Public                              *bool                         `json:"public,omitempty"`
@@ -635,6 +635,38 @@ func (o *BTDocumentSummarySearchInfo) HasOwner() bool {
 // SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
 func (o *BTDocumentSummarySearchInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
+}
+
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTDocumentSummarySearchInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummarySearchInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTDocumentSummarySearchInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTDocumentSummarySearchInfo) SetParentId(v string) {
+	o.ParentId = &v
 }
 
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
@@ -1533,38 +1565,6 @@ func (o *BTDocumentSummarySearchInfo) SetNumberOfTimesReferenced(v int64) {
 	o.NumberOfTimesReferenced = &v
 }
 
-// GetParentId returns the ParentId field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetParentId() string {
-	if o == nil || o.ParentId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ParentId
-}
-
-// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetParentIdOk() (*string, bool) {
-	if o == nil || o.ParentId == nil {
-		return nil, false
-	}
-	return o.ParentId, true
-}
-
-// HasParentId returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasParentId() bool {
-	if o != nil && o.ParentId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParentId gets a reference to the given string and assigns it to the ParentId field.
-func (o *BTDocumentSummarySearchInfo) SetParentId(v string) {
-	o.ParentId = &v
-}
-
 // GetPermission returns the Permission field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetPermission() BTOldPermission {
 	if o == nil || o.Permission == nil {
@@ -2098,6 +2098,9 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
+	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
@@ -2181,9 +2184,6 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.NumberOfTimesReferenced != nil {
 		toSerialize["numberOfTimesReferenced"] = o.NumberOfTimesReferenced
-	}
-	if o.ParentId != nil {
-		toSerialize["parentId"] = o.ParentId
 	}
 	if o.Permission != nil {
 		toSerialize["permission"] = o.Permission

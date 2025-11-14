@@ -21,6 +21,7 @@ type BTReleasePackageItemParams struct {
 	DocumentId         *string                `json:"documentId,omitempty"`
 	ElementId          *string                `json:"elementId,omitempty"`
 	ElementType        *int32                 `json:"elementType,omitempty"`
+	FlatPartId         *string                `json:"flatPartId,omitempty"`
 	Href               *string                `json:"href,omitempty"`
 	Id                 *string                `json:"id,omitempty"`
 	IsIncluded         *bool                  `json:"isIncluded,omitempty"`
@@ -209,6 +210,38 @@ func (o *BTReleasePackageItemParams) HasElementType() bool {
 // SetElementType gets a reference to the given int32 and assigns it to the ElementType field.
 func (o *BTReleasePackageItemParams) SetElementType(v int32) {
 	o.ElementType = &v
+}
+
+// GetFlatPartId returns the FlatPartId field value if set, zero value otherwise.
+func (o *BTReleasePackageItemParams) GetFlatPartId() string {
+	if o == nil || o.FlatPartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FlatPartId
+}
+
+// GetFlatPartIdOk returns a tuple with the FlatPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemParams) GetFlatPartIdOk() (*string, bool) {
+	if o == nil || o.FlatPartId == nil {
+		return nil, false
+	}
+	return o.FlatPartId, true
+}
+
+// HasFlatPartId returns a boolean if a field has been set.
+func (o *BTReleasePackageItemParams) HasFlatPartId() bool {
+	if o != nil && o.FlatPartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFlatPartId gets a reference to the given string and assigns it to the FlatPartId field.
+func (o *BTReleasePackageItemParams) SetFlatPartId(v string) {
+	o.FlatPartId = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -579,6 +612,9 @@ func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementType != nil {
 		toSerialize["elementType"] = o.ElementType
+	}
+	if o.FlatPartId != nil {
+		toSerialize["flatPartId"] = o.FlatPartId
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href

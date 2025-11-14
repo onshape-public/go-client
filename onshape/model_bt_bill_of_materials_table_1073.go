@@ -26,6 +26,8 @@ type BTBillOfMaterialsTable1073 struct {
 	ReadOnly                                *bool                   `json:"readOnly,omitempty"`
 	RowCount                                *int32                  `json:"rowCount,omitempty"`
 	SortOrder                               *BTTableSortOrder4371   `json:"sortOrder,omitempty"`
+	StatusMessage                           *string                 `json:"statusMessage,omitempty"`
+	StatusType                              *GBTNodeStatusType      `json:"statusType,omitempty"`
 	TableColumns                            []BTTableColumnInfo1222 `json:"tableColumns,omitempty"`
 	TableId                                 *string                 `json:"tableId,omitempty"`
 	TableRows                               []BTTableRow1054        `json:"tableRows,omitempty"`
@@ -343,6 +345,70 @@ func (o *BTBillOfMaterialsTable1073) HasSortOrder() bool {
 // SetSortOrder gets a reference to the given BTTableSortOrder4371 and assigns it to the SortOrder field.
 func (o *BTBillOfMaterialsTable1073) SetSortOrder(v BTTableSortOrder4371) {
 	o.SortOrder = &v
+}
+
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTable1073) GetStatusMessage() string {
+	if o == nil || o.StatusMessage == nil {
+		var ret string
+		return ret
+	}
+	return *o.StatusMessage
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTable1073) GetStatusMessageOk() (*string, bool) {
+	if o == nil || o.StatusMessage == nil {
+		return nil, false
+	}
+	return o.StatusMessage, true
+}
+
+// HasStatusMessage returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTable1073) HasStatusMessage() bool {
+	if o != nil && o.StatusMessage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *BTBillOfMaterialsTable1073) SetStatusMessage(v string) {
+	o.StatusMessage = &v
+}
+
+// GetStatusType returns the StatusType field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsTable1073) GetStatusType() GBTNodeStatusType {
+	if o == nil || o.StatusType == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.StatusType
+}
+
+// GetStatusTypeOk returns a tuple with the StatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsTable1073) GetStatusTypeOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.StatusType == nil {
+		return nil, false
+	}
+	return o.StatusType, true
+}
+
+// HasStatusType returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsTable1073) HasStatusType() bool {
+	if o != nil && o.StatusType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusType gets a reference to the given GBTNodeStatusType and assigns it to the StatusType field.
+func (o *BTBillOfMaterialsTable1073) SetStatusType(v GBTNodeStatusType) {
+	o.StatusType = &v
 }
 
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
@@ -765,6 +831,12 @@ func (o BTBillOfMaterialsTable1073) MarshalJSON() ([]byte, error) {
 	}
 	if o.SortOrder != nil {
 		toSerialize["sortOrder"] = o.SortOrder
+	}
+	if o.StatusMessage != nil {
+		toSerialize["statusMessage"] = o.StatusMessage
+	}
+	if o.StatusType != nil {
+		toSerialize["statusType"] = o.StatusType
 	}
 	if o.TableColumns != nil {
 		toSerialize["tableColumns"] = o.TableColumns
