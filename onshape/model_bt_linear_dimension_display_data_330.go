@@ -97,6 +97,56 @@ func (o *BTLinearDimensionDisplayData330) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTLinearDimensionDisplayData330) GetCharacteristicId() string {
+	type getResult interface {
+		GetCharacteristicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLinearDimensionDisplayData330) GetCharacteristicIdOk() (*string, bool) {
+	type getResult interface {
+		GetCharacteristicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTLinearDimensionDisplayData330) HasCharacteristicId() bool {
+	type getResult interface {
+		HasCharacteristicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCharacteristicId()
+	} else {
+		return false
+	}
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTLinearDimensionDisplayData330) SetCharacteristicId(v string) {
+	type getResult interface {
+		SetCharacteristicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCharacteristicId(v)
+}
+
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
 func (o *BTLinearDimensionDisplayData330) GetCoordinateSystem() BTMatrix3x3340 {
 	type getResult interface {
@@ -1653,6 +1703,7 @@ func (v *NullableBTLinearDimensionDisplayData330) UnmarshalJSON(src []byte) erro
 type base_BTLinearDimensionDisplayData330 struct {
 	BTDimensionDisplayData323
 	BtType                *string                `json:"btType,omitempty"`
+	CharacteristicId      *string                `json:"characteristicId,omitempty"`
 	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
 	FeatureId             *string                `json:"featureId,omitempty"`
 	FitClass              *string                `json:"fitClass,omitempty"`
@@ -1731,6 +1782,38 @@ func (o *base_BTLinearDimensionDisplayData330) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTLinearDimensionDisplayData330) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *base_BTLinearDimensionDisplayData330) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTLinearDimensionDisplayData330) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *base_BTLinearDimensionDisplayData330) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *base_BTLinearDimensionDisplayData330) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -2673,6 +2756,9 @@ func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
 	}
 	if o.CoordinateSystem != nil {
 		toSerialize["coordinateSystem"] = o.CoordinateSystem
