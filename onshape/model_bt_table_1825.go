@@ -512,6 +512,106 @@ func (o *BTTable1825) SetSortOrder(v BTTableSortOrder4371) {
 	o.GetActualInstance().(getResult).SetSortOrder(v)
 }
 
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *BTTable1825) GetStatusMessage() string {
+	type getResult interface {
+		GetStatusMessage() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusMessage()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTable1825) GetStatusMessageOk() (*string, bool) {
+	type getResult interface {
+		GetStatusMessageOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusMessageOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasStatusMessage returns a boolean if a field has been set.
+func (o *BTTable1825) HasStatusMessage() bool {
+	type getResult interface {
+		HasStatusMessage() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasStatusMessage()
+	} else {
+		return false
+	}
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *BTTable1825) SetStatusMessage(v string) {
+	type getResult interface {
+		SetStatusMessage(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetStatusMessage(v)
+}
+
+// GetStatusType returns the StatusType field value if set, zero value otherwise.
+func (o *BTTable1825) GetStatusType() GBTNodeStatusType {
+	type getResult interface {
+		GetStatusType() GBTNodeStatusType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusType()
+	} else {
+		var de GBTNodeStatusType
+		return de
+	}
+}
+
+// GetStatusTypeOk returns a tuple with the StatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTable1825) GetStatusTypeOk() (*GBTNodeStatusType, bool) {
+	type getResult interface {
+		GetStatusTypeOk() (*GBTNodeStatusType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasStatusType returns a boolean if a field has been set.
+func (o *BTTable1825) HasStatusType() bool {
+	type getResult interface {
+		HasStatusType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasStatusType()
+	} else {
+		return false
+	}
+}
+
+// SetStatusType gets a reference to the given GBTNodeStatusType and assigns it to the StatusType field.
+func (o *BTTable1825) SetStatusType(v GBTNodeStatusType) {
+	type getResult interface {
+		SetStatusType(v GBTNodeStatusType)
+	}
+
+	o.GetActualInstance().(getResult).SetStatusType(v)
+}
+
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
 func (o *BTTable1825) GetTableColumns() []BTTableColumnInfo1222 {
 	type getResult interface {
@@ -868,6 +968,8 @@ type base_BTTable1825 struct {
 	ReadOnly      *bool                   `json:"readOnly,omitempty"`
 	RowCount      *int32                  `json:"rowCount,omitempty"`
 	SortOrder     *BTTableSortOrder4371   `json:"sortOrder,omitempty"`
+	StatusMessage *string                 `json:"statusMessage,omitempty"`
+	StatusType    *GBTNodeStatusType      `json:"statusType,omitempty"`
 	TableColumns  []BTTableColumnInfo1222 `json:"tableColumns,omitempty"`
 	TableId       *string                 `json:"tableId,omitempty"`
 	TableRows     []BTTableRow1054        `json:"tableRows,omitempty"`
@@ -1179,6 +1281,70 @@ func (o *base_BTTable1825) SetSortOrder(v BTTableSortOrder4371) {
 	o.SortOrder = &v
 }
 
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *base_BTTable1825) GetStatusMessage() string {
+	if o == nil || o.StatusMessage == nil {
+		var ret string
+		return ret
+	}
+	return *o.StatusMessage
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTable1825) GetStatusMessageOk() (*string, bool) {
+	if o == nil || o.StatusMessage == nil {
+		return nil, false
+	}
+	return o.StatusMessage, true
+}
+
+// HasStatusMessage returns a boolean if a field has been set.
+func (o *base_BTTable1825) HasStatusMessage() bool {
+	if o != nil && o.StatusMessage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *base_BTTable1825) SetStatusMessage(v string) {
+	o.StatusMessage = &v
+}
+
+// GetStatusType returns the StatusType field value if set, zero value otherwise.
+func (o *base_BTTable1825) GetStatusType() GBTNodeStatusType {
+	if o == nil || o.StatusType == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.StatusType
+}
+
+// GetStatusTypeOk returns a tuple with the StatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTable1825) GetStatusTypeOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.StatusType == nil {
+		return nil, false
+	}
+	return o.StatusType, true
+}
+
+// HasStatusType returns a boolean if a field has been set.
+func (o *base_BTTable1825) HasStatusType() bool {
+	if o != nil && o.StatusType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusType gets a reference to the given GBTNodeStatusType and assigns it to the StatusType field.
+func (o *base_BTTable1825) SetStatusType(v GBTNodeStatusType) {
+	o.StatusType = &v
+}
+
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
 func (o *base_BTTable1825) GetTableColumns() []BTTableColumnInfo1222 {
 	if o == nil || o.TableColumns == nil {
@@ -1335,6 +1501,12 @@ func (o base_BTTable1825) MarshalJSON() ([]byte, error) {
 	}
 	if o.SortOrder != nil {
 		toSerialize["sortOrder"] = o.SortOrder
+	}
+	if o.StatusMessage != nil {
+		toSerialize["statusMessage"] = o.StatusMessage
+	}
+	if o.StatusType != nil {
+		toSerialize["statusType"] = o.StatusType
 	}
 	if o.TableColumns != nil {
 		toSerialize["tableColumns"] = o.TableColumns

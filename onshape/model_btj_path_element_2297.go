@@ -34,8 +34,8 @@ func (o *BTJPathKey3221) AsBTJPathElement2297() *BTJPathElement2297 {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJPathElement2297() *BTJPathElement2297 {
-	this := BTJPathElement2297{Newbase_BTJPathElement2297()}
+func NewBTJPathElement2297(btType string) *BTJPathElement2297 {
+	this := BTJPathElement2297{Newbase_BTJPathElement2297(btType)}
 	return &this
 }
 
@@ -47,7 +47,7 @@ func NewBTJPathElement2297WithDefaults() *BTJPathElement2297 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJPathElement2297) GetBtType() string {
 	type getResult interface {
 		GetBtType() string
@@ -61,7 +61,7 @@ func (o *BTJPathElement2297) GetBtType() string {
 	}
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJPathElement2297) GetBtTypeOk() (*string, bool) {
 	type getResult interface {
@@ -75,20 +75,7 @@ func (o *BTJPathElement2297) GetBtTypeOk() (*string, bool) {
 	}
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJPathElement2297) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJPathElement2297) SetBtType(v string) {
 	type getResult interface {
 		SetBtType(v string)
@@ -202,15 +189,16 @@ func (v *NullableBTJPathElement2297) UnmarshalJSON(src []byte) error {
 
 type base_BTJPathElement2297 struct {
 	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
+	BtType string `json:"btType"`
 }
 
 // Newbase_BTJPathElement2297 instantiates a new base_BTJPathElement2297 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_BTJPathElement2297() *base_BTJPathElement2297 {
+func Newbase_BTJPathElement2297(btType string) *base_BTJPathElement2297 {
 	this := base_BTJPathElement2297{}
+	this.BtType = btType
 	return &this
 }
 
@@ -222,41 +210,33 @@ func Newbase_BTJPathElement2297WithDefaults() *base_BTJPathElement2297 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *base_BTJPathElement2297) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *base_BTJPathElement2297) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTJPathElement2297) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *base_BTJPathElement2297) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 func (o base_BTJPathElement2297) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)

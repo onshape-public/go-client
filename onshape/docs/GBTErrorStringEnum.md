@@ -3393,6 +3393,10 @@
 
 * `GBTErrorStringEnumTlSelfIntersectingBody` (value: `"TL_SELF_INTERSECTING_BODY"`)
 
+* `GBTErrorStringEnumSketchPatternMissingParameter` (value: `"SKETCH_PATTERN_MISSING_PARAMETER"`)
+
+* `GBTErrorStringEnumSketchPatternInvalidValue` (value: `"SKETCH_PATTERN_INVALID_VALUE"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 
