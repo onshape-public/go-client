@@ -17,7 +17,7 @@ import (
 // BTJEditList2707 A list of edits that will be applied in order.
 type BTJEditList2707 struct {
 	BTJEdit3734
-	BtType *string       `json:"btType,omitempty"`
+	BtType string        `json:"btType"`
 	Edits  []BTJEdit3734 `json:"edits,omitempty"`
 }
 
@@ -25,8 +25,9 @@ type BTJEditList2707 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJEditList2707() *BTJEditList2707 {
+func NewBTJEditList2707(btType string) *BTJEditList2707 {
 	this := BTJEditList2707{}
+	this.BtType = btType
 	return &this
 }
 
@@ -38,36 +39,28 @@ func NewBTJEditList2707WithDefaults() *BTJEditList2707 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJEditList2707) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJEditList2707) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEditList2707) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJEditList2707) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetEdits returns the Edits field value if set, zero value otherwise.
@@ -112,7 +105,7 @@ func (o BTJEditList2707) MarshalJSON() ([]byte, error) {
 	if errBTJEdit3734 != nil {
 		return []byte{}, errBTJEdit3734
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Edits != nil {

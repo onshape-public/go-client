@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **Path** | Pointer to [**BTJPath3073**](BTJPath3073.md) |  | [optional] 
 **Value** | Pointer to **map[string]interface{}** |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBTJEditInsert2523
 
-`func NewBTJEditInsert2523() *BTJEditInsert2523`
+`func NewBTJEditInsert2523(btType string, ) *BTJEditInsert2523`
 
 NewBTJEditInsert2523 instantiates a new BTJEditInsert2523 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJEditInsert2523) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetPath
 

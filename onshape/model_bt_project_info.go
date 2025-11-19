@@ -36,6 +36,7 @@ type BTProjectInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -602,6 +603,38 @@ func (o *BTProjectInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTProjectInfo) SetParentId(v string) {
+	o.ParentId = &v
+}
+
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
 func (o *BTProjectInfo) GetProjectId() string {
 	if o == nil || o.ProjectId == nil {
@@ -942,6 +975,9 @@ func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
