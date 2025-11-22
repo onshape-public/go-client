@@ -3393,6 +3393,16 @@
 
 * `GBTErrorStringEnumTlSelfIntersectingBody` (value: `"TL_SELF_INTERSECTING_BODY"`)
 
+* `GBTErrorStringEnumSketchPatternMissingParameter` (value: `"SKETCH_PATTERN_MISSING_PARAMETER"`)
+
+* `GBTErrorStringEnumSketchPatternInvalidValue` (value: `"SKETCH_PATTERN_INVALID_VALUE"`)
+
+* `GBTErrorStringEnumTlProfilesTransformed` (value: `"TL_PROFILES_TRANSFORMED"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoVariableRadius` (value: `"TOLERANT_RADIUS_NO_VARIABLE_RADIUS"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoAsymmetry` (value: `"TOLERANT_RADIUS_NO_ASYMMETRY"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

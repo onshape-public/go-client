@@ -17,7 +17,7 @@ import (
 // BTJPathKey3221 Identifies a subtree of the json structure by field name.
 type BTJPathKey3221 struct {
 	BTJPathElement2297
-	BtType *string `json:"btType,omitempty"`
+	BtType string  `json:"btType"`
 	Key    *string `json:"key,omitempty"`
 }
 
@@ -25,8 +25,9 @@ type BTJPathKey3221 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJPathKey3221() *BTJPathKey3221 {
+func NewBTJPathKey3221(btType string) *BTJPathKey3221 {
 	this := BTJPathKey3221{}
+	this.BtType = btType
 	return &this
 }
 
@@ -38,36 +39,28 @@ func NewBTJPathKey3221WithDefaults() *BTJPathKey3221 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJPathKey3221) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJPathKey3221) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJPathKey3221) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJPathKey3221) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetKey returns the Key field value if set, zero value otherwise.
@@ -112,7 +105,7 @@ func (o BTJPathKey3221) MarshalJSON() ([]byte, error) {
 	if errBTJPathElement2297 != nil {
 		return []byte{}, errBTJPathElement2297
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Key != nil {
