@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConstraintType** | Pointer to [**GBTGTolConstraintType**](GBTGTolConstraintType.md) |  | [optional] 
+**ExtendedConstraintType** | Pointer to [**GBTGTolExtendedConstraintType**](GBTGTolExtendedConstraintType.md) |  | [optional] 
 **Prefix** | Pointer to **string** |  | [optional] 
 **References** | Pointer to **[]string** |  | [optional] 
 **Suffix** | Pointer to **string** |  | [optional] 
@@ -79,6 +80,31 @@ SetConstraintType sets ConstraintType field to given value.
 `func (o *BTAnnotationGTolRowDisplayData4397) HasConstraintType() bool`
 
 HasConstraintType returns a boolean if a field has been set.
+
+### GetExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintType() GBTGTolExtendedConstraintType`
+
+GetExtendedConstraintType returns the ExtendedConstraintType field if non-nil, zero value otherwise.
+
+### GetExtendedConstraintTypeOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintTypeOk() (*GBTGTolExtendedConstraintType, bool)`
+
+GetExtendedConstraintTypeOk returns a tuple with the ExtendedConstraintType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetExtendedConstraintType(v GBTGTolExtendedConstraintType)`
+
+SetExtendedConstraintType sets ExtendedConstraintType field to given value.
+
+### HasExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasExtendedConstraintType() bool`
+
+HasExtendedConstraintType returns a boolean if a field has been set.
 
 ### GetPrefix
 

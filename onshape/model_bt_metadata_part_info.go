@@ -19,13 +19,14 @@ type BTMetadataPartInfo struct {
 	Href     *string `json:"href,omitempty"`
 	JsonType string  `json:"jsonType"`
 	// Properties associated with this metadata object
-	Properties      []BTMetadataPropertyInfo `json:"properties,omitempty"`
-	Thumbnail       *BTThumbnailInfo         `json:"thumbnail,omitempty"`
-	IsFlattenedBody *bool                    `json:"isFlattenedBody,omitempty"`
-	MeshState       *int32                   `json:"meshState,omitempty"`
-	PartId          *string                  `json:"partId,omitempty"`
-	PartIdentity    *string                  `json:"partIdentity,omitempty"`
-	PartType        *string                  `json:"partType,omitempty"`
+	Properties              []BTMetadataPropertyInfo `json:"properties,omitempty"`
+	Thumbnail               *BTThumbnailInfo         `json:"thumbnail,omitempty"`
+	IsFlattenedBody         *bool                    `json:"isFlattenedBody,omitempty"`
+	IsPublicPartOverridable *bool                    `json:"isPublicPartOverridable,omitempty"`
+	MeshState               *int32                   `json:"meshState,omitempty"`
+	PartId                  *string                  `json:"partId,omitempty"`
+	PartIdentity            *string                  `json:"partIdentity,omitempty"`
+	PartType                *string                  `json:"partType,omitempty"`
 }
 
 // NewBTMetadataPartInfo instantiates a new BTMetadataPartInfo object
@@ -198,6 +199,38 @@ func (o *BTMetadataPartInfo) SetIsFlattenedBody(v bool) {
 	o.IsFlattenedBody = &v
 }
 
+// GetIsPublicPartOverridable returns the IsPublicPartOverridable field value if set, zero value otherwise.
+func (o *BTMetadataPartInfo) GetIsPublicPartOverridable() bool {
+	if o == nil || o.IsPublicPartOverridable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPublicPartOverridable
+}
+
+// GetIsPublicPartOverridableOk returns a tuple with the IsPublicPartOverridable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPartInfo) GetIsPublicPartOverridableOk() (*bool, bool) {
+	if o == nil || o.IsPublicPartOverridable == nil {
+		return nil, false
+	}
+	return o.IsPublicPartOverridable, true
+}
+
+// HasIsPublicPartOverridable returns a boolean if a field has been set.
+func (o *BTMetadataPartInfo) HasIsPublicPartOverridable() bool {
+	if o != nil && o.IsPublicPartOverridable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPublicPartOverridable gets a reference to the given bool and assigns it to the IsPublicPartOverridable field.
+func (o *BTMetadataPartInfo) SetIsPublicPartOverridable(v bool) {
+	o.IsPublicPartOverridable = &v
+}
+
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
 func (o *BTMetadataPartInfo) GetMeshState() int32 {
 	if o == nil || o.MeshState == nil {
@@ -342,6 +375,9 @@ func (o BTMetadataPartInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFlattenedBody != nil {
 		toSerialize["isFlattenedBody"] = o.IsFlattenedBody
+	}
+	if o.IsPublicPartOverridable != nil {
+		toSerialize["isPublicPartOverridable"] = o.IsPublicPartOverridable
 	}
 	if o.MeshState != nil {
 		toSerialize["meshState"] = o.MeshState

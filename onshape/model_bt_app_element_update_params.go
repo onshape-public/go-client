@@ -16,11 +16,9 @@ import (
 
 // BTAppElementUpdateParams struct for BTAppElementUpdateParams
 type BTAppElementUpdateParams struct {
-	// Edits to be applied to the element's subelement data.
-	Changes []BTAppElementChangeParams `json:"changes,omitempty"`
 	// The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
 	Description *string `json:"description,omitempty"`
-	// A json patch that will be applied to the application element's json data.
+	// A json patch that will be applied to the application element's json data. The JSON patch format is as specified in RFC 6902 from the IETF.
 	JsonPatch    *string      `json:"jsonPatch,omitempty"`
 	JsonTreeEdit *BTJEdit3734 `json:"jsonTreeEdit,omitempty"`
 	// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
@@ -50,38 +48,6 @@ func NewBTAppElementUpdateParams() *BTAppElementUpdateParams {
 func NewBTAppElementUpdateParamsWithDefaults() *BTAppElementUpdateParams {
 	this := BTAppElementUpdateParams{}
 	return &this
-}
-
-// GetChanges returns the Changes field value if set, zero value otherwise.
-func (o *BTAppElementUpdateParams) GetChanges() []BTAppElementChangeParams {
-	if o == nil || o.Changes == nil {
-		var ret []BTAppElementChangeParams
-		return ret
-	}
-	return o.Changes
-}
-
-// GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAppElementUpdateParams) GetChangesOk() ([]BTAppElementChangeParams, bool) {
-	if o == nil || o.Changes == nil {
-		return nil, false
-	}
-	return o.Changes, true
-}
-
-// HasChanges returns a boolean if a field has been set.
-func (o *BTAppElementUpdateParams) HasChanges() bool {
-	if o != nil && o.Changes != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChanges gets a reference to the given []BTAppElementChangeParams and assigns it to the Changes field.
-func (o *BTAppElementUpdateParams) SetChanges(v []BTAppElementChangeParams) {
-	o.Changes = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -342,9 +308,6 @@ func (o *BTAppElementUpdateParams) SetTransactionId(v string) {
 
 func (o BTAppElementUpdateParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Changes != nil {
-		toSerialize["changes"] = o.Changes
-	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}

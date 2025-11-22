@@ -17,36 +17,38 @@ import (
 // BTCenterlineDimensionDisplayData1798 struct for BTCenterlineDimensionDisplayData1798
 type BTCenterlineDimensionDisplayData1798 struct {
 	BTLinearDimensionDisplayData330
-	BtType                *string                `json:"btType,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
-	FeatureId             *string                `json:"featureId,omitempty"`
-	FitClass              *string                `json:"fitClass,omitempty"`
-	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
-	Id                    *string                `json:"id,omitempty"`
-	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
-	IsDriven              *bool                  `json:"isDriven,omitempty"`
-	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
-	ParameterId           *string                `json:"parameterId,omitempty"`
-	PartId                *string                `json:"partId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
-	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
-	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
-	Value                 *float64               `json:"value,omitempty"`
-	HasExtension          *bool                  `json:"hasExtension,omitempty"`
-	PositionX             *float64               `json:"positionX,omitempty"`
-	PositionY             *float64               `json:"positionY,omitempty"`
-	WitnessEndPoint0X     *float64               `json:"witnessEndPoint0X,omitempty"`
-	WitnessEndPoint0Y     *float64               `json:"witnessEndPoint0Y,omitempty"`
-	WitnessEndPoint1X     *float64               `json:"witnessEndPoint1X,omitempty"`
-	WitnessEndPoint1Y     *float64               `json:"witnessEndPoint1Y,omitempty"`
-	WitnessExtension0Z    *float64               `json:"witnessExtension0Z,omitempty"`
-	WitnessExtension1Z    *float64               `json:"witnessExtension1Z,omitempty"`
+	BtType                *string                 `json:"btType,omitempty"`
+	CharacteristicId      *string                 `json:"characteristicId,omitempty"`
+	CoordinateSystem      *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
+	FeatureId             *string                 `json:"featureId,omitempty"`
+	FitClass              *string                 `json:"fitClass,omitempty"`
+	HasMaximumLimit_      *bool                   `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_      *bool                   `json:"hasMinimumLimit,omitempty"`
+	Id                    *string                 `json:"id,omitempty"`
+	IsAnnotationDimension *bool                   `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat  *bool                   `json:"isAssociatedWithFlat,omitempty"`
+	IsDriven              *bool                   `json:"isDriven,omitempty"`
+	IsOverDefined         *bool                   `json:"isOverDefined,omitempty"`
+	LowerTolerance        *float64                `json:"lowerTolerance,omitempty"`
+	MaximumLimit          *float64                `json:"maximumLimit,omitempty"`
+	MinimumLimit          *float64                `json:"minimumLimit,omitempty"`
+	ParameterId           *string                 `json:"parameterId,omitempty"`
+	PartId                *string                 `json:"partId,omitempty"`
+	PlaneMatrix           *BTBSMatrix386          `json:"planeMatrix,omitempty"`
+	Precision             *GBTTolerancePrecision  `json:"precision,omitempty"`
+	ToleranceType         *GBTToleranceType       `json:"toleranceType,omitempty"`
+	UpperTolerance        *float64                `json:"upperTolerance,omitempty"`
+	Value                 *float64                `json:"value,omitempty"`
+	HasExtension          *bool                   `json:"hasExtension,omitempty"`
+	PositionX             *float64                `json:"positionX,omitempty"`
+	PositionY             *float64                `json:"positionY,omitempty"`
+	WitnessEndPoint0X     *float64                `json:"witnessEndPoint0X,omitempty"`
+	WitnessEndPoint0Y     *float64                `json:"witnessEndPoint0Y,omitempty"`
+	WitnessEndPoint1X     *float64                `json:"witnessEndPoint1X,omitempty"`
+	WitnessEndPoint1Y     *float64                `json:"witnessEndPoint1Y,omitempty"`
+	WitnessExtension0Z    *float64                `json:"witnessExtension0Z,omitempty"`
+	WitnessExtension1Z    *float64                `json:"witnessExtension1Z,omitempty"`
+	WitnessExtensionCurve *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
 }
 
 // NewBTCenterlineDimensionDisplayData1798 instantiates a new BTCenterlineDimensionDisplayData1798 object
@@ -96,6 +98,38 @@ func (o *BTCenterlineDimensionDisplayData1798) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTCenterlineDimensionDisplayData1798) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTCenterlineDimensionDisplayData1798) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCenterlineDimensionDisplayData1798) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTCenterlineDimensionDisplayData1798) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTCenterlineDimensionDisplayData1798) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -1026,6 +1060,38 @@ func (o *BTCenterlineDimensionDisplayData1798) SetWitnessExtension1Z(v float64) 
 	o.WitnessExtension1Z = &v
 }
 
+// GetWitnessExtensionCurve returns the WitnessExtensionCurve field value if set, zero value otherwise.
+func (o *BTCenterlineDimensionDisplayData1798) GetWitnessExtensionCurve() BTCurveDisplayData4722 {
+	if o == nil || o.WitnessExtensionCurve == nil {
+		var ret BTCurveDisplayData4722
+		return ret
+	}
+	return *o.WitnessExtensionCurve
+}
+
+// GetWitnessExtensionCurveOk returns a tuple with the WitnessExtensionCurve field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCenterlineDimensionDisplayData1798) GetWitnessExtensionCurveOk() (*BTCurveDisplayData4722, bool) {
+	if o == nil || o.WitnessExtensionCurve == nil {
+		return nil, false
+	}
+	return o.WitnessExtensionCurve, true
+}
+
+// HasWitnessExtensionCurve returns a boolean if a field has been set.
+func (o *BTCenterlineDimensionDisplayData1798) HasWitnessExtensionCurve() bool {
+	if o != nil && o.WitnessExtensionCurve != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWitnessExtensionCurve gets a reference to the given BTCurveDisplayData4722 and assigns it to the WitnessExtensionCurve field.
+func (o *BTCenterlineDimensionDisplayData1798) SetWitnessExtensionCurve(v BTCurveDisplayData4722) {
+	o.WitnessExtensionCurve = &v
+}
+
 func (o BTCenterlineDimensionDisplayData1798) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTLinearDimensionDisplayData330, errBTLinearDimensionDisplayData330 := json.Marshal(o.BTLinearDimensionDisplayData330)
@@ -1038,6 +1104,9 @@ func (o BTCenterlineDimensionDisplayData1798) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
 	}
 	if o.CoordinateSystem != nil {
 		toSerialize["coordinateSystem"] = o.CoordinateSystem
@@ -1125,6 +1194,9 @@ func (o BTCenterlineDimensionDisplayData1798) MarshalJSON() ([]byte, error) {
 	}
 	if o.WitnessExtension1Z != nil {
 		toSerialize["witnessExtension1Z"] = o.WitnessExtension1Z
+	}
+	if o.WitnessExtensionCurve != nil {
+		toSerialize["witnessExtensionCurve"] = o.WitnessExtensionCurve
 	}
 	return json.Marshal(toSerialize)
 }
