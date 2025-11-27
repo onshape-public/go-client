@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **RowCount** | Pointer to **int32** |  | [optional] 
 **SortOrder** | Pointer to [**BTTableSortOrder4371**](BTTableSortOrder4371.md) |  | [optional] 
+**StatusMessage** | Pointer to **string** |  | [optional] 
+**StatusType** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **TableColumns** | Pointer to [**[]BTTableColumnInfo1222**](BTTableColumnInfo1222.md) |  | [optional] 
 **TableId** | Pointer to **string** |  | [optional] 
 **TableRows** | Pointer to [**[]BTTableRow1054**](BTTableRow1054.md) |  | [optional] 
@@ -261,6 +263,56 @@ SetSortOrder sets SortOrder field to given value.
 `func (o *BTTable1825) HasSortOrder() bool`
 
 HasSortOrder returns a boolean if a field has been set.
+
+### GetStatusMessage
+
+`func (o *BTTable1825) GetStatusMessage() string`
+
+GetStatusMessage returns the StatusMessage field if non-nil, zero value otherwise.
+
+### GetStatusMessageOk
+
+`func (o *BTTable1825) GetStatusMessageOk() (*string, bool)`
+
+GetStatusMessageOk returns a tuple with the StatusMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusMessage
+
+`func (o *BTTable1825) SetStatusMessage(v string)`
+
+SetStatusMessage sets StatusMessage field to given value.
+
+### HasStatusMessage
+
+`func (o *BTTable1825) HasStatusMessage() bool`
+
+HasStatusMessage returns a boolean if a field has been set.
+
+### GetStatusType
+
+`func (o *BTTable1825) GetStatusType() GBTNodeStatusType`
+
+GetStatusType returns the StatusType field if non-nil, zero value otherwise.
+
+### GetStatusTypeOk
+
+`func (o *BTTable1825) GetStatusTypeOk() (*GBTNodeStatusType, bool)`
+
+GetStatusTypeOk returns a tuple with the StatusType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusType
+
+`func (o *BTTable1825) SetStatusType(v GBTNodeStatusType)`
+
+SetStatusType sets StatusType field to given value.
+
+### HasStatusType
+
+`func (o *BTTable1825) HasStatusType() bool`
+
+HasStatusType returns a boolean if a field has been set.
 
 ### GetTableColumns
 

@@ -44,6 +44,7 @@ type BTCompanyUserSummaryInfo struct {
 	Source                    *int32                `json:"source,omitempty"`
 	Admin                     *bool                 `json:"admin,omitempty"`
 	Cls                       *string               `json:"cls,omitempty"`
+	CompanyUserState          *int32                `json:"companyUserState,omitempty"`
 }
 
 // NewBTCompanyUserSummaryInfo instantiates a new BTCompanyUserSummaryInfo object
@@ -824,6 +825,38 @@ func (o *BTCompanyUserSummaryInfo) SetCls(v string) {
 	o.Cls = &v
 }
 
+// GetCompanyUserState returns the CompanyUserState field value if set, zero value otherwise.
+func (o *BTCompanyUserSummaryInfo) GetCompanyUserState() int32 {
+	if o == nil || o.CompanyUserState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.CompanyUserState
+}
+
+// GetCompanyUserStateOk returns a tuple with the CompanyUserState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserSummaryInfo) GetCompanyUserStateOk() (*int32, bool) {
+	if o == nil || o.CompanyUserState == nil {
+		return nil, false
+	}
+	return o.CompanyUserState, true
+}
+
+// HasCompanyUserState returns a boolean if a field has been set.
+func (o *BTCompanyUserSummaryInfo) HasCompanyUserState() bool {
+	if o != nil && o.CompanyUserState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanyUserState gets a reference to the given int32 and assigns it to the CompanyUserState field.
+func (o *BTCompanyUserSummaryInfo) SetCompanyUserState(v int32) {
+	o.CompanyUserState = &v
+}
+
 func (o BTCompanyUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -897,6 +930,9 @@ func (o BTCompanyUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Cls != nil {
 		toSerialize["cls"] = o.Cls
+	}
+	if o.CompanyUserState != nil {
+		toSerialize["companyUserState"] = o.CompanyUserState
 	}
 	return json.Marshal(toSerialize)
 }

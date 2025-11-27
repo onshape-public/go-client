@@ -39,6 +39,7 @@ type BTParameterSpecArray2600 struct {
 	ItemLabelTemplate          *string                            `json:"itemLabelTemplate,omitempty"`
 	ItemName                   *string                            `json:"itemName,omitempty"`
 	MaxNumberOfPicks           *int32                             `json:"maxNumberOfPicks,omitempty"`
+	Parameters                 []BTParameterSpec6                 `json:"parameters,omitempty"`
 	ShowLabelsOnly             *bool                              `json:"showLabelsOnly,omitempty"`
 }
 
@@ -763,6 +764,38 @@ func (o *BTParameterSpecArray2600) SetMaxNumberOfPicks(v int32) {
 	o.MaxNumberOfPicks = &v
 }
 
+// GetParameters returns the Parameters field value if set, zero value otherwise.
+func (o *BTParameterSpecArray2600) GetParameters() []BTParameterSpec6 {
+	if o == nil || o.Parameters == nil {
+		var ret []BTParameterSpec6
+		return ret
+	}
+	return o.Parameters
+}
+
+// GetParametersOk returns a tuple with the Parameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterSpecArray2600) GetParametersOk() ([]BTParameterSpec6, bool) {
+	if o == nil || o.Parameters == nil {
+		return nil, false
+	}
+	return o.Parameters, true
+}
+
+// HasParameters returns a boolean if a field has been set.
+func (o *BTParameterSpecArray2600) HasParameters() bool {
+	if o != nil && o.Parameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameters gets a reference to the given []BTParameterSpec6 and assigns it to the Parameters field.
+func (o *BTParameterSpecArray2600) SetParameters(v []BTParameterSpec6) {
+	o.Parameters = v
+}
+
 // GetShowLabelsOnly returns the ShowLabelsOnly field value if set, zero value otherwise.
 func (o *BTParameterSpecArray2600) GetShowLabelsOnly() bool {
 	if o == nil || o.ShowLabelsOnly == nil {
@@ -870,6 +903,9 @@ func (o BTParameterSpecArray2600) MarshalJSON() ([]byte, error) {
 	}
 	if o.MaxNumberOfPicks != nil {
 		toSerialize["maxNumberOfPicks"] = o.MaxNumberOfPicks
+	}
+	if o.Parameters != nil {
+		toSerialize["parameters"] = o.Parameters
 	}
 	if o.ShowLabelsOnly != nil {
 		toSerialize["showLabelsOnly"] = o.ShowLabelsOnly

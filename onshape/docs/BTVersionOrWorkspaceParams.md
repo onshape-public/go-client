@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **MicroversionId** | Pointer to **string** |  | [optional] 
 **MissingBomTableTemplateId** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**PublishVersion** | Pointer to **bool** |  | [optional] 
+**PublishVersion** | Pointer to **bool** | Publish FeatureScript at this version. | [optional] [default to false]
 **Purpose** | Pointer to **int32** |  | [optional] 
 **ReadOnly** | Pointer to **bool** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
