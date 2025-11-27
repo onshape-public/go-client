@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.207.67826-66b8156fa325",
+    "version" : "1.207.68097-dab79f147d30",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -28397,10 +28397,13 @@
       "BTDiffInfo" : {
         "type" : "object",
         "properties" : {
-          "changes" : {
+          "collectionChanges" : {
             "type" : "object",
             "additionalProperties" : {
-              "$ref" : "#/components/schemas/BTDiffInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BTDiffInfo"
+              }
             }
           },
           "entityType" : {
