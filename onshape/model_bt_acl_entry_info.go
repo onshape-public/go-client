@@ -16,24 +16,25 @@ import (
 
 // BTAclEntryInfo struct for BTAclEntryInfo
 type BTAclEntryInfo struct {
-	AcceptOwnerTransfer  *bool        `json:"acceptOwnerTransfer,omitempty"`
-	CompanyName          *string      `json:"companyName,omitempty"`
-	ConnectionId         *string      `json:"connectionId,omitempty"`
-	ConnectionName       *string      `json:"connectionName,omitempty"`
-	ConnectionUser       *bool        `json:"connectionUser,omitempty"`
-	Email                *string      `json:"email,omitempty"`
-	EnterpriseMember     *bool        `json:"enterpriseMember,omitempty"`
-	EntryId              *string      `json:"entryId,omitempty"`
-	EntryState           *BTUserState `json:"entryState,omitempty"`
-	EntryType            *int32       `json:"entryType,omitempty"`
-	Image                *string      `json:"image,omitempty"`
-	Name                 *string      `json:"name,omitempty"`
-	ObjectId             *string      `json:"objectId,omitempty"`
-	PendingOwnerTransfer *bool        `json:"pendingOwnerTransfer,omitempty"`
-	Permission           *int64       `json:"permission,omitempty"`
-	PermissionSet        []string     `json:"permissionSet,omitempty"`
-	ProCompanySubtype    *int32       `json:"proCompanySubtype,omitempty"`
-	TeamName             *string      `json:"teamName,omitempty"`
+	AcceptOwnerTransfer   *bool        `json:"acceptOwnerTransfer,omitempty"`
+	CanConnectionUserEdit *bool        `json:"canConnectionUserEdit,omitempty"`
+	CompanyName           *string      `json:"companyName,omitempty"`
+	ConnectionId          *string      `json:"connectionId,omitempty"`
+	ConnectionName        *string      `json:"connectionName,omitempty"`
+	ConnectionUser        *bool        `json:"connectionUser,omitempty"`
+	Email                 *string      `json:"email,omitempty"`
+	EnterpriseMember      *bool        `json:"enterpriseMember,omitempty"`
+	EntryId               *string      `json:"entryId,omitempty"`
+	EntryState            *BTUserState `json:"entryState,omitempty"`
+	EntryType             *int32       `json:"entryType,omitempty"`
+	Image                 *string      `json:"image,omitempty"`
+	Name                  *string      `json:"name,omitempty"`
+	ObjectId              *string      `json:"objectId,omitempty"`
+	PendingOwnerTransfer  *bool        `json:"pendingOwnerTransfer,omitempty"`
+	Permission            *int64       `json:"permission,omitempty"`
+	PermissionSet         []string     `json:"permissionSet,omitempty"`
+	ProCompanySubtype     *int32       `json:"proCompanySubtype,omitempty"`
+	TeamName              *string      `json:"teamName,omitempty"`
 }
 
 // NewBTAclEntryInfo instantiates a new BTAclEntryInfo object
@@ -83,6 +84,38 @@ func (o *BTAclEntryInfo) HasAcceptOwnerTransfer() bool {
 // SetAcceptOwnerTransfer gets a reference to the given bool and assigns it to the AcceptOwnerTransfer field.
 func (o *BTAclEntryInfo) SetAcceptOwnerTransfer(v bool) {
 	o.AcceptOwnerTransfer = &v
+}
+
+// GetCanConnectionUserEdit returns the CanConnectionUserEdit field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetCanConnectionUserEdit() bool {
+	if o == nil || o.CanConnectionUserEdit == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanConnectionUserEdit
+}
+
+// GetCanConnectionUserEditOk returns a tuple with the CanConnectionUserEdit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetCanConnectionUserEditOk() (*bool, bool) {
+	if o == nil || o.CanConnectionUserEdit == nil {
+		return nil, false
+	}
+	return o.CanConnectionUserEdit, true
+}
+
+// HasCanConnectionUserEdit returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasCanConnectionUserEdit() bool {
+	if o != nil && o.CanConnectionUserEdit != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanConnectionUserEdit gets a reference to the given bool and assigns it to the CanConnectionUserEdit field.
+func (o *BTAclEntryInfo) SetCanConnectionUserEdit(v bool) {
+	o.CanConnectionUserEdit = &v
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
@@ -633,6 +666,9 @@ func (o BTAclEntryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AcceptOwnerTransfer != nil {
 		toSerialize["acceptOwnerTransfer"] = o.AcceptOwnerTransfer
+	}
+	if o.CanConnectionUserEdit != nil {
+		toSerialize["canConnectionUserEdit"] = o.CanConnectionUserEdit
 	}
 	if o.CompanyName != nil {
 		toSerialize["companyName"] = o.CompanyName

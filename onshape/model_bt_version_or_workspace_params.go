@@ -24,11 +24,12 @@ type BTVersionOrWorkspaceParams struct {
 	MicroversionId            *string `json:"microversionId,omitempty"`
 	MissingBomTableTemplateId *string `json:"missingBomTableTemplateId,omitempty"`
 	Name                      *string `json:"name,omitempty"`
-	PublishVersion            *bool   `json:"publishVersion,omitempty"`
-	Purpose                   *int32  `json:"purpose,omitempty"`
-	ReadOnly                  *bool   `json:"readOnly,omitempty"`
-	VersionId                 *string `json:"versionId,omitempty"`
-	WorkspaceId               *string `json:"workspaceId,omitempty"`
+	// Publish FeatureScript at this version.
+	PublishVersion *bool   `json:"publishVersion,omitempty"`
+	Purpose        *int32  `json:"purpose,omitempty"`
+	ReadOnly       *bool   `json:"readOnly,omitempty"`
+	VersionId      *string `json:"versionId,omitempty"`
+	WorkspaceId    *string `json:"workspaceId,omitempty"`
 }
 
 // NewBTVersionOrWorkspaceParams instantiates a new BTVersionOrWorkspaceParams object
@@ -37,6 +38,8 @@ type BTVersionOrWorkspaceParams struct {
 // will change when the set of required properties is changed
 func NewBTVersionOrWorkspaceParams() *BTVersionOrWorkspaceParams {
 	this := BTVersionOrWorkspaceParams{}
+	var publishVersion bool = false
+	this.PublishVersion = &publishVersion
 	return &this
 }
 
@@ -45,6 +48,8 @@ func NewBTVersionOrWorkspaceParams() *BTVersionOrWorkspaceParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTVersionOrWorkspaceParamsWithDefaults() *BTVersionOrWorkspaceParams {
 	this := BTVersionOrWorkspaceParams{}
+	var publishVersion bool = false
+	this.PublishVersion = &publishVersion
 	return &this
 }
 
