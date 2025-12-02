@@ -16,17 +16,17 @@ import (
 
 // BTSplineDescription2118 struct for BTSplineDescription2118
 type BTSplineDescription2118 struct {
-	BTCurveDescription1583
+	// Type of JSON object.
 	BtType                    *string           `json:"btType,omitempty"`
-	Direction                 *BTVector3d389    `json:"direction,omitempty"`
-	DirectionOrientedWithFace *BTVector3d389    `json:"directionOrientedWithFace,omitempty"`
-	Origin                    *BTVector3d389    `json:"origin,omitempty"`
-	Type                      *GBTCurveTypeEnum `json:"type,omitempty"`
 	ControlPoints             []float64         `json:"controlPoints,omitempty"`
 	Degree                    *int32            `json:"degree,omitempty"`
+	Direction                 *BTVector3d389    `json:"direction,omitempty"`
+	DirectionOrientedWithFace *BTVector3d389    `json:"directionOrientedWithFace,omitempty"`
 	IsPeriodic                *bool             `json:"isPeriodic,omitempty"`
 	IsRational                *bool             `json:"isRational,omitempty"`
 	Knots                     []float64         `json:"knots,omitempty"`
+	Origin                    *BTVector3d389    `json:"origin,omitempty"`
+	Type                      *GBTCurveTypeEnum `json:"type,omitempty"`
 }
 
 // NewBTSplineDescription2118 instantiates a new BTSplineDescription2118 object
@@ -76,134 +76,6 @@ func (o *BTSplineDescription2118) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTSplineDescription2118) SetBtType(v string) {
 	o.BtType = &v
-}
-
-// GetDirection returns the Direction field value if set, zero value otherwise.
-func (o *BTSplineDescription2118) GetDirection() BTVector3d389 {
-	if o == nil || o.Direction == nil {
-		var ret BTVector3d389
-		return ret
-	}
-	return *o.Direction
-}
-
-// GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSplineDescription2118) GetDirectionOk() (*BTVector3d389, bool) {
-	if o == nil || o.Direction == nil {
-		return nil, false
-	}
-	return o.Direction, true
-}
-
-// HasDirection returns a boolean if a field has been set.
-func (o *BTSplineDescription2118) HasDirection() bool {
-	if o != nil && o.Direction != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDirection gets a reference to the given BTVector3d389 and assigns it to the Direction field.
-func (o *BTSplineDescription2118) SetDirection(v BTVector3d389) {
-	o.Direction = &v
-}
-
-// GetDirectionOrientedWithFace returns the DirectionOrientedWithFace field value if set, zero value otherwise.
-func (o *BTSplineDescription2118) GetDirectionOrientedWithFace() BTVector3d389 {
-	if o == nil || o.DirectionOrientedWithFace == nil {
-		var ret BTVector3d389
-		return ret
-	}
-	return *o.DirectionOrientedWithFace
-}
-
-// GetDirectionOrientedWithFaceOk returns a tuple with the DirectionOrientedWithFace field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSplineDescription2118) GetDirectionOrientedWithFaceOk() (*BTVector3d389, bool) {
-	if o == nil || o.DirectionOrientedWithFace == nil {
-		return nil, false
-	}
-	return o.DirectionOrientedWithFace, true
-}
-
-// HasDirectionOrientedWithFace returns a boolean if a field has been set.
-func (o *BTSplineDescription2118) HasDirectionOrientedWithFace() bool {
-	if o != nil && o.DirectionOrientedWithFace != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDirectionOrientedWithFace gets a reference to the given BTVector3d389 and assigns it to the DirectionOrientedWithFace field.
-func (o *BTSplineDescription2118) SetDirectionOrientedWithFace(v BTVector3d389) {
-	o.DirectionOrientedWithFace = &v
-}
-
-// GetOrigin returns the Origin field value if set, zero value otherwise.
-func (o *BTSplineDescription2118) GetOrigin() BTVector3d389 {
-	if o == nil || o.Origin == nil {
-		var ret BTVector3d389
-		return ret
-	}
-	return *o.Origin
-}
-
-// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSplineDescription2118) GetOriginOk() (*BTVector3d389, bool) {
-	if o == nil || o.Origin == nil {
-		return nil, false
-	}
-	return o.Origin, true
-}
-
-// HasOrigin returns a boolean if a field has been set.
-func (o *BTSplineDescription2118) HasOrigin() bool {
-	if o != nil && o.Origin != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOrigin gets a reference to the given BTVector3d389 and assigns it to the Origin field.
-func (o *BTSplineDescription2118) SetOrigin(v BTVector3d389) {
-	o.Origin = &v
-}
-
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *BTSplineDescription2118) GetType() GBTCurveTypeEnum {
-	if o == nil || o.Type == nil {
-		var ret GBTCurveTypeEnum
-		return ret
-	}
-	return *o.Type
-}
-
-// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTSplineDescription2118) GetTypeOk() (*GBTCurveTypeEnum, bool) {
-	if o == nil || o.Type == nil {
-		return nil, false
-	}
-	return o.Type, true
-}
-
-// HasType returns a boolean if a field has been set.
-func (o *BTSplineDescription2118) HasType() bool {
-	if o != nil && o.Type != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetType gets a reference to the given GBTCurveTypeEnum and assigns it to the Type field.
-func (o *BTSplineDescription2118) SetType(v GBTCurveTypeEnum) {
-	o.Type = &v
 }
 
 // GetControlPoints returns the ControlPoints field value if set, zero value otherwise.
@@ -268,6 +140,70 @@ func (o *BTSplineDescription2118) HasDegree() bool {
 // SetDegree gets a reference to the given int32 and assigns it to the Degree field.
 func (o *BTSplineDescription2118) SetDegree(v int32) {
 	o.Degree = &v
+}
+
+// GetDirection returns the Direction field value if set, zero value otherwise.
+func (o *BTSplineDescription2118) GetDirection() BTVector3d389 {
+	if o == nil || o.Direction == nil {
+		var ret BTVector3d389
+		return ret
+	}
+	return *o.Direction
+}
+
+// GetDirectionOk returns a tuple with the Direction field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSplineDescription2118) GetDirectionOk() (*BTVector3d389, bool) {
+	if o == nil || o.Direction == nil {
+		return nil, false
+	}
+	return o.Direction, true
+}
+
+// HasDirection returns a boolean if a field has been set.
+func (o *BTSplineDescription2118) HasDirection() bool {
+	if o != nil && o.Direction != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDirection gets a reference to the given BTVector3d389 and assigns it to the Direction field.
+func (o *BTSplineDescription2118) SetDirection(v BTVector3d389) {
+	o.Direction = &v
+}
+
+// GetDirectionOrientedWithFace returns the DirectionOrientedWithFace field value if set, zero value otherwise.
+func (o *BTSplineDescription2118) GetDirectionOrientedWithFace() BTVector3d389 {
+	if o == nil || o.DirectionOrientedWithFace == nil {
+		var ret BTVector3d389
+		return ret
+	}
+	return *o.DirectionOrientedWithFace
+}
+
+// GetDirectionOrientedWithFaceOk returns a tuple with the DirectionOrientedWithFace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSplineDescription2118) GetDirectionOrientedWithFaceOk() (*BTVector3d389, bool) {
+	if o == nil || o.DirectionOrientedWithFace == nil {
+		return nil, false
+	}
+	return o.DirectionOrientedWithFace, true
+}
+
+// HasDirectionOrientedWithFace returns a boolean if a field has been set.
+func (o *BTSplineDescription2118) HasDirectionOrientedWithFace() bool {
+	if o != nil && o.DirectionOrientedWithFace != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDirectionOrientedWithFace gets a reference to the given BTVector3d389 and assigns it to the DirectionOrientedWithFace field.
+func (o *BTSplineDescription2118) SetDirectionOrientedWithFace(v BTVector3d389) {
+	o.DirectionOrientedWithFace = &v
 }
 
 // GetIsPeriodic returns the IsPeriodic field value if set, zero value otherwise.
@@ -366,36 +302,86 @@ func (o *BTSplineDescription2118) SetKnots(v []float64) {
 	o.Knots = v
 }
 
+// GetOrigin returns the Origin field value if set, zero value otherwise.
+func (o *BTSplineDescription2118) GetOrigin() BTVector3d389 {
+	if o == nil || o.Origin == nil {
+		var ret BTVector3d389
+		return ret
+	}
+	return *o.Origin
+}
+
+// GetOriginOk returns a tuple with the Origin field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSplineDescription2118) GetOriginOk() (*BTVector3d389, bool) {
+	if o == nil || o.Origin == nil {
+		return nil, false
+	}
+	return o.Origin, true
+}
+
+// HasOrigin returns a boolean if a field has been set.
+func (o *BTSplineDescription2118) HasOrigin() bool {
+	if o != nil && o.Origin != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOrigin gets a reference to the given BTVector3d389 and assigns it to the Origin field.
+func (o *BTSplineDescription2118) SetOrigin(v BTVector3d389) {
+	o.Origin = &v
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *BTSplineDescription2118) GetType() GBTCurveTypeEnum {
+	if o == nil || o.Type == nil {
+		var ret GBTCurveTypeEnum
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSplineDescription2118) GetTypeOk() (*GBTCurveTypeEnum, bool) {
+	if o == nil || o.Type == nil {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *BTSplineDescription2118) HasType() bool {
+	if o != nil && o.Type != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given GBTCurveTypeEnum and assigns it to the Type field.
+func (o *BTSplineDescription2118) SetType(v GBTCurveTypeEnum) {
+	o.Type = &v
+}
+
 func (o BTSplineDescription2118) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBTCurveDescription1583, errBTCurveDescription1583 := json.Marshal(o.BTCurveDescription1583)
-	if errBTCurveDescription1583 != nil {
-		return []byte{}, errBTCurveDescription1583
-	}
-	errBTCurveDescription1583 = json.Unmarshal([]byte(serializedBTCurveDescription1583), &toSerialize)
-	if errBTCurveDescription1583 != nil {
-		return []byte{}, errBTCurveDescription1583
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
-	}
-	if o.Direction != nil {
-		toSerialize["direction"] = o.Direction
-	}
-	if o.DirectionOrientedWithFace != nil {
-		toSerialize["directionOrientedWithFace"] = o.DirectionOrientedWithFace
-	}
-	if o.Origin != nil {
-		toSerialize["origin"] = o.Origin
-	}
-	if o.Type != nil {
-		toSerialize["type"] = o.Type
 	}
 	if o.ControlPoints != nil {
 		toSerialize["controlPoints"] = o.ControlPoints
 	}
 	if o.Degree != nil {
 		toSerialize["degree"] = o.Degree
+	}
+	if o.Direction != nil {
+		toSerialize["direction"] = o.Direction
+	}
+	if o.DirectionOrientedWithFace != nil {
+		toSerialize["directionOrientedWithFace"] = o.DirectionOrientedWithFace
 	}
 	if o.IsPeriodic != nil {
 		toSerialize["isPeriodic"] = o.IsPeriodic
@@ -405,6 +391,12 @@ func (o BTSplineDescription2118) MarshalJSON() ([]byte, error) {
 	}
 	if o.Knots != nil {
 		toSerialize["knots"] = o.Knots
+	}
+	if o.Origin != nil {
+		toSerialize["origin"] = o.Origin
+	}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
 	}
 	return json.Marshal(toSerialize)
 }

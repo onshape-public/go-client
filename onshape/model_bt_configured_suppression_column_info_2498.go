@@ -24,6 +24,7 @@ type BTConfiguredSuppressionColumnInfo2498 struct {
 	ParentId      *string                  `json:"parentId,omitempty"`
 	ParentName    *string                  `json:"parentName,omitempty"`
 	ParentType    *GBTConfiguredParentType `json:"parentType,omitempty"`
+	ParameterId   *string                  `json:"parameterId,omitempty"`
 }
 
 // NewBTConfiguredSuppressionColumnInfo2498 instantiates a new BTConfiguredSuppressionColumnInfo2498 object
@@ -267,6 +268,38 @@ func (o *BTConfiguredSuppressionColumnInfo2498) SetParentType(v GBTConfiguredPar
 	o.ParentType = &v
 }
 
+// GetParameterId returns the ParameterId field value if set, zero value otherwise.
+func (o *BTConfiguredSuppressionColumnInfo2498) GetParameterId() string {
+	if o == nil || o.ParameterId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParameterId
+}
+
+// GetParameterIdOk returns a tuple with the ParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTConfiguredSuppressionColumnInfo2498) GetParameterIdOk() (*string, bool) {
+	if o == nil || o.ParameterId == nil {
+		return nil, false
+	}
+	return o.ParameterId, true
+}
+
+// HasParameterId returns a boolean if a field has been set.
+func (o *BTConfiguredSuppressionColumnInfo2498) HasParameterId() bool {
+	if o != nil && o.ParameterId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParameterId gets a reference to the given string and assigns it to the ParameterId field.
+func (o *BTConfiguredSuppressionColumnInfo2498) SetParameterId(v string) {
+	o.ParameterId = &v
+}
+
 func (o BTConfiguredSuppressionColumnInfo2498) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTConfiguredValuesColumnInfo1025, errBTConfiguredValuesColumnInfo1025 := json.Marshal(o.BTConfiguredValuesColumnInfo1025)
@@ -297,6 +330,9 @@ func (o BTConfiguredSuppressionColumnInfo2498) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParentType != nil {
 		toSerialize["parentType"] = o.ParentType
+	}
+	if o.ParameterId != nil {
+		toSerialize["parameterId"] = o.ParameterId
 	}
 	return json.Marshal(toSerialize)
 }

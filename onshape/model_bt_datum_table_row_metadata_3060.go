@@ -20,6 +20,7 @@ type BTDatumTableRowMetadata3060 struct {
 	BtType                  *string                            `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	AnnotationId            *string                            `json:"annotationId,omitempty"`
+	CrossHighlightData      *BTTableCrossHighlightData1753     `json:"crossHighlightData,omitempty"`
 }
 
 // NewBTDatumTableRowMetadata3060 instantiates a new BTDatumTableRowMetadata3060 object
@@ -135,6 +136,38 @@ func (o *BTDatumTableRowMetadata3060) SetAnnotationId(v string) {
 	o.AnnotationId = &v
 }
 
+// GetCrossHighlightData returns the CrossHighlightData field value if set, zero value otherwise.
+func (o *BTDatumTableRowMetadata3060) GetCrossHighlightData() BTTableCrossHighlightData1753 {
+	if o == nil || o.CrossHighlightData == nil {
+		var ret BTTableCrossHighlightData1753
+		return ret
+	}
+	return *o.CrossHighlightData
+}
+
+// GetCrossHighlightDataOk returns a tuple with the CrossHighlightData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDatumTableRowMetadata3060) GetCrossHighlightDataOk() (*BTTableCrossHighlightData1753, bool) {
+	if o == nil || o.CrossHighlightData == nil {
+		return nil, false
+	}
+	return o.CrossHighlightData, true
+}
+
+// HasCrossHighlightData returns a boolean if a field has been set.
+func (o *BTDatumTableRowMetadata3060) HasCrossHighlightData() bool {
+	if o != nil && o.CrossHighlightData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCrossHighlightData gets a reference to the given BTTableCrossHighlightData1753 and assigns it to the CrossHighlightData field.
+func (o *BTDatumTableRowMetadata3060) SetCrossHighlightData(v BTTableCrossHighlightData1753) {
+	o.CrossHighlightData = &v
+}
+
 func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
@@ -153,6 +186,9 @@ func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
+	}
+	if o.CrossHighlightData != nil {
+		toSerialize["crossHighlightData"] = o.CrossHighlightData
 	}
 	return json.Marshal(toSerialize)
 }
