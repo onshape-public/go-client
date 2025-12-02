@@ -43,6 +43,9 @@ type BTUserSettingsInfo struct {
 	PreviousSketchFont                   *string                                `json:"previousSketchFont,omitempty"`
 	ReverseScrollWheelZoomDirection      *bool                                  `json:"reverseScrollWheelZoomDirection,omitempty"`
 	SelectItemViewStateInfos             []BTSelectItemViewStateInfo            `json:"selectItemViewStateInfos,omitempty"`
+	SketchShowConstraints                *bool                                  `json:"sketchShowConstraints,omitempty"`
+	SketchShowErrors                     *bool                                  `json:"sketchShowErrors,omitempty"`
+	SketchShowExpressions                *bool                                  `json:"sketchShowExpressions,omitempty"`
 	StartupPage                          *int32                                 `json:"startupPage,omitempty"`
 	SubstituteApprovers                  []BTSubstituteApproverInfo             `json:"substituteApprovers,omitempty"`
 	Theme                                *int32                                 `json:"theme,omitempty"`
@@ -935,6 +938,102 @@ func (o *BTUserSettingsInfo) SetSelectItemViewStateInfos(v []BTSelectItemViewSta
 	o.SelectItemViewStateInfos = v
 }
 
+// GetSketchShowConstraints returns the SketchShowConstraints field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetSketchShowConstraints() bool {
+	if o == nil || o.SketchShowConstraints == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SketchShowConstraints
+}
+
+// GetSketchShowConstraintsOk returns a tuple with the SketchShowConstraints field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetSketchShowConstraintsOk() (*bool, bool) {
+	if o == nil || o.SketchShowConstraints == nil {
+		return nil, false
+	}
+	return o.SketchShowConstraints, true
+}
+
+// HasSketchShowConstraints returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasSketchShowConstraints() bool {
+	if o != nil && o.SketchShowConstraints != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchShowConstraints gets a reference to the given bool and assigns it to the SketchShowConstraints field.
+func (o *BTUserSettingsInfo) SetSketchShowConstraints(v bool) {
+	o.SketchShowConstraints = &v
+}
+
+// GetSketchShowErrors returns the SketchShowErrors field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetSketchShowErrors() bool {
+	if o == nil || o.SketchShowErrors == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SketchShowErrors
+}
+
+// GetSketchShowErrorsOk returns a tuple with the SketchShowErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetSketchShowErrorsOk() (*bool, bool) {
+	if o == nil || o.SketchShowErrors == nil {
+		return nil, false
+	}
+	return o.SketchShowErrors, true
+}
+
+// HasSketchShowErrors returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasSketchShowErrors() bool {
+	if o != nil && o.SketchShowErrors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchShowErrors gets a reference to the given bool and assigns it to the SketchShowErrors field.
+func (o *BTUserSettingsInfo) SetSketchShowErrors(v bool) {
+	o.SketchShowErrors = &v
+}
+
+// GetSketchShowExpressions returns the SketchShowExpressions field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetSketchShowExpressions() bool {
+	if o == nil || o.SketchShowExpressions == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SketchShowExpressions
+}
+
+// GetSketchShowExpressionsOk returns a tuple with the SketchShowExpressions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetSketchShowExpressionsOk() (*bool, bool) {
+	if o == nil || o.SketchShowExpressions == nil {
+		return nil, false
+	}
+	return o.SketchShowExpressions, true
+}
+
+// HasSketchShowExpressions returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasSketchShowExpressions() bool {
+	if o != nil && o.SketchShowExpressions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSketchShowExpressions gets a reference to the given bool and assigns it to the SketchShowExpressions field.
+func (o *BTUserSettingsInfo) SetSketchShowExpressions(v bool) {
+	o.SketchShowExpressions = &v
+}
+
 // GetStartupPage returns the StartupPage field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetStartupPage() int32 {
 	if o == nil || o.StartupPage == nil {
@@ -1305,6 +1404,15 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SelectItemViewStateInfos != nil {
 		toSerialize["selectItemViewStateInfos"] = o.SelectItemViewStateInfos
+	}
+	if o.SketchShowConstraints != nil {
+		toSerialize["sketchShowConstraints"] = o.SketchShowConstraints
+	}
+	if o.SketchShowErrors != nil {
+		toSerialize["sketchShowErrors"] = o.SketchShowErrors
+	}
+	if o.SketchShowExpressions != nil {
+		toSerialize["sketchShowExpressions"] = o.SketchShowExpressions
 	}
 	if o.StartupPage != nil {
 		toSerialize["startupPage"] = o.StartupPage

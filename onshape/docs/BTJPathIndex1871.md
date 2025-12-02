@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **Index** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
 ### NewBTJPathIndex1871
 
-`func NewBTJPathIndex1871() *BTJPathIndex1871`
+`func NewBTJPathIndex1871(btType string, ) *BTJPathIndex1871`
 
 NewBTJPathIndex1871 instantiates a new BTJPathIndex1871 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJPathIndex1871) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetIndex
 

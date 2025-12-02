@@ -36,6 +36,7 @@ type BTTeamInfo struct {
 	// Name of the resource.
 	Name                  *string      `json:"name,omitempty"`
 	Owner                 *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId              *string      `json:"parentId,omitempty"`
 	PredefinedTeam        *int32       `json:"predefinedTeam,omitempty"`
 	PredefinedTeamMutable *bool        `json:"predefinedTeamMutable,omitempty"`
 	ProjectId             *string      `json:"projectId,omitempty"`
@@ -610,6 +611,38 @@ func (o *BTTeamInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTTeamInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTeamInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTTeamInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTTeamInfo) SetParentId(v string) {
+	o.ParentId = &v
+}
+
 // GetPredefinedTeam returns the PredefinedTeam field value if set, zero value otherwise.
 func (o *BTTeamInfo) GetPredefinedTeam() int32 {
 	if o == nil || o.PredefinedTeam == nil {
@@ -982,6 +1015,9 @@ func (o BTTeamInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.PredefinedTeam != nil {
 		toSerialize["predefinedTeam"] = o.PredefinedTeam

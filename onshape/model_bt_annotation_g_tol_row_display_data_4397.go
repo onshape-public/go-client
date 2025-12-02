@@ -17,12 +17,13 @@ import (
 // BTAnnotationGTolRowDisplayData4397 struct for BTAnnotationGTolRowDisplayData4397
 type BTAnnotationGTolRowDisplayData4397 struct {
 	// Type of JSON object.
-	BtType         *string                `json:"btType,omitempty"`
-	ConstraintType *GBTGTolConstraintType `json:"constraintType,omitempty"`
-	Prefix         *string                `json:"prefix,omitempty"`
-	References     []string               `json:"references,omitempty"`
-	Suffix         *string                `json:"suffix,omitempty"`
-	Tolerance      *float64               `json:"tolerance,omitempty"`
+	BtType                 *string                        `json:"btType,omitempty"`
+	ConstraintType         *GBTGTolConstraintType         `json:"constraintType,omitempty"`
+	ExtendedConstraintType *GBTGTolExtendedConstraintType `json:"extendedConstraintType,omitempty"`
+	Prefix                 *string                        `json:"prefix,omitempty"`
+	References             []string                       `json:"references,omitempty"`
+	Suffix                 *string                        `json:"suffix,omitempty"`
+	Tolerance              *float64                       `json:"tolerance,omitempty"`
 }
 
 // NewBTAnnotationGTolRowDisplayData4397 instantiates a new BTAnnotationGTolRowDisplayData4397 object
@@ -104,6 +105,38 @@ func (o *BTAnnotationGTolRowDisplayData4397) HasConstraintType() bool {
 // SetConstraintType gets a reference to the given GBTGTolConstraintType and assigns it to the ConstraintType field.
 func (o *BTAnnotationGTolRowDisplayData4397) SetConstraintType(v GBTGTolConstraintType) {
 	o.ConstraintType = &v
+}
+
+// GetExtendedConstraintType returns the ExtendedConstraintType field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintType() GBTGTolExtendedConstraintType {
+	if o == nil || o.ExtendedConstraintType == nil {
+		var ret GBTGTolExtendedConstraintType
+		return ret
+	}
+	return *o.ExtendedConstraintType
+}
+
+// GetExtendedConstraintTypeOk returns a tuple with the ExtendedConstraintType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintTypeOk() (*GBTGTolExtendedConstraintType, bool) {
+	if o == nil || o.ExtendedConstraintType == nil {
+		return nil, false
+	}
+	return o.ExtendedConstraintType, true
+}
+
+// HasExtendedConstraintType returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasExtendedConstraintType() bool {
+	if o != nil && o.ExtendedConstraintType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExtendedConstraintType gets a reference to the given GBTGTolExtendedConstraintType and assigns it to the ExtendedConstraintType field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetExtendedConstraintType(v GBTGTolExtendedConstraintType) {
+	o.ExtendedConstraintType = &v
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
@@ -241,6 +274,9 @@ func (o BTAnnotationGTolRowDisplayData4397) MarshalJSON() ([]byte, error) {
 	}
 	if o.ConstraintType != nil {
 		toSerialize["constraintType"] = o.ConstraintType
+	}
+	if o.ExtendedConstraintType != nil {
+		toSerialize["extendedConstraintType"] = o.ExtendedConstraintType
 	}
 	if o.Prefix != nil {
 		toSerialize["prefix"] = o.Prefix
