@@ -44,6 +44,7 @@ type BTCompanyUserSummaryAdminInfo struct {
 	Source                    *int32                `json:"source,omitempty"`
 	Admin                     *bool                 `json:"admin,omitempty"`
 	Cls                       *string               `json:"cls,omitempty"`
+	CompanyUserState          *int32                `json:"companyUserState,omitempty"`
 	TotpEnabled               *bool                 `json:"totpEnabled,omitempty"`
 }
 
@@ -825,6 +826,38 @@ func (o *BTCompanyUserSummaryAdminInfo) SetCls(v string) {
 	o.Cls = &v
 }
 
+// GetCompanyUserState returns the CompanyUserState field value if set, zero value otherwise.
+func (o *BTCompanyUserSummaryAdminInfo) GetCompanyUserState() int32 {
+	if o == nil || o.CompanyUserState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.CompanyUserState
+}
+
+// GetCompanyUserStateOk returns a tuple with the CompanyUserState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserSummaryAdminInfo) GetCompanyUserStateOk() (*int32, bool) {
+	if o == nil || o.CompanyUserState == nil {
+		return nil, false
+	}
+	return o.CompanyUserState, true
+}
+
+// HasCompanyUserState returns a boolean if a field has been set.
+func (o *BTCompanyUserSummaryAdminInfo) HasCompanyUserState() bool {
+	if o != nil && o.CompanyUserState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanyUserState gets a reference to the given int32 and assigns it to the CompanyUserState field.
+func (o *BTCompanyUserSummaryAdminInfo) SetCompanyUserState(v int32) {
+	o.CompanyUserState = &v
+}
+
 // GetTotpEnabled returns the TotpEnabled field value if set, zero value otherwise.
 func (o *BTCompanyUserSummaryAdminInfo) GetTotpEnabled() bool {
 	if o == nil || o.TotpEnabled == nil {
@@ -930,6 +963,9 @@ func (o BTCompanyUserSummaryAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Cls != nil {
 		toSerialize["cls"] = o.Cls
+	}
+	if o.CompanyUserState != nil {
+		toSerialize["companyUserState"] = o.CompanyUserState
 	}
 	if o.TotpEnabled != nil {
 		toSerialize["totpEnabled"] = o.TotpEnabled
