@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **Edits** | Pointer to [**[]BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
 
 ## Methods
 
 ### NewBTJEditList2707
 
-`func NewBTJEditList2707() *BTJEditList2707`
+`func NewBTJEditList2707(btType string, ) *BTJEditList2707`
 
 NewBTJEditList2707 instantiates a new BTJEditList2707 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJEditList2707) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetEdits
 

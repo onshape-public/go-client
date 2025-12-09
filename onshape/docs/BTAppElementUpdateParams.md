@@ -4,9 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Changes** | Pointer to [**[]BTAppElementChangeParams**](BTAppElementChangeParams.md) | Edits to be applied to the element&#39;s subelement data. | [optional] 
 **Description** | Pointer to **string** | The label that will appear in the document&#39;s edit history for this operation. If blank, a value will be auto-generated. | [optional] 
-**JsonPatch** | Pointer to **string** | A json patch that will be applied to the application element&#39;s json data. | [optional] 
+**JsonPatch** | Pointer to **string** | A json patch that will be applied to the application element&#39;s json data. The JSON patch format is as specified in RFC 6902 from the IETF. | [optional] 
 **JsonTreeEdit** | Pointer to [**BTJEdit3734**](BTJEdit3734.md) |  | [optional] 
 **ParentChangeId** | Pointer to **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | [optional] 
 **PropertyUpdates** | Pointer to [**[]BTMetadataPropertyUpdateParams**](BTMetadataPropertyUpdateParams.md) | Edits to be applied to the element&#39;s metadata. | [optional] 
@@ -32,31 +31,6 @@ will change when the set of required properties is changed
 NewBTAppElementUpdateParamsWithDefaults instantiates a new BTAppElementUpdateParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetChanges
-
-`func (o *BTAppElementUpdateParams) GetChanges() []BTAppElementChangeParams`
-
-GetChanges returns the Changes field if non-nil, zero value otherwise.
-
-### GetChangesOk
-
-`func (o *BTAppElementUpdateParams) GetChangesOk() (*[]BTAppElementChangeParams, bool)`
-
-GetChangesOk returns a tuple with the Changes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetChanges
-
-`func (o *BTAppElementUpdateParams) SetChanges(v []BTAppElementChangeParams)`
-
-SetChanges sets Changes field to given value.
-
-### HasChanges
-
-`func (o *BTAppElementUpdateParams) HasChanges() bool`
-
-HasChanges returns a boolean if a field has been set.
 
 ### GetDescription
 

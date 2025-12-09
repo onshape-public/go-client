@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **TypeTag** | Pointer to **string** |  | [optional] 
 **Value** | Pointer to [**[]BTFSValueMapEntry2077**](BTFSValueMapEntry2077.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBTFSValueMap2062
 
-`func NewBTFSValueMap2062() *BTFSValueMap2062`
+`func NewBTFSValueMap2062(btType string, ) *BTFSValueMap2062`
 
 NewBTFSValueMap2062 instantiates a new BTFSValueMap2062 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTFSValueMap2062) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetTypeTag
 

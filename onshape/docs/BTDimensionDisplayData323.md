@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**CharacteristicId** | Pointer to **string** |  | [optional] 
 **CoordinateSystem** | Pointer to [**BTMatrix3x3340**](BTMatrix3x3340.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FitClass** | Pointer to **string** |  | [optional] 
@@ -69,6 +70,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTDimensionDisplayData323) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCharacteristicId
+
+`func (o *BTDimensionDisplayData323) GetCharacteristicId() string`
+
+GetCharacteristicId returns the CharacteristicId field if non-nil, zero value otherwise.
+
+### GetCharacteristicIdOk
+
+`func (o *BTDimensionDisplayData323) GetCharacteristicIdOk() (*string, bool)`
+
+GetCharacteristicIdOk returns a tuple with the CharacteristicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCharacteristicId
+
+`func (o *BTDimensionDisplayData323) SetCharacteristicId(v string)`
+
+SetCharacteristicId sets CharacteristicId field to given value.
+
+### HasCharacteristicId
+
+`func (o *BTDimensionDisplayData323) HasCharacteristicId() bool`
+
+HasCharacteristicId returns a boolean if a field has been set.
 
 ### GetCoordinateSystem
 

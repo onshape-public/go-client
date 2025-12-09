@@ -1715,6 +1715,11 @@ const (
 	GBTErrorStringEnumDrawingEmptySectionTargetBody                               GBTErrorStringEnum = "DRAWING_EMPTY_SECTION_TARGET_BODY"
 	GBTErrorStringEnumSketchCannotEvaluatePatternParameter                        GBTErrorStringEnum = "SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"
 	GBTErrorStringEnumTlSelfIntersectingBody                                      GBTErrorStringEnum = "TL_SELF_INTERSECTING_BODY"
+	GBTErrorStringEnumSketchPatternMissingParameter                               GBTErrorStringEnum = "SKETCH_PATTERN_MISSING_PARAMETER"
+	GBTErrorStringEnumSketchPatternInvalidValue                                   GBTErrorStringEnum = "SKETCH_PATTERN_INVALID_VALUE"
+	GBTErrorStringEnumTlProfilesTransformed                                       GBTErrorStringEnum = "TL_PROFILES_TRANSFORMED"
+	GBTErrorStringEnumTolerantRadiusNoVariableRadius                              GBTErrorStringEnum = "TOLERANT_RADIUS_NO_VARIABLE_RADIUS"
+	GBTErrorStringEnumTolerantRadiusNoAsymmetry                                   GBTErrorStringEnum = "TOLERANT_RADIUS_NO_ASYMMETRY"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3415,6 +3420,11 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"DRAWING_EMPTY_SECTION_TARGET_BODY",
 	"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER",
 	"TL_SELF_INTERSECTING_BODY",
+	"SKETCH_PATTERN_MISSING_PARAMETER",
+	"SKETCH_PATTERN_INVALID_VALUE",
+	"TL_PROFILES_TRANSFORMED",
+	"TOLERANT_RADIUS_NO_VARIABLE_RADIUS",
+	"TOLERANT_RADIUS_NO_ASYMMETRY",
 	"UNKNOWN",
 }
 

@@ -17,6 +17,7 @@ import (
 // BTBillOfMaterialsItemSourceInfo struct for BTBillOfMaterialsItemSourceInfo
 type BTBillOfMaterialsItemSourceInfo struct {
 	Configuration                          *string          `json:"configuration,omitempty"`
+	DistinctConfigurations                 []string         `json:"distinctConfigurations,omitempty"`
 	DocumentId                             *string          `json:"documentId,omitempty"`
 	ElementId                              *string          `json:"elementId,omitempty"`
 	FullConfiguration                      *string          `json:"fullConfiguration,omitempty"`
@@ -80,6 +81,38 @@ func (o *BTBillOfMaterialsItemSourceInfo) HasConfiguration() bool {
 // SetConfiguration gets a reference to the given string and assigns it to the Configuration field.
 func (o *BTBillOfMaterialsItemSourceInfo) SetConfiguration(v string) {
 	o.Configuration = &v
+}
+
+// GetDistinctConfigurations returns the DistinctConfigurations field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsItemSourceInfo) GetDistinctConfigurations() []string {
+	if o == nil || o.DistinctConfigurations == nil {
+		var ret []string
+		return ret
+	}
+	return o.DistinctConfigurations
+}
+
+// GetDistinctConfigurationsOk returns a tuple with the DistinctConfigurations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) GetDistinctConfigurationsOk() ([]string, bool) {
+	if o == nil || o.DistinctConfigurations == nil {
+		return nil, false
+	}
+	return o.DistinctConfigurations, true
+}
+
+// HasDistinctConfigurations returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsItemSourceInfo) HasDistinctConfigurations() bool {
+	if o != nil && o.DistinctConfigurations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDistinctConfigurations gets a reference to the given []string and assigns it to the DistinctConfigurations field.
+func (o *BTBillOfMaterialsItemSourceInfo) SetDistinctConfigurations(v []string) {
+	o.DistinctConfigurations = v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -534,6 +567,9 @@ func (o BTBillOfMaterialsItemSourceInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration
+	}
+	if o.DistinctConfigurations != nil {
+		toSerialize["distinctConfigurations"] = o.DistinctConfigurations
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
