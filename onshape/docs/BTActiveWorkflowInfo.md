@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
 **EnabledActiveMultipleWorkflows** | Pointer to **bool** | Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows &gt; 1 | [optional] 
 **HasInactiveCustomWorkflows** | Pointer to **bool** | Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object | [optional] 
+**IsCurrentUserLoggedIntoToPLM** | Pointer to **bool** | Whether user has even authenticated against PLM. Used to trigger OAuth handshake | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ObsoletionWorkflowId** | Pointer to **string** | Deprecated, use obsoletionWorkflowInfo.workflow.id instead | [optional] 
 **ObsoletionWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
@@ -563,6 +564,31 @@ SetHasInactiveCustomWorkflows sets HasInactiveCustomWorkflows field to given val
 `func (o *BTActiveWorkflowInfo) HasHasInactiveCustomWorkflows() bool`
 
 HasHasInactiveCustomWorkflows returns a boolean if a field has been set.
+
+### GetIsCurrentUserLoggedIntoToPLM
+
+`func (o *BTActiveWorkflowInfo) GetIsCurrentUserLoggedIntoToPLM() bool`
+
+GetIsCurrentUserLoggedIntoToPLM returns the IsCurrentUserLoggedIntoToPLM field if non-nil, zero value otherwise.
+
+### GetIsCurrentUserLoggedIntoToPLMOk
+
+`func (o *BTActiveWorkflowInfo) GetIsCurrentUserLoggedIntoToPLMOk() (*bool, bool)`
+
+GetIsCurrentUserLoggedIntoToPLMOk returns a tuple with the IsCurrentUserLoggedIntoToPLM field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsCurrentUserLoggedIntoToPLM
+
+`func (o *BTActiveWorkflowInfo) SetIsCurrentUserLoggedIntoToPLM(v bool)`
+
+SetIsCurrentUserLoggedIntoToPLM sets IsCurrentUserLoggedIntoToPLM field to given value.
+
+### HasIsCurrentUserLoggedIntoToPLM
+
+`func (o *BTActiveWorkflowInfo) HasIsCurrentUserLoggedIntoToPLM() bool`
+
+HasIsCurrentUserLoggedIntoToPLM returns a boolean if a field has been set.
 
 ### GetObsoletionWorkflow
 

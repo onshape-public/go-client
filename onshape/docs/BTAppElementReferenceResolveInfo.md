@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **PartNumber** | Pointer to **string** |  | [optional] 
 **ReferenceId** | Pointer to **string** |  | [optional] 
 **ReferenceType** | Pointer to **int32** |  | [optional] 
+**ResolvedConfiguration** | Pointer to **string** |  | [optional] 
 **ResolvedDocumentMicroversionId** | Pointer to **string** |  | [optional] 
 **ResolvedElementMicroversionId** | Pointer to **string** |  | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
@@ -451,6 +452,31 @@ SetReferenceType sets ReferenceType field to given value.
 `func (o *BTAppElementReferenceResolveInfo) HasReferenceType() bool`
 
 HasReferenceType returns a boolean if a field has been set.
+
+### GetResolvedConfiguration
+
+`func (o *BTAppElementReferenceResolveInfo) GetResolvedConfiguration() string`
+
+GetResolvedConfiguration returns the ResolvedConfiguration field if non-nil, zero value otherwise.
+
+### GetResolvedConfigurationOk
+
+`func (o *BTAppElementReferenceResolveInfo) GetResolvedConfigurationOk() (*string, bool)`
+
+GetResolvedConfigurationOk returns a tuple with the ResolvedConfiguration field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetResolvedConfiguration
+
+`func (o *BTAppElementReferenceResolveInfo) SetResolvedConfiguration(v string)`
+
+SetResolvedConfiguration sets ResolvedConfiguration field to given value.
+
+### HasResolvedConfiguration
+
+`func (o *BTAppElementReferenceResolveInfo) HasResolvedConfiguration() bool`
+
+HasResolvedConfiguration returns a boolean if a field has been set.
 
 ### GetResolvedDocumentMicroversionId
 

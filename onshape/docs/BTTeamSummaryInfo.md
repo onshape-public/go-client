@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ModifiedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Owner** | Pointer to [**BTOwnerInfo**](BTOwnerInfo.md) |  | [optional] 
+**ParentId** | Pointer to **string** |  | [optional] 
 **PredefinedTeam** | Pointer to **int32** |  | [optional] 
 **PredefinedTeamMutable** | Pointer to **bool** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -472,6 +473,31 @@ SetOwner sets Owner field to given value.
 `func (o *BTTeamSummaryInfo) HasOwner() bool`
 
 HasOwner returns a boolean if a field has been set.
+
+### GetParentId
+
+`func (o *BTTeamSummaryInfo) GetParentId() string`
+
+GetParentId returns the ParentId field if non-nil, zero value otherwise.
+
+### GetParentIdOk
+
+`func (o *BTTeamSummaryInfo) GetParentIdOk() (*string, bool)`
+
+GetParentIdOk returns a tuple with the ParentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentId
+
+`func (o *BTTeamSummaryInfo) SetParentId(v string)`
+
+SetParentId sets ParentId field to given value.
+
+### HasParentId
+
+`func (o *BTTeamSummaryInfo) HasParentId() bool`
+
+HasParentId returns a boolean if a field has been set.
 
 ### GetPredefinedTeam
 
