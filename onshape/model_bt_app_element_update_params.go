@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,11 +16,9 @@ import (
 
 // BTAppElementUpdateParams struct for BTAppElementUpdateParams
 type BTAppElementUpdateParams struct {
-	// Edits to be applied to the element's subelement data.
-	Changes []BTAppElementChangeParams `json:"changes,omitempty"`
 	// The label that will appear in the document's edit history for this operation. If blank, a value will be auto-generated.
 	Description *string `json:"description,omitempty"`
-	// A json patch that will be applied to the application element's json data.
+	// A json patch that will be applied to the application element's json data. The JSON patch format is as specified in RFC 6902 from the IETF.
 	JsonPatch    *string      `json:"jsonPatch,omitempty"`
 	JsonTreeEdit *BTJEdit3734 `json:"jsonTreeEdit,omitempty"`
 	// The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint.
@@ -50,38 +48,6 @@ func NewBTAppElementUpdateParams() *BTAppElementUpdateParams {
 func NewBTAppElementUpdateParamsWithDefaults() *BTAppElementUpdateParams {
 	this := BTAppElementUpdateParams{}
 	return &this
-}
-
-// GetChanges returns the Changes field value if set, zero value otherwise.
-func (o *BTAppElementUpdateParams) GetChanges() []BTAppElementChangeParams {
-	if o == nil || o.Changes == nil {
-		var ret []BTAppElementChangeParams
-		return ret
-	}
-	return o.Changes
-}
-
-// GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTAppElementUpdateParams) GetChangesOk() ([]BTAppElementChangeParams, bool) {
-	if o == nil || o.Changes == nil {
-		return nil, false
-	}
-	return o.Changes, true
-}
-
-// HasChanges returns a boolean if a field has been set.
-func (o *BTAppElementUpdateParams) HasChanges() bool {
-	if o != nil && o.Changes != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChanges gets a reference to the given []BTAppElementChangeParams and assigns it to the Changes field.
-func (o *BTAppElementUpdateParams) SetChanges(v []BTAppElementChangeParams) {
-	o.Changes = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -342,9 +308,6 @@ func (o *BTAppElementUpdateParams) SetTransactionId(v string) {
 
 func (o BTAppElementUpdateParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Changes != nil {
-		toSerialize["changes"] = o.Changes
-	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}

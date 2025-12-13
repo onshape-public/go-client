@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsOwnerEnterpriseEdu** | Pointer to **bool** |  | [optional] 
 **Member** | Pointer to **bool** |  | [optional] 
 **NumberOfMembers** | Pointer to **int64** |  | [optional] 
+**RejectedBy** | Pointer to **string** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetNumberOfMembers sets NumberOfMembers field to given value.
 `func (o *BTExternalConnectionInfo) HasNumberOfMembers() bool`
 
 HasNumberOfMembers returns a boolean if a field has been set.
+
+### GetRejectedBy
+
+`func (o *BTExternalConnectionInfo) GetRejectedBy() string`
+
+GetRejectedBy returns the RejectedBy field if non-nil, zero value otherwise.
+
+### GetRejectedByOk
+
+`func (o *BTExternalConnectionInfo) GetRejectedByOk() (*string, bool)`
+
+GetRejectedByOk returns a tuple with the RejectedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRejectedBy
+
+`func (o *BTExternalConnectionInfo) SetRejectedBy(v string)`
+
+SetRejectedBy sets RejectedBy field to given value.
+
+### HasRejectedBy
+
+`func (o *BTExternalConnectionInfo) HasRejectedBy() bool`
+
+HasRejectedBy returns a boolean if a field has been set.
 
 ### GetState
 

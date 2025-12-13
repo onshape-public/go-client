@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**SplitAssembliesIntoMultipleDocuments** | Pointer to **bool** |  | [optional] 
 **TranslationEventKey** | Pointer to **string** |  | [optional] 
 **TranslationId** | Pointer to **string** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewBTDocumentProcessingInfoAllOfWithDefaults instantiates a new BTDocumentProcessingInfoAllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetSplitAssembliesIntoMultipleDocuments
+
+`func (o *BTDocumentProcessingInfoAllOf) GetSplitAssembliesIntoMultipleDocuments() bool`
+
+GetSplitAssembliesIntoMultipleDocuments returns the SplitAssembliesIntoMultipleDocuments field if non-nil, zero value otherwise.
+
+### GetSplitAssembliesIntoMultipleDocumentsOk
+
+`func (o *BTDocumentProcessingInfoAllOf) GetSplitAssembliesIntoMultipleDocumentsOk() (*bool, bool)`
+
+GetSplitAssembliesIntoMultipleDocumentsOk returns a tuple with the SplitAssembliesIntoMultipleDocuments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSplitAssembliesIntoMultipleDocuments
+
+`func (o *BTDocumentProcessingInfoAllOf) SetSplitAssembliesIntoMultipleDocuments(v bool)`
+
+SetSplitAssembliesIntoMultipleDocuments sets SplitAssembliesIntoMultipleDocuments field to given value.
+
+### HasSplitAssembliesIntoMultipleDocuments
+
+`func (o *BTDocumentProcessingInfoAllOf) HasSplitAssembliesIntoMultipleDocuments() bool`
+
+HasSplitAssembliesIntoMultipleDocuments returns a boolean if a field has been set.
 
 ### GetTranslationEventKey
 

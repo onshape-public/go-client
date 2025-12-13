@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **CurrentSheetOnly** | Pointer to **bool** |  | [optional] 
 **DestinationName** | Pointer to **string** | The name of the exported file. | [optional] 
 **DistanceTolerance** | Pointer to **float64** | Determines the maximum distance deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
+**DxfVersion** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** | The id of the element in which to perform the operation. | [optional] 
 **ElementIds** | Pointer to **[]string** | An array of element ids for multi-element export. | [optional] 
 **EmailLink** | Pointer to **bool** | Use &#x60;true&#x60; if a link in an email should be sent. | [optional] 
@@ -27,6 +28,7 @@ Name | Type | Description | Notes
 **ExcludeHiddenEntities** | Pointer to **bool** | Whether or not to exclude hidden parts from export. | [optional] 
 **ExcludeOffSheetContent** | Pointer to **bool** |  | [optional] 
 **ExtractAssemblyHierarchy** | Pointer to **bool** |  | [optional] 
+**FlatPatternAsync** | Pointer to **bool** |  | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **FlattenAssemblies** | Pointer to **bool** |  | [optional] 
 **ForeignId** | Pointer to **string** |  | [optional] 
@@ -42,7 +44,13 @@ Name | Type | Description | Notes
 **ImportInBackground** | Pointer to **bool** |  | [optional] 
 **ImportMaterialDensity** | Pointer to **bool** |  | [optional] 
 **ImportWithinDocument** | Pointer to **bool** |  | [optional] 
+**IncludeBendCenterlines** | Pointer to **bool** |  | [optional] 
+**IncludeBendLines** | Pointer to **bool** |  | [optional] 
+**IncludeCboreCsink** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** | Whether topology ids should be exported as parasolid attributes. | [optional] 
+**IncludeFormedCentermarks** | Pointer to **bool** |  | [optional] 
+**IncludeFormedOutlines** | Pointer to **bool** |  | [optional] 
+**IncludeSketches** | Pointer to **bool** |  | [optional] 
 **JoinAdjacentSurfaces** | Pointer to **bool** |  | [optional] 
 **Level** | Pointer to **string** |  | [optional] 
 **LinkDocumentId** | Pointer to **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [optional] 
@@ -70,6 +78,7 @@ Name | Type | Description | Notes
 **SelectablePdfText** | Pointer to **bool** |  | [optional] 
 **SendCopyToMe** | Pointer to **bool** | Use &#x60;true&#x60; if email copy should be sent to the user who does the export. | [optional] 
 **SheetIndices** | Pointer to **[]int32** |  | [optional] 
+**SheetMetalFlat** | Pointer to **bool** |  | [optional] 
 **ShowOverriddenDimensions** | Pointer to **bool** |  | [optional] 
 **SkipBodyshop** | Pointer to **bool** |  | [optional] 
 **SourceName** | Pointer to **string** |  | [optional] 
@@ -86,6 +95,7 @@ Name | Type | Description | Notes
 **TriggerAutoDownload** | Pointer to **bool** | Automatically download a translated file. | [optional] 
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
+**UrdfMeshFormat** | Pointer to [**GBTUrdfMeshFormat**](GBTUrdfMeshFormat.md) |  | [optional] 
 **UseFileNameToSetSinglePartName** | Pointer to **bool** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
 **UseIGESImportPostProcessing** | Pointer to **bool** |  | [optional] 
@@ -437,6 +447,31 @@ SetDistanceTolerance sets DistanceTolerance field to given value.
 
 HasDistanceTolerance returns a boolean if a field has been set.
 
+### GetDxfVersion
+
+`func (o *BTTranslateFormatParams) GetDxfVersion() string`
+
+GetDxfVersion returns the DxfVersion field if non-nil, zero value otherwise.
+
+### GetDxfVersionOk
+
+`func (o *BTTranslateFormatParams) GetDxfVersionOk() (*string, bool)`
+
+GetDxfVersionOk returns a tuple with the DxfVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDxfVersion
+
+`func (o *BTTranslateFormatParams) SetDxfVersion(v string)`
+
+SetDxfVersion sets DxfVersion field to given value.
+
+### HasDxfVersion
+
+`func (o *BTTranslateFormatParams) HasDxfVersion() bool`
+
+HasDxfVersion returns a boolean if a field has been set.
+
 ### GetElementId
 
 `func (o *BTTranslateFormatParams) GetElementId() string`
@@ -686,6 +721,31 @@ SetExtractAssemblyHierarchy sets ExtractAssemblyHierarchy field to given value.
 `func (o *BTTranslateFormatParams) HasExtractAssemblyHierarchy() bool`
 
 HasExtractAssemblyHierarchy returns a boolean if a field has been set.
+
+### GetFlatPatternAsync
+
+`func (o *BTTranslateFormatParams) GetFlatPatternAsync() bool`
+
+GetFlatPatternAsync returns the FlatPatternAsync field if non-nil, zero value otherwise.
+
+### GetFlatPatternAsyncOk
+
+`func (o *BTTranslateFormatParams) GetFlatPatternAsyncOk() (*bool, bool)`
+
+GetFlatPatternAsyncOk returns a tuple with the FlatPatternAsync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlatPatternAsync
+
+`func (o *BTTranslateFormatParams) SetFlatPatternAsync(v bool)`
+
+SetFlatPatternAsync sets FlatPatternAsync field to given value.
+
+### HasFlatPatternAsync
+
+`func (o *BTTranslateFormatParams) HasFlatPatternAsync() bool`
+
+HasFlatPatternAsync returns a boolean if a field has been set.
 
 ### GetFlatten
 
@@ -1057,6 +1117,81 @@ SetImportWithinDocument sets ImportWithinDocument field to given value.
 
 HasImportWithinDocument returns a boolean if a field has been set.
 
+### GetIncludeBendCenterlines
+
+`func (o *BTTranslateFormatParams) GetIncludeBendCenterlines() bool`
+
+GetIncludeBendCenterlines returns the IncludeBendCenterlines field if non-nil, zero value otherwise.
+
+### GetIncludeBendCenterlinesOk
+
+`func (o *BTTranslateFormatParams) GetIncludeBendCenterlinesOk() (*bool, bool)`
+
+GetIncludeBendCenterlinesOk returns a tuple with the IncludeBendCenterlines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeBendCenterlines
+
+`func (o *BTTranslateFormatParams) SetIncludeBendCenterlines(v bool)`
+
+SetIncludeBendCenterlines sets IncludeBendCenterlines field to given value.
+
+### HasIncludeBendCenterlines
+
+`func (o *BTTranslateFormatParams) HasIncludeBendCenterlines() bool`
+
+HasIncludeBendCenterlines returns a boolean if a field has been set.
+
+### GetIncludeBendLines
+
+`func (o *BTTranslateFormatParams) GetIncludeBendLines() bool`
+
+GetIncludeBendLines returns the IncludeBendLines field if non-nil, zero value otherwise.
+
+### GetIncludeBendLinesOk
+
+`func (o *BTTranslateFormatParams) GetIncludeBendLinesOk() (*bool, bool)`
+
+GetIncludeBendLinesOk returns a tuple with the IncludeBendLines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeBendLines
+
+`func (o *BTTranslateFormatParams) SetIncludeBendLines(v bool)`
+
+SetIncludeBendLines sets IncludeBendLines field to given value.
+
+### HasIncludeBendLines
+
+`func (o *BTTranslateFormatParams) HasIncludeBendLines() bool`
+
+HasIncludeBendLines returns a boolean if a field has been set.
+
+### GetIncludeCboreCsink
+
+`func (o *BTTranslateFormatParams) GetIncludeCboreCsink() bool`
+
+GetIncludeCboreCsink returns the IncludeCboreCsink field if non-nil, zero value otherwise.
+
+### GetIncludeCboreCsinkOk
+
+`func (o *BTTranslateFormatParams) GetIncludeCboreCsinkOk() (*bool, bool)`
+
+GetIncludeCboreCsinkOk returns a tuple with the IncludeCboreCsink field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeCboreCsink
+
+`func (o *BTTranslateFormatParams) SetIncludeCboreCsink(v bool)`
+
+SetIncludeCboreCsink sets IncludeCboreCsink field to given value.
+
+### HasIncludeCboreCsink
+
+`func (o *BTTranslateFormatParams) HasIncludeCboreCsink() bool`
+
+HasIncludeCboreCsink returns a boolean if a field has been set.
+
 ### GetIncludeExportIds
 
 `func (o *BTTranslateFormatParams) GetIncludeExportIds() bool`
@@ -1081,6 +1216,81 @@ SetIncludeExportIds sets IncludeExportIds field to given value.
 `func (o *BTTranslateFormatParams) HasIncludeExportIds() bool`
 
 HasIncludeExportIds returns a boolean if a field has been set.
+
+### GetIncludeFormedCentermarks
+
+`func (o *BTTranslateFormatParams) GetIncludeFormedCentermarks() bool`
+
+GetIncludeFormedCentermarks returns the IncludeFormedCentermarks field if non-nil, zero value otherwise.
+
+### GetIncludeFormedCentermarksOk
+
+`func (o *BTTranslateFormatParams) GetIncludeFormedCentermarksOk() (*bool, bool)`
+
+GetIncludeFormedCentermarksOk returns a tuple with the IncludeFormedCentermarks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeFormedCentermarks
+
+`func (o *BTTranslateFormatParams) SetIncludeFormedCentermarks(v bool)`
+
+SetIncludeFormedCentermarks sets IncludeFormedCentermarks field to given value.
+
+### HasIncludeFormedCentermarks
+
+`func (o *BTTranslateFormatParams) HasIncludeFormedCentermarks() bool`
+
+HasIncludeFormedCentermarks returns a boolean if a field has been set.
+
+### GetIncludeFormedOutlines
+
+`func (o *BTTranslateFormatParams) GetIncludeFormedOutlines() bool`
+
+GetIncludeFormedOutlines returns the IncludeFormedOutlines field if non-nil, zero value otherwise.
+
+### GetIncludeFormedOutlinesOk
+
+`func (o *BTTranslateFormatParams) GetIncludeFormedOutlinesOk() (*bool, bool)`
+
+GetIncludeFormedOutlinesOk returns a tuple with the IncludeFormedOutlines field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeFormedOutlines
+
+`func (o *BTTranslateFormatParams) SetIncludeFormedOutlines(v bool)`
+
+SetIncludeFormedOutlines sets IncludeFormedOutlines field to given value.
+
+### HasIncludeFormedOutlines
+
+`func (o *BTTranslateFormatParams) HasIncludeFormedOutlines() bool`
+
+HasIncludeFormedOutlines returns a boolean if a field has been set.
+
+### GetIncludeSketches
+
+`func (o *BTTranslateFormatParams) GetIncludeSketches() bool`
+
+GetIncludeSketches returns the IncludeSketches field if non-nil, zero value otherwise.
+
+### GetIncludeSketchesOk
+
+`func (o *BTTranslateFormatParams) GetIncludeSketchesOk() (*bool, bool)`
+
+GetIncludeSketchesOk returns a tuple with the IncludeSketches field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeSketches
+
+`func (o *BTTranslateFormatParams) SetIncludeSketches(v bool)`
+
+SetIncludeSketches sets IncludeSketches field to given value.
+
+### HasIncludeSketches
+
+`func (o *BTTranslateFormatParams) HasIncludeSketches() bool`
+
+HasIncludeSketches returns a boolean if a field has been set.
 
 ### GetJoinAdjacentSurfaces
 
@@ -1757,6 +1967,31 @@ SetSheetIndices sets SheetIndices field to given value.
 
 HasSheetIndices returns a boolean if a field has been set.
 
+### GetSheetMetalFlat
+
+`func (o *BTTranslateFormatParams) GetSheetMetalFlat() bool`
+
+GetSheetMetalFlat returns the SheetMetalFlat field if non-nil, zero value otherwise.
+
+### GetSheetMetalFlatOk
+
+`func (o *BTTranslateFormatParams) GetSheetMetalFlatOk() (*bool, bool)`
+
+GetSheetMetalFlatOk returns a tuple with the SheetMetalFlat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSheetMetalFlat
+
+`func (o *BTTranslateFormatParams) SetSheetMetalFlat(v bool)`
+
+SetSheetMetalFlat sets SheetMetalFlat field to given value.
+
+### HasSheetMetalFlat
+
+`func (o *BTTranslateFormatParams) HasSheetMetalFlat() bool`
+
+HasSheetMetalFlat returns a boolean if a field has been set.
+
 ### GetShowOverriddenDimensions
 
 `func (o *BTTranslateFormatParams) GetShowOverriddenDimensions() bool`
@@ -2156,6 +2391,31 @@ SetUploadId sets UploadId field to given value.
 `func (o *BTTranslateFormatParams) HasUploadId() bool`
 
 HasUploadId returns a boolean if a field has been set.
+
+### GetUrdfMeshFormat
+
+`func (o *BTTranslateFormatParams) GetUrdfMeshFormat() GBTUrdfMeshFormat`
+
+GetUrdfMeshFormat returns the UrdfMeshFormat field if non-nil, zero value otherwise.
+
+### GetUrdfMeshFormatOk
+
+`func (o *BTTranslateFormatParams) GetUrdfMeshFormatOk() (*GBTUrdfMeshFormat, bool)`
+
+GetUrdfMeshFormatOk returns a tuple with the UrdfMeshFormat field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrdfMeshFormat
+
+`func (o *BTTranslateFormatParams) SetUrdfMeshFormat(v GBTUrdfMeshFormat)`
+
+SetUrdfMeshFormat sets UrdfMeshFormat field to given value.
+
+### HasUrdfMeshFormat
+
+`func (o *BTTranslateFormatParams) HasUrdfMeshFormat() bool`
+
+HasUrdfMeshFormat returns a boolean if a field has been set.
 
 ### GetUseFileNameToSetSinglePartName
 
