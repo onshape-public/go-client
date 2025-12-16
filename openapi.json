@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.208.68980-736ce7a5e6f5",
+    "version" : "1.208.69094-820e41e20026",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -32716,33 +32716,38 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
+          },
+          "firstDeterministicId" : {
+            "type" : "string"
+          },
+          "firstOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "location" : {
+            "$ref" : "#/components/schemas/BTCoordinateSystem-387"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "secondDeterministicId" : {
+            "type" : "string"
+          },
+          "secondOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "firstDeterministicId" : {
-              "type" : "string"
-            },
-            "firstOccurrence" : {
-              "$ref" : "#/components/schemas/BTOccurrence-74"
-            },
-            "location" : {
-              "$ref" : "#/components/schemas/BTCoordinateSystem-387"
-            },
-            "secondDeterministicId" : {
-              "type" : "string"
-            },
-            "secondOccurrence" : {
-              "$ref" : "#/components/schemas/BTOccurrence-74"
-            }
-          }
-        } ]
+        }
       },
       "BTGetJsonPaths-1697" : {
         "type" : "object",
@@ -35414,39 +35419,44 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
+          },
+          "componentValues" : {
+            "$ref" : "#/components/schemas/BTVector3d-389"
+          },
+          "directionMateConnectorId" : {
+            "type" : "string"
+          },
+          "faceLoadDeterministicIds" : {
+            "type" : "array",
+            "items" : {
               "type" : "string"
-            },
-            "componentValues" : {
-              "$ref" : "#/components/schemas/BTVector3d-389"
-            },
-            "directionMateConnectorId" : {
-              "type" : "string"
-            },
-            "faceLoadDeterministicIds" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
-            },
-            "isDirectionFlipped" : {
-              "type" : "boolean"
-            },
-            "loadType" : {
-              "$ref" : "#/components/schemas/GBTLoadType"
-            },
-            "occurrence" : {
-              "$ref" : "#/components/schemas/BTOccurrence-74"
             }
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "isDirectionFlipped" : {
+            "type" : "boolean"
+          },
+          "loadType" : {
+            "$ref" : "#/components/schemas/GBTLoadType"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "occurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        } ]
+        }
       },
       "BTLocationInfo-226" : {
         "type" : "object",
@@ -39991,27 +40001,32 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "mateConnectorIds" : {
+            "type" : "array",
+            "items" : {
               "type" : "string"
-            },
-            "mateConnectorIds" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
-            },
-            "mateType" : {
-              "$ref" : "#/components/schemas/GBTMateType"
             }
+          },
+          "mateType" : {
+            "$ref" : "#/components/schemas/GBTMateType"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        } ]
+        }
       },
       "BTMateFilter-162" : {
         "type" : "object",
@@ -40050,24 +40065,29 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "occurrenceIds" : {
+            "type" : "array",
+            "items" : {
               "type" : "string"
-            },
-            "occurrenceIds" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
             }
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        } ]
+        }
       },
       "BTMateOccurrenceData-1671" : {
         "type" : "object",
