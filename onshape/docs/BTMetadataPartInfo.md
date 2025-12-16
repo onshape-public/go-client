@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **IsFlattenedBody** | Pointer to **bool** |  | [optional] 
+**IsPublicPartOverridable** | Pointer to **bool** |  | [optional] 
 **MeshState** | Pointer to **int32** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **PartIdentity** | Pointer to **string** |  | [optional] 
@@ -53,6 +54,31 @@ SetIsFlattenedBody sets IsFlattenedBody field to given value.
 `func (o *BTMetadataPartInfo) HasIsFlattenedBody() bool`
 
 HasIsFlattenedBody returns a boolean if a field has been set.
+
+### GetIsPublicPartOverridable
+
+`func (o *BTMetadataPartInfo) GetIsPublicPartOverridable() bool`
+
+GetIsPublicPartOverridable returns the IsPublicPartOverridable field if non-nil, zero value otherwise.
+
+### GetIsPublicPartOverridableOk
+
+`func (o *BTMetadataPartInfo) GetIsPublicPartOverridableOk() (*bool, bool)`
+
+GetIsPublicPartOverridableOk returns a tuple with the IsPublicPartOverridable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPublicPartOverridable
+
+`func (o *BTMetadataPartInfo) SetIsPublicPartOverridable(v bool)`
+
+SetIsPublicPartOverridable sets IsPublicPartOverridable field to given value.
+
+### HasIsPublicPartOverridable
+
+`func (o *BTMetadataPartInfo) HasIsPublicPartOverridable() bool`
+
+HasIsPublicPartOverridable returns a boolean if a field has been set.
 
 ### GetMeshState
 

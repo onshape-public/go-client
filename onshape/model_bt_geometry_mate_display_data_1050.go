@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,18 +16,18 @@ import (
 
 // BTGeometryMateDisplayData1050 struct for BTGeometryMateDisplayData1050
 type BTGeometryMateDisplayData1050 struct {
-	BTAssemblyFeatureDisplayData1783
+	// Type of JSON object.
 	BtType                *string                          `json:"btType,omitempty"`
-	Hidden                *bool                            `json:"hidden,omitempty"`
-	IsDerivedFeature      *bool                            `json:"isDerivedFeature,omitempty"`
-	NodeId                *string                          `json:"nodeId,omitempty"`
-	OwnerOccurrence       *BTOccurrence74                  `json:"ownerOccurrence,omitempty"`
-	Status                *GBTAssemblyFeatureDisplayStatus `json:"status,omitempty"`
 	FirstDeterministicId  *string                          `json:"firstDeterministicId,omitempty"`
 	FirstOccurrence       *BTOccurrence74                  `json:"firstOccurrence,omitempty"`
+	Hidden                *bool                            `json:"hidden,omitempty"`
+	IsDerivedFeature      *bool                            `json:"isDerivedFeature,omitempty"`
 	Location              *BTCoordinateSystem387           `json:"location,omitempty"`
+	NodeId                *string                          `json:"nodeId,omitempty"`
+	OwnerOccurrence       *BTOccurrence74                  `json:"ownerOccurrence,omitempty"`
 	SecondDeterministicId *string                          `json:"secondDeterministicId,omitempty"`
 	SecondOccurrence      *BTOccurrence74                  `json:"secondOccurrence,omitempty"`
+	Status                *GBTAssemblyFeatureDisplayStatus `json:"status,omitempty"`
 }
 
 // NewBTGeometryMateDisplayData1050 instantiates a new BTGeometryMateDisplayData1050 object
@@ -77,166 +77,6 @@ func (o *BTGeometryMateDisplayData1050) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTGeometryMateDisplayData1050) SetBtType(v string) {
 	o.BtType = &v
-}
-
-// GetHidden returns the Hidden field value if set, zero value otherwise.
-func (o *BTGeometryMateDisplayData1050) GetHidden() bool {
-	if o == nil || o.Hidden == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Hidden
-}
-
-// GetHiddenOk returns a tuple with the Hidden field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTGeometryMateDisplayData1050) GetHiddenOk() (*bool, bool) {
-	if o == nil || o.Hidden == nil {
-		return nil, false
-	}
-	return o.Hidden, true
-}
-
-// HasHidden returns a boolean if a field has been set.
-func (o *BTGeometryMateDisplayData1050) HasHidden() bool {
-	if o != nil && o.Hidden != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetHidden gets a reference to the given bool and assigns it to the Hidden field.
-func (o *BTGeometryMateDisplayData1050) SetHidden(v bool) {
-	o.Hidden = &v
-}
-
-// GetIsDerivedFeature returns the IsDerivedFeature field value if set, zero value otherwise.
-func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeature() bool {
-	if o == nil || o.IsDerivedFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsDerivedFeature
-}
-
-// GetIsDerivedFeatureOk returns a tuple with the IsDerivedFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeatureOk() (*bool, bool) {
-	if o == nil || o.IsDerivedFeature == nil {
-		return nil, false
-	}
-	return o.IsDerivedFeature, true
-}
-
-// HasIsDerivedFeature returns a boolean if a field has been set.
-func (o *BTGeometryMateDisplayData1050) HasIsDerivedFeature() bool {
-	if o != nil && o.IsDerivedFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsDerivedFeature gets a reference to the given bool and assigns it to the IsDerivedFeature field.
-func (o *BTGeometryMateDisplayData1050) SetIsDerivedFeature(v bool) {
-	o.IsDerivedFeature = &v
-}
-
-// GetNodeId returns the NodeId field value if set, zero value otherwise.
-func (o *BTGeometryMateDisplayData1050) GetNodeId() string {
-	if o == nil || o.NodeId == nil {
-		var ret string
-		return ret
-	}
-	return *o.NodeId
-}
-
-// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTGeometryMateDisplayData1050) GetNodeIdOk() (*string, bool) {
-	if o == nil || o.NodeId == nil {
-		return nil, false
-	}
-	return o.NodeId, true
-}
-
-// HasNodeId returns a boolean if a field has been set.
-func (o *BTGeometryMateDisplayData1050) HasNodeId() bool {
-	if o != nil && o.NodeId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
-func (o *BTGeometryMateDisplayData1050) SetNodeId(v string) {
-	o.NodeId = &v
-}
-
-// GetOwnerOccurrence returns the OwnerOccurrence field value if set, zero value otherwise.
-func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrence() BTOccurrence74 {
-	if o == nil || o.OwnerOccurrence == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.OwnerOccurrence
-}
-
-// GetOwnerOccurrenceOk returns a tuple with the OwnerOccurrence field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrenceOk() (*BTOccurrence74, bool) {
-	if o == nil || o.OwnerOccurrence == nil {
-		return nil, false
-	}
-	return o.OwnerOccurrence, true
-}
-
-// HasOwnerOccurrence returns a boolean if a field has been set.
-func (o *BTGeometryMateDisplayData1050) HasOwnerOccurrence() bool {
-	if o != nil && o.OwnerOccurrence != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOwnerOccurrence gets a reference to the given BTOccurrence74 and assigns it to the OwnerOccurrence field.
-func (o *BTGeometryMateDisplayData1050) SetOwnerOccurrence(v BTOccurrence74) {
-	o.OwnerOccurrence = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *BTGeometryMateDisplayData1050) GetStatus() GBTAssemblyFeatureDisplayStatus {
-	if o == nil || o.Status == nil {
-		var ret GBTAssemblyFeatureDisplayStatus
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTGeometryMateDisplayData1050) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool) {
-	if o == nil || o.Status == nil {
-		return nil, false
-	}
-	return o.Status, true
-}
-
-// HasStatus returns a boolean if a field has been set.
-func (o *BTGeometryMateDisplayData1050) HasStatus() bool {
-	if o != nil && o.Status != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given GBTAssemblyFeatureDisplayStatus and assigns it to the Status field.
-func (o *BTGeometryMateDisplayData1050) SetStatus(v GBTAssemblyFeatureDisplayStatus) {
-	o.Status = &v
 }
 
 // GetFirstDeterministicId returns the FirstDeterministicId field value if set, zero value otherwise.
@@ -303,6 +143,70 @@ func (o *BTGeometryMateDisplayData1050) SetFirstOccurrence(v BTOccurrence74) {
 	o.FirstOccurrence = &v
 }
 
+// GetHidden returns the Hidden field value if set, zero value otherwise.
+func (o *BTGeometryMateDisplayData1050) GetHidden() bool {
+	if o == nil || o.Hidden == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Hidden
+}
+
+// GetHiddenOk returns a tuple with the Hidden field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeometryMateDisplayData1050) GetHiddenOk() (*bool, bool) {
+	if o == nil || o.Hidden == nil {
+		return nil, false
+	}
+	return o.Hidden, true
+}
+
+// HasHidden returns a boolean if a field has been set.
+func (o *BTGeometryMateDisplayData1050) HasHidden() bool {
+	if o != nil && o.Hidden != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHidden gets a reference to the given bool and assigns it to the Hidden field.
+func (o *BTGeometryMateDisplayData1050) SetHidden(v bool) {
+	o.Hidden = &v
+}
+
+// GetIsDerivedFeature returns the IsDerivedFeature field value if set, zero value otherwise.
+func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeature() bool {
+	if o == nil || o.IsDerivedFeature == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerivedFeature
+}
+
+// GetIsDerivedFeatureOk returns a tuple with the IsDerivedFeature field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeatureOk() (*bool, bool) {
+	if o == nil || o.IsDerivedFeature == nil {
+		return nil, false
+	}
+	return o.IsDerivedFeature, true
+}
+
+// HasIsDerivedFeature returns a boolean if a field has been set.
+func (o *BTGeometryMateDisplayData1050) HasIsDerivedFeature() bool {
+	if o != nil && o.IsDerivedFeature != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerivedFeature gets a reference to the given bool and assigns it to the IsDerivedFeature field.
+func (o *BTGeometryMateDisplayData1050) SetIsDerivedFeature(v bool) {
+	o.IsDerivedFeature = &v
+}
+
 // GetLocation returns the Location field value if set, zero value otherwise.
 func (o *BTGeometryMateDisplayData1050) GetLocation() BTCoordinateSystem387 {
 	if o == nil || o.Location == nil {
@@ -333,6 +237,70 @@ func (o *BTGeometryMateDisplayData1050) HasLocation() bool {
 // SetLocation gets a reference to the given BTCoordinateSystem387 and assigns it to the Location field.
 func (o *BTGeometryMateDisplayData1050) SetLocation(v BTCoordinateSystem387) {
 	o.Location = &v
+}
+
+// GetNodeId returns the NodeId field value if set, zero value otherwise.
+func (o *BTGeometryMateDisplayData1050) GetNodeId() string {
+	if o == nil || o.NodeId == nil {
+		var ret string
+		return ret
+	}
+	return *o.NodeId
+}
+
+// GetNodeIdOk returns a tuple with the NodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeometryMateDisplayData1050) GetNodeIdOk() (*string, bool) {
+	if o == nil || o.NodeId == nil {
+		return nil, false
+	}
+	return o.NodeId, true
+}
+
+// HasNodeId returns a boolean if a field has been set.
+func (o *BTGeometryMateDisplayData1050) HasNodeId() bool {
+	if o != nil && o.NodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeId gets a reference to the given string and assigns it to the NodeId field.
+func (o *BTGeometryMateDisplayData1050) SetNodeId(v string) {
+	o.NodeId = &v
+}
+
+// GetOwnerOccurrence returns the OwnerOccurrence field value if set, zero value otherwise.
+func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrence() BTOccurrence74 {
+	if o == nil || o.OwnerOccurrence == nil {
+		var ret BTOccurrence74
+		return ret
+	}
+	return *o.OwnerOccurrence
+}
+
+// GetOwnerOccurrenceOk returns a tuple with the OwnerOccurrence field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrenceOk() (*BTOccurrence74, bool) {
+	if o == nil || o.OwnerOccurrence == nil {
+		return nil, false
+	}
+	return o.OwnerOccurrence, true
+}
+
+// HasOwnerOccurrence returns a boolean if a field has been set.
+func (o *BTGeometryMateDisplayData1050) HasOwnerOccurrence() bool {
+	if o != nil && o.OwnerOccurrence != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOwnerOccurrence gets a reference to the given BTOccurrence74 and assigns it to the OwnerOccurrence field.
+func (o *BTGeometryMateDisplayData1050) SetOwnerOccurrence(v BTOccurrence74) {
+	o.OwnerOccurrence = &v
 }
 
 // GetSecondDeterministicId returns the SecondDeterministicId field value if set, zero value otherwise.
@@ -399,33 +367,42 @@ func (o *BTGeometryMateDisplayData1050) SetSecondOccurrence(v BTOccurrence74) {
 	o.SecondOccurrence = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *BTGeometryMateDisplayData1050) GetStatus() GBTAssemblyFeatureDisplayStatus {
+	if o == nil || o.Status == nil {
+		var ret GBTAssemblyFeatureDisplayStatus
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGeometryMateDisplayData1050) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *BTGeometryMateDisplayData1050) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given GBTAssemblyFeatureDisplayStatus and assigns it to the Status field.
+func (o *BTGeometryMateDisplayData1050) SetStatus(v GBTAssemblyFeatureDisplayStatus) {
+	o.Status = &v
+}
+
 func (o BTGeometryMateDisplayData1050) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	serializedBTAssemblyFeatureDisplayData1783, errBTAssemblyFeatureDisplayData1783 := json.Marshal(o.BTAssemblyFeatureDisplayData1783)
-	if errBTAssemblyFeatureDisplayData1783 != nil {
-		return []byte{}, errBTAssemblyFeatureDisplayData1783
-	}
-	errBTAssemblyFeatureDisplayData1783 = json.Unmarshal([]byte(serializedBTAssemblyFeatureDisplayData1783), &toSerialize)
-	if errBTAssemblyFeatureDisplayData1783 != nil {
-		return []byte{}, errBTAssemblyFeatureDisplayData1783
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
-	}
-	if o.Hidden != nil {
-		toSerialize["hidden"] = o.Hidden
-	}
-	if o.IsDerivedFeature != nil {
-		toSerialize["isDerivedFeature"] = o.IsDerivedFeature
-	}
-	if o.NodeId != nil {
-		toSerialize["nodeId"] = o.NodeId
-	}
-	if o.OwnerOccurrence != nil {
-		toSerialize["ownerOccurrence"] = o.OwnerOccurrence
-	}
-	if o.Status != nil {
-		toSerialize["status"] = o.Status
 	}
 	if o.FirstDeterministicId != nil {
 		toSerialize["firstDeterministicId"] = o.FirstDeterministicId
@@ -433,14 +410,29 @@ func (o BTGeometryMateDisplayData1050) MarshalJSON() ([]byte, error) {
 	if o.FirstOccurrence != nil {
 		toSerialize["firstOccurrence"] = o.FirstOccurrence
 	}
+	if o.Hidden != nil {
+		toSerialize["hidden"] = o.Hidden
+	}
+	if o.IsDerivedFeature != nil {
+		toSerialize["isDerivedFeature"] = o.IsDerivedFeature
+	}
 	if o.Location != nil {
 		toSerialize["location"] = o.Location
+	}
+	if o.NodeId != nil {
+		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.OwnerOccurrence != nil {
+		toSerialize["ownerOccurrence"] = o.OwnerOccurrence
 	}
 	if o.SecondDeterministicId != nil {
 		toSerialize["secondDeterministicId"] = o.SecondDeterministicId
 	}
 	if o.SecondOccurrence != nil {
 		toSerialize["secondOccurrence"] = o.SecondOccurrence
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 	return json.Marshal(toSerialize)
 }

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -17,7 +17,7 @@ import (
 // BTJEditMove3245 Move an existing node from one path to another.
 type BTJEditMove3245 struct {
 	BTJEdit3734
-	BtType          *string      `json:"btType,omitempty"`
+	BtType          string       `json:"btType"`
 	DestinationPath *BTJPath3073 `json:"destinationPath,omitempty"`
 	SourcePath      *BTJPath3073 `json:"sourcePath,omitempty"`
 }
@@ -26,8 +26,9 @@ type BTJEditMove3245 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJEditMove3245() *BTJEditMove3245 {
+func NewBTJEditMove3245(btType string) *BTJEditMove3245 {
 	this := BTJEditMove3245{}
+	this.BtType = btType
 	return &this
 }
 
@@ -39,36 +40,28 @@ func NewBTJEditMove3245WithDefaults() *BTJEditMove3245 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJEditMove3245) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJEditMove3245) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEditMove3245) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJEditMove3245) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetDestinationPath returns the DestinationPath field value if set, zero value otherwise.
@@ -145,7 +138,7 @@ func (o BTJEditMove3245) MarshalJSON() ([]byte, error) {
 	if errBTJEdit3734 != nil {
 		return []byte{}, errBTJEdit3734
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.DestinationPath != nil {

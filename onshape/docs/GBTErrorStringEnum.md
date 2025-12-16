@@ -3393,6 +3393,36 @@
 
 * `GBTErrorStringEnumTlSelfIntersectingBody` (value: `"TL_SELF_INTERSECTING_BODY"`)
 
+* `GBTErrorStringEnumSketchPatternMissingParameter` (value: `"SKETCH_PATTERN_MISSING_PARAMETER"`)
+
+* `GBTErrorStringEnumSketchPatternInvalidValue` (value: `"SKETCH_PATTERN_INVALID_VALUE"`)
+
+* `GBTErrorStringEnumTlProfilesTransformed` (value: `"TL_PROFILES_TRANSFORMED"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoVariableRadius` (value: `"TOLERANT_RADIUS_NO_VARIABLE_RADIUS"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoAsymmetry` (value: `"TOLERANT_RADIUS_NO_ASYMMETRY"`)
+
+* `GBTErrorStringEnumTlConeNeedsTangentPolylines` (value: `"TL_CONE_NEEDS_TANGENT_POLYLINES"`)
+
+* `GBTErrorStringEnumAssemblyMirrorTargetFeatureSuppressed` (value: `"ASSEMBLY_MIRROR_TARGET_FEATURE_SUPPRESSED"`)
+
+* `GBTErrorStringEnumRevolveUpToFailed` (value: `"REVOLVE_UP_TO_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToNextFailed` (value: `"REVOLVE_UP_TO_NEXT_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToThinFailed` (value: `"REVOLVE_UP_TO_THIN_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToNextNoTarget` (value: `"REVOLVE_UP_TO_NEXT_NO_TARGET"`)
+
+* `GBTErrorStringEnumDeviationAnalysisFailed` (value: `"DEVIATION_ANALYSIS_FAILED"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingBody` (value: `"REVOLVE_SELECT_TERMINATING_BODY"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingSurface` (value: `"REVOLVE_SELECT_TERMINATING_SURFACE"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingVertex` (value: `"REVOLVE_SELECT_TERMINATING_VERTEX"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

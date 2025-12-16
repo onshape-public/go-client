@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -90,6 +90,56 @@ func (o *BTAngularDimensionDisplayData320) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetCharacteristicId() string {
+	type getResult interface {
+		GetCharacteristicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetCharacteristicIdOk() (*string, bool) {
+	type getResult interface {
+		GetCharacteristicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasCharacteristicId() bool {
+	type getResult interface {
+		HasCharacteristicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCharacteristicId()
+	} else {
+		return false
+	}
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTAngularDimensionDisplayData320) SetCharacteristicId(v string) {
+	type getResult interface {
+		SetCharacteristicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCharacteristicId(v)
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -1734,6 +1784,7 @@ func (v *NullableBTAngularDimensionDisplayData320) UnmarshalJSON(src []byte) err
 type base_BTAngularDimensionDisplayData320 struct {
 	BTDimensionDisplayData323
 	BtType                *string                `json:"btType,omitempty"`
+	CharacteristicId      *string                `json:"characteristicId,omitempty"`
 	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
 	FeatureId             *string                `json:"featureId,omitempty"`
 	FitClass              *string                `json:"fitClass,omitempty"`
@@ -1814,6 +1865,38 @@ func (o *base_BTAngularDimensionDisplayData320) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTAngularDimensionDisplayData320) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *base_BTAngularDimensionDisplayData320) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -2820,6 +2903,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
 	}
 	if o.CoordinateSystem != nil {
 		toSerialize["coordinateSystem"] = o.CoordinateSystem

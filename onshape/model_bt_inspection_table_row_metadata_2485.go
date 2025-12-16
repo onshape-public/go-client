@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -20,6 +20,8 @@ type BTInspectionTableRowMetadata2485 struct {
 	BtType                  *string                        `json:"btType,omitempty"`
 	CrossHighlightDataIfAny *BTTableCrossHighlightData1753 `json:"crossHighlightDataIfAny,omitempty"`
 	AnnotationId            *string                        `json:"annotationId,omitempty"`
+	AnnotationType          *GBTAnnotationType             `json:"annotationType,omitempty"`
+	ChamferCalloutId        *string                        `json:"chamferCalloutId,omitempty"`
 	ConstraintId            *string                        `json:"constraintId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
@@ -140,6 +142,70 @@ func (o *BTInspectionTableRowMetadata2485) HasAnnotationId() bool {
 // SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
 func (o *BTInspectionTableRowMetadata2485) SetAnnotationId(v string) {
 	o.AnnotationId = &v
+}
+
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetAnnotationType() GBTAnnotationType {
+	if o == nil || o.AnnotationType == nil {
+		var ret GBTAnnotationType
+		return ret
+	}
+	return *o.AnnotationType
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetAnnotationTypeOk() (*GBTAnnotationType, bool) {
+	if o == nil || o.AnnotationType == nil {
+		return nil, false
+	}
+	return o.AnnotationType, true
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasAnnotationType() bool {
+	if o != nil && o.AnnotationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationType gets a reference to the given GBTAnnotationType and assigns it to the AnnotationType field.
+func (o *BTInspectionTableRowMetadata2485) SetAnnotationType(v GBTAnnotationType) {
+	o.AnnotationType = &v
+}
+
+// GetChamferCalloutId returns the ChamferCalloutId field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetChamferCalloutId() string {
+	if o == nil || o.ChamferCalloutId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ChamferCalloutId
+}
+
+// GetChamferCalloutIdOk returns a tuple with the ChamferCalloutId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetChamferCalloutIdOk() (*string, bool) {
+	if o == nil || o.ChamferCalloutId == nil {
+		return nil, false
+	}
+	return o.ChamferCalloutId, true
+}
+
+// HasChamferCalloutId returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasChamferCalloutId() bool {
+	if o != nil && o.ChamferCalloutId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetChamferCalloutId gets a reference to the given string and assigns it to the ChamferCalloutId field.
+func (o *BTInspectionTableRowMetadata2485) SetChamferCalloutId(v string) {
+	o.ChamferCalloutId = &v
 }
 
 // GetConstraintId returns the ConstraintId field value if set, zero value otherwise.
@@ -384,6 +450,12 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
+	}
+	if o.AnnotationType != nil {
+		toSerialize["annotationType"] = o.AnnotationType
+	}
+	if o.ChamferCalloutId != nil {
+		toSerialize["chamferCalloutId"] = o.ChamferCalloutId
 	}
 	if o.ConstraintId != nil {
 		toSerialize["constraintId"] = o.ConstraintId

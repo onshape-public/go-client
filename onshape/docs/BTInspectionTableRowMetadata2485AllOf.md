@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationId** | Pointer to **string** |  | [optional] 
+**AnnotationType** | Pointer to [**GBTAnnotationType**](GBTAnnotationType.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**ChamferCalloutId** | Pointer to **string** |  | [optional] 
 **ConstraintId** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
@@ -59,6 +61,31 @@ SetAnnotationId sets AnnotationId field to given value.
 
 HasAnnotationId returns a boolean if a field has been set.
 
+### GetAnnotationType
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetAnnotationType() GBTAnnotationType`
+
+GetAnnotationType returns the AnnotationType field if non-nil, zero value otherwise.
+
+### GetAnnotationTypeOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetAnnotationTypeOk() (*GBTAnnotationType, bool)`
+
+GetAnnotationTypeOk returns a tuple with the AnnotationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationType
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetAnnotationType(v GBTAnnotationType)`
+
+SetAnnotationType sets AnnotationType field to given value.
+
+### HasAnnotationType
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasAnnotationType() bool`
+
+HasAnnotationType returns a boolean if a field has been set.
+
 ### GetBtType
 
 `func (o *BTInspectionTableRowMetadata2485AllOf) GetBtType() string`
@@ -83,6 +110,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTInspectionTableRowMetadata2485AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetChamferCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetChamferCalloutId() string`
+
+GetChamferCalloutId returns the ChamferCalloutId field if non-nil, zero value otherwise.
+
+### GetChamferCalloutIdOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetChamferCalloutIdOk() (*string, bool)`
+
+GetChamferCalloutIdOk returns a tuple with the ChamferCalloutId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetChamferCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetChamferCalloutId(v string)`
+
+SetChamferCalloutId sets ChamferCalloutId field to given value.
+
+### HasChamferCalloutId
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasChamferCalloutId() bool`
+
+HasChamferCalloutId returns a boolean if a field has been set.
 
 ### GetConstraintId
 

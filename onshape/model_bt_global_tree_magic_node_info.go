@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -36,6 +36,7 @@ type BTGlobalTreeMagicNodeInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -599,6 +600,38 @@ func (o *BTGlobalTreeMagicNodeInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTGlobalTreeMagicNodeInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGlobalTreeMagicNodeInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTGlobalTreeMagicNodeInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTGlobalTreeMagicNodeInfo) SetParentId(v string) {
+	o.ParentId = &v
+}
+
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
 func (o *BTGlobalTreeMagicNodeInfo) GetProjectId() string {
 	if o == nil || o.ProjectId == nil {
@@ -843,6 +876,9 @@ func (o BTGlobalTreeMagicNodeInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
