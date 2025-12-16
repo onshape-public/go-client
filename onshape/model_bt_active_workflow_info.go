@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -42,8 +42,10 @@ type BTActiveWorkflowInfo struct {
 	// Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows > 1
 	EnabledActiveMultipleWorkflows *bool `json:"enabledActiveMultipleWorkflows,omitempty"`
 	// Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object
-	HasInactiveCustomWorkflows *bool                    `json:"hasInactiveCustomWorkflows,omitempty"`
-	ObsoletionWorkflow         *BTPublishedWorkflowInfo `json:"obsoletionWorkflow,omitempty"`
+	HasInactiveCustomWorkflows *bool `json:"hasInactiveCustomWorkflows,omitempty"`
+	// Whether user has even authenticated against PLM. Used to trigger OAuth handshake
+	IsCurrentUserLoggedIntoToPLM *bool                    `json:"isCurrentUserLoggedIntoToPLM,omitempty"`
+	ObsoletionWorkflow           *BTPublishedWorkflowInfo `json:"obsoletionWorkflow,omitempty"`
 	// Deprecated, use obsoletionWorkflowInfo.workflow.id instead
 	ObsoletionWorkflowId   *string                   `json:"obsoletionWorkflowId,omitempty"`
 	ObsoletionWorkflowInfo *BTActiveWorkflowTypeInfo `json:"obsoletionWorkflowInfo,omitempty"`
@@ -725,6 +727,38 @@ func (o *BTActiveWorkflowInfo) HasHasInactiveCustomWorkflows() bool {
 // SetHasInactiveCustomWorkflows gets a reference to the given bool and assigns it to the HasInactiveCustomWorkflows field.
 func (o *BTActiveWorkflowInfo) SetHasInactiveCustomWorkflows(v bool) {
 	o.HasInactiveCustomWorkflows = &v
+}
+
+// GetIsCurrentUserLoggedIntoToPLM returns the IsCurrentUserLoggedIntoToPLM field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetIsCurrentUserLoggedIntoToPLM() bool {
+	if o == nil || o.IsCurrentUserLoggedIntoToPLM == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsCurrentUserLoggedIntoToPLM
+}
+
+// GetIsCurrentUserLoggedIntoToPLMOk returns a tuple with the IsCurrentUserLoggedIntoToPLM field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetIsCurrentUserLoggedIntoToPLMOk() (*bool, bool) {
+	if o == nil || o.IsCurrentUserLoggedIntoToPLM == nil {
+		return nil, false
+	}
+	return o.IsCurrentUserLoggedIntoToPLM, true
+}
+
+// HasIsCurrentUserLoggedIntoToPLM returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasIsCurrentUserLoggedIntoToPLM() bool {
+	if o != nil && o.IsCurrentUserLoggedIntoToPLM != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsCurrentUserLoggedIntoToPLM gets a reference to the given bool and assigns it to the IsCurrentUserLoggedIntoToPLM field.
+func (o *BTActiveWorkflowInfo) SetIsCurrentUserLoggedIntoToPLM(v bool) {
+	o.IsCurrentUserLoggedIntoToPLM = &v
 }
 
 // GetObsoletionWorkflow returns the ObsoletionWorkflow field value if set, zero value otherwise.
@@ -1428,6 +1462,9 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.HasInactiveCustomWorkflows != nil {
 		toSerialize["hasInactiveCustomWorkflows"] = o.HasInactiveCustomWorkflows
+	}
+	if o.IsCurrentUserLoggedIntoToPLM != nil {
+		toSerialize["isCurrentUserLoggedIntoToPLM"] = o.IsCurrentUserLoggedIntoToPLM
 	}
 	if o.ObsoletionWorkflow != nil {
 		toSerialize["obsoletionWorkflow"] = o.ObsoletionWorkflow

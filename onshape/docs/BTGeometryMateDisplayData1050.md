@@ -7,9 +7,14 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **FirstDeterministicId** | Pointer to **string** |  | [optional] 
 **FirstOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**Hidden** | Pointer to **bool** |  | [optional] 
+**IsDerivedFeature** | Pointer to **bool** |  | [optional] 
 **Location** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
+**NodeId** | Pointer to **string** |  | [optional] 
+**OwnerOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **SecondDeterministicId** | Pointer to **string** |  | [optional] 
 **SecondOccurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**Status** | Pointer to [**GBTAssemblyFeatureDisplayStatus**](GBTAssemblyFeatureDisplayStatus.md) |  | [optional] 
 
 ## Methods
 
@@ -105,6 +110,56 @@ SetFirstOccurrence sets FirstOccurrence field to given value.
 
 HasFirstOccurrence returns a boolean if a field has been set.
 
+### GetHidden
+
+`func (o *BTGeometryMateDisplayData1050) GetHidden() bool`
+
+GetHidden returns the Hidden field if non-nil, zero value otherwise.
+
+### GetHiddenOk
+
+`func (o *BTGeometryMateDisplayData1050) GetHiddenOk() (*bool, bool)`
+
+GetHiddenOk returns a tuple with the Hidden field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHidden
+
+`func (o *BTGeometryMateDisplayData1050) SetHidden(v bool)`
+
+SetHidden sets Hidden field to given value.
+
+### HasHidden
+
+`func (o *BTGeometryMateDisplayData1050) HasHidden() bool`
+
+HasHidden returns a boolean if a field has been set.
+
+### GetIsDerivedFeature
+
+`func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeature() bool`
+
+GetIsDerivedFeature returns the IsDerivedFeature field if non-nil, zero value otherwise.
+
+### GetIsDerivedFeatureOk
+
+`func (o *BTGeometryMateDisplayData1050) GetIsDerivedFeatureOk() (*bool, bool)`
+
+GetIsDerivedFeatureOk returns a tuple with the IsDerivedFeature field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDerivedFeature
+
+`func (o *BTGeometryMateDisplayData1050) SetIsDerivedFeature(v bool)`
+
+SetIsDerivedFeature sets IsDerivedFeature field to given value.
+
+### HasIsDerivedFeature
+
+`func (o *BTGeometryMateDisplayData1050) HasIsDerivedFeature() bool`
+
+HasIsDerivedFeature returns a boolean if a field has been set.
+
 ### GetLocation
 
 `func (o *BTGeometryMateDisplayData1050) GetLocation() BTCoordinateSystem387`
@@ -129,6 +184,56 @@ SetLocation sets Location field to given value.
 `func (o *BTGeometryMateDisplayData1050) HasLocation() bool`
 
 HasLocation returns a boolean if a field has been set.
+
+### GetNodeId
+
+`func (o *BTGeometryMateDisplayData1050) GetNodeId() string`
+
+GetNodeId returns the NodeId field if non-nil, zero value otherwise.
+
+### GetNodeIdOk
+
+`func (o *BTGeometryMateDisplayData1050) GetNodeIdOk() (*string, bool)`
+
+GetNodeIdOk returns a tuple with the NodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeId
+
+`func (o *BTGeometryMateDisplayData1050) SetNodeId(v string)`
+
+SetNodeId sets NodeId field to given value.
+
+### HasNodeId
+
+`func (o *BTGeometryMateDisplayData1050) HasNodeId() bool`
+
+HasNodeId returns a boolean if a field has been set.
+
+### GetOwnerOccurrence
+
+`func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrence() BTOccurrence74`
+
+GetOwnerOccurrence returns the OwnerOccurrence field if non-nil, zero value otherwise.
+
+### GetOwnerOccurrenceOk
+
+`func (o *BTGeometryMateDisplayData1050) GetOwnerOccurrenceOk() (*BTOccurrence74, bool)`
+
+GetOwnerOccurrenceOk returns a tuple with the OwnerOccurrence field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwnerOccurrence
+
+`func (o *BTGeometryMateDisplayData1050) SetOwnerOccurrence(v BTOccurrence74)`
+
+SetOwnerOccurrence sets OwnerOccurrence field to given value.
+
+### HasOwnerOccurrence
+
+`func (o *BTGeometryMateDisplayData1050) HasOwnerOccurrence() bool`
+
+HasOwnerOccurrence returns a boolean if a field has been set.
 
 ### GetSecondDeterministicId
 
@@ -179,6 +284,31 @@ SetSecondOccurrence sets SecondOccurrence field to given value.
 `func (o *BTGeometryMateDisplayData1050) HasSecondOccurrence() bool`
 
 HasSecondOccurrence returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *BTGeometryMateDisplayData1050) GetStatus() GBTAssemblyFeatureDisplayStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *BTGeometryMateDisplayData1050) GetStatusOk() (*GBTAssemblyFeatureDisplayStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *BTGeometryMateDisplayData1050) SetStatus(v GBTAssemblyFeatureDisplayStatus)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *BTGeometryMateDisplayData1050) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

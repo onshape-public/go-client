@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AcceptOwnerTransfer** | Pointer to **bool** |  | [optional] 
+**CanConnectionUserEdit** | Pointer to **bool** |  | [optional] 
 **CompanyName** | Pointer to **string** |  | [optional] 
 **ConnectionId** | Pointer to **string** |  | [optional] 
 **ConnectionName** | Pointer to **string** |  | [optional] 
@@ -66,6 +67,31 @@ SetAcceptOwnerTransfer sets AcceptOwnerTransfer field to given value.
 `func (o *BTAclEntryInfo) HasAcceptOwnerTransfer() bool`
 
 HasAcceptOwnerTransfer returns a boolean if a field has been set.
+
+### GetCanConnectionUserEdit
+
+`func (o *BTAclEntryInfo) GetCanConnectionUserEdit() bool`
+
+GetCanConnectionUserEdit returns the CanConnectionUserEdit field if non-nil, zero value otherwise.
+
+### GetCanConnectionUserEditOk
+
+`func (o *BTAclEntryInfo) GetCanConnectionUserEditOk() (*bool, bool)`
+
+GetCanConnectionUserEditOk returns a tuple with the CanConnectionUserEdit field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanConnectionUserEdit
+
+`func (o *BTAclEntryInfo) SetCanConnectionUserEdit(v bool)`
+
+SetCanConnectionUserEdit sets CanConnectionUserEdit field to given value.
+
+### HasCanConnectionUserEdit
+
+`func (o *BTAclEntryInfo) HasCanConnectionUserEdit() bool`
+
+HasCanConnectionUserEdit returns a boolean if a field has been set.
 
 ### GetCompanyName
 

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -20,9 +20,14 @@ type BTHoleCalloutDisplayData3452 struct {
 	AnnotationPlane     *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
 	BasePlane           *BTCoordinateSystem387          `json:"basePlane,omitempty"`
 	BtType              *string                         `json:"btType,omitempty"`
+	CharacteristicId    *string                         `json:"characteristicId,omitempty"`
 	DeterministicId     *string                         `json:"deterministicId,omitempty"`
 	DxdySegments        []BTVector2d1812                `json:"dxdySegments,omitempty"`
 	IsDeletion          *bool                           `json:"isDeletion,omitempty"`
+	MainConstraintId    *string                         `json:"mainConstraintId,omitempty"`
+	MainFeatureId       *string                         `json:"mainFeatureId,omitempty"`
+	MainParameterId     *string                         `json:"mainParameterId,omitempty"`
+	MainPartId          *string                         `json:"mainPartId,omitempty"`
 	AllHoleFaces        []string                        `json:"allHoleFaces,omitempty"`
 	CounterboreDepth    *BTTolerantValueDisplayData3483 `json:"counterboreDepth,omitempty"`
 	CounterboreDiameter *BTTolerantValueDisplayData3483 `json:"counterboreDiameter,omitempty"`
@@ -155,6 +160,38 @@ func (o *BTHoleCalloutDisplayData3452) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTHoleCalloutDisplayData3452) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
+}
+
 // GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
 func (o *BTHoleCalloutDisplayData3452) GetDeterministicId() string {
 	if o == nil || o.DeterministicId == nil {
@@ -249,6 +286,134 @@ func (o *BTHoleCalloutDisplayData3452) HasIsDeletion() bool {
 // SetIsDeletion gets a reference to the given bool and assigns it to the IsDeletion field.
 func (o *BTHoleCalloutDisplayData3452) SetIsDeletion(v bool) {
 	o.IsDeletion = &v
+}
+
+// GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetMainConstraintId() string {
+	if o == nil || o.MainConstraintId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainConstraintId
+}
+
+// GetMainConstraintIdOk returns a tuple with the MainConstraintId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetMainConstraintIdOk() (*string, bool) {
+	if o == nil || o.MainConstraintId == nil {
+		return nil, false
+	}
+	return o.MainConstraintId, true
+}
+
+// HasMainConstraintId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasMainConstraintId() bool {
+	if o != nil && o.MainConstraintId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainConstraintId gets a reference to the given string and assigns it to the MainConstraintId field.
+func (o *BTHoleCalloutDisplayData3452) SetMainConstraintId(v string) {
+	o.MainConstraintId = &v
+}
+
+// GetMainFeatureId returns the MainFeatureId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetMainFeatureId() string {
+	if o == nil || o.MainFeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainFeatureId
+}
+
+// GetMainFeatureIdOk returns a tuple with the MainFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetMainFeatureIdOk() (*string, bool) {
+	if o == nil || o.MainFeatureId == nil {
+		return nil, false
+	}
+	return o.MainFeatureId, true
+}
+
+// HasMainFeatureId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasMainFeatureId() bool {
+	if o != nil && o.MainFeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainFeatureId gets a reference to the given string and assigns it to the MainFeatureId field.
+func (o *BTHoleCalloutDisplayData3452) SetMainFeatureId(v string) {
+	o.MainFeatureId = &v
+}
+
+// GetMainParameterId returns the MainParameterId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetMainParameterId() string {
+	if o == nil || o.MainParameterId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainParameterId
+}
+
+// GetMainParameterIdOk returns a tuple with the MainParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetMainParameterIdOk() (*string, bool) {
+	if o == nil || o.MainParameterId == nil {
+		return nil, false
+	}
+	return o.MainParameterId, true
+}
+
+// HasMainParameterId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasMainParameterId() bool {
+	if o != nil && o.MainParameterId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainParameterId gets a reference to the given string and assigns it to the MainParameterId field.
+func (o *BTHoleCalloutDisplayData3452) SetMainParameterId(v string) {
+	o.MainParameterId = &v
+}
+
+// GetMainPartId returns the MainPartId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetMainPartId() string {
+	if o == nil || o.MainPartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainPartId
+}
+
+// GetMainPartIdOk returns a tuple with the MainPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetMainPartIdOk() (*string, bool) {
+	if o == nil || o.MainPartId == nil {
+		return nil, false
+	}
+	return o.MainPartId, true
+}
+
+// HasMainPartId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasMainPartId() bool {
+	if o != nil && o.MainPartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainPartId gets a reference to the given string and assigns it to the MainPartId field.
+func (o *BTHoleCalloutDisplayData3452) SetMainPartId(v string) {
+	o.MainPartId = &v
 }
 
 // GetAllHoleFaces returns the AllHoleFaces field value if set, zero value otherwise.
@@ -814,6 +979,9 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
+	}
 	if o.DeterministicId != nil {
 		toSerialize["deterministicId"] = o.DeterministicId
 	}
@@ -822,6 +990,18 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDeletion != nil {
 		toSerialize["isDeletion"] = o.IsDeletion
+	}
+	if o.MainConstraintId != nil {
+		toSerialize["mainConstraintId"] = o.MainConstraintId
+	}
+	if o.MainFeatureId != nil {
+		toSerialize["mainFeatureId"] = o.MainFeatureId
+	}
+	if o.MainParameterId != nil {
+		toSerialize["mainParameterId"] = o.MainParameterId
+	}
+	if o.MainPartId != nil {
+		toSerialize["mainPartId"] = o.MainPartId
 	}
 	if o.AllHoleFaces != nil {
 		toSerialize["allHoleFaces"] = o.AllHoleFaces
