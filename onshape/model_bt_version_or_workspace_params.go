@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -24,11 +24,12 @@ type BTVersionOrWorkspaceParams struct {
 	MicroversionId            *string `json:"microversionId,omitempty"`
 	MissingBomTableTemplateId *string `json:"missingBomTableTemplateId,omitempty"`
 	Name                      *string `json:"name,omitempty"`
-	PublishVersion            *bool   `json:"publishVersion,omitempty"`
-	Purpose                   *int32  `json:"purpose,omitempty"`
-	ReadOnly                  *bool   `json:"readOnly,omitempty"`
-	VersionId                 *string `json:"versionId,omitempty"`
-	WorkspaceId               *string `json:"workspaceId,omitempty"`
+	// Publish FeatureScript at this version.
+	PublishVersion *bool   `json:"publishVersion,omitempty"`
+	Purpose        *int32  `json:"purpose,omitempty"`
+	ReadOnly       *bool   `json:"readOnly,omitempty"`
+	VersionId      *string `json:"versionId,omitempty"`
+	WorkspaceId    *string `json:"workspaceId,omitempty"`
 }
 
 // NewBTVersionOrWorkspaceParams instantiates a new BTVersionOrWorkspaceParams object
@@ -37,6 +38,8 @@ type BTVersionOrWorkspaceParams struct {
 // will change when the set of required properties is changed
 func NewBTVersionOrWorkspaceParams() *BTVersionOrWorkspaceParams {
 	this := BTVersionOrWorkspaceParams{}
+	var publishVersion bool = false
+	this.PublishVersion = &publishVersion
 	return &this
 }
 
@@ -45,6 +48,8 @@ func NewBTVersionOrWorkspaceParams() *BTVersionOrWorkspaceParams {
 // but it doesn't guarantee that properties required by API are set
 func NewBTVersionOrWorkspaceParamsWithDefaults() *BTVersionOrWorkspaceParams {
 	this := BTVersionOrWorkspaceParams{}
+	var publishVersion bool = false
+	this.PublishVersion = &publishVersion
 	return &this
 }
 

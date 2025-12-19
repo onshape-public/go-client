@@ -231,6 +231,8 @@ docs/BTCategoryParam.md
 docs/BTCategoryPropertyConfigInfo.md
 docs/BTCategoryPropertyInfo.md
 docs/BTCenterlineDimensionDisplayData1798.md
+docs/BTChamferCalloutDisplayData4471.md
+docs/BTChamferCalloutDisplayData4471AllOf.md
 docs/BTCircleDescription1145.md
 docs/BTCircleDescription1145AllOf.md
 docs/BTClassroomInfo.md
@@ -281,6 +283,7 @@ docs/BTConfiguredPartProperties2645.md
 docs/BTConfiguredPartPropertiesTable2740.md
 docs/BTConfiguredPartPropertiesTable2740AllOf.md
 docs/BTConfiguredSuppressionColumnInfo2498.md
+docs/BTConfiguredSuppressionColumnInfo2498AllOf.md
 docs/BTConfiguredValue.md
 docs/BTConfiguredValuesColumnInfo1025.md
 docs/BTConfiguredValuesColumnInfo1025AllOf.md
@@ -298,6 +301,7 @@ docs/BTCosmeticThreadMetadata3248AllOf.md
 docs/BTCountDimensionDisplayData1778.md
 docs/BTCreateTaskParams.md
 docs/BTCurveDescription1583.md
+docs/BTCurveDisplayData4722.md
 docs/BTCurveLengthDimensionDisplayData322.md
 docs/BTCylinderDescription686.md
 docs/BTCylinderDescription686AllOf.md
@@ -548,6 +552,7 @@ docs/BTJEditChange2636AllOf.md
 docs/BTJEditDelete1992.md
 docs/BTJEditDelete1992AllOf.md
 docs/BTJEditInsert2523.md
+docs/BTJEditInsert2523AllOf.md
 docs/BTJEditList2707.md
 docs/BTJEditList2707AllOf.md
 docs/BTJEditMove3245.md
@@ -901,6 +906,7 @@ docs/BTPFunctionOrPredicateDeclaration247.md
 docs/BTPFunctionOrPredicateDeclaration247AllOf.md
 docs/BTPIdentifier8.md
 docs/BTPIdentifier8AllOf.md
+docs/BTPLMMessageBody.md
 docs/BTPLValue249.md
 docs/BTPLValueAccess250.md
 docs/BTPLValueAccess250AllOf.md
@@ -1076,6 +1082,8 @@ docs/BTPlaneDescription692AllOf.md
 docs/BTPlaneOrientationFilter1700.md
 docs/BTPlaneOrientationFilter1700AllOf.md
 docs/BTPointEntity1439.md
+docs/BTPolylineDisplayData3522.md
+docs/BTPolylineDisplayData3522AllOf.md
 docs/BTPrivacyConsentInfo.md
 docs/BTProjectInfo.md
 docs/BTProjectInfoAllOf.md
@@ -1193,7 +1201,6 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
-docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1438,6 +1445,7 @@ docs/GBTFeatureFilterExclusion.md
 docs/GBTFieldWeldFlag.md
 docs/GBTFilterFlattenedGeometryOptions.md
 docs/GBTGTolConstraintType.md
+docs/GBTGTolExtendedConstraintType.md
 docs/GBTGeometryType.md
 docs/GBTGraphicsBufferTarget.md
 docs/GBTHoleType.md
@@ -1483,6 +1491,7 @@ docs/GBTTolerancePrecision.md
 docs/GBTToleranceType.md
 docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
+docs/GBTUrdfMeshFormat.md
 docs/GBTValueUse.md
 docs/GBTVariableType.md
 docs/GBTWeldContourType.md
@@ -1499,6 +1508,7 @@ docs/Info.md
 docs/InsertableApi.md
 docs/Interpolation.md
 docs/ItemApi.md
+docs/JobType.md
 docs/License.md
 docs/Lines.md
 docs/Link.md
@@ -1713,6 +1723,7 @@ model_bt_category_param.go
 model_bt_category_property_config_info.go
 model_bt_category_property_info.go
 model_bt_centerline_dimension_display_data_1798.go
+model_bt_chamfer_callout_display_data_4471.go
 model_bt_circle_description_1145.go
 model_bt_classroom_info.go
 model_bt_cloned_instance_2505.go
@@ -1764,6 +1775,7 @@ model_bt_cosmetic_thread_metadata_3248.go
 model_bt_count_dimension_display_data_1778.go
 model_bt_create_task_params.go
 model_bt_curve_description_1583.go
+model_bt_curve_display_data_4722.go
 model_bt_curve_length_dimension_display_data_322.go
 model_bt_cylinder_description_686.go
 model_bt_cylindrical_image_mapping_1640.go
@@ -2104,6 +2116,7 @@ model_bt_planar_image_mapping_4398.go
 model_bt_plane_description_692.go
 model_bt_plane_orientation_filter_1700.go
 model_bt_point_entity_1439.go
+model_bt_polyline_display_data_3522.go
 model_bt_privacy_consent_info.go
 model_bt_project_info.go
 model_bt_properties_table_template_info.go
@@ -2551,6 +2564,7 @@ model_btpl_value_249.go
 model_btpl_value_access_250.go
 model_btpl_value_box_dereference_251.go
 model_btpl_value_var_reference_252.go
+model_btplm_message_body.go
 model_btpso_identity_2741.go
 model_btsm_bend_table_row_metadata_1705.go
 model_btsm_definition_entity_type_filter_1651.go
@@ -2654,6 +2668,7 @@ model_gbt_table_text_alignment.go
 model_gbt_tessellation_setting_enum.go
 model_gbt_tolerance_precision.go
 model_gbt_tolerance_type.go
+model_gbt_urdf_mesh_format.go
 model_gbt_value_use.go
 model_gbt_variable_type.go
 model_gbt_weld_contour_type.go
@@ -2663,6 +2678,7 @@ model_gbt_weld_standard.go
 model_gbt_weld_type.go
 model_gbtbs_feature_visibility.go
 model_gbtg_tol_constraint_type.go
+model_gbtg_tol_extended_constraint_type.go
 model_gbtm_geom_status.go
 model_gbtp_definition_type.go
 model_gbtp_operator.go
@@ -2676,6 +2692,7 @@ model_image.go
 model_in.go
 model_info.go
 model_interpolation.go
+model_job_type.go
 model_license.go
 model_lines.go
 model_link.go

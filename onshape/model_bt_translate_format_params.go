@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -36,6 +36,7 @@ type BTTranslateFormatParams struct {
 	DestinationName *string `json:"destinationName,omitempty"`
 	// Determines the maximum distance deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
 	DistanceTolerance *float64 `json:"distanceTolerance,omitempty"`
+	DxfVersion        *string  `json:"dxfVersion,omitempty"`
 	// The id of the element in which to perform the operation.
 	ElementId *string `json:"elementId,omitempty"`
 	// An array of element ids for multi-element export.
@@ -54,6 +55,7 @@ type BTTranslateFormatParams struct {
 	ExcludeHiddenEntities    *bool   `json:"excludeHiddenEntities,omitempty"`
 	ExcludeOffSheetContent   *bool   `json:"excludeOffSheetContent,omitempty"`
 	ExtractAssemblyHierarchy *bool   `json:"extractAssemblyHierarchy,omitempty"`
+	FlatPatternAsync         *bool   `json:"flatPatternAsync,omitempty"`
 	Flatten                  *bool   `json:"flatten,omitempty"`
 	FlattenAssemblies        *bool   `json:"flattenAssemblies,omitempty"`
 	ForeignId                *string `json:"foreignId,omitempty"`
@@ -73,10 +75,16 @@ type BTTranslateFormatParams struct {
 	ImportInBackground           *bool  `json:"importInBackground,omitempty"`
 	ImportMaterialDensity        *bool  `json:"importMaterialDensity,omitempty"`
 	ImportWithinDocument         *bool  `json:"importWithinDocument,omitempty"`
+	IncludeBendCenterlines       *bool  `json:"includeBendCenterlines,omitempty"`
+	IncludeBendLines             *bool  `json:"includeBendLines,omitempty"`
+	IncludeCboreCsink            *bool  `json:"includeCboreCsink,omitempty"`
 	// Whether topology ids should be exported as parasolid attributes.
-	IncludeExportIds     *bool   `json:"includeExportIds,omitempty"`
-	JoinAdjacentSurfaces *bool   `json:"joinAdjacentSurfaces,omitempty"`
-	Level                *string `json:"level,omitempty"`
+	IncludeExportIds         *bool   `json:"includeExportIds,omitempty"`
+	IncludeFormedCentermarks *bool   `json:"includeFormedCentermarks,omitempty"`
+	IncludeFormedOutlines    *bool   `json:"includeFormedOutlines,omitempty"`
+	IncludeSketches          *bool   `json:"includeSketches,omitempty"`
+	JoinAdjacentSurfaces     *bool   `json:"joinAdjacentSurfaces,omitempty"`
+	Level                    *string `json:"level,omitempty"`
 	// The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
 	LinkDocumentId *string `json:"linkDocumentId,omitempty"`
 	// The id of the workspace through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -112,6 +120,7 @@ type BTTranslateFormatParams struct {
 	// Use `true` if email copy should be sent to the user who does the export.
 	SendCopyToMe                         *bool                         `json:"sendCopyToMe,omitempty"`
 	SheetIndices                         []int32                       `json:"sheetIndices,omitempty"`
+	SheetMetalFlat                       *bool                         `json:"sheetMetalFlat,omitempty"`
 	ShowOverriddenDimensions             *bool                         `json:"showOverriddenDimensions,omitempty"`
 	SkipBodyshop                         *bool                         `json:"skipBodyshop,omitempty"`
 	SourceName                           *string                       `json:"sourceName,omitempty"`
@@ -128,13 +137,14 @@ type BTTranslateFormatParams struct {
 	TextAsGeometry  *bool   `json:"textAsGeometry,omitempty"`
 	TextOption      *string `json:"textOption,omitempty"`
 	// Automatically download a translated file.
-	TriggerAutoDownload            *bool   `json:"triggerAutoDownload,omitempty"`
-	Unit                           *string `json:"unit,omitempty"`
-	UploadId                       *string `json:"uploadId,omitempty"`
-	UseFileNameToSetSinglePartName *bool   `json:"useFileNameToSetSinglePartName,omitempty"`
-	UseGltfCompression             *bool   `json:"useGltfCompression,omitempty"`
-	UseIGESImportPostProcessing    *bool   `json:"useIGESImportPostProcessing,omitempty"`
-	UseIgesCompatibilityMode       *bool   `json:"useIgesCompatibilityMode,omitempty"`
+	TriggerAutoDownload            *bool              `json:"triggerAutoDownload,omitempty"`
+	Unit                           *string            `json:"unit,omitempty"`
+	UploadId                       *string            `json:"uploadId,omitempty"`
+	UrdfMeshFormat                 *GBTUrdfMeshFormat `json:"urdfMeshFormat,omitempty"`
+	UseFileNameToSetSinglePartName *bool              `json:"useFileNameToSetSinglePartName,omitempty"`
+	UseGltfCompression             *bool              `json:"useGltfCompression,omitempty"`
+	UseIGESImportPostProcessing    *bool              `json:"useIGESImportPostProcessing,omitempty"`
+	UseIgesCompatibilityMode       *bool              `json:"useIgesCompatibilityMode,omitempty"`
 	// Number of days to keep the link valid for.
 	ValidForDays *int32 `json:"validForDays,omitempty"`
 	// Parasolid version number as string. Use '0' for the latest.
@@ -599,6 +609,38 @@ func (o *BTTranslateFormatParams) SetDistanceTolerance(v float64) {
 	o.DistanceTolerance = &v
 }
 
+// GetDxfVersion returns the DxfVersion field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetDxfVersion() string {
+	if o == nil || o.DxfVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.DxfVersion
+}
+
+// GetDxfVersionOk returns a tuple with the DxfVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetDxfVersionOk() (*string, bool) {
+	if o == nil || o.DxfVersion == nil {
+		return nil, false
+	}
+	return o.DxfVersion, true
+}
+
+// HasDxfVersion returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasDxfVersion() bool {
+	if o != nil && o.DxfVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDxfVersion gets a reference to the given string and assigns it to the DxfVersion field.
+func (o *BTTranslateFormatParams) SetDxfVersion(v string) {
+	o.DxfVersion = &v
+}
+
 // GetElementId returns the ElementId field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetElementId() string {
 	if o == nil || o.ElementId == nil {
@@ -917,6 +959,38 @@ func (o *BTTranslateFormatParams) HasExtractAssemblyHierarchy() bool {
 // SetExtractAssemblyHierarchy gets a reference to the given bool and assigns it to the ExtractAssemblyHierarchy field.
 func (o *BTTranslateFormatParams) SetExtractAssemblyHierarchy(v bool) {
 	o.ExtractAssemblyHierarchy = &v
+}
+
+// GetFlatPatternAsync returns the FlatPatternAsync field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetFlatPatternAsync() bool {
+	if o == nil || o.FlatPatternAsync == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FlatPatternAsync
+}
+
+// GetFlatPatternAsyncOk returns a tuple with the FlatPatternAsync field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetFlatPatternAsyncOk() (*bool, bool) {
+	if o == nil || o.FlatPatternAsync == nil {
+		return nil, false
+	}
+	return o.FlatPatternAsync, true
+}
+
+// HasFlatPatternAsync returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasFlatPatternAsync() bool {
+	if o != nil && o.FlatPatternAsync != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFlatPatternAsync gets a reference to the given bool and assigns it to the FlatPatternAsync field.
+func (o *BTTranslateFormatParams) SetFlatPatternAsync(v bool) {
+	o.FlatPatternAsync = &v
 }
 
 // GetFlatten returns the Flatten field value if set, zero value otherwise.
@@ -1391,6 +1465,102 @@ func (o *BTTranslateFormatParams) SetImportWithinDocument(v bool) {
 	o.ImportWithinDocument = &v
 }
 
+// GetIncludeBendCenterlines returns the IncludeBendCenterlines field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeBendCenterlines() bool {
+	if o == nil || o.IncludeBendCenterlines == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeBendCenterlines
+}
+
+// GetIncludeBendCenterlinesOk returns a tuple with the IncludeBendCenterlines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeBendCenterlinesOk() (*bool, bool) {
+	if o == nil || o.IncludeBendCenterlines == nil {
+		return nil, false
+	}
+	return o.IncludeBendCenterlines, true
+}
+
+// HasIncludeBendCenterlines returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeBendCenterlines() bool {
+	if o != nil && o.IncludeBendCenterlines != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeBendCenterlines gets a reference to the given bool and assigns it to the IncludeBendCenterlines field.
+func (o *BTTranslateFormatParams) SetIncludeBendCenterlines(v bool) {
+	o.IncludeBendCenterlines = &v
+}
+
+// GetIncludeBendLines returns the IncludeBendLines field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeBendLines() bool {
+	if o == nil || o.IncludeBendLines == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeBendLines
+}
+
+// GetIncludeBendLinesOk returns a tuple with the IncludeBendLines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeBendLinesOk() (*bool, bool) {
+	if o == nil || o.IncludeBendLines == nil {
+		return nil, false
+	}
+	return o.IncludeBendLines, true
+}
+
+// HasIncludeBendLines returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeBendLines() bool {
+	if o != nil && o.IncludeBendLines != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeBendLines gets a reference to the given bool and assigns it to the IncludeBendLines field.
+func (o *BTTranslateFormatParams) SetIncludeBendLines(v bool) {
+	o.IncludeBendLines = &v
+}
+
+// GetIncludeCboreCsink returns the IncludeCboreCsink field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeCboreCsink() bool {
+	if o == nil || o.IncludeCboreCsink == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeCboreCsink
+}
+
+// GetIncludeCboreCsinkOk returns a tuple with the IncludeCboreCsink field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeCboreCsinkOk() (*bool, bool) {
+	if o == nil || o.IncludeCboreCsink == nil {
+		return nil, false
+	}
+	return o.IncludeCboreCsink, true
+}
+
+// HasIncludeCboreCsink returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeCboreCsink() bool {
+	if o != nil && o.IncludeCboreCsink != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeCboreCsink gets a reference to the given bool and assigns it to the IncludeCboreCsink field.
+func (o *BTTranslateFormatParams) SetIncludeCboreCsink(v bool) {
+	o.IncludeCboreCsink = &v
+}
+
 // GetIncludeExportIds returns the IncludeExportIds field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetIncludeExportIds() bool {
 	if o == nil || o.IncludeExportIds == nil {
@@ -1421,6 +1591,102 @@ func (o *BTTranslateFormatParams) HasIncludeExportIds() bool {
 // SetIncludeExportIds gets a reference to the given bool and assigns it to the IncludeExportIds field.
 func (o *BTTranslateFormatParams) SetIncludeExportIds(v bool) {
 	o.IncludeExportIds = &v
+}
+
+// GetIncludeFormedCentermarks returns the IncludeFormedCentermarks field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeFormedCentermarks() bool {
+	if o == nil || o.IncludeFormedCentermarks == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeFormedCentermarks
+}
+
+// GetIncludeFormedCentermarksOk returns a tuple with the IncludeFormedCentermarks field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeFormedCentermarksOk() (*bool, bool) {
+	if o == nil || o.IncludeFormedCentermarks == nil {
+		return nil, false
+	}
+	return o.IncludeFormedCentermarks, true
+}
+
+// HasIncludeFormedCentermarks returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeFormedCentermarks() bool {
+	if o != nil && o.IncludeFormedCentermarks != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeFormedCentermarks gets a reference to the given bool and assigns it to the IncludeFormedCentermarks field.
+func (o *BTTranslateFormatParams) SetIncludeFormedCentermarks(v bool) {
+	o.IncludeFormedCentermarks = &v
+}
+
+// GetIncludeFormedOutlines returns the IncludeFormedOutlines field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeFormedOutlines() bool {
+	if o == nil || o.IncludeFormedOutlines == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeFormedOutlines
+}
+
+// GetIncludeFormedOutlinesOk returns a tuple with the IncludeFormedOutlines field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeFormedOutlinesOk() (*bool, bool) {
+	if o == nil || o.IncludeFormedOutlines == nil {
+		return nil, false
+	}
+	return o.IncludeFormedOutlines, true
+}
+
+// HasIncludeFormedOutlines returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeFormedOutlines() bool {
+	if o != nil && o.IncludeFormedOutlines != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeFormedOutlines gets a reference to the given bool and assigns it to the IncludeFormedOutlines field.
+func (o *BTTranslateFormatParams) SetIncludeFormedOutlines(v bool) {
+	o.IncludeFormedOutlines = &v
+}
+
+// GetIncludeSketches returns the IncludeSketches field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeSketches() bool {
+	if o == nil || o.IncludeSketches == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeSketches
+}
+
+// GetIncludeSketchesOk returns a tuple with the IncludeSketches field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeSketchesOk() (*bool, bool) {
+	if o == nil || o.IncludeSketches == nil {
+		return nil, false
+	}
+	return o.IncludeSketches, true
+}
+
+// HasIncludeSketches returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeSketches() bool {
+	if o != nil && o.IncludeSketches != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeSketches gets a reference to the given bool and assigns it to the IncludeSketches field.
+func (o *BTTranslateFormatParams) SetIncludeSketches(v bool) {
+	o.IncludeSketches = &v
 }
 
 // GetJoinAdjacentSurfaces returns the JoinAdjacentSurfaces field value if set, zero value otherwise.
@@ -2287,6 +2553,38 @@ func (o *BTTranslateFormatParams) SetSheetIndices(v []int32) {
 	o.SheetIndices = v
 }
 
+// GetSheetMetalFlat returns the SheetMetalFlat field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetSheetMetalFlat() bool {
+	if o == nil || o.SheetMetalFlat == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SheetMetalFlat
+}
+
+// GetSheetMetalFlatOk returns a tuple with the SheetMetalFlat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetSheetMetalFlatOk() (*bool, bool) {
+	if o == nil || o.SheetMetalFlat == nil {
+		return nil, false
+	}
+	return o.SheetMetalFlat, true
+}
+
+// HasSheetMetalFlat returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasSheetMetalFlat() bool {
+	if o != nil && o.SheetMetalFlat != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSheetMetalFlat gets a reference to the given bool and assigns it to the SheetMetalFlat field.
+func (o *BTTranslateFormatParams) SetSheetMetalFlat(v bool) {
+	o.SheetMetalFlat = &v
+}
+
 // GetShowOverriddenDimensions returns the ShowOverriddenDimensions field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetShowOverriddenDimensions() bool {
 	if o == nil || o.ShowOverriddenDimensions == nil {
@@ -2799,6 +3097,38 @@ func (o *BTTranslateFormatParams) SetUploadId(v string) {
 	o.UploadId = &v
 }
 
+// GetUrdfMeshFormat returns the UrdfMeshFormat field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUrdfMeshFormat() GBTUrdfMeshFormat {
+	if o == nil || o.UrdfMeshFormat == nil {
+		var ret GBTUrdfMeshFormat
+		return ret
+	}
+	return *o.UrdfMeshFormat
+}
+
+// GetUrdfMeshFormatOk returns a tuple with the UrdfMeshFormat field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUrdfMeshFormatOk() (*GBTUrdfMeshFormat, bool) {
+	if o == nil || o.UrdfMeshFormat == nil {
+		return nil, false
+	}
+	return o.UrdfMeshFormat, true
+}
+
+// HasUrdfMeshFormat returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUrdfMeshFormat() bool {
+	if o != nil && o.UrdfMeshFormat != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUrdfMeshFormat gets a reference to the given GBTUrdfMeshFormat and assigns it to the UrdfMeshFormat field.
+func (o *BTTranslateFormatParams) SetUrdfMeshFormat(v GBTUrdfMeshFormat) {
+	o.UrdfMeshFormat = &v
+}
+
 // GetUseFileNameToSetSinglePartName returns the UseFileNameToSetSinglePartName field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartName() bool {
 	if o == nil || o.UseFileNameToSetSinglePartName == nil {
@@ -3032,6 +3362,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.DistanceTolerance != nil {
 		toSerialize["distanceTolerance"] = o.DistanceTolerance
 	}
+	if o.DxfVersion != nil {
+		toSerialize["dxfVersion"] = o.DxfVersion
+	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
 	}
@@ -3061,6 +3394,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExtractAssemblyHierarchy != nil {
 		toSerialize["extractAssemblyHierarchy"] = o.ExtractAssemblyHierarchy
+	}
+	if o.FlatPatternAsync != nil {
+		toSerialize["flatPatternAsync"] = o.FlatPatternAsync
 	}
 	if o.Flatten != nil {
 		toSerialize["flatten"] = o.Flatten
@@ -3107,8 +3443,26 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.ImportWithinDocument != nil {
 		toSerialize["importWithinDocument"] = o.ImportWithinDocument
 	}
+	if o.IncludeBendCenterlines != nil {
+		toSerialize["includeBendCenterlines"] = o.IncludeBendCenterlines
+	}
+	if o.IncludeBendLines != nil {
+		toSerialize["includeBendLines"] = o.IncludeBendLines
+	}
+	if o.IncludeCboreCsink != nil {
+		toSerialize["includeCboreCsink"] = o.IncludeCboreCsink
+	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds
+	}
+	if o.IncludeFormedCentermarks != nil {
+		toSerialize["includeFormedCentermarks"] = o.IncludeFormedCentermarks
+	}
+	if o.IncludeFormedOutlines != nil {
+		toSerialize["includeFormedOutlines"] = o.IncludeFormedOutlines
+	}
+	if o.IncludeSketches != nil {
+		toSerialize["includeSketches"] = o.IncludeSketches
 	}
 	if o.JoinAdjacentSurfaces != nil {
 		toSerialize["joinAdjacentSurfaces"] = o.JoinAdjacentSurfaces
@@ -3191,6 +3545,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	if o.SheetIndices != nil {
 		toSerialize["sheetIndices"] = o.SheetIndices
 	}
+	if o.SheetMetalFlat != nil {
+		toSerialize["sheetMetalFlat"] = o.SheetMetalFlat
+	}
 	if o.ShowOverriddenDimensions != nil {
 		toSerialize["showOverriddenDimensions"] = o.ShowOverriddenDimensions
 	}
@@ -3238,6 +3595,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UploadId != nil {
 		toSerialize["uploadId"] = o.UploadId
+	}
+	if o.UrdfMeshFormat != nil {
+		toSerialize["urdfMeshFormat"] = o.UrdfMeshFormat
 	}
 	if o.UseFileNameToSetSinglePartName != nil {
 		toSerialize["useFileNameToSetSinglePartName"] = o.UseFileNameToSetSinglePartName
