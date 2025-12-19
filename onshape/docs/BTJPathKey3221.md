@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **Key** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewBTJPathKey3221
 
-`func NewBTJPathKey3221() *BTJPathKey3221`
+`func NewBTJPathKey3221(btType string, ) *BTJPathKey3221`
 
 NewBTJPathKey3221 instantiates a new BTJPathKey3221 object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJPathKey3221) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetKey
 

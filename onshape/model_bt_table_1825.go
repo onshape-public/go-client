@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -512,6 +512,106 @@ func (o *BTTable1825) SetSortOrder(v BTTableSortOrder4371) {
 	o.GetActualInstance().(getResult).SetSortOrder(v)
 }
 
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *BTTable1825) GetStatusMessage() string {
+	type getResult interface {
+		GetStatusMessage() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusMessage()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTable1825) GetStatusMessageOk() (*string, bool) {
+	type getResult interface {
+		GetStatusMessageOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusMessageOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasStatusMessage returns a boolean if a field has been set.
+func (o *BTTable1825) HasStatusMessage() bool {
+	type getResult interface {
+		HasStatusMessage() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasStatusMessage()
+	} else {
+		return false
+	}
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *BTTable1825) SetStatusMessage(v string) {
+	type getResult interface {
+		SetStatusMessage(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetStatusMessage(v)
+}
+
+// GetStatusType returns the StatusType field value if set, zero value otherwise.
+func (o *BTTable1825) GetStatusType() GBTNodeStatusType {
+	type getResult interface {
+		GetStatusType() GBTNodeStatusType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusType()
+	} else {
+		var de GBTNodeStatusType
+		return de
+	}
+}
+
+// GetStatusTypeOk returns a tuple with the StatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTable1825) GetStatusTypeOk() (*GBTNodeStatusType, bool) {
+	type getResult interface {
+		GetStatusTypeOk() (*GBTNodeStatusType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetStatusTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasStatusType returns a boolean if a field has been set.
+func (o *BTTable1825) HasStatusType() bool {
+	type getResult interface {
+		HasStatusType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasStatusType()
+	} else {
+		return false
+	}
+}
+
+// SetStatusType gets a reference to the given GBTNodeStatusType and assigns it to the StatusType field.
+func (o *BTTable1825) SetStatusType(v GBTNodeStatusType) {
+	type getResult interface {
+		SetStatusType(v GBTNodeStatusType)
+	}
+
+	o.GetActualInstance().(getResult).SetStatusType(v)
+}
+
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
 func (o *BTTable1825) GetTableColumns() []BTTableColumnInfo1222 {
 	type getResult interface {
@@ -868,6 +968,8 @@ type base_BTTable1825 struct {
 	ReadOnly      *bool                   `json:"readOnly,omitempty"`
 	RowCount      *int32                  `json:"rowCount,omitempty"`
 	SortOrder     *BTTableSortOrder4371   `json:"sortOrder,omitempty"`
+	StatusMessage *string                 `json:"statusMessage,omitempty"`
+	StatusType    *GBTNodeStatusType      `json:"statusType,omitempty"`
 	TableColumns  []BTTableColumnInfo1222 `json:"tableColumns,omitempty"`
 	TableId       *string                 `json:"tableId,omitempty"`
 	TableRows     []BTTableRow1054        `json:"tableRows,omitempty"`
@@ -1179,6 +1281,70 @@ func (o *base_BTTable1825) SetSortOrder(v BTTableSortOrder4371) {
 	o.SortOrder = &v
 }
 
+// GetStatusMessage returns the StatusMessage field value if set, zero value otherwise.
+func (o *base_BTTable1825) GetStatusMessage() string {
+	if o == nil || o.StatusMessage == nil {
+		var ret string
+		return ret
+	}
+	return *o.StatusMessage
+}
+
+// GetStatusMessageOk returns a tuple with the StatusMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTable1825) GetStatusMessageOk() (*string, bool) {
+	if o == nil || o.StatusMessage == nil {
+		return nil, false
+	}
+	return o.StatusMessage, true
+}
+
+// HasStatusMessage returns a boolean if a field has been set.
+func (o *base_BTTable1825) HasStatusMessage() bool {
+	if o != nil && o.StatusMessage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusMessage gets a reference to the given string and assigns it to the StatusMessage field.
+func (o *base_BTTable1825) SetStatusMessage(v string) {
+	o.StatusMessage = &v
+}
+
+// GetStatusType returns the StatusType field value if set, zero value otherwise.
+func (o *base_BTTable1825) GetStatusType() GBTNodeStatusType {
+	if o == nil || o.StatusType == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.StatusType
+}
+
+// GetStatusTypeOk returns a tuple with the StatusType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTable1825) GetStatusTypeOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.StatusType == nil {
+		return nil, false
+	}
+	return o.StatusType, true
+}
+
+// HasStatusType returns a boolean if a field has been set.
+func (o *base_BTTable1825) HasStatusType() bool {
+	if o != nil && o.StatusType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusType gets a reference to the given GBTNodeStatusType and assigns it to the StatusType field.
+func (o *base_BTTable1825) SetStatusType(v GBTNodeStatusType) {
+	o.StatusType = &v
+}
+
 // GetTableColumns returns the TableColumns field value if set, zero value otherwise.
 func (o *base_BTTable1825) GetTableColumns() []BTTableColumnInfo1222 {
 	if o == nil || o.TableColumns == nil {
@@ -1335,6 +1501,12 @@ func (o base_BTTable1825) MarshalJSON() ([]byte, error) {
 	}
 	if o.SortOrder != nil {
 		toSerialize["sortOrder"] = o.SortOrder
+	}
+	if o.StatusMessage != nil {
+		toSerialize["statusMessage"] = o.StatusMessage
+	}
+	if o.StatusType != nil {
+		toSerialize["statusType"] = o.StatusType
 	}
 	if o.TableColumns != nil {
 		toSerialize["tableColumns"] = o.TableColumns

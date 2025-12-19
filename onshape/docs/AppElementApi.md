@@ -364,6 +364,8 @@ Name | Type | Description  | Notes
 
 Create a new application element.
 
+
+
 ### Example
 
 ```go
@@ -2038,6 +2040,8 @@ Name | Type | Description  | Notes
 > BTAppElementModifyInfo UpdateAppElement(ctx, did, eid, wvm, wvmid).BTAppElementUpdateParams(bTAppElementUpdateParams).Execute()
 
 Update the content for the specified app element.
+
+
 
 ### Example
 
