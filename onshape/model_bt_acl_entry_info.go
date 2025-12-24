@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,24 +16,25 @@ import (
 
 // BTAclEntryInfo struct for BTAclEntryInfo
 type BTAclEntryInfo struct {
-	AcceptOwnerTransfer  *bool        `json:"acceptOwnerTransfer,omitempty"`
-	CompanyName          *string      `json:"companyName,omitempty"`
-	ConnectionId         *string      `json:"connectionId,omitempty"`
-	ConnectionName       *string      `json:"connectionName,omitempty"`
-	ConnectionUser       *bool        `json:"connectionUser,omitempty"`
-	Email                *string      `json:"email,omitempty"`
-	EnterpriseMember     *bool        `json:"enterpriseMember,omitempty"`
-	EntryId              *string      `json:"entryId,omitempty"`
-	EntryState           *BTUserState `json:"entryState,omitempty"`
-	EntryType            *int32       `json:"entryType,omitempty"`
-	Image                *string      `json:"image,omitempty"`
-	Name                 *string      `json:"name,omitempty"`
-	ObjectId             *string      `json:"objectId,omitempty"`
-	PendingOwnerTransfer *bool        `json:"pendingOwnerTransfer,omitempty"`
-	Permission           *int64       `json:"permission,omitempty"`
-	PermissionSet        []string     `json:"permissionSet,omitempty"`
-	ProCompanySubtype    *int32       `json:"proCompanySubtype,omitempty"`
-	TeamName             *string      `json:"teamName,omitempty"`
+	AcceptOwnerTransfer   *bool        `json:"acceptOwnerTransfer,omitempty"`
+	CanConnectionUserEdit *bool        `json:"canConnectionUserEdit,omitempty"`
+	CompanyName           *string      `json:"companyName,omitempty"`
+	ConnectionId          *string      `json:"connectionId,omitempty"`
+	ConnectionName        *string      `json:"connectionName,omitempty"`
+	ConnectionUser        *bool        `json:"connectionUser,omitempty"`
+	Email                 *string      `json:"email,omitempty"`
+	EnterpriseMember      *bool        `json:"enterpriseMember,omitempty"`
+	EntryId               *string      `json:"entryId,omitempty"`
+	EntryState            *BTUserState `json:"entryState,omitempty"`
+	EntryType             *int32       `json:"entryType,omitempty"`
+	Image                 *string      `json:"image,omitempty"`
+	Name                  *string      `json:"name,omitempty"`
+	ObjectId              *string      `json:"objectId,omitempty"`
+	PendingOwnerTransfer  *bool        `json:"pendingOwnerTransfer,omitempty"`
+	Permission            *int64       `json:"permission,omitempty"`
+	PermissionSet         []string     `json:"permissionSet,omitempty"`
+	ProCompanySubtype     *int32       `json:"proCompanySubtype,omitempty"`
+	TeamName              *string      `json:"teamName,omitempty"`
 }
 
 // NewBTAclEntryInfo instantiates a new BTAclEntryInfo object
@@ -83,6 +84,38 @@ func (o *BTAclEntryInfo) HasAcceptOwnerTransfer() bool {
 // SetAcceptOwnerTransfer gets a reference to the given bool and assigns it to the AcceptOwnerTransfer field.
 func (o *BTAclEntryInfo) SetAcceptOwnerTransfer(v bool) {
 	o.AcceptOwnerTransfer = &v
+}
+
+// GetCanConnectionUserEdit returns the CanConnectionUserEdit field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetCanConnectionUserEdit() bool {
+	if o == nil || o.CanConnectionUserEdit == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanConnectionUserEdit
+}
+
+// GetCanConnectionUserEditOk returns a tuple with the CanConnectionUserEdit field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetCanConnectionUserEditOk() (*bool, bool) {
+	if o == nil || o.CanConnectionUserEdit == nil {
+		return nil, false
+	}
+	return o.CanConnectionUserEdit, true
+}
+
+// HasCanConnectionUserEdit returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasCanConnectionUserEdit() bool {
+	if o != nil && o.CanConnectionUserEdit != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanConnectionUserEdit gets a reference to the given bool and assigns it to the CanConnectionUserEdit field.
+func (o *BTAclEntryInfo) SetCanConnectionUserEdit(v bool) {
+	o.CanConnectionUserEdit = &v
 }
 
 // GetCompanyName returns the CompanyName field value if set, zero value otherwise.
@@ -633,6 +666,9 @@ func (o BTAclEntryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AcceptOwnerTransfer != nil {
 		toSerialize["acceptOwnerTransfer"] = o.AcceptOwnerTransfer
+	}
+	if o.CanConnectionUserEdit != nil {
+		toSerialize["canConnectionUserEdit"] = o.CanConnectionUserEdit
 	}
 	if o.CompanyName != nil {
 		toSerialize["companyName"] = o.CompanyName

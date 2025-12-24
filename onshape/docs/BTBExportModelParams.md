@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **EmailTo** | Pointer to **string** | Base64-encoded email address. When sending an email, the &#x60;fromUserId&#x60; parameter is also required. | [optional] 
 **ExcludeHiddenEntities** | Pointer to **bool** | If &#x60;true&#x60;, the exported file won&#39;t have any parts and assemblies marked as hidden | [optional] 
 **FeatureIds** | Pointer to **string** |  | [optional] 
+**FlatPatternAsync** | Pointer to **bool** | If &#x60;true&#x60;, flat pattern export being called via async | [optional] 
 **Flatten** | Pointer to **bool** |  | [optional] 
 **Format** | **string** |  | 
 **FromUserId** | Pointer to **string** | Your user ID. Required when providing the &#x60;emailTo&#x60; parameter. | [optional] 
@@ -525,6 +526,31 @@ SetFeatureIds sets FeatureIds field to given value.
 `func (o *BTBExportModelParams) HasFeatureIds() bool`
 
 HasFeatureIds returns a boolean if a field has been set.
+
+### GetFlatPatternAsync
+
+`func (o *BTBExportModelParams) GetFlatPatternAsync() bool`
+
+GetFlatPatternAsync returns the FlatPatternAsync field if non-nil, zero value otherwise.
+
+### GetFlatPatternAsyncOk
+
+`func (o *BTBExportModelParams) GetFlatPatternAsyncOk() (*bool, bool)`
+
+GetFlatPatternAsyncOk returns a tuple with the FlatPatternAsync field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFlatPatternAsync
+
+`func (o *BTBExportModelParams) SetFlatPatternAsync(v bool)`
+
+SetFlatPatternAsync sets FlatPatternAsync field to given value.
+
+### HasFlatPatternAsync
+
+`func (o *BTBExportModelParams) HasFlatPatternAsync() bool`
+
+HasFlatPatternAsync returns a boolean if a field has been set.
 
 ### GetFlatten
 

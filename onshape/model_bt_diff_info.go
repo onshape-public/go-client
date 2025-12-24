@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,7 +16,7 @@ import (
 
 // BTDiffInfo struct for BTDiffInfo
 type BTDiffInfo struct {
-	Changes                *map[string]BTDiffInfo    `json:"changes,omitempty"`
+	CollectionChanges      *map[string][]BTDiffInfo  `json:"collectionChanges,omitempty"`
 	EntityType             *BTDiffInfoCollectionType `json:"entityType,omitempty"`
 	GeometryChangeMessages []string                  `json:"geometryChangeMessages,omitempty"`
 	SourceId               *string                   `json:"sourceId,omitempty"`
@@ -43,36 +43,36 @@ func NewBTDiffInfoWithDefaults() *BTDiffInfo {
 	return &this
 }
 
-// GetChanges returns the Changes field value if set, zero value otherwise.
-func (o *BTDiffInfo) GetChanges() map[string]BTDiffInfo {
-	if o == nil || o.Changes == nil {
-		var ret map[string]BTDiffInfo
+// GetCollectionChanges returns the CollectionChanges field value if set, zero value otherwise.
+func (o *BTDiffInfo) GetCollectionChanges() map[string][]BTDiffInfo {
+	if o == nil || o.CollectionChanges == nil {
+		var ret map[string][]BTDiffInfo
 		return ret
 	}
-	return *o.Changes
+	return *o.CollectionChanges
 }
 
-// GetChangesOk returns a tuple with the Changes field value if set, nil otherwise
+// GetCollectionChangesOk returns a tuple with the CollectionChanges field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTDiffInfo) GetChangesOk() (*map[string]BTDiffInfo, bool) {
-	if o == nil || o.Changes == nil {
+func (o *BTDiffInfo) GetCollectionChangesOk() (*map[string][]BTDiffInfo, bool) {
+	if o == nil || o.CollectionChanges == nil {
 		return nil, false
 	}
-	return o.Changes, true
+	return o.CollectionChanges, true
 }
 
-// HasChanges returns a boolean if a field has been set.
-func (o *BTDiffInfo) HasChanges() bool {
-	if o != nil && o.Changes != nil {
+// HasCollectionChanges returns a boolean if a field has been set.
+func (o *BTDiffInfo) HasCollectionChanges() bool {
+	if o != nil && o.CollectionChanges != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetChanges gets a reference to the given map[string]BTDiffInfo and assigns it to the Changes field.
-func (o *BTDiffInfo) SetChanges(v map[string]BTDiffInfo) {
-	o.Changes = &v
+// SetCollectionChanges gets a reference to the given map[string][]BTDiffInfo and assigns it to the CollectionChanges field.
+func (o *BTDiffInfo) SetCollectionChanges(v map[string][]BTDiffInfo) {
+	o.CollectionChanges = &v
 }
 
 // GetEntityType returns the EntityType field value if set, zero value otherwise.
@@ -301,8 +301,8 @@ func (o *BTDiffInfo) SetType(v GBTNodeChange) {
 
 func (o BTDiffInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Changes != nil {
-		toSerialize["changes"] = o.Changes
+	if o.CollectionChanges != nil {
+		toSerialize["collectionChanges"] = o.CollectionChanges
 	}
 	if o.EntityType != nil {
 		toSerialize["entityType"] = o.EntityType

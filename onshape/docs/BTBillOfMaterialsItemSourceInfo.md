@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Configuration** | Pointer to **string** |  | [optional] 
+**DistinctConfigurations** | Pointer to **[]string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FullConfiguration** | Pointer to **string** |  | [optional] 
@@ -63,6 +64,31 @@ SetConfiguration sets Configuration field to given value.
 `func (o *BTBillOfMaterialsItemSourceInfo) HasConfiguration() bool`
 
 HasConfiguration returns a boolean if a field has been set.
+
+### GetDistinctConfigurations
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetDistinctConfigurations() []string`
+
+GetDistinctConfigurations returns the DistinctConfigurations field if non-nil, zero value otherwise.
+
+### GetDistinctConfigurationsOk
+
+`func (o *BTBillOfMaterialsItemSourceInfo) GetDistinctConfigurationsOk() (*[]string, bool)`
+
+GetDistinctConfigurationsOk returns a tuple with the DistinctConfigurations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDistinctConfigurations
+
+`func (o *BTBillOfMaterialsItemSourceInfo) SetDistinctConfigurations(v []string)`
+
+SetDistinctConfigurations sets DistinctConfigurations field to given value.
+
+### HasDistinctConfigurations
+
+`func (o *BTBillOfMaterialsItemSourceInfo) HasDistinctConfigurations() bool`
+
+HasDistinctConfigurations returns a boolean if a field has been set.
 
 ### GetDocumentId
 

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -1715,6 +1715,21 @@ const (
 	GBTErrorStringEnumDrawingEmptySectionTargetBody                               GBTErrorStringEnum = "DRAWING_EMPTY_SECTION_TARGET_BODY"
 	GBTErrorStringEnumSketchCannotEvaluatePatternParameter                        GBTErrorStringEnum = "SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER"
 	GBTErrorStringEnumTlSelfIntersectingBody                                      GBTErrorStringEnum = "TL_SELF_INTERSECTING_BODY"
+	GBTErrorStringEnumSketchPatternMissingParameter                               GBTErrorStringEnum = "SKETCH_PATTERN_MISSING_PARAMETER"
+	GBTErrorStringEnumSketchPatternInvalidValue                                   GBTErrorStringEnum = "SKETCH_PATTERN_INVALID_VALUE"
+	GBTErrorStringEnumTlProfilesTransformed                                       GBTErrorStringEnum = "TL_PROFILES_TRANSFORMED"
+	GBTErrorStringEnumTolerantRadiusNoVariableRadius                              GBTErrorStringEnum = "TOLERANT_RADIUS_NO_VARIABLE_RADIUS"
+	GBTErrorStringEnumTolerantRadiusNoAsymmetry                                   GBTErrorStringEnum = "TOLERANT_RADIUS_NO_ASYMMETRY"
+	GBTErrorStringEnumTlConeNeedsTangentPolylines                                 GBTErrorStringEnum = "TL_CONE_NEEDS_TANGENT_POLYLINES"
+	GBTErrorStringEnumAssemblyMirrorTargetFeatureSuppressed                       GBTErrorStringEnum = "ASSEMBLY_MIRROR_TARGET_FEATURE_SUPPRESSED"
+	GBTErrorStringEnumRevolveUpToFailed                                           GBTErrorStringEnum = "REVOLVE_UP_TO_FAILED"
+	GBTErrorStringEnumRevolveUpToNextFailed                                       GBTErrorStringEnum = "REVOLVE_UP_TO_NEXT_FAILED"
+	GBTErrorStringEnumRevolveUpToThinFailed                                       GBTErrorStringEnum = "REVOLVE_UP_TO_THIN_FAILED"
+	GBTErrorStringEnumRevolveUpToNextNoTarget                                     GBTErrorStringEnum = "REVOLVE_UP_TO_NEXT_NO_TARGET"
+	GBTErrorStringEnumDeviationAnalysisFailed                                     GBTErrorStringEnum = "DEVIATION_ANALYSIS_FAILED"
+	GBTErrorStringEnumRevolveSelectTerminatingBody                                GBTErrorStringEnum = "REVOLVE_SELECT_TERMINATING_BODY"
+	GBTErrorStringEnumRevolveSelectTerminatingSurface                             GBTErrorStringEnum = "REVOLVE_SELECT_TERMINATING_SURFACE"
+	GBTErrorStringEnumRevolveSelectTerminatingVertex                              GBTErrorStringEnum = "REVOLVE_SELECT_TERMINATING_VERTEX"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3415,6 +3430,21 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"DRAWING_EMPTY_SECTION_TARGET_BODY",
 	"SKETCH_CANNOT_EVALUATE_PATTERN_PARAMETER",
 	"TL_SELF_INTERSECTING_BODY",
+	"SKETCH_PATTERN_MISSING_PARAMETER",
+	"SKETCH_PATTERN_INVALID_VALUE",
+	"TL_PROFILES_TRANSFORMED",
+	"TOLERANT_RADIUS_NO_VARIABLE_RADIUS",
+	"TOLERANT_RADIUS_NO_ASYMMETRY",
+	"TL_CONE_NEEDS_TANGENT_POLYLINES",
+	"ASSEMBLY_MIRROR_TARGET_FEATURE_SUPPRESSED",
+	"REVOLVE_UP_TO_FAILED",
+	"REVOLVE_UP_TO_NEXT_FAILED",
+	"REVOLVE_UP_TO_THIN_FAILED",
+	"REVOLVE_UP_TO_NEXT_NO_TARGET",
+	"DEVIATION_ANALYSIS_FAILED",
+	"REVOLVE_SELECT_TERMINATING_BODY",
+	"REVOLVE_SELECT_TERMINATING_SURFACE",
+	"REVOLVE_SELECT_TERMINATING_VERTEX",
 	"UNKNOWN",
 }
 
