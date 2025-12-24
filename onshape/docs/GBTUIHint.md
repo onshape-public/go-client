@@ -77,6 +77,8 @@
 
 * `GBTUIHintAllowFlatSketchSelection` (value: `"ALLOW_FLAT_SKETCH_SELECTION"`)
 
+* `GBTUIHintQueryVariableName` (value: `"QUERY_VARIABLE_NAME"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

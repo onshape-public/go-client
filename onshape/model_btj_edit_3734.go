@@ -49,8 +49,8 @@ func (o *BTJEditInsert2523) AsBTJEdit3734() *BTJEdit3734 {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJEdit3734() *BTJEdit3734 {
-	this := BTJEdit3734{Newbase_BTJEdit3734()}
+func NewBTJEdit3734(btType string) *BTJEdit3734 {
+	this := BTJEdit3734{Newbase_BTJEdit3734(btType)}
 	return &this
 }
 
@@ -62,7 +62,7 @@ func NewBTJEdit3734WithDefaults() *BTJEdit3734 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJEdit3734) GetBtType() string {
 	type getResult interface {
 		GetBtType() string
@@ -76,7 +76,7 @@ func (o *BTJEdit3734) GetBtType() string {
 	}
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJEdit3734) GetBtTypeOk() (*string, bool) {
 	type getResult interface {
@@ -90,20 +90,7 @@ func (o *BTJEdit3734) GetBtTypeOk() (*string, bool) {
 	}
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEdit3734) HasBtType() bool {
-	type getResult interface {
-		HasBtType() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasBtType()
-	} else {
-		return false
-	}
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJEdit3734) SetBtType(v string) {
 	type getResult interface {
 		SetBtType(v string)
@@ -259,15 +246,16 @@ func (v *NullableBTJEdit3734) UnmarshalJSON(src []byte) error {
 
 type base_BTJEdit3734 struct {
 	// Type of JSON object.
-	BtType *string `json:"btType,omitempty"`
+	BtType string `json:"btType"`
 }
 
 // Newbase_BTJEdit3734 instantiates a new base_BTJEdit3734 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func Newbase_BTJEdit3734() *base_BTJEdit3734 {
+func Newbase_BTJEdit3734(btType string) *base_BTJEdit3734 {
 	this := base_BTJEdit3734{}
+	this.BtType = btType
 	return &this
 }
 
@@ -279,41 +267,33 @@ func Newbase_BTJEdit3734WithDefaults() *base_BTJEdit3734 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *base_BTJEdit3734) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *base_BTJEdit3734) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *base_BTJEdit3734) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *base_BTJEdit3734) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 func (o base_BTJEdit3734) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	return json.Marshal(toSerialize)
