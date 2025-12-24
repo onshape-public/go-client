@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -27,6 +27,11 @@ func (o *BTDatumDisplayData3408) AsBTAnnotationDisplayData3225() *BTAnnotationDi
 
 // BTAnnotationWeldDisplayData4919AsBTAnnotationDisplayData3225 is a convenience function that returns BTAnnotationWeldDisplayData4919 wrapped in BTAnnotationDisplayData3225
 func (o *BTAnnotationWeldDisplayData4919) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
+	return &BTAnnotationDisplayData3225{o}
+}
+
+// BTChamferCalloutDisplayData4471AsBTAnnotationDisplayData3225 is a convenience function that returns BTChamferCalloutDisplayData4471 wrapped in BTAnnotationDisplayData3225
+func (o *BTChamferCalloutDisplayData4471) AsBTAnnotationDisplayData3225() *BTAnnotationDisplayData3225 {
 	return &BTAnnotationDisplayData3225{o}
 }
 
@@ -212,6 +217,56 @@ func (o *BTAnnotationDisplayData3225) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetCharacteristicId() string {
+	type getResult interface {
+		GetCharacteristicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetCharacteristicIdOk() (*string, bool) {
+	type getResult interface {
+		GetCharacteristicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasCharacteristicId() bool {
+	type getResult interface {
+		HasCharacteristicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCharacteristicId()
+	} else {
+		return false
+	}
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTAnnotationDisplayData3225) SetCharacteristicId(v string) {
+	type getResult interface {
+		SetCharacteristicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCharacteristicId(v)
+}
+
 // GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetDeterministicId() string {
 	type getResult interface {
@@ -362,6 +417,206 @@ func (o *BTAnnotationDisplayData3225) SetIsDeletion(v bool) {
 	o.GetActualInstance().(getResult).SetIsDeletion(v)
 }
 
+// GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetMainConstraintId() string {
+	type getResult interface {
+		GetMainConstraintId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainConstraintId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetMainConstraintIdOk returns a tuple with the MainConstraintId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetMainConstraintIdOk() (*string, bool) {
+	type getResult interface {
+		GetMainConstraintIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainConstraintIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasMainConstraintId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasMainConstraintId() bool {
+	type getResult interface {
+		HasMainConstraintId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasMainConstraintId()
+	} else {
+		return false
+	}
+}
+
+// SetMainConstraintId gets a reference to the given string and assigns it to the MainConstraintId field.
+func (o *BTAnnotationDisplayData3225) SetMainConstraintId(v string) {
+	type getResult interface {
+		SetMainConstraintId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetMainConstraintId(v)
+}
+
+// GetMainFeatureId returns the MainFeatureId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetMainFeatureId() string {
+	type getResult interface {
+		GetMainFeatureId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainFeatureId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetMainFeatureIdOk returns a tuple with the MainFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetMainFeatureIdOk() (*string, bool) {
+	type getResult interface {
+		GetMainFeatureIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainFeatureIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasMainFeatureId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasMainFeatureId() bool {
+	type getResult interface {
+		HasMainFeatureId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasMainFeatureId()
+	} else {
+		return false
+	}
+}
+
+// SetMainFeatureId gets a reference to the given string and assigns it to the MainFeatureId field.
+func (o *BTAnnotationDisplayData3225) SetMainFeatureId(v string) {
+	type getResult interface {
+		SetMainFeatureId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetMainFeatureId(v)
+}
+
+// GetMainParameterId returns the MainParameterId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetMainParameterId() string {
+	type getResult interface {
+		GetMainParameterId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainParameterId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetMainParameterIdOk returns a tuple with the MainParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetMainParameterIdOk() (*string, bool) {
+	type getResult interface {
+		GetMainParameterIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainParameterIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasMainParameterId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasMainParameterId() bool {
+	type getResult interface {
+		HasMainParameterId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasMainParameterId()
+	} else {
+		return false
+	}
+}
+
+// SetMainParameterId gets a reference to the given string and assigns it to the MainParameterId field.
+func (o *BTAnnotationDisplayData3225) SetMainParameterId(v string) {
+	type getResult interface {
+		SetMainParameterId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetMainParameterId(v)
+}
+
+// GetMainPartId returns the MainPartId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetMainPartId() string {
+	type getResult interface {
+		GetMainPartId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainPartId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetMainPartIdOk returns a tuple with the MainPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetMainPartIdOk() (*string, bool) {
+	type getResult interface {
+		GetMainPartIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainPartIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasMainPartId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasMainPartId() bool {
+	type getResult interface {
+		HasMainPartId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasMainPartId()
+	} else {
+		return false
+	}
+}
+
+// SetMainPartId gets a reference to the given string and assigns it to the MainPartId field.
+func (o *BTAnnotationDisplayData3225) SetMainPartId(v string) {
+	type getResult interface {
+		SetMainPartId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetMainPartId(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 	var err error
@@ -411,6 +666,20 @@ func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTAnnotationDisplayData3225 = nil
 			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTAnnotationWeldDisplayData4919: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTChamferCalloutDisplayData-4471'
+	if jsonDict["btType"] == "BTChamferCalloutDisplayData-4471" {
+		// try to unmarshal JSON data into BTChamferCalloutDisplayData4471
+		var qr *BTChamferCalloutDisplayData4471
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTAnnotationDisplayData3225 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTAnnotationDisplayData3225 = nil
+			return fmt.Errorf("failed to unmarshal BTAnnotationDisplayData3225 as BTChamferCalloutDisplayData4471: %s", err.Error())
 		}
 	}
 
@@ -511,10 +780,15 @@ type base_BTAnnotationDisplayData3225 struct {
 	AnnotationPlane *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
 	BasePlane       *BTCoordinateSystem387 `json:"basePlane,omitempty"`
 	// Type of JSON object.
-	BtType          *string          `json:"btType,omitempty"`
-	DeterministicId *string          `json:"deterministicId,omitempty"`
-	DxdySegments    []BTVector2d1812 `json:"dxdySegments,omitempty"`
-	IsDeletion      *bool            `json:"isDeletion,omitempty"`
+	BtType           *string          `json:"btType,omitempty"`
+	CharacteristicId *string          `json:"characteristicId,omitempty"`
+	DeterministicId  *string          `json:"deterministicId,omitempty"`
+	DxdySegments     []BTVector2d1812 `json:"dxdySegments,omitempty"`
+	IsDeletion       *bool            `json:"isDeletion,omitempty"`
+	MainConstraintId *string          `json:"mainConstraintId,omitempty"`
+	MainFeatureId    *string          `json:"mainFeatureId,omitempty"`
+	MainParameterId  *string          `json:"mainParameterId,omitempty"`
+	MainPartId       *string          `json:"mainPartId,omitempty"`
 }
 
 // Newbase_BTAnnotationDisplayData3225 instantiates a new base_BTAnnotationDisplayData3225 object
@@ -630,6 +904,38 @@ func (o *base_BTAnnotationDisplayData3225) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *base_BTAnnotationDisplayData3225) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
+}
+
 // GetDeterministicId returns the DeterministicId field value if set, zero value otherwise.
 func (o *base_BTAnnotationDisplayData3225) GetDeterministicId() string {
 	if o == nil || o.DeterministicId == nil {
@@ -726,6 +1032,134 @@ func (o *base_BTAnnotationDisplayData3225) SetIsDeletion(v bool) {
 	o.IsDeletion = &v
 }
 
+// GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetMainConstraintId() string {
+	if o == nil || o.MainConstraintId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainConstraintId
+}
+
+// GetMainConstraintIdOk returns a tuple with the MainConstraintId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetMainConstraintIdOk() (*string, bool) {
+	if o == nil || o.MainConstraintId == nil {
+		return nil, false
+	}
+	return o.MainConstraintId, true
+}
+
+// HasMainConstraintId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasMainConstraintId() bool {
+	if o != nil && o.MainConstraintId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainConstraintId gets a reference to the given string and assigns it to the MainConstraintId field.
+func (o *base_BTAnnotationDisplayData3225) SetMainConstraintId(v string) {
+	o.MainConstraintId = &v
+}
+
+// GetMainFeatureId returns the MainFeatureId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetMainFeatureId() string {
+	if o == nil || o.MainFeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainFeatureId
+}
+
+// GetMainFeatureIdOk returns a tuple with the MainFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetMainFeatureIdOk() (*string, bool) {
+	if o == nil || o.MainFeatureId == nil {
+		return nil, false
+	}
+	return o.MainFeatureId, true
+}
+
+// HasMainFeatureId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasMainFeatureId() bool {
+	if o != nil && o.MainFeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainFeatureId gets a reference to the given string and assigns it to the MainFeatureId field.
+func (o *base_BTAnnotationDisplayData3225) SetMainFeatureId(v string) {
+	o.MainFeatureId = &v
+}
+
+// GetMainParameterId returns the MainParameterId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetMainParameterId() string {
+	if o == nil || o.MainParameterId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainParameterId
+}
+
+// GetMainParameterIdOk returns a tuple with the MainParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetMainParameterIdOk() (*string, bool) {
+	if o == nil || o.MainParameterId == nil {
+		return nil, false
+	}
+	return o.MainParameterId, true
+}
+
+// HasMainParameterId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasMainParameterId() bool {
+	if o != nil && o.MainParameterId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainParameterId gets a reference to the given string and assigns it to the MainParameterId field.
+func (o *base_BTAnnotationDisplayData3225) SetMainParameterId(v string) {
+	o.MainParameterId = &v
+}
+
+// GetMainPartId returns the MainPartId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetMainPartId() string {
+	if o == nil || o.MainPartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainPartId
+}
+
+// GetMainPartIdOk returns a tuple with the MainPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetMainPartIdOk() (*string, bool) {
+	if o == nil || o.MainPartId == nil {
+		return nil, false
+	}
+	return o.MainPartId, true
+}
+
+// HasMainPartId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasMainPartId() bool {
+	if o != nil && o.MainPartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainPartId gets a reference to the given string and assigns it to the MainPartId field.
+func (o *base_BTAnnotationDisplayData3225) SetMainPartId(v string) {
+	o.MainPartId = &v
+}
+
 func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AnnotationPlane != nil {
@@ -737,6 +1171,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
+	}
 	if o.DeterministicId != nil {
 		toSerialize["deterministicId"] = o.DeterministicId
 	}
@@ -745,6 +1182,18 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDeletion != nil {
 		toSerialize["isDeletion"] = o.IsDeletion
+	}
+	if o.MainConstraintId != nil {
+		toSerialize["mainConstraintId"] = o.MainConstraintId
+	}
+	if o.MainFeatureId != nil {
+		toSerialize["mainFeatureId"] = o.MainFeatureId
+	}
+	if o.MainParameterId != nil {
+		toSerialize["mainParameterId"] = o.MainParameterId
+	}
+	if o.MainPartId != nil {
+		toSerialize["mainPartId"] = o.MainPartId
 	}
 	return json.Marshal(toSerialize)
 }
