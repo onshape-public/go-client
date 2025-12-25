@@ -901,6 +901,7 @@ docs/BTPFunctionOrPredicateDeclaration247.md
 docs/BTPFunctionOrPredicateDeclaration247AllOf.md
 docs/BTPIdentifier8.md
 docs/BTPIdentifier8AllOf.md
+docs/BTPLMMessageBody.md
 docs/BTPLValue249.md
 docs/BTPLValueAccess250.md
 docs/BTPLValueAccess250AllOf.md
@@ -1193,7 +1194,6 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
-docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1499,6 +1499,7 @@ docs/Info.md
 docs/InsertableApi.md
 docs/Interpolation.md
 docs/ItemApi.md
+docs/JobType.md
 docs/License.md
 docs/Lines.md
 docs/Link.md
@@ -2551,6 +2552,7 @@ model_btpl_value_249.go
 model_btpl_value_access_250.go
 model_btpl_value_box_dereference_251.go
 model_btpl_value_var_reference_252.go
+model_btplm_message_body.go
 model_btpso_identity_2741.go
 model_btsm_bend_table_row_metadata_1705.go
 model_btsm_definition_entity_type_filter_1651.go
@@ -2676,6 +2678,7 @@ model_image.go
 model_in.go
 model_info.go
 model_interpolation.go
+model_job_type.go
 model_license.go
 model_lines.go
 model_link.go

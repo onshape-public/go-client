@@ -17,7 +17,7 @@ import (
 // BTJEditMove3245 Move an existing node from one path to another.
 type BTJEditMove3245 struct {
 	BTJEdit3734
-	BtType          *string      `json:"btType,omitempty"`
+	BtType          string       `json:"btType"`
 	DestinationPath *BTJPath3073 `json:"destinationPath,omitempty"`
 	SourcePath      *BTJPath3073 `json:"sourcePath,omitempty"`
 }
@@ -26,8 +26,9 @@ type BTJEditMove3245 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJEditMove3245() *BTJEditMove3245 {
+func NewBTJEditMove3245(btType string) *BTJEditMove3245 {
 	this := BTJEditMove3245{}
+	this.BtType = btType
 	return &this
 }
 
@@ -39,36 +40,28 @@ func NewBTJEditMove3245WithDefaults() *BTJEditMove3245 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJEditMove3245) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJEditMove3245) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEditMove3245) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJEditMove3245) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetDestinationPath returns the DestinationPath field value if set, zero value otherwise.
@@ -145,7 +138,7 @@ func (o BTJEditMove3245) MarshalJSON() ([]byte, error) {
 	if errBTJEdit3734 != nil {
 		return []byte{}, errBTJEdit3734
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.DestinationPath != nil {

@@ -31,6 +31,9 @@ Name | Type | Description | Notes
 **PreviousSketchFont** | Pointer to **string** |  | [optional] 
 **ReverseScrollWheelZoomDirection** | Pointer to **bool** |  | [optional] 
 **SelectItemViewStateInfos** | Pointer to [**[]BTSelectItemViewStateInfo**](BTSelectItemViewStateInfo.md) |  | [optional] 
+**SketchShowConstraints** | Pointer to **bool** |  | [optional] 
+**SketchShowErrors** | Pointer to **bool** |  | [optional] 
+**SketchShowExpressions** | Pointer to **bool** |  | [optional] 
 **StartupPage** | Pointer to **int32** |  | [optional] 
 **SubstituteApprovers** | Pointer to [**[]BTSubstituteApproverInfo**](BTSubstituteApproverInfo.md) |  | [optional] 
 **Theme** | Pointer to **int32** |  | [optional] 
@@ -734,6 +737,81 @@ SetSelectItemViewStateInfos sets SelectItemViewStateInfos field to given value.
 `func (o *BTUserSettingsInfo) HasSelectItemViewStateInfos() bool`
 
 HasSelectItemViewStateInfos returns a boolean if a field has been set.
+
+### GetSketchShowConstraints
+
+`func (o *BTUserSettingsInfo) GetSketchShowConstraints() bool`
+
+GetSketchShowConstraints returns the SketchShowConstraints field if non-nil, zero value otherwise.
+
+### GetSketchShowConstraintsOk
+
+`func (o *BTUserSettingsInfo) GetSketchShowConstraintsOk() (*bool, bool)`
+
+GetSketchShowConstraintsOk returns a tuple with the SketchShowConstraints field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchShowConstraints
+
+`func (o *BTUserSettingsInfo) SetSketchShowConstraints(v bool)`
+
+SetSketchShowConstraints sets SketchShowConstraints field to given value.
+
+### HasSketchShowConstraints
+
+`func (o *BTUserSettingsInfo) HasSketchShowConstraints() bool`
+
+HasSketchShowConstraints returns a boolean if a field has been set.
+
+### GetSketchShowErrors
+
+`func (o *BTUserSettingsInfo) GetSketchShowErrors() bool`
+
+GetSketchShowErrors returns the SketchShowErrors field if non-nil, zero value otherwise.
+
+### GetSketchShowErrorsOk
+
+`func (o *BTUserSettingsInfo) GetSketchShowErrorsOk() (*bool, bool)`
+
+GetSketchShowErrorsOk returns a tuple with the SketchShowErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchShowErrors
+
+`func (o *BTUserSettingsInfo) SetSketchShowErrors(v bool)`
+
+SetSketchShowErrors sets SketchShowErrors field to given value.
+
+### HasSketchShowErrors
+
+`func (o *BTUserSettingsInfo) HasSketchShowErrors() bool`
+
+HasSketchShowErrors returns a boolean if a field has been set.
+
+### GetSketchShowExpressions
+
+`func (o *BTUserSettingsInfo) GetSketchShowExpressions() bool`
+
+GetSketchShowExpressions returns the SketchShowExpressions field if non-nil, zero value otherwise.
+
+### GetSketchShowExpressionsOk
+
+`func (o *BTUserSettingsInfo) GetSketchShowExpressionsOk() (*bool, bool)`
+
+GetSketchShowExpressionsOk returns a tuple with the SketchShowExpressions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSketchShowExpressions
+
+`func (o *BTUserSettingsInfo) SetSketchShowExpressions(v bool)`
+
+SetSketchShowExpressions sets SketchShowExpressions field to given value.
+
+### HasSketchShowExpressions
+
+`func (o *BTUserSettingsInfo) HasSketchShowExpressions() bool`
+
+HasSketchShowExpressions returns a boolean if a field has been set.
 
 ### GetStartupPage
 
