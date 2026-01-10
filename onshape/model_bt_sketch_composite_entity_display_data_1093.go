@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -27,6 +27,11 @@ func (o *BTSketchTextDisplayData1707) AsBTSketchCompositeEntityDisplayData1093()
 
 // BTSketchImageDisplayData1379AsBTSketchCompositeEntityDisplayData1093 is a convenience function that returns BTSketchImageDisplayData1379 wrapped in BTSketchCompositeEntityDisplayData1093
 func (o *BTSketchImageDisplayData1379) AsBTSketchCompositeEntityDisplayData1093() *BTSketchCompositeEntityDisplayData1093 {
+	return &BTSketchCompositeEntityDisplayData1093{o}
+}
+
+// BTSketchCurvedTextDisplayData4245AsBTSketchCompositeEntityDisplayData1093 is a convenience function that returns BTSketchCurvedTextDisplayData4245 wrapped in BTSketchCompositeEntityDisplayData1093
+func (o *BTSketchCurvedTextDisplayData4245) AsBTSketchCompositeEntityDisplayData1093() *BTSketchCompositeEntityDisplayData1093 {
 	return &BTSketchCompositeEntityDisplayData1093{o}
 }
 
@@ -155,6 +160,20 @@ func (dst *BTSketchCompositeEntityDisplayData1093) UnmarshalJSON(data []byte) er
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTSketchCurvedTextDisplayData-4245'
+	if jsonDict["btType"] == "BTSketchCurvedTextDisplayData-4245" {
+		// try to unmarshal JSON data into BTSketchCurvedTextDisplayData4245
+		var qr *BTSketchCurvedTextDisplayData4245
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTSketchCompositeEntityDisplayData1093 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTSketchCompositeEntityDisplayData1093 = nil
+			return fmt.Errorf("failed to unmarshal BTSketchCompositeEntityDisplayData1093 as BTSketchCurvedTextDisplayData4245: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTSketchImageDisplayData-1379'

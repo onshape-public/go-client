@@ -23,6 +23,8 @@
 
 * `GBTMetadataSourceTypeImport` (value: `"IMPORT"`)
 
+* `GBTMetadataSourceTypeOverriddenPublic` (value: `"OVERRIDDEN_PUBLIC"`)
+
 * `GBTMetadataSourceTypeUnknown` (value: `"UNKNOWN"`)
 
 

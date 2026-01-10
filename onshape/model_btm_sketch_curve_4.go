@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -942,6 +942,56 @@ func (o *BTMSketchCurve4) SetCenterId(v string) {
 	o.GetActualInstance().(getResult).SetCenterId(v)
 }
 
+// GetCurvedTextIds returns the CurvedTextIds field value if set, zero value otherwise.
+func (o *BTMSketchCurve4) GetCurvedTextIds() []string {
+	type getResult interface {
+		GetCurvedTextIds() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCurvedTextIds()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetCurvedTextIdsOk returns a tuple with the CurvedTextIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurve4) GetCurvedTextIdsOk() ([]string, bool) {
+	type getResult interface {
+		GetCurvedTextIdsOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCurvedTextIdsOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCurvedTextIds returns a boolean if a field has been set.
+func (o *BTMSketchCurve4) HasCurvedTextIds() bool {
+	type getResult interface {
+		HasCurvedTextIds() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCurvedTextIds()
+	} else {
+		return false
+	}
+}
+
+// SetCurvedTextIds gets a reference to the given []string and assigns it to the CurvedTextIds field.
+func (o *BTMSketchCurve4) SetCurvedTextIds(v []string) {
+	type getResult interface {
+		SetCurvedTextIds(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetCurvedTextIds(v)
+}
+
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *BTMSketchCurve4) GetInternalIds() []string {
 	type getResult interface {
@@ -1102,6 +1152,7 @@ type base_BTMSketchCurve4 struct {
 	IsFromSplineControlPolygon          *bool                     `json:"isFromSplineControlPolygon,omitempty"`
 	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
 	CenterId                            *string                   `json:"centerId,omitempty"`
+	CurvedTextIds                       []string                  `json:"curvedTextIds,omitempty"`
 	InternalIds                         []string                  `json:"internalIds,omitempty"`
 }
 
@@ -1698,6 +1749,38 @@ func (o *base_BTMSketchCurve4) SetCenterId(v string) {
 	o.CenterId = &v
 }
 
+// GetCurvedTextIds returns the CurvedTextIds field value if set, zero value otherwise.
+func (o *base_BTMSketchCurve4) GetCurvedTextIds() []string {
+	if o == nil || o.CurvedTextIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.CurvedTextIds
+}
+
+// GetCurvedTextIdsOk returns a tuple with the CurvedTextIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchCurve4) GetCurvedTextIdsOk() ([]string, bool) {
+	if o == nil || o.CurvedTextIds == nil {
+		return nil, false
+	}
+	return o.CurvedTextIds, true
+}
+
+// HasCurvedTextIds returns a boolean if a field has been set.
+func (o *base_BTMSketchCurve4) HasCurvedTextIds() bool {
+	if o != nil && o.CurvedTextIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCurvedTextIds gets a reference to the given []string and assigns it to the CurvedTextIds field.
+func (o *base_BTMSketchCurve4) SetCurvedTextIds(v []string) {
+	o.CurvedTextIds = v
+}
+
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *base_BTMSketchCurve4) GetInternalIds() []string {
 	if o == nil || o.InternalIds == nil {
@@ -1793,6 +1876,9 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	}
 	if o.CenterId != nil {
 		toSerialize["centerId"] = o.CenterId
+	}
+	if o.CurvedTextIds != nil {
+		toSerialize["curvedTextIds"] = o.CurvedTextIds
 	}
 	if o.InternalIds != nil {
 		toSerialize["internalIds"] = o.InternalIds

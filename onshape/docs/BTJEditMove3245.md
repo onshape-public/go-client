@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **DestinationPath** | Pointer to [**BTJPath3073**](BTJPath3073.md) |  | [optional] 
 **SourcePath** | Pointer to [**BTJPath3073**](BTJPath3073.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBTJEditMove3245
 
-`func NewBTJEditMove3245() *BTJEditMove3245`
+`func NewBTJEditMove3245(btType string, ) *BTJEditMove3245`
 
 NewBTJEditMove3245 instantiates a new BTJEditMove3245 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJEditMove3245) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetDestinationPath
 

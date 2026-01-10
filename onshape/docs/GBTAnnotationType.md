@@ -17,6 +17,10 @@
 
 * `GBTAnnotationTypeHoleCalloutPosition` (value: `"HOLE_CALLOUT_POSITION"`)
 
+* `GBTAnnotationTypeChamferCallout` (value: `"CHAMFER_CALLOUT"`)
+
+* `GBTAnnotationTypeChamferCalloutPosition` (value: `"CHAMFER_CALLOUT_POSITION"`)
+
 * `GBTAnnotationTypeUnknown` (value: `"UNKNOWN"`)
 
 

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -90,6 +90,56 @@ func (o *BTParameterVisibilityOnEqual180) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetSelfOrChildAlwaysVisible returns the SelfOrChildAlwaysVisible field value if set, zero value otherwise.
+func (o *BTParameterVisibilityOnEqual180) GetSelfOrChildAlwaysVisible() bool {
+	type getResult interface {
+		GetSelfOrChildAlwaysVisible() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSelfOrChildAlwaysVisible()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetSelfOrChildAlwaysVisibleOk returns a tuple with the SelfOrChildAlwaysVisible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityOnEqual180) GetSelfOrChildAlwaysVisibleOk() (*bool, bool) {
+	type getResult interface {
+		GetSelfOrChildAlwaysVisibleOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSelfOrChildAlwaysVisibleOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSelfOrChildAlwaysVisible returns a boolean if a field has been set.
+func (o *BTParameterVisibilityOnEqual180) HasSelfOrChildAlwaysVisible() bool {
+	type getResult interface {
+		HasSelfOrChildAlwaysVisible() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSelfOrChildAlwaysVisible()
+	} else {
+		return false
+	}
+}
+
+// SetSelfOrChildAlwaysVisible gets a reference to the given bool and assigns it to the SelfOrChildAlwaysVisible field.
+func (o *BTParameterVisibilityOnEqual180) SetSelfOrChildAlwaysVisible(v bool) {
+	type getResult interface {
+		SetSelfOrChildAlwaysVisible(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetSelfOrChildAlwaysVisible(v)
 }
 
 // GetInArray returns the InArray field value if set, zero value otherwise.
@@ -333,10 +383,11 @@ func (v *NullableBTParameterVisibilityOnEqual180) UnmarshalJSON(src []byte) erro
 
 type base_BTParameterVisibilityOnEqual180 struct {
 	BTParameterVisibilityCondition177
-	BtType      *string `json:"btType,omitempty"`
-	InArray     *bool   `json:"inArray,omitempty"`
-	ParameterId *string `json:"parameterId,omitempty"`
-	Value       *string `json:"value,omitempty"`
+	BtType                   *string `json:"btType,omitempty"`
+	SelfOrChildAlwaysVisible *bool   `json:"selfOrChildAlwaysVisible,omitempty"`
+	InArray                  *bool   `json:"inArray,omitempty"`
+	ParameterId              *string `json:"parameterId,omitempty"`
+	Value                    *string `json:"value,omitempty"`
 }
 
 // Newbase_BTParameterVisibilityOnEqual180 instantiates a new base_BTParameterVisibilityOnEqual180 object
@@ -386,6 +437,38 @@ func (o *base_BTParameterVisibilityOnEqual180) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTParameterVisibilityOnEqual180) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetSelfOrChildAlwaysVisible returns the SelfOrChildAlwaysVisible field value if set, zero value otherwise.
+func (o *base_BTParameterVisibilityOnEqual180) GetSelfOrChildAlwaysVisible() bool {
+	if o == nil || o.SelfOrChildAlwaysVisible == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SelfOrChildAlwaysVisible
+}
+
+// GetSelfOrChildAlwaysVisibleOk returns a tuple with the SelfOrChildAlwaysVisible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTParameterVisibilityOnEqual180) GetSelfOrChildAlwaysVisibleOk() (*bool, bool) {
+	if o == nil || o.SelfOrChildAlwaysVisible == nil {
+		return nil, false
+	}
+	return o.SelfOrChildAlwaysVisible, true
+}
+
+// HasSelfOrChildAlwaysVisible returns a boolean if a field has been set.
+func (o *base_BTParameterVisibilityOnEqual180) HasSelfOrChildAlwaysVisible() bool {
+	if o != nil && o.SelfOrChildAlwaysVisible != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSelfOrChildAlwaysVisible gets a reference to the given bool and assigns it to the SelfOrChildAlwaysVisible field.
+func (o *base_BTParameterVisibilityOnEqual180) SetSelfOrChildAlwaysVisible(v bool) {
+	o.SelfOrChildAlwaysVisible = &v
 }
 
 // GetInArray returns the InArray field value if set, zero value otherwise.
@@ -496,6 +579,9 @@ func (o base_BTParameterVisibilityOnEqual180) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.SelfOrChildAlwaysVisible != nil {
+		toSerialize["selfOrChildAlwaysVisible"] = o.SelfOrChildAlwaysVisible
 	}
 	if o.InArray != nil {
 		toSerialize["inArray"] = o.InArray
