@@ -7,9 +7,9 @@ Name | Type | Description | Notes
 **AccountId** | Pointer to **string** |  | [optional] 
 **ActualAmountPaidCents** | Pointer to **int64** |  | [optional] 
 **AmountCents** | Pointer to **int64** |  | [optional] 
-**ApiAllocationByPlan** | Pointer to **int64** |  | [optional] 
+**ApiAllocationByPlan** | Pointer to **int64** | Represents the default annual API call allocation defined by the user&#39;s Onshape billing plan. | [optional] 
 **ApiAllocationEndDate** | Pointer to **JSONTime** |  | [optional] 
-**ApiAllocationOverride** | Pointer to **int64** |  | [optional] 
+**ApiAllocationOverride** | Pointer to **int64** | Manual override set by Onshape admin; when non-zero takes precedence over apiAllocationByPlan. | [optional] 
 **ApiAllocationStartDate** | Pointer to **JSONTime** |  | [optional] 
 **Application** | Pointer to [**BTAPIApplicationSummaryInfo**](BTAPIApplicationSummaryInfo.md) |  | [optional] 
 **CanceledAt** | Pointer to **JSONTime** |  | [optional] 
@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **LightSeats** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **NextCharge** | Pointer to [**NextCharge**](NextCharge.md) |  | [optional] 
+**OverageEnabled** | Pointer to **bool** |  | [optional] 
 **PaymentType** | Pointer to **int32** |  | [optional] 
 **PendingCancelation** | Pointer to **bool** |  | [optional] 
 **Plan** | Pointer to [**BTBillingPlanInfo**](BTBillingPlanInfo.md) |  | [optional] 
@@ -695,6 +696,31 @@ SetNextCharge sets NextCharge field to given value.
 `func (o *BTPurchaseInfo) HasNextCharge() bool`
 
 HasNextCharge returns a boolean if a field has been set.
+
+### GetOverageEnabled
+
+`func (o *BTPurchaseInfo) GetOverageEnabled() bool`
+
+GetOverageEnabled returns the OverageEnabled field if non-nil, zero value otherwise.
+
+### GetOverageEnabledOk
+
+`func (o *BTPurchaseInfo) GetOverageEnabledOk() (*bool, bool)`
+
+GetOverageEnabledOk returns a tuple with the OverageEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOverageEnabled
+
+`func (o *BTPurchaseInfo) SetOverageEnabled(v bool)`
+
+SetOverageEnabled sets OverageEnabled field to given value.
+
+### HasOverageEnabled
+
+`func (o *BTPurchaseInfo) HasOverageEnabled() bool`
+
+HasOverageEnabled returns a boolean if a field has been set.
 
 ### GetPaymentType
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**CanAcceptNewContext** | Pointer to **bool** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **ImmutableContextVersion** | Pointer to **string** |  | [optional] 
@@ -58,6 +59,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTCacheDataPath191) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetCanAcceptNewContext
+
+`func (o *BTCacheDataPath191) GetCanAcceptNewContext() bool`
+
+GetCanAcceptNewContext returns the CanAcceptNewContext field if non-nil, zero value otherwise.
+
+### GetCanAcceptNewContextOk
+
+`func (o *BTCacheDataPath191) GetCanAcceptNewContextOk() (*bool, bool)`
+
+GetCanAcceptNewContextOk returns a tuple with the CanAcceptNewContext field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanAcceptNewContext
+
+`func (o *BTCacheDataPath191) SetCanAcceptNewContext(v bool)`
+
+SetCanAcceptNewContext sets CanAcceptNewContext field to given value.
+
+### HasCanAcceptNewContext
+
+`func (o *BTCacheDataPath191) HasCanAcceptNewContext() bool`
+
+HasCanAcceptNewContext returns a boolean if a field has been set.
 
 ### GetDocumentId
 

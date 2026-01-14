@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PropertyId** | Pointer to **string** | Id of the property to set. | [optional] 
-**Value** | Pointer to **map[string]interface{}** | Value to set for the property. | [optional] 
+**Value** | Pointer to **map[string]interface{}** | Value to set for the property. User property values must be a list of &#x60;{ \&quot;id\&quot;: \&quot;idValue\&quot; }&#x60; maps. | [optional] 
 
 ## Methods
 

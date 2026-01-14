@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -95,6 +95,56 @@ func (o *BTLinearDimensionDisplayData330) SetBtType(v string) {
 	}
 
 	o.GetActualInstance().(getResult).SetBtType(v)
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *BTLinearDimensionDisplayData330) GetCharacteristicId() string {
+	type getResult interface {
+		GetCharacteristicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLinearDimensionDisplayData330) GetCharacteristicIdOk() (*string, bool) {
+	type getResult interface {
+		GetCharacteristicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCharacteristicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *BTLinearDimensionDisplayData330) HasCharacteristicId() bool {
+	type getResult interface {
+		HasCharacteristicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCharacteristicId()
+	} else {
+		return false
+	}
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *BTLinearDimensionDisplayData330) SetCharacteristicId(v string) {
+	type getResult interface {
+		SetCharacteristicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetCharacteristicId(v)
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -1547,6 +1597,56 @@ func (o *BTLinearDimensionDisplayData330) SetWitnessExtension1Z(v float64) {
 	o.GetActualInstance().(getResult).SetWitnessExtension1Z(v)
 }
 
+// GetWitnessExtensionCurve returns the WitnessExtensionCurve field value if set, zero value otherwise.
+func (o *BTLinearDimensionDisplayData330) GetWitnessExtensionCurve() BTCurveDisplayData4722 {
+	type getResult interface {
+		GetWitnessExtensionCurve() BTCurveDisplayData4722
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetWitnessExtensionCurve()
+	} else {
+		var de BTCurveDisplayData4722
+		return de
+	}
+}
+
+// GetWitnessExtensionCurveOk returns a tuple with the WitnessExtensionCurve field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLinearDimensionDisplayData330) GetWitnessExtensionCurveOk() (*BTCurveDisplayData4722, bool) {
+	type getResult interface {
+		GetWitnessExtensionCurveOk() (*BTCurveDisplayData4722, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetWitnessExtensionCurveOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasWitnessExtensionCurve returns a boolean if a field has been set.
+func (o *BTLinearDimensionDisplayData330) HasWitnessExtensionCurve() bool {
+	type getResult interface {
+		HasWitnessExtensionCurve() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasWitnessExtensionCurve()
+	} else {
+		return false
+	}
+}
+
+// SetWitnessExtensionCurve gets a reference to the given BTCurveDisplayData4722 and assigns it to the WitnessExtensionCurve field.
+func (o *BTLinearDimensionDisplayData330) SetWitnessExtensionCurve(v BTCurveDisplayData4722) {
+	type getResult interface {
+		SetWitnessExtensionCurve(v BTCurveDisplayData4722)
+	}
+
+	o.GetActualInstance().(getResult).SetWitnessExtensionCurve(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTLinearDimensionDisplayData330) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1652,36 +1752,38 @@ func (v *NullableBTLinearDimensionDisplayData330) UnmarshalJSON(src []byte) erro
 
 type base_BTLinearDimensionDisplayData330 struct {
 	BTDimensionDisplayData323
-	BtType                *string                `json:"btType,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
-	FeatureId             *string                `json:"featureId,omitempty"`
-	FitClass              *string                `json:"fitClass,omitempty"`
-	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
-	Id                    *string                `json:"id,omitempty"`
-	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
-	IsDriven              *bool                  `json:"isDriven,omitempty"`
-	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
-	ParameterId           *string                `json:"parameterId,omitempty"`
-	PartId                *string                `json:"partId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
-	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
-	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
-	Value                 *float64               `json:"value,omitempty"`
-	HasExtension          *bool                  `json:"hasExtension,omitempty"`
-	PositionX             *float64               `json:"positionX,omitempty"`
-	PositionY             *float64               `json:"positionY,omitempty"`
-	WitnessEndPoint0X     *float64               `json:"witnessEndPoint0X,omitempty"`
-	WitnessEndPoint0Y     *float64               `json:"witnessEndPoint0Y,omitempty"`
-	WitnessEndPoint1X     *float64               `json:"witnessEndPoint1X,omitempty"`
-	WitnessEndPoint1Y     *float64               `json:"witnessEndPoint1Y,omitempty"`
-	WitnessExtension0Z    *float64               `json:"witnessExtension0Z,omitempty"`
-	WitnessExtension1Z    *float64               `json:"witnessExtension1Z,omitempty"`
+	BtType                *string                 `json:"btType,omitempty"`
+	CharacteristicId      *string                 `json:"characteristicId,omitempty"`
+	CoordinateSystem      *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
+	FeatureId             *string                 `json:"featureId,omitempty"`
+	FitClass              *string                 `json:"fitClass,omitempty"`
+	HasMaximumLimit_      *bool                   `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_      *bool                   `json:"hasMinimumLimit,omitempty"`
+	Id                    *string                 `json:"id,omitempty"`
+	IsAnnotationDimension *bool                   `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat  *bool                   `json:"isAssociatedWithFlat,omitempty"`
+	IsDriven              *bool                   `json:"isDriven,omitempty"`
+	IsOverDefined         *bool                   `json:"isOverDefined,omitempty"`
+	LowerTolerance        *float64                `json:"lowerTolerance,omitempty"`
+	MaximumLimit          *float64                `json:"maximumLimit,omitempty"`
+	MinimumLimit          *float64                `json:"minimumLimit,omitempty"`
+	ParameterId           *string                 `json:"parameterId,omitempty"`
+	PartId                *string                 `json:"partId,omitempty"`
+	PlaneMatrix           *BTBSMatrix386          `json:"planeMatrix,omitempty"`
+	Precision             *GBTTolerancePrecision  `json:"precision,omitempty"`
+	ToleranceType         *GBTToleranceType       `json:"toleranceType,omitempty"`
+	UpperTolerance        *float64                `json:"upperTolerance,omitempty"`
+	Value                 *float64                `json:"value,omitempty"`
+	HasExtension          *bool                   `json:"hasExtension,omitempty"`
+	PositionX             *float64                `json:"positionX,omitempty"`
+	PositionY             *float64                `json:"positionY,omitempty"`
+	WitnessEndPoint0X     *float64                `json:"witnessEndPoint0X,omitempty"`
+	WitnessEndPoint0Y     *float64                `json:"witnessEndPoint0Y,omitempty"`
+	WitnessEndPoint1X     *float64                `json:"witnessEndPoint1X,omitempty"`
+	WitnessEndPoint1Y     *float64                `json:"witnessEndPoint1Y,omitempty"`
+	WitnessExtension0Z    *float64                `json:"witnessExtension0Z,omitempty"`
+	WitnessExtension1Z    *float64                `json:"witnessExtension1Z,omitempty"`
+	WitnessExtensionCurve *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
 }
 
 // Newbase_BTLinearDimensionDisplayData330 instantiates a new base_BTLinearDimensionDisplayData330 object
@@ -1731,6 +1833,38 @@ func (o *base_BTLinearDimensionDisplayData330) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTLinearDimensionDisplayData330) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetCharacteristicId returns the CharacteristicId field value if set, zero value otherwise.
+func (o *base_BTLinearDimensionDisplayData330) GetCharacteristicId() string {
+	if o == nil || o.CharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CharacteristicId
+}
+
+// GetCharacteristicIdOk returns a tuple with the CharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTLinearDimensionDisplayData330) GetCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.CharacteristicId == nil {
+		return nil, false
+	}
+	return o.CharacteristicId, true
+}
+
+// HasCharacteristicId returns a boolean if a field has been set.
+func (o *base_BTLinearDimensionDisplayData330) HasCharacteristicId() bool {
+	if o != nil && o.CharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCharacteristicId gets a reference to the given string and assigns it to the CharacteristicId field.
+func (o *base_BTLinearDimensionDisplayData330) SetCharacteristicId(v string) {
+	o.CharacteristicId = &v
 }
 
 // GetCoordinateSystem returns the CoordinateSystem field value if set, zero value otherwise.
@@ -2661,6 +2795,38 @@ func (o *base_BTLinearDimensionDisplayData330) SetWitnessExtension1Z(v float64) 
 	o.WitnessExtension1Z = &v
 }
 
+// GetWitnessExtensionCurve returns the WitnessExtensionCurve field value if set, zero value otherwise.
+func (o *base_BTLinearDimensionDisplayData330) GetWitnessExtensionCurve() BTCurveDisplayData4722 {
+	if o == nil || o.WitnessExtensionCurve == nil {
+		var ret BTCurveDisplayData4722
+		return ret
+	}
+	return *o.WitnessExtensionCurve
+}
+
+// GetWitnessExtensionCurveOk returns a tuple with the WitnessExtensionCurve field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTLinearDimensionDisplayData330) GetWitnessExtensionCurveOk() (*BTCurveDisplayData4722, bool) {
+	if o == nil || o.WitnessExtensionCurve == nil {
+		return nil, false
+	}
+	return o.WitnessExtensionCurve, true
+}
+
+// HasWitnessExtensionCurve returns a boolean if a field has been set.
+func (o *base_BTLinearDimensionDisplayData330) HasWitnessExtensionCurve() bool {
+	if o != nil && o.WitnessExtensionCurve != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWitnessExtensionCurve gets a reference to the given BTCurveDisplayData4722 and assigns it to the WitnessExtensionCurve field.
+func (o *base_BTLinearDimensionDisplayData330) SetWitnessExtensionCurve(v BTCurveDisplayData4722) {
+	o.WitnessExtensionCurve = &v
+}
+
 func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTDimensionDisplayData323, errBTDimensionDisplayData323 := json.Marshal(o.BTDimensionDisplayData323)
@@ -2673,6 +2839,9 @@ func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.CharacteristicId != nil {
+		toSerialize["characteristicId"] = o.CharacteristicId
 	}
 	if o.CoordinateSystem != nil {
 		toSerialize["coordinateSystem"] = o.CoordinateSystem
@@ -2760,6 +2929,9 @@ func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	}
 	if o.WitnessExtension1Z != nil {
 		toSerialize["witnessExtension1Z"] = o.WitnessExtension1Z
+	}
+	if o.WitnessExtensionCurve != nil {
+		toSerialize["witnessExtensionCurve"] = o.WitnessExtensionCurve
 	}
 	return json.Marshal(toSerialize)
 }

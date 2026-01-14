@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Empty** | Pointer to **bool** |  | [optional] 
 **ItemIds** | Pointer to **[]string** |  | [optional] 
 **Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) |  | [optional] 
-**ManuallyRemovedItemIds** | Pointer to **[]string** |  | [optional] 
 **Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) |  | [optional] 
 
 ## Methods
@@ -103,31 +102,6 @@ SetItems sets Items field to given value.
 `func (o *BTUpdateReleasePackageParams) HasItems() bool`
 
 HasItems returns a boolean if a field has been set.
-
-### GetManuallyRemovedItemIds
-
-`func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIds() []string`
-
-GetManuallyRemovedItemIds returns the ManuallyRemovedItemIds field if non-nil, zero value otherwise.
-
-### GetManuallyRemovedItemIdsOk
-
-`func (o *BTUpdateReleasePackageParams) GetManuallyRemovedItemIdsOk() (*[]string, bool)`
-
-GetManuallyRemovedItemIdsOk returns a tuple with the ManuallyRemovedItemIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetManuallyRemovedItemIds
-
-`func (o *BTUpdateReleasePackageParams) SetManuallyRemovedItemIds(v []string)`
-
-SetManuallyRemovedItemIds sets ManuallyRemovedItemIds field to given value.
-
-### HasManuallyRemovedItemIds
-
-`func (o *BTUpdateReleasePackageParams) HasManuallyRemovedItemIds() bool`
-
-HasManuallyRemovedItemIds returns a boolean if a field has been set.
 
 ### GetProperties
 

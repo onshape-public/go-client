@@ -3393,6 +3393,64 @@
 
 * `GBTErrorStringEnumTlSelfIntersectingBody` (value: `"TL_SELF_INTERSECTING_BODY"`)
 
+* `GBTErrorStringEnumSketchPatternMissingParameter` (value: `"SKETCH_PATTERN_MISSING_PARAMETER"`)
+
+* `GBTErrorStringEnumSketchPatternInvalidValue` (value: `"SKETCH_PATTERN_INVALID_VALUE"`)
+
+* `GBTErrorStringEnumTlProfilesTransformed` (value: `"TL_PROFILES_TRANSFORMED"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoVariableRadius` (value: `"TOLERANT_RADIUS_NO_VARIABLE_RADIUS"`)
+
+* `GBTErrorStringEnumTolerantRadiusNoAsymmetry` (value: `"TOLERANT_RADIUS_NO_ASYMMETRY"`)
+
+* `GBTErrorStringEnumTlConeNeedsTangentPolylines` (value: `"TL_CONE_NEEDS_TANGENT_POLYLINES"`)
+
+* `GBTErrorStringEnumAssemblyMirrorTargetFeatureSuppressed` (value: `"ASSEMBLY_MIRROR_TARGET_FEATURE_SUPPRESSED"`)
+
+* `GBTErrorStringEnumRevolveUpToFailed` (value: `"REVOLVE_UP_TO_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToNextFailed` (value: `"REVOLVE_UP_TO_NEXT_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToThinFailed` (value: `"REVOLVE_UP_TO_THIN_FAILED"`)
+
+* `GBTErrorStringEnumRevolveUpToNextNoTarget` (value: `"REVOLVE_UP_TO_NEXT_NO_TARGET"`)
+
+* `GBTErrorStringEnumDeviationAnalysisFailed` (value: `"DEVIATION_ANALYSIS_FAILED"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingBody` (value: `"REVOLVE_SELECT_TERMINATING_BODY"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingSurface` (value: `"REVOLVE_SELECT_TERMINATING_SURFACE"`)
+
+* `GBTErrorStringEnumRevolveSelectTerminatingVertex` (value: `"REVOLVE_SELECT_TERMINATING_VERTEX"`)
+
+* `GBTErrorStringEnumFgsGenerativeSewSegmentsFailed` (value: `"FGS_GENERATIVE_SEW_SEGMENTS_FAILED"`)
+
+* `GBTErrorStringEnumFgsGenerativeBuildMixedBodyFailed` (value: `"FGS_GENERATIVE_BUILD_MIXED_BODY_FAILED"`)
+
+* `GBTErrorStringEnumFgsGenerativeBuildBodyFailed` (value: `"FGS_GENERATIVE_BUILD_BODY_FAILED"`)
+
+* `GBTErrorStringEnumFgsGenerativeReplaceWithFaceFailed` (value: `"FGS_GENERATIVE_REPLACE_WITH_FACE_FAILED"`)
+
+* `GBTErrorStringEnumTlNoIntersectingProfiles` (value: `"TL_NO_INTERSECTING_PROFILES"`)
+
+* `GBTErrorStringEnumSheetMetalLoftProfilesTouch` (value: `"SHEET_METAL_LOFT_PROFILES_TOUCH"`)
+
+* `GBTErrorStringEnumSheetMetalLoftOrthogonalProfile` (value: `"SHEET_METAL_LOFT_ORTHOGONAL_PROFILE"`)
+
+* `GBTErrorStringEnumSheetMetalLoftDisjointResult` (value: `"SHEET_METAL_LOFT_DISJOINT_RESULT"`)
+
+* `GBTErrorStringEnumAssemblyMirrorNoActiveSmComposite` (value: `"ASSEMBLY_MIRROR_NO_ACTIVE_SM_COMPOSITE"`)
+
+* `GBTErrorStringEnumCannotFindRow` (value: `"CANNOT_FIND_ROW"`)
+
+* `GBTErrorStringEnumCannotFindColumn` (value: `"CANNOT_FIND_COLUMN"`)
+
+* `GBTErrorStringEnumSelectCsvData` (value: `"SELECT_CSV_DATA"`)
+
+* `GBTErrorStringEnumInvalidRowRegex` (value: `"INVALID_ROW_REGEX"`)
+
+* `GBTErrorStringEnumInvalidColumnRegex` (value: `"INVALID_COLUMN_REGEX"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

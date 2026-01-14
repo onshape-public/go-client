@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -1296,6 +1296,7 @@ type ApiUpdateVEOPStandardContentPartMetadataRequest struct {
 	body           *string
 }
 
+// The ID of the document in which you have inserted the standard content part.
 func (r ApiUpdateVEOPStandardContentPartMetadataRequest) LinkDocumentId(linkDocumentId string) ApiUpdateVEOPStandardContentPartMetadataRequest {
 	r.linkDocumentId = &linkDocumentId
 	return r
@@ -1313,13 +1314,10 @@ func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Execute() (map[string]i
 /*
 UpdateVEOPStandardContentPartMetadata Update the metadata for a standard content part.
 
-See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/) for details.
-* Specify the document ID to update in the `did` path param.
-* Specify the document in which you have inserted the standard content part in the `linkDocumentId` query param.
-* Specify the property metadata to update in the Request body.
+Specify the property metadata to update in the Request body. See [API Guide: Metadata](https://onshape-public.github.io/docs/api-adv/metadata/#update-standard-content-part-metadata) for an example.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param did
+	@param did The ID of the document that owns the standard content part.
 	@return ApiUpdateVEOPStandardContentPartMetadataRequest
 */
 func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadata(ctx context.Context, did string) ApiUpdateVEOPStandardContentPartMetadataRequest {

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -17,9 +17,10 @@ import (
 // BTParameterVisibilityLogical178 struct for BTParameterVisibilityLogical178
 type BTParameterVisibilityLogical178 struct {
 	BTParameterVisibilityCondition177
-	BtType    *string                             `json:"btType,omitempty"`
-	Children  []BTParameterVisibilityCondition177 `json:"children,omitempty"`
-	Operation *GBTParameterVisibilityLogicalOp    `json:"operation,omitempty"`
+	BtType                   *string                             `json:"btType,omitempty"`
+	SelfOrChildAlwaysVisible *bool                               `json:"selfOrChildAlwaysVisible,omitempty"`
+	Children                 []BTParameterVisibilityCondition177 `json:"children,omitempty"`
+	Operation                *GBTParameterVisibilityLogicalOp    `json:"operation,omitempty"`
 }
 
 // NewBTParameterVisibilityLogical178 instantiates a new BTParameterVisibilityLogical178 object
@@ -69,6 +70,38 @@ func (o *BTParameterVisibilityLogical178) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTParameterVisibilityLogical178) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetSelfOrChildAlwaysVisible returns the SelfOrChildAlwaysVisible field value if set, zero value otherwise.
+func (o *BTParameterVisibilityLogical178) GetSelfOrChildAlwaysVisible() bool {
+	if o == nil || o.SelfOrChildAlwaysVisible == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SelfOrChildAlwaysVisible
+}
+
+// GetSelfOrChildAlwaysVisibleOk returns a tuple with the SelfOrChildAlwaysVisible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParameterVisibilityLogical178) GetSelfOrChildAlwaysVisibleOk() (*bool, bool) {
+	if o == nil || o.SelfOrChildAlwaysVisible == nil {
+		return nil, false
+	}
+	return o.SelfOrChildAlwaysVisible, true
+}
+
+// HasSelfOrChildAlwaysVisible returns a boolean if a field has been set.
+func (o *BTParameterVisibilityLogical178) HasSelfOrChildAlwaysVisible() bool {
+	if o != nil && o.SelfOrChildAlwaysVisible != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSelfOrChildAlwaysVisible gets a reference to the given bool and assigns it to the SelfOrChildAlwaysVisible field.
+func (o *BTParameterVisibilityLogical178) SetSelfOrChildAlwaysVisible(v bool) {
+	o.SelfOrChildAlwaysVisible = &v
 }
 
 // GetChildren returns the Children field value if set, zero value otherwise.
@@ -147,6 +180,9 @@ func (o BTParameterVisibilityLogical178) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.SelfOrChildAlwaysVisible != nil {
+		toSerialize["selfOrChildAlwaysVisible"] = o.SelfOrChildAlwaysVisible
 	}
 	if o.Children != nil {
 		toSerialize["children"] = o.Children

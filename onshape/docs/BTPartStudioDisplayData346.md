@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **IsExternal** | Pointer to **bool** |  | [optional] 
 **IsNoop** | Pointer to **bool** |  | [optional] 
 **KeepFromMicroversion** | Pointer to **bool** |  | [optional] 
+**MicroversionConfigIntervalAdvancing** | Pointer to **bool** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **MicroversionIdAndConfigurationInterval** | Pointer to [**BTMicroversionIdAndConfigurationInterval2364**](BTMicroversionIdAndConfigurationInterval2364.md) |  | [optional] 
 **MicroversionInterval** | Pointer to [**BTMicroversionIdInterval367**](BTMicroversionIdInterval367.md) |  | [optional] 
@@ -712,6 +713,31 @@ SetKeepFromMicroversion sets KeepFromMicroversion field to given value.
 `func (o *BTPartStudioDisplayData346) HasKeepFromMicroversion() bool`
 
 HasKeepFromMicroversion returns a boolean if a field has been set.
+
+### GetMicroversionConfigIntervalAdvancing
+
+`func (o *BTPartStudioDisplayData346) GetMicroversionConfigIntervalAdvancing() bool`
+
+GetMicroversionConfigIntervalAdvancing returns the MicroversionConfigIntervalAdvancing field if non-nil, zero value otherwise.
+
+### GetMicroversionConfigIntervalAdvancingOk
+
+`func (o *BTPartStudioDisplayData346) GetMicroversionConfigIntervalAdvancingOk() (*bool, bool)`
+
+GetMicroversionConfigIntervalAdvancingOk returns a tuple with the MicroversionConfigIntervalAdvancing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMicroversionConfigIntervalAdvancing
+
+`func (o *BTPartStudioDisplayData346) SetMicroversionConfigIntervalAdvancing(v bool)`
+
+SetMicroversionConfigIntervalAdvancing sets MicroversionConfigIntervalAdvancing field to given value.
+
+### HasMicroversionConfigIntervalAdvancing
+
+`func (o *BTPartStudioDisplayData346) HasMicroversionConfigIntervalAdvancing() bool`
+
+HasMicroversionConfigIntervalAdvancing returns a boolean if a field has been set.
 
 ### GetMicroversionId
 

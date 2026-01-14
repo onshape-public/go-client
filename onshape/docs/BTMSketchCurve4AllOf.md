@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CenterId** | Pointer to **string** |  | [optional] 
+**CurvedTextIds** | Pointer to **[]string** |  | [optional] 
 **InternalIds** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
@@ -76,6 +77,31 @@ SetCenterId sets CenterId field to given value.
 `func (o *BTMSketchCurve4AllOf) HasCenterId() bool`
 
 HasCenterId returns a boolean if a field has been set.
+
+### GetCurvedTextIds
+
+`func (o *BTMSketchCurve4AllOf) GetCurvedTextIds() []string`
+
+GetCurvedTextIds returns the CurvedTextIds field if non-nil, zero value otherwise.
+
+### GetCurvedTextIdsOk
+
+`func (o *BTMSketchCurve4AllOf) GetCurvedTextIdsOk() (*[]string, bool)`
+
+GetCurvedTextIdsOk returns a tuple with the CurvedTextIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurvedTextIds
+
+`func (o *BTMSketchCurve4AllOf) SetCurvedTextIds(v []string)`
+
+SetCurvedTextIds sets CurvedTextIds field to given value.
+
+### HasCurvedTextIds
+
+`func (o *BTMSketchCurve4AllOf) HasCurvedTextIds() bool`
+
+HasCurvedTextIds returns a boolean if a field has been set.
 
 ### GetInternalIds
 

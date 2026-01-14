@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -17,12 +17,15 @@ import (
 // BTAnnotationGTolRowDisplayData4397 struct for BTAnnotationGTolRowDisplayData4397
 type BTAnnotationGTolRowDisplayData4397 struct {
 	// Type of JSON object.
-	BtType         *string                `json:"btType,omitempty"`
-	ConstraintType *GBTGTolConstraintType `json:"constraintType,omitempty"`
-	Prefix         *string                `json:"prefix,omitempty"`
-	References     []string               `json:"references,omitempty"`
-	Suffix         *string                `json:"suffix,omitempty"`
-	Tolerance      *float64               `json:"tolerance,omitempty"`
+	BtType                 *string                        `json:"btType,omitempty"`
+	ConstraintType         *GBTGTolConstraintType         `json:"constraintType,omitempty"`
+	ExtendedConstraintType *GBTGTolExtendedConstraintType `json:"extendedConstraintType,omitempty"`
+	Prefix                 *string                        `json:"prefix,omitempty"`
+	References             []string                       `json:"references,omitempty"`
+	Suffix                 *string                        `json:"suffix,omitempty"`
+	Tolerance              *float64                       `json:"tolerance,omitempty"`
+	ToleranceSymbol0       *string                        `json:"toleranceSymbol0,omitempty"`
+	ToleranceSymbol1       *string                        `json:"toleranceSymbol1,omitempty"`
 }
 
 // NewBTAnnotationGTolRowDisplayData4397 instantiates a new BTAnnotationGTolRowDisplayData4397 object
@@ -104,6 +107,38 @@ func (o *BTAnnotationGTolRowDisplayData4397) HasConstraintType() bool {
 // SetConstraintType gets a reference to the given GBTGTolConstraintType and assigns it to the ConstraintType field.
 func (o *BTAnnotationGTolRowDisplayData4397) SetConstraintType(v GBTGTolConstraintType) {
 	o.ConstraintType = &v
+}
+
+// GetExtendedConstraintType returns the ExtendedConstraintType field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintType() GBTGTolExtendedConstraintType {
+	if o == nil || o.ExtendedConstraintType == nil {
+		var ret GBTGTolExtendedConstraintType
+		return ret
+	}
+	return *o.ExtendedConstraintType
+}
+
+// GetExtendedConstraintTypeOk returns a tuple with the ExtendedConstraintType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintTypeOk() (*GBTGTolExtendedConstraintType, bool) {
+	if o == nil || o.ExtendedConstraintType == nil {
+		return nil, false
+	}
+	return o.ExtendedConstraintType, true
+}
+
+// HasExtendedConstraintType returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasExtendedConstraintType() bool {
+	if o != nil && o.ExtendedConstraintType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExtendedConstraintType gets a reference to the given GBTGTolExtendedConstraintType and assigns it to the ExtendedConstraintType field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetExtendedConstraintType(v GBTGTolExtendedConstraintType) {
+	o.ExtendedConstraintType = &v
 }
 
 // GetPrefix returns the Prefix field value if set, zero value otherwise.
@@ -234,6 +269,70 @@ func (o *BTAnnotationGTolRowDisplayData4397) SetTolerance(v float64) {
 	o.Tolerance = &v
 }
 
+// GetToleranceSymbol0 returns the ToleranceSymbol0 field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol0() string {
+	if o == nil || o.ToleranceSymbol0 == nil {
+		var ret string
+		return ret
+	}
+	return *o.ToleranceSymbol0
+}
+
+// GetToleranceSymbol0Ok returns a tuple with the ToleranceSymbol0 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol0Ok() (*string, bool) {
+	if o == nil || o.ToleranceSymbol0 == nil {
+		return nil, false
+	}
+	return o.ToleranceSymbol0, true
+}
+
+// HasToleranceSymbol0 returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasToleranceSymbol0() bool {
+	if o != nil && o.ToleranceSymbol0 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSymbol0 gets a reference to the given string and assigns it to the ToleranceSymbol0 field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetToleranceSymbol0(v string) {
+	o.ToleranceSymbol0 = &v
+}
+
+// GetToleranceSymbol1 returns the ToleranceSymbol1 field value if set, zero value otherwise.
+func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol1() string {
+	if o == nil || o.ToleranceSymbol1 == nil {
+		var ret string
+		return ret
+	}
+	return *o.ToleranceSymbol1
+}
+
+// GetToleranceSymbol1Ok returns a tuple with the ToleranceSymbol1 field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol1Ok() (*string, bool) {
+	if o == nil || o.ToleranceSymbol1 == nil {
+		return nil, false
+	}
+	return o.ToleranceSymbol1, true
+}
+
+// HasToleranceSymbol1 returns a boolean if a field has been set.
+func (o *BTAnnotationGTolRowDisplayData4397) HasToleranceSymbol1() bool {
+	if o != nil && o.ToleranceSymbol1 != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetToleranceSymbol1 gets a reference to the given string and assigns it to the ToleranceSymbol1 field.
+func (o *BTAnnotationGTolRowDisplayData4397) SetToleranceSymbol1(v string) {
+	o.ToleranceSymbol1 = &v
+}
+
 func (o BTAnnotationGTolRowDisplayData4397) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -241,6 +340,9 @@ func (o BTAnnotationGTolRowDisplayData4397) MarshalJSON() ([]byte, error) {
 	}
 	if o.ConstraintType != nil {
 		toSerialize["constraintType"] = o.ConstraintType
+	}
+	if o.ExtendedConstraintType != nil {
+		toSerialize["extendedConstraintType"] = o.ExtendedConstraintType
 	}
 	if o.Prefix != nil {
 		toSerialize["prefix"] = o.Prefix
@@ -253,6 +355,12 @@ func (o BTAnnotationGTolRowDisplayData4397) MarshalJSON() ([]byte, error) {
 	}
 	if o.Tolerance != nil {
 		toSerialize["tolerance"] = o.Tolerance
+	}
+	if o.ToleranceSymbol0 != nil {
+		toSerialize["toleranceSymbol0"] = o.ToleranceSymbol0
+	}
+	if o.ToleranceSymbol1 != nil {
+		toSerialize["toleranceSymbol1"] = o.ToleranceSymbol1
 	}
 	return json.Marshal(toSerialize)
 }
