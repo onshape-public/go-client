@@ -3,6 +3,7 @@ package onshape_test
 import (
 	"encoding/base64"
 	"fmt"
+	"strconv"
 	"testing"
 
 	"github.com/google/uuid"
@@ -75,13 +76,19 @@ func TestTxnWorkflow(t *testing.T) {
 			txnID := btAppElementModifyInfo.TransactionId
 
 			//Update subelements in several consecutive operations using the same transaction
-			for _, chapterSubelement := range tt.args.subElements {
-				btAppElementChangeParams := onshape.NewBTAppElementChangeParams(chapterSubelement.name)
-				btAppElementChangeParams.SetBaseContent(chapterSubelement.content)
+			for i, chapterSubelement := range tt.args.subElements {
+				property := "p"
 
 				btAppElementUpdateParams := onshape.NewBTAppElementUpdateParams()
 				btAppElementUpdateParams.SetDescription(fmt.Sprintf("Updating %s", chapterSubelement.name))
-				btAppElementUpdateParams.SetChanges([]onshape.BTAppElementChangeParams{*btAppElementChangeParams})
+				btAppElementUpdateParams.SetPropertyUpdates([]onshape.BTMetadataPropertyUpdateParams{
+					{
+						PropertyId: &property,
+						Value: map[string]interface{}{
+							property: strconv.Itoa(i + 1),
+						},
+					},
+				})
 				btAppElementUpdateParams.SetTransactionId(*txnID)
 
 				btAppElementModifyInfo, rawResp, err = client.AppElementApi.UpdateAppElement(ctx, did, eid, "w", wid).BTAppElementUpdateParams(*btAppElementUpdateParams).Execute()
@@ -92,14 +99,11 @@ func TestTxnWorkflow(t *testing.T) {
 			//Update Json Tree in the same transaction
 			bTAppElementUpdateParams := onshape.NewBTAppElementUpdateParams()
 			//Top Level Edit Element
-			btjEditInsert := onshape.NewBTJEditInsert2523()
-			btjEditInsert.SetBtType("BTJEditInsert-2523")
+			btjEditInsert := onshape.NewBTJEditInsert2523("BTJEditInsert-2523")
 			//Path Element of the Edit
 			path := onshape.NewBTJPath3073(tt.args.elementName)
-			path.SetBtType("BTJPath-3073")
 			//Path.path element
-			pathKey := onshape.NewBTJPathKey3221()
-			pathKey.SetBtType("BTJPathKey-3221")
+			pathKey := onshape.NewBTJPathKey3221("BTJPathKey-3221")
 			path.SetPath([]onshape.BTJPathElement2297{*pathKey.AsBTJPathElement2297()})
 			btjEditInsert.SetPath(*path)
 			value := map[string]interface{}{
@@ -124,12 +128,12 @@ func TestTxnWorkflow(t *testing.T) {
 			//Verify we only have two microversions
 			btDocumentHistoryInfos, rawResp, err := client.DocumentApi.GetDocumentHistory(ctx, did, "w", wid).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
-			require.LessOrEqual(t, 3, len(btDocumentHistoryInfos))
+			require.LessOrEqual(t, 2, len(btDocumentHistoryInfos))
 			latestCommit := btDocumentHistoryInfos[0].GetMicroversionId()
 
 			btAppElementIdsInfo, rawResp, err := client.AppElementApi.GetSubelementIds(ctx, did, eid, "m", latestCommit).Execute()
 			require.NoError(t, err, "Response status %d", rawResp.StatusCode)
-			require.Equal(t, 3, len(btAppElementIdsInfo.GetSubelementIds()))
+			require.Equal(t, 0, len(btAppElementIdsInfo.GetSubelementIds()))
 		})
 	}
 }
