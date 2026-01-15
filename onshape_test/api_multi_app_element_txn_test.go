@@ -92,14 +92,12 @@ func TestTxnWorkflow(t *testing.T) {
 			//Update Json Tree in the same transaction
 			bTAppElementUpdateParams := onshape.NewBTAppElementUpdateParams()
 			//Top Level Edit Element
-			btjEditInsert := onshape.NewBTJEditInsert2523()
-			btjEditInsert.SetBtType("BTJEditInsert-2523")
+			btjEditInsert := onshape.NewBTJEditInsert2523("BTJEditInsert-2523")
 			//Path Element of the Edit
 			path := onshape.NewBTJPath3073(tt.args.elementName)
 			path.SetBtType("BTJPath-3073")
 			//Path.path element
-			pathKey := onshape.NewBTJPathKey3221()
-			pathKey.SetBtType("BTJPathKey-3221")
+			pathKey := onshape.NewBTJPathKey3221("BTJPathKey-3221")
 			path.SetPath([]onshape.BTJPathElement2297{*pathKey.AsBTJPathElement2297()})
 			btjEditInsert.SetPath(*path)
 			value := map[string]interface{}{
