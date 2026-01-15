@@ -21,6 +21,8 @@
 
 * `GBTSketchEntityTypeLine` (value: `"LINE"`)
 
+* `GBTSketchEntityTypeCurvedText` (value: `"CURVED_TEXT"`)
+
 * `GBTSketchEntityTypeUnknown` (value: `"UNKNOWN"`)
 
 

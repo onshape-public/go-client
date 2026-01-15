@@ -26,9 +26,11 @@ Name | Type | Description | Notes
 **SelectedGroupIds** | Pointer to **[]string** |  | [optional] 
 **SourceDocumentId** | Pointer to **string** |  | [optional] 
 **SourceVersionId** | Pointer to **string** |  | [optional] 
+**SourceVersionName** | Pointer to **string** | Name of version to move elements from (source). | [optional] 
 **SourceWorkspaceId** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **TargetDocumentId** | Pointer to **string** |  | [optional] 
+**TargetVersionName** | Pointer to **string** | Name of version to move elements to (target). | [optional] 
 **TargetWorkspaceId** | Pointer to **string** |  | [optional] 
 **VersionName** | Pointer to **string** |  | [optional] 
 
@@ -601,6 +603,31 @@ SetSourceVersionId sets SourceVersionId field to given value.
 
 HasSourceVersionId returns a boolean if a field has been set.
 
+### GetSourceVersionName
+
+`func (o *BTMoveElementParams) GetSourceVersionName() string`
+
+GetSourceVersionName returns the SourceVersionName field if non-nil, zero value otherwise.
+
+### GetSourceVersionNameOk
+
+`func (o *BTMoveElementParams) GetSourceVersionNameOk() (*string, bool)`
+
+GetSourceVersionNameOk returns a tuple with the SourceVersionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceVersionName
+
+`func (o *BTMoveElementParams) SetSourceVersionName(v string)`
+
+SetSourceVersionName sets SourceVersionName field to given value.
+
+### HasSourceVersionName
+
+`func (o *BTMoveElementParams) HasSourceVersionName() bool`
+
+HasSourceVersionName returns a boolean if a field has been set.
+
 ### GetSourceWorkspaceId
 
 `func (o *BTMoveElementParams) GetSourceWorkspaceId() string`
@@ -675,6 +702,31 @@ SetTargetDocumentId sets TargetDocumentId field to given value.
 `func (o *BTMoveElementParams) HasTargetDocumentId() bool`
 
 HasTargetDocumentId returns a boolean if a field has been set.
+
+### GetTargetVersionName
+
+`func (o *BTMoveElementParams) GetTargetVersionName() string`
+
+GetTargetVersionName returns the TargetVersionName field if non-nil, zero value otherwise.
+
+### GetTargetVersionNameOk
+
+`func (o *BTMoveElementParams) GetTargetVersionNameOk() (*string, bool)`
+
+GetTargetVersionNameOk returns a tuple with the TargetVersionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetVersionName
+
+`func (o *BTMoveElementParams) SetTargetVersionName(v string)`
+
+SetTargetVersionName sets TargetVersionName field to given value.
+
+### HasTargetVersionName
+
+`func (o *BTMoveElementParams) HasTargetVersionName() bool`
+
+HasTargetVersionName returns a boolean if a field has been set.
 
 ### GetTargetWorkspaceId
 

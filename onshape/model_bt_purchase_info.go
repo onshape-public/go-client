@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -16,11 +16,13 @@ import (
 
 // BTPurchaseInfo struct for BTPurchaseInfo
 type BTPurchaseInfo struct {
-	AccountId              *string                      `json:"accountId,omitempty"`
-	ActualAmountPaidCents  *int64                       `json:"actualAmountPaidCents,omitempty"`
-	AmountCents            *int64                       `json:"amountCents,omitempty"`
-	ApiAllocationByPlan    *int64                       `json:"apiAllocationByPlan,omitempty"`
-	ApiAllocationEndDate   *JSONTime                    `json:"apiAllocationEndDate,omitempty"`
+	AccountId             *string `json:"accountId,omitempty"`
+	ActualAmountPaidCents *int64  `json:"actualAmountPaidCents,omitempty"`
+	AmountCents           *int64  `json:"amountCents,omitempty"`
+	// Represents the default annual API call allocation defined by the user's Onshape billing plan.
+	ApiAllocationByPlan  *int64    `json:"apiAllocationByPlan,omitempty"`
+	ApiAllocationEndDate *JSONTime `json:"apiAllocationEndDate,omitempty"`
+	// Manual override set by Onshape admin; when non-zero takes precedence over apiAllocationByPlan.
 	ApiAllocationOverride  *int64                       `json:"apiAllocationOverride,omitempty"`
 	ApiAllocationStartDate *JSONTime                    `json:"apiAllocationStartDate,omitempty"`
 	Application            *BTAPIApplicationSummaryInfo `json:"application,omitempty"`
@@ -44,6 +46,7 @@ type BTPurchaseInfo struct {
 	// Name of the resource.
 	Name                *string                `json:"name,omitempty"`
 	NextCharge          *NextCharge            `json:"nextCharge,omitempty"`
+	OverageEnabled      *bool                  `json:"overageEnabled,omitempty"`
 	PaymentType         *int32                 `json:"paymentType,omitempty"`
 	PendingCancelation  *bool                  `json:"pendingCancelation,omitempty"`
 	Plan                *BTBillingPlanInfo     `json:"plan,omitempty"`
@@ -886,6 +889,38 @@ func (o *BTPurchaseInfo) SetNextCharge(v NextCharge) {
 	o.NextCharge = &v
 }
 
+// GetOverageEnabled returns the OverageEnabled field value if set, zero value otherwise.
+func (o *BTPurchaseInfo) GetOverageEnabled() bool {
+	if o == nil || o.OverageEnabled == nil {
+		var ret bool
+		return ret
+	}
+	return *o.OverageEnabled
+}
+
+// GetOverageEnabledOk returns a tuple with the OverageEnabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPurchaseInfo) GetOverageEnabledOk() (*bool, bool) {
+	if o == nil || o.OverageEnabled == nil {
+		return nil, false
+	}
+	return o.OverageEnabled, true
+}
+
+// HasOverageEnabled returns a boolean if a field has been set.
+func (o *BTPurchaseInfo) HasOverageEnabled() bool {
+	if o != nil && o.OverageEnabled != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOverageEnabled gets a reference to the given bool and assigns it to the OverageEnabled field.
+func (o *BTPurchaseInfo) SetOverageEnabled(v bool) {
+	o.OverageEnabled = &v
+}
+
 // GetPaymentType returns the PaymentType field value if set, zero value otherwise.
 func (o *BTPurchaseInfo) GetPaymentType() int32 {
 	if o == nil || o.PaymentType == nil {
@@ -1666,6 +1701,9 @@ func (o BTPurchaseInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.NextCharge != nil {
 		toSerialize["nextCharge"] = o.NextCharge
+	}
+	if o.OverageEnabled != nil {
+		toSerialize["overageEnabled"] = o.OverageEnabled
 	}
 	if o.PaymentType != nil {
 		toSerialize["paymentType"] = o.PaymentType

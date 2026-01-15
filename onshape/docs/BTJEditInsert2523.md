@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BtType** | **string** | Type of JSON object. | 
 **Path** | Pointer to [**BTJPath3073**](BTJPath3073.md) |  | [optional] 
+**Upsert** | Pointer to **bool** |  | [optional] 
 **Value** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewBTJEditInsert2523
 
-`func NewBTJEditInsert2523() *BTJEditInsert2523`
+`func NewBTJEditInsert2523(btType string, ) *BTJEditInsert2523`
 
 NewBTJEditInsert2523 instantiates a new BTJEditInsert2523 object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetBtType sets BtType field to given value.
 
-### HasBtType
-
-`func (o *BTJEditInsert2523) HasBtType() bool`
-
-HasBtType returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -76,6 +72,31 @@ SetPath sets Path field to given value.
 `func (o *BTJEditInsert2523) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+### GetUpsert
+
+`func (o *BTJEditInsert2523) GetUpsert() bool`
+
+GetUpsert returns the Upsert field if non-nil, zero value otherwise.
+
+### GetUpsertOk
+
+`func (o *BTJEditInsert2523) GetUpsertOk() (*bool, bool)`
+
+GetUpsertOk returns a tuple with the Upsert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpsert
+
+`func (o *BTJEditInsert2523) SetUpsert(v bool)`
+
+SetUpsert sets Upsert field to given value.
+
+### HasUpsert
+
+`func (o *BTJEditInsert2523) HasUpsert() bool`
+
+HasUpsert returns a boolean if a field has been set.
 
 ### GetValue
 

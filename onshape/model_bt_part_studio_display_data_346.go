@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -43,6 +43,7 @@ type BTPartStudioDisplayData346 struct {
 	IsExternal                                     *bool                                               `json:"isExternal,omitempty"`
 	IsNoop                                         *bool                                               `json:"isNoop,omitempty"`
 	KeepFromMicroversion                           *bool                                               `json:"keepFromMicroversion,omitempty"`
+	MicroversionConfigIntervalAdvancing            *bool                                               `json:"microversionConfigIntervalAdvancing,omitempty"`
 	MicroversionId                                 *BTMicroversionId366                                `json:"microversionId,omitempty"`
 	MicroversionIdAndConfigurationInterval         *BTMicroversionIdAndConfigurationInterval2364       `json:"microversionIdAndConfigurationInterval,omitempty"`
 	MicroversionInterval                           *BTMicroversionIdInterval367                        `json:"microversionInterval,omitempty"`
@@ -907,6 +908,38 @@ func (o *BTPartStudioDisplayData346) SetKeepFromMicroversion(v bool) {
 	o.KeepFromMicroversion = &v
 }
 
+// GetMicroversionConfigIntervalAdvancing returns the MicroversionConfigIntervalAdvancing field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetMicroversionConfigIntervalAdvancing() bool {
+	if o == nil || o.MicroversionConfigIntervalAdvancing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.MicroversionConfigIntervalAdvancing
+}
+
+// GetMicroversionConfigIntervalAdvancingOk returns a tuple with the MicroversionConfigIntervalAdvancing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetMicroversionConfigIntervalAdvancingOk() (*bool, bool) {
+	if o == nil || o.MicroversionConfigIntervalAdvancing == nil {
+		return nil, false
+	}
+	return o.MicroversionConfigIntervalAdvancing, true
+}
+
+// HasMicroversionConfigIntervalAdvancing returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasMicroversionConfigIntervalAdvancing() bool {
+	if o != nil && o.MicroversionConfigIntervalAdvancing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMicroversionConfigIntervalAdvancing gets a reference to the given bool and assigns it to the MicroversionConfigIntervalAdvancing field.
+func (o *BTPartStudioDisplayData346) SetMicroversionConfigIntervalAdvancing(v bool) {
+	o.MicroversionConfigIntervalAdvancing = &v
+}
+
 // GetMicroversionId returns the MicroversionId field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayData346) GetMicroversionId() BTMicroversionId366 {
 	if o == nil || o.MicroversionId == nil {
@@ -1402,6 +1435,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.KeepFromMicroversion != nil {
 		toSerialize["keepFromMicroversion"] = o.KeepFromMicroversion
+	}
+	if o.MicroversionConfigIntervalAdvancing != nil {
+		toSerialize["microversionConfigIntervalAdvancing"] = o.MicroversionConfigIntervalAdvancing
 	}
 	if o.MicroversionId != nil {
 		toSerialize["microversionId"] = o.MicroversionId

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -19,13 +19,14 @@ type BTMetadataPartInfo struct {
 	Href     *string `json:"href,omitempty"`
 	JsonType string  `json:"jsonType"`
 	// Properties associated with this metadata object
-	Properties      []BTMetadataPropertyInfo `json:"properties,omitempty"`
-	Thumbnail       *BTThumbnailInfo         `json:"thumbnail,omitempty"`
-	IsFlattenedBody *bool                    `json:"isFlattenedBody,omitempty"`
-	MeshState       *int32                   `json:"meshState,omitempty"`
-	PartId          *string                  `json:"partId,omitempty"`
-	PartIdentity    *string                  `json:"partIdentity,omitempty"`
-	PartType        *string                  `json:"partType,omitempty"`
+	Properties              []BTMetadataPropertyInfo `json:"properties,omitempty"`
+	Thumbnail               *BTThumbnailInfo         `json:"thumbnail,omitempty"`
+	IsFlattenedBody         *bool                    `json:"isFlattenedBody,omitempty"`
+	IsPublicPartOverridable *bool                    `json:"isPublicPartOverridable,omitempty"`
+	MeshState               *int32                   `json:"meshState,omitempty"`
+	PartId                  *string                  `json:"partId,omitempty"`
+	PartIdentity            *string                  `json:"partIdentity,omitempty"`
+	PartType                *string                  `json:"partType,omitempty"`
 }
 
 // NewBTMetadataPartInfo instantiates a new BTMetadataPartInfo object
@@ -198,6 +199,38 @@ func (o *BTMetadataPartInfo) SetIsFlattenedBody(v bool) {
 	o.IsFlattenedBody = &v
 }
 
+// GetIsPublicPartOverridable returns the IsPublicPartOverridable field value if set, zero value otherwise.
+func (o *BTMetadataPartInfo) GetIsPublicPartOverridable() bool {
+	if o == nil || o.IsPublicPartOverridable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPublicPartOverridable
+}
+
+// GetIsPublicPartOverridableOk returns a tuple with the IsPublicPartOverridable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPartInfo) GetIsPublicPartOverridableOk() (*bool, bool) {
+	if o == nil || o.IsPublicPartOverridable == nil {
+		return nil, false
+	}
+	return o.IsPublicPartOverridable, true
+}
+
+// HasIsPublicPartOverridable returns a boolean if a field has been set.
+func (o *BTMetadataPartInfo) HasIsPublicPartOverridable() bool {
+	if o != nil && o.IsPublicPartOverridable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPublicPartOverridable gets a reference to the given bool and assigns it to the IsPublicPartOverridable field.
+func (o *BTMetadataPartInfo) SetIsPublicPartOverridable(v bool) {
+	o.IsPublicPartOverridable = &v
+}
+
 // GetMeshState returns the MeshState field value if set, zero value otherwise.
 func (o *BTMetadataPartInfo) GetMeshState() int32 {
 	if o == nil || o.MeshState == nil {
@@ -342,6 +375,9 @@ func (o BTMetadataPartInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFlattenedBody != nil {
 		toSerialize["isFlattenedBody"] = o.IsFlattenedBody
+	}
+	if o.IsPublicPartOverridable != nil {
+		toSerialize["isPublicPartOverridable"] = o.IsPublicPartOverridable
 	}
 	if o.MeshState != nil {
 		toSerialize["meshState"] = o.MeshState
