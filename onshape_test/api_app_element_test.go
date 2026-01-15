@@ -187,7 +187,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			require.LessOrEqual(Tester(), 3, len(r))
+			require.LessOrEqual(Tester(), 2, len(r))
 			Context()["wvmid"] = r[0].GetMicroversionId()
 		}),
 	}.Execute()
@@ -196,7 +196,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		Call:    onshape.ApiGetSubelementIdsRequest{},
 		Context: TestingContext{"wvm": "m"},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementIdsInfo) {
-			require.Equal(Tester(), 3, len(r.GetSubelementIds()))
+			require.Equal(Tester(), 0, len(r.GetSubelementIds()))
 		}),
 	}.Execute()
 
@@ -243,19 +243,17 @@ func GetDefaultAppElementParams() *onshape.BTAppElementParams {
 func GetDefaultAppUpdateParams() *onshape.BTAppElementUpdateParams {
 	bTAppElementUpdateParams := onshape.NewBTAppElementUpdateParams()
 	//Top Level Edit Element
-	btjEditInsert := onshape.NewBTJEditInsert2523()
-	btjEditInsert.SetBtType("BTJEditInsert-2523")
-	btjEditInsert.BTJEdit3734 = *onshape.NewBTJEdit3734()
+	btjEditInsert := onshape.NewBTJEditInsert2523("BTJEditInsert-2523")
+	btjEditInsert.BTJEdit3734 = *onshape.NewBTJEdit3734("BTJEdit-3734")
 	//Path Element of the Edit
 	path := onshape.NewBTJPath3073("master")
 	pathType := string("BTJPath-3073")
 	path.BtType = &pathType
 	// path.SetStartNode("master") -- not needed any more, passing it in the constructor
 	//Path.path element
-	pathKey := onshape.NewBTJPathKey3221()
-	pathKey.SetBtType("BTJPathKey-3221")
+	pathKey := onshape.NewBTJPathKey3221("BTJPathKey-3221")
 	pathKey.SetKey("chapterProperties")
-	pathKey.BTJPathElement2297 = *onshape.NewBTJPathElement2297()
+	pathKey.BTJPathElement2297 = *onshape.NewBTJPathElement2297("BTJPathElement-2297")
 	path.SetPath([]onshape.BTJPathElement2297{*pathKey.AsBTJPathElement2297()})
 	btjEditInsert.SetPath(*path)
 	value := map[string]interface{}{
@@ -276,7 +274,13 @@ func CreateChapterTestSubelement(name string) onshape.BTAppElementChangeParams {
 func CreateAppElementChangeUpdate(name string) *onshape.BTAppElementUpdateParams {
 	return &onshape.BTAppElementUpdateParams{
 		Description: Ptr("Update " + name),
-		Changes:     []onshape.BTAppElementChangeParams{CreateChapterTestSubelement(name)},
+		PropertyUpdates: []onshape.BTMetadataPropertyUpdateParams{
+			onshape.BTMetadataPropertyUpdateParams{
+				Value: map[string]interface{}{
+					"key": "value",
+				},
+			},
+		},
 	}
 }
 

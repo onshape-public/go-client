@@ -43,6 +43,8 @@ func main() {
 Could be found [here](./onshape/README.md)
 
 ## Breaking Changes
+### v1.206.66510-d41dc53c96af 
+* Makes BTType a mandatory field for several models 
 ### v1.201.59934-5fdafe848d7f
 * Replaces BTDocumentSummaryInfo with BTGlobalTreeNodeSummaryInfo
 ### v1.193.50007-3a3fc4483ede

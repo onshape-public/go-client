@@ -107,18 +107,16 @@ func TestCreateAndGetAppElement(t *testing.T) {
 			//I'll make it better
 			bTAppElementUpdateParams := onshape.NewBTAppElementUpdateParams()
 			//Top Level Edit Element
-			btjEditInsert := onshape.NewBTJEditInsert2523()
-			btjEditInsert.SetBtType("BTJEditInsert-2523")
-			btjEditInsert.BTJEdit3734 = *onshape.NewBTJEdit3734()
+			btjEditInsert := onshape.NewBTJEditInsert2523("BTJEditInsert-2523")
+			btjEditInsert.BTJEdit3734 = *onshape.NewBTJEdit3734("BTJEdit-3734")
 			//Path Element of the Edit
 			path := onshape.NewBTJPath3073("master")
 			pathType := string("BTJPath-3073")
 			path.BtType = &pathType
 			// path.SetStartNode("master") -- not needed any more, passing it in the constructor
 			//Path.path element
-			pathKey := onshape.NewBTJPathKey3221()
-			pathKey.SetBtType("BTJPathKey-3221")
-			pathKey.BTJPathElement2297 = *onshape.NewBTJPathElement2297()
+			pathKey := onshape.NewBTJPathKey3221("BTJPathKey-3221")
+			pathKey.BTJPathElement2297 = *onshape.NewBTJPathElement2297("BTJPathElement-2297")
 			pathKey.SetKey("chapterProperties")
 			path.SetPath([]onshape.BTJPathElement2297{*pathKey.AsBTJPathElement2297()})
 			btjEditInsert.SetPath(*path)
