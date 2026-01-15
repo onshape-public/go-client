@@ -187,7 +187,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 			ApiService: Context()["client"].(*onshape.APIClient).DocumentApi,
 		},
 		Expect: NoAPIErrorAnd(func(r []onshape.BTDocumentHistoryInfo) {
-			require.LessOrEqual(Tester(), 3, len(r))
+			require.LessOrEqual(Tester(), 2, len(r))
 			Context()["wvmid"] = r[0].GetMicroversionId()
 		}),
 	}.Execute()
@@ -196,7 +196,7 @@ func TestTransactionAppElementAPI(t *testing.T) {
 		Call:    onshape.ApiGetSubelementIdsRequest{},
 		Context: TestingContext{"wvm": "m"},
 		Expect: NoAPIErrorAnd(func(r *onshape.BTAppElementIdsInfo) {
-			require.Equal(Tester(), 3, len(r.GetSubelementIds()))
+			require.Equal(Tester(), 0, len(r.GetSubelementIds()))
 		}),
 	}.Execute()
 
@@ -274,7 +274,13 @@ func CreateChapterTestSubelement(name string) onshape.BTAppElementChangeParams {
 func CreateAppElementChangeUpdate(name string) *onshape.BTAppElementUpdateParams {
 	return &onshape.BTAppElementUpdateParams{
 		Description: Ptr("Update " + name),
-		Changes:     []onshape.BTAppElementChangeParams{CreateChapterTestSubelement(name)},
+		PropertyUpdates: []onshape.BTMetadataPropertyUpdateParams{
+			onshape.BTMetadataPropertyUpdateParams{
+				Value: map[string]interface{}{
+					"key": "value",
+				},
+			},
+		},
 	}
 }
 
