@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -17,8 +17,9 @@ import (
 // BTJEditInsert2523 Inserts a value using the specified path.
 type BTJEditInsert2523 struct {
 	BTJEdit3734
-	BtType *string                 `json:"btType,omitempty"`
+	BtType string                  `json:"btType"`
 	Path   *BTJPath3073            `json:"path,omitempty"`
+	Upsert *bool                   `json:"upsert,omitempty"`
 	Value  *map[string]interface{} `json:"value,omitempty"`
 }
 
@@ -26,8 +27,9 @@ type BTJEditInsert2523 struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTJEditInsert2523() *BTJEditInsert2523 {
+func NewBTJEditInsert2523(btType string) *BTJEditInsert2523 {
 	this := BTJEditInsert2523{}
+	this.BtType = btType
 	return &this
 }
 
@@ -39,36 +41,28 @@ func NewBTJEditInsert2523WithDefaults() *BTJEditInsert2523 {
 	return &this
 }
 
-// GetBtType returns the BtType field value if set, zero value otherwise.
+// GetBtType returns the BtType field value
 func (o *BTJEditInsert2523) GetBtType() string {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.BtType
+
+	return o.BtType
 }
 
-// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// GetBtTypeOk returns a tuple with the BtType field value
 // and a boolean to check if the value has been set.
 func (o *BTJEditInsert2523) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.BtType, true
+	return &o.BtType, true
 }
 
-// HasBtType returns a boolean if a field has been set.
-func (o *BTJEditInsert2523) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetBtType gets a reference to the given string and assigns it to the BtType field.
+// SetBtType sets field value
 func (o *BTJEditInsert2523) SetBtType(v string) {
-	o.BtType = &v
+	o.BtType = v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -101,6 +95,38 @@ func (o *BTJEditInsert2523) HasPath() bool {
 // SetPath gets a reference to the given BTJPath3073 and assigns it to the Path field.
 func (o *BTJEditInsert2523) SetPath(v BTJPath3073) {
 	o.Path = &v
+}
+
+// GetUpsert returns the Upsert field value if set, zero value otherwise.
+func (o *BTJEditInsert2523) GetUpsert() bool {
+	if o == nil || o.Upsert == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Upsert
+}
+
+// GetUpsertOk returns a tuple with the Upsert field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTJEditInsert2523) GetUpsertOk() (*bool, bool) {
+	if o == nil || o.Upsert == nil {
+		return nil, false
+	}
+	return o.Upsert, true
+}
+
+// HasUpsert returns a boolean if a field has been set.
+func (o *BTJEditInsert2523) HasUpsert() bool {
+	if o != nil && o.Upsert != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUpsert gets a reference to the given bool and assigns it to the Upsert field.
+func (o *BTJEditInsert2523) SetUpsert(v bool) {
+	o.Upsert = &v
 }
 
 // GetValue returns the Value field value if set, zero value otherwise.
@@ -145,11 +171,14 @@ func (o BTJEditInsert2523) MarshalJSON() ([]byte, error) {
 	if errBTJEdit3734 != nil {
 		return []byte{}, errBTJEdit3734
 	}
-	if o.BtType != nil {
+	if true {
 		toSerialize["btType"] = o.BtType
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
+	}
+	if o.Upsert != nil {
+		toSerialize["upsert"] = o.Upsert
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

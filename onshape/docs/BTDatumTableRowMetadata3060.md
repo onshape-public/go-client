@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AnnotationId** | Pointer to **string** |  | [optional] 
+**CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetAnnotationId sets AnnotationId field to given value.
 `func (o *BTDatumTableRowMetadata3060) HasAnnotationId() bool`
 
 HasAnnotationId returns a boolean if a field has been set.
+
+### GetCrossHighlightData
+
+`func (o *BTDatumTableRowMetadata3060) GetCrossHighlightData() BTTableCrossHighlightData1753`
+
+GetCrossHighlightData returns the CrossHighlightData field if non-nil, zero value otherwise.
+
+### GetCrossHighlightDataOk
+
+`func (o *BTDatumTableRowMetadata3060) GetCrossHighlightDataOk() (*BTTableCrossHighlightData1753, bool)`
+
+GetCrossHighlightDataOk returns a tuple with the CrossHighlightData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrossHighlightData
+
+`func (o *BTDatumTableRowMetadata3060) SetCrossHighlightData(v BTTableCrossHighlightData1753)`
+
+SetCrossHighlightData sets CrossHighlightData field to given value.
+
+### HasCrossHighlightData
+
+`func (o *BTDatumTableRowMetadata3060) HasCrossHighlightData() bool`
+
+HasCrossHighlightData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

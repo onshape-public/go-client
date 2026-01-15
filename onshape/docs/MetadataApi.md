@@ -1,6 +1,6 @@
 # \MetadataApi
 
-All URIs are relative to *https://cad.onshape.com/api/v12*
+All URIs are relative to *https://cad.onshape.com/api/v13*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -672,8 +672,8 @@ import (
 )
 
 func main() {
-    did := "did_example" // string | 
-    linkDocumentId := "linkDocumentId_example" // string | 
+    did := "did_example" // string | The ID of the document that owns the standard content part.
+    linkDocumentId := "linkDocumentId_example" // string | The ID of the document in which you have inserted the standard content part.
     body := "body_example" // string | 
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -694,7 +694,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**did** | **string** |  | 
+**did** | **string** | The ID of the document that owns the standard content part. | 
 
 ### Other Parameters
 
@@ -704,7 +704,7 @@ Other parameters are passed through a pointer to a apiUpdateVEOPStandardContentP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **linkDocumentId** | **string** |  | 
+ **linkDocumentId** | **string** | The ID of the document in which you have inserted the standard content part. | 
  **body** | **string** |  | 
 
 ### Return type

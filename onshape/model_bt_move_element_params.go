@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -38,11 +38,15 @@ type BTMoveElementParams struct {
 	SelectedGroupIds        []string           `json:"selectedGroupIds,omitempty"`
 	SourceDocumentId        *string            `json:"sourceDocumentId,omitempty"`
 	SourceVersionId         *string            `json:"sourceVersionId,omitempty"`
-	SourceWorkspaceId       *string            `json:"sourceWorkspaceId,omitempty"`
-	Tags                    []string           `json:"tags,omitempty"`
-	TargetDocumentId        *string            `json:"targetDocumentId,omitempty"`
-	TargetWorkspaceId       *string            `json:"targetWorkspaceId,omitempty"`
-	VersionName             *string            `json:"versionName,omitempty"`
+	// Name of version to move elements from (source).
+	SourceVersionName *string  `json:"sourceVersionName,omitempty"`
+	SourceWorkspaceId *string  `json:"sourceWorkspaceId,omitempty"`
+	Tags              []string `json:"tags,omitempty"`
+	TargetDocumentId  *string  `json:"targetDocumentId,omitempty"`
+	// Name of version to move elements to (target).
+	TargetVersionName *string `json:"targetVersionName,omitempty"`
+	TargetWorkspaceId *string `json:"targetWorkspaceId,omitempty"`
+	VersionName       *string `json:"versionName,omitempty"`
 }
 
 // NewBTMoveElementParams instantiates a new BTMoveElementParams object
@@ -766,6 +770,38 @@ func (o *BTMoveElementParams) SetSourceVersionId(v string) {
 	o.SourceVersionId = &v
 }
 
+// GetSourceVersionName returns the SourceVersionName field value if set, zero value otherwise.
+func (o *BTMoveElementParams) GetSourceVersionName() string {
+	if o == nil || o.SourceVersionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceVersionName
+}
+
+// GetSourceVersionNameOk returns a tuple with the SourceVersionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMoveElementParams) GetSourceVersionNameOk() (*string, bool) {
+	if o == nil || o.SourceVersionName == nil {
+		return nil, false
+	}
+	return o.SourceVersionName, true
+}
+
+// HasSourceVersionName returns a boolean if a field has been set.
+func (o *BTMoveElementParams) HasSourceVersionName() bool {
+	if o != nil && o.SourceVersionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceVersionName gets a reference to the given string and assigns it to the SourceVersionName field.
+func (o *BTMoveElementParams) SetSourceVersionName(v string) {
+	o.SourceVersionName = &v
+}
+
 // GetSourceWorkspaceId returns the SourceWorkspaceId field value if set, zero value otherwise.
 func (o *BTMoveElementParams) GetSourceWorkspaceId() string {
 	if o == nil || o.SourceWorkspaceId == nil {
@@ -860,6 +896,38 @@ func (o *BTMoveElementParams) HasTargetDocumentId() bool {
 // SetTargetDocumentId gets a reference to the given string and assigns it to the TargetDocumentId field.
 func (o *BTMoveElementParams) SetTargetDocumentId(v string) {
 	o.TargetDocumentId = &v
+}
+
+// GetTargetVersionName returns the TargetVersionName field value if set, zero value otherwise.
+func (o *BTMoveElementParams) GetTargetVersionName() string {
+	if o == nil || o.TargetVersionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.TargetVersionName
+}
+
+// GetTargetVersionNameOk returns a tuple with the TargetVersionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMoveElementParams) GetTargetVersionNameOk() (*string, bool) {
+	if o == nil || o.TargetVersionName == nil {
+		return nil, false
+	}
+	return o.TargetVersionName, true
+}
+
+// HasTargetVersionName returns a boolean if a field has been set.
+func (o *BTMoveElementParams) HasTargetVersionName() bool {
+	if o != nil && o.TargetVersionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetVersionName gets a reference to the given string and assigns it to the TargetVersionName field.
+func (o *BTMoveElementParams) SetTargetVersionName(v string) {
+	o.TargetVersionName = &v
 }
 
 // GetTargetWorkspaceId returns the TargetWorkspaceId field value if set, zero value otherwise.
@@ -994,6 +1062,9 @@ func (o BTMoveElementParams) MarshalJSON() ([]byte, error) {
 	if o.SourceVersionId != nil {
 		toSerialize["sourceVersionId"] = o.SourceVersionId
 	}
+	if o.SourceVersionName != nil {
+		toSerialize["sourceVersionName"] = o.SourceVersionName
+	}
 	if o.SourceWorkspaceId != nil {
 		toSerialize["sourceWorkspaceId"] = o.SourceWorkspaceId
 	}
@@ -1002,6 +1073,9 @@ func (o BTMoveElementParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.TargetDocumentId != nil {
 		toSerialize["targetDocumentId"] = o.TargetDocumentId
+	}
+	if o.TargetVersionName != nil {
+		toSerialize["targetVersionName"] = o.TargetVersionName
 	}
 	if o.TargetWorkspaceId != nil {
 		toSerialize["targetWorkspaceId"] = o.TargetWorkspaceId

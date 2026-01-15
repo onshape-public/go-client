@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -17,21 +17,23 @@ import (
 // BTSingleAssemblyReferenceDisplayData1557 struct for BTSingleAssemblyReferenceDisplayData1557
 type BTSingleAssemblyReferenceDisplayData1557 struct {
 	BTSingleReferenceDisplayData1943
-	BtType               *string                      `json:"btType,omitempty"`
-	ContextWorkspaceId   *string                      `json:"contextWorkspaceId,omitempty"`
-	DocumentId           *string                      `json:"documentId,omitempty"`
-	Error                *GBTErrorStringEnum          `json:"error,omitempty"`
-	ErrorMessage         *string                      `json:"errorMessage,omitempty"`
-	FullElementId        *BTFullElementId756          `json:"fullElementId,omitempty"`
-	IsTransient          *bool                        `json:"isTransient,omitempty"`
-	Name                 *string                      `json:"name,omitempty"`
-	ReferenceName        *string                      `json:"referenceName,omitempty"`
-	ReferenceNodeId      *string                      `json:"referenceNodeId,omitempty"`
-	Visibility           *GBTBSFeatureVisibility      `json:"visibility,omitempty"`
-	AssemblyDisplayData  *BTRootAssemblyDisplayData96 `json:"assemblyDisplayData,omitempty"`
-	HasConfiguration     *bool                        `json:"hasConfiguration,omitempty"`
-	OccurrencesToExclude []BTOccurrence74             `json:"occurrencesToExclude,omitempty"`
-	Transform            *BTBSMatrix386               `json:"transform,omitempty"`
+	BtType                  *string                                  `json:"btType,omitempty"`
+	ContextWorkspaceId      *string                                  `json:"contextWorkspaceId,omitempty"`
+	DocumentId              *string                                  `json:"documentId,omitempty"`
+	Error                   *GBTErrorStringEnum                      `json:"error,omitempty"`
+	ErrorMessage            *string                                  `json:"errorMessage,omitempty"`
+	FullElementId           *BTFullElementId756                      `json:"fullElementId,omitempty"`
+	IsTransient             *bool                                    `json:"isTransient,omitempty"`
+	Name                    *string                                  `json:"name,omitempty"`
+	ReferenceName           *string                                  `json:"referenceName,omitempty"`
+	ReferenceNodeId         *string                                  `json:"referenceNodeId,omitempty"`
+	Visibility              *GBTBSFeatureVisibility                  `json:"visibility,omitempty"`
+	AssemblyDisplayData     *BTRootAssemblyDisplayData96             `json:"assemblyDisplayData,omitempty"`
+	AssemblyNamedPositions  []BTAssemblyContextNamedPositionInfo3801 `json:"assemblyNamedPositions,omitempty"`
+	HasConfiguration        *bool                                    `json:"hasConfiguration,omitempty"`
+	OccurrencesToExclude    []BTOccurrence74                         `json:"occurrencesToExclude,omitempty"`
+	SelectedNamedPositionId *string                                  `json:"selectedNamedPositionId,omitempty"`
+	Transform               *BTBSMatrix386                           `json:"transform,omitempty"`
 }
 
 // NewBTSingleAssemblyReferenceDisplayData1557 instantiates a new BTSingleAssemblyReferenceDisplayData1557 object
@@ -435,6 +437,38 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyDisplayData(v BTRo
 	o.AssemblyDisplayData = &v
 }
 
+// GetAssemblyNamedPositions returns the AssemblyNamedPositions field value if set, zero value otherwise.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyNamedPositions() []BTAssemblyContextNamedPositionInfo3801 {
+	if o == nil || o.AssemblyNamedPositions == nil {
+		var ret []BTAssemblyContextNamedPositionInfo3801
+		return ret
+	}
+	return o.AssemblyNamedPositions
+}
+
+// GetAssemblyNamedPositionsOk returns a tuple with the AssemblyNamedPositions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyNamedPositionsOk() ([]BTAssemblyContextNamedPositionInfo3801, bool) {
+	if o == nil || o.AssemblyNamedPositions == nil {
+		return nil, false
+	}
+	return o.AssemblyNamedPositions, true
+}
+
+// HasAssemblyNamedPositions returns a boolean if a field has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyNamedPositions() bool {
+	if o != nil && o.AssemblyNamedPositions != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAssemblyNamedPositions gets a reference to the given []BTAssemblyContextNamedPositionInfo3801 and assigns it to the AssemblyNamedPositions field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyNamedPositions(v []BTAssemblyContextNamedPositionInfo3801) {
+	o.AssemblyNamedPositions = v
+}
+
 // GetHasConfiguration returns the HasConfiguration field value if set, zero value otherwise.
 func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfiguration() bool {
 	if o == nil || o.HasConfiguration == nil {
@@ -497,6 +531,38 @@ func (o *BTSingleAssemblyReferenceDisplayData1557) HasOccurrencesToExclude() boo
 // SetOccurrencesToExclude gets a reference to the given []BTOccurrence74 and assigns it to the OccurrencesToExclude field.
 func (o *BTSingleAssemblyReferenceDisplayData1557) SetOccurrencesToExclude(v []BTOccurrence74) {
 	o.OccurrencesToExclude = v
+}
+
+// GetSelectedNamedPositionId returns the SelectedNamedPositionId field value if set, zero value otherwise.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetSelectedNamedPositionId() string {
+	if o == nil || o.SelectedNamedPositionId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SelectedNamedPositionId
+}
+
+// GetSelectedNamedPositionIdOk returns a tuple with the SelectedNamedPositionId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) GetSelectedNamedPositionIdOk() (*string, bool) {
+	if o == nil || o.SelectedNamedPositionId == nil {
+		return nil, false
+	}
+	return o.SelectedNamedPositionId, true
+}
+
+// HasSelectedNamedPositionId returns a boolean if a field has been set.
+func (o *BTSingleAssemblyReferenceDisplayData1557) HasSelectedNamedPositionId() bool {
+	if o != nil && o.SelectedNamedPositionId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSelectedNamedPositionId gets a reference to the given string and assigns it to the SelectedNamedPositionId field.
+func (o *BTSingleAssemblyReferenceDisplayData1557) SetSelectedNamedPositionId(v string) {
+	o.SelectedNamedPositionId = &v
 }
 
 // GetTransform returns the Transform field value if set, zero value otherwise.
@@ -577,11 +643,17 @@ func (o BTSingleAssemblyReferenceDisplayData1557) MarshalJSON() ([]byte, error) 
 	if o.AssemblyDisplayData != nil {
 		toSerialize["assemblyDisplayData"] = o.AssemblyDisplayData
 	}
+	if o.AssemblyNamedPositions != nil {
+		toSerialize["assemblyNamedPositions"] = o.AssemblyNamedPositions
+	}
 	if o.HasConfiguration != nil {
 		toSerialize["hasConfiguration"] = o.HasConfiguration
 	}
 	if o.OccurrencesToExclude != nil {
 		toSerialize["occurrencesToExclude"] = o.OccurrencesToExclude
+	}
+	if o.SelectedNamedPositionId != nil {
+		toSerialize["selectedNamedPositionId"] = o.SelectedNamedPositionId
 	}
 	if o.Transform != nil {
 		toSerialize["transform"] = o.Transform

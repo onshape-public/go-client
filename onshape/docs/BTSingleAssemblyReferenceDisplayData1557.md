@@ -6,8 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **AssemblyDisplayData** | Pointer to [**BTRootAssemblyDisplayData96**](BTRootAssemblyDisplayData96.md) |  | [optional] 
+**AssemblyNamedPositions** | Pointer to [**[]BTAssemblyContextNamedPositionInfo3801**](BTAssemblyContextNamedPositionInfo3801.md) |  | [optional] 
 **HasConfiguration** | Pointer to **bool** |  | [optional] 
 **OccurrencesToExclude** | Pointer to [**[]BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**SelectedNamedPositionId** | Pointer to **string** |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 
 ## Methods
@@ -79,6 +81,31 @@ SetAssemblyDisplayData sets AssemblyDisplayData field to given value.
 
 HasAssemblyDisplayData returns a boolean if a field has been set.
 
+### GetAssemblyNamedPositions
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyNamedPositions() []BTAssemblyContextNamedPositionInfo3801`
+
+GetAssemblyNamedPositions returns the AssemblyNamedPositions field if non-nil, zero value otherwise.
+
+### GetAssemblyNamedPositionsOk
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetAssemblyNamedPositionsOk() (*[]BTAssemblyContextNamedPositionInfo3801, bool)`
+
+GetAssemblyNamedPositionsOk returns a tuple with the AssemblyNamedPositions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAssemblyNamedPositions
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) SetAssemblyNamedPositions(v []BTAssemblyContextNamedPositionInfo3801)`
+
+SetAssemblyNamedPositions sets AssemblyNamedPositions field to given value.
+
+### HasAssemblyNamedPositions
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) HasAssemblyNamedPositions() bool`
+
+HasAssemblyNamedPositions returns a boolean if a field has been set.
+
 ### GetHasConfiguration
 
 `func (o *BTSingleAssemblyReferenceDisplayData1557) GetHasConfiguration() bool`
@@ -128,6 +155,31 @@ SetOccurrencesToExclude sets OccurrencesToExclude field to given value.
 `func (o *BTSingleAssemblyReferenceDisplayData1557) HasOccurrencesToExclude() bool`
 
 HasOccurrencesToExclude returns a boolean if a field has been set.
+
+### GetSelectedNamedPositionId
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetSelectedNamedPositionId() string`
+
+GetSelectedNamedPositionId returns the SelectedNamedPositionId field if non-nil, zero value otherwise.
+
+### GetSelectedNamedPositionIdOk
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) GetSelectedNamedPositionIdOk() (*string, bool)`
+
+GetSelectedNamedPositionIdOk returns a tuple with the SelectedNamedPositionId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedNamedPositionId
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) SetSelectedNamedPositionId(v string)`
+
+SetSelectedNamedPositionId sets SelectedNamedPositionId field to given value.
+
+### HasSelectedNamedPositionId
+
+`func (o *BTSingleAssemblyReferenceDisplayData1557) HasSelectedNamedPositionId() bool`
+
+HasSelectedNamedPositionId returns a boolean if a field has been set.
 
 ### GetTransform
 

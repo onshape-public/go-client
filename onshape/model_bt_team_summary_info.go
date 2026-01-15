@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -892,6 +892,56 @@ func (o *BTTeamSummaryInfo) SetOwner(v BTOwnerInfo) {
 	o.GetActualInstance().(getResult).SetOwner(v)
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTTeamSummaryInfo) GetParentId() string {
+	type getResult interface {
+		GetParentId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTeamSummaryInfo) GetParentIdOk() (*string, bool) {
+	type getResult interface {
+		GetParentIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTTeamSummaryInfo) HasParentId() bool {
+	type getResult interface {
+		HasParentId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParentId()
+	} else {
+		return false
+	}
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTTeamSummaryInfo) SetParentId(v string) {
+	type getResult interface {
+		SetParentId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetParentId(v)
+}
+
 // GetPredefinedTeam returns the PredefinedTeam field value if set, zero value otherwise.
 func (o *BTTeamSummaryInfo) GetPredefinedTeam() int32 {
 	type getResult interface {
@@ -1352,6 +1402,7 @@ type base_BTTeamSummaryInfo struct {
 	// Name of the resource.
 	Name                  *string      `json:"name,omitempty"`
 	Owner                 *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId              *string      `json:"parentId,omitempty"`
 	PredefinedTeam        *int32       `json:"predefinedTeam,omitempty"`
 	PredefinedTeamMutable *bool        `json:"predefinedTeamMutable,omitempty"`
 	ProjectId             *string      `json:"projectId,omitempty"`
@@ -1923,6 +1974,38 @@ func (o *base_BTTeamSummaryInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
 }
 
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *base_BTTeamSummaryInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTeamSummaryInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *base_BTTeamSummaryInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *base_BTTeamSummaryInfo) SetParentId(v string) {
+	o.ParentId = &v
+}
+
 // GetPredefinedTeam returns the PredefinedTeam field value if set, zero value otherwise.
 func (o *base_BTTeamSummaryInfo) GetPredefinedTeam() int32 {
 	if o == nil || o.PredefinedTeam == nil {
@@ -2199,6 +2282,9 @@ func (o base_BTTeamSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
+	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
 	}
 	if o.PredefinedTeam != nil {
 		toSerialize["predefinedTeam"] = o.PredefinedTeam

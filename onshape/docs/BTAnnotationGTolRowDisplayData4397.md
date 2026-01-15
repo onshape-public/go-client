@@ -6,10 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ConstraintType** | Pointer to [**GBTGTolConstraintType**](GBTGTolConstraintType.md) |  | [optional] 
+**ExtendedConstraintType** | Pointer to [**GBTGTolExtendedConstraintType**](GBTGTolExtendedConstraintType.md) |  | [optional] 
 **Prefix** | Pointer to **string** |  | [optional] 
 **References** | Pointer to **[]string** |  | [optional] 
 **Suffix** | Pointer to **string** |  | [optional] 
 **Tolerance** | Pointer to **float64** |  | [optional] 
+**ToleranceSymbol0** | Pointer to **string** |  | [optional] 
+**ToleranceSymbol1** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -79,6 +82,31 @@ SetConstraintType sets ConstraintType field to given value.
 `func (o *BTAnnotationGTolRowDisplayData4397) HasConstraintType() bool`
 
 HasConstraintType returns a boolean if a field has been set.
+
+### GetExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintType() GBTGTolExtendedConstraintType`
+
+GetExtendedConstraintType returns the ExtendedConstraintType field if non-nil, zero value otherwise.
+
+### GetExtendedConstraintTypeOk
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetExtendedConstraintTypeOk() (*GBTGTolExtendedConstraintType, bool)`
+
+GetExtendedConstraintTypeOk returns a tuple with the ExtendedConstraintType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetExtendedConstraintType(v GBTGTolExtendedConstraintType)`
+
+SetExtendedConstraintType sets ExtendedConstraintType field to given value.
+
+### HasExtendedConstraintType
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasExtendedConstraintType() bool`
+
+HasExtendedConstraintType returns a boolean if a field has been set.
 
 ### GetPrefix
 
@@ -179,6 +207,56 @@ SetTolerance sets Tolerance field to given value.
 `func (o *BTAnnotationGTolRowDisplayData4397) HasTolerance() bool`
 
 HasTolerance returns a boolean if a field has been set.
+
+### GetToleranceSymbol0
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol0() string`
+
+GetToleranceSymbol0 returns the ToleranceSymbol0 field if non-nil, zero value otherwise.
+
+### GetToleranceSymbol0Ok
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol0Ok() (*string, bool)`
+
+GetToleranceSymbol0Ok returns a tuple with the ToleranceSymbol0 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToleranceSymbol0
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetToleranceSymbol0(v string)`
+
+SetToleranceSymbol0 sets ToleranceSymbol0 field to given value.
+
+### HasToleranceSymbol0
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasToleranceSymbol0() bool`
+
+HasToleranceSymbol0 returns a boolean if a field has been set.
+
+### GetToleranceSymbol1
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol1() string`
+
+GetToleranceSymbol1 returns the ToleranceSymbol1 field if non-nil, zero value otherwise.
+
+### GetToleranceSymbol1Ok
+
+`func (o *BTAnnotationGTolRowDisplayData4397) GetToleranceSymbol1Ok() (*string, bool)`
+
+GetToleranceSymbol1Ok returns a tuple with the ToleranceSymbol1 field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetToleranceSymbol1
+
+`func (o *BTAnnotationGTolRowDisplayData4397) SetToleranceSymbol1(v string)`
+
+SetToleranceSymbol1 sets ToleranceSymbol1 field to given value.
+
+### HasToleranceSymbol1
+
+`func (o *BTAnnotationGTolRowDisplayData4397) HasToleranceSymbol1() bool`
+
+HasToleranceSymbol1 returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1,7 +1,7 @@
 /*
 Onshape REST API
 
-## Welcome to the Onshape REST API Explorer  To use this API explorer, sign in to your [Onshape](https://cad.onshape.com) account in another tab, then click the **Try it out** button below (it toggles to a **Cancel** button when selected).  See the **[API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/)** for help navigating this API Explorer, including **[authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication)**.  **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser. Alternatively, you can use a private or incognito window.  ## See Also  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in  your Onshape applications.
+## Welcome to the Onshape REST API Explorer  **See the [API Explorer Guide](https://onshape-public.github.io/docs/api-intro/explorer/) for help navigating this page.**  ### Using this page 1. Sign in to your [Onshape](https://cad.onshape.com) account in another tab. 2. Click the `Try it out` button below. It toggles to a `Cancel` button when selected.  ### Authenticating To authenticate your calls, click the `Authorize` button. See [API Explorer Guide: Authentication](https://onshape-public.github.io/docs/api-intro/explorer/#authentication) for details. Calls made when authenticated via API Keys or OAuth count against your annual [API limits](https://onshape-public.github.io/docs/auth/limits/#annual-api-call-limits). * **Tip:** To ensure the current session isn't used when trying other authentication techniques, make sure to [remove the Onshape cookie](https://support.google.com/chrome/answer/95647#zippy=%2Cdelete-cookies-from-a-site) as per the instructions for your browser, or use a private or incognito window.  ### Additional resources  * [Onshape API Guide](https://onshape-public.github.io/docs/): Our full suite of developer guides, to be used as an accompaniment to this API Explorer. * [Onshape Developer Portal](https://cad.onshape.com/appstore/dev-portal): The Onshape portal for managing your API keys, OAuth2 credentials, your Onshape applications, and your Onshape App Store entries. * [Authentication Guide](https://onshape-public.github.io/docs/auth/): Our guide to using API keys, request signatures, and OAuth2 in your Onshape applications.
 
 Contact: api-support@onshape.zendesk.com
 */
@@ -36,6 +36,7 @@ type BTDocumentProcessingInfo struct {
 	// Name of the resource.
 	Name         *string      `json:"name,omitempty"`
 	Owner        *BTOwnerInfo `json:"owner,omitempty"`
+	ParentId     *string      `json:"parentId,omitempty"`
 	ProjectId    *string      `json:"projectId,omitempty"`
 	ResourceType *string      `json:"resourceType,omitempty"`
 	TreeHref     *string      `json:"treeHref,omitempty"`
@@ -65,7 +66,6 @@ type BTDocumentProcessingInfo struct {
 	Notes                                      *string                       `json:"notes,omitempty"`
 	NumberOfTimesCopied                        *int64                        `json:"numberOfTimesCopied,omitempty"`
 	NumberOfTimesReferenced                    *int64                        `json:"numberOfTimesReferenced,omitempty"`
-	ParentId                                   *string                       `json:"parentId,omitempty"`
 	Permission                                 *BTOldPermission              `json:"permission,omitempty"`
 	PermissionSet                              []string                      `json:"permissionSet,omitempty"`
 	Public                                     *bool                         `json:"public,omitempty"`
@@ -88,6 +88,7 @@ type BTDocumentProcessingInfo struct {
 	IsUpgradedToLatestVersion                  *bool                         `json:"isUpgradedToLatestVersion,omitempty"`
 	RequireApprovedDrawingTemplatesPreference  *bool                         `json:"requireApprovedDrawingTemplatesPreference,omitempty"`
 	TracingEnabled                             *bool                         `json:"tracingEnabled,omitempty"`
+	SplitAssembliesIntoMultipleDocuments       *bool                         `json:"splitAssembliesIntoMultipleDocuments,omitempty"`
 	TranslationEventKey                        *string                       `json:"translationEventKey,omitempty"`
 	TranslationId                              *string                       `json:"translationId,omitempty"`
 }
@@ -644,6 +645,38 @@ func (o *BTDocumentProcessingInfo) HasOwner() bool {
 // SetOwner gets a reference to the given BTOwnerInfo and assigns it to the Owner field.
 func (o *BTDocumentProcessingInfo) SetOwner(v BTOwnerInfo) {
 	o.Owner = &v
+}
+
+// GetParentId returns the ParentId field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetParentId() string {
+	if o == nil || o.ParentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentId
+}
+
+// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetParentIdOk() (*string, bool) {
+	if o == nil || o.ParentId == nil {
+		return nil, false
+	}
+	return o.ParentId, true
+}
+
+// HasParentId returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasParentId() bool {
+	if o != nil && o.ParentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentId gets a reference to the given string and assigns it to the ParentId field.
+func (o *BTDocumentProcessingInfo) SetParentId(v string) {
+	o.ParentId = &v
 }
 
 // GetProjectId returns the ProjectId field value if set, zero value otherwise.
@@ -1542,38 +1575,6 @@ func (o *BTDocumentProcessingInfo) SetNumberOfTimesReferenced(v int64) {
 	o.NumberOfTimesReferenced = &v
 }
 
-// GetParentId returns the ParentId field value if set, zero value otherwise.
-func (o *BTDocumentProcessingInfo) GetParentId() string {
-	if o == nil || o.ParentId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ParentId
-}
-
-// GetParentIdOk returns a tuple with the ParentId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentProcessingInfo) GetParentIdOk() (*string, bool) {
-	if o == nil || o.ParentId == nil {
-		return nil, false
-	}
-	return o.ParentId, true
-}
-
-// HasParentId returns a boolean if a field has been set.
-func (o *BTDocumentProcessingInfo) HasParentId() bool {
-	if o != nil && o.ParentId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParentId gets a reference to the given string and assigns it to the ParentId field.
-func (o *BTDocumentProcessingInfo) SetParentId(v string) {
-	o.ParentId = &v
-}
-
 // GetPermission returns the Permission field value if set, zero value otherwise.
 func (o *BTDocumentProcessingInfo) GetPermission() BTOldPermission {
 	if o == nil || o.Permission == nil {
@@ -2278,6 +2279,38 @@ func (o *BTDocumentProcessingInfo) SetTracingEnabled(v bool) {
 	o.TracingEnabled = &v
 }
 
+// GetSplitAssembliesIntoMultipleDocuments returns the SplitAssembliesIntoMultipleDocuments field value if set, zero value otherwise.
+func (o *BTDocumentProcessingInfo) GetSplitAssembliesIntoMultipleDocuments() bool {
+	if o == nil || o.SplitAssembliesIntoMultipleDocuments == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SplitAssembliesIntoMultipleDocuments
+}
+
+// GetSplitAssembliesIntoMultipleDocumentsOk returns a tuple with the SplitAssembliesIntoMultipleDocuments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentProcessingInfo) GetSplitAssembliesIntoMultipleDocumentsOk() (*bool, bool) {
+	if o == nil || o.SplitAssembliesIntoMultipleDocuments == nil {
+		return nil, false
+	}
+	return o.SplitAssembliesIntoMultipleDocuments, true
+}
+
+// HasSplitAssembliesIntoMultipleDocuments returns a boolean if a field has been set.
+func (o *BTDocumentProcessingInfo) HasSplitAssembliesIntoMultipleDocuments() bool {
+	if o != nil && o.SplitAssembliesIntoMultipleDocuments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSplitAssembliesIntoMultipleDocuments gets a reference to the given bool and assigns it to the SplitAssembliesIntoMultipleDocuments field.
+func (o *BTDocumentProcessingInfo) SetSplitAssembliesIntoMultipleDocuments(v bool) {
+	o.SplitAssembliesIntoMultipleDocuments = &v
+}
+
 // GetTranslationEventKey returns the TranslationEventKey field value if set, zero value otherwise.
 func (o *BTDocumentProcessingInfo) GetTranslationEventKey() string {
 	if o == nil || o.TranslationEventKey == nil {
@@ -2395,6 +2428,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	if o.Owner != nil {
 		toSerialize["owner"] = o.Owner
 	}
+	if o.ParentId != nil {
+		toSerialize["parentId"] = o.ParentId
+	}
 	if o.ProjectId != nil {
 		toSerialize["projectId"] = o.ProjectId
 	}
@@ -2479,9 +2515,6 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	if o.NumberOfTimesReferenced != nil {
 		toSerialize["numberOfTimesReferenced"] = o.NumberOfTimesReferenced
 	}
-	if o.ParentId != nil {
-		toSerialize["parentId"] = o.ParentId
-	}
 	if o.Permission != nil {
 		toSerialize["permission"] = o.Permission
 	}
@@ -2547,6 +2580,9 @@ func (o BTDocumentProcessingInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.TracingEnabled != nil {
 		toSerialize["tracingEnabled"] = o.TracingEnabled
+	}
+	if o.SplitAssembliesIntoMultipleDocuments != nil {
+		toSerialize["splitAssembliesIntoMultipleDocuments"] = o.SplitAssembliesIntoMultipleDocuments
 	}
 	if o.TranslationEventKey != nil {
 		toSerialize["translationEventKey"] = o.TranslationEventKey
