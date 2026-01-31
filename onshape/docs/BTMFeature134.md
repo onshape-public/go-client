@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
 **ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) | A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation. | [optional] 
+**ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
 **Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
@@ -289,6 +290,31 @@ SetParameters sets Parameters field to given value.
 `func (o *BTMFeature134) HasParameters() bool`
 
 HasParameters returns a boolean if a field has been set.
+
+### GetParentSuppressed
+
+`func (o *BTMFeature134) GetParentSuppressed() bool`
+
+GetParentSuppressed returns the ParentSuppressed field if non-nil, zero value otherwise.
+
+### GetParentSuppressedOk
+
+`func (o *BTMFeature134) GetParentSuppressedOk() (*bool, bool)`
+
+GetParentSuppressedOk returns a tuple with the ParentSuppressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentSuppressed
+
+`func (o *BTMFeature134) SetParentSuppressed(v bool)`
+
+SetParentSuppressed sets ParentSuppressed field to given value.
+
+### HasParentSuppressed
+
+`func (o *BTMFeature134) HasParentSuppressed() bool`
+
+HasParentSuppressed returns a boolean if a field has been set.
 
 ### GetReturnAfterSubfeatures
 

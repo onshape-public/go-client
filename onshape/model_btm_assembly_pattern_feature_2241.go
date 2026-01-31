@@ -39,6 +39,7 @@ type BTMAssemblyPatternFeature2241 struct {
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParameterLibraries                     []BTMParameter1                           `json:"parameterLibraries,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
+	ParentSuppressed                       *bool                                     `json:"parentSuppressed,omitempty"`
 	PatternType                            *GBTPatternType                           `json:"patternType,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
@@ -584,6 +585,38 @@ func (o *BTMAssemblyPatternFeature2241) SetParametricInstanceFeature(v bool) {
 	o.ParametricInstanceFeature = &v
 }
 
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTMAssemblyPatternFeature2241) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMAssemblyPatternFeature2241) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTMAssemblyPatternFeature2241) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTMAssemblyPatternFeature2241) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
+}
+
 // GetPatternType returns the PatternType field value if set, zero value otherwise.
 func (o *BTMAssemblyPatternFeature2241) GetPatternType() GBTPatternType {
 	if o == nil || o.PatternType == nil {
@@ -921,6 +954,9 @@ func (o BTMAssemblyPatternFeature2241) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.PatternType != nil {
 		toSerialize["patternType"] = o.PatternType

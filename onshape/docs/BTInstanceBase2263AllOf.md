@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **ParametricOutputInstance** | Pointer to **bool** |  | [optional] 
 **ParametricPartStudioChildInstance** | Pointer to **bool** |  | [optional] 
 **ParametricPartStudioInstance** | Pointer to **bool** |  | [optional] 
+**ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **PartInstance** | Pointer to **bool** |  | [optional] 
 **Releasable** | Pointer to **bool** |  | [optional] 
 **RevisionCustomData** | Pointer to [**BTRevisionCustomData2090**](BTRevisionCustomData2090.md) |  | [optional] 
@@ -451,6 +452,31 @@ SetParametricPartStudioInstance sets ParametricPartStudioInstance field to given
 `func (o *BTInstanceBase2263AllOf) HasParametricPartStudioInstance() bool`
 
 HasParametricPartStudioInstance returns a boolean if a field has been set.
+
+### GetParentSuppressed
+
+`func (o *BTInstanceBase2263AllOf) GetParentSuppressed() bool`
+
+GetParentSuppressed returns the ParentSuppressed field if non-nil, zero value otherwise.
+
+### GetParentSuppressedOk
+
+`func (o *BTInstanceBase2263AllOf) GetParentSuppressedOk() (*bool, bool)`
+
+GetParentSuppressedOk returns a tuple with the ParentSuppressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentSuppressed
+
+`func (o *BTInstanceBase2263AllOf) SetParentSuppressed(v bool)`
+
+SetParentSuppressed sets ParentSuppressed field to given value.
+
+### HasParentSuppressed
+
+`func (o *BTInstanceBase2263AllOf) HasParentSuppressed() bool`
+
+HasParentSuppressed returns a boolean if a field has been set.
 
 ### GetPartInstance
 

@@ -27,6 +27,7 @@ type BTCenterlineDimensionDisplayData1798 struct {
 	Id                    *string                 `json:"id,omitempty"`
 	IsAnnotationDimension *bool                   `json:"isAnnotationDimension,omitempty"`
 	IsAssociatedWithFlat  *bool                   `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived             *bool                   `json:"isDerived,omitempty"`
 	IsDriven              *bool                   `json:"isDriven,omitempty"`
 	IsOverDefined         *bool                   `json:"isOverDefined,omitempty"`
 	LowerTolerance        *float64                `json:"lowerTolerance,omitempty"`
@@ -386,6 +387,38 @@ func (o *BTCenterlineDimensionDisplayData1798) HasIsAssociatedWithFlat() bool {
 // SetIsAssociatedWithFlat gets a reference to the given bool and assigns it to the IsAssociatedWithFlat field.
 func (o *BTCenterlineDimensionDisplayData1798) SetIsAssociatedWithFlat(v bool) {
 	o.IsAssociatedWithFlat = &v
+}
+
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTCenterlineDimensionDisplayData1798) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCenterlineDimensionDisplayData1798) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTCenterlineDimensionDisplayData1798) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTCenterlineDimensionDisplayData1798) SetIsDerived(v bool) {
+	o.IsDerived = &v
 }
 
 // GetIsDriven returns the IsDriven field value if set, zero value otherwise.
@@ -1131,6 +1164,9 @@ func (o BTCenterlineDimensionDisplayData1798) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsAssociatedWithFlat != nil {
 		toSerialize["isAssociatedWithFlat"] = o.IsAssociatedWithFlat
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	if o.IsDriven != nil {
 		toSerialize["isDriven"] = o.IsDriven

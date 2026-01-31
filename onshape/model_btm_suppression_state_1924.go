@@ -30,6 +30,11 @@ func (o *BTMSuppressionStateExpression1811) AsBTMSuppressionState1924() *BTMSupp
 	return &BTMSuppressionState1924{o}
 }
 
+// BTMSuppressionStateParentSuppressed5404AsBTMSuppressionState1924 is a convenience function that returns BTMSuppressionStateParentSuppressed5404 wrapped in BTMSuppressionState1924
+func (o *BTMSuppressionStateParentSuppressed5404) AsBTMSuppressionState1924() *BTMSuppressionState1924 {
+	return &BTMSuppressionState1924{o}
+}
+
 // NewBTMSuppressionState1924 instantiates a new BTMSuppressionState1924 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -197,6 +202,56 @@ func (o *BTMSuppressionState1924) SetNodeId(v string) {
 	o.GetActualInstance().(getResult).SetNodeId(v)
 }
 
+// GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
+func (o *BTMSuppressionState1924) GetSuppressionConfigured() bool {
+	type getResult interface {
+		GetSuppressionConfigured() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionConfigured()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSuppressionState1924) GetSuppressionConfiguredOk() (*bool, bool) {
+	type getResult interface {
+		GetSuppressionConfiguredOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetSuppressionConfiguredOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasSuppressionConfigured returns a boolean if a field has been set.
+func (o *BTMSuppressionState1924) HasSuppressionConfigured() bool {
+	type getResult interface {
+		HasSuppressionConfigured() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasSuppressionConfigured()
+	} else {
+		return false
+	}
+}
+
+// SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
+func (o *BTMSuppressionState1924) SetSuppressionConfigured(v bool) {
+	type getResult interface {
+		SetSuppressionConfigured(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetSuppressionConfigured(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 	var err error
@@ -232,6 +287,20 @@ func (dst *BTMSuppressionState1924) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMSuppressionState1924 = nil
 			return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateExpression1811: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSuppressionStateParentSuppressed-5404'
+	if jsonDict["btType"] == "BTMSuppressionStateParentSuppressed-5404" {
+		// try to unmarshal JSON data into BTMSuppressionStateParentSuppressed5404
+		var qr *BTMSuppressionStateParentSuppressed5404
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMSuppressionState1924 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMSuppressionState1924 = nil
+			return fmt.Errorf("failed to unmarshal BTMSuppressionState1924 as BTMSuppressionStateParentSuppressed5404: %s", err.Error())
 		}
 	}
 
@@ -304,8 +373,9 @@ type base_BTMSuppressionState1924 struct {
 	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string `json:"importMicroversion,omitempty"`
-	NodeId             *string `json:"nodeId,omitempty"`
+	ImportMicroversion    *string `json:"importMicroversion,omitempty"`
+	NodeId                *string `json:"nodeId,omitempty"`
+	SuppressionConfigured *bool   `json:"suppressionConfigured,omitempty"`
 }
 
 // Newbase_BTMSuppressionState1924 instantiates a new base_BTMSuppressionState1924 object
@@ -421,6 +491,38 @@ func (o *base_BTMSuppressionState1924) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
+func (o *base_BTMSuppressionState1924) GetSuppressionConfigured() bool {
+	if o == nil || o.SuppressionConfigured == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SuppressionConfigured
+}
+
+// GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSuppressionState1924) GetSuppressionConfiguredOk() (*bool, bool) {
+	if o == nil || o.SuppressionConfigured == nil {
+		return nil, false
+	}
+	return o.SuppressionConfigured, true
+}
+
+// HasSuppressionConfigured returns a boolean if a field has been set.
+func (o *base_BTMSuppressionState1924) HasSuppressionConfigured() bool {
+	if o != nil && o.SuppressionConfigured != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
+func (o *base_BTMSuppressionState1924) SetSuppressionConfigured(v bool) {
+	o.SuppressionConfigured = &v
+}
+
 func (o base_BTMSuppressionState1924) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMNode19, errBTMNode19 := json.Marshal(o.BTMNode19)
@@ -439,6 +541,9 @@ func (o base_BTMSuppressionState1924) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.SuppressionConfigured != nil {
+		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
 	}
 	return json.Marshal(toSerialize)
 }

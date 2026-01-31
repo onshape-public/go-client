@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **ClientId** | Pointer to **string** |  | [optional] 
 **CompanyId** | Pointer to **string** | Company admins can register webhooks to listen to all company events. | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
-**Description** | Pointer to **string** |  | [optional] 
+**Description** | Pointer to **string** | Webhook description. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **Events** | Pointer to **[]string** | List of events for which webhook callback is invoked. | [optional] 
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] [default to true]
 **LinkDocumentId** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** | Webhook name. | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -368,6 +369,31 @@ SetLinkDocumentId sets LinkDocumentId field to given value.
 `func (o *BTWebhookParams) HasLinkDocumentId() bool`
 
 HasLinkDocumentId returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *BTWebhookParams) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *BTWebhookParams) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *BTWebhookParams) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *BTWebhookParams) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetOptions
 

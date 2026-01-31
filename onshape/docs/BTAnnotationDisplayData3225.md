@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **DxdySegments** | Pointer to [**[]BTVector2d1812**](BTVector2d1812.md) |  | [optional] 
 **IsConstrainedToPlane** | Pointer to **bool** |  | [optional] 
 **IsDeletion** | Pointer to **bool** |  | [optional] 
+**IsDerived** | Pointer to **bool** |  | [optional] 
 **MainConstraintId** | Pointer to **string** |  | [optional] 
 **MainFeatureId** | Pointer to **string** |  | [optional] 
 **MainParameterId** | Pointer to **string** |  | [optional] 
@@ -235,6 +236,31 @@ SetIsDeletion sets IsDeletion field to given value.
 `func (o *BTAnnotationDisplayData3225) HasIsDeletion() bool`
 
 HasIsDeletion returns a boolean if a field has been set.
+
+### GetIsDerived
+
+`func (o *BTAnnotationDisplayData3225) GetIsDerived() bool`
+
+GetIsDerived returns the IsDerived field if non-nil, zero value otherwise.
+
+### GetIsDerivedOk
+
+`func (o *BTAnnotationDisplayData3225) GetIsDerivedOk() (*bool, bool)`
+
+GetIsDerivedOk returns a tuple with the IsDerived field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDerived
+
+`func (o *BTAnnotationDisplayData3225) SetIsDerived(v bool)`
+
+SetIsDerived sets IsDerived field to given value.
+
+### HasIsDerived
+
+`func (o *BTAnnotationDisplayData3225) HasIsDerived() bool`
+
+HasIsDerived returns a boolean if a field has been set.
 
 ### GetMainConstraintId
 

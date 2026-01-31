@@ -3451,6 +3451,8 @@
 
 * `GBTErrorStringEnumInvalidColumnRegex` (value: `"INVALID_COLUMN_REGEX"`)
 
+* `GBTErrorStringEnumSheetMetalLoftMergeScopeShift` (value: `"SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

@@ -21,6 +21,7 @@ type BTDatumTableRowMetadata3060 struct {
 	CrossHighlightDataIfAny *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	AnnotationId            *string                            `json:"annotationId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753     `json:"crossHighlightData,omitempty"`
+	IsDerived               *bool                              `json:"isDerived,omitempty"`
 }
 
 // NewBTDatumTableRowMetadata3060 instantiates a new BTDatumTableRowMetadata3060 object
@@ -168,6 +169,38 @@ func (o *BTDatumTableRowMetadata3060) SetCrossHighlightData(v BTTableCrossHighli
 	o.CrossHighlightData = &v
 }
 
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTDatumTableRowMetadata3060) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDatumTableRowMetadata3060) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTDatumTableRowMetadata3060) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTDatumTableRowMetadata3060) SetIsDerived(v bool) {
+	o.IsDerived = &v
+}
+
 func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
@@ -189,6 +222,9 @@ func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	return json.Marshal(toSerialize)
 }

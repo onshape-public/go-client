@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **IsAnnotationDimension** | Pointer to **bool** |  | [optional] 
 **IsAssociatedWithFlat** | Pointer to **bool** |  | [optional] 
+**IsDerived** | Pointer to **bool** |  | [optional] 
 **IsDriven** | Pointer to **bool** |  | [optional] 
 **IsOverDefined** | Pointer to **bool** |  | [optional] 
 **LowerTolerance** | Pointer to **float64** |  | [optional] 
@@ -295,6 +296,31 @@ SetIsAssociatedWithFlat sets IsAssociatedWithFlat field to given value.
 `func (o *BTDimensionDisplayData323) HasIsAssociatedWithFlat() bool`
 
 HasIsAssociatedWithFlat returns a boolean if a field has been set.
+
+### GetIsDerived
+
+`func (o *BTDimensionDisplayData323) GetIsDerived() bool`
+
+GetIsDerived returns the IsDerived field if non-nil, zero value otherwise.
+
+### GetIsDerivedOk
+
+`func (o *BTDimensionDisplayData323) GetIsDerivedOk() (*bool, bool)`
+
+GetIsDerivedOk returns a tuple with the IsDerived field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDerived
+
+`func (o *BTDimensionDisplayData323) SetIsDerived(v bool)`
+
+SetIsDerived sets IsDerived field to given value.
+
+### HasIsDerived
+
+`func (o *BTDimensionDisplayData323) HasIsDerived() bool`
+
+HasIsDerived returns a boolean if a field has been set.
 
 ### GetIsDriven
 

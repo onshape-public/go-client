@@ -37,6 +37,7 @@ type BTMSketchCurveSegment155 struct {
 	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
 	CenterId                            *string                   `json:"centerId,omitempty"`
 	CurvedTextIds                       []string                  `json:"curvedTextIds,omitempty"`
+	Geometry                            *BTCurveGeometry114       `json:"geometry,omitempty"`
 	InternalIds                         []string                  `json:"internalIds,omitempty"`
 	EndParam                            *float64                  `json:"endParam,omitempty"`
 	EndPointId                          *string                   `json:"endPointId,omitempty"`
@@ -670,6 +671,38 @@ func (o *BTMSketchCurveSegment155) SetCurvedTextIds(v []string) {
 	o.CurvedTextIds = v
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *BTMSketchCurveSegment155) GetGeometry() BTCurveGeometry114 {
+	if o == nil || o.Geometry == nil {
+		var ret BTCurveGeometry114
+		return ret
+	}
+	return *o.Geometry
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurveSegment155) GetGeometryOk() (*BTCurveGeometry114, bool) {
+	if o == nil || o.Geometry == nil {
+		return nil, false
+	}
+	return o.Geometry, true
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *BTMSketchCurveSegment155) HasGeometry() bool {
+	if o != nil && o.Geometry != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
+func (o *BTMSketchCurveSegment155) SetGeometry(v BTCurveGeometry114) {
+	o.Geometry = &v
+}
+
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *BTMSketchCurveSegment155) GetInternalIds() []string {
 	if o == nil || o.InternalIds == nil {
@@ -928,6 +961,9 @@ func (o BTMSketchCurveSegment155) MarshalJSON() ([]byte, error) {
 	}
 	if o.CurvedTextIds != nil {
 		toSerialize["curvedTextIds"] = o.CurvedTextIds
+	}
+	if o.Geometry != nil {
+		toSerialize["geometry"] = o.Geometry
 	}
 	if o.InternalIds != nil {
 		toSerialize["internalIds"] = o.InternalIds

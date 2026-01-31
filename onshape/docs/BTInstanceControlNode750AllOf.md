@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
+**ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressedFieldIndex** | Pointer to **int32** |  | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
@@ -54,6 +55,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTInstanceControlNode750AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetParentSuppressed
+
+`func (o *BTInstanceControlNode750AllOf) GetParentSuppressed() bool`
+
+GetParentSuppressed returns the ParentSuppressed field if non-nil, zero value otherwise.
+
+### GetParentSuppressedOk
+
+`func (o *BTInstanceControlNode750AllOf) GetParentSuppressedOk() (*bool, bool)`
+
+GetParentSuppressedOk returns a tuple with the ParentSuppressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentSuppressed
+
+`func (o *BTInstanceControlNode750AllOf) SetParentSuppressed(v bool)`
+
+SetParentSuppressed sets ParentSuppressed field to given value.
+
+### HasParentSuppressed
+
+`func (o *BTInstanceControlNode750AllOf) HasParentSuppressed() bool`
+
+HasParentSuppressed returns a boolean if a field has been set.
 
 ### GetSuppressed
 

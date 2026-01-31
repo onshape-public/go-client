@@ -856,7 +856,7 @@ func main() {
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     elementType := openapiclient.GBTElementType("PARTSTUDIO") // GBTElementType | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. (optional)
     elementId := "elementId_example" // string | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. (optional)
-    withZipContents := true // bool | Returns the names of the files inside a zip file tab. (optional) (default to false)
+    withZipContents := true // bool | When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -893,7 +893,7 @@ Name | Type | Description  | Notes
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **elementType** | [**GBTElementType**](GBTElementType.md) | If specified, information for elements of this type are returned. Note, the folder structure is not affected by this filter. | 
  **elementId** | **string** | If specified, only the element with this id is returned. Note, the folder structure is not affected by this filter. | 
- **withZipContents** | **bool** | Returns the names of the files inside a zip file tab. | [default to false]
+ **withZipContents** | **bool** | When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files. | [default to false]
 
 ### Return type
 
@@ -1307,7 +1307,7 @@ func main() {
     elementType := "elementType_example" // string |  (optional) (default to "")
     elementId := "elementId_example" // string |  (optional) (default to "")
     withThumbnails := true // bool |  (optional) (default to false)
-    withZipContents := true // bool | Returns the names of the files inside a zip file tab. (optional) (default to false)
+    withZipContents := true // bool | When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files. (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -1345,7 +1345,7 @@ Name | Type | Description  | Notes
  **elementType** | **string** |  | [default to &quot;&quot;]
  **elementId** | **string** |  | [default to &quot;&quot;]
  **withThumbnails** | **bool** |  | [default to false]
- **withZipContents** | **bool** | Returns the names of the files inside a zip file tab. | [default to false]
+ **withZipContents** | **bool** | When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files. | [default to false]
 
 ### Return type
 

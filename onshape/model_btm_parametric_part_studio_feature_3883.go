@@ -39,6 +39,7 @@ type BTMParametricPartStudioFeature3883 struct {
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParameterLibraries                     []BTMParameter1                           `json:"parameterLibraries,omitempty"`
 	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
+	ParentSuppressed                       *bool                                     `json:"parentSuppressed,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
@@ -583,6 +584,38 @@ func (o *BTMParametricPartStudioFeature3883) SetParametricInstanceFeature(v bool
 	o.ParametricInstanceFeature = &v
 }
 
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTMParametricPartStudioFeature3883) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParametricPartStudioFeature3883) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTMParametricPartStudioFeature3883) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTMParametricPartStudioFeature3883) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
+}
+
 // GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
 func (o *BTMParametricPartStudioFeature3883) GetReturnAfterSubfeatures() bool {
 	if o == nil || o.ReturnAfterSubfeatures == nil {
@@ -888,6 +921,9 @@ func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.ReturnAfterSubfeatures != nil {
 		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures

@@ -19,9 +19,11 @@ type BTTranslateFormatParams struct {
 	// If true, parts with faults are imported. If false, faulty parts are omitted.
 	AllowFaultyParts *bool `json:"allowFaultyParts,omitempty"`
 	// Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry.
-	AngularTolerance   *float64 `json:"angularTolerance,omitempty"`
-	BlobElementId      *string  `json:"blobElementId,omitempty"`
-	BlobMicroversionId *string  `json:"blobMicroversionId,omitempty"`
+	AngularTolerance *float64 `json:"angularTolerance,omitempty"`
+	// Determines the font size in workspace units used for the MBD annotations text export
+	AnnotationsFontHeightInMillimeters *float64 `json:"annotationsFontHeightInMillimeters,omitempty"`
+	BlobElementId                      *string  `json:"blobElementId,omitempty"`
+	BlobMicroversionId                 *string  `json:"blobMicroversionId,omitempty"`
 	// Folder id where to store the exported model.
 	CloudObjectId *string `json:"cloudObjectId,omitempty"`
 	// Account id to access the cloud storage.
@@ -255,6 +257,38 @@ func (o *BTTranslateFormatParams) HasAngularTolerance() bool {
 // SetAngularTolerance gets a reference to the given float64 and assigns it to the AngularTolerance field.
 func (o *BTTranslateFormatParams) SetAngularTolerance(v float64) {
 	o.AngularTolerance = &v
+}
+
+// GetAnnotationsFontHeightInMillimeters returns the AnnotationsFontHeightInMillimeters field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetAnnotationsFontHeightInMillimeters() float64 {
+	if o == nil || o.AnnotationsFontHeightInMillimeters == nil {
+		var ret float64
+		return ret
+	}
+	return *o.AnnotationsFontHeightInMillimeters
+}
+
+// GetAnnotationsFontHeightInMillimetersOk returns a tuple with the AnnotationsFontHeightInMillimeters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetAnnotationsFontHeightInMillimetersOk() (*float64, bool) {
+	if o == nil || o.AnnotationsFontHeightInMillimeters == nil {
+		return nil, false
+	}
+	return o.AnnotationsFontHeightInMillimeters, true
+}
+
+// HasAnnotationsFontHeightInMillimeters returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasAnnotationsFontHeightInMillimeters() bool {
+	if o != nil && o.AnnotationsFontHeightInMillimeters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationsFontHeightInMillimeters gets a reference to the given float64 and assigns it to the AnnotationsFontHeightInMillimeters field.
+func (o *BTTranslateFormatParams) SetAnnotationsFontHeightInMillimeters(v float64) {
+	o.AnnotationsFontHeightInMillimeters = &v
 }
 
 // GetBlobElementId returns the BlobElementId field value if set, zero value otherwise.
@@ -3328,6 +3362,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.AngularTolerance != nil {
 		toSerialize["angularTolerance"] = o.AngularTolerance
+	}
+	if o.AnnotationsFontHeightInMillimeters != nil {
+		toSerialize["annotationsFontHeightInMillimeters"] = o.AnnotationsFontHeightInMillimeters
 	}
 	if o.BlobElementId != nil {
 		toSerialize["blobElementId"] = o.BlobElementId

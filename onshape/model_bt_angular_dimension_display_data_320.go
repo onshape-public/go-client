@@ -542,6 +542,56 @@ func (o *BTAngularDimensionDisplayData320) SetIsAssociatedWithFlat(v bool) {
 	o.GetActualInstance().(getResult).SetIsAssociatedWithFlat(v)
 }
 
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetIsDerived() bool {
+	type getResult interface {
+		GetIsDerived() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsDerived()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetIsDerivedOk() (*bool, bool) {
+	type getResult interface {
+		GetIsDerivedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsDerivedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasIsDerived() bool {
+	type getResult interface {
+		HasIsDerived() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsDerived()
+	} else {
+		return false
+	}
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTAngularDimensionDisplayData320) SetIsDerived(v bool) {
+	type getResult interface {
+		SetIsDerived(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsDerived(v)
+}
+
 // GetIsDriven returns the IsDriven field value if set, zero value otherwise.
 func (o *BTAngularDimensionDisplayData320) GetIsDriven() bool {
 	type getResult interface {
@@ -1793,6 +1843,7 @@ type base_BTAngularDimensionDisplayData320 struct {
 	Id                    *string                `json:"id,omitempty"`
 	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
 	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived             *bool                  `json:"isDerived,omitempty"`
 	IsDriven              *bool                  `json:"isDriven,omitempty"`
 	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
 	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
@@ -2153,6 +2204,38 @@ func (o *base_BTAngularDimensionDisplayData320) HasIsAssociatedWithFlat() bool {
 // SetIsAssociatedWithFlat gets a reference to the given bool and assigns it to the IsAssociatedWithFlat field.
 func (o *base_BTAngularDimensionDisplayData320) SetIsAssociatedWithFlat(v bool) {
 	o.IsAssociatedWithFlat = &v
+}
+
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *base_BTAngularDimensionDisplayData320) SetIsDerived(v bool) {
+	o.IsDerived = &v
 }
 
 // GetIsDriven returns the IsDriven field value if set, zero value otherwise.
@@ -2930,6 +3013,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsAssociatedWithFlat != nil {
 		toSerialize["isAssociatedWithFlat"] = o.IsAssociatedWithFlat
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	if o.IsDriven != nil {
 		toSerialize["isDriven"] = o.IsDriven

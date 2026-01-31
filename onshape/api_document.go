@@ -1340,7 +1340,7 @@ func (r ApiGetDocumentContentsRequest) ElementId(elementId string) ApiGetDocumen
 	return r
 }
 
-// Returns the names of the files inside a zip file tab.
+// When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files.
 func (r ApiGetDocumentContentsRequest) WithZipContents(withZipContents bool) ApiGetDocumentContentsRequest {
 	r.withZipContents = &withZipContents
 	return r
@@ -2166,7 +2166,7 @@ func (r ApiGetElementsInDocumentRequest) WithThumbnails(withThumbnails bool) Api
 	return r
 }
 
-// Returns the names of the files inside a zip file tab.
+// When true, returns the names of the files inside each zip file tab. Ignored if the document contains more than 10 zip files.
 func (r ApiGetElementsInDocumentRequest) WithZipContents(withZipContents bool) ApiGetElementsInDocumentRequest {
 	r.withZipContents = &withZipContents
 	return r

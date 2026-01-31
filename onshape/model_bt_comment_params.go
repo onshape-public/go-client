@@ -16,23 +16,29 @@ import (
 
 // BTCommentParams struct for BTCommentParams
 type BTCommentParams struct {
+	AnnotationId    *string `json:"annotationId,omitempty"`
+	AnnotationType  *int32  `json:"annotationType,omitempty"`
 	AssemblyFeature *string `json:"assemblyFeature,omitempty"`
 	// Assign the comment during creation. Comments cannot be reassigned during an update at this time.
-	Assignee          *string            `json:"assignee,omitempty"`
-	Coordinates       *CoordinatesParams `json:"coordinates,omitempty"`
-	DocumentId        *string            `json:"documentId,omitempty"`
-	ElementFeature    *string            `json:"elementFeature,omitempty"`
-	ElementId         *string            `json:"elementId,omitempty"`
-	ElementOccurrence *string            `json:"elementOccurrence,omitempty"`
-	ElementQuery      *string            `json:"elementQuery,omitempty"`
-	Id                *string            `json:"id,omitempty"`
-	Message           *string            `json:"message,omitempty"`
-	ObjectId          *string            `json:"objectId,omitempty"`
-	ObjectType        *int32             `json:"objectType,omitempty"`
-	ParentId          *string            `json:"parentId,omitempty"`
-	VersionId         *string            `json:"versionId,omitempty"`
-	ViewData          *BTViewDataParams  `json:"viewData,omitempty"`
-	WorkspaceId       *string            `json:"workspaceId,omitempty"`
+	Assignee              *string            `json:"assignee,omitempty"`
+	Coordinates           *CoordinatesParams `json:"coordinates,omitempty"`
+	DimensionConstraintId *string            `json:"dimensionConstraintId,omitempty"`
+	DimensionFeatureId    *string            `json:"dimensionFeatureId,omitempty"`
+	DimensionParameterId  *string            `json:"dimensionParameterId,omitempty"`
+	DimensionPartQuery    *string            `json:"dimensionPartQuery,omitempty"`
+	DocumentId            *string            `json:"documentId,omitempty"`
+	ElementFeature        *string            `json:"elementFeature,omitempty"`
+	ElementId             *string            `json:"elementId,omitempty"`
+	ElementOccurrence     *string            `json:"elementOccurrence,omitempty"`
+	ElementQuery          *string            `json:"elementQuery,omitempty"`
+	Id                    *string            `json:"id,omitempty"`
+	Message               *string            `json:"message,omitempty"`
+	ObjectId              *string            `json:"objectId,omitempty"`
+	ObjectType            *int32             `json:"objectType,omitempty"`
+	ParentId              *string            `json:"parentId,omitempty"`
+	VersionId             *string            `json:"versionId,omitempty"`
+	ViewData              *BTViewDataParams  `json:"viewData,omitempty"`
+	WorkspaceId           *string            `json:"workspaceId,omitempty"`
 }
 
 // NewBTCommentParams instantiates a new BTCommentParams object
@@ -50,6 +56,70 @@ func NewBTCommentParams() *BTCommentParams {
 func NewBTCommentParamsWithDefaults() *BTCommentParams {
 	this := BTCommentParams{}
 	return &this
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTCommentParams) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTCommentParams) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTCommentParams) SetAnnotationId(v string) {
+	o.AnnotationId = &v
+}
+
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *BTCommentParams) GetAnnotationType() int32 {
+	if o == nil || o.AnnotationType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.AnnotationType
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetAnnotationTypeOk() (*int32, bool) {
+	if o == nil || o.AnnotationType == nil {
+		return nil, false
+	}
+	return o.AnnotationType, true
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *BTCommentParams) HasAnnotationType() bool {
+	if o != nil && o.AnnotationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationType gets a reference to the given int32 and assigns it to the AnnotationType field.
+func (o *BTCommentParams) SetAnnotationType(v int32) {
+	o.AnnotationType = &v
 }
 
 // GetAssemblyFeature returns the AssemblyFeature field value if set, zero value otherwise.
@@ -146,6 +216,134 @@ func (o *BTCommentParams) HasCoordinates() bool {
 // SetCoordinates gets a reference to the given CoordinatesParams and assigns it to the Coordinates field.
 func (o *BTCommentParams) SetCoordinates(v CoordinatesParams) {
 	o.Coordinates = &v
+}
+
+// GetDimensionConstraintId returns the DimensionConstraintId field value if set, zero value otherwise.
+func (o *BTCommentParams) GetDimensionConstraintId() string {
+	if o == nil || o.DimensionConstraintId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DimensionConstraintId
+}
+
+// GetDimensionConstraintIdOk returns a tuple with the DimensionConstraintId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetDimensionConstraintIdOk() (*string, bool) {
+	if o == nil || o.DimensionConstraintId == nil {
+		return nil, false
+	}
+	return o.DimensionConstraintId, true
+}
+
+// HasDimensionConstraintId returns a boolean if a field has been set.
+func (o *BTCommentParams) HasDimensionConstraintId() bool {
+	if o != nil && o.DimensionConstraintId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDimensionConstraintId gets a reference to the given string and assigns it to the DimensionConstraintId field.
+func (o *BTCommentParams) SetDimensionConstraintId(v string) {
+	o.DimensionConstraintId = &v
+}
+
+// GetDimensionFeatureId returns the DimensionFeatureId field value if set, zero value otherwise.
+func (o *BTCommentParams) GetDimensionFeatureId() string {
+	if o == nil || o.DimensionFeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DimensionFeatureId
+}
+
+// GetDimensionFeatureIdOk returns a tuple with the DimensionFeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetDimensionFeatureIdOk() (*string, bool) {
+	if o == nil || o.DimensionFeatureId == nil {
+		return nil, false
+	}
+	return o.DimensionFeatureId, true
+}
+
+// HasDimensionFeatureId returns a boolean if a field has been set.
+func (o *BTCommentParams) HasDimensionFeatureId() bool {
+	if o != nil && o.DimensionFeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDimensionFeatureId gets a reference to the given string and assigns it to the DimensionFeatureId field.
+func (o *BTCommentParams) SetDimensionFeatureId(v string) {
+	o.DimensionFeatureId = &v
+}
+
+// GetDimensionParameterId returns the DimensionParameterId field value if set, zero value otherwise.
+func (o *BTCommentParams) GetDimensionParameterId() string {
+	if o == nil || o.DimensionParameterId == nil {
+		var ret string
+		return ret
+	}
+	return *o.DimensionParameterId
+}
+
+// GetDimensionParameterIdOk returns a tuple with the DimensionParameterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetDimensionParameterIdOk() (*string, bool) {
+	if o == nil || o.DimensionParameterId == nil {
+		return nil, false
+	}
+	return o.DimensionParameterId, true
+}
+
+// HasDimensionParameterId returns a boolean if a field has been set.
+func (o *BTCommentParams) HasDimensionParameterId() bool {
+	if o != nil && o.DimensionParameterId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDimensionParameterId gets a reference to the given string and assigns it to the DimensionParameterId field.
+func (o *BTCommentParams) SetDimensionParameterId(v string) {
+	o.DimensionParameterId = &v
+}
+
+// GetDimensionPartQuery returns the DimensionPartQuery field value if set, zero value otherwise.
+func (o *BTCommentParams) GetDimensionPartQuery() string {
+	if o == nil || o.DimensionPartQuery == nil {
+		var ret string
+		return ret
+	}
+	return *o.DimensionPartQuery
+}
+
+// GetDimensionPartQueryOk returns a tuple with the DimensionPartQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetDimensionPartQueryOk() (*string, bool) {
+	if o == nil || o.DimensionPartQuery == nil {
+		return nil, false
+	}
+	return o.DimensionPartQuery, true
+}
+
+// HasDimensionPartQuery returns a boolean if a field has been set.
+func (o *BTCommentParams) HasDimensionPartQuery() bool {
+	if o != nil && o.DimensionPartQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDimensionPartQuery gets a reference to the given string and assigns it to the DimensionPartQuery field.
+func (o *BTCommentParams) SetDimensionPartQuery(v string) {
+	o.DimensionPartQuery = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -566,6 +764,12 @@ func (o *BTCommentParams) SetWorkspaceId(v string) {
 
 func (o BTCommentParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
+	}
+	if o.AnnotationType != nil {
+		toSerialize["annotationType"] = o.AnnotationType
+	}
 	if o.AssemblyFeature != nil {
 		toSerialize["assemblyFeature"] = o.AssemblyFeature
 	}
@@ -574,6 +778,18 @@ func (o BTCommentParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Coordinates != nil {
 		toSerialize["coordinates"] = o.Coordinates
+	}
+	if o.DimensionConstraintId != nil {
+		toSerialize["dimensionConstraintId"] = o.DimensionConstraintId
+	}
+	if o.DimensionFeatureId != nil {
+		toSerialize["dimensionFeatureId"] = o.DimensionFeatureId
+	}
+	if o.DimensionParameterId != nil {
+		toSerialize["dimensionParameterId"] = o.DimensionParameterId
+	}
+	if o.DimensionPartQuery != nil {
+		toSerialize["dimensionPartQuery"] = o.DimensionPartQuery
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
