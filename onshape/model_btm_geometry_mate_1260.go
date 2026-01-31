@@ -33,7 +33,8 @@ type BTMGeometryMate1260 struct {
 	NodeId             *string         `json:"nodeId,omitempty"`
 	ParameterLibraries []BTMParameter1 `json:"parameterLibraries,omitempty"`
 	// A list of parameter values for instantiation of the feature spec. Parameters are present for all defined parameters, even if not used in a specific instantiation.
-	Parameters []BTMParameter1 `json:"parameters,omitempty"`
+	Parameters       []BTMParameter1 `json:"parameters,omitempty"`
+	ParentSuppressed *bool           `json:"parentSuppressed,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
@@ -391,6 +392,38 @@ func (o *BTMGeometryMate1260) HasParameters() bool {
 // SetParameters gets a reference to the given []BTMParameter1 and assigns it to the Parameters field.
 func (o *BTMGeometryMate1260) SetParameters(v []BTMParameter1) {
 	o.Parameters = v
+}
+
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTMGeometryMate1260) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMGeometryMate1260) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTMGeometryMate1260) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTMGeometryMate1260) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
 }
 
 // GetReturnAfterSubfeatures returns the ReturnAfterSubfeatures field value if set, zero value otherwise.
@@ -912,6 +945,9 @@ func (o BTMGeometryMate1260) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.ReturnAfterSubfeatures != nil {
 		toSerialize["returnAfterSubfeatures"] = o.ReturnAfterSubfeatures

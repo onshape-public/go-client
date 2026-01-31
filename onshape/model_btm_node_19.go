@@ -55,6 +55,11 @@ func (o *BTMSketchPoint158) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
 }
 
+// BTMSuppressionStateParentSuppressed5404AsBTMNode19 is a convenience function that returns BTMSuppressionStateParentSuppressed5404 wrapped in BTMNode19
+func (o *BTMSuppressionStateParentSuppressed5404) AsBTMNode19() *BTMNode19 {
+	return &BTMNode19{o}
+}
+
 // BTMFeatureQueryWithOccurrence157AsBTMNode19 is a convenience function that returns BTMFeatureQueryWithOccurrence157 wrapped in BTMNode19
 func (o *BTMFeatureQueryWithOccurrence157) AsBTMNode19() *BTMNode19 {
 	return &BTMNode19{o}
@@ -1359,6 +1364,20 @@ func (dst *BTMNode19) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMNode19 = nil
 			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateExpression1811: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTMSuppressionStateParentSuppressed-5404'
+	if jsonDict["btType"] == "BTMSuppressionStateParentSuppressed-5404" {
+		// try to unmarshal JSON data into BTMSuppressionStateParentSuppressed5404
+		var qr *BTMSuppressionStateParentSuppressed5404
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMNode19 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMNode19 = nil
+			return fmt.Errorf("failed to unmarshal BTMNode19 as BTMSuppressionStateParentSuppressed5404: %s", err.Error())
 		}
 	}
 

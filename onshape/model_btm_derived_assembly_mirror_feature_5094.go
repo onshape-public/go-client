@@ -41,6 +41,7 @@ type BTMDerivedAssemblyMirrorFeature5094 struct {
 	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904   `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
 	ParameterLibraries                     []BTMParameter1                             `json:"parameterLibraries,omitempty"`
 	ParametricInstanceFeature              *bool                                       `json:"parametricInstanceFeature,omitempty"`
+	ParentSuppressed                       *bool                                       `json:"parentSuppressed,omitempty"`
 	ReferenceParameter                     *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
@@ -650,6 +651,38 @@ func (o *BTMDerivedAssemblyMirrorFeature5094) SetParametricInstanceFeature(v boo
 	o.ParametricInstanceFeature = &v
 }
 
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTMDerivedAssemblyMirrorFeature5094) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMDerivedAssemblyMirrorFeature5094) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTMDerivedAssemblyMirrorFeature5094) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTMDerivedAssemblyMirrorFeature5094) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
+}
+
 // GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
 func (o *BTMDerivedAssemblyMirrorFeature5094) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
 	if o == nil || o.ReferenceParameter == nil {
@@ -993,6 +1026,9 @@ func (o BTMDerivedAssemblyMirrorFeature5094) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricInstanceFeature != nil {
 		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter

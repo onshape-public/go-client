@@ -18,8 +18,9 @@ import (
 type BTWebhookParams struct {
 	ClientId *string `json:"clientId,omitempty"`
 	// Company admins can register webhooks to listen to all company events.
-	CompanyId   *string `json:"companyId,omitempty"`
-	Data        *string `json:"data,omitempty"`
+	CompanyId *string `json:"companyId,omitempty"`
+	Data      *string `json:"data,omitempty"`
+	// Webhook description.
 	Description *string `json:"description,omitempty"`
 	DocumentId  *string `json:"documentId,omitempty"`
 	ElementId   *string `json:"elementId,omitempty"`
@@ -31,15 +32,17 @@ type BTWebhookParams struct {
 	FolderId          *string `json:"folderId,omitempty"`
 	Id                *string `json:"id,omitempty"`
 	// Transient webhooks are automatically cleaned up after a period of inactivity.
-	IsTransient    *bool             `json:"isTransient,omitempty"`
-	LinkDocumentId *string           `json:"linkDocumentId,omitempty"`
-	Options        *BTWebhookOptions `json:"options,omitempty"`
-	PartId         *string           `json:"partId,omitempty"`
-	ProjectId      *string           `json:"projectId,omitempty"`
-	Url            *string           `json:"url,omitempty"`
-	UserId         *string           `json:"userId,omitempty"`
-	VersionId      *string           `json:"versionId,omitempty"`
-	WorkspaceId    *string           `json:"workspaceId,omitempty"`
+	IsTransient    *bool   `json:"isTransient,omitempty"`
+	LinkDocumentId *string `json:"linkDocumentId,omitempty"`
+	// Webhook name.
+	Name        *string           `json:"name,omitempty"`
+	Options     *BTWebhookOptions `json:"options,omitempty"`
+	PartId      *string           `json:"partId,omitempty"`
+	ProjectId   *string           `json:"projectId,omitempty"`
+	Url         *string           `json:"url,omitempty"`
+	UserId      *string           `json:"userId,omitempty"`
+	VersionId   *string           `json:"versionId,omitempty"`
+	WorkspaceId *string           `json:"workspaceId,omitempty"`
 }
 
 // NewBTWebhookParams instantiates a new BTWebhookParams object
@@ -479,6 +482,38 @@ func (o *BTWebhookParams) SetLinkDocumentId(v string) {
 	o.LinkDocumentId = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTWebhookParams) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebhookParams) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTWebhookParams) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTWebhookParams) SetName(v string) {
+	o.Name = &v
+}
+
 // GetOptions returns the Options field value if set, zero value otherwise.
 func (o *BTWebhookParams) GetOptions() BTWebhookOptions {
 	if o == nil || o.Options == nil {
@@ -743,6 +778,9 @@ func (o BTWebhookParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.LinkDocumentId != nil {
 		toSerialize["linkDocumentId"] = o.LinkDocumentId
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options

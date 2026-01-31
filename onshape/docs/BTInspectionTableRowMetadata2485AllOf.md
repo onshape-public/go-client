@@ -12,7 +12,9 @@ Name | Type | Description | Notes
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**HasDefaultTolerances** | Pointer to **bool** |  | [optional] 
 **HoleCalloutId** | Pointer to **string** |  | [optional] 
+**IsDerived** | Pointer to **bool** |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
@@ -236,6 +238,31 @@ SetFeatureId sets FeatureId field to given value.
 
 HasFeatureId returns a boolean if a field has been set.
 
+### GetHasDefaultTolerances
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetHasDefaultTolerances() bool`
+
+GetHasDefaultTolerances returns the HasDefaultTolerances field if non-nil, zero value otherwise.
+
+### GetHasDefaultTolerancesOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetHasDefaultTolerancesOk() (*bool, bool)`
+
+GetHasDefaultTolerancesOk returns a tuple with the HasDefaultTolerances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasDefaultTolerances
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetHasDefaultTolerances(v bool)`
+
+SetHasDefaultTolerances sets HasDefaultTolerances field to given value.
+
+### HasHasDefaultTolerances
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasHasDefaultTolerances() bool`
+
+HasHasDefaultTolerances returns a boolean if a field has been set.
+
 ### GetHoleCalloutId
 
 `func (o *BTInspectionTableRowMetadata2485AllOf) GetHoleCalloutId() string`
@@ -260,6 +287,31 @@ SetHoleCalloutId sets HoleCalloutId field to given value.
 `func (o *BTInspectionTableRowMetadata2485AllOf) HasHoleCalloutId() bool`
 
 HasHoleCalloutId returns a boolean if a field has been set.
+
+### GetIsDerived
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetIsDerived() bool`
+
+GetIsDerived returns the IsDerived field if non-nil, zero value otherwise.
+
+### GetIsDerivedOk
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) GetIsDerivedOk() (*bool, bool)`
+
+GetIsDerivedOk returns a tuple with the IsDerived field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsDerived
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) SetIsDerived(v bool)`
+
+SetIsDerived sets IsDerived field to given value.
+
+### HasIsDerived
+
+`func (o *BTInspectionTableRowMetadata2485AllOf) HasIsDerived() bool`
+
+HasIsDerived returns a boolean if a field has been set.
 
 ### GetParameterId
 

@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 **ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
+**ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
 **SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
@@ -499,6 +500,31 @@ SetParametricInstanceFeature sets ParametricInstanceFeature field to given value
 `func (o *BTMAssemblyMirrorFeature3037) HasParametricInstanceFeature() bool`
 
 HasParametricInstanceFeature returns a boolean if a field has been set.
+
+### GetParentSuppressed
+
+`func (o *BTMAssemblyMirrorFeature3037) GetParentSuppressed() bool`
+
+GetParentSuppressed returns the ParentSuppressed field if non-nil, zero value otherwise.
+
+### GetParentSuppressedOk
+
+`func (o *BTMAssemblyMirrorFeature3037) GetParentSuppressedOk() (*bool, bool)`
+
+GetParentSuppressedOk returns a tuple with the ParentSuppressed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentSuppressed
+
+`func (o *BTMAssemblyMirrorFeature3037) SetParentSuppressed(v bool)`
+
+SetParentSuppressed sets ParentSuppressed field to given value.
+
+### HasParentSuppressed
+
+`func (o *BTMAssemblyMirrorFeature3037) HasParentSuppressed() bool`
+
+HasParentSuppressed returns a boolean if a field has been set.
 
 ### GetReturnAfterSubfeatures
 

@@ -4,9 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AnnotationId** | Pointer to **string** |  | [optional] 
+**AnnotationType** | Pointer to **int32** |  | [optional] 
 **AssemblyFeature** | Pointer to **string** |  | [optional] 
 **Assignee** | Pointer to **string** | Assign the comment during creation. Comments cannot be reassigned during an update at this time. | [optional] 
 **Coordinates** | Pointer to [**CoordinatesParams**](CoordinatesParams.md) |  | [optional] 
+**DimensionConstraintId** | Pointer to **string** |  | [optional] 
+**DimensionFeatureId** | Pointer to **string** |  | [optional] 
+**DimensionParameterId** | Pointer to **string** |  | [optional] 
+**DimensionPartQuery** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ElementFeature** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
@@ -39,6 +45,56 @@ will change when the set of required properties is changed
 NewBTCommentParamsWithDefaults instantiates a new BTCommentParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAnnotationId
+
+`func (o *BTCommentParams) GetAnnotationId() string`
+
+GetAnnotationId returns the AnnotationId field if non-nil, zero value otherwise.
+
+### GetAnnotationIdOk
+
+`func (o *BTCommentParams) GetAnnotationIdOk() (*string, bool)`
+
+GetAnnotationIdOk returns a tuple with the AnnotationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationId
+
+`func (o *BTCommentParams) SetAnnotationId(v string)`
+
+SetAnnotationId sets AnnotationId field to given value.
+
+### HasAnnotationId
+
+`func (o *BTCommentParams) HasAnnotationId() bool`
+
+HasAnnotationId returns a boolean if a field has been set.
+
+### GetAnnotationType
+
+`func (o *BTCommentParams) GetAnnotationType() int32`
+
+GetAnnotationType returns the AnnotationType field if non-nil, zero value otherwise.
+
+### GetAnnotationTypeOk
+
+`func (o *BTCommentParams) GetAnnotationTypeOk() (*int32, bool)`
+
+GetAnnotationTypeOk returns a tuple with the AnnotationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationType
+
+`func (o *BTCommentParams) SetAnnotationType(v int32)`
+
+SetAnnotationType sets AnnotationType field to given value.
+
+### HasAnnotationType
+
+`func (o *BTCommentParams) HasAnnotationType() bool`
+
+HasAnnotationType returns a boolean if a field has been set.
 
 ### GetAssemblyFeature
 
@@ -114,6 +170,106 @@ SetCoordinates sets Coordinates field to given value.
 `func (o *BTCommentParams) HasCoordinates() bool`
 
 HasCoordinates returns a boolean if a field has been set.
+
+### GetDimensionConstraintId
+
+`func (o *BTCommentParams) GetDimensionConstraintId() string`
+
+GetDimensionConstraintId returns the DimensionConstraintId field if non-nil, zero value otherwise.
+
+### GetDimensionConstraintIdOk
+
+`func (o *BTCommentParams) GetDimensionConstraintIdOk() (*string, bool)`
+
+GetDimensionConstraintIdOk returns a tuple with the DimensionConstraintId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDimensionConstraintId
+
+`func (o *BTCommentParams) SetDimensionConstraintId(v string)`
+
+SetDimensionConstraintId sets DimensionConstraintId field to given value.
+
+### HasDimensionConstraintId
+
+`func (o *BTCommentParams) HasDimensionConstraintId() bool`
+
+HasDimensionConstraintId returns a boolean if a field has been set.
+
+### GetDimensionFeatureId
+
+`func (o *BTCommentParams) GetDimensionFeatureId() string`
+
+GetDimensionFeatureId returns the DimensionFeatureId field if non-nil, zero value otherwise.
+
+### GetDimensionFeatureIdOk
+
+`func (o *BTCommentParams) GetDimensionFeatureIdOk() (*string, bool)`
+
+GetDimensionFeatureIdOk returns a tuple with the DimensionFeatureId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDimensionFeatureId
+
+`func (o *BTCommentParams) SetDimensionFeatureId(v string)`
+
+SetDimensionFeatureId sets DimensionFeatureId field to given value.
+
+### HasDimensionFeatureId
+
+`func (o *BTCommentParams) HasDimensionFeatureId() bool`
+
+HasDimensionFeatureId returns a boolean if a field has been set.
+
+### GetDimensionParameterId
+
+`func (o *BTCommentParams) GetDimensionParameterId() string`
+
+GetDimensionParameterId returns the DimensionParameterId field if non-nil, zero value otherwise.
+
+### GetDimensionParameterIdOk
+
+`func (o *BTCommentParams) GetDimensionParameterIdOk() (*string, bool)`
+
+GetDimensionParameterIdOk returns a tuple with the DimensionParameterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDimensionParameterId
+
+`func (o *BTCommentParams) SetDimensionParameterId(v string)`
+
+SetDimensionParameterId sets DimensionParameterId field to given value.
+
+### HasDimensionParameterId
+
+`func (o *BTCommentParams) HasDimensionParameterId() bool`
+
+HasDimensionParameterId returns a boolean if a field has been set.
+
+### GetDimensionPartQuery
+
+`func (o *BTCommentParams) GetDimensionPartQuery() string`
+
+GetDimensionPartQuery returns the DimensionPartQuery field if non-nil, zero value otherwise.
+
+### GetDimensionPartQueryOk
+
+`func (o *BTCommentParams) GetDimensionPartQueryOk() (*string, bool)`
+
+GetDimensionPartQueryOk returns a tuple with the DimensionPartQuery field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDimensionPartQuery
+
+`func (o *BTCommentParams) SetDimensionPartQuery(v string)`
+
+SetDimensionPartQuery sets DimensionPartQuery field to given value.
+
+### HasDimensionPartQuery
+
+`func (o *BTCommentParams) HasDimensionPartQuery() bool`
+
+HasDimensionPartQuery returns a boolean if a field has been set.
 
 ### GetDocumentId
 

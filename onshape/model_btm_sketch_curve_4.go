@@ -992,6 +992,56 @@ func (o *BTMSketchCurve4) SetCurvedTextIds(v []string) {
 	o.GetActualInstance().(getResult).SetCurvedTextIds(v)
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
+	type getResult interface {
+		GetGeometry() BTCurveGeometry114
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeometry()
+	} else {
+		var de BTCurveGeometry114
+		return de
+	}
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
+	type getResult interface {
+		GetGeometryOk() (*BTCurveGeometry114, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetGeometryOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *BTMSketchCurve4) HasGeometry() bool {
+	type getResult interface {
+		HasGeometry() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasGeometry()
+	} else {
+		return false
+	}
+}
+
+// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
+func (o *BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
+	type getResult interface {
+		SetGeometry(v BTCurveGeometry114)
+	}
+
+	o.GetActualInstance().(getResult).SetGeometry(v)
+}
+
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *BTMSketchCurve4) GetInternalIds() []string {
 	type getResult interface {
@@ -1153,6 +1203,7 @@ type base_BTMSketchCurve4 struct {
 	IsFromSplineHandle                  *bool                     `json:"isFromSplineHandle,omitempty"`
 	CenterId                            *string                   `json:"centerId,omitempty"`
 	CurvedTextIds                       []string                  `json:"curvedTextIds,omitempty"`
+	Geometry                            *BTCurveGeometry114       `json:"geometry,omitempty"`
 	InternalIds                         []string                  `json:"internalIds,omitempty"`
 }
 
@@ -1781,6 +1832,38 @@ func (o *base_BTMSketchCurve4) SetCurvedTextIds(v []string) {
 	o.CurvedTextIds = v
 }
 
+// GetGeometry returns the Geometry field value if set, zero value otherwise.
+func (o *base_BTMSketchCurve4) GetGeometry() BTCurveGeometry114 {
+	if o == nil || o.Geometry == nil {
+		var ret BTCurveGeometry114
+		return ret
+	}
+	return *o.Geometry
+}
+
+// GetGeometryOk returns a tuple with the Geometry field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTMSketchCurve4) GetGeometryOk() (*BTCurveGeometry114, bool) {
+	if o == nil || o.Geometry == nil {
+		return nil, false
+	}
+	return o.Geometry, true
+}
+
+// HasGeometry returns a boolean if a field has been set.
+func (o *base_BTMSketchCurve4) HasGeometry() bool {
+	if o != nil && o.Geometry != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGeometry gets a reference to the given BTCurveGeometry114 and assigns it to the Geometry field.
+func (o *base_BTMSketchCurve4) SetGeometry(v BTCurveGeometry114) {
+	o.Geometry = &v
+}
+
 // GetInternalIds returns the InternalIds field value if set, zero value otherwise.
 func (o *base_BTMSketchCurve4) GetInternalIds() []string {
 	if o == nil || o.InternalIds == nil {
@@ -1879,6 +1962,9 @@ func (o base_BTMSketchCurve4) MarshalJSON() ([]byte, error) {
 	}
 	if o.CurvedTextIds != nil {
 		toSerialize["curvedTextIds"] = o.CurvedTextIds
+	}
+	if o.Geometry != nil {
+		toSerialize["geometry"] = o.Geometry
 	}
 	if o.InternalIds != nil {
 		toSerialize["internalIds"] = o.InternalIds

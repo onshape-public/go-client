@@ -19,9 +19,10 @@ type BTMSuppressionStateExpression1811 struct {
 	BTMSuppressionState1924
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion *string                  `json:"importMicroversion,omitempty"`
-	NodeId             *string                  `json:"nodeId,omitempty"`
-	Value              *BTMParameterQuantity147 `json:"value,omitempty"`
+	ImportMicroversion    *string                  `json:"importMicroversion,omitempty"`
+	NodeId                *string                  `json:"nodeId,omitempty"`
+	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
+	Value                 *BTMParameterQuantity147 `json:"value,omitempty"`
 }
 
 // NewBTMSuppressionStateExpression1811 instantiates a new BTMSuppressionStateExpression1811 object
@@ -137,6 +138,38 @@ func (o *BTMSuppressionStateExpression1811) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetSuppressionConfigured returns the SuppressionConfigured field value if set, zero value otherwise.
+func (o *BTMSuppressionStateExpression1811) GetSuppressionConfigured() bool {
+	if o == nil || o.SuppressionConfigured == nil {
+		var ret bool
+		return ret
+	}
+	return *o.SuppressionConfigured
+}
+
+// GetSuppressionConfiguredOk returns a tuple with the SuppressionConfigured field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMSuppressionStateExpression1811) GetSuppressionConfiguredOk() (*bool, bool) {
+	if o == nil || o.SuppressionConfigured == nil {
+		return nil, false
+	}
+	return o.SuppressionConfigured, true
+}
+
+// HasSuppressionConfigured returns a boolean if a field has been set.
+func (o *BTMSuppressionStateExpression1811) HasSuppressionConfigured() bool {
+	if o != nil && o.SuppressionConfigured != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionConfigured gets a reference to the given bool and assigns it to the SuppressionConfigured field.
+func (o *BTMSuppressionStateExpression1811) SetSuppressionConfigured(v bool) {
+	o.SuppressionConfigured = &v
+}
+
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *BTMSuppressionStateExpression1811) GetValue() BTMParameterQuantity147 {
 	if o == nil || o.Value == nil {
@@ -187,6 +220,9 @@ func (o BTMSuppressionStateExpression1811) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.SuppressionConfigured != nil {
+		toSerialize["suppressionConfigured"] = o.SuppressionConfigured
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

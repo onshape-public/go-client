@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AllowFaultyParts** | Pointer to **bool** | If true, parts with faults are imported. If false, faulty parts are omitted. | [optional] [default to false]
 **AngularTolerance** | Pointer to **float64** | Determines the maximum angular deviation, between the analytical surface and its triangulation. Lower values result in a finer geometry and higher values result in coarser geometry. | [optional] 
+**AnnotationsFontHeightInMillimeters** | Pointer to **float64** | Determines the font size in workspace units used for the MBD annotations text export | [optional] 
 **BlobElementId** | Pointer to **string** |  | [optional] 
 **BlobMicroversionId** | Pointer to **string** |  | [optional] 
 **CloudObjectId** | Pointer to **string** | Folder id where to store the exported model. | [optional] 
@@ -171,6 +172,31 @@ SetAngularTolerance sets AngularTolerance field to given value.
 `func (o *BTTranslateFormatParams) HasAngularTolerance() bool`
 
 HasAngularTolerance returns a boolean if a field has been set.
+
+### GetAnnotationsFontHeightInMillimeters
+
+`func (o *BTTranslateFormatParams) GetAnnotationsFontHeightInMillimeters() float64`
+
+GetAnnotationsFontHeightInMillimeters returns the AnnotationsFontHeightInMillimeters field if non-nil, zero value otherwise.
+
+### GetAnnotationsFontHeightInMillimetersOk
+
+`func (o *BTTranslateFormatParams) GetAnnotationsFontHeightInMillimetersOk() (*float64, bool)`
+
+GetAnnotationsFontHeightInMillimetersOk returns a tuple with the AnnotationsFontHeightInMillimeters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationsFontHeightInMillimeters
+
+`func (o *BTTranslateFormatParams) SetAnnotationsFontHeightInMillimeters(v float64)`
+
+SetAnnotationsFontHeightInMillimeters sets AnnotationsFontHeightInMillimeters field to given value.
+
+### HasAnnotationsFontHeightInMillimeters
+
+`func (o *BTTranslateFormatParams) HasAnnotationsFontHeightInMillimeters() bool`
+
+HasAnnotationsFontHeightInMillimeters returns a boolean if a field has been set.
 
 ### GetBlobElementId
 

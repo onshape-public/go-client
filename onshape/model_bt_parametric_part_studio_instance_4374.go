@@ -36,6 +36,7 @@ type BTParametricPartStudioInstance4374 struct {
 	ParametricOutputInstance          *bool                                 `json:"parametricOutputInstance,omitempty"`
 	ParametricPartStudioChildInstance *bool                                 `json:"parametricPartStudioChildInstance,omitempty"`
 	ParametricPartStudioInstance      *bool                                 `json:"parametricPartStudioInstance,omitempty"`
+	ParentSuppressed                  *bool                                 `json:"parentSuppressed,omitempty"`
 	PartInstance                      *bool                                 `json:"partInstance,omitempty"`
 	Releasable                        *bool                                 `json:"releasable,omitempty"`
 	RevisionCustomData                *BTRevisionCustomData2090             `json:"revisionCustomData,omitempty"`
@@ -659,6 +660,38 @@ func (o *BTParametricPartStudioInstance4374) HasParametricPartStudioInstance() b
 // SetParametricPartStudioInstance gets a reference to the given bool and assigns it to the ParametricPartStudioInstance field.
 func (o *BTParametricPartStudioInstance4374) SetParametricPartStudioInstance(v bool) {
 	o.ParametricPartStudioInstance = &v
+}
+
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTParametricPartStudioInstance4374) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTParametricPartStudioInstance4374) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTParametricPartStudioInstance4374) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTParametricPartStudioInstance4374) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
 }
 
 // GetPartInstance returns the PartInstance field value if set, zero value otherwise.
@@ -1652,6 +1685,9 @@ func (o BTParametricPartStudioInstance4374) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParametricPartStudioInstance != nil {
 		toSerialize["parametricPartStudioInstance"] = o.ParametricPartStudioInstance
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.PartInstance != nil {
 		toSerialize["partInstance"] = o.PartInstance

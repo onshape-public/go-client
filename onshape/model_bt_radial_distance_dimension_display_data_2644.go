@@ -27,6 +27,7 @@ type BTRadialDistanceDimensionDisplayData2644 struct {
 	Id                         *string                `json:"id,omitempty"`
 	IsAnnotationDimension      *bool                  `json:"isAnnotationDimension,omitempty"`
 	IsAssociatedWithFlat       *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived                  *bool                  `json:"isDerived,omitempty"`
 	IsDriven                   *bool                  `json:"isDriven,omitempty"`
 	IsOverDefined              *bool                  `json:"isOverDefined,omitempty"`
 	LowerTolerance             *float64               `json:"lowerTolerance,omitempty"`
@@ -384,6 +385,38 @@ func (o *BTRadialDistanceDimensionDisplayData2644) HasIsAssociatedWithFlat() boo
 // SetIsAssociatedWithFlat gets a reference to the given bool and assigns it to the IsAssociatedWithFlat field.
 func (o *BTRadialDistanceDimensionDisplayData2644) SetIsAssociatedWithFlat(v bool) {
 	o.IsAssociatedWithFlat = &v
+}
+
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTRadialDistanceDimensionDisplayData2644) SetIsDerived(v bool) {
+	o.IsDerived = &v
 }
 
 // GetIsDriven returns the IsDriven field value if set, zero value otherwise.
@@ -1065,6 +1098,9 @@ func (o BTRadialDistanceDimensionDisplayData2644) MarshalJSON() ([]byte, error) 
 	}
 	if o.IsAssociatedWithFlat != nil {
 		toSerialize["isAssociatedWithFlat"] = o.IsAssociatedWithFlat
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	if o.IsDriven != nil {
 		toSerialize["isDriven"] = o.IsDriven

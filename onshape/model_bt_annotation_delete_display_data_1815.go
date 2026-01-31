@@ -25,6 +25,7 @@ type BTAnnotationDeleteDisplayData1815 struct {
 	DxdySegments         []BTVector2d1812       `json:"dxdySegments,omitempty"`
 	IsConstrainedToPlane *bool                  `json:"isConstrainedToPlane,omitempty"`
 	IsDeletion           *bool                  `json:"isDeletion,omitempty"`
+	IsDerived            *bool                  `json:"isDerived,omitempty"`
 	MainConstraintId     *string                `json:"mainConstraintId,omitempty"`
 	MainFeatureId        *string                `json:"mainFeatureId,omitempty"`
 	MainParameterId      *string                `json:"mainParameterId,omitempty"`
@@ -304,6 +305,38 @@ func (o *BTAnnotationDeleteDisplayData1815) SetIsDeletion(v bool) {
 	o.IsDeletion = &v
 }
 
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTAnnotationDeleteDisplayData1815) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDeleteDisplayData1815) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTAnnotationDeleteDisplayData1815) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTAnnotationDeleteDisplayData1815) SetIsDerived(v bool) {
+	o.IsDerived = &v
+}
+
 // GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
 func (o *BTAnnotationDeleteDisplayData1815) GetMainConstraintId() string {
 	if o == nil || o.MainConstraintId == nil {
@@ -465,6 +498,9 @@ func (o BTAnnotationDeleteDisplayData1815) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDeletion != nil {
 		toSerialize["isDeletion"] = o.IsDeletion
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	if o.MainConstraintId != nil {
 		toSerialize["mainConstraintId"] = o.MainConstraintId

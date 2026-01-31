@@ -1744,6 +1744,7 @@ const (
 	GBTErrorStringEnumSelectCsvData                                               GBTErrorStringEnum = "SELECT_CSV_DATA"
 	GBTErrorStringEnumInvalidRowRegex                                             GBTErrorStringEnum = "INVALID_ROW_REGEX"
 	GBTErrorStringEnumInvalidColumnRegex                                          GBTErrorStringEnum = "INVALID_COLUMN_REGEX"
+	GBTErrorStringEnumSheetMetalLoftMergeScopeShift                               GBTErrorStringEnum = "SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3473,6 +3474,7 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SELECT_CSV_DATA",
 	"INVALID_ROW_REGEX",
 	"INVALID_COLUMN_REGEX",
+	"SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT",
 	"UNKNOWN",
 }
 

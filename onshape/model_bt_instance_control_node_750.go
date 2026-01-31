@@ -21,6 +21,7 @@ type BTInstanceControlNode750 struct {
 	// Microversion that resulted from the import.
 	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
 	NodeId               *string `json:"nodeId,omitempty"`
+	ParentSuppressed     *bool   `json:"parentSuppressed,omitempty"`
 	Suppressed           *bool   `json:"suppressed,omitempty"`
 	SuppressedFieldIndex *int32  `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
@@ -140,6 +141,38 @@ func (o *BTInstanceControlNode750) HasNodeId() bool {
 // SetNodeId gets a reference to the given string and assigns it to the NodeId field.
 func (o *BTInstanceControlNode750) SetNodeId(v string) {
 	o.NodeId = &v
+}
+
+// GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
+func (o *BTInstanceControlNode750) GetParentSuppressed() bool {
+	if o == nil || o.ParentSuppressed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ParentSuppressed
+}
+
+// GetParentSuppressedOk returns a tuple with the ParentSuppressed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceControlNode750) GetParentSuppressedOk() (*bool, bool) {
+	if o == nil || o.ParentSuppressed == nil {
+		return nil, false
+	}
+	return o.ParentSuppressed, true
+}
+
+// HasParentSuppressed returns a boolean if a field has been set.
+func (o *BTInstanceControlNode750) HasParentSuppressed() bool {
+	if o != nil && o.ParentSuppressed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
+func (o *BTInstanceControlNode750) SetParentSuppressed(v bool) {
+	o.ParentSuppressed = &v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
@@ -320,6 +353,9 @@ func (o BTInstanceControlNode750) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.ParentSuppressed != nil {
+		toSerialize["parentSuppressed"] = o.ParentSuppressed
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

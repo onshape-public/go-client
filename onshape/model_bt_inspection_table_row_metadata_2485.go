@@ -25,7 +25,9 @@ type BTInspectionTableRowMetadata2485 struct {
 	ConstraintId            *string                        `json:"constraintId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
+	HasDefaultTolerances    *bool                          `json:"hasDefaultTolerances,omitempty"`
 	HoleCalloutId           *string                        `json:"holeCalloutId,omitempty"`
+	IsDerived               *bool                          `json:"isDerived,omitempty"`
 	ParameterId             *string                        `json:"parameterId,omitempty"`
 	PartId                  *string                        `json:"partId,omitempty"`
 	Precision               *GBTTolerancePrecision         `json:"precision,omitempty"`
@@ -304,6 +306,38 @@ func (o *BTInspectionTableRowMetadata2485) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetHasDefaultTolerances returns the HasDefaultTolerances field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetHasDefaultTolerances() bool {
+	if o == nil || o.HasDefaultTolerances == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasDefaultTolerances
+}
+
+// GetHasDefaultTolerancesOk returns a tuple with the HasDefaultTolerances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetHasDefaultTolerancesOk() (*bool, bool) {
+	if o == nil || o.HasDefaultTolerances == nil {
+		return nil, false
+	}
+	return o.HasDefaultTolerances, true
+}
+
+// HasHasDefaultTolerances returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasHasDefaultTolerances() bool {
+	if o != nil && o.HasDefaultTolerances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasDefaultTolerances gets a reference to the given bool and assigns it to the HasDefaultTolerances field.
+func (o *BTInspectionTableRowMetadata2485) SetHasDefaultTolerances(v bool) {
+	o.HasDefaultTolerances = &v
+}
+
 // GetHoleCalloutId returns the HoleCalloutId field value if set, zero value otherwise.
 func (o *BTInspectionTableRowMetadata2485) GetHoleCalloutId() string {
 	if o == nil || o.HoleCalloutId == nil {
@@ -334,6 +368,38 @@ func (o *BTInspectionTableRowMetadata2485) HasHoleCalloutId() bool {
 // SetHoleCalloutId gets a reference to the given string and assigns it to the HoleCalloutId field.
 func (o *BTInspectionTableRowMetadata2485) SetHoleCalloutId(v string) {
 	o.HoleCalloutId = &v
+}
+
+// GetIsDerived returns the IsDerived field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetIsDerived() bool {
+	if o == nil || o.IsDerived == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsDerived
+}
+
+// GetIsDerivedOk returns a tuple with the IsDerived field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetIsDerivedOk() (*bool, bool) {
+	if o == nil || o.IsDerived == nil {
+		return nil, false
+	}
+	return o.IsDerived, true
+}
+
+// HasIsDerived returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasIsDerived() bool {
+	if o != nil && o.IsDerived != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
+func (o *BTInspectionTableRowMetadata2485) SetIsDerived(v bool) {
+	o.IsDerived = &v
 }
 
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
@@ -466,8 +532,14 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
+	if o.HasDefaultTolerances != nil {
+		toSerialize["hasDefaultTolerances"] = o.HasDefaultTolerances
+	}
 	if o.HoleCalloutId != nil {
 		toSerialize["holeCalloutId"] = o.HoleCalloutId
+	}
+	if o.IsDerived != nil {
+		toSerialize["isDerived"] = o.IsDerived
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId
