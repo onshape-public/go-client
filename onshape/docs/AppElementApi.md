@@ -1,6 +1,6 @@
 # \AppElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v13*
+All URIs are relative to *https://cad.onshape.com/api/v14*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -2200,7 +2200,7 @@ Name | Type | Description  | Notes
 
 ## UploadBlobSubelement
 
-> BTAppElementModifyInfo UploadBlobSubelement(ctx, did, wid, eid, bid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).File(file).FileContentLength(fileContentLength).Execute()
+> BTAppElementModifyInfo UploadBlobSubelement(ctx, did, wid, eid, bid).Description(description).File(file).FileContentLength(fileContentLength).ParentChangeId(parentChangeId).TransactionId(transactionId).Execute()
 
 Create a new blob subelement from an uploaded file.
 
@@ -2223,15 +2223,15 @@ func main() {
     wid := "wid_example" // string | 
     eid := "eid_example" // string | 
     bid := "bid_example" // string | 
-    transactionId := "transactionId_example" // string |  (optional)
-    parentChangeId := "parentChangeId_example" // string |  (optional)
     description := "description_example" // string |  (optional)
     file := os.NewFile(1234, "some_file") // HttpFile | File to upload. (optional)
-    fileContentLength := int64(789) // int64 |  (optional) (default to -1)
+    fileContentLength := int64(789) // int64 |  (optional)
+    parentChangeId := "parentChangeId_example" // string |  (optional)
+    transactionId := "transactionId_example" // string |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.AppElementApi.UploadBlobSubelement(context.Background(), did, wid, eid, bid).TransactionId(transactionId).ParentChangeId(parentChangeId).Description(description).File(file).FileContentLength(fileContentLength).Execute()
+    resp, r, err := apiClient.AppElementApi.UploadBlobSubelement(context.Background(), did, wid, eid, bid).Description(description).File(file).FileContentLength(fileContentLength).ParentChangeId(parentChangeId).TransactionId(transactionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AppElementApi.UploadBlobSubelement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2263,11 +2263,11 @@ Name | Type | Description  | Notes
 
 
 
- **transactionId** | **string** |  | 
- **parentChangeId** | **string** |  | 
  **description** | **string** |  | 
  **file** | **HttpFile** | File to upload. | 
- **fileContentLength** | **int64** |  | [default to -1]
+ **fileContentLength** | **int64** |  | 
+ **parentChangeId** | **string** |  | 
+ **transactionId** | **string** |  | 
 
 ### Return type
 
