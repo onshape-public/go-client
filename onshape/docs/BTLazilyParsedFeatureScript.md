@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **NoticeModuleIds** | Pointer to [**BTPModuleId235**](BTPModuleId235.md) |  | [optional] 
 **ParentLanguageVersion** | Pointer to **int32** |  | [optional] 
 **References** | Pointer to [**map[string]BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
+**SizeInKBEstimate** | Pointer to **int32** |  | [optional] 
 **Source** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetReferences sets References field to given value.
 `func (o *BTLazilyParsedFeatureScript) HasReferences() bool`
 
 HasReferences returns a boolean if a field has been set.
+
+### GetSizeInKBEstimate
+
+`func (o *BTLazilyParsedFeatureScript) GetSizeInKBEstimate() int32`
+
+GetSizeInKBEstimate returns the SizeInKBEstimate field if non-nil, zero value otherwise.
+
+### GetSizeInKBEstimateOk
+
+`func (o *BTLazilyParsedFeatureScript) GetSizeInKBEstimateOk() (*int32, bool)`
+
+GetSizeInKBEstimateOk returns a tuple with the SizeInKBEstimate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSizeInKBEstimate
+
+`func (o *BTLazilyParsedFeatureScript) SetSizeInKBEstimate(v int32)`
+
+SetSizeInKBEstimate sets SizeInKBEstimate field to given value.
+
+### HasSizeInKBEstimate
+
+`func (o *BTLazilyParsedFeatureScript) HasSizeInKBEstimate() bool`
+
+HasSizeInKBEstimate returns a boolean if a field has been set.
 
 ### GetSource
 

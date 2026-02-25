@@ -1745,6 +1745,15 @@ const (
 	GBTErrorStringEnumInvalidRowRegex                                             GBTErrorStringEnum = "INVALID_ROW_REGEX"
 	GBTErrorStringEnumInvalidColumnRegex                                          GBTErrorStringEnum = "INVALID_COLUMN_REGEX"
 	GBTErrorStringEnumSheetMetalLoftMergeScopeShift                               GBTErrorStringEnum = "SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT"
+	GBTErrorStringEnumLoftGuideNotSmooth                                          GBTErrorStringEnum = "LOFT_GUIDE_NOT_SMOOTH"
+	GBTErrorStringEnumDerivedNoClosedCompositeWithSmWarning                       GBTErrorStringEnum = "DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_WARNING"
+	GBTErrorStringEnumDerivedNoClosedCompositeWithSmError                         GBTErrorStringEnum = "DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_ERROR"
+	GBTErrorStringEnumSweepTwistRequireTangentPath                                GBTErrorStringEnum = "SWEEP_TWIST_REQUIRE_TANGENT_PATH"
+	GBTErrorStringEnumSweepScaleRequireTangentPath                                GBTErrorStringEnum = "SWEEP_SCALE_REQUIRE_TANGENT_PATH"
+	GBTErrorStringEnumSweepTwistScaleRequireTangentPath                           GBTErrorStringEnum = "SWEEP_TWIST_SCALE_REQUIRE_TANGENT_PATH"
+	GBTErrorStringEnumSweepMultiprofileScaleNotAllowed                            GBTErrorStringEnum = "SWEEP_MULTIPROFILE_SCALE_NOT_ALLOWED"
+	GBTErrorStringEnumSweepTwistAngleExceedsLimits                                GBTErrorStringEnum = "SWEEP_TWIST_ANGLE_EXCEEDS_LIMITS"
+	GBTErrorStringEnumSweepTwistPitchExceedsLimits                                GBTErrorStringEnum = "SWEEP_TWIST_PITCH_EXCEEDS_LIMITS"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3475,6 +3484,15 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"INVALID_ROW_REGEX",
 	"INVALID_COLUMN_REGEX",
 	"SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT",
+	"LOFT_GUIDE_NOT_SMOOTH",
+	"DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_WARNING",
+	"DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_ERROR",
+	"SWEEP_TWIST_REQUIRE_TANGENT_PATH",
+	"SWEEP_SCALE_REQUIRE_TANGENT_PATH",
+	"SWEEP_TWIST_SCALE_REQUIRE_TANGENT_PATH",
+	"SWEEP_MULTIPROFILE_SCALE_NOT_ALLOWED",
+	"SWEEP_TWIST_ANGLE_EXCEEDS_LIMITS",
+	"SWEEP_TWIST_PITCH_EXCEEDS_LIMITS",
 	"UNKNOWN",
 }
 
