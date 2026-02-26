@@ -67,6 +67,56 @@ func NewBTAnnotationDisplayData3225WithDefaults() *BTAnnotationDisplayData3225 {
 	return &this
 }
 
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetAnnotationId() string {
+	type getResult interface {
+		GetAnnotationId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetAnnotationIdOk() (*string, bool) {
+	type getResult interface {
+		GetAnnotationIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasAnnotationId() bool {
+	type getResult interface {
+		HasAnnotationId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnnotationId()
+	} else {
+		return false
+	}
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTAnnotationDisplayData3225) SetAnnotationId(v string) {
+	type getResult interface {
+		SetAnnotationId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetAnnotationId(v)
+}
+
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetAnnotationPlane() BTCoordinateSystem387 {
 	type getResult interface {
@@ -877,6 +927,7 @@ func (v *NullableBTAnnotationDisplayData3225) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTAnnotationDisplayData3225 struct {
+	AnnotationId    *string                `json:"annotationId,omitempty"`
 	AnnotationPlane *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
 	BasePlane       *BTCoordinateSystem387 `json:"basePlane,omitempty"`
 	// Type of JSON object.
@@ -908,6 +959,38 @@ func Newbase_BTAnnotationDisplayData3225() *base_BTAnnotationDisplayData3225 {
 func Newbase_BTAnnotationDisplayData3225WithDefaults() *base_BTAnnotationDisplayData3225 {
 	this := base_BTAnnotationDisplayData3225{}
 	return &this
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *base_BTAnnotationDisplayData3225) SetAnnotationId(v string) {
+	o.AnnotationId = &v
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
@@ -1328,6 +1411,9 @@ func (o *base_BTAnnotationDisplayData3225) SetMainPartId(v string) {
 
 func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
+	}
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}

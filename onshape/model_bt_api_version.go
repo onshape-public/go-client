@@ -34,6 +34,7 @@ const (
 	BTApiVersionV11ExcludeZipContentsByDefault                  BTApiVersion = "V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"
 	BTApiVersionV12ValidateElementTypeForTranslations           BTApiVersion = "V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"
 	BTApiVersionV13SourceTargetDocumentVersionsToMove           BTApiVersion = "V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"
+	BTApiVersionV14FixReferenceType                             BTApiVersion = "V14_FIX_REFERENCE_TYPE"
 )
 
 // All allowed values of BTApiVersion enum
@@ -52,6 +53,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT",
 	"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS",
 	"V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE",
+	"V14_FIX_REFERENCE_TYPE",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

@@ -460,42 +460,36 @@ type ApiUploadFileCreateElementRequest struct {
 	did                                  string
 	wid                                  string
 	linkDocumentId                       *string
-	file                                 *map[string]interface{}
 	allowFaultyParts                     *bool
 	createComposite                      *bool
 	createDrawingIfPossible              *bool
 	encodedFilename                      *string
 	extractAssemblyHierarchy             *bool
+	file                                 *HttpFile
 	flattenAssemblies                    *bool
 	formatName                           *string
+	importAppearances                    *bool
+	importMaterialDensity                *bool
+	importWithinDocument                 *bool
 	joinAdjacentSurfaces                 *bool
 	locationElementId                    *string
 	locationGroupId                      *string
 	locationPosition                     *int32
+	makePublic                           *bool
 	notifyUser                           *bool
+	onePartPerDoc                        *bool
 	ownerId                              *string
 	parentId                             *string
 	projectId                            *string
-	public                               *bool
-	onePartPerDoc                        *bool
+	repointAppElementVersionRefs         *bool
 	splitAssembliesIntoMultipleDocuments *bool
 	storeInDocument                      *bool
 	translate                            *bool
 	unit                                 *string
 	uploadId                             *string
-	versionString                        *string
-	importAppearances                    *bool
-	importMaterialDensity                *bool
-	yAxisIsUp                            *bool
-	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
-	upgradeFeatureScriptVersion          *bool
-	preserveSourceIds                    *bool
-	documentId                           *string
-	versionId                            *string
-	versionName                          *string
-	versionDescription                   *string
-	repointAppElementVersionRefs         *bool
+	versionString                        *string
+	yAxisIsUp                            *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -504,19 +498,11 @@ func (r ApiUploadFileCreateElementRequest) LinkDocumentId(linkDocumentId string)
 	return r
 }
 
-// The file to upload.
-func (r ApiUploadFileCreateElementRequest) File(file map[string]interface{}) ApiUploadFileCreateElementRequest {
-	r.file = &file
-	return r
-}
-
-// If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults.
 func (r ApiUploadFileCreateElementRequest) AllowFaultyParts(allowFaultyParts bool) ApiUploadFileCreateElementRequest {
 	r.allowFaultyParts = &allowFaultyParts
 	return r
 }
 
-// Not supported for importing into a single part studio.
 func (r ApiUploadFileCreateElementRequest) CreateComposite(createComposite bool) ApiUploadFileCreateElementRequest {
 	r.createComposite = &createComposite
 	return r
@@ -527,7 +513,6 @@ func (r ApiUploadFileCreateElementRequest) CreateDrawingIfPossible(createDrawing
 	return r
 }
 
-// If the filename contains non-ASCII characters. Use this field to store the filename.
 func (r ApiUploadFileCreateElementRequest) EncodedFilename(encodedFilename string) ApiUploadFileCreateElementRequest {
 	r.encodedFilename = &encodedFilename
 	return r
@@ -538,7 +523,12 @@ func (r ApiUploadFileCreateElementRequest) ExtractAssemblyHierarchy(extractAssem
 	return r
 }
 
-// If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly.
+// The file to upload.
+func (r ApiUploadFileCreateElementRequest) File(file HttpFile) ApiUploadFileCreateElementRequest {
+	r.file = &file
+	return r
+}
+
 func (r ApiUploadFileCreateElementRequest) FlattenAssemblies(flattenAssemblies bool) ApiUploadFileCreateElementRequest {
 	r.flattenAssemblies = &flattenAssemblies
 	return r
@@ -546,6 +536,21 @@ func (r ApiUploadFileCreateElementRequest) FlattenAssemblies(flattenAssemblies b
 
 func (r ApiUploadFileCreateElementRequest) FormatName(formatName string) ApiUploadFileCreateElementRequest {
 	r.formatName = &formatName
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileCreateElementRequest {
+	r.importAppearances = &importAppearances
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileCreateElementRequest {
+	r.importMaterialDensity = &importMaterialDensity
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileCreateElementRequest {
+	r.importWithinDocument = &importWithinDocument
 	return r
 }
 
@@ -569,8 +574,18 @@ func (r ApiUploadFileCreateElementRequest) LocationPosition(locationPosition int
 	return r
 }
 
+func (r ApiUploadFileCreateElementRequest) MakePublic(makePublic bool) ApiUploadFileCreateElementRequest {
+	r.makePublic = &makePublic
+	return r
+}
+
 func (r ApiUploadFileCreateElementRequest) NotifyUser(notifyUser bool) ApiUploadFileCreateElementRequest {
 	r.notifyUser = &notifyUser
+	return r
+}
+
+func (r ApiUploadFileCreateElementRequest) OnePartPerDoc(onePartPerDoc bool) ApiUploadFileCreateElementRequest {
+	r.onePartPerDoc = &onePartPerDoc
 	return r
 }
 
@@ -589,13 +604,8 @@ func (r ApiUploadFileCreateElementRequest) ProjectId(projectId string) ApiUpload
 	return r
 }
 
-func (r ApiUploadFileCreateElementRequest) Public(public bool) ApiUploadFileCreateElementRequest {
-	r.public = &public
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) OnePartPerDoc(onePartPerDoc bool) ApiUploadFileCreateElementRequest {
-	r.onePartPerDoc = &onePartPerDoc
+func (r ApiUploadFileCreateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileCreateElementRequest {
+	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
 	return r
 }
 
@@ -624,73 +634,18 @@ func (r ApiUploadFileCreateElementRequest) UploadId(uploadId string) ApiUploadFi
 	return r
 }
 
-func (r ApiUploadFileCreateElementRequest) VersionString(versionString string) ApiUploadFileCreateElementRequest {
-	r.versionString = &versionString
-	return r
-}
-
-// Face appearances defined on models will be imported.
-func (r ApiUploadFileCreateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileCreateElementRequest {
-	r.importAppearances = &importAppearances
-	return r
-}
-
-// Material density defined on models will be imported.
-func (r ApiUploadFileCreateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileCreateElementRequest {
-	r.importMaterialDensity = &importMaterialDensity
-	return r
-}
-
-// If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect.
-func (r ApiUploadFileCreateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileCreateElementRequest {
-	r.yAxisIsUp = &yAxisIsUp
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileCreateElementRequest {
-	r.importWithinDocument = &importWithinDocument
-	return r
-}
-
-// Try getting optimized topology from IGES model.
 func (r ApiUploadFileCreateElementRequest) UseIGESImportPostProcessing(useIGESImportPostProcessing bool) ApiUploadFileCreateElementRequest {
 	r.useIGESImportPostProcessing = &useIGESImportPostProcessing
 	return r
 }
 
-func (r ApiUploadFileCreateElementRequest) UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion bool) ApiUploadFileCreateElementRequest {
-	r.upgradeFeatureScriptVersion = &upgradeFeatureScriptVersion
+func (r ApiUploadFileCreateElementRequest) VersionString(versionString string) ApiUploadFileCreateElementRequest {
+	r.versionString = &versionString
 	return r
 }
 
-func (r ApiUploadFileCreateElementRequest) PreserveSourceIds(preserveSourceIds bool) ApiUploadFileCreateElementRequest {
-	r.preserveSourceIds = &preserveSourceIds
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) DocumentId(documentId string) ApiUploadFileCreateElementRequest {
-	r.documentId = &documentId
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) VersionId(versionId string) ApiUploadFileCreateElementRequest {
-	r.versionId = &versionId
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) VersionName(versionName string) ApiUploadFileCreateElementRequest {
-	r.versionName = &versionName
-	return r
-}
-
-func (r ApiUploadFileCreateElementRequest) VersionDescription(versionDescription string) ApiUploadFileCreateElementRequest {
-	r.versionDescription = &versionDescription
-	return r
-}
-
-// Re-point the version references in APP elements to initial version in the new document
-func (r ApiUploadFileCreateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileCreateElementRequest {
-	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
+func (r ApiUploadFileCreateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileCreateElementRequest {
+	r.yAxisIsUp = &yAxisIsUp
 	return r
 }
 
@@ -761,9 +716,6 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.file != nil {
-		localVarFormParams.Add("file", parameterToString(*r.file, ""))
-	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))
 	}
@@ -779,11 +731,32 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.extractAssemblyHierarchy != nil {
 		localVarFormParams.Add("extractAssemblyHierarchy", parameterToString(*r.extractAssemblyHierarchy, ""))
 	}
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes io.Reader
+
+	fileLocalVarFormFileName = "file"
+
+	if r.file != nil {
+		fileLocalVarFile := *r.file
+		fileLocalVarFileBytes = fileLocalVarFile.Data
+		fileLocalVarFileName = fileLocalVarFile.Name
+		formFiles = append(formFiles, formFile{fileData: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
+	}
 	if r.flattenAssemblies != nil {
 		localVarFormParams.Add("flattenAssemblies", parameterToString(*r.flattenAssemblies, ""))
 	}
 	if r.formatName != nil {
 		localVarFormParams.Add("formatName", parameterToString(*r.formatName, ""))
+	}
+	if r.importAppearances != nil {
+		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
+	}
+	if r.importMaterialDensity != nil {
+		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
+	}
+	if r.importWithinDocument != nil {
+		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
 	}
 	if r.joinAdjacentSurfaces != nil {
 		localVarFormParams.Add("joinAdjacentSurfaces", parameterToString(*r.joinAdjacentSurfaces, ""))
@@ -797,8 +770,14 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.locationPosition != nil {
 		localVarFormParams.Add("locationPosition", parameterToString(*r.locationPosition, ""))
 	}
+	if r.makePublic != nil {
+		localVarFormParams.Add("makePublic", parameterToString(*r.makePublic, ""))
+	}
 	if r.notifyUser != nil {
 		localVarFormParams.Add("notifyUser", parameterToString(*r.notifyUser, ""))
+	}
+	if r.onePartPerDoc != nil {
+		localVarFormParams.Add("onePartPerDoc", parameterToString(*r.onePartPerDoc, ""))
 	}
 	if r.ownerId != nil {
 		localVarFormParams.Add("ownerId", parameterToString(*r.ownerId, ""))
@@ -809,11 +788,8 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.projectId != nil {
 		localVarFormParams.Add("projectId", parameterToString(*r.projectId, ""))
 	}
-	if r.public != nil {
-		localVarFormParams.Add("public", parameterToString(*r.public, ""))
-	}
-	if r.onePartPerDoc != nil {
-		localVarFormParams.Add("onePartPerDoc", parameterToString(*r.onePartPerDoc, ""))
+	if r.repointAppElementVersionRefs != nil {
+		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
 	}
 	if r.splitAssembliesIntoMultipleDocuments != nil {
 		localVarFormParams.Add("splitAssembliesIntoMultipleDocuments", parameterToString(*r.splitAssembliesIntoMultipleDocuments, ""))
@@ -830,44 +806,14 @@ func (a *BlobElementApiService) UploadFileCreateElementExecute(r ApiUploadFileCr
 	if r.uploadId != nil {
 		localVarFormParams.Add("uploadId", parameterToString(*r.uploadId, ""))
 	}
-	if r.versionString != nil {
-		localVarFormParams.Add("versionString", parameterToString(*r.versionString, ""))
-	}
-	if r.importAppearances != nil {
-		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
-	}
-	if r.importMaterialDensity != nil {
-		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
-	}
-	if r.yAxisIsUp != nil {
-		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))
-	}
-	if r.importWithinDocument != nil {
-		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
-	}
 	if r.useIGESImportPostProcessing != nil {
 		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
 	}
-	if r.upgradeFeatureScriptVersion != nil {
-		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
+	if r.versionString != nil {
+		localVarFormParams.Add("versionString", parameterToString(*r.versionString, ""))
 	}
-	if r.preserveSourceIds != nil {
-		localVarFormParams.Add("preserveSourceIds", parameterToString(*r.preserveSourceIds, ""))
-	}
-	if r.documentId != nil {
-		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
-	}
-	if r.versionId != nil {
-		localVarFormParams.Add("versionId", parameterToString(*r.versionId, ""))
-	}
-	if r.versionName != nil {
-		localVarFormParams.Add("versionName", parameterToString(*r.versionName, ""))
-	}
-	if r.versionDescription != nil {
-		localVarFormParams.Add("versionDescription", parameterToString(*r.versionDescription, ""))
-	}
-	if r.repointAppElementVersionRefs != nil {
-		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
+	if r.yAxisIsUp != nil {
+		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
@@ -921,42 +867,36 @@ type ApiUploadFileUpdateElementRequest struct {
 	eid                                  string
 	linkDocumentId                       *string
 	parentChangeId                       *string
-	file                                 *map[string]interface{}
 	allowFaultyParts                     *bool
 	createComposite                      *bool
 	createDrawingIfPossible              *bool
 	encodedFilename                      *string
 	extractAssemblyHierarchy             *bool
+	file                                 *HttpFile
 	flattenAssemblies                    *bool
 	formatName                           *string
+	importAppearances                    *bool
+	importMaterialDensity                *bool
+	importWithinDocument                 *bool
 	joinAdjacentSurfaces                 *bool
 	locationElementId                    *string
 	locationGroupId                      *string
 	locationPosition                     *int32
+	makePublic                           *bool
 	notifyUser                           *bool
+	onePartPerDoc                        *bool
 	ownerId                              *string
 	parentId                             *string
 	projectId                            *string
-	public                               *bool
-	onePartPerDoc                        *bool
+	repointAppElementVersionRefs         *bool
 	splitAssembliesIntoMultipleDocuments *bool
 	storeInDocument                      *bool
 	translate                            *bool
 	unit                                 *string
 	uploadId                             *string
-	versionString                        *string
-	importAppearances                    *bool
-	importMaterialDensity                *bool
-	yAxisIsUp                            *bool
-	importWithinDocument                 *bool
 	useIGESImportPostProcessing          *bool
-	upgradeFeatureScriptVersion          *bool
-	preserveSourceIds                    *bool
-	documentId                           *string
-	versionId                            *string
-	versionName                          *string
-	versionDescription                   *string
-	repointAppElementVersionRefs         *bool
+	versionString                        *string
+	yAxisIsUp                            *bool
 }
 
 // The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both.
@@ -971,19 +911,11 @@ func (r ApiUploadFileUpdateElementRequest) ParentChangeId(parentChangeId string)
 	return r
 }
 
-// The file to upload.
-func (r ApiUploadFileUpdateElementRequest) File(file map[string]interface{}) ApiUploadFileUpdateElementRequest {
-	r.file = &file
-	return r
-}
-
-// If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults.
 func (r ApiUploadFileUpdateElementRequest) AllowFaultyParts(allowFaultyParts bool) ApiUploadFileUpdateElementRequest {
 	r.allowFaultyParts = &allowFaultyParts
 	return r
 }
 
-// Not supported for importing into a single part studio.
 func (r ApiUploadFileUpdateElementRequest) CreateComposite(createComposite bool) ApiUploadFileUpdateElementRequest {
 	r.createComposite = &createComposite
 	return r
@@ -994,7 +926,6 @@ func (r ApiUploadFileUpdateElementRequest) CreateDrawingIfPossible(createDrawing
 	return r
 }
 
-// If the filename contains non-ASCII characters. Use this field to store the filename.
 func (r ApiUploadFileUpdateElementRequest) EncodedFilename(encodedFilename string) ApiUploadFileUpdateElementRequest {
 	r.encodedFilename = &encodedFilename
 	return r
@@ -1005,7 +936,12 @@ func (r ApiUploadFileUpdateElementRequest) ExtractAssemblyHierarchy(extractAssem
 	return r
 }
 
-// If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly.
+// The file to upload.
+func (r ApiUploadFileUpdateElementRequest) File(file HttpFile) ApiUploadFileUpdateElementRequest {
+	r.file = &file
+	return r
+}
+
 func (r ApiUploadFileUpdateElementRequest) FlattenAssemblies(flattenAssemblies bool) ApiUploadFileUpdateElementRequest {
 	r.flattenAssemblies = &flattenAssemblies
 	return r
@@ -1013,6 +949,21 @@ func (r ApiUploadFileUpdateElementRequest) FlattenAssemblies(flattenAssemblies b
 
 func (r ApiUploadFileUpdateElementRequest) FormatName(formatName string) ApiUploadFileUpdateElementRequest {
 	r.formatName = &formatName
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileUpdateElementRequest {
+	r.importAppearances = &importAppearances
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileUpdateElementRequest {
+	r.importMaterialDensity = &importMaterialDensity
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileUpdateElementRequest {
+	r.importWithinDocument = &importWithinDocument
 	return r
 }
 
@@ -1036,8 +987,18 @@ func (r ApiUploadFileUpdateElementRequest) LocationPosition(locationPosition int
 	return r
 }
 
+func (r ApiUploadFileUpdateElementRequest) MakePublic(makePublic bool) ApiUploadFileUpdateElementRequest {
+	r.makePublic = &makePublic
+	return r
+}
+
 func (r ApiUploadFileUpdateElementRequest) NotifyUser(notifyUser bool) ApiUploadFileUpdateElementRequest {
 	r.notifyUser = &notifyUser
+	return r
+}
+
+func (r ApiUploadFileUpdateElementRequest) OnePartPerDoc(onePartPerDoc bool) ApiUploadFileUpdateElementRequest {
+	r.onePartPerDoc = &onePartPerDoc
 	return r
 }
 
@@ -1056,13 +1017,8 @@ func (r ApiUploadFileUpdateElementRequest) ProjectId(projectId string) ApiUpload
 	return r
 }
 
-func (r ApiUploadFileUpdateElementRequest) Public(public bool) ApiUploadFileUpdateElementRequest {
-	r.public = &public
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) OnePartPerDoc(onePartPerDoc bool) ApiUploadFileUpdateElementRequest {
-	r.onePartPerDoc = &onePartPerDoc
+func (r ApiUploadFileUpdateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileUpdateElementRequest {
+	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
 	return r
 }
 
@@ -1091,73 +1047,18 @@ func (r ApiUploadFileUpdateElementRequest) UploadId(uploadId string) ApiUploadFi
 	return r
 }
 
-func (r ApiUploadFileUpdateElementRequest) VersionString(versionString string) ApiUploadFileUpdateElementRequest {
-	r.versionString = &versionString
-	return r
-}
-
-// Face appearances defined on models will be imported.
-func (r ApiUploadFileUpdateElementRequest) ImportAppearances(importAppearances bool) ApiUploadFileUpdateElementRequest {
-	r.importAppearances = &importAppearances
-	return r
-}
-
-// Material density defined on models will be imported.
-func (r ApiUploadFileUpdateElementRequest) ImportMaterialDensity(importMaterialDensity bool) ApiUploadFileUpdateElementRequest {
-	r.importMaterialDensity = &importMaterialDensity
-	return r
-}
-
-// If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect.
-func (r ApiUploadFileUpdateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileUpdateElementRequest {
-	r.yAxisIsUp = &yAxisIsUp
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) ImportWithinDocument(importWithinDocument bool) ApiUploadFileUpdateElementRequest {
-	r.importWithinDocument = &importWithinDocument
-	return r
-}
-
-// Try getting optimized topology from IGES model.
 func (r ApiUploadFileUpdateElementRequest) UseIGESImportPostProcessing(useIGESImportPostProcessing bool) ApiUploadFileUpdateElementRequest {
 	r.useIGESImportPostProcessing = &useIGESImportPostProcessing
 	return r
 }
 
-func (r ApiUploadFileUpdateElementRequest) UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion bool) ApiUploadFileUpdateElementRequest {
-	r.upgradeFeatureScriptVersion = &upgradeFeatureScriptVersion
+func (r ApiUploadFileUpdateElementRequest) VersionString(versionString string) ApiUploadFileUpdateElementRequest {
+	r.versionString = &versionString
 	return r
 }
 
-func (r ApiUploadFileUpdateElementRequest) PreserveSourceIds(preserveSourceIds bool) ApiUploadFileUpdateElementRequest {
-	r.preserveSourceIds = &preserveSourceIds
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) DocumentId(documentId string) ApiUploadFileUpdateElementRequest {
-	r.documentId = &documentId
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) VersionId(versionId string) ApiUploadFileUpdateElementRequest {
-	r.versionId = &versionId
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) VersionName(versionName string) ApiUploadFileUpdateElementRequest {
-	r.versionName = &versionName
-	return r
-}
-
-func (r ApiUploadFileUpdateElementRequest) VersionDescription(versionDescription string) ApiUploadFileUpdateElementRequest {
-	r.versionDescription = &versionDescription
-	return r
-}
-
-// Re-point the version references in APP elements to initial version in the new document
-func (r ApiUploadFileUpdateElementRequest) RepointAppElementVersionRefs(repointAppElementVersionRefs bool) ApiUploadFileUpdateElementRequest {
-	r.repointAppElementVersionRefs = &repointAppElementVersionRefs
+func (r ApiUploadFileUpdateElementRequest) YAxisIsUp(yAxisIsUp bool) ApiUploadFileUpdateElementRequest {
+	r.yAxisIsUp = &yAxisIsUp
 	return r
 }
 
@@ -1234,9 +1135,6 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.file != nil {
-		localVarFormParams.Add("file", parameterToString(*r.file, ""))
-	}
 	if r.allowFaultyParts != nil {
 		localVarFormParams.Add("allowFaultyParts", parameterToString(*r.allowFaultyParts, ""))
 	}
@@ -1252,11 +1150,32 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	if r.extractAssemblyHierarchy != nil {
 		localVarFormParams.Add("extractAssemblyHierarchy", parameterToString(*r.extractAssemblyHierarchy, ""))
 	}
+	var fileLocalVarFormFileName string
+	var fileLocalVarFileName string
+	var fileLocalVarFileBytes io.Reader
+
+	fileLocalVarFormFileName = "file"
+
+	if r.file != nil {
+		fileLocalVarFile := *r.file
+		fileLocalVarFileBytes = fileLocalVarFile.Data
+		fileLocalVarFileName = fileLocalVarFile.Name
+		formFiles = append(formFiles, formFile{fileData: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
+	}
 	if r.flattenAssemblies != nil {
 		localVarFormParams.Add("flattenAssemblies", parameterToString(*r.flattenAssemblies, ""))
 	}
 	if r.formatName != nil {
 		localVarFormParams.Add("formatName", parameterToString(*r.formatName, ""))
+	}
+	if r.importAppearances != nil {
+		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
+	}
+	if r.importMaterialDensity != nil {
+		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
+	}
+	if r.importWithinDocument != nil {
+		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
 	}
 	if r.joinAdjacentSurfaces != nil {
 		localVarFormParams.Add("joinAdjacentSurfaces", parameterToString(*r.joinAdjacentSurfaces, ""))
@@ -1270,8 +1189,14 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	if r.locationPosition != nil {
 		localVarFormParams.Add("locationPosition", parameterToString(*r.locationPosition, ""))
 	}
+	if r.makePublic != nil {
+		localVarFormParams.Add("makePublic", parameterToString(*r.makePublic, ""))
+	}
 	if r.notifyUser != nil {
 		localVarFormParams.Add("notifyUser", parameterToString(*r.notifyUser, ""))
+	}
+	if r.onePartPerDoc != nil {
+		localVarFormParams.Add("onePartPerDoc", parameterToString(*r.onePartPerDoc, ""))
 	}
 	if r.ownerId != nil {
 		localVarFormParams.Add("ownerId", parameterToString(*r.ownerId, ""))
@@ -1282,11 +1207,8 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	if r.projectId != nil {
 		localVarFormParams.Add("projectId", parameterToString(*r.projectId, ""))
 	}
-	if r.public != nil {
-		localVarFormParams.Add("public", parameterToString(*r.public, ""))
-	}
-	if r.onePartPerDoc != nil {
-		localVarFormParams.Add("onePartPerDoc", parameterToString(*r.onePartPerDoc, ""))
+	if r.repointAppElementVersionRefs != nil {
+		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
 	}
 	if r.splitAssembliesIntoMultipleDocuments != nil {
 		localVarFormParams.Add("splitAssembliesIntoMultipleDocuments", parameterToString(*r.splitAssembliesIntoMultipleDocuments, ""))
@@ -1303,44 +1225,14 @@ func (a *BlobElementApiService) UploadFileUpdateElementExecute(r ApiUploadFileUp
 	if r.uploadId != nil {
 		localVarFormParams.Add("uploadId", parameterToString(*r.uploadId, ""))
 	}
-	if r.versionString != nil {
-		localVarFormParams.Add("versionString", parameterToString(*r.versionString, ""))
-	}
-	if r.importAppearances != nil {
-		localVarFormParams.Add("importAppearances", parameterToString(*r.importAppearances, ""))
-	}
-	if r.importMaterialDensity != nil {
-		localVarFormParams.Add("importMaterialDensity", parameterToString(*r.importMaterialDensity, ""))
-	}
-	if r.yAxisIsUp != nil {
-		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))
-	}
-	if r.importWithinDocument != nil {
-		localVarFormParams.Add("importWithinDocument", parameterToString(*r.importWithinDocument, ""))
-	}
 	if r.useIGESImportPostProcessing != nil {
 		localVarFormParams.Add("useIGESImportPostProcessing", parameterToString(*r.useIGESImportPostProcessing, ""))
 	}
-	if r.upgradeFeatureScriptVersion != nil {
-		localVarFormParams.Add("upgradeFeatureScriptVersion", parameterToString(*r.upgradeFeatureScriptVersion, ""))
+	if r.versionString != nil {
+		localVarFormParams.Add("versionString", parameterToString(*r.versionString, ""))
 	}
-	if r.preserveSourceIds != nil {
-		localVarFormParams.Add("preserveSourceIds", parameterToString(*r.preserveSourceIds, ""))
-	}
-	if r.documentId != nil {
-		localVarFormParams.Add("documentId", parameterToString(*r.documentId, ""))
-	}
-	if r.versionId != nil {
-		localVarFormParams.Add("versionId", parameterToString(*r.versionId, ""))
-	}
-	if r.versionName != nil {
-		localVarFormParams.Add("versionName", parameterToString(*r.versionName, ""))
-	}
-	if r.versionDescription != nil {
-		localVarFormParams.Add("versionDescription", parameterToString(*r.versionDescription, ""))
-	}
-	if r.repointAppElementVersionRefs != nil {
-		localVarFormParams.Add("repointAppElementVersionRefs", parameterToString(*r.repointAppElementVersionRefs, ""))
+	if r.yAxisIsUp != nil {
+		localVarFormParams.Add("yAxisIsUp", parameterToString(*r.yAxisIsUp, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
