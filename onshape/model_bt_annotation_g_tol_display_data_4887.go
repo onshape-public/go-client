@@ -17,6 +17,7 @@ import (
 // BTAnnotationGTolDisplayData4887 struct for BTAnnotationGTolDisplayData4887
 type BTAnnotationGTolDisplayData4887 struct {
 	BTAnnotationDisplayData3225
+	AnnotationId         *string                              `json:"annotationId,omitempty"`
 	AnnotationPlane      *BTCoordinateSystem387               `json:"annotationPlane,omitempty"`
 	BasePlane            *BTCoordinateSystem387               `json:"basePlane,omitempty"`
 	BtType               *string                              `json:"btType,omitempty"`
@@ -50,6 +51,38 @@ func NewBTAnnotationGTolDisplayData4887() *BTAnnotationGTolDisplayData4887 {
 func NewBTAnnotationGTolDisplayData4887WithDefaults() *BTAnnotationGTolDisplayData4887 {
 	this := BTAnnotationGTolDisplayData4887{}
 	return &this
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTAnnotationGTolDisplayData4887) SetAnnotationId(v string) {
+	o.AnnotationId = &v
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
@@ -573,6 +606,9 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	errBTAnnotationDisplayData3225 = json.Unmarshal([]byte(serializedBTAnnotationDisplayData3225), &toSerialize)
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
+	}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
 	}
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane

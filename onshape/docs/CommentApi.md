@@ -1,6 +1,6 @@
 # \CommentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v13*
+All URIs are relative to *https://cad.onshape.com/api/v14*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 ## AddAttachment
 
-> BTCommentInfo AddAttachment(ctx, cid).File(file).FileContentLength(fileContentLength).Execute()
+> BTCommentInfo AddAttachment(ctx, cid).File(file).Execute()
 
 Add an attachment to a comment.
 
@@ -37,12 +37,11 @@ import (
 
 func main() {
     cid := "cid_example" // string | 
-    file := os.NewFile(1234, "some_file") // HttpFile | The file to upload.
-    fileContentLength := int32(56) // int32 |  (optional)
+    file := os.NewFile(1234, "some_file") // HttpFile | The file to upload. (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.CommentApi.AddAttachment(context.Background(), cid).File(file).FileContentLength(fileContentLength).Execute()
+    resp, r, err := apiClient.CommentApi.AddAttachment(context.Background(), cid).File(file).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CommentApi.AddAttachment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -69,7 +68,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **file** | **HttpFile** | The file to upload. | 
- **fileContentLength** | **int32** |  | 
 
 ### Return type
 

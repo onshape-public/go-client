@@ -17,6 +17,7 @@ import (
 // BTHoleCalloutDisplayData3452 struct for BTHoleCalloutDisplayData3452
 type BTHoleCalloutDisplayData3452 struct {
 	BTAnnotationDisplayData3225
+	AnnotationId         *string                         `json:"annotationId,omitempty"`
 	AnnotationPlane      *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
 	BasePlane            *BTCoordinateSystem387          `json:"basePlane,omitempty"`
 	BtType               *string                         `json:"btType,omitempty"`
@@ -39,6 +40,7 @@ type BTHoleCalloutDisplayData3452 struct {
 	Diameter             *BTTolerantValueDisplayData3483 `json:"diameter,omitempty"`
 	FeatureId            *string                         `json:"featureId,omitempty"`
 	HoleType             *GBTHoleType                    `json:"holeType,omitempty"`
+	InstanceId           *string                         `json:"instanceId,omitempty"`
 	IsPipeTap            *bool                           `json:"isPipeTap,omitempty"`
 	IsTaperedPipeTap     *bool                           `json:"isTaperedPipeTap,omitempty"`
 	IsTapped             *bool                           `json:"isTapped,omitempty"`
@@ -64,6 +66,38 @@ func NewBTHoleCalloutDisplayData3452() *BTHoleCalloutDisplayData3452 {
 func NewBTHoleCalloutDisplayData3452WithDefaults() *BTHoleCalloutDisplayData3452 {
 	this := BTHoleCalloutDisplayData3452{}
 	return &this
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTHoleCalloutDisplayData3452) SetAnnotationId(v string) {
+	o.AnnotationId = &v
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
@@ -770,6 +804,38 @@ func (o *BTHoleCalloutDisplayData3452) SetHoleType(v GBTHoleType) {
 	o.HoleType = &v
 }
 
+// GetInstanceId returns the InstanceId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetInstanceId() string {
+	if o == nil || o.InstanceId == nil {
+		var ret string
+		return ret
+	}
+	return *o.InstanceId
+}
+
+// GetInstanceIdOk returns a tuple with the InstanceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetInstanceIdOk() (*string, bool) {
+	if o == nil || o.InstanceId == nil {
+		return nil, false
+	}
+	return o.InstanceId, true
+}
+
+// HasInstanceId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasInstanceId() bool {
+	if o != nil && o.InstanceId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInstanceId gets a reference to the given string and assigns it to the InstanceId field.
+func (o *BTHoleCalloutDisplayData3452) SetInstanceId(v string) {
+	o.InstanceId = &v
+}
+
 // GetIsPipeTap returns the IsPipeTap field value if set, zero value otherwise.
 func (o *BTHoleCalloutDisplayData3452) GetIsPipeTap() bool {
 	if o == nil || o.IsPipeTap == nil {
@@ -1036,6 +1102,9 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
 	}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
+	}
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
@@ -1101,6 +1170,9 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	}
 	if o.HoleType != nil {
 		toSerialize["holeType"] = o.HoleType
+	}
+	if o.InstanceId != nil {
+		toSerialize["instanceId"] = o.InstanceId
 	}
 	if o.IsPipeTap != nil {
 		toSerialize["isPipeTap"] = o.IsPipeTap

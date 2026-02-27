@@ -1103,6 +1103,7 @@ docs/BTPlaneDescription692.md
 docs/BTPlaneDescription692AllOf.md
 docs/BTPlaneOrientationFilter1700.md
 docs/BTPlaneOrientationFilter1700AllOf.md
+docs/BTPlmContextInfo.md
 docs/BTPointEntity1439.md
 docs/BTPolylineDisplayData3522.md
 docs/BTPolylineDisplayData3522AllOf.md
@@ -1224,6 +1225,7 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
+docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -2149,6 +2151,7 @@ model_bt_plan_subscriber_info.go
 model_bt_planar_image_mapping_4398.go
 model_bt_plane_description_692.go
 model_bt_plane_orientation_filter_1700.go
+model_bt_plm_context_info.go
 model_bt_point_entity_1439.go
 model_bt_polyline_display_data_3522.go
 model_bt_privacy_consent_info.go
