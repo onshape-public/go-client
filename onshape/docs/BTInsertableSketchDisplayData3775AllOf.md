@@ -4,7 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BodyDIdList** | Pointer to **[]string** |  | [optional] 
 **BodyIdToPartData** | Pointer to [**map[string]BTPartData16**](BTPartData16.md) |  | [optional] 
+**BodyPartDataList** | Pointer to [**[]BTPartData16**](BTPartData16.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **SketchFeatureId** | Pointer to **string** |  | [optional] 
 
@@ -26,6 +28,31 @@ will change when the set of required properties is changed
 NewBTInsertableSketchDisplayData3775AllOfWithDefaults instantiates a new BTInsertableSketchDisplayData3775AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBodyDIdList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) GetBodyDIdList() []string`
+
+GetBodyDIdList returns the BodyDIdList field if non-nil, zero value otherwise.
+
+### GetBodyDIdListOk
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) GetBodyDIdListOk() (*[]string, bool)`
+
+GetBodyDIdListOk returns a tuple with the BodyDIdList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyDIdList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) SetBodyDIdList(v []string)`
+
+SetBodyDIdList sets BodyDIdList field to given value.
+
+### HasBodyDIdList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) HasBodyDIdList() bool`
+
+HasBodyDIdList returns a boolean if a field has been set.
 
 ### GetBodyIdToPartData
 
@@ -51,6 +78,31 @@ SetBodyIdToPartData sets BodyIdToPartData field to given value.
 `func (o *BTInsertableSketchDisplayData3775AllOf) HasBodyIdToPartData() bool`
 
 HasBodyIdToPartData returns a boolean if a field has been set.
+
+### GetBodyPartDataList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) GetBodyPartDataList() []BTPartData16`
+
+GetBodyPartDataList returns the BodyPartDataList field if non-nil, zero value otherwise.
+
+### GetBodyPartDataListOk
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) GetBodyPartDataListOk() (*[]BTPartData16, bool)`
+
+GetBodyPartDataListOk returns a tuple with the BodyPartDataList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyPartDataList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) SetBodyPartDataList(v []BTPartData16)`
+
+SetBodyPartDataList sets BodyPartDataList field to given value.
+
+### HasBodyPartDataList
+
+`func (o *BTInsertableSketchDisplayData3775AllOf) HasBodyPartDataList() bool`
+
+HasBodyPartDataList returns a boolean if a field has been set.
 
 ### GetBtType
 
