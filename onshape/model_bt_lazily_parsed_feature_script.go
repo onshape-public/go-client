@@ -25,6 +25,7 @@ type BTLazilyParsedFeatureScript struct {
 	NoticeModuleIds       *BTPModuleId235                 `json:"noticeModuleIds,omitempty"`
 	ParentLanguageVersion *int32                          `json:"parentLanguageVersion,omitempty"`
 	References            *map[string]BTMicroversionId366 `json:"references,omitempty"`
+	SizeInKBEstimate      *int32                          `json:"sizeInKBEstimate,omitempty"`
 	Source                *string                         `json:"source,omitempty"`
 }
 
@@ -333,6 +334,38 @@ func (o *BTLazilyParsedFeatureScript) SetReferences(v map[string]BTMicroversionI
 	o.References = &v
 }
 
+// GetSizeInKBEstimate returns the SizeInKBEstimate field value if set, zero value otherwise.
+func (o *BTLazilyParsedFeatureScript) GetSizeInKBEstimate() int32 {
+	if o == nil || o.SizeInKBEstimate == nil {
+		var ret int32
+		return ret
+	}
+	return *o.SizeInKBEstimate
+}
+
+// GetSizeInKBEstimateOk returns a tuple with the SizeInKBEstimate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLazilyParsedFeatureScript) GetSizeInKBEstimateOk() (*int32, bool) {
+	if o == nil || o.SizeInKBEstimate == nil {
+		return nil, false
+	}
+	return o.SizeInKBEstimate, true
+}
+
+// HasSizeInKBEstimate returns a boolean if a field has been set.
+func (o *BTLazilyParsedFeatureScript) HasSizeInKBEstimate() bool {
+	if o != nil && o.SizeInKBEstimate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSizeInKBEstimate gets a reference to the given int32 and assigns it to the SizeInKBEstimate field.
+func (o *BTLazilyParsedFeatureScript) SetSizeInKBEstimate(v int32) {
+	o.SizeInKBEstimate = &v
+}
+
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *BTLazilyParsedFeatureScript) GetSource() string {
 	if o == nil || o.Source == nil {
@@ -393,6 +426,9 @@ func (o BTLazilyParsedFeatureScript) MarshalJSON() ([]byte, error) {
 	}
 	if o.References != nil {
 		toSerialize["references"] = o.References
+	}
+	if o.SizeInKBEstimate != nil {
+		toSerialize["sizeInKBEstimate"] = o.SizeInKBEstimate
 	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source

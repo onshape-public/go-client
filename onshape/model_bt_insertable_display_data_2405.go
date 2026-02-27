@@ -247,6 +247,56 @@ func (o *BTInsertableDisplayData2405) SetId(v string) {
 	o.GetActualInstance().(getResult).SetId(v)
 }
 
+// GetInsertableEntityData returns the InsertableEntityData field value if set, zero value otherwise.
+func (o *BTInsertableDisplayData2405) GetInsertableEntityData() BTImmutableByteArray {
+	type getResult interface {
+		GetInsertableEntityData() BTImmutableByteArray
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInsertableEntityData()
+	} else {
+		var de BTImmutableByteArray
+		return de
+	}
+}
+
+// GetInsertableEntityDataOk returns a tuple with the InsertableEntityData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableDisplayData2405) GetInsertableEntityDataOk() (*BTImmutableByteArray, bool) {
+	type getResult interface {
+		GetInsertableEntityDataOk() (*BTImmutableByteArray, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetInsertableEntityDataOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasInsertableEntityData returns a boolean if a field has been set.
+func (o *BTInsertableDisplayData2405) HasInsertableEntityData() bool {
+	type getResult interface {
+		HasInsertableEntityData() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasInsertableEntityData()
+	} else {
+		return false
+	}
+}
+
+// SetInsertableEntityData gets a reference to the given BTImmutableByteArray and assigns it to the InsertableEntityData field.
+func (o *BTInsertableDisplayData2405) SetInsertableEntityData(v BTImmutableByteArray) {
+	type getResult interface {
+		SetInsertableEntityData(v BTImmutableByteArray)
+	}
+
+	o.GetActualInstance().(getResult).SetInsertableEntityData(v)
+}
+
 // GetPart returns the Part field value if set, zero value otherwise.
 func (o *BTInsertableDisplayData2405) GetPart() bool {
 	type getResult interface {
@@ -506,6 +556,7 @@ type base_BTInsertableDisplayData2405 struct {
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
 	Id                       *string                                     `json:"id,omitempty"`
+	InsertableEntityData     *BTImmutableByteArray                       `json:"insertableEntityData,omitempty"`
 	Part                     *bool                                       `json:"part,omitempty"`
 	SketchFeature            *bool                                       `json:"sketchFeature,omitempty"`
 	TessellationSettingIndex *int32                                      `json:"tessellationSettingIndex,omitempty"`
@@ -656,6 +707,38 @@ func (o *base_BTInsertableDisplayData2405) SetId(v string) {
 	o.Id = &v
 }
 
+// GetInsertableEntityData returns the InsertableEntityData field value if set, zero value otherwise.
+func (o *base_BTInsertableDisplayData2405) GetInsertableEntityData() BTImmutableByteArray {
+	if o == nil || o.InsertableEntityData == nil {
+		var ret BTImmutableByteArray
+		return ret
+	}
+	return *o.InsertableEntityData
+}
+
+// GetInsertableEntityDataOk returns a tuple with the InsertableEntityData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInsertableDisplayData2405) GetInsertableEntityDataOk() (*BTImmutableByteArray, bool) {
+	if o == nil || o.InsertableEntityData == nil {
+		return nil, false
+	}
+	return o.InsertableEntityData, true
+}
+
+// HasInsertableEntityData returns a boolean if a field has been set.
+func (o *base_BTInsertableDisplayData2405) HasInsertableEntityData() bool {
+	if o != nil && o.InsertableEntityData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInsertableEntityData gets a reference to the given BTImmutableByteArray and assigns it to the InsertableEntityData field.
+func (o *base_BTInsertableDisplayData2405) SetInsertableEntityData(v BTImmutableByteArray) {
+	o.InsertableEntityData = &v
+}
+
 // GetPart returns the Part field value if set, zero value otherwise.
 func (o *base_BTInsertableDisplayData2405) GetPart() bool {
 	if o == nil || o.Part == nil {
@@ -765,6 +848,9 @@ func (o base_BTInsertableDisplayData2405) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.InsertableEntityData != nil {
+		toSerialize["insertableEntityData"] = o.InsertableEntityData
 	}
 	if o.Part != nil {
 		toSerialize["part"] = o.Part
