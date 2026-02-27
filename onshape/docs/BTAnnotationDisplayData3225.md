@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AnnotationId** | Pointer to **string** |  | [optional] 
 **AnnotationPlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **BasePlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewBTAnnotationDisplayData3225WithDefaults instantiates a new BTAnnotationDisplayData3225 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) GetAnnotationId() string`
+
+GetAnnotationId returns the AnnotationId field if non-nil, zero value otherwise.
+
+### GetAnnotationIdOk
+
+`func (o *BTAnnotationDisplayData3225) GetAnnotationIdOk() (*string, bool)`
+
+GetAnnotationIdOk returns a tuple with the AnnotationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) SetAnnotationId(v string)`
+
+SetAnnotationId sets AnnotationId field to given value.
+
+### HasAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) HasAnnotationId() bool`
+
+HasAnnotationId returns a boolean if a field has been set.
 
 ### GetAnnotationPlane
 

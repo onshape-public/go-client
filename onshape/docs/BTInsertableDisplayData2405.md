@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **GraphicsBuffers** | Pointer to [**map[string]map[string]BTGraphicsBuffer2668**](map.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**InsertableEntityData** | Pointer to [**BTImmutableByteArray**](BTImmutableByteArray.md) |  | [optional] 
 **Part** | Pointer to **bool** |  | [optional] 
 **SketchFeature** | Pointer to **bool** |  | [optional] 
 **TessellationSettingIndex** | Pointer to **int32** |  | [optional] 
@@ -130,6 +131,31 @@ SetId sets Id field to given value.
 `func (o *BTInsertableDisplayData2405) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetInsertableEntityData
+
+`func (o *BTInsertableDisplayData2405) GetInsertableEntityData() BTImmutableByteArray`
+
+GetInsertableEntityData returns the InsertableEntityData field if non-nil, zero value otherwise.
+
+### GetInsertableEntityDataOk
+
+`func (o *BTInsertableDisplayData2405) GetInsertableEntityDataOk() (*BTImmutableByteArray, bool)`
+
+GetInsertableEntityDataOk returns a tuple with the InsertableEntityData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInsertableEntityData
+
+`func (o *BTInsertableDisplayData2405) SetInsertableEntityData(v BTImmutableByteArray)`
+
+SetInsertableEntityData sets InsertableEntityData field to given value.
+
+### HasInsertableEntityData
+
+`func (o *BTInsertableDisplayData2405) HasInsertableEntityData() bool`
+
+HasInsertableEntityData returns a boolean if a field has been set.
 
 ### GetPart
 
