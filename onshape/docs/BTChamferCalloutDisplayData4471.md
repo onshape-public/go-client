@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Angle** | Pointer to [**BTTolerantValueDisplayData3483**](BTTolerantValueDisplayData3483.md) |  | [optional] 
 **Distance** | Pointer to [**BTTolerantValueDisplayData3483**](BTTolerantValueDisplayData3483.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**FeatureParameterIds** | Pointer to **[]string** |  | [optional] 
 **IsInvalid** | Pointer to **bool** |  | [optional] 
 **LabelLocation** | Pointer to [**BTVector2d1812**](BTVector2d1812.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
@@ -156,6 +157,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTChamferCalloutDisplayData4471) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetFeatureParameterIds
+
+`func (o *BTChamferCalloutDisplayData4471) GetFeatureParameterIds() []string`
+
+GetFeatureParameterIds returns the FeatureParameterIds field if non-nil, zero value otherwise.
+
+### GetFeatureParameterIdsOk
+
+`func (o *BTChamferCalloutDisplayData4471) GetFeatureParameterIdsOk() (*[]string, bool)`
+
+GetFeatureParameterIdsOk returns a tuple with the FeatureParameterIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFeatureParameterIds
+
+`func (o *BTChamferCalloutDisplayData4471) SetFeatureParameterIds(v []string)`
+
+SetFeatureParameterIds sets FeatureParameterIds field to given value.
+
+### HasFeatureParameterIds
+
+`func (o *BTChamferCalloutDisplayData4471) HasFeatureParameterIds() bool`
+
+HasFeatureParameterIds returns a boolean if a field has been set.
 
 ### GetIsInvalid
 

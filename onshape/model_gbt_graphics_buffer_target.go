@@ -20,15 +20,21 @@ type GBTGraphicsBufferTarget string
 
 // List of GBTGraphicsBufferTarget
 const (
-	GBTGraphicsBufferTargetArrayBuffer        GBTGraphicsBufferTarget = "ARRAY_BUFFER"
-	GBTGraphicsBufferTargetElementArrayBuffer GBTGraphicsBufferTarget = "ELEMENT_ARRAY_BUFFER"
-	GBTGraphicsBufferTargetUnknown            GBTGraphicsBufferTarget = "UNKNOWN"
+	GBTGraphicsBufferTargetArrayBuffer                                   GBTGraphicsBufferTarget = "ARRAY_BUFFER"
+	GBTGraphicsBufferTargetElementArrayBuffer                            GBTGraphicsBufferTarget = "ELEMENT_ARRAY_BUFFER"
+	GBTGraphicsBufferTargetEntityPartIndexBuffer                         GBTGraphicsBufferTarget = "ENTITY_PART_INDEX_BUFFER"
+	GBTGraphicsBufferTargetEntityRangeBuffer                             GBTGraphicsBufferTarget = "ENTITY_RANGE_BUFFER"
+	GBTGraphicsBufferTargetSketchEntityPartidIndexCountEntityCountBuffer GBTGraphicsBufferTarget = "SKETCH_ENTITY_PARTID_INDEX_COUNT_ENTITY_COUNT_BUFFER"
+	GBTGraphicsBufferTargetUnknown                                       GBTGraphicsBufferTarget = "UNKNOWN"
 )
 
 // All allowed values of GBTGraphicsBufferTarget enum
 var AllowedGBTGraphicsBufferTargetEnumValues = []GBTGraphicsBufferTarget{
 	"ARRAY_BUFFER",
 	"ELEMENT_ARRAY_BUFFER",
+	"ENTITY_PART_INDEX_BUFFER",
+	"ENTITY_RANGE_BUFFER",
+	"SKETCH_ENTITY_PARTID_INDEX_COUNT_ENTITY_COUNT_BUFFER",
 	"UNKNOWN",
 }
 
