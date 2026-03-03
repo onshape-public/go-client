@@ -1,6 +1,6 @@
 # \BlobElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v13*
+All URIs are relative to *https://cad.onshape.com/api/v14*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileCreateElement
 
-> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+> BTDocumentElementProcessingInfo UploadFileCreateElement(ctx, did, wid).LinkDocumentId(linkDocumentId).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).File(file).FlattenAssemblies(flattenAssemblies).FormatName(formatName).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).ImportWithinDocument(importWithinDocument).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).MakePublic(makePublic).NotifyUser(notifyUser).OnePartPerDoc(onePartPerDoc).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).RepointAppElementVersionRefs(repointAppElementVersionRefs).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).UseIGESImportPostProcessing(useIGESImportPostProcessing).VersionString(versionString).YAxisIsUp(yAxisIsUp).Execute()
 
 Upload a file and create a blob element from it.
 
@@ -279,46 +279,40 @@ func main() {
     did := "did_example" // string | The id of the document in which to perform the operation.
     wid := "wid_example" // string | The id of the workspace in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
-    file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
-    allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
-    createComposite := true // bool | Not supported for importing into a single part studio. (optional)
+    allowFaultyParts := true // bool |  (optional)
+    createComposite := true // bool |  (optional)
     createDrawingIfPossible := true // bool |  (optional)
-    encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
+    encodedFilename := "encodedFilename_example" // string |  (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
-    flattenAssemblies := true // bool | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. (optional)
+    file := os.NewFile(1234, "some_file") // HttpFile | The file to upload. (optional)
+    flattenAssemblies := true // bool |  (optional)
     formatName := "formatName_example" // string |  (optional)
+    importAppearances := true // bool |  (optional)
+    importMaterialDensity := true // bool |  (optional)
+    importWithinDocument := true // bool |  (optional)
     joinAdjacentSurfaces := true // bool |  (optional)
     locationElementId := "locationElementId_example" // string |  (optional)
     locationGroupId := "locationGroupId_example" // string |  (optional)
-    locationPosition := int32(56) // int32 |  (optional) (default to -1)
-    notifyUser := true // bool |  (optional) (default to true)
+    locationPosition := int32(56) // int32 |  (optional)
+    makePublic := true // bool |  (optional)
+    notifyUser := true // bool |  (optional)
+    onePartPerDoc := true // bool |  (optional)
     ownerId := "ownerId_example" // string |  (optional)
     parentId := "parentId_example" // string |  (optional)
     projectId := "projectId_example" // string |  (optional)
-    public := true // bool |  (optional)
-    onePartPerDoc := true // bool |  (optional) (default to false)
-    splitAssembliesIntoMultipleDocuments := true // bool |  (optional) (default to false)
-    storeInDocument := true // bool |  (optional) (default to true)
-    translate := true // bool |  (optional) (default to true)
-    unit := "unit_example" // string |  (optional) (default to "")
+    repointAppElementVersionRefs := true // bool |  (optional)
+    splitAssembliesIntoMultipleDocuments := true // bool |  (optional)
+    storeInDocument := true // bool |  (optional)
+    translate := true // bool |  (optional)
+    unit := "unit_example" // string |  (optional)
     uploadId := "uploadId_example" // string |  (optional)
+    useIGESImportPostProcessing := true // bool |  (optional)
     versionString := "versionString_example" // string |  (optional)
-    importAppearances := true // bool | Face appearances defined on models will be imported. (optional) (default to true)
-    importMaterialDensity := true // bool | Material density defined on models will be imported. (optional) (default to false)
-    yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
-    importWithinDocument := true // bool |  (optional)
-    useIGESImportPostProcessing := true // bool | Try getting optimized topology from IGES model. (optional) (default to false)
-    upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
-    preserveSourceIds := true // bool |  (optional) (default to false)
-    documentId := "documentId_example" // string |  (optional)
-    versionId := "versionId_example" // string |  (optional)
-    versionName := "versionName_example" // string |  (optional)
-    versionDescription := "versionDescription_example" // string |  (optional)
-    repointAppElementVersionRefs := true // bool | Re-point the version references in APP elements to initial version in the new document (optional) (default to false)
+    yAxisIsUp := true // bool |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileCreateElement(context.Background(), did, wid).LinkDocumentId(linkDocumentId).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).File(file).FlattenAssemblies(flattenAssemblies).FormatName(formatName).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).ImportWithinDocument(importWithinDocument).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).MakePublic(makePublic).NotifyUser(notifyUser).OnePartPerDoc(onePartPerDoc).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).RepointAppElementVersionRefs(repointAppElementVersionRefs).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).UseIGESImportPostProcessing(useIGESImportPostProcessing).VersionString(versionString).YAxisIsUp(yAxisIsUp).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileCreateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -347,42 +341,36 @@ Name | Type | Description  | Notes
 
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
- **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
- **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
- **createComposite** | **bool** | Not supported for importing into a single part studio. | 
+ **allowFaultyParts** | **bool** |  | 
+ **createComposite** | **bool** |  | 
  **createDrawingIfPossible** | **bool** |  | 
- **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
+ **encodedFilename** | **string** |  | 
  **extractAssemblyHierarchy** | **bool** |  | 
- **flattenAssemblies** | **bool** | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. | 
+ **file** | **HttpFile** | The file to upload. | 
+ **flattenAssemblies** | **bool** |  | 
  **formatName** | **string** |  | 
+ **importAppearances** | **bool** |  | 
+ **importMaterialDensity** | **bool** |  | 
+ **importWithinDocument** | **bool** |  | 
  **joinAdjacentSurfaces** | **bool** |  | 
  **locationElementId** | **string** |  | 
  **locationGroupId** | **string** |  | 
- **locationPosition** | **int32** |  | [default to -1]
- **notifyUser** | **bool** |  | [default to true]
+ **locationPosition** | **int32** |  | 
+ **makePublic** | **bool** |  | 
+ **notifyUser** | **bool** |  | 
+ **onePartPerDoc** | **bool** |  | 
  **ownerId** | **string** |  | 
  **parentId** | **string** |  | 
  **projectId** | **string** |  | 
- **public** | **bool** |  | 
- **onePartPerDoc** | **bool** |  | [default to false]
- **splitAssembliesIntoMultipleDocuments** | **bool** |  | [default to false]
- **storeInDocument** | **bool** |  | [default to true]
- **translate** | **bool** |  | [default to true]
- **unit** | **string** |  | [default to &quot;&quot;]
+ **repointAppElementVersionRefs** | **bool** |  | 
+ **splitAssembliesIntoMultipleDocuments** | **bool** |  | 
+ **storeInDocument** | **bool** |  | 
+ **translate** | **bool** |  | 
+ **unit** | **string** |  | 
  **uploadId** | **string** |  | 
+ **useIGESImportPostProcessing** | **bool** |  | 
  **versionString** | **string** |  | 
- **importAppearances** | **bool** | Face appearances defined on models will be imported. | [default to true]
- **importMaterialDensity** | **bool** | Material density defined on models will be imported. | [default to false]
- **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
- **importWithinDocument** | **bool** |  | 
- **useIGESImportPostProcessing** | **bool** | Try getting optimized topology from IGES model. | [default to false]
- **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
- **preserveSourceIds** | **bool** |  | [default to false]
- **documentId** | **string** |  | 
- **versionId** | **string** |  | 
- **versionName** | **string** |  | 
- **versionDescription** | **string** |  | 
- **repointAppElementVersionRefs** | **bool** | Re-point the version references in APP elements to initial version in the new document | [default to false]
+ **yAxisIsUp** | **bool** |  | 
 
 ### Return type
 
@@ -404,7 +392,7 @@ Name | Type | Description  | Notes
 
 ## UploadFileUpdateElement
 
-> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+> BTDocumentElementProcessingInfo UploadFileUpdateElement(ctx, did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).File(file).FlattenAssemblies(flattenAssemblies).FormatName(formatName).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).ImportWithinDocument(importWithinDocument).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).MakePublic(makePublic).NotifyUser(notifyUser).OnePartPerDoc(onePartPerDoc).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).RepointAppElementVersionRefs(repointAppElementVersionRefs).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).UseIGESImportPostProcessing(useIGESImportPostProcessing).VersionString(versionString).YAxisIsUp(yAxisIsUp).Execute()
 
 Update a blob element by uploading a file.
 
@@ -428,46 +416,40 @@ func main() {
     eid := "eid_example" // string | The id of the element in which to perform the operation.
     linkDocumentId := "linkDocumentId_example" // string | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. (optional) (default to "")
     parentChangeId := "parentChangeId_example" // string | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. (optional)
-    file := map[string]interface{}{ ... } // map[string]interface{} | The file to upload. (optional)
-    allowFaultyParts := true // bool | If true, and a part doesn't pass Onshape validation, it will be imported with faults. (optional)
-    createComposite := true // bool | Not supported for importing into a single part studio. (optional)
+    allowFaultyParts := true // bool |  (optional)
+    createComposite := true // bool |  (optional)
     createDrawingIfPossible := true // bool |  (optional)
-    encodedFilename := "encodedFilename_example" // string | If the filename contains non-ASCII characters. Use this field to store the filename. (optional)
+    encodedFilename := "encodedFilename_example" // string |  (optional)
     extractAssemblyHierarchy := true // bool |  (optional)
-    flattenAssemblies := true // bool | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. (optional)
+    file := os.NewFile(1234, "some_file") // HttpFile | The file to upload. (optional)
+    flattenAssemblies := true // bool |  (optional)
     formatName := "formatName_example" // string |  (optional)
+    importAppearances := true // bool |  (optional)
+    importMaterialDensity := true // bool |  (optional)
+    importWithinDocument := true // bool |  (optional)
     joinAdjacentSurfaces := true // bool |  (optional)
     locationElementId := "locationElementId_example" // string |  (optional)
     locationGroupId := "locationGroupId_example" // string |  (optional)
-    locationPosition := int32(56) // int32 |  (optional) (default to -1)
-    notifyUser := true // bool |  (optional) (default to true)
+    locationPosition := int32(56) // int32 |  (optional)
+    makePublic := true // bool |  (optional)
+    notifyUser := true // bool |  (optional)
+    onePartPerDoc := true // bool |  (optional)
     ownerId := "ownerId_example" // string |  (optional)
     parentId := "parentId_example" // string |  (optional)
     projectId := "projectId_example" // string |  (optional)
-    public := true // bool |  (optional)
-    onePartPerDoc := true // bool |  (optional) (default to false)
-    splitAssembliesIntoMultipleDocuments := true // bool |  (optional) (default to false)
-    storeInDocument := true // bool |  (optional) (default to true)
-    translate := true // bool |  (optional) (default to true)
-    unit := "unit_example" // string |  (optional) (default to "")
+    repointAppElementVersionRefs := true // bool |  (optional)
+    splitAssembliesIntoMultipleDocuments := true // bool |  (optional)
+    storeInDocument := true // bool |  (optional)
+    translate := true // bool |  (optional)
+    unit := "unit_example" // string |  (optional)
     uploadId := "uploadId_example" // string |  (optional)
+    useIGESImportPostProcessing := true // bool |  (optional)
     versionString := "versionString_example" // string |  (optional)
-    importAppearances := true // bool | Face appearances defined on models will be imported. (optional) (default to true)
-    importMaterialDensity := true // bool | Material density defined on models will be imported. (optional) (default to false)
-    yAxisIsUp := true // bool | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. (optional)
-    importWithinDocument := true // bool |  (optional)
-    useIGESImportPostProcessing := true // bool | Try getting optimized topology from IGES model. (optional) (default to false)
-    upgradeFeatureScriptVersion := true // bool |  (optional) (default to false)
-    preserveSourceIds := true // bool |  (optional) (default to false)
-    documentId := "documentId_example" // string |  (optional)
-    versionId := "versionId_example" // string |  (optional)
-    versionName := "versionName_example" // string |  (optional)
-    versionDescription := "versionDescription_example" // string |  (optional)
-    repointAppElementVersionRefs := true // bool | Re-point the version references in APP elements to initial version in the new document (optional) (default to false)
+    yAxisIsUp := true // bool |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).File(file).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).FlattenAssemblies(flattenAssemblies).FormatName(formatName).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).NotifyUser(notifyUser).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).Public(public).OnePartPerDoc(onePartPerDoc).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).VersionString(versionString).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).YAxisIsUp(yAxisIsUp).ImportWithinDocument(importWithinDocument).UseIGESImportPostProcessing(useIGESImportPostProcessing).UpgradeFeatureScriptVersion(upgradeFeatureScriptVersion).PreserveSourceIds(preserveSourceIds).DocumentId(documentId).VersionId(versionId).VersionName(versionName).VersionDescription(versionDescription).RepointAppElementVersionRefs(repointAppElementVersionRefs).Execute()
+    resp, r, err := apiClient.BlobElementApi.UploadFileUpdateElement(context.Background(), did, wid, eid).LinkDocumentId(linkDocumentId).ParentChangeId(parentChangeId).AllowFaultyParts(allowFaultyParts).CreateComposite(createComposite).CreateDrawingIfPossible(createDrawingIfPossible).EncodedFilename(encodedFilename).ExtractAssemblyHierarchy(extractAssemblyHierarchy).File(file).FlattenAssemblies(flattenAssemblies).FormatName(formatName).ImportAppearances(importAppearances).ImportMaterialDensity(importMaterialDensity).ImportWithinDocument(importWithinDocument).JoinAdjacentSurfaces(joinAdjacentSurfaces).LocationElementId(locationElementId).LocationGroupId(locationGroupId).LocationPosition(locationPosition).MakePublic(makePublic).NotifyUser(notifyUser).OnePartPerDoc(onePartPerDoc).OwnerId(ownerId).ParentId(parentId).ProjectId(projectId).RepointAppElementVersionRefs(repointAppElementVersionRefs).SplitAssembliesIntoMultipleDocuments(splitAssembliesIntoMultipleDocuments).StoreInDocument(storeInDocument).Translate(translate).Unit(unit).UploadId(uploadId).UseIGESImportPostProcessing(useIGESImportPostProcessing).VersionString(versionString).YAxisIsUp(yAxisIsUp).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BlobElementApi.UploadFileUpdateElement``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -499,42 +481,36 @@ Name | Type | Description  | Notes
 
  **linkDocumentId** | **string** | The id of the document through which the above document should be accessed; only applicable when accessing a version of the document. This allows a user who has access to document a to see data from document b, as long as document b has been linked to document a by a user who has permission to both. | [default to &quot;&quot;]
  **parentChangeId** | **string** | The id of the last change made to this application element. This can be retrieved from the response for any app element modification endpoint. | 
- **file** | [**map[string]interface{}**](map[string]interface{}.md) | The file to upload. | 
- **allowFaultyParts** | **bool** | If true, and a part doesn&#39;t pass Onshape validation, it will be imported with faults. | 
- **createComposite** | **bool** | Not supported for importing into a single part studio. | 
+ **allowFaultyParts** | **bool** |  | 
+ **createComposite** | **bool** |  | 
  **createDrawingIfPossible** | **bool** |  | 
- **encodedFilename** | **string** | If the filename contains non-ASCII characters. Use this field to store the filename. | 
+ **encodedFilename** | **string** |  | 
  **extractAssemblyHierarchy** | **bool** |  | 
- **flattenAssemblies** | **bool** | If the file is an assembly, or contains an assembly, setting this to True will import it as a Part Studio. In this case the assembly will be flattened to a set of parts in a Part Studio. There will be duplicate parts created whenever a part is instanced more than once. If False, it will be imported as an Assembly. | 
+ **file** | **HttpFile** | The file to upload. | 
+ **flattenAssemblies** | **bool** |  | 
  **formatName** | **string** |  | 
+ **importAppearances** | **bool** |  | 
+ **importMaterialDensity** | **bool** |  | 
+ **importWithinDocument** | **bool** |  | 
  **joinAdjacentSurfaces** | **bool** |  | 
  **locationElementId** | **string** |  | 
  **locationGroupId** | **string** |  | 
- **locationPosition** | **int32** |  | [default to -1]
- **notifyUser** | **bool** |  | [default to true]
+ **locationPosition** | **int32** |  | 
+ **makePublic** | **bool** |  | 
+ **notifyUser** | **bool** |  | 
+ **onePartPerDoc** | **bool** |  | 
  **ownerId** | **string** |  | 
  **parentId** | **string** |  | 
  **projectId** | **string** |  | 
- **public** | **bool** |  | 
- **onePartPerDoc** | **bool** |  | [default to false]
- **splitAssembliesIntoMultipleDocuments** | **bool** |  | [default to false]
- **storeInDocument** | **bool** |  | [default to true]
- **translate** | **bool** |  | [default to true]
- **unit** | **string** |  | [default to &quot;&quot;]
+ **repointAppElementVersionRefs** | **bool** |  | 
+ **splitAssembliesIntoMultipleDocuments** | **bool** |  | 
+ **storeInDocument** | **bool** |  | 
+ **translate** | **bool** |  | 
+ **unit** | **string** |  | 
  **uploadId** | **string** |  | 
+ **useIGESImportPostProcessing** | **bool** |  | 
  **versionString** | **string** |  | 
- **importAppearances** | **bool** | Face appearances defined on models will be imported. | [default to true]
- **importMaterialDensity** | **bool** | Material density defined on models will be imported. | [default to false]
- **yAxisIsUp** | **bool** | If the file was created in a system that orients with Y Axis Up, the models would by default be brought into Onshape (a Z Axis Up system) with a flipped coordinate system. Toggle this value to reorient the axis system to match Onshape and display the model with the coordinates you expect. | 
- **importWithinDocument** | **bool** |  | 
- **useIGESImportPostProcessing** | **bool** | Try getting optimized topology from IGES model. | [default to false]
- **upgradeFeatureScriptVersion** | **bool** |  | [default to false]
- **preserveSourceIds** | **bool** |  | [default to false]
- **documentId** | **string** |  | 
- **versionId** | **string** |  | 
- **versionName** | **string** |  | 
- **versionDescription** | **string** |  | 
- **repointAppElementVersionRefs** | **bool** | Re-point the version references in APP elements to initial version in the new document | [default to false]
+ **yAxisIsUp** | **bool** |  | 
 
 ### Return type
 
