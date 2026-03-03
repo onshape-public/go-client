@@ -22,21 +22,15 @@ import (
 type CommentApiService service
 
 type ApiAddAttachmentRequest struct {
-	ctx               context.Context
-	ApiService        *CommentApiService
-	cid               string
-	file              *HttpFile
-	fileContentLength *int32
+	ctx        context.Context
+	ApiService *CommentApiService
+	cid        string
+	file       *HttpFile
 }
 
 // The file to upload.
 func (r ApiAddAttachmentRequest) File(file HttpFile) ApiAddAttachmentRequest {
 	r.file = &file
-	return r
-}
-
-func (r ApiAddAttachmentRequest) FileContentLength(fileContentLength int32) ApiAddAttachmentRequest {
-	r.fileContentLength = &fileContentLength
 	return r
 }
 
@@ -81,9 +75,6 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.file == nil {
-		return localVarReturnValue, nil, reportError("file is required and must be specified")
-	}
 
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}
@@ -102,19 +93,18 @@ func (a *CommentApiService) AddAttachmentExecute(r ApiAddAttachmentRequest) (*BT
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.fileContentLength != nil {
-		localVarFormParams.Add("fileContentLength", parameterToString(*r.fileContentLength, ""))
-	}
 	var fileLocalVarFormFileName string
 	var fileLocalVarFileName string
 	var fileLocalVarFileBytes io.Reader
 
 	fileLocalVarFormFileName = "file"
 
-	fileLocalVarFile := *r.file
-	fileLocalVarFileBytes = fileLocalVarFile.Data
-	fileLocalVarFileName = fileLocalVarFile.Name
-	formFiles = append(formFiles, formFile{fileData: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
+	if r.file != nil {
+		fileLocalVarFile := *r.file
+		fileLocalVarFileBytes = fileLocalVarFile.Data
+		fileLocalVarFileName = fileLocalVarFile.Name
+		formFiles = append(formFiles, formFile{fileData: fileLocalVarFileBytes, fileName: fileLocalVarFileName, formFileName: fileLocalVarFormFileName})
+	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

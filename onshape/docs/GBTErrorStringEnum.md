@@ -3453,6 +3453,24 @@
 
 * `GBTErrorStringEnumSheetMetalLoftMergeScopeShift` (value: `"SHEET_METAL_LOFT_MERGE_SCOPE_SHIFT"`)
 
+* `GBTErrorStringEnumLoftGuideNotSmooth` (value: `"LOFT_GUIDE_NOT_SMOOTH"`)
+
+* `GBTErrorStringEnumDerivedNoClosedCompositeWithSmWarning` (value: `"DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_WARNING"`)
+
+* `GBTErrorStringEnumDerivedNoClosedCompositeWithSmError` (value: `"DERIVED_NO_CLOSED_COMPOSITE_WITH_SM_ERROR"`)
+
+* `GBTErrorStringEnumSweepTwistRequireTangentPath` (value: `"SWEEP_TWIST_REQUIRE_TANGENT_PATH"`)
+
+* `GBTErrorStringEnumSweepScaleRequireTangentPath` (value: `"SWEEP_SCALE_REQUIRE_TANGENT_PATH"`)
+
+* `GBTErrorStringEnumSweepTwistScaleRequireTangentPath` (value: `"SWEEP_TWIST_SCALE_REQUIRE_TANGENT_PATH"`)
+
+* `GBTErrorStringEnumSweepMultiprofileScaleNotAllowed` (value: `"SWEEP_MULTIPROFILE_SCALE_NOT_ALLOWED"`)
+
+* `GBTErrorStringEnumSweepTwistAngleExceedsLimits` (value: `"SWEEP_TWIST_ANGLE_EXCEEDS_LIMITS"`)
+
+* `GBTErrorStringEnumSweepTwistPitchExceedsLimits` (value: `"SWEEP_TWIST_PITCH_EXCEEDS_LIMITS"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

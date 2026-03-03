@@ -31,6 +31,8 @@
 
 * `BTApiVersionV13SourceTargetDocumentVersionsToMove` (value: `"V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"`)
 
+* `BTApiVersionV14FixReferenceType` (value: `"V14_FIX_REFERENCE_TYPE"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

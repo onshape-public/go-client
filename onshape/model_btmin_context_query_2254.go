@@ -27,6 +27,8 @@ type BTMInContextQuery2254 struct {
 	GeneratedSectionQueryId    *string                    `json:"generatedSectionQueryId,omitempty"`
 	Query                      *BTMIndividualQueryBase139 `json:"query,omitempty"`
 	QueryString                *string                    `json:"queryString,omitempty"`
+	FeatureId                  *string                    `json:"featureId,omitempty"`
+	FeatureQuery               *bool                      `json:"featureQuery,omitempty"`
 	Path                       []string                   `json:"path,omitempty"`
 }
 
@@ -335,6 +337,70 @@ func (o *BTMInContextQuery2254) SetQueryString(v string) {
 	o.QueryString = &v
 }
 
+// GetFeatureId returns the FeatureId field value if set, zero value otherwise.
+func (o *BTMInContextQuery2254) GetFeatureId() string {
+	if o == nil || o.FeatureId == nil {
+		var ret string
+		return ret
+	}
+	return *o.FeatureId
+}
+
+// GetFeatureIdOk returns a tuple with the FeatureId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInContextQuery2254) GetFeatureIdOk() (*string, bool) {
+	if o == nil || o.FeatureId == nil {
+		return nil, false
+	}
+	return o.FeatureId, true
+}
+
+// HasFeatureId returns a boolean if a field has been set.
+func (o *BTMInContextQuery2254) HasFeatureId() bool {
+	if o != nil && o.FeatureId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureId gets a reference to the given string and assigns it to the FeatureId field.
+func (o *BTMInContextQuery2254) SetFeatureId(v string) {
+	o.FeatureId = &v
+}
+
+// GetFeatureQuery returns the FeatureQuery field value if set, zero value otherwise.
+func (o *BTMInContextQuery2254) GetFeatureQuery() bool {
+	if o == nil || o.FeatureQuery == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FeatureQuery
+}
+
+// GetFeatureQueryOk returns a tuple with the FeatureQuery field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMInContextQuery2254) GetFeatureQueryOk() (*bool, bool) {
+	if o == nil || o.FeatureQuery == nil {
+		return nil, false
+	}
+	return o.FeatureQuery, true
+}
+
+// HasFeatureQuery returns a boolean if a field has been set.
+func (o *BTMInContextQuery2254) HasFeatureQuery() bool {
+	if o != nil && o.FeatureQuery != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureQuery gets a reference to the given bool and assigns it to the FeatureQuery field.
+func (o *BTMInContextQuery2254) SetFeatureQuery(v bool) {
+	o.FeatureQuery = &v
+}
+
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *BTMInContextQuery2254) GetPath() []string {
 	if o == nil || o.Path == nil {
@@ -403,6 +469,12 @@ func (o BTMInContextQuery2254) MarshalJSON() ([]byte, error) {
 	}
 	if o.QueryString != nil {
 		toSerialize["queryString"] = o.QueryString
+	}
+	if o.FeatureId != nil {
+		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.FeatureQuery != nil {
+		toSerialize["featureQuery"] = o.FeatureQuery
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path
