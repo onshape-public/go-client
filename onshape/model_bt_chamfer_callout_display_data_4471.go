@@ -17,6 +17,7 @@ import (
 // BTChamferCalloutDisplayData4471 struct for BTChamferCalloutDisplayData4471
 type BTChamferCalloutDisplayData4471 struct {
 	BTAnnotationDisplayData3225
+	AnnotationId         *string                         `json:"annotationId,omitempty"`
 	AnnotationPlane      *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
 	BasePlane            *BTCoordinateSystem387          `json:"basePlane,omitempty"`
 	BtType               *string                         `json:"btType,omitempty"`
@@ -34,6 +35,7 @@ type BTChamferCalloutDisplayData4471 struct {
 	Angle                *BTTolerantValueDisplayData3483 `json:"angle,omitempty"`
 	Distance             *BTTolerantValueDisplayData3483 `json:"distance,omitempty"`
 	FeatureId            *string                         `json:"featureId,omitempty"`
+	FeatureParameterIds  []string                        `json:"featureParameterIds,omitempty"`
 	IsInvalid            *bool                           `json:"isInvalid,omitempty"`
 	LabelLocation        *BTVector2d1812                 `json:"labelLocation,omitempty"`
 	PartId               *string                         `json:"partId,omitempty"`
@@ -54,6 +56,38 @@ func NewBTChamferCalloutDisplayData4471() *BTChamferCalloutDisplayData4471 {
 func NewBTChamferCalloutDisplayData4471WithDefaults() *BTChamferCalloutDisplayData4471 {
 	this := BTChamferCalloutDisplayData4471{}
 	return &this
+}
+
+// GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
+func (o *BTChamferCalloutDisplayData4471) GetAnnotationId() string {
+	if o == nil || o.AnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.AnnotationId
+}
+
+// GetAnnotationIdOk returns a tuple with the AnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTChamferCalloutDisplayData4471) GetAnnotationIdOk() (*string, bool) {
+	if o == nil || o.AnnotationId == nil {
+		return nil, false
+	}
+	return o.AnnotationId, true
+}
+
+// HasAnnotationId returns a boolean if a field has been set.
+func (o *BTChamferCalloutDisplayData4471) HasAnnotationId() bool {
+	if o != nil && o.AnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationId gets a reference to the given string and assigns it to the AnnotationId field.
+func (o *BTChamferCalloutDisplayData4471) SetAnnotationId(v string) {
+	o.AnnotationId = &v
 }
 
 // GetAnnotationPlane returns the AnnotationPlane field value if set, zero value otherwise.
@@ -600,6 +634,38 @@ func (o *BTChamferCalloutDisplayData4471) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetFeatureParameterIds returns the FeatureParameterIds field value if set, zero value otherwise.
+func (o *BTChamferCalloutDisplayData4471) GetFeatureParameterIds() []string {
+	if o == nil || o.FeatureParameterIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.FeatureParameterIds
+}
+
+// GetFeatureParameterIdsOk returns a tuple with the FeatureParameterIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTChamferCalloutDisplayData4471) GetFeatureParameterIdsOk() ([]string, bool) {
+	if o == nil || o.FeatureParameterIds == nil {
+		return nil, false
+	}
+	return o.FeatureParameterIds, true
+}
+
+// HasFeatureParameterIds returns a boolean if a field has been set.
+func (o *BTChamferCalloutDisplayData4471) HasFeatureParameterIds() bool {
+	if o != nil && o.FeatureParameterIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureParameterIds gets a reference to the given []string and assigns it to the FeatureParameterIds field.
+func (o *BTChamferCalloutDisplayData4471) SetFeatureParameterIds(v []string) {
+	o.FeatureParameterIds = v
+}
+
 // GetIsInvalid returns the IsInvalid field value if set, zero value otherwise.
 func (o *BTChamferCalloutDisplayData4471) GetIsInvalid() bool {
 	if o == nil || o.IsInvalid == nil {
@@ -706,6 +772,9 @@ func (o BTChamferCalloutDisplayData4471) MarshalJSON() ([]byte, error) {
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
 	}
+	if o.AnnotationId != nil {
+		toSerialize["annotationId"] = o.AnnotationId
+	}
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
@@ -756,6 +825,9 @@ func (o BTChamferCalloutDisplayData4471) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.FeatureParameterIds != nil {
+		toSerialize["featureParameterIds"] = o.FeatureParameterIds
 	}
 	if o.IsInvalid != nil {
 		toSerialize["isInvalid"] = o.IsInvalid
