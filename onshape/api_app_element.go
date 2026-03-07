@@ -3898,21 +3898,11 @@ type ApiUploadBlobSubelementRequest struct {
 	wid               string
 	eid               string
 	bid               string
-	transactionId     *string
-	parentChangeId    *string
 	description       *string
 	file              *HttpFile
 	fileContentLength *int64
-}
-
-func (r ApiUploadBlobSubelementRequest) TransactionId(transactionId string) ApiUploadBlobSubelementRequest {
-	r.transactionId = &transactionId
-	return r
-}
-
-func (r ApiUploadBlobSubelementRequest) ParentChangeId(parentChangeId string) ApiUploadBlobSubelementRequest {
-	r.parentChangeId = &parentChangeId
-	return r
+	parentChangeId    *string
+	transactionId     *string
 }
 
 func (r ApiUploadBlobSubelementRequest) Description(description string) ApiUploadBlobSubelementRequest {
@@ -3928,6 +3918,16 @@ func (r ApiUploadBlobSubelementRequest) File(file HttpFile) ApiUploadBlobSubelem
 
 func (r ApiUploadBlobSubelementRequest) FileContentLength(fileContentLength int64) ApiUploadBlobSubelementRequest {
 	r.fileContentLength = &fileContentLength
+	return r
+}
+
+func (r ApiUploadBlobSubelementRequest) ParentChangeId(parentChangeId string) ApiUploadBlobSubelementRequest {
+	r.parentChangeId = &parentChangeId
+	return r
+}
+
+func (r ApiUploadBlobSubelementRequest) TransactionId(transactionId string) ApiUploadBlobSubelementRequest {
+	r.transactionId = &transactionId
 	return r
 }
 
@@ -4001,12 +4001,6 @@ func (a *AppElementApiService) UploadBlobSubelementExecute(r ApiUploadBlobSubele
 	if localVarHTTPHeaderAccept != "" {
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
-	if r.transactionId != nil {
-		localVarFormParams.Add("transactionId", parameterToString(*r.transactionId, ""))
-	}
-	if r.parentChangeId != nil {
-		localVarFormParams.Add("parentChangeId", parameterToString(*r.parentChangeId, ""))
-	}
 	if r.description != nil {
 		localVarFormParams.Add("description", parameterToString(*r.description, ""))
 	}
@@ -4024,6 +4018,12 @@ func (a *AppElementApiService) UploadBlobSubelementExecute(r ApiUploadBlobSubele
 	}
 	if r.fileContentLength != nil {
 		localVarFormParams.Add("fileContentLength", parameterToString(*r.fileContentLength, ""))
+	}
+	if r.parentChangeId != nil {
+		localVarFormParams.Add("parentChangeId", parameterToString(*r.parentChangeId, ""))
+	}
+	if r.transactionId != nil {
+		localVarFormParams.Add("transactionId", parameterToString(*r.transactionId, ""))
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
