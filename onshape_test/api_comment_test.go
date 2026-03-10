@@ -2,6 +2,7 @@ package onshape_test
 
 import (
 	"context"
+	"fmt"
 	"os"
 	"testing"
 
@@ -15,7 +16,6 @@ func TestCommentAPI(t *testing.T) {
 	message := "test comment"
 	updatedMessage := "updated test comment"
 	fileName := "spider-man-1.jpg"
-	fileSize := 9084
 	osFile, err := os.Open("./test_data/" + fileName)
 	require.NoError(Tester(), err)
 	file := onshape.NewHttpFileFromOsFile(osFile)
@@ -105,9 +105,9 @@ func TestCommentAPI(t *testing.T) {
 			require.True(Tester(), r.GetReopenedAt().After(r.GetResolvedAt().Time))
 		}),
 	}.Execute()
-
+	fmt.Println("cid", cid)
 	OpenAPITest{
-		Call: commentApi.AddAttachment(ctx, cid).FileContentLength(int32(fileSize)).File(file),
+		Call: commentApi.AddAttachment(ctx, cid).File(file),
 		Expect: NoAPIErrorAnd(func(r *onshape.BTCommentInfo) {
 			require.NotNil(Tester(), r)
 			require.NotEmpty(Tester(), r.GetId())
