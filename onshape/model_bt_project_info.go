@@ -45,6 +45,7 @@ type BTProjectInfo struct {
 	ViewRef          *string                     `json:"viewRef,omitempty"`
 	PermissionScheme *BTRbacPermissionSchemeInfo `json:"permissionScheme,omitempty"`
 	PermissionSet    []string                    `json:"permissionSet,omitempty"`
+	PlmContext       *BTPlmContextInfo           `json:"plmContext,omitempty"`
 	RoleMapEntries   []RoleMapEntry              `json:"roleMapEntries,omitempty"`
 	Trash            *bool                       `json:"trash,omitempty"`
 }
@@ -859,6 +860,38 @@ func (o *BTProjectInfo) SetPermissionSet(v []string) {
 	o.PermissionSet = v
 }
 
+// GetPlmContext returns the PlmContext field value if set, zero value otherwise.
+func (o *BTProjectInfo) GetPlmContext() BTPlmContextInfo {
+	if o == nil || o.PlmContext == nil {
+		var ret BTPlmContextInfo
+		return ret
+	}
+	return *o.PlmContext
+}
+
+// GetPlmContextOk returns a tuple with the PlmContext field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTProjectInfo) GetPlmContextOk() (*BTPlmContextInfo, bool) {
+	if o == nil || o.PlmContext == nil {
+		return nil, false
+	}
+	return o.PlmContext, true
+}
+
+// HasPlmContext returns a boolean if a field has been set.
+func (o *BTProjectInfo) HasPlmContext() bool {
+	if o != nil && o.PlmContext != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPlmContext gets a reference to the given BTPlmContextInfo and assigns it to the PlmContext field.
+func (o *BTProjectInfo) SetPlmContext(v BTPlmContextInfo) {
+	o.PlmContext = &v
+}
+
 // GetRoleMapEntries returns the RoleMapEntries field value if set, zero value otherwise.
 func (o *BTProjectInfo) GetRoleMapEntries() []RoleMapEntry {
 	if o == nil || o.RoleMapEntries == nil {
@@ -999,6 +1032,9 @@ func (o BTProjectInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PermissionSet != nil {
 		toSerialize["permissionSet"] = o.PermissionSet
+	}
+	if o.PlmContext != nil {
+		toSerialize["plmContext"] = o.PlmContext
 	}
 	if o.RoleMapEntries != nil {
 		toSerialize["roleMapEntries"] = o.RoleMapEntries

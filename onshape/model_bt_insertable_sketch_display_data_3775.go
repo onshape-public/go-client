@@ -21,10 +21,13 @@ type BTInsertableSketchDisplayData3775 struct {
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
 	Id                       *string                                     `json:"id,omitempty"`
+	InsertableEntityData     *BTImmutableByteArray                       `json:"insertableEntityData,omitempty"`
 	Part                     *bool                                       `json:"part,omitempty"`
 	SketchFeature            *bool                                       `json:"sketchFeature,omitempty"`
 	TessellationSettingIndex *int32                                      `json:"tessellationSettingIndex,omitempty"`
+	BodyDIdList              []string                                    `json:"bodyDIdList,omitempty"`
 	BodyIdToPartData         *map[string]BTPartData16                    `json:"bodyIdToPartData,omitempty"`
+	BodyPartDataList         []BTPartData16                              `json:"bodyPartDataList,omitempty"`
 	SketchFeatureId          *string                                     `json:"sketchFeatureId,omitempty"`
 }
 
@@ -173,6 +176,38 @@ func (o *BTInsertableSketchDisplayData3775) SetId(v string) {
 	o.Id = &v
 }
 
+// GetInsertableEntityData returns the InsertableEntityData field value if set, zero value otherwise.
+func (o *BTInsertableSketchDisplayData3775) GetInsertableEntityData() BTImmutableByteArray {
+	if o == nil || o.InsertableEntityData == nil {
+		var ret BTImmutableByteArray
+		return ret
+	}
+	return *o.InsertableEntityData
+}
+
+// GetInsertableEntityDataOk returns a tuple with the InsertableEntityData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableSketchDisplayData3775) GetInsertableEntityDataOk() (*BTImmutableByteArray, bool) {
+	if o == nil || o.InsertableEntityData == nil {
+		return nil, false
+	}
+	return o.InsertableEntityData, true
+}
+
+// HasInsertableEntityData returns a boolean if a field has been set.
+func (o *BTInsertableSketchDisplayData3775) HasInsertableEntityData() bool {
+	if o != nil && o.InsertableEntityData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetInsertableEntityData gets a reference to the given BTImmutableByteArray and assigns it to the InsertableEntityData field.
+func (o *BTInsertableSketchDisplayData3775) SetInsertableEntityData(v BTImmutableByteArray) {
+	o.InsertableEntityData = &v
+}
+
 // GetPart returns the Part field value if set, zero value otherwise.
 func (o *BTInsertableSketchDisplayData3775) GetPart() bool {
 	if o == nil || o.Part == nil {
@@ -269,6 +304,38 @@ func (o *BTInsertableSketchDisplayData3775) SetTessellationSettingIndex(v int32)
 	o.TessellationSettingIndex = &v
 }
 
+// GetBodyDIdList returns the BodyDIdList field value if set, zero value otherwise.
+func (o *BTInsertableSketchDisplayData3775) GetBodyDIdList() []string {
+	if o == nil || o.BodyDIdList == nil {
+		var ret []string
+		return ret
+	}
+	return o.BodyDIdList
+}
+
+// GetBodyDIdListOk returns a tuple with the BodyDIdList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableSketchDisplayData3775) GetBodyDIdListOk() ([]string, bool) {
+	if o == nil || o.BodyDIdList == nil {
+		return nil, false
+	}
+	return o.BodyDIdList, true
+}
+
+// HasBodyDIdList returns a boolean if a field has been set.
+func (o *BTInsertableSketchDisplayData3775) HasBodyDIdList() bool {
+	if o != nil && o.BodyDIdList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyDIdList gets a reference to the given []string and assigns it to the BodyDIdList field.
+func (o *BTInsertableSketchDisplayData3775) SetBodyDIdList(v []string) {
+	o.BodyDIdList = v
+}
+
 // GetBodyIdToPartData returns the BodyIdToPartData field value if set, zero value otherwise.
 func (o *BTInsertableSketchDisplayData3775) GetBodyIdToPartData() map[string]BTPartData16 {
 	if o == nil || o.BodyIdToPartData == nil {
@@ -299,6 +366,38 @@ func (o *BTInsertableSketchDisplayData3775) HasBodyIdToPartData() bool {
 // SetBodyIdToPartData gets a reference to the given map[string]BTPartData16 and assigns it to the BodyIdToPartData field.
 func (o *BTInsertableSketchDisplayData3775) SetBodyIdToPartData(v map[string]BTPartData16) {
 	o.BodyIdToPartData = &v
+}
+
+// GetBodyPartDataList returns the BodyPartDataList field value if set, zero value otherwise.
+func (o *BTInsertableSketchDisplayData3775) GetBodyPartDataList() []BTPartData16 {
+	if o == nil || o.BodyPartDataList == nil {
+		var ret []BTPartData16
+		return ret
+	}
+	return o.BodyPartDataList
+}
+
+// GetBodyPartDataListOk returns a tuple with the BodyPartDataList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableSketchDisplayData3775) GetBodyPartDataListOk() ([]BTPartData16, bool) {
+	if o == nil || o.BodyPartDataList == nil {
+		return nil, false
+	}
+	return o.BodyPartDataList, true
+}
+
+// HasBodyPartDataList returns a boolean if a field has been set.
+func (o *BTInsertableSketchDisplayData3775) HasBodyPartDataList() bool {
+	if o != nil && o.BodyPartDataList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyPartDataList gets a reference to the given []BTPartData16 and assigns it to the BodyPartDataList field.
+func (o *BTInsertableSketchDisplayData3775) SetBodyPartDataList(v []BTPartData16) {
+	o.BodyPartDataList = v
 }
 
 // GetSketchFeatureId returns the SketchFeatureId field value if set, zero value otherwise.
@@ -355,6 +454,9 @@ func (o BTInsertableSketchDisplayData3775) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
+	if o.InsertableEntityData != nil {
+		toSerialize["insertableEntityData"] = o.InsertableEntityData
+	}
 	if o.Part != nil {
 		toSerialize["part"] = o.Part
 	}
@@ -364,8 +466,14 @@ func (o BTInsertableSketchDisplayData3775) MarshalJSON() ([]byte, error) {
 	if o.TessellationSettingIndex != nil {
 		toSerialize["tessellationSettingIndex"] = o.TessellationSettingIndex
 	}
+	if o.BodyDIdList != nil {
+		toSerialize["bodyDIdList"] = o.BodyDIdList
+	}
 	if o.BodyIdToPartData != nil {
 		toSerialize["bodyIdToPartData"] = o.BodyIdToPartData
+	}
+	if o.BodyPartDataList != nil {
+		toSerialize["bodyPartDataList"] = o.BodyPartDataList
 	}
 	if o.SketchFeatureId != nil {
 		toSerialize["sketchFeatureId"] = o.SketchFeatureId

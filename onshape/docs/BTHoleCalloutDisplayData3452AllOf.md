@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Diameter** | Pointer to [**BTTolerantValueDisplayData3483**](BTTolerantValueDisplayData3483.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **HoleType** | Pointer to [**GBTHoleType**](GBTHoleType.md) |  | [optional] 
+**InstanceId** | Pointer to **string** |  | [optional] 
 **IsPipeTap** | Pointer to **bool** |  | [optional] 
 **IsTaperedPipeTap** | Pointer to **bool** |  | [optional] 
 **IsTapped** | Pointer to **bool** |  | [optional] 
@@ -291,6 +292,31 @@ SetHoleType sets HoleType field to given value.
 `func (o *BTHoleCalloutDisplayData3452AllOf) HasHoleType() bool`
 
 HasHoleType returns a boolean if a field has been set.
+
+### GetInstanceId
+
+`func (o *BTHoleCalloutDisplayData3452AllOf) GetInstanceId() string`
+
+GetInstanceId returns the InstanceId field if non-nil, zero value otherwise.
+
+### GetInstanceIdOk
+
+`func (o *BTHoleCalloutDisplayData3452AllOf) GetInstanceIdOk() (*string, bool)`
+
+GetInstanceIdOk returns a tuple with the InstanceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetInstanceId
+
+`func (o *BTHoleCalloutDisplayData3452AllOf) SetInstanceId(v string)`
+
+SetInstanceId sets InstanceId field to given value.
+
+### HasInstanceId
+
+`func (o *BTHoleCalloutDisplayData3452AllOf) HasInstanceId() bool`
+
+HasInstanceId returns a boolean if a field has been set.
 
 ### GetIsPipeTap
 

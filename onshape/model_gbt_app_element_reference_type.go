@@ -20,16 +20,17 @@ type GBTAppElementReferenceType string
 
 // List of GBTAppElementReferenceType
 const (
-	GBTAppElementReferenceTypeUnknown       GBTAppElementReferenceType = "UNKNOWN"
-	GBTAppElementReferenceTypePartstudio    GBTAppElementReferenceType = "PARTSTUDIO"
-	GBTAppElementReferenceTypeAssembly      GBTAppElementReferenceType = "ASSEMBLY"
-	GBTAppElementReferenceTypePart          GBTAppElementReferenceType = "PART"
-	GBTAppElementReferenceTypeFlattenedPart GBTAppElementReferenceType = "FLATTENED_PART"
-	GBTAppElementReferenceTypeCompositePart GBTAppElementReferenceType = "COMPOSITE_PART"
-	GBTAppElementReferenceTypeMeshPart      GBTAppElementReferenceType = "MESH_PART"
-	GBTAppElementReferenceTypeSurface       GBTAppElementReferenceType = "SURFACE"
-	GBTAppElementReferenceTypeSketch        GBTAppElementReferenceType = "SKETCH"
-	GBTAppElementReferenceTypeCurve         GBTAppElementReferenceType = "CURVE"
+	GBTAppElementReferenceTypeUnknown         GBTAppElementReferenceType = "UNKNOWN"
+	GBTAppElementReferenceTypePartstudio      GBTAppElementReferenceType = "PARTSTUDIO"
+	GBTAppElementReferenceTypeAssembly        GBTAppElementReferenceType = "ASSEMBLY"
+	GBTAppElementReferenceTypePart            GBTAppElementReferenceType = "PART"
+	GBTAppElementReferenceTypeFlattenedPart   GBTAppElementReferenceType = "FLATTENED_PART"
+	GBTAppElementReferenceTypeCompositePart   GBTAppElementReferenceType = "COMPOSITE_PART"
+	GBTAppElementReferenceTypeMeshPart        GBTAppElementReferenceType = "MESH_PART"
+	GBTAppElementReferenceTypeSurface         GBTAppElementReferenceType = "SURFACE"
+	GBTAppElementReferenceTypeSketch          GBTAppElementReferenceType = "SKETCH"
+	GBTAppElementReferenceTypeCurve           GBTAppElementReferenceType = "CURVE"
+	GBTAppElementReferenceTypeBillofmaterials GBTAppElementReferenceType = "BILLOFMATERIALS"
 )
 
 // All allowed values of GBTAppElementReferenceType enum
@@ -44,6 +45,7 @@ var AllowedGBTAppElementReferenceTypeEnumValues = []GBTAppElementReferenceType{
 	"SURFACE",
 	"SKETCH",
 	"CURVE",
+	"BILLOFMATERIALS",
 }
 
 func (v *GBTAppElementReferenceType) UnmarshalJSON(src []byte) error {
