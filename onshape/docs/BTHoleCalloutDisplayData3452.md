@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Depth** | Pointer to [**BTTolerantValueDisplayData3483**](BTTolerantValueDisplayData3483.md) |  | [optional] 
 **Diameter** | Pointer to [**BTTolerantValueDisplayData3483**](BTTolerantValueDisplayData3483.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**HasDefaultTolerances** | Pointer to **bool** |  | [optional] 
 **HoleType** | Pointer to [**GBTHoleType**](GBTHoleType.md) |  | [optional] 
 **InstanceId** | Pointer to **string** |  | [optional] 
 **IsPipeTap** | Pointer to **bool** |  | [optional] 
@@ -267,6 +268,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTHoleCalloutDisplayData3452) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetHasDefaultTolerances
+
+`func (o *BTHoleCalloutDisplayData3452) GetHasDefaultTolerances() bool`
+
+GetHasDefaultTolerances returns the HasDefaultTolerances field if non-nil, zero value otherwise.
+
+### GetHasDefaultTolerancesOk
+
+`func (o *BTHoleCalloutDisplayData3452) GetHasDefaultTolerancesOk() (*bool, bool)`
+
+GetHasDefaultTolerancesOk returns a tuple with the HasDefaultTolerances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasDefaultTolerances
+
+`func (o *BTHoleCalloutDisplayData3452) SetHasDefaultTolerances(v bool)`
+
+SetHasDefaultTolerances sets HasDefaultTolerances field to given value.
+
+### HasHasDefaultTolerances
+
+`func (o *BTHoleCalloutDisplayData3452) HasHasDefaultTolerances() bool`
+
+HasHasDefaultTolerances returns a boolean if a field has been set.
 
 ### GetHoleType
 

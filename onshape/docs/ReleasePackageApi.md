@@ -4,10 +4,10 @@ All URIs are relative to *https://cad.onshape.com/api/v14*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateObsoletionPackage**](ReleasePackageApi.md#CreateObsoletionPackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion package to make an existing revision obsolete.
-[**CreateReleasePackage**](ReleasePackageApi.md#CreateReleasePackage) | **Post** /releasepackages/release/{wfid} | Create a new release package for one or more items.
-[**GetReleasePackage**](ReleasePackageApi.md#GetReleasePackage) | **Get** /releasepackages/{rpid} | Get details about the specified release package.
-[**UpdateReleasePackage**](ReleasePackageApi.md#UpdateReleasePackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion package/item properties.
+[**CreateObsoletionPackage**](ReleasePackageApi.md#CreateObsoletionPackage) | **Post** /releasepackages/obsoletion/{wfid} | Create an obsoletion candidate to make an existing revision obsolete.
+[**CreateReleasePackage**](ReleasePackageApi.md#CreateReleasePackage) | **Post** /releasepackages/release/{wfid} | Create a new release candidate for one or more items.
+[**GetReleasePackage**](ReleasePackageApi.md#GetReleasePackage) | **Get** /releasepackages/{rpid} | Get details about the specified release candidate.
+[**UpdateReleasePackage**](ReleasePackageApi.md#UpdateReleasePackage) | **Post** /releasepackages/{rpid} | Update the release/obsoletion candidate/item properties.
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > map[string]interface{} CreateObsoletionPackage(ctx, wfid).RevisionId(revisionId).DebugMode(debugMode).Execute()
 
-Create an obsoletion package to make an existing revision obsolete.
+Create an obsoletion candidate to make an existing revision obsolete.
 
 ### Example
 
@@ -30,8 +30,8 @@ import (
 )
 
 func main() {
-    wfid := "wfid_example" // string | 
-    revisionId := "revisionId_example" // string | 
+    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
+    revisionId := "revisionId_example" // string | ID of revision to obsolete. See [Revision](https://cad.onshape.com/glassworks/explorer/#/Revision).
     debugMode := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wfid** | **string** |  | 
+**wfid** | **string** | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows). | 
 
 ### Other Parameters
 
@@ -62,7 +62,7 @@ Other parameters are passed through a pointer to a apiCreateObsoletionPackageReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **revisionId** | **string** |  | 
+ **revisionId** | **string** | ID of revision to obsolete. See [Revision](https://cad.onshape.com/glassworks/explorer/#/Revision). | 
  **debugMode** | **bool** |  | [default to false]
 
 ### Return type
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 > map[string]interface{} CreateReleasePackage(ctx, wfid).BTReleasePackageParams(bTReleasePackageParams).DebugMode(debugMode).Execute()
 
-Create a new release package for one or more items.
+Create a new release candidate for one or more items.
 
 
 
@@ -104,7 +104,7 @@ import (
 )
 
 func main() {
-    wfid := "wfid_example" // string | 
+    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
     bTReleasePackageParams := *openapiclient.NewBTReleasePackageParams() // BTReleasePackageParams | 
     debugMode := true // bool |  (optional) (default to false)
 
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wfid** | **string** |  | 
+**wfid** | **string** | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows). | 
 
 ### Other Parameters
 
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 
 > BTReleasePackageInfo GetReleasePackage(ctx, rpid).Detailed(detailed).Execute()
 
-Get details about the specified release package.
+Get details about the specified release candidate.
 
 ### Example
 
@@ -176,7 +176,7 @@ import (
 )
 
 func main() {
-    rpid := "rpid_example" // string | 
+    rpid := "rpid_example" // string | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
     detailed := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
@@ -197,7 +197,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**rpid** | **string** |  | 
+**rpid** | **string** | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage). | 
 
 ### Other Parameters
 
@@ -231,7 +231,7 @@ Name | Type | Description  | Notes
 
 > BTReleasePackageInfo UpdateReleasePackage(ctx, rpid).BTUpdateReleasePackageParams(bTUpdateReleasePackageParams).Action(action).Wfaction(wfaction).Execute()
 
-Update the release/obsoletion package/item properties.
+Update the release/obsoletion candidate/item properties.
 
 
 
@@ -248,10 +248,10 @@ import (
 )
 
 func main() {
-    rpid := "rpid_example" // string | 
+    rpid := "rpid_example" // string | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
     bTUpdateReleasePackageParams := *openapiclient.NewBTUpdateReleasePackageParams() // BTUpdateReleasePackageParams | 
-    action := "action_example" // string |  (optional) (default to "UPDATE")
-    wfaction := "wfaction_example" // string |  (optional)
+    action := "action_example" // string | `UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT` (optional) (default to "UPDATE")
+    wfaction := "wfaction_example" // string | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    `SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE`    * `DISCARD` can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * `CREATE_AND_RELEASE` and `CREATE_AND_OBSOLETE` can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions. (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -271,7 +271,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**rpid** | **string** |  | 
+**rpid** | **string** | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage). | 
 
 ### Other Parameters
 
@@ -282,8 +282,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **bTUpdateReleasePackageParams** | [**BTUpdateReleasePackageParams**](BTUpdateReleasePackageParams.md) |  | 
- **action** | **string** |  | [default to &quot;UPDATE&quot;]
- **wfaction** | **string** |  | 
+ **action** | **string** | &#x60;UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT&#x60; | [default to &quot;UPDATE&quot;]
+ **wfaction** | **string** | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions. | 
 
 ### Return type
 

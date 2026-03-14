@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **IncludeBendCenterlines** | Pointer to **bool** |  | [optional] 
 **IncludeBendLines** | Pointer to **bool** |  | [optional] 
 **IncludeCboreCsink** | Pointer to **bool** |  | [optional] 
+**IncludeDerivedTolerances** | Pointer to **bool** |  | [optional] 
 **IncludeExportIds** | Pointer to **bool** | Whether topology ids should be exported as parasolid attributes. | [optional] 
 **IncludeFormedCentermarks** | Pointer to **bool** |  | [optional] 
 **IncludeFormedOutlines** | Pointer to **bool** |  | [optional] 
@@ -1217,6 +1218,31 @@ SetIncludeCboreCsink sets IncludeCboreCsink field to given value.
 `func (o *BTTranslateFormatParams) HasIncludeCboreCsink() bool`
 
 HasIncludeCboreCsink returns a boolean if a field has been set.
+
+### GetIncludeDerivedTolerances
+
+`func (o *BTTranslateFormatParams) GetIncludeDerivedTolerances() bool`
+
+GetIncludeDerivedTolerances returns the IncludeDerivedTolerances field if non-nil, zero value otherwise.
+
+### GetIncludeDerivedTolerancesOk
+
+`func (o *BTTranslateFormatParams) GetIncludeDerivedTolerancesOk() (*bool, bool)`
+
+GetIncludeDerivedTolerancesOk returns a tuple with the IncludeDerivedTolerances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeDerivedTolerances
+
+`func (o *BTTranslateFormatParams) SetIncludeDerivedTolerances(v bool)`
+
+SetIncludeDerivedTolerances sets IncludeDerivedTolerances field to given value.
+
+### HasIncludeDerivedTolerances
+
+`func (o *BTTranslateFormatParams) HasIncludeDerivedTolerances() bool`
+
+HasIncludeDerivedTolerances returns a boolean if a field has been set.
 
 ### GetIncludeExportIds
 

@@ -39,6 +39,7 @@ type BTHoleCalloutDisplayData3452 struct {
 	Depth                *BTTolerantValueDisplayData3483 `json:"depth,omitempty"`
 	Diameter             *BTTolerantValueDisplayData3483 `json:"diameter,omitempty"`
 	FeatureId            *string                         `json:"featureId,omitempty"`
+	HasDefaultTolerances *bool                           `json:"hasDefaultTolerances,omitempty"`
 	HoleType             *GBTHoleType                    `json:"holeType,omitempty"`
 	InstanceId           *string                         `json:"instanceId,omitempty"`
 	IsPipeTap            *bool                           `json:"isPipeTap,omitempty"`
@@ -772,6 +773,38 @@ func (o *BTHoleCalloutDisplayData3452) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetHasDefaultTolerances returns the HasDefaultTolerances field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetHasDefaultTolerances() bool {
+	if o == nil || o.HasDefaultTolerances == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasDefaultTolerances
+}
+
+// GetHasDefaultTolerancesOk returns a tuple with the HasDefaultTolerances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetHasDefaultTolerancesOk() (*bool, bool) {
+	if o == nil || o.HasDefaultTolerances == nil {
+		return nil, false
+	}
+	return o.HasDefaultTolerances, true
+}
+
+// HasHasDefaultTolerances returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasHasDefaultTolerances() bool {
+	if o != nil && o.HasDefaultTolerances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasDefaultTolerances gets a reference to the given bool and assigns it to the HasDefaultTolerances field.
+func (o *BTHoleCalloutDisplayData3452) SetHasDefaultTolerances(v bool) {
+	o.HasDefaultTolerances = &v
+}
+
 // GetHoleType returns the HoleType field value if set, zero value otherwise.
 func (o *BTHoleCalloutDisplayData3452) GetHoleType() GBTHoleType {
 	if o == nil || o.HoleType == nil {
@@ -1167,6 +1200,9 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.HasDefaultTolerances != nil {
+		toSerialize["hasDefaultTolerances"] = o.HasDefaultTolerances
 	}
 	if o.HoleType != nil {
 		toSerialize["holeType"] = o.HoleType

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ContactBehavior** | Pointer to [**GBTSimulationContactBehavior**](GBTSimulationContactBehavior.md) |  | [optional] 
 **Loads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 **LoadsByNodeId** | Pointer to [**map[string]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
+**SimulationFeatures** | Pointer to [**[]BTMSimulationFeature5034**](BTMSimulationFeature5034.md) |  | [optional] 
 **Simulations** | Pointer to [**[]BTAssemblySimulation2246**](BTAssemblySimulation2246.md) |  | [optional] 
 **StructuralLoads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 
@@ -129,6 +130,31 @@ SetLoadsByNodeId sets LoadsByNodeId field to given value.
 `func (o *BTAssemblySimulationData978) HasLoadsByNodeId() bool`
 
 HasLoadsByNodeId returns a boolean if a field has been set.
+
+### GetSimulationFeatures
+
+`func (o *BTAssemblySimulationData978) GetSimulationFeatures() []BTMSimulationFeature5034`
+
+GetSimulationFeatures returns the SimulationFeatures field if non-nil, zero value otherwise.
+
+### GetSimulationFeaturesOk
+
+`func (o *BTAssemblySimulationData978) GetSimulationFeaturesOk() (*[]BTMSimulationFeature5034, bool)`
+
+GetSimulationFeaturesOk returns a tuple with the SimulationFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSimulationFeatures
+
+`func (o *BTAssemblySimulationData978) SetSimulationFeatures(v []BTMSimulationFeature5034)`
+
+SetSimulationFeatures sets SimulationFeatures field to given value.
+
+### HasSimulationFeatures
+
+`func (o *BTAssemblySimulationData978) HasSimulationFeatures() bool`
+
+HasSimulationFeatures returns a boolean if a field has been set.
 
 ### GetSimulations
 

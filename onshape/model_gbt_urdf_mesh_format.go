@@ -20,7 +20,6 @@ type GBTUrdfMeshFormat string
 
 // List of GBTUrdfMeshFormat
 const (
-	GBTUrdfMeshFormatStep    GBTUrdfMeshFormat = "STEP"
 	GBTUrdfMeshFormatStl     GBTUrdfMeshFormat = "STL"
 	GBTUrdfMeshFormatGltf    GBTUrdfMeshFormat = "GLTF"
 	GBTUrdfMeshFormatUnknown GBTUrdfMeshFormat = "UNKNOWN"
@@ -28,7 +27,6 @@ const (
 
 // All allowed values of GBTUrdfMeshFormat enum
 var AllowedGBTUrdfMeshFormatEnumValues = []GBTUrdfMeshFormat{
-	"STEP",
 	"STL",
 	"GLTF",
 	"UNKNOWN",

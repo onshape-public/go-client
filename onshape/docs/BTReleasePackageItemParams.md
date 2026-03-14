@@ -4,22 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Configuration** | Pointer to **string** |  | [optional] 
-**DocumentId** | Pointer to **string** |  | [optional] 
-**ElementId** | Pointer to **string** |  | [optional] 
-**ElementType** | Pointer to **int32** |  | [optional] 
-**FlatPartId** | Pointer to **string** |  | [optional] 
-**Href** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
-**IsIncluded** | Pointer to **bool** |  | [optional] 
-**ParentId** | Pointer to **string** |  | [optional] 
-**PartId** | Pointer to **string** |  | [optional] 
-**PartIdentity** | Pointer to **string** |  | [optional] 
-**PartNumber** | Pointer to **string** |  | [optional] 
-**Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) |  | [optional] 
-**RevisionId** | Pointer to **string** |  | [optional] 
-**VersionId** | Pointer to **string** |  | [optional] 
-**WorkspaceId** | Pointer to **string** |  | [optional] 
+**Configuration** | Pointer to **string** | Encoded configuration string for the item. See [encodeConfigurationMap](#/Element/encodeConfigurationMap). | [optional] 
+**DocumentId** | Pointer to **string** | Document containing the item. | [optional] 
+**ElementId** | Pointer to **string** | Element containing the item. | [optional] 
+**ElementType** | Pointer to **int32** | Type of element, which can be: &#x60;0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob&#x60; | [optional] 
+**FlatPartId** | Pointer to **string** | Flat part ID. | [optional] 
+**Href** | Pointer to **string** | Href link to the item. | [optional] 
+**Id** | Pointer to **string** | ID of the item. Use this to reference the item when updating it. See [getReleasePackage](#/ReleasePackage/getReleasePackage). | [optional] 
+**ParentId** | Pointer to **string** | ID of the parent item, if any. | [optional] 
+**PartId** | Pointer to **string** | ID of the part to add to the release candidate. | [optional] 
+**PartIdentity** | Pointer to **string** | Part identity string for the part to add to the release candidate. | [optional] 
+**PartNumber** | Pointer to **string** | Part number. See [nextNumbers](#/NumberingScheme/nextNumbers). | [optional] 
+**Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) | List of property values associated with the item. | [optional] 
+**RevisionId** | Pointer to **string** | Revision ID of the item. Use when adding items to an obsoletion candidate. | [optional] 
+**VersionId** | Pointer to **string** | Version containing the item. | [optional] 
+**WorkspaceId** | Pointer to **string** | Workspace containing the item. | [optional] 
 
 ## Methods
 
@@ -214,31 +213,6 @@ SetId sets Id field to given value.
 `func (o *BTReleasePackageItemParams) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetIsIncluded
-
-`func (o *BTReleasePackageItemParams) GetIsIncluded() bool`
-
-GetIsIncluded returns the IsIncluded field if non-nil, zero value otherwise.
-
-### GetIsIncludedOk
-
-`func (o *BTReleasePackageItemParams) GetIsIncludedOk() (*bool, bool)`
-
-GetIsIncludedOk returns a tuple with the IsIncluded field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsIncluded
-
-`func (o *BTReleasePackageItemParams) SetIsIncluded(v bool)`
-
-SetIsIncluded sets IsIncluded field to given value.
-
-### HasIsIncluded
-
-`func (o *BTReleasePackageItemParams) HasIsIncluded() bool`
-
-HasIsIncluded returns a boolean if a field has been set.
 
 ### GetParentId
 

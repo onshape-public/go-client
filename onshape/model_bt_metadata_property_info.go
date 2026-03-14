@@ -34,6 +34,7 @@ type BTMetadataPropertyInfo struct {
 	// 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden
 	PropertyOverrideStatus *int32                           `json:"propertyOverrideStatus,omitempty"`
 	PropertySource         *int32                           `json:"propertySource,omitempty"`
+	PublicPartOverridable  *bool                            `json:"publicPartOverridable,omitempty"`
 	Required               *bool                            `json:"required,omitempty"`
 	SchemaId               *string                          `json:"schemaId,omitempty"`
 	UiHints                *BTMetadataPropertyUiHintsInfo   `json:"uiHints,omitempty"`
@@ -604,6 +605,38 @@ func (o *BTMetadataPropertyInfo) SetPropertySource(v int32) {
 	o.PropertySource = &v
 }
 
+// GetPublicPartOverridable returns the PublicPartOverridable field value if set, zero value otherwise.
+func (o *BTMetadataPropertyInfo) GetPublicPartOverridable() bool {
+	if o == nil || o.PublicPartOverridable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PublicPartOverridable
+}
+
+// GetPublicPartOverridableOk returns a tuple with the PublicPartOverridable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPropertyInfo) GetPublicPartOverridableOk() (*bool, bool) {
+	if o == nil || o.PublicPartOverridable == nil {
+		return nil, false
+	}
+	return o.PublicPartOverridable, true
+}
+
+// HasPublicPartOverridable returns a boolean if a field has been set.
+func (o *BTMetadataPropertyInfo) HasPublicPartOverridable() bool {
+	if o != nil && o.PublicPartOverridable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicPartOverridable gets a reference to the given bool and assigns it to the PublicPartOverridable field.
+func (o *BTMetadataPropertyInfo) SetPublicPartOverridable(v bool) {
+	o.PublicPartOverridable = &v
+}
+
 // GetRequired returns the Required field value if set, zero value otherwise.
 func (o *BTMetadataPropertyInfo) GetRequired() bool {
 	if o == nil || o.Required == nil {
@@ -849,6 +882,9 @@ func (o BTMetadataPropertyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PropertySource != nil {
 		toSerialize["propertySource"] = o.PropertySource
+	}
+	if o.PublicPartOverridable != nil {
+		toSerialize["publicPartOverridable"] = o.PublicPartOverridable
 	}
 	if o.Required != nil {
 		toSerialize["required"] = o.Required

@@ -53,6 +53,7 @@ type BTUserSettingsInfo struct {
 	UnitsMaximumDisplayPrecision         *BTUnitsMaximumDisplayPrecisionInfo    `json:"unitsMaximumDisplayPrecision,omitempty"`
 	Use24HourTime                        *bool                                  `json:"use24HourTime,omitempty"`
 	UseDecimalComma                      *bool                                  `json:"useDecimalComma,omitempty"`
+	UsePenAsMouse                        *bool                                  `json:"usePenAsMouse,omitempty"`
 	ViewManipulationMouseKeyMapping      *BTViewManipulationMouseKeyMappingInfo `json:"viewManipulationMouseKeyMapping,omitempty"`
 	ViewMappingId                        *int32                                 `json:"viewMappingId,omitempty"`
 }
@@ -1258,6 +1259,38 @@ func (o *BTUserSettingsInfo) SetUseDecimalComma(v bool) {
 	o.UseDecimalComma = &v
 }
 
+// GetUsePenAsMouse returns the UsePenAsMouse field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetUsePenAsMouse() bool {
+	if o == nil || o.UsePenAsMouse == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UsePenAsMouse
+}
+
+// GetUsePenAsMouseOk returns a tuple with the UsePenAsMouse field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetUsePenAsMouseOk() (*bool, bool) {
+	if o == nil || o.UsePenAsMouse == nil {
+		return nil, false
+	}
+	return o.UsePenAsMouse, true
+}
+
+// HasUsePenAsMouse returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasUsePenAsMouse() bool {
+	if o != nil && o.UsePenAsMouse != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUsePenAsMouse gets a reference to the given bool and assigns it to the UsePenAsMouse field.
+func (o *BTUserSettingsInfo) SetUsePenAsMouse(v bool) {
+	o.UsePenAsMouse = &v
+}
+
 // GetViewManipulationMouseKeyMapping returns the ViewManipulationMouseKeyMapping field value if set, zero value otherwise.
 func (o *BTUserSettingsInfo) GetViewManipulationMouseKeyMapping() BTViewManipulationMouseKeyMappingInfo {
 	if o == nil || o.ViewManipulationMouseKeyMapping == nil {
@@ -1434,6 +1467,9 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.UseDecimalComma != nil {
 		toSerialize["useDecimalComma"] = o.UseDecimalComma
+	}
+	if o.UsePenAsMouse != nil {
+		toSerialize["usePenAsMouse"] = o.UsePenAsMouse
 	}
 	if o.ViewManipulationMouseKeyMapping != nil {
 		toSerialize["viewManipulationMouseKeyMapping"] = o.ViewManipulationMouseKeyMapping

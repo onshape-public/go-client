@@ -80,6 +80,7 @@ type BTTranslateFormatParams struct {
 	IncludeBendCenterlines       *bool  `json:"includeBendCenterlines,omitempty"`
 	IncludeBendLines             *bool  `json:"includeBendLines,omitempty"`
 	IncludeCboreCsink            *bool  `json:"includeCboreCsink,omitempty"`
+	IncludeDerivedTolerances     *bool  `json:"includeDerivedTolerances,omitempty"`
 	// Whether topology ids should be exported as parasolid attributes.
 	IncludeExportIds         *bool   `json:"includeExportIds,omitempty"`
 	IncludeFormedCentermarks *bool   `json:"includeFormedCentermarks,omitempty"`
@@ -1593,6 +1594,38 @@ func (o *BTTranslateFormatParams) HasIncludeCboreCsink() bool {
 // SetIncludeCboreCsink gets a reference to the given bool and assigns it to the IncludeCboreCsink field.
 func (o *BTTranslateFormatParams) SetIncludeCboreCsink(v bool) {
 	o.IncludeCboreCsink = &v
+}
+
+// GetIncludeDerivedTolerances returns the IncludeDerivedTolerances field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetIncludeDerivedTolerances() bool {
+	if o == nil || o.IncludeDerivedTolerances == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IncludeDerivedTolerances
+}
+
+// GetIncludeDerivedTolerancesOk returns a tuple with the IncludeDerivedTolerances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetIncludeDerivedTolerancesOk() (*bool, bool) {
+	if o == nil || o.IncludeDerivedTolerances == nil {
+		return nil, false
+	}
+	return o.IncludeDerivedTolerances, true
+}
+
+// HasIncludeDerivedTolerances returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasIncludeDerivedTolerances() bool {
+	if o != nil && o.IncludeDerivedTolerances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIncludeDerivedTolerances gets a reference to the given bool and assigns it to the IncludeDerivedTolerances field.
+func (o *BTTranslateFormatParams) SetIncludeDerivedTolerances(v bool) {
+	o.IncludeDerivedTolerances = &v
 }
 
 // GetIncludeExportIds returns the IncludeExportIds field value if set, zero value otherwise.
@@ -3488,6 +3521,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.IncludeCboreCsink != nil {
 		toSerialize["includeCboreCsink"] = o.IncludeCboreCsink
+	}
+	if o.IncludeDerivedTolerances != nil {
+		toSerialize["includeDerivedTolerances"] = o.IncludeDerivedTolerances
 	}
 	if o.IncludeExportIds != nil {
 		toSerialize["includeExportIds"] = o.IncludeExportIds

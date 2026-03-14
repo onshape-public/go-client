@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **PropertyId** | Pointer to **string** |  | [optional] 
 **PropertyOverrideStatus** | Pointer to **int32** | 0: Unknown | 1: Not computed | 2: Computed without override | 3: Computed with override | 4: Computed with subassembly overrides | 5: Overridden | [optional] 
 **PropertySource** | Pointer to **int32** |  | [optional] 
+**PublicPartOverridable** | Pointer to **bool** |  | [optional] 
 **Required** | Pointer to **bool** |  | [optional] 
 **SchemaId** | Pointer to **string** |  | [optional] 
 **TeamsOnly** | Pointer to **bool** |  | [optional] 
@@ -577,6 +578,31 @@ SetPropertySource sets PropertySource field to given value.
 `func (o *BTWorkflowPropertyInfo) HasPropertySource() bool`
 
 HasPropertySource returns a boolean if a field has been set.
+
+### GetPublicPartOverridable
+
+`func (o *BTWorkflowPropertyInfo) GetPublicPartOverridable() bool`
+
+GetPublicPartOverridable returns the PublicPartOverridable field if non-nil, zero value otherwise.
+
+### GetPublicPartOverridableOk
+
+`func (o *BTWorkflowPropertyInfo) GetPublicPartOverridableOk() (*bool, bool)`
+
+GetPublicPartOverridableOk returns a tuple with the PublicPartOverridable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicPartOverridable
+
+`func (o *BTWorkflowPropertyInfo) SetPublicPartOverridable(v bool)`
+
+SetPublicPartOverridable sets PublicPartOverridable field to given value.
+
+### HasPublicPartOverridable
+
+`func (o *BTWorkflowPropertyInfo) HasPublicPartOverridable() bool`
+
+HasPublicPartOverridable returns a boolean if a field has been set.
 
 ### GetRequired
 

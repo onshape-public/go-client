@@ -178,6 +178,7 @@ docs/BTAssemblyReplicate2774AllOf.md
 docs/BTAssemblySimulation2246.md
 docs/BTAssemblySimulationData978.md
 docs/BTAssemblySimulationData978AllOf.md
+docs/BTAssemblySimulationHistoryTable5453.md
 docs/BTAssemblySimulationStructuralLoadsTable3867.md
 docs/BTAssemblySimulationTable3236.md
 docs/BTAssemblyTransformDefinitionParams.md
@@ -628,6 +629,7 @@ docs/BTMAssemblyFeatureFolder2543AllOf.md
 docs/BTMAssemblyMirrorFeature3037.md
 docs/BTMAssemblyPatternFeature2241.md
 docs/BTMAssemblyReplicateFeature1351.md
+docs/BTMBoundaryCondition5556.md
 docs/BTMConfigurationData1560.md
 docs/BTMConfigurationData1560AllOf.md
 docs/BTMConfigurationParameter819.md
@@ -685,6 +687,7 @@ docs/BTMIndividualSketchUniqueVerticesQuery1472AllOf.md
 docs/BTMInferenceQueryWithOccurrence1083.md
 docs/BTMInferenceQueryWithOccurrence1083AllOf.md
 docs/BTMLoad3538.md
+docs/BTMLoad3538AllOf.md
 docs/BTMMate64.md
 docs/BTMMate64AllOf.md
 docs/BTMMateConnector66.md
@@ -761,6 +764,7 @@ docs/BTMReadOnlyParameter3800.md
 docs/BTMRecordMetrics1169.md
 docs/BTMRecordMetrics1169AllOf.md
 docs/BTMRollback150.md
+docs/BTMSimulationFeature5034.md
 docs/BTMSketch151.md
 docs/BTMSketch151AllOf.md
 docs/BTMSketchCompositeEntity893.md
@@ -1225,7 +1229,6 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
-docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1714,6 +1717,7 @@ model_bt_assembly_references_display_data_1562.go
 model_bt_assembly_replicate_2774.go
 model_bt_assembly_simulation_2246.go
 model_bt_assembly_simulation_data_978.go
+model_bt_assembly_simulation_history_table_5453.go
 model_bt_assembly_simulation_structural_loads_table_3867.go
 model_bt_assembly_simulation_table_3236.go
 model_bt_assembly_transform_definition_params.go
@@ -2433,6 +2437,7 @@ model_btm_assembly_feature_folder_2543.go
 model_btm_assembly_mirror_feature_3037.go
 model_btm_assembly_pattern_feature_2241.go
 model_btm_assembly_replicate_feature_1351.go
+model_btm_boundary_condition_5556.go
 model_btm_configuration_data_1560.go
 model_btm_configuration_parameter_819.go
 model_btm_configuration_parameter_boolean_2550.go
@@ -2515,6 +2520,7 @@ model_btm_part_studio_mate_connector_query_1324.go
 model_btm_read_only_parameter_3800.go
 model_btm_record_metrics_1169.go
 model_btm_rollback_150.go
+model_btm_simulation_feature_5034.go
 model_btm_sketch_151.go
 model_btm_sketch_composite_entity_893.go
 model_btm_sketch_constraint_2.go

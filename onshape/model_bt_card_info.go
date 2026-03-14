@@ -20,6 +20,7 @@ type BTCardInfo struct {
 	ExpMonth       *int32         `json:"expMonth,omitempty"`
 	ExpYear        *int32         `json:"expYear,omitempty"`
 	Last4          *string        `json:"last4,omitempty"`
+	Name           *string        `json:"name,omitempty"`
 	Type           *string        `json:"type,omitempty"`
 }
 
@@ -168,6 +169,38 @@ func (o *BTCardInfo) SetLast4(v string) {
 	o.Last4 = &v
 }
 
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *BTCardInfo) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCardInfo) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *BTCardInfo) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *BTCardInfo) SetName(v string) {
+	o.Name = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BTCardInfo) GetType() string {
 	if o == nil || o.Type == nil {
@@ -213,6 +246,9 @@ func (o BTCardInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Last4 != nil {
 		toSerialize["last4"] = o.Last4
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

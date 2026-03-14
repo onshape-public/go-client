@@ -1754,6 +1754,12 @@ const (
 	GBTErrorStringEnumSweepMultiprofileScaleNotAllowed                            GBTErrorStringEnum = "SWEEP_MULTIPROFILE_SCALE_NOT_ALLOWED"
 	GBTErrorStringEnumSweepTwistAngleExceedsLimits                                GBTErrorStringEnum = "SWEEP_TWIST_ANGLE_EXCEEDS_LIMITS"
 	GBTErrorStringEnumSweepTwistPitchExceedsLimits                                GBTErrorStringEnum = "SWEEP_TWIST_PITCH_EXCEEDS_LIMITS"
+	GBTErrorStringEnumSimulationBoundaryConditionInstanceNotSpecified             GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_INSTANCE_NOT_SPECIFIED"
+	GBTErrorStringEnumSimulationBoundaryConditionRegionQueryFailed                GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_FAILED"
+	GBTErrorStringEnumSimulationBoundaryConditionRegionQueryEmpty                 GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_EMPTY"
+	GBTErrorStringEnumSimulationBoundaryConditionInstanceSuppressed               GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_INSTANCE_SUPPRESSED"
+	GBTErrorStringEnumSimulationBoundaryConditionDirectionQueryFailed             GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_DIRECTION_QUERY_FAILED"
+	GBTErrorStringEnumSimulationBoundaryConditionDirectionNotSpecified            GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3493,6 +3499,12 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SWEEP_MULTIPROFILE_SCALE_NOT_ALLOWED",
 	"SWEEP_TWIST_ANGLE_EXCEEDS_LIMITS",
 	"SWEEP_TWIST_PITCH_EXCEEDS_LIMITS",
+	"SIMULATION_BOUNDARY_CONDITION_INSTANCE_NOT_SPECIFIED",
+	"SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_FAILED",
+	"SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_EMPTY",
+	"SIMULATION_BOUNDARY_CONDITION_INSTANCE_SUPPRESSED",
+	"SIMULATION_BOUNDARY_CONDITION_DIRECTION_QUERY_FAILED",
+	"SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED",
 	"UNKNOWN",
 }
 

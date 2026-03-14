@@ -14,10 +14,10 @@ import (
 	"encoding/json"
 )
 
-// BTReleasePackageParams struct for BTReleasePackageParams
+// BTReleasePackageParams Parameters for creating a release candidate.
 type BTReleasePackageParams struct {
-	ChangeOrderId *string                      `json:"changeOrderId,omitempty"`
-	Items         []BTReleasePackageItemParams `json:"items,omitempty"`
+	// List of items to include in the release candidate.
+	Items []BTReleasePackageItemParams `json:"items,omitempty"`
 }
 
 // NewBTReleasePackageParams instantiates a new BTReleasePackageParams object
@@ -35,38 +35,6 @@ func NewBTReleasePackageParams() *BTReleasePackageParams {
 func NewBTReleasePackageParamsWithDefaults() *BTReleasePackageParams {
 	this := BTReleasePackageParams{}
 	return &this
-}
-
-// GetChangeOrderId returns the ChangeOrderId field value if set, zero value otherwise.
-func (o *BTReleasePackageParams) GetChangeOrderId() string {
-	if o == nil || o.ChangeOrderId == nil {
-		var ret string
-		return ret
-	}
-	return *o.ChangeOrderId
-}
-
-// GetChangeOrderIdOk returns a tuple with the ChangeOrderId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTReleasePackageParams) GetChangeOrderIdOk() (*string, bool) {
-	if o == nil || o.ChangeOrderId == nil {
-		return nil, false
-	}
-	return o.ChangeOrderId, true
-}
-
-// HasChangeOrderId returns a boolean if a field has been set.
-func (o *BTReleasePackageParams) HasChangeOrderId() bool {
-	if o != nil && o.ChangeOrderId != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetChangeOrderId gets a reference to the given string and assigns it to the ChangeOrderId field.
-func (o *BTReleasePackageParams) SetChangeOrderId(v string) {
-	o.ChangeOrderId = &v
 }
 
 // GetItems returns the Items field value if set, zero value otherwise.
@@ -103,9 +71,6 @@ func (o *BTReleasePackageParams) SetItems(v []BTReleasePackageItemParams) {
 
 func (o BTReleasePackageParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.ChangeOrderId != nil {
-		toSerialize["changeOrderId"] = o.ChangeOrderId
-	}
 	if o.Items != nil {
 		toSerialize["items"] = o.Items
 	}

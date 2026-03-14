@@ -35,6 +35,11 @@ func (o *BTConfiguredPartPropertiesTable2740) AsBTTable1825() *BTTable1825 {
 	return &BTTable1825{o}
 }
 
+// BTAssemblySimulationHistoryTable5453AsBTTable1825 is a convenience function that returns BTAssemblySimulationHistoryTable5453 wrapped in BTTable1825
+func (o *BTAssemblySimulationHistoryTable5453) AsBTTable1825() *BTTable1825 {
+	return &BTTable1825{o}
+}
+
 // BTFSTable953AsBTTable1825 is a convenience function that returns BTFSTable953 wrapped in BTTable1825
 func (o *BTFSTable953) AsBTTable1825() *BTTable1825 {
 	return &BTTable1825{o}
@@ -820,6 +825,20 @@ func (dst *BTTable1825) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTAssemblySimulationHistoryTable-5453'
+	if jsonDict["btType"] == "BTAssemblySimulationHistoryTable-5453" {
+		// try to unmarshal JSON data into BTAssemblySimulationHistoryTable5453
+		var qr *BTAssemblySimulationHistoryTable5453
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTable1825 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTable1825 = nil
+			return fmt.Errorf("failed to unmarshal BTTable1825 as BTAssemblySimulationHistoryTable5453: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTAssemblySimulationStructuralLoadsTable-3867'

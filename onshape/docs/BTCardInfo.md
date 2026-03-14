@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ExpMonth** | Pointer to **int32** |  | [optional] 
 **ExpYear** | Pointer to **int32** |  | [optional] 
 **Last4** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetLast4 sets Last4 field to given value.
 `func (o *BTCardInfo) HasLast4() bool`
 
 HasLast4 returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *BTCardInfo) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *BTCardInfo) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *BTCardInfo) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *BTCardInfo) HasName() bool`
+
+HasName returns a boolean if a field has been set.
 
 ### GetType
 

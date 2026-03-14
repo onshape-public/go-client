@@ -4,7 +4,7 @@ All URIs are relative to *https://cad.onshape.com/api/v14*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**NextNumbers**](NumberingSchemeApi.md#NextNumbers) | **Post** /numberingscheme/nextnumbers | Send the items to generate numbers for, and return the next valid available part numbers.
+[**NextNumbers**](NumberingSchemeApi.md#NextNumbers) | **Post** /numberingscheme/nextnumbers | Get the next available part number for a release item.
 
 
 
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 > map[string][]BTNextPartNumber NextNumbers(ctx).BTNextPartNumbersParam(bTNextPartNumbersParam).Cid(cid).Did(did).Execute()
 
-Send the items to generate numbers for, and return the next valid available part numbers.
+Get the next available part number for a release item.
 
 
 
@@ -30,8 +30,8 @@ import (
 
 func main() {
     bTNextPartNumbersParam := *openapiclient.NewBTNextPartNumbersParam() // BTNextPartNumbersParam | 
-    cid := "cid_example" // string |  (optional)
-    did := "did_example" // string |  (optional)
+    cid := "cid_example" // string | Company ID (optional)
+    did := "did_example" // string | Document ID (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -57,8 +57,8 @@ Other parameters are passed through a pointer to a apiNextNumbersRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bTNextPartNumbersParam** | [**BTNextPartNumbersParam**](BTNextPartNumbersParam.md) |  | 
- **cid** | **string** |  | 
- **did** | **string** |  | 
+ **cid** | **string** | Company ID | 
+ **did** | **string** | Document ID | 
 
 ### Return type
 

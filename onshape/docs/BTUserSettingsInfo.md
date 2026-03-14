@@ -41,6 +41,7 @@ Name | Type | Description | Notes
 **UnitsMaximumDisplayPrecision** | Pointer to [**BTUnitsMaximumDisplayPrecisionInfo**](BTUnitsMaximumDisplayPrecisionInfo.md) |  | [optional] 
 **Use24HourTime** | Pointer to **bool** |  | [optional] 
 **UseDecimalComma** | Pointer to **bool** |  | [optional] 
+**UsePenAsMouse** | Pointer to **bool** |  | [optional] 
 **ViewManipulationMouseKeyMapping** | Pointer to [**BTViewManipulationMouseKeyMappingInfo**](BTViewManipulationMouseKeyMappingInfo.md) |  | [optional] 
 **ViewMappingId** | Pointer to **int32** |  | [optional] 
 
@@ -987,6 +988,31 @@ SetUseDecimalComma sets UseDecimalComma field to given value.
 `func (o *BTUserSettingsInfo) HasUseDecimalComma() bool`
 
 HasUseDecimalComma returns a boolean if a field has been set.
+
+### GetUsePenAsMouse
+
+`func (o *BTUserSettingsInfo) GetUsePenAsMouse() bool`
+
+GetUsePenAsMouse returns the UsePenAsMouse field if non-nil, zero value otherwise.
+
+### GetUsePenAsMouseOk
+
+`func (o *BTUserSettingsInfo) GetUsePenAsMouseOk() (*bool, bool)`
+
+GetUsePenAsMouseOk returns a tuple with the UsePenAsMouse field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUsePenAsMouse
+
+`func (o *BTUserSettingsInfo) SetUsePenAsMouse(v bool)`
+
+SetUsePenAsMouse sets UsePenAsMouse field to given value.
+
+### HasUsePenAsMouse
+
+`func (o *BTUserSettingsInfo) HasUsePenAsMouse() bool`
+
+HasUsePenAsMouse returns a boolean if a field has been set.
 
 ### GetViewManipulationMouseKeyMapping
 
