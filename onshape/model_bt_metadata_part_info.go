@@ -27,6 +27,7 @@ type BTMetadataPartInfo struct {
 	PartId                  *string                  `json:"partId,omitempty"`
 	PartIdentity            *string                  `json:"partIdentity,omitempty"`
 	PartType                *string                  `json:"partType,omitempty"`
+	UnflattenedPartId       *string                  `json:"unflattenedPartId,omitempty"`
 }
 
 // NewBTMetadataPartInfo instantiates a new BTMetadataPartInfo object
@@ -359,6 +360,38 @@ func (o *BTMetadataPartInfo) SetPartType(v string) {
 	o.PartType = &v
 }
 
+// GetUnflattenedPartId returns the UnflattenedPartId field value if set, zero value otherwise.
+func (o *BTMetadataPartInfo) GetUnflattenedPartId() string {
+	if o == nil || o.UnflattenedPartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.UnflattenedPartId
+}
+
+// GetUnflattenedPartIdOk returns a tuple with the UnflattenedPartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMetadataPartInfo) GetUnflattenedPartIdOk() (*string, bool) {
+	if o == nil || o.UnflattenedPartId == nil {
+		return nil, false
+	}
+	return o.UnflattenedPartId, true
+}
+
+// HasUnflattenedPartId returns a boolean if a field has been set.
+func (o *BTMetadataPartInfo) HasUnflattenedPartId() bool {
+	if o != nil && o.UnflattenedPartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUnflattenedPartId gets a reference to the given string and assigns it to the UnflattenedPartId field.
+func (o *BTMetadataPartInfo) SetUnflattenedPartId(v string) {
+	o.UnflattenedPartId = &v
+}
+
 func (o BTMetadataPartInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Href != nil {
@@ -390,6 +423,9 @@ func (o BTMetadataPartInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PartType != nil {
 		toSerialize["partType"] = o.PartType
+	}
+	if o.UnflattenedPartId != nil {
+		toSerialize["unflattenedPartId"] = o.UnflattenedPartId
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3471,6 +3471,18 @@
 
 * `GBTErrorStringEnumSweepTwistPitchExceedsLimits` (value: `"SWEEP_TWIST_PITCH_EXCEEDS_LIMITS"`)
 
+* `GBTErrorStringEnumSimulationBoundaryConditionInstanceNotSpecified` (value: `"SIMULATION_BOUNDARY_CONDITION_INSTANCE_NOT_SPECIFIED"`)
+
+* `GBTErrorStringEnumSimulationBoundaryConditionRegionQueryFailed` (value: `"SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_FAILED"`)
+
+* `GBTErrorStringEnumSimulationBoundaryConditionRegionQueryEmpty` (value: `"SIMULATION_BOUNDARY_CONDITION_REGION_QUERY_EMPTY"`)
+
+* `GBTErrorStringEnumSimulationBoundaryConditionInstanceSuppressed` (value: `"SIMULATION_BOUNDARY_CONDITION_INSTANCE_SUPPRESSED"`)
+
+* `GBTErrorStringEnumSimulationBoundaryConditionDirectionQueryFailed` (value: `"SIMULATION_BOUNDARY_CONDITION_DIRECTION_QUERY_FAILED"`)
+
+* `GBTErrorStringEnumSimulationBoundaryConditionDirectionNotSpecified` (value: `"SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

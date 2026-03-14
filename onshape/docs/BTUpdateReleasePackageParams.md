@@ -4,10 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Empty** | Pointer to **bool** |  | [optional] 
-**ItemIds** | Pointer to **[]string** |  | [optional] 
-**Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) |  | [optional] 
-**Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) |  | [optional] 
+**ItemIds** | Pointer to **[]string** | Items to remove from the release candidate when &#x60;action&#x3D;REMOVE_ITEMS&#x60;. | [optional] 
+**Items** | Pointer to [**[]BTReleasePackageItemParams**](BTReleasePackageItemParams.md) | Items in the release candidate. | [optional] 
+**Properties** | Pointer to [**[]BTPropertyValueParam**](BTPropertyValueParam.md) | Release candidate properties. | [optional] 
 
 ## Methods
 
@@ -27,31 +26,6 @@ will change when the set of required properties is changed
 NewBTUpdateReleasePackageParamsWithDefaults instantiates a new BTUpdateReleasePackageParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetEmpty
-
-`func (o *BTUpdateReleasePackageParams) GetEmpty() bool`
-
-GetEmpty returns the Empty field if non-nil, zero value otherwise.
-
-### GetEmptyOk
-
-`func (o *BTUpdateReleasePackageParams) GetEmptyOk() (*bool, bool)`
-
-GetEmptyOk returns a tuple with the Empty field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEmpty
-
-`func (o *BTUpdateReleasePackageParams) SetEmpty(v bool)`
-
-SetEmpty sets Empty field to given value.
-
-### HasEmpty
-
-`func (o *BTUpdateReleasePackageParams) HasEmpty() bool`
-
-HasEmpty returns a boolean if a field has been set.
 
 ### GetItemIds
 

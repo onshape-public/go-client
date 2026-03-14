@@ -29,6 +29,7 @@ type ApiCreateObsoletionPackageRequest struct {
 	debugMode  *bool
 }
 
+// ID of revision to obsolete. See [Revision](https://cad.onshape.com/glassworks/explorer/#/Revision).
 func (r ApiCreateObsoletionPackageRequest) RevisionId(revisionId string) ApiCreateObsoletionPackageRequest {
 	r.revisionId = &revisionId
 	return r
@@ -44,10 +45,10 @@ func (r ApiCreateObsoletionPackageRequest) Execute() (map[string]interface{}, *h
 }
 
 /*
-CreateObsoletionPackage Create an obsoletion package to make an existing revision obsolete.
+CreateObsoletionPackage Create an obsoletion candidate to make an existing revision obsolete.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param wfid
+	@param wfid Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
 	@return ApiCreateObsoletionPackageRequest
 */
 func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, wfid string) ApiCreateObsoletionPackageRequest {
@@ -172,14 +173,14 @@ func (r ApiCreateReleasePackageRequest) Execute() (map[string]interface{}, *http
 }
 
 /*
-CreateReleasePackage Create a new release package for one or more items.
+CreateReleasePackage Create a new release candidate for one or more items.
 
-Once a release package is successfully created, use `updateReleasePackage` to update all desired item/package properties, and transition it to the desired state.
+This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release the candidate. Once the release candidate is successfully created, use [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate properties, and transition it to the desired release state. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
 To add items from other documents, you must select `Allow adding items from other documents` in your [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog).
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param wfid
+	@param wfid Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
 	@return ApiCreateReleasePackageRequest
 */
 func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfid string) ApiCreateReleasePackageRequest {
@@ -299,10 +300,10 @@ func (r ApiGetReleasePackageRequest) Execute() (*BTReleasePackageInfo, *http.Res
 }
 
 /*
-GetReleasePackage Get details about the specified release package.
+GetReleasePackage Get details about the specified release candidate.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param rpid
+	@param rpid Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
 	@return ApiGetReleasePackageRequest
 */
 func (a *ReleasePackageApiService) GetReleasePackage(ctx context.Context, rpid string) ApiGetReleasePackageRequest {
@@ -414,11 +415,13 @@ func (r ApiUpdateReleasePackageRequest) BTUpdateReleasePackageParams(bTUpdateRel
 	return r
 }
 
+// &#x60;UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT&#x60;
 func (r ApiUpdateReleasePackageRequest) Action(action string) ApiUpdateReleasePackageRequest {
 	r.action = &action
 	return r
 }
 
+// Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions.
 func (r ApiUpdateReleasePackageRequest) Wfaction(wfaction string) ApiUpdateReleasePackageRequest {
 	r.wfaction = &wfaction
 	return r
@@ -429,12 +432,21 @@ func (r ApiUpdateReleasePackageRequest) Execute() (*BTReleasePackageInfo, *http.
 }
 
 /*
-UpdateReleasePackage Update the release/obsoletion package/item properties.
+UpdateReleasePackage Update the release/obsoletion candidate/item properties.
 
-Use the `wfaction` query param to also perform a workflow transition.
+Use this endpoint to submit the release. Release candidates must first be created with the [createReleasePackage](#/ReleasePackage/createObsoletionPackage) endpoint.
+
+This endpoint can perform the following actions on release or obsoletion candidates:
+* Update candidate properties
+* Update properties of items in the candidate
+* Add items to the candidate
+* Remove items from the candidate
+* Transition the package to a new state with the `wfaction` query param
+
+See [Onshape Help: Release Management](https://cad.onshape.com/help/Content/release_management.htm) for more information on Onshape releases, and see [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for API examples.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param rpid
+	@param rpid Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
 	@return ApiUpdateReleasePackageRequest
 */
 func (a *ReleasePackageApiService) UpdateReleasePackage(ctx context.Context, rpid string) ApiUpdateReleasePackageRequest {

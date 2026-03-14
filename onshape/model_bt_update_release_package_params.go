@@ -14,12 +14,14 @@ import (
 	"encoding/json"
 )
 
-// BTUpdateReleasePackageParams struct for BTUpdateReleasePackageParams
+// BTUpdateReleasePackageParams Parameters for updating a release or obsoletion candidate.
 type BTUpdateReleasePackageParams struct {
-	Empty      *bool                        `json:"empty,omitempty"`
-	ItemIds    []string                     `json:"itemIds,omitempty"`
-	Items      []BTReleasePackageItemParams `json:"items,omitempty"`
-	Properties []BTPropertyValueParam       `json:"properties,omitempty"`
+	// Items to remove from the release candidate when `action=REMOVE_ITEMS`.
+	ItemIds []string `json:"itemIds,omitempty"`
+	// Items in the release candidate.
+	Items []BTReleasePackageItemParams `json:"items,omitempty"`
+	// Release candidate properties.
+	Properties []BTPropertyValueParam `json:"properties,omitempty"`
 }
 
 // NewBTUpdateReleasePackageParams instantiates a new BTUpdateReleasePackageParams object
@@ -37,38 +39,6 @@ func NewBTUpdateReleasePackageParams() *BTUpdateReleasePackageParams {
 func NewBTUpdateReleasePackageParamsWithDefaults() *BTUpdateReleasePackageParams {
 	this := BTUpdateReleasePackageParams{}
 	return &this
-}
-
-// GetEmpty returns the Empty field value if set, zero value otherwise.
-func (o *BTUpdateReleasePackageParams) GetEmpty() bool {
-	if o == nil || o.Empty == nil {
-		var ret bool
-		return ret
-	}
-	return *o.Empty
-}
-
-// GetEmptyOk returns a tuple with the Empty field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTUpdateReleasePackageParams) GetEmptyOk() (*bool, bool) {
-	if o == nil || o.Empty == nil {
-		return nil, false
-	}
-	return o.Empty, true
-}
-
-// HasEmpty returns a boolean if a field has been set.
-func (o *BTUpdateReleasePackageParams) HasEmpty() bool {
-	if o != nil && o.Empty != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetEmpty gets a reference to the given bool and assigns it to the Empty field.
-func (o *BTUpdateReleasePackageParams) SetEmpty(v bool) {
-	o.Empty = &v
 }
 
 // GetItemIds returns the ItemIds field value if set, zero value otherwise.
@@ -169,9 +139,6 @@ func (o *BTUpdateReleasePackageParams) SetProperties(v []BTPropertyValueParam) {
 
 func (o BTUpdateReleasePackageParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Empty != nil {
-		toSerialize["empty"] = o.Empty
-	}
 	if o.ItemIds != nil {
 		toSerialize["itemIds"] = o.ItemIds
 	}

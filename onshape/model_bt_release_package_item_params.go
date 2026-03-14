@@ -14,24 +14,38 @@ import (
 	"encoding/json"
 )
 
-// BTReleasePackageItemParams struct for BTReleasePackageItemParams
+// BTReleasePackageItemParams Parameters for an item in a release or obsoletion candidate.
 type BTReleasePackageItemParams struct {
-	Configuration *string                `json:"configuration,omitempty"`
-	DocumentId    *string                `json:"documentId,omitempty"`
-	ElementId     *string                `json:"elementId,omitempty"`
-	ElementType   *int32                 `json:"elementType,omitempty"`
-	FlatPartId    *string                `json:"flatPartId,omitempty"`
-	Href          *string                `json:"href,omitempty"`
-	Id            *string                `json:"id,omitempty"`
-	IsIncluded    *bool                  `json:"isIncluded,omitempty"`
-	ParentId      *string                `json:"parentId,omitempty"`
-	PartId        *string                `json:"partId,omitempty"`
-	PartIdentity  *string                `json:"partIdentity,omitempty"`
-	PartNumber    *string                `json:"partNumber,omitempty"`
-	Properties    []BTPropertyValueParam `json:"properties,omitempty"`
-	RevisionId    *string                `json:"revisionId,omitempty"`
-	VersionId     *string                `json:"versionId,omitempty"`
-	WorkspaceId   *string                `json:"workspaceId,omitempty"`
+	// Encoded configuration string for the item. See [encodeConfigurationMap](#/Element/encodeConfigurationMap).
+	Configuration *string `json:"configuration,omitempty"`
+	// Document containing the item.
+	DocumentId *string `json:"documentId,omitempty"`
+	// Element containing the item.
+	ElementId *string `json:"elementId,omitempty"`
+	// Type of element, which can be: `0: Part Studio, 1: Assembly, 2: Drawing. 4: Blob`
+	ElementType *int32 `json:"elementType,omitempty"`
+	// Flat part ID.
+	FlatPartId *string `json:"flatPartId,omitempty"`
+	// Href link to the item.
+	Href *string `json:"href,omitempty"`
+	// ID of the item. Use this to reference the item when updating it. See [getReleasePackage](#/ReleasePackage/getReleasePackage).
+	Id *string `json:"id,omitempty"`
+	// ID of the parent item, if any.
+	ParentId *string `json:"parentId,omitempty"`
+	// ID of the part to add to the release candidate.
+	PartId *string `json:"partId,omitempty"`
+	// Part identity string for the part to add to the release candidate.
+	PartIdentity *string `json:"partIdentity,omitempty"`
+	// Part number. See [nextNumbers](#/NumberingScheme/nextNumbers).
+	PartNumber *string `json:"partNumber,omitempty"`
+	// List of property values associated with the item.
+	Properties []BTPropertyValueParam `json:"properties,omitempty"`
+	// Revision ID of the item. Use when adding items to an obsoletion candidate.
+	RevisionId *string `json:"revisionId,omitempty"`
+	// Version containing the item.
+	VersionId *string `json:"versionId,omitempty"`
+	// Workspace containing the item.
+	WorkspaceId *string `json:"workspaceId,omitempty"`
 }
 
 // NewBTReleasePackageItemParams instantiates a new BTReleasePackageItemParams object
@@ -273,38 +287,6 @@ func (o *BTReleasePackageItemParams) HasId() bool {
 // SetId gets a reference to the given string and assigns it to the Id field.
 func (o *BTReleasePackageItemParams) SetId(v string) {
 	o.Id = &v
-}
-
-// GetIsIncluded returns the IsIncluded field value if set, zero value otherwise.
-func (o *BTReleasePackageItemParams) GetIsIncluded() bool {
-	if o == nil || o.IsIncluded == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsIncluded
-}
-
-// GetIsIncludedOk returns a tuple with the IsIncluded field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTReleasePackageItemParams) GetIsIncludedOk() (*bool, bool) {
-	if o == nil || o.IsIncluded == nil {
-		return nil, false
-	}
-	return o.IsIncluded, true
-}
-
-// HasIsIncluded returns a boolean if a field has been set.
-func (o *BTReleasePackageItemParams) HasIsIncluded() bool {
-	if o != nil && o.IsIncluded != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsIncluded gets a reference to the given bool and assigns it to the IsIncluded field.
-func (o *BTReleasePackageItemParams) SetIsIncluded(v bool) {
-	o.IsIncluded = &v
 }
 
 // GetParentId returns the ParentId field value if set, zero value otherwise.
@@ -585,9 +567,6 @@ func (o BTReleasePackageItemParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
-	}
-	if o.IsIncluded != nil {
-		toSerialize["isIncluded"] = o.IsIncluded
 	}
 	if o.ParentId != nil {
 		toSerialize["parentId"] = o.ParentId

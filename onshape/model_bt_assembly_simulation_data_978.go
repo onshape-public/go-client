@@ -24,6 +24,7 @@ type BTAssemblySimulationData978 struct {
 	ContactBehavior    *GBTSimulationContactBehavior `json:"contactBehavior,omitempty"`
 	Loads              []BTMLoad3538                 `json:"loads,omitempty"`
 	LoadsByNodeId      *map[string]BTMLoad3538       `json:"loadsByNodeId,omitempty"`
+	SimulationFeatures []BTMSimulationFeature5034    `json:"simulationFeatures,omitempty"`
 	Simulations        []BTAssemblySimulation2246    `json:"simulations,omitempty"`
 	StructuralLoads    []BTMLoad3538                 `json:"structuralLoads,omitempty"`
 }
@@ -237,6 +238,38 @@ func (o *BTAssemblySimulationData978) SetLoadsByNodeId(v map[string]BTMLoad3538)
 	o.LoadsByNodeId = &v
 }
 
+// GetSimulationFeatures returns the SimulationFeatures field value if set, zero value otherwise.
+func (o *BTAssemblySimulationData978) GetSimulationFeatures() []BTMSimulationFeature5034 {
+	if o == nil || o.SimulationFeatures == nil {
+		var ret []BTMSimulationFeature5034
+		return ret
+	}
+	return o.SimulationFeatures
+}
+
+// GetSimulationFeaturesOk returns a tuple with the SimulationFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblySimulationData978) GetSimulationFeaturesOk() ([]BTMSimulationFeature5034, bool) {
+	if o == nil || o.SimulationFeatures == nil {
+		return nil, false
+	}
+	return o.SimulationFeatures, true
+}
+
+// HasSimulationFeatures returns a boolean if a field has been set.
+func (o *BTAssemblySimulationData978) HasSimulationFeatures() bool {
+	if o != nil && o.SimulationFeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSimulationFeatures gets a reference to the given []BTMSimulationFeature5034 and assigns it to the SimulationFeatures field.
+func (o *BTAssemblySimulationData978) SetSimulationFeatures(v []BTMSimulationFeature5034) {
+	o.SimulationFeatures = v
+}
+
 // GetSimulations returns the Simulations field value if set, zero value otherwise.
 func (o *BTAssemblySimulationData978) GetSimulations() []BTAssemblySimulation2246 {
 	if o == nil || o.Simulations == nil {
@@ -328,6 +361,9 @@ func (o BTAssemblySimulationData978) MarshalJSON() ([]byte, error) {
 	}
 	if o.LoadsByNodeId != nil {
 		toSerialize["loadsByNodeId"] = o.LoadsByNodeId
+	}
+	if o.SimulationFeatures != nil {
+		toSerialize["simulationFeatures"] = o.SimulationFeatures
 	}
 	if o.Simulations != nil {
 		toSerialize["simulations"] = o.Simulations

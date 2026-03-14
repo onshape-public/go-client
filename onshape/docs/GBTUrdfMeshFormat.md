@@ -3,8 +3,6 @@
 ## Enum
 
 
-* `GBTUrdfMeshFormatStep` (value: `"STEP"`)
-
 * `GBTUrdfMeshFormatStl` (value: `"STL"`)
 
 * `GBTUrdfMeshFormatGltf` (value: `"GLTF"`)
