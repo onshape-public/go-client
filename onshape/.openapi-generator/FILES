@@ -501,7 +501,6 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
-docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -606,7 +605,6 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
-docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -810,11 +808,9 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
-docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
-docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -1229,6 +1225,7 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
+docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
