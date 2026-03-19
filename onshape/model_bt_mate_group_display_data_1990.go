@@ -16,14 +16,14 @@ import (
 
 // BTMateGroupDisplayData1990 struct for BTMateGroupDisplayData1990
 type BTMateGroupDisplayData1990 struct {
-	// Type of JSON object.
+	BTAssemblyFeatureDisplayData1783
 	BtType           *string                          `json:"btType,omitempty"`
 	Hidden           *bool                            `json:"hidden,omitempty"`
 	IsDerivedFeature *bool                            `json:"isDerivedFeature,omitempty"`
 	NodeId           *string                          `json:"nodeId,omitempty"`
-	OccurrenceIds    []string                         `json:"occurrenceIds,omitempty"`
 	OwnerOccurrence  *BTOccurrence74                  `json:"ownerOccurrence,omitempty"`
 	Status           *GBTAssemblyFeatureDisplayStatus `json:"status,omitempty"`
+	OccurrenceIds    []string                         `json:"occurrenceIds,omitempty"`
 }
 
 // NewBTMateGroupDisplayData1990 instantiates a new BTMateGroupDisplayData1990 object
@@ -171,38 +171,6 @@ func (o *BTMateGroupDisplayData1990) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetOccurrenceIds returns the OccurrenceIds field value if set, zero value otherwise.
-func (o *BTMateGroupDisplayData1990) GetOccurrenceIds() []string {
-	if o == nil || o.OccurrenceIds == nil {
-		var ret []string
-		return ret
-	}
-	return o.OccurrenceIds
-}
-
-// GetOccurrenceIdsOk returns a tuple with the OccurrenceIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMateGroupDisplayData1990) GetOccurrenceIdsOk() ([]string, bool) {
-	if o == nil || o.OccurrenceIds == nil {
-		return nil, false
-	}
-	return o.OccurrenceIds, true
-}
-
-// HasOccurrenceIds returns a boolean if a field has been set.
-func (o *BTMateGroupDisplayData1990) HasOccurrenceIds() bool {
-	if o != nil && o.OccurrenceIds != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceIds gets a reference to the given []string and assigns it to the OccurrenceIds field.
-func (o *BTMateGroupDisplayData1990) SetOccurrenceIds(v []string) {
-	o.OccurrenceIds = v
-}
-
 // GetOwnerOccurrence returns the OwnerOccurrence field value if set, zero value otherwise.
 func (o *BTMateGroupDisplayData1990) GetOwnerOccurrence() BTOccurrence74 {
 	if o == nil || o.OwnerOccurrence == nil {
@@ -267,8 +235,48 @@ func (o *BTMateGroupDisplayData1990) SetStatus(v GBTAssemblyFeatureDisplayStatus
 	o.Status = &v
 }
 
+// GetOccurrenceIds returns the OccurrenceIds field value if set, zero value otherwise.
+func (o *BTMateGroupDisplayData1990) GetOccurrenceIds() []string {
+	if o == nil || o.OccurrenceIds == nil {
+		var ret []string
+		return ret
+	}
+	return o.OccurrenceIds
+}
+
+// GetOccurrenceIdsOk returns a tuple with the OccurrenceIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMateGroupDisplayData1990) GetOccurrenceIdsOk() ([]string, bool) {
+	if o == nil || o.OccurrenceIds == nil {
+		return nil, false
+	}
+	return o.OccurrenceIds, true
+}
+
+// HasOccurrenceIds returns a boolean if a field has been set.
+func (o *BTMateGroupDisplayData1990) HasOccurrenceIds() bool {
+	if o != nil && o.OccurrenceIds != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrenceIds gets a reference to the given []string and assigns it to the OccurrenceIds field.
+func (o *BTMateGroupDisplayData1990) SetOccurrenceIds(v []string) {
+	o.OccurrenceIds = v
+}
+
 func (o BTMateGroupDisplayData1990) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	serializedBTAssemblyFeatureDisplayData1783, errBTAssemblyFeatureDisplayData1783 := json.Marshal(o.BTAssemblyFeatureDisplayData1783)
+	if errBTAssemblyFeatureDisplayData1783 != nil {
+		return []byte{}, errBTAssemblyFeatureDisplayData1783
+	}
+	errBTAssemblyFeatureDisplayData1783 = json.Unmarshal([]byte(serializedBTAssemblyFeatureDisplayData1783), &toSerialize)
+	if errBTAssemblyFeatureDisplayData1783 != nil {
+		return []byte{}, errBTAssemblyFeatureDisplayData1783
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -281,14 +289,14 @@ func (o BTMateGroupDisplayData1990) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.OccurrenceIds != nil {
-		toSerialize["occurrenceIds"] = o.OccurrenceIds
-	}
 	if o.OwnerOccurrence != nil {
 		toSerialize["ownerOccurrence"] = o.OwnerOccurrence
 	}
 	if o.Status != nil {
 		toSerialize["status"] = o.Status
+	}
+	if o.OccurrenceIds != nil {
+		toSerialize["occurrenceIds"] = o.OccurrenceIds
 	}
 	return json.Marshal(toSerialize)
 }
