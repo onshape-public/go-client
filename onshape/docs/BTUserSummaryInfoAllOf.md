@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
+**ConfirmationRequested** | Pointer to **bool** |  | [optional] 
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
 **InvitationState** | Pointer to **int32** |  | [optional] 
@@ -58,6 +59,31 @@ SetCompany sets Company field to given value.
 `func (o *BTUserSummaryInfoAllOf) HasCompany() bool`
 
 HasCompany returns a boolean if a field has been set.
+
+### GetConfirmationRequested
+
+`func (o *BTUserSummaryInfoAllOf) GetConfirmationRequested() bool`
+
+GetConfirmationRequested returns the ConfirmationRequested field if non-nil, zero value otherwise.
+
+### GetConfirmationRequestedOk
+
+`func (o *BTUserSummaryInfoAllOf) GetConfirmationRequestedOk() (*bool, bool)`
+
+GetConfirmationRequestedOk returns a tuple with the ConfirmationRequested field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConfirmationRequested
+
+`func (o *BTUserSummaryInfoAllOf) SetConfirmationRequested(v bool)`
+
+SetConfirmationRequested sets ConfirmationRequested field to given value.
+
+### HasConfirmationRequested
+
+`func (o *BTUserSummaryInfoAllOf) HasConfirmationRequested() bool`
+
+HasConfirmationRequested returns a boolean if a field has been set.
 
 ### GetDocumentationNameOverride
 

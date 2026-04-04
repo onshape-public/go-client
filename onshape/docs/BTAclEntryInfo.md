@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **EntryId** | Pointer to **string** |  | [optional] 
 **EntryState** | Pointer to [**BTUserState**](BTUserState.md) |  | [optional] 
 **EntryType** | Pointer to **int32** |  | [optional] 
+**FolderInaccessible** | Pointer to **bool** |  | [optional] 
+**FolderName** | Pointer to **string** |  | [optional] 
 **Image** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **ObjectId** | Pointer to **string** |  | [optional] 
@@ -317,6 +319,56 @@ SetEntryType sets EntryType field to given value.
 `func (o *BTAclEntryInfo) HasEntryType() bool`
 
 HasEntryType returns a boolean if a field has been set.
+
+### GetFolderInaccessible
+
+`func (o *BTAclEntryInfo) GetFolderInaccessible() bool`
+
+GetFolderInaccessible returns the FolderInaccessible field if non-nil, zero value otherwise.
+
+### GetFolderInaccessibleOk
+
+`func (o *BTAclEntryInfo) GetFolderInaccessibleOk() (*bool, bool)`
+
+GetFolderInaccessibleOk returns a tuple with the FolderInaccessible field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFolderInaccessible
+
+`func (o *BTAclEntryInfo) SetFolderInaccessible(v bool)`
+
+SetFolderInaccessible sets FolderInaccessible field to given value.
+
+### HasFolderInaccessible
+
+`func (o *BTAclEntryInfo) HasFolderInaccessible() bool`
+
+HasFolderInaccessible returns a boolean if a field has been set.
+
+### GetFolderName
+
+`func (o *BTAclEntryInfo) GetFolderName() string`
+
+GetFolderName returns the FolderName field if non-nil, zero value otherwise.
+
+### GetFolderNameOk
+
+`func (o *BTAclEntryInfo) GetFolderNameOk() (*string, bool)`
+
+GetFolderNameOk returns a tuple with the FolderName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFolderName
+
+`func (o *BTAclEntryInfo) SetFolderName(v string)`
+
+SetFolderName sets FolderName field to given value.
+
+### HasFolderName
+
+`func (o *BTAclEntryInfo) HasFolderName() bool`
+
+HasFolderName returns a boolean if a field has been set.
 
 ### GetImage
 

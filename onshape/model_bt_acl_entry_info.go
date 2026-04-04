@@ -27,6 +27,8 @@ type BTAclEntryInfo struct {
 	EntryId               *string      `json:"entryId,omitempty"`
 	EntryState            *BTUserState `json:"entryState,omitempty"`
 	EntryType             *int32       `json:"entryType,omitempty"`
+	FolderInaccessible    *bool        `json:"folderInaccessible,omitempty"`
+	FolderName            *string      `json:"folderName,omitempty"`
 	Image                 *string      `json:"image,omitempty"`
 	Name                  *string      `json:"name,omitempty"`
 	ObjectId              *string      `json:"objectId,omitempty"`
@@ -406,6 +408,70 @@ func (o *BTAclEntryInfo) SetEntryType(v int32) {
 	o.EntryType = &v
 }
 
+// GetFolderInaccessible returns the FolderInaccessible field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetFolderInaccessible() bool {
+	if o == nil || o.FolderInaccessible == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FolderInaccessible
+}
+
+// GetFolderInaccessibleOk returns a tuple with the FolderInaccessible field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetFolderInaccessibleOk() (*bool, bool) {
+	if o == nil || o.FolderInaccessible == nil {
+		return nil, false
+	}
+	return o.FolderInaccessible, true
+}
+
+// HasFolderInaccessible returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasFolderInaccessible() bool {
+	if o != nil && o.FolderInaccessible != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFolderInaccessible gets a reference to the given bool and assigns it to the FolderInaccessible field.
+func (o *BTAclEntryInfo) SetFolderInaccessible(v bool) {
+	o.FolderInaccessible = &v
+}
+
+// GetFolderName returns the FolderName field value if set, zero value otherwise.
+func (o *BTAclEntryInfo) GetFolderName() string {
+	if o == nil || o.FolderName == nil {
+		var ret string
+		return ret
+	}
+	return *o.FolderName
+}
+
+// GetFolderNameOk returns a tuple with the FolderName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAclEntryInfo) GetFolderNameOk() (*string, bool) {
+	if o == nil || o.FolderName == nil {
+		return nil, false
+	}
+	return o.FolderName, true
+}
+
+// HasFolderName returns a boolean if a field has been set.
+func (o *BTAclEntryInfo) HasFolderName() bool {
+	if o != nil && o.FolderName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFolderName gets a reference to the given string and assigns it to the FolderName field.
+func (o *BTAclEntryInfo) SetFolderName(v string) {
+	o.FolderName = &v
+}
+
 // GetImage returns the Image field value if set, zero value otherwise.
 func (o *BTAclEntryInfo) GetImage() string {
 	if o == nil || o.Image == nil {
@@ -696,6 +762,12 @@ func (o BTAclEntryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.EntryType != nil {
 		toSerialize["entryType"] = o.EntryType
+	}
+	if o.FolderInaccessible != nil {
+		toSerialize["folderInaccessible"] = o.FolderInaccessible
+	}
+	if o.FolderName != nil {
+		toSerialize["folderName"] = o.FolderName
 	}
 	if o.Image != nil {
 		toSerialize["image"] = o.Image

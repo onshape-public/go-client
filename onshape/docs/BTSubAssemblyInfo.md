@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Features** | Pointer to [**[]BTAssemblyFeatureInfo**](BTAssemblyFeatureInfo.md) | List of Assembly features including those are created by replicates. | [optional] 
 **FullConfiguration** | Pointer to **string** |  | [optional] 
 **Instances** | Pointer to [**[]BTAssemblyInstanceInfo**](BTAssemblyInstanceInfo.md) | List of instances including those created by patterns and replicates. | [optional] 
+**ParametricInstances** | Pointer to [**[]BTAssemblyParametricInstanceInfo**](BTAssemblyParametricInstanceInfo.md) | List of parametric instances. | [optional] 
 **PartNumber** | Pointer to **string** |  | [optional] 
 **Patterns** | Pointer to [**[]BTAssemblyPatternInfo**](BTAssemblyPatternInfo.md) | List of patterns. | [optional] 
 **Revision** | Pointer to **string** |  | [optional] 
@@ -234,6 +235,31 @@ SetInstances sets Instances field to given value.
 `func (o *BTSubAssemblyInfo) HasInstances() bool`
 
 HasInstances returns a boolean if a field has been set.
+
+### GetParametricInstances
+
+`func (o *BTSubAssemblyInfo) GetParametricInstances() []BTAssemblyParametricInstanceInfo`
+
+GetParametricInstances returns the ParametricInstances field if non-nil, zero value otherwise.
+
+### GetParametricInstancesOk
+
+`func (o *BTSubAssemblyInfo) GetParametricInstancesOk() (*[]BTAssemblyParametricInstanceInfo, bool)`
+
+GetParametricInstancesOk returns a tuple with the ParametricInstances field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParametricInstances
+
+`func (o *BTSubAssemblyInfo) SetParametricInstances(v []BTAssemblyParametricInstanceInfo)`
+
+SetParametricInstances sets ParametricInstances field to given value.
+
+### HasParametricInstances
+
+`func (o *BTSubAssemblyInfo) HasParametricInstances() bool`
+
+HasParametricInstances returns a boolean if a field has been set.
 
 ### GetPartNumber
 

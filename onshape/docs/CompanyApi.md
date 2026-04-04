@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**ClearGlobalPermissions**](CompanyApi.md#ClearGlobalPermissions) | **Delete** /companies/{cid}/globalpermission/{type}/{id} | Remove global permissions for a company user or team.
 [**FindCompany**](CompanyApi.md#FindCompany) | **Get** /companies | Get all companies to which the specified user belongs.
 [**GetCompany**](CompanyApi.md#GetCompany) | **Get** /companies/{cid} | Get company information by company ID.
+[**GetCompanyUsers**](CompanyApi.md#GetCompanyUsers) | **Get** /companies/{cid}/users | Get a list of members in a company.
 [**GetDocumentsByName**](CompanyApi.md#GetDocumentsByName) | **Get** /companies/{cid}/documentsbyname | Get document by exact document name.
 [**RemoveUserFromCompany**](CompanyApi.md#RemoveUserFromCompany) | **Delete** /companies/{cid}/users/{uid} | Remove a user from a company, company teams, and all the direct shares.
 [**UpdateCompanyUser**](CompanyApi.md#UpdateCompanyUser) | **Post** /companies/{cid}/users/{uid} | Update the company&#39;s information for a user.
@@ -189,7 +190,7 @@ func main() {
     cid := "cid_example" // string | Company ID
     type_ := int32(56) // int32 | `0`: USER | `1`: TEAM
     id := "id_example" // string | User ID or Team ID, depending on `type`
-    permission := []int32{int32(123)} // []int32 | List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * `0`: Manage role based access control   * `1`: Manage users, teams, and aliases   * `2`: Enterprise administrator   * `3`: Permanently delete   * `4`: Analytics administrator   * `5`: Invite guest users   * `6`: Create projects   * `7`: Approve releases   * `8`: Enable link sharing   * `9`: Create releases   * `10`: Allow access to the App Store   * `11`: Create documents and folders in the Enterprise root   * `12`: Allow access to public documents   * `17`: Manage non-geometric items   * `18`: Manage workflows   * `19`: Transfer documents out of Enterprise   * `20`: Sync to Arena   * `21`: Create tasks   * `22`: Manage standard content metadata   * `23`: Workspace protection permissions   * `24`: Import files   * `25`: Use revision tools  * `26`: Export files   (optional)
+    permission := []int32{int32(123)} // []int32 | List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * `0`: Manage role based access control   * `1`: Manage users, teams, and aliases   * `2`: Enterprise administrator   * `3`: Permanently delete   * `4`: Analytics administrator   * `5`: Invite guest users   * `6`: Create projects   * `7`: Approve releases   * `8`: Enable link sharing   * `9`: Create releases   * `10`: Allow access to the App Store   * `11`: Create documents and folders in the Enterprise root   * `12`: Allow access to public documents   * `17`: Manage non-geometric items   * `18`: Manage workflows   * `19`: Transfer documents out of Enterprise   * `20`: Sync to configured PLM Integration in Enterprise settings   * `21`: Create tasks   * `22`: Manage standard content metadata   * `23`: Workspace protection permissions   * `24`: Import files   * `25`: Use revision tools  * `26`: Export files   (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -223,7 +224,7 @@ Name | Type | Description  | Notes
 
 
 
- **permission** | **[]int32** | List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * &#x60;0&#x60;: Manage role based access control   * &#x60;1&#x60;: Manage users, teams, and aliases   * &#x60;2&#x60;: Enterprise administrator   * &#x60;3&#x60;: Permanently delete   * &#x60;4&#x60;: Analytics administrator   * &#x60;5&#x60;: Invite guest users   * &#x60;6&#x60;: Create projects   * &#x60;7&#x60;: Approve releases   * &#x60;8&#x60;: Enable link sharing   * &#x60;9&#x60;: Create releases   * &#x60;10&#x60;: Allow access to the App Store   * &#x60;11&#x60;: Create documents and folders in the Enterprise root   * &#x60;12&#x60;: Allow access to public documents   * &#x60;17&#x60;: Manage non-geometric items   * &#x60;18&#x60;: Manage workflows   * &#x60;19&#x60;: Transfer documents out of Enterprise   * &#x60;20&#x60;: Sync to Arena   * &#x60;21&#x60;: Create tasks   * &#x60;22&#x60;: Manage standard content metadata   * &#x60;23&#x60;: Workspace protection permissions   * &#x60;24&#x60;: Import files   * &#x60;25&#x60;: Use revision tools  * &#x60;26&#x60;: Export files   | 
+ **permission** | **[]int32** | List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * &#x60;0&#x60;: Manage role based access control   * &#x60;1&#x60;: Manage users, teams, and aliases   * &#x60;2&#x60;: Enterprise administrator   * &#x60;3&#x60;: Permanently delete   * &#x60;4&#x60;: Analytics administrator   * &#x60;5&#x60;: Invite guest users   * &#x60;6&#x60;: Create projects   * &#x60;7&#x60;: Approve releases   * &#x60;8&#x60;: Enable link sharing   * &#x60;9&#x60;: Create releases   * &#x60;10&#x60;: Allow access to the App Store   * &#x60;11&#x60;: Create documents and folders in the Enterprise root   * &#x60;12&#x60;: Allow access to public documents   * &#x60;17&#x60;: Manage non-geometric items   * &#x60;18&#x60;: Manage workflows   * &#x60;19&#x60;: Transfer documents out of Enterprise   * &#x60;20&#x60;: Sync to configured PLM Integration in Enterprise settings   * &#x60;21&#x60;: Create tasks   * &#x60;22&#x60;: Manage standard content metadata   * &#x60;23&#x60;: Workspace protection permissions   * &#x60;24&#x60;: Import files   * &#x60;25&#x60;: Use revision tools  * &#x60;26&#x60;: Export files   | 
 
 ### Return type
 
@@ -370,6 +371,88 @@ Name | Type | Description  | Notes
 ### Authorization
 
 [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCompanyUsers
+
+> BTListResponseBTCompanyUserInfo GetCompanyUsers(ctx, cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).Execute()
+
+Get a list of members in a company.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    cid := "cid_example" // string | Company ID
+    sortColumn := "sortColumn_example" // string | `createdAt | modifiedAt | name | light | lastLoginTime | userRole | state` (optional) (default to "createdAt")
+    sortOrder := "sortOrder_example" // string | `desc` (descending, default) | `asc` (ascending) (optional) (default to "desc")
+    q := "q_example" // string | Search string to filter users by name or email. (optional) (default to "")
+    includeGlobalPermissions := true // bool | Whether to include global permission info for each user. (optional) (default to false)
+    offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
+    limit := int32(56) // int32 | Number of results to return per page. Default value is 20 (also the maximum). (optional) (default to 20)
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.CompanyApi.GetCompanyUsers(context.Background(), cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.GetCompanyUsers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `GetCompanyUsers`: BTListResponseBTCompanyUserInfo
+    fmt.Fprintf(os.Stdout, "Response from `CompanyApi.GetCompanyUsers`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cid** | **string** | Company ID | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCompanyUsersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **sortColumn** | **string** | &#x60;createdAt | modifiedAt | name | light | lastLoginTime | userRole | state&#x60; | [default to &quot;createdAt&quot;]
+ **sortOrder** | **string** | &#x60;desc&#x60; (descending, default) | &#x60;asc&#x60; (ascending) | [default to &quot;desc&quot;]
+ **q** | **string** | Search string to filter users by name or email. | [default to &quot;&quot;]
+ **includeGlobalPermissions** | **bool** | Whether to include global permission info for each user. | [default to false]
+ **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
+ **limit** | **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [default to 20]
+
+### Return type
+
+[**BTListResponseBTCompanyUserInfo**](BTListResponseBTCompanyUserInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

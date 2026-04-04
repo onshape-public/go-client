@@ -60,6 +60,11 @@ func (o *BTGlobalTreeNodeSummaryInfo) AsBTPublicationInfo() *BTPublicationInfo {
 	return &BTPublicationInfo{o}
 }
 
+// BTSmartFolderInfoAsBTPublicationInfo is a convenience function that returns BTSmartFolderInfo wrapped in BTPublicationInfo
+func (o *BTSmartFolderInfo) AsBTPublicationInfo() *BTPublicationInfo {
+	return &BTPublicationInfo{o}
+}
+
 // BTTeamSummaryInfoAsBTPublicationInfo is a convenience function that returns BTTeamSummaryInfo wrapped in BTPublicationInfo
 func (o *BTTeamSummaryInfo) AsBTPublicationInfo() *BTPublicationInfo {
 	return &BTPublicationInfo{o}
@@ -1557,6 +1562,20 @@ func (dst *BTPublicationInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTPublicationInfo = nil
 			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTResourceOwnerInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'smartfolder'
+	if jsonDict["jsonType"] == "smartfolder" {
+		// try to unmarshal JSON data into BTSmartFolderInfo
+		var qr *BTSmartFolderInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTPublicationInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTPublicationInfo = nil
+			return fmt.Errorf("failed to unmarshal BTPublicationInfo as BTSmartFolderInfo: %s", err.Error())
 		}
 	}
 

@@ -704,6 +704,56 @@ func (o *BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.GetActualInstance().(getResult).SetCompany(v)
 }
 
+// GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetConfirmationRequested() bool {
+	type getResult interface {
+		GetConfirmationRequested() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConfirmationRequested()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetConfirmationRequestedOk returns a tuple with the ConfirmationRequested field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetConfirmationRequestedOk() (*bool, bool) {
+	type getResult interface {
+		GetConfirmationRequestedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetConfirmationRequestedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasConfirmationRequested returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasConfirmationRequested() bool {
+	type getResult interface {
+		HasConfirmationRequested() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasConfirmationRequested()
+	} else {
+		return false
+	}
+}
+
+// SetConfirmationRequested gets a reference to the given bool and assigns it to the ConfirmationRequested field.
+func (o *BTUserSummaryInfo) SetConfirmationRequested(v bool) {
+	type getResult interface {
+		SetConfirmationRequested(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetConfirmationRequested(v)
+}
+
 // GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetDocumentationNameOverride() string {
 	type getResult interface {
@@ -1331,6 +1381,7 @@ type base_BTUserSummaryInfo struct {
 	FirstName                 *string               `json:"firstName,omitempty"`
 	LastName                  *string               `json:"lastName,omitempty"`
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
 	InvitationState           *int32                `json:"invitationState,omitempty"`
@@ -1768,6 +1819,38 @@ func (o *base_BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
 }
 
+// GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
+func (o *base_BTUserSummaryInfo) GetConfirmationRequested() bool {
+	if o == nil || o.ConfirmationRequested == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConfirmationRequested
+}
+
+// GetConfirmationRequestedOk returns a tuple with the ConfirmationRequested field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetConfirmationRequestedOk() (*bool, bool) {
+	if o == nil || o.ConfirmationRequested == nil {
+		return nil, false
+	}
+	return o.ConfirmationRequested, true
+}
+
+// HasConfirmationRequested returns a boolean if a field has been set.
+func (o *base_BTUserSummaryInfo) HasConfirmationRequested() bool {
+	if o != nil && o.ConfirmationRequested != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmationRequested gets a reference to the given bool and assigns it to the ConfirmationRequested field.
+func (o *base_BTUserSummaryInfo) SetConfirmationRequested(v bool) {
+	o.ConfirmationRequested = &v
+}
+
 // GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
 func (o *base_BTUserSummaryInfo) GetDocumentationNameOverride() string {
 	if o == nil || o.DocumentationNameOverride == nil {
@@ -2096,6 +2179,9 @@ func (o base_BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.ConfirmationRequested != nil {
+		toSerialize["confirmationRequested"] = o.ConfirmationRequested
 	}
 	if o.DocumentationNameOverride != nil {
 		toSerialize["documentationNameOverride"] = o.DocumentationNameOverride

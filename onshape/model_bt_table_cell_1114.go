@@ -212,6 +212,56 @@ func (o *BTTableCell1114) SetIsReadOnly(v bool) {
 	o.GetActualInstance().(getResult).SetIsReadOnly(v)
 }
 
+// GetModifiers returns the Modifiers field value if set, zero value otherwise.
+func (o *BTTableCell1114) GetModifiers() []BTTableCellModifier4883 {
+	type getResult interface {
+		GetModifiers() []BTTableCellModifier4883
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiers()
+	} else {
+		var de []BTTableCellModifier4883
+		return de
+	}
+}
+
+// GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCell1114) GetModifiersOk() ([]BTTableCellModifier4883, bool) {
+	type getResult interface {
+		GetModifiersOk() ([]BTTableCellModifier4883, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetModifiersOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasModifiers returns a boolean if a field has been set.
+func (o *BTTableCell1114) HasModifiers() bool {
+	type getResult interface {
+		HasModifiers() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasModifiers()
+	} else {
+		return false
+	}
+}
+
+// SetModifiers gets a reference to the given []BTTableCellModifier4883 and assigns it to the Modifiers field.
+func (o *BTTableCell1114) SetModifiers(v []BTTableCellModifier4883) {
+	type getResult interface {
+		SetModifiers(v []BTTableCellModifier4883)
+	}
+
+	o.GetActualInstance().(getResult).SetModifiers(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 	var err error
@@ -359,9 +409,10 @@ func (v *NullableBTTableCell1114) UnmarshalJSON(src []byte) error {
 
 type base_BTTableCell1114 struct {
 	// Type of JSON object.
-	BtType        *string `json:"btType,omitempty"`
-	IsEverVisible *bool   `json:"isEverVisible,omitempty"`
-	IsReadOnly    *bool   `json:"isReadOnly,omitempty"`
+	BtType        *string                   `json:"btType,omitempty"`
+	IsEverVisible *bool                     `json:"isEverVisible,omitempty"`
+	IsReadOnly    *bool                     `json:"isReadOnly,omitempty"`
+	Modifiers     []BTTableCellModifier4883 `json:"modifiers,omitempty"`
 }
 
 // Newbase_BTTableCell1114 instantiates a new base_BTTableCell1114 object
@@ -477,6 +528,38 @@ func (o *base_BTTableCell1114) SetIsReadOnly(v bool) {
 	o.IsReadOnly = &v
 }
 
+// GetModifiers returns the Modifiers field value if set, zero value otherwise.
+func (o *base_BTTableCell1114) GetModifiers() []BTTableCellModifier4883 {
+	if o == nil || o.Modifiers == nil {
+		var ret []BTTableCellModifier4883
+		return ret
+	}
+	return o.Modifiers
+}
+
+// GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCell1114) GetModifiersOk() ([]BTTableCellModifier4883, bool) {
+	if o == nil || o.Modifiers == nil {
+		return nil, false
+	}
+	return o.Modifiers, true
+}
+
+// HasModifiers returns a boolean if a field has been set.
+func (o *base_BTTableCell1114) HasModifiers() bool {
+	if o != nil && o.Modifiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiers gets a reference to the given []BTTableCellModifier4883 and assigns it to the Modifiers field.
+func (o *base_BTTableCell1114) SetModifiers(v []BTTableCellModifier4883) {
+	o.Modifiers = v
+}
+
 func (o base_BTTableCell1114) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -487,6 +570,9 @@ func (o base_BTTableCell1114) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsReadOnly != nil {
 		toSerialize["isReadOnly"] = o.IsReadOnly
+	}
+	if o.Modifiers != nil {
+		toSerialize["modifiers"] = o.Modifiers
 	}
 	return json.Marshal(toSerialize)
 }

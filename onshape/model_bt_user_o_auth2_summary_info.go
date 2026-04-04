@@ -33,6 +33,7 @@ type BTUserOAuth2SummaryInfo struct {
 	FirstName                 *string               `json:"firstName,omitempty"`
 	LastName                  *string               `json:"lastName,omitempty"`
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
 	InvitationState           *int32                `json:"invitationState,omitempty"`
@@ -474,6 +475,38 @@ func (o *BTUserOAuth2SummaryInfo) HasCompany() bool {
 // SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
 func (o *BTUserOAuth2SummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
+}
+
+// GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
+func (o *BTUserOAuth2SummaryInfo) GetConfirmationRequested() bool {
+	if o == nil || o.ConfirmationRequested == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConfirmationRequested
+}
+
+// GetConfirmationRequestedOk returns a tuple with the ConfirmationRequested field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserOAuth2SummaryInfo) GetConfirmationRequestedOk() (*bool, bool) {
+	if o == nil || o.ConfirmationRequested == nil {
+		return nil, false
+	}
+	return o.ConfirmationRequested, true
+}
+
+// HasConfirmationRequested returns a boolean if a field has been set.
+func (o *BTUserOAuth2SummaryInfo) HasConfirmationRequested() bool {
+	if o != nil && o.ConfirmationRequested != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmationRequested gets a reference to the given bool and assigns it to the ConfirmationRequested field.
+func (o *BTUserOAuth2SummaryInfo) SetConfirmationRequested(v bool) {
+	o.ConfirmationRequested = &v
 }
 
 // GetDocumentationNameOverride returns the DocumentationNameOverride field value if set, zero value otherwise.
@@ -996,6 +1029,9 @@ func (o BTUserOAuth2SummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.ConfirmationRequested != nil {
+		toSerialize["confirmationRequested"] = o.ConfirmationRequested
 	}
 	if o.DocumentationNameOverride != nil {
 		toSerialize["documentationNameOverride"] = o.DocumentationNameOverride

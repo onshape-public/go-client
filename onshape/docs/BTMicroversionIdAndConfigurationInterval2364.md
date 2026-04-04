@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **From** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
+**FromToEqual** | Pointer to **bool** |  | [optional] 
 **MicroversionIdInterval** | Pointer to [**BTMicroversionIdInterval367**](BTMicroversionIdInterval367.md) |  | [optional] 
 **To** | Pointer to [**BTMicroversionIdAndConfiguration2338**](BTMicroversionIdAndConfiguration2338.md) |  | [optional] 
 
@@ -77,6 +78,31 @@ SetFrom sets From field to given value.
 `func (o *BTMicroversionIdAndConfigurationInterval2364) HasFrom() bool`
 
 HasFrom returns a boolean if a field has been set.
+
+### GetFromToEqual
+
+`func (o *BTMicroversionIdAndConfigurationInterval2364) GetFromToEqual() bool`
+
+GetFromToEqual returns the FromToEqual field if non-nil, zero value otherwise.
+
+### GetFromToEqualOk
+
+`func (o *BTMicroversionIdAndConfigurationInterval2364) GetFromToEqualOk() (*bool, bool)`
+
+GetFromToEqualOk returns a tuple with the FromToEqual field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFromToEqual
+
+`func (o *BTMicroversionIdAndConfigurationInterval2364) SetFromToEqual(v bool)`
+
+SetFromToEqual sets FromToEqual field to given value.
+
+### HasFromToEqual
+
+`func (o *BTMicroversionIdAndConfigurationInterval2364) HasFromToEqual() bool`
+
+HasFromToEqual returns a boolean if a field has been set.
 
 ### GetMicroversionIdInterval
 

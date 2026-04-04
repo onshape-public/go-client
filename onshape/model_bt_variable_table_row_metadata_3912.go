@@ -21,8 +21,8 @@ type BTVariableTableRowMetadata3912 struct {
 	CrossHighlightDataIfAny  *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData       *BTTableBaseCrossHighlightData2609 `json:"crossHighlightData,omitempty"`
 	Info                     *string                            `json:"info,omitempty"`
-	IsFullyEditable          *bool                              `json:"isFullyEditable,omitempty"`
 	IsRecursiveImport        *bool                              `json:"isRecursiveImport,omitempty"`
+	IsRowEditable            *bool                              `json:"isRowEditable,omitempty"`
 	LastWritingFeatureNodeId *string                            `json:"lastWritingFeatureNodeId,omitempty"`
 }
 
@@ -171,38 +171,6 @@ func (o *BTVariableTableRowMetadata3912) SetInfo(v string) {
 	o.Info = &v
 }
 
-// GetIsFullyEditable returns the IsFullyEditable field value if set, zero value otherwise.
-func (o *BTVariableTableRowMetadata3912) GetIsFullyEditable() bool {
-	if o == nil || o.IsFullyEditable == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsFullyEditable
-}
-
-// GetIsFullyEditableOk returns a tuple with the IsFullyEditable field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTVariableTableRowMetadata3912) GetIsFullyEditableOk() (*bool, bool) {
-	if o == nil || o.IsFullyEditable == nil {
-		return nil, false
-	}
-	return o.IsFullyEditable, true
-}
-
-// HasIsFullyEditable returns a boolean if a field has been set.
-func (o *BTVariableTableRowMetadata3912) HasIsFullyEditable() bool {
-	if o != nil && o.IsFullyEditable != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsFullyEditable gets a reference to the given bool and assigns it to the IsFullyEditable field.
-func (o *BTVariableTableRowMetadata3912) SetIsFullyEditable(v bool) {
-	o.IsFullyEditable = &v
-}
-
 // GetIsRecursiveImport returns the IsRecursiveImport field value if set, zero value otherwise.
 func (o *BTVariableTableRowMetadata3912) GetIsRecursiveImport() bool {
 	if o == nil || o.IsRecursiveImport == nil {
@@ -233,6 +201,38 @@ func (o *BTVariableTableRowMetadata3912) HasIsRecursiveImport() bool {
 // SetIsRecursiveImport gets a reference to the given bool and assigns it to the IsRecursiveImport field.
 func (o *BTVariableTableRowMetadata3912) SetIsRecursiveImport(v bool) {
 	o.IsRecursiveImport = &v
+}
+
+// GetIsRowEditable returns the IsRowEditable field value if set, zero value otherwise.
+func (o *BTVariableTableRowMetadata3912) GetIsRowEditable() bool {
+	if o == nil || o.IsRowEditable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsRowEditable
+}
+
+// GetIsRowEditableOk returns a tuple with the IsRowEditable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTVariableTableRowMetadata3912) GetIsRowEditableOk() (*bool, bool) {
+	if o == nil || o.IsRowEditable == nil {
+		return nil, false
+	}
+	return o.IsRowEditable, true
+}
+
+// HasIsRowEditable returns a boolean if a field has been set.
+func (o *BTVariableTableRowMetadata3912) HasIsRowEditable() bool {
+	if o != nil && o.IsRowEditable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsRowEditable gets a reference to the given bool and assigns it to the IsRowEditable field.
+func (o *BTVariableTableRowMetadata3912) SetIsRowEditable(v bool) {
+	o.IsRowEditable = &v
 }
 
 // GetLastWritingFeatureNodeId returns the LastWritingFeatureNodeId field value if set, zero value otherwise.
@@ -289,11 +289,11 @@ func (o BTVariableTableRowMetadata3912) MarshalJSON() ([]byte, error) {
 	if o.Info != nil {
 		toSerialize["info"] = o.Info
 	}
-	if o.IsFullyEditable != nil {
-		toSerialize["isFullyEditable"] = o.IsFullyEditable
-	}
 	if o.IsRecursiveImport != nil {
 		toSerialize["isRecursiveImport"] = o.IsRecursiveImport
+	}
+	if o.IsRowEditable != nil {
+		toSerialize["isRowEditable"] = o.IsRowEditable
 	}
 	if o.LastWritingFeatureNodeId != nil {
 		toSerialize["lastWritingFeatureNodeId"] = o.LastWritingFeatureNodeId

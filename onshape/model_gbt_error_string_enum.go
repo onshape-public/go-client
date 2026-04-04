@@ -1760,6 +1760,19 @@ const (
 	GBTErrorStringEnumSimulationBoundaryConditionInstanceSuppressed               GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_INSTANCE_SUPPRESSED"
 	GBTErrorStringEnumSimulationBoundaryConditionDirectionQueryFailed             GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_DIRECTION_QUERY_FAILED"
 	GBTErrorStringEnumSimulationBoundaryConditionDirectionNotSpecified            GBTErrorStringEnum = "SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED"
+	GBTErrorStringEnumSmBendAngleTooSmall                                         GBTErrorStringEnum = "SM_BEND_ANGLE_TOO_SMALL"
+	GBTErrorStringEnumPcbHoleNoBasePlane                                          GBTErrorStringEnum = "PCB_HOLE_NO_BASE_PLANE"
+	GBTErrorStringEnumPcbHoleNoInteriorFace                                       GBTErrorStringEnum = "PCB_HOLE_NO_INTERIOR_FACE"
+	GBTErrorStringEnumPcbHoleDuplicateHoleId                                      GBTErrorStringEnum = "PCB_HOLE_DUPLICATE_HOLE_ID"
+	GBTErrorStringEnumPcbHoleInteriorFacesMustBelongToSameBody                    GBTErrorStringEnum = "PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_BODY"
+	GBTErrorStringEnumPcbHoleLessThan2ParallelFaces                               GBTErrorStringEnum = "PCB_HOLE_LESS_THAN_2_PARALLEL_FACES"
+	GBTErrorStringEnumPcbHoleMoreThan2ParallelFaces                               GBTErrorStringEnum = "PCB_HOLE_MORE_THAN_2_PARALLEL_FACES"
+	GBTErrorStringEnumPcbHoleFaceOnOutlineOfRegion                                GBTErrorStringEnum = "PCB_HOLE_FACE_ON_OUTLINE_OF_REGION"
+	GBTErrorStringEnumPcbHoleInteriorFacesMustBelongToSameHole                    GBTErrorStringEnum = "PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_HOLE"
+	GBTErrorStringEnumPcbHoleAlreadyTagged                                        GBTErrorStringEnum = "PCB_HOLE_ALREADY_TAGGED"
+	GBTErrorStringEnumMateConnectorStackedAndMultipleEntities                     GBTErrorStringEnum = "MATE_CONNECTOR_STACKED_AND_MULTIPLE_ENTITIES"
+	GBTErrorStringEnumCycleOfOnlyMateConnectors                                   GBTErrorStringEnum = "CYCLE_OF_ONLY_MATE_CONNECTORS"
+	GBTErrorStringEnumDrawingEmptyViewCorrespondenceFailed                        GBTErrorStringEnum = "DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3505,6 +3518,19 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"SIMULATION_BOUNDARY_CONDITION_INSTANCE_SUPPRESSED",
 	"SIMULATION_BOUNDARY_CONDITION_DIRECTION_QUERY_FAILED",
 	"SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED",
+	"SM_BEND_ANGLE_TOO_SMALL",
+	"PCB_HOLE_NO_BASE_PLANE",
+	"PCB_HOLE_NO_INTERIOR_FACE",
+	"PCB_HOLE_DUPLICATE_HOLE_ID",
+	"PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_BODY",
+	"PCB_HOLE_LESS_THAN_2_PARALLEL_FACES",
+	"PCB_HOLE_MORE_THAN_2_PARALLEL_FACES",
+	"PCB_HOLE_FACE_ON_OUTLINE_OF_REGION",
+	"PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_HOLE",
+	"PCB_HOLE_ALREADY_TAGGED",
+	"MATE_CONNECTOR_STACKED_AND_MULTIPLE_ENTITIES",
+	"CYCLE_OF_ONLY_MATE_CONNECTORS",
+	"DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED",
 	"UNKNOWN",
 }
 

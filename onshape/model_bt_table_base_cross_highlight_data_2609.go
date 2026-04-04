@@ -30,6 +30,11 @@ func (o *BTTableAssemblyCrossHighlightData2675) AsBTTableBaseCrossHighlightData2
 	return &BTTableBaseCrossHighlightData2609{o}
 }
 
+// BTInspectionTableCrossHighlightData4177AsBTTableBaseCrossHighlightData2609 is a convenience function that returns BTInspectionTableCrossHighlightData4177 wrapped in BTTableBaseCrossHighlightData2609
+func (o *BTInspectionTableCrossHighlightData4177) AsBTTableBaseCrossHighlightData2609() *BTTableBaseCrossHighlightData2609 {
+	return &BTTableBaseCrossHighlightData2609{o}
+}
+
 // NewBTTableBaseCrossHighlightData2609 instantiates a new BTTableBaseCrossHighlightData2609 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -132,6 +137,20 @@ func (dst *BTTableBaseCrossHighlightData2609) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableBaseCrossHighlightData2609 = nil
 			return fmt.Errorf("failed to unmarshal BTTableBaseCrossHighlightData2609 as BTTableCrossHighlightData1753: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTInspectionTableCrossHighlightData-4177'
+	if jsonDict["btType"] == "BTInspectionTableCrossHighlightData-4177" {
+		// try to unmarshal JSON data into BTInspectionTableCrossHighlightData4177
+		var qr *BTInspectionTableCrossHighlightData4177
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableBaseCrossHighlightData2609 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableBaseCrossHighlightData2609 = nil
+			return fmt.Errorf("failed to unmarshal BTTableBaseCrossHighlightData2609 as BTInspectionTableCrossHighlightData4177: %s", err.Error())
 		}
 	}
 

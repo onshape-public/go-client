@@ -27,7 +27,9 @@ type BTRootAssemblyInfo struct {
 	// List of instances including those created by patterns and replicates.
 	Instances   []BTAssemblyInstanceInfo   `json:"instances,omitempty"`
 	Occurrences []BTAssemblyOccurrenceInfo `json:"occurrences,omitempty"`
-	PartNumber  *string                    `json:"partNumber,omitempty"`
+	// List of parametric instances.
+	ParametricInstances []BTAssemblyParametricInstanceInfo `json:"parametricInstances,omitempty"`
+	PartNumber          *string                            `json:"partNumber,omitempty"`
 	// List of patterns.
 	Patterns []BTAssemblyPatternInfo `json:"patterns,omitempty"`
 	Revision *string                 `json:"revision,omitempty"`
@@ -338,6 +340,38 @@ func (o *BTRootAssemblyInfo) SetOccurrences(v []BTAssemblyOccurrenceInfo) {
 	o.Occurrences = v
 }
 
+// GetParametricInstances returns the ParametricInstances field value if set, zero value otherwise.
+func (o *BTRootAssemblyInfo) GetParametricInstances() []BTAssemblyParametricInstanceInfo {
+	if o == nil || o.ParametricInstances == nil {
+		var ret []BTAssemblyParametricInstanceInfo
+		return ret
+	}
+	return o.ParametricInstances
+}
+
+// GetParametricInstancesOk returns a tuple with the ParametricInstances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyInfo) GetParametricInstancesOk() ([]BTAssemblyParametricInstanceInfo, bool) {
+	if o == nil || o.ParametricInstances == nil {
+		return nil, false
+	}
+	return o.ParametricInstances, true
+}
+
+// HasParametricInstances returns a boolean if a field has been set.
+func (o *BTRootAssemblyInfo) HasParametricInstances() bool {
+	if o != nil && o.ParametricInstances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricInstances gets a reference to the given []BTAssemblyParametricInstanceInfo and assigns it to the ParametricInstances field.
+func (o *BTRootAssemblyInfo) SetParametricInstances(v []BTAssemblyParametricInstanceInfo) {
+	o.ParametricInstances = v
+}
+
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
 func (o *BTRootAssemblyInfo) GetPartNumber() string {
 	if o == nil || o.PartNumber == nil {
@@ -462,6 +496,9 @@ func (o BTRootAssemblyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Occurrences != nil {
 		toSerialize["occurrences"] = o.Occurrences
+	}
+	if o.ParametricInstances != nil {
+		toSerialize["parametricInstances"] = o.ParametricInstances
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber

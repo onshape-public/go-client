@@ -18,6 +18,7 @@ import (
 type BTTaskUserSummaryInfo struct {
 	Acted                     *bool                 `json:"acted,omitempty"`
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
 	DocumentationName         *string               `json:"documentationName,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	Email                     *string               `json:"email,omitempty"`
@@ -123,6 +124,38 @@ func (o *BTTaskUserSummaryInfo) HasCompany() bool {
 // SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
 func (o *BTTaskUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
+}
+
+// GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
+func (o *BTTaskUserSummaryInfo) GetConfirmationRequested() bool {
+	if o == nil || o.ConfirmationRequested == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ConfirmationRequested
+}
+
+// GetConfirmationRequestedOk returns a tuple with the ConfirmationRequested field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTaskUserSummaryInfo) GetConfirmationRequestedOk() (*bool, bool) {
+	if o == nil || o.ConfirmationRequested == nil {
+		return nil, false
+	}
+	return o.ConfirmationRequested, true
+}
+
+// HasConfirmationRequested returns a boolean if a field has been set.
+func (o *BTTaskUserSummaryInfo) HasConfirmationRequested() bool {
+	if o != nil && o.ConfirmationRequested != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConfirmationRequested gets a reference to the given bool and assigns it to the ConfirmationRequested field.
+func (o *BTTaskUserSummaryInfo) SetConfirmationRequested(v bool) {
+	o.ConfirmationRequested = &v
 }
 
 // GetDocumentationName returns the DocumentationName field value if set, zero value otherwise.
@@ -772,6 +805,9 @@ func (o BTTaskUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.ConfirmationRequested != nil {
+		toSerialize["confirmationRequested"] = o.ConfirmationRequested
 	}
 	if o.DocumentationName != nil {
 		toSerialize["documentationName"] = o.DocumentationName

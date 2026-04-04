@@ -19,6 +19,7 @@ type BTMicroversionIdAndConfigurationInterval2364 struct {
 	// Type of JSON object.
 	BtType                 *string                               `json:"btType,omitempty"`
 	From                   *BTMicroversionIdAndConfiguration2338 `json:"from,omitempty"`
+	FromToEqual            *bool                                 `json:"fromToEqual,omitempty"`
 	MicroversionIdInterval *BTMicroversionIdInterval367          `json:"microversionIdInterval,omitempty"`
 	To                     *BTMicroversionIdAndConfiguration2338 `json:"to,omitempty"`
 }
@@ -104,6 +105,38 @@ func (o *BTMicroversionIdAndConfigurationInterval2364) SetFrom(v BTMicroversionI
 	o.From = &v
 }
 
+// GetFromToEqual returns the FromToEqual field value if set, zero value otherwise.
+func (o *BTMicroversionIdAndConfigurationInterval2364) GetFromToEqual() bool {
+	if o == nil || o.FromToEqual == nil {
+		var ret bool
+		return ret
+	}
+	return *o.FromToEqual
+}
+
+// GetFromToEqualOk returns a tuple with the FromToEqual field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMicroversionIdAndConfigurationInterval2364) GetFromToEqualOk() (*bool, bool) {
+	if o == nil || o.FromToEqual == nil {
+		return nil, false
+	}
+	return o.FromToEqual, true
+}
+
+// HasFromToEqual returns a boolean if a field has been set.
+func (o *BTMicroversionIdAndConfigurationInterval2364) HasFromToEqual() bool {
+	if o != nil && o.FromToEqual != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFromToEqual gets a reference to the given bool and assigns it to the FromToEqual field.
+func (o *BTMicroversionIdAndConfigurationInterval2364) SetFromToEqual(v bool) {
+	o.FromToEqual = &v
+}
+
 // GetMicroversionIdInterval returns the MicroversionIdInterval field value if set, zero value otherwise.
 func (o *BTMicroversionIdAndConfigurationInterval2364) GetMicroversionIdInterval() BTMicroversionIdInterval367 {
 	if o == nil || o.MicroversionIdInterval == nil {
@@ -175,6 +208,9 @@ func (o BTMicroversionIdAndConfigurationInterval2364) MarshalJSON() ([]byte, err
 	}
 	if o.From != nil {
 		toSerialize["from"] = o.From
+	}
+	if o.FromToEqual != nil {
+		toSerialize["fromToEqual"] = o.FromToEqual
 	}
 	if o.MicroversionIdInterval != nil {
 		toSerialize["microversionIdInterval"] = o.MicroversionIdInterval

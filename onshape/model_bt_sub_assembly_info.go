@@ -25,8 +25,10 @@ type BTSubAssemblyInfo struct {
 	Features          []BTAssemblyFeatureInfo `json:"features,omitempty"`
 	FullConfiguration *string                 `json:"fullConfiguration,omitempty"`
 	// List of instances including those created by patterns and replicates.
-	Instances  []BTAssemblyInstanceInfo `json:"instances,omitempty"`
-	PartNumber *string                  `json:"partNumber,omitempty"`
+	Instances []BTAssemblyInstanceInfo `json:"instances,omitempty"`
+	// List of parametric instances.
+	ParametricInstances []BTAssemblyParametricInstanceInfo `json:"parametricInstances,omitempty"`
+	PartNumber          *string                            `json:"partNumber,omitempty"`
 	// List of patterns.
 	Patterns []BTAssemblyPatternInfo `json:"patterns,omitempty"`
 	Revision *string                 `json:"revision,omitempty"`
@@ -305,6 +307,38 @@ func (o *BTSubAssemblyInfo) SetInstances(v []BTAssemblyInstanceInfo) {
 	o.Instances = v
 }
 
+// GetParametricInstances returns the ParametricInstances field value if set, zero value otherwise.
+func (o *BTSubAssemblyInfo) GetParametricInstances() []BTAssemblyParametricInstanceInfo {
+	if o == nil || o.ParametricInstances == nil {
+		var ret []BTAssemblyParametricInstanceInfo
+		return ret
+	}
+	return o.ParametricInstances
+}
+
+// GetParametricInstancesOk returns a tuple with the ParametricInstances field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSubAssemblyInfo) GetParametricInstancesOk() ([]BTAssemblyParametricInstanceInfo, bool) {
+	if o == nil || o.ParametricInstances == nil {
+		return nil, false
+	}
+	return o.ParametricInstances, true
+}
+
+// HasParametricInstances returns a boolean if a field has been set.
+func (o *BTSubAssemblyInfo) HasParametricInstances() bool {
+	if o != nil && o.ParametricInstances != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParametricInstances gets a reference to the given []BTAssemblyParametricInstanceInfo and assigns it to the ParametricInstances field.
+func (o *BTSubAssemblyInfo) SetParametricInstances(v []BTAssemblyParametricInstanceInfo) {
+	o.ParametricInstances = v
+}
+
 // GetPartNumber returns the PartNumber field value if set, zero value otherwise.
 func (o *BTSubAssemblyInfo) GetPartNumber() string {
 	if o == nil || o.PartNumber == nil {
@@ -426,6 +460,9 @@ func (o BTSubAssemblyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Instances != nil {
 		toSerialize["instances"] = o.Instances
+	}
+	if o.ParametricInstances != nil {
+		toSerialize["parametricInstances"] = o.ParametricInstances
 	}
 	if o.PartNumber != nil {
 		toSerialize["partNumber"] = o.PartNumber
