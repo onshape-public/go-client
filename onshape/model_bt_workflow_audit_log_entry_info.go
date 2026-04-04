@@ -29,6 +29,7 @@ type BTWorkflowAuditLogEntryInfo struct {
 	ObjectId              *string                `json:"objectId,omitempty"`
 	PropertyUpdates       []BTPropertyUpdateInfo `json:"propertyUpdates,omitempty"`
 	SupportCode           *string                `json:"supportCode,omitempty"`
+	TransitionsSkipped    []string               `json:"transitionsSkipped,omitempty"`
 	UserId                *string                `json:"userId,omitempty"`
 	WorkflowAction        *string                `json:"workflowAction,omitempty"`
 	WorkflowState         *string                `json:"workflowState,omitempty"`
@@ -468,6 +469,38 @@ func (o *BTWorkflowAuditLogEntryInfo) SetSupportCode(v string) {
 	o.SupportCode = &v
 }
 
+// GetTransitionsSkipped returns the TransitionsSkipped field value if set, zero value otherwise.
+func (o *BTWorkflowAuditLogEntryInfo) GetTransitionsSkipped() []string {
+	if o == nil || o.TransitionsSkipped == nil {
+		var ret []string
+		return ret
+	}
+	return o.TransitionsSkipped
+}
+
+// GetTransitionsSkippedOk returns a tuple with the TransitionsSkipped field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowAuditLogEntryInfo) GetTransitionsSkippedOk() ([]string, bool) {
+	if o == nil || o.TransitionsSkipped == nil {
+		return nil, false
+	}
+	return o.TransitionsSkipped, true
+}
+
+// HasTransitionsSkipped returns a boolean if a field has been set.
+func (o *BTWorkflowAuditLogEntryInfo) HasTransitionsSkipped() bool {
+	if o != nil && o.TransitionsSkipped != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTransitionsSkipped gets a reference to the given []string and assigns it to the TransitionsSkipped field.
+func (o *BTWorkflowAuditLogEntryInfo) SetTransitionsSkipped(v []string) {
+	o.TransitionsSkipped = v
+}
+
 // GetUserId returns the UserId field value if set, zero value otherwise.
 func (o *BTWorkflowAuditLogEntryInfo) GetUserId() string {
 	if o == nil || o.UserId == nil {
@@ -636,6 +669,9 @@ func (o BTWorkflowAuditLogEntryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SupportCode != nil {
 		toSerialize["supportCode"] = o.SupportCode
+	}
+	if o.TransitionsSkipped != nil {
+		toSerialize["transitionsSkipped"] = o.TransitionsSkipped
 	}
 	if o.UserId != nil {
 		toSerialize["userId"] = o.UserId

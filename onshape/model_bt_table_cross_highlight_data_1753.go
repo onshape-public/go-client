@@ -12,15 +12,17 @@ package onshape
 
 import (
 	"encoding/json"
+	"fmt"
 )
 
-// BTTableCrossHighlightData1753 struct for BTTableCrossHighlightData1753
+// BTTableCrossHighlightData1753 - struct for BTTableCrossHighlightData1753
 type BTTableCrossHighlightData1753 struct {
-	BTTableBaseCrossHighlightData2609
-	// Type of JSON object.
-	BtType              *string  `json:"btType,omitempty"`
-	DeterministicIdList []string `json:"deterministicIdList,omitempty"`
-	FeatureIdList       []string `json:"featureIdList,omitempty"`
+	implBTTableCrossHighlightData1753 interface{}
+}
+
+// BTInspectionTableCrossHighlightData4177AsBTTableCrossHighlightData1753 is a convenience function that returns BTInspectionTableCrossHighlightData4177 wrapped in BTTableCrossHighlightData1753
+func (o *BTInspectionTableCrossHighlightData4177) AsBTTableCrossHighlightData1753() *BTTableCrossHighlightData1753 {
+	return &BTTableCrossHighlightData1753{o}
 }
 
 // NewBTTableCrossHighlightData1753 instantiates a new BTTableCrossHighlightData1753 object
@@ -28,7 +30,7 @@ type BTTableCrossHighlightData1753 struct {
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
 func NewBTTableCrossHighlightData1753() *BTTableCrossHighlightData1753 {
-	this := BTTableCrossHighlightData1753{}
+	this := BTTableCrossHighlightData1753{Newbase_BTTableCrossHighlightData1753()}
 	return &this
 }
 
@@ -36,126 +38,211 @@ func NewBTTableCrossHighlightData1753() *BTTableCrossHighlightData1753 {
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
 func NewBTTableCrossHighlightData1753WithDefaults() *BTTableCrossHighlightData1753 {
-	this := BTTableCrossHighlightData1753{}
+	this := BTTableCrossHighlightData1753{Newbase_BTTableCrossHighlightData1753WithDefaults()}
 	return &this
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTTableCrossHighlightData1753) GetBtType() string {
-	if o == nil || o.BtType == nil {
-		var ret string
-		return ret
+	type getResult interface {
+		GetBtType() string
 	}
-	return *o.BtType
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtType()
+	} else {
+		var de string
+		return de
+	}
 }
 
 // GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTTableCrossHighlightData1753) GetBtTypeOk() (*string, bool) {
-	if o == nil || o.BtType == nil {
+	type getResult interface {
+		GetBtTypeOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBtTypeOk()
+	} else {
 		return nil, false
 	}
-	return o.BtType, true
 }
 
 // HasBtType returns a boolean if a field has been set.
 func (o *BTTableCrossHighlightData1753) HasBtType() bool {
-	if o != nil && o.BtType != nil {
-		return true
+	type getResult interface {
+		HasBtType() bool
 	}
 
-	return false
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBtType()
+	} else {
+		return false
+	}
 }
 
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTTableCrossHighlightData1753) SetBtType(v string) {
-	o.BtType = &v
+	type getResult interface {
+		SetBtType(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
 // GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
 func (o *BTTableCrossHighlightData1753) GetDeterministicIdList() []string {
-	if o == nil || o.DeterministicIdList == nil {
-		var ret []string
-		return ret
+	type getResult interface {
+		GetDeterministicIdList() []string
 	}
-	return o.DeterministicIdList
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeterministicIdList()
+	} else {
+		var de []string
+		return de
+	}
 }
 
 // GetDeterministicIdListOk returns a tuple with the DeterministicIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTTableCrossHighlightData1753) GetDeterministicIdListOk() ([]string, bool) {
-	if o == nil || o.DeterministicIdList == nil {
+	type getResult interface {
+		GetDeterministicIdListOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDeterministicIdListOk()
+	} else {
 		return nil, false
 	}
-	return o.DeterministicIdList, true
 }
 
 // HasDeterministicIdList returns a boolean if a field has been set.
 func (o *BTTableCrossHighlightData1753) HasDeterministicIdList() bool {
-	if o != nil && o.DeterministicIdList != nil {
-		return true
+	type getResult interface {
+		HasDeterministicIdList() bool
 	}
 
-	return false
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDeterministicIdList()
+	} else {
+		return false
+	}
 }
 
 // SetDeterministicIdList gets a reference to the given []string and assigns it to the DeterministicIdList field.
 func (o *BTTableCrossHighlightData1753) SetDeterministicIdList(v []string) {
-	o.DeterministicIdList = v
+	type getResult interface {
+		SetDeterministicIdList(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetDeterministicIdList(v)
 }
 
 // GetFeatureIdList returns the FeatureIdList field value if set, zero value otherwise.
 func (o *BTTableCrossHighlightData1753) GetFeatureIdList() []string {
-	if o == nil || o.FeatureIdList == nil {
-		var ret []string
-		return ret
+	type getResult interface {
+		GetFeatureIdList() []string
 	}
-	return o.FeatureIdList
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFeatureIdList()
+	} else {
+		var de []string
+		return de
+	}
 }
 
 // GetFeatureIdListOk returns a tuple with the FeatureIdList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BTTableCrossHighlightData1753) GetFeatureIdListOk() ([]string, bool) {
-	if o == nil || o.FeatureIdList == nil {
+	type getResult interface {
+		GetFeatureIdListOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetFeatureIdListOk()
+	} else {
 		return nil, false
 	}
-	return o.FeatureIdList, true
 }
 
 // HasFeatureIdList returns a boolean if a field has been set.
 func (o *BTTableCrossHighlightData1753) HasFeatureIdList() bool {
-	if o != nil && o.FeatureIdList != nil {
-		return true
+	type getResult interface {
+		HasFeatureIdList() bool
 	}
 
-	return false
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasFeatureIdList()
+	} else {
+		return false
+	}
 }
 
 // SetFeatureIdList gets a reference to the given []string and assigns it to the FeatureIdList field.
 func (o *BTTableCrossHighlightData1753) SetFeatureIdList(v []string) {
-	o.FeatureIdList = v
+	type getResult interface {
+		SetFeatureIdList(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetFeatureIdList(v)
 }
 
-func (o BTTableCrossHighlightData1753) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	serializedBTTableBaseCrossHighlightData2609, errBTTableBaseCrossHighlightData2609 := json.Marshal(o.BTTableBaseCrossHighlightData2609)
-	if errBTTableBaseCrossHighlightData2609 != nil {
-		return []byte{}, errBTTableBaseCrossHighlightData2609
+// Unmarshal JSON data into one of the pointers in the struct
+func (dst *BTTableCrossHighlightData1753) UnmarshalJSON(data []byte) error {
+	var err error
+	// use discriminator value to speed up the lookup
+	var jsonDict map[string]interface{}
+	err = newStrictDecoder(data).Decode(&jsonDict)
+	if err != nil {
+		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
 	}
-	errBTTableBaseCrossHighlightData2609 = json.Unmarshal([]byte(serializedBTTableBaseCrossHighlightData2609), &toSerialize)
-	if errBTTableBaseCrossHighlightData2609 != nil {
-		return []byte{}, errBTTableBaseCrossHighlightData2609
+
+	// check if the discriminator value is 'BTInspectionTableCrossHighlightData-4177'
+	if jsonDict["btType"] == "BTInspectionTableCrossHighlightData-4177" {
+		// try to unmarshal JSON data into BTInspectionTableCrossHighlightData4177
+		var qr *BTInspectionTableCrossHighlightData4177
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableCrossHighlightData1753 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableCrossHighlightData1753 = nil
+			return fmt.Errorf("failed to unmarshal BTTableCrossHighlightData1753 as BTInspectionTableCrossHighlightData4177: %s", err.Error())
+		}
 	}
-	if o.BtType != nil {
-		toSerialize["btType"] = o.BtType
+
+	var qtx *base_BTTableCrossHighlightData1753
+	err = json.Unmarshal(data, &qtx)
+	if err == nil {
+		dst.implBTTableCrossHighlightData1753 = qtx
+		return nil // data stored in dst.base_BTTableCrossHighlightData1753, return on the first match
+	} else {
+		dst.implBTTableCrossHighlightData1753 = nil
+		return fmt.Errorf("failed to unmarshal BTTableCrossHighlightData1753 as base_BTTableCrossHighlightData1753: %s", err.Error())
 	}
-	if o.DeterministicIdList != nil {
-		toSerialize["deterministicIdList"] = o.DeterministicIdList
+}
+
+// Marshal data from the first non-nil pointers in the struct to JSON
+func (src BTTableCrossHighlightData1753) MarshalJSON() ([]byte, error) {
+	ret := src.GetActualInstance()
+	if ret == nil {
+		return nil, nil // no data in oneOf schemas
+	} else {
+		return json.Marshal(&ret)
 	}
-	if o.FeatureIdList != nil {
-		toSerialize["featureIdList"] = o.FeatureIdList
+}
+
+// Get the actual instance
+func (obj *BTTableCrossHighlightData1753) GetActualInstance() interface{} {
+	if obj == nil {
+		return nil
 	}
-	return json.Marshal(toSerialize)
+	return obj.implBTTableCrossHighlightData1753
 }
 
 type NullableBTTableCrossHighlightData1753 struct {
@@ -192,4 +279,147 @@ func (v NullableBTTableCrossHighlightData1753) MarshalJSON() ([]byte, error) {
 func (v *NullableBTTableCrossHighlightData1753) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
+}
+
+type base_BTTableCrossHighlightData1753 struct {
+	BTTableBaseCrossHighlightData2609
+	// Type of JSON object.
+	BtType              *string  `json:"btType,omitempty"`
+	DeterministicIdList []string `json:"deterministicIdList,omitempty"`
+	FeatureIdList       []string `json:"featureIdList,omitempty"`
+}
+
+// Newbase_BTTableCrossHighlightData1753 instantiates a new base_BTTableCrossHighlightData1753 object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func Newbase_BTTableCrossHighlightData1753() *base_BTTableCrossHighlightData1753 {
+	this := base_BTTableCrossHighlightData1753{}
+	return &this
+}
+
+// Newbase_BTTableCrossHighlightData1753WithDefaults instantiates a new base_BTTableCrossHighlightData1753 object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func Newbase_BTTableCrossHighlightData1753WithDefaults() *base_BTTableCrossHighlightData1753 {
+	this := base_BTTableCrossHighlightData1753{}
+	return &this
+}
+
+// GetBtType returns the BtType field value if set, zero value otherwise.
+func (o *base_BTTableCrossHighlightData1753) GetBtType() string {
+	if o == nil || o.BtType == nil {
+		var ret string
+		return ret
+	}
+	return *o.BtType
+}
+
+// GetBtTypeOk returns a tuple with the BtType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCrossHighlightData1753) GetBtTypeOk() (*string, bool) {
+	if o == nil || o.BtType == nil {
+		return nil, false
+	}
+	return o.BtType, true
+}
+
+// HasBtType returns a boolean if a field has been set.
+func (o *base_BTTableCrossHighlightData1753) HasBtType() bool {
+	if o != nil && o.BtType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBtType gets a reference to the given string and assigns it to the BtType field.
+func (o *base_BTTableCrossHighlightData1753) SetBtType(v string) {
+	o.BtType = &v
+}
+
+// GetDeterministicIdList returns the DeterministicIdList field value if set, zero value otherwise.
+func (o *base_BTTableCrossHighlightData1753) GetDeterministicIdList() []string {
+	if o == nil || o.DeterministicIdList == nil {
+		var ret []string
+		return ret
+	}
+	return o.DeterministicIdList
+}
+
+// GetDeterministicIdListOk returns a tuple with the DeterministicIdList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCrossHighlightData1753) GetDeterministicIdListOk() ([]string, bool) {
+	if o == nil || o.DeterministicIdList == nil {
+		return nil, false
+	}
+	return o.DeterministicIdList, true
+}
+
+// HasDeterministicIdList returns a boolean if a field has been set.
+func (o *base_BTTableCrossHighlightData1753) HasDeterministicIdList() bool {
+	if o != nil && o.DeterministicIdList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDeterministicIdList gets a reference to the given []string and assigns it to the DeterministicIdList field.
+func (o *base_BTTableCrossHighlightData1753) SetDeterministicIdList(v []string) {
+	o.DeterministicIdList = v
+}
+
+// GetFeatureIdList returns the FeatureIdList field value if set, zero value otherwise.
+func (o *base_BTTableCrossHighlightData1753) GetFeatureIdList() []string {
+	if o == nil || o.FeatureIdList == nil {
+		var ret []string
+		return ret
+	}
+	return o.FeatureIdList
+}
+
+// GetFeatureIdListOk returns a tuple with the FeatureIdList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCrossHighlightData1753) GetFeatureIdListOk() ([]string, bool) {
+	if o == nil || o.FeatureIdList == nil {
+		return nil, false
+	}
+	return o.FeatureIdList, true
+}
+
+// HasFeatureIdList returns a boolean if a field has been set.
+func (o *base_BTTableCrossHighlightData1753) HasFeatureIdList() bool {
+	if o != nil && o.FeatureIdList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFeatureIdList gets a reference to the given []string and assigns it to the FeatureIdList field.
+func (o *base_BTTableCrossHighlightData1753) SetFeatureIdList(v []string) {
+	o.FeatureIdList = v
+}
+
+func (o base_BTTableCrossHighlightData1753) MarshalJSON() ([]byte, error) {
+	toSerialize := map[string]interface{}{}
+	serializedBTTableBaseCrossHighlightData2609, errBTTableBaseCrossHighlightData2609 := json.Marshal(o.BTTableBaseCrossHighlightData2609)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
+	errBTTableBaseCrossHighlightData2609 = json.Unmarshal([]byte(serializedBTTableBaseCrossHighlightData2609), &toSerialize)
+	if errBTTableBaseCrossHighlightData2609 != nil {
+		return []byte{}, errBTTableBaseCrossHighlightData2609
+	}
+	if o.BtType != nil {
+		toSerialize["btType"] = o.BtType
+	}
+	if o.DeterministicIdList != nil {
+		toSerialize["deterministicIdList"] = o.DeterministicIdList
+	}
+	if o.FeatureIdList != nil {
+		toSerialize["featureIdList"] = o.FeatureIdList
+	}
+	return json.Marshal(toSerialize)
 }

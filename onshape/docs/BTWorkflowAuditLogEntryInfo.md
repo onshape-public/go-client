@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ObjectId** | Pointer to **string** |  | [optional] 
 **PropertyUpdates** | Pointer to [**[]BTPropertyUpdateInfo**](BTPropertyUpdateInfo.md) |  | [optional] 
 **SupportCode** | Pointer to **string** |  | [optional] 
+**TransitionsSkipped** | Pointer to **[]string** |  | [optional] 
 **UserId** | Pointer to **string** |  | [optional] 
 **WorkflowAction** | Pointer to **string** |  | [optional] 
 **WorkflowState** | Pointer to **string** |  | [optional] 
@@ -365,6 +366,31 @@ SetSupportCode sets SupportCode field to given value.
 `func (o *BTWorkflowAuditLogEntryInfo) HasSupportCode() bool`
 
 HasSupportCode returns a boolean if a field has been set.
+
+### GetTransitionsSkipped
+
+`func (o *BTWorkflowAuditLogEntryInfo) GetTransitionsSkipped() []string`
+
+GetTransitionsSkipped returns the TransitionsSkipped field if non-nil, zero value otherwise.
+
+### GetTransitionsSkippedOk
+
+`func (o *BTWorkflowAuditLogEntryInfo) GetTransitionsSkippedOk() (*[]string, bool)`
+
+GetTransitionsSkippedOk returns a tuple with the TransitionsSkipped field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransitionsSkipped
+
+`func (o *BTWorkflowAuditLogEntryInfo) SetTransitionsSkipped(v []string)`
+
+SetTransitionsSkipped sets TransitionsSkipped field to given value.
+
+### HasTransitionsSkipped
+
+`func (o *BTWorkflowAuditLogEntryInfo) HasTransitionsSkipped() bool`
+
+HasTransitionsSkipped returns a boolean if a field has been set.
 
 ### GetUserId
 

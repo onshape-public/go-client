@@ -17,14 +17,15 @@ import (
 // BTTableCellParameterWithValue2122 struct for BTTableCellParameterWithValue2122
 type BTTableCellParameterWithValue2122 struct {
 	BTTableCellParameter2399
-	BtType        *string           `json:"btType,omitempty"`
-	IsEverVisible *bool             `json:"isEverVisible,omitempty"`
-	IsReadOnly    *bool             `json:"isReadOnly,omitempty"`
-	Error         *string           `json:"error,omitempty"`
-	Info          *string           `json:"info,omitempty"`
-	OverrideSpec  *BTParameterSpec6 `json:"overrideSpec,omitempty"`
-	Parameter     *BTMParameter1    `json:"parameter,omitempty"`
-	Value         *BTFSValue1888    `json:"value,omitempty"`
+	BtType        *string                   `json:"btType,omitempty"`
+	IsEverVisible *bool                     `json:"isEverVisible,omitempty"`
+	IsReadOnly    *bool                     `json:"isReadOnly,omitempty"`
+	Modifiers     []BTTableCellModifier4883 `json:"modifiers,omitempty"`
+	Error         *string                   `json:"error,omitempty"`
+	Info          *string                   `json:"info,omitempty"`
+	OverrideSpec  *BTParameterSpec6         `json:"overrideSpec,omitempty"`
+	Parameter     *BTMParameter1            `json:"parameter,omitempty"`
+	Value         *BTFSValue1888            `json:"value,omitempty"`
 }
 
 // NewBTTableCellParameterWithValue2122 instantiates a new BTTableCellParameterWithValue2122 object
@@ -138,6 +139,38 @@ func (o *BTTableCellParameterWithValue2122) HasIsReadOnly() bool {
 // SetIsReadOnly gets a reference to the given bool and assigns it to the IsReadOnly field.
 func (o *BTTableCellParameterWithValue2122) SetIsReadOnly(v bool) {
 	o.IsReadOnly = &v
+}
+
+// GetModifiers returns the Modifiers field value if set, zero value otherwise.
+func (o *BTTableCellParameterWithValue2122) GetModifiers() []BTTableCellModifier4883 {
+	if o == nil || o.Modifiers == nil {
+		var ret []BTTableCellModifier4883
+		return ret
+	}
+	return o.Modifiers
+}
+
+// GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellParameterWithValue2122) GetModifiersOk() ([]BTTableCellModifier4883, bool) {
+	if o == nil || o.Modifiers == nil {
+		return nil, false
+	}
+	return o.Modifiers, true
+}
+
+// HasModifiers returns a boolean if a field has been set.
+func (o *BTTableCellParameterWithValue2122) HasModifiers() bool {
+	if o != nil && o.Modifiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiers gets a reference to the given []BTTableCellModifier4883 and assigns it to the Modifiers field.
+func (o *BTTableCellParameterWithValue2122) SetModifiers(v []BTTableCellModifier4883) {
+	o.Modifiers = v
 }
 
 // GetError returns the Error field value if set, zero value otherwise.
@@ -318,6 +351,9 @@ func (o BTTableCellParameterWithValue2122) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsReadOnly != nil {
 		toSerialize["isReadOnly"] = o.IsReadOnly
+	}
+	if o.Modifiers != nil {
+		toSerialize["modifiers"] = o.Modifiers
 	}
 	if o.Error != nil {
 		toSerialize["error"] = o.Error

@@ -17,10 +17,11 @@ import (
 // BTTableTestCellString2112 struct for BTTableTestCellString2112
 type BTTableTestCellString2112 struct {
 	BTTableCell1114
-	BtType        *string `json:"btType,omitempty"`
-	IsEverVisible *bool   `json:"isEverVisible,omitempty"`
-	IsReadOnly    *bool   `json:"isReadOnly,omitempty"`
-	CellValue     *string `json:"cellValue,omitempty"`
+	BtType        *string                   `json:"btType,omitempty"`
+	IsEverVisible *bool                     `json:"isEverVisible,omitempty"`
+	IsReadOnly    *bool                     `json:"isReadOnly,omitempty"`
+	Modifiers     []BTTableCellModifier4883 `json:"modifiers,omitempty"`
+	CellValue     *string                   `json:"cellValue,omitempty"`
 }
 
 // NewBTTableTestCellString2112 instantiates a new BTTableTestCellString2112 object
@@ -136,6 +137,38 @@ func (o *BTTableTestCellString2112) SetIsReadOnly(v bool) {
 	o.IsReadOnly = &v
 }
 
+// GetModifiers returns the Modifiers field value if set, zero value otherwise.
+func (o *BTTableTestCellString2112) GetModifiers() []BTTableCellModifier4883 {
+	if o == nil || o.Modifiers == nil {
+		var ret []BTTableCellModifier4883
+		return ret
+	}
+	return o.Modifiers
+}
+
+// GetModifiersOk returns a tuple with the Modifiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableTestCellString2112) GetModifiersOk() ([]BTTableCellModifier4883, bool) {
+	if o == nil || o.Modifiers == nil {
+		return nil, false
+	}
+	return o.Modifiers, true
+}
+
+// HasModifiers returns a boolean if a field has been set.
+func (o *BTTableTestCellString2112) HasModifiers() bool {
+	if o != nil && o.Modifiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiers gets a reference to the given []BTTableCellModifier4883 and assigns it to the Modifiers field.
+func (o *BTTableTestCellString2112) SetModifiers(v []BTTableCellModifier4883) {
+	o.Modifiers = v
+}
+
 // GetCellValue returns the CellValue field value if set, zero value otherwise.
 func (o *BTTableTestCellString2112) GetCellValue() string {
 	if o == nil || o.CellValue == nil {
@@ -186,6 +219,9 @@ func (o BTTableTestCellString2112) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsReadOnly != nil {
 		toSerialize["isReadOnly"] = o.IsReadOnly
+	}
+	if o.Modifiers != nil {
+		toSerialize["modifiers"] = o.Modifiers
 	}
 	if o.CellValue != nil {
 		toSerialize["cellValue"] = o.CellValue

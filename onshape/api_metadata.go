@@ -177,6 +177,7 @@ type ApiGetVEOPStandardContentMetadataRequest struct {
 	pid                               string
 	configuration                     *string
 	linkDocumentId                    *string
+	companyId                         *string
 	includeComputedProperties         *bool
 	includeComputedAssemblyProperties *bool
 	thumbnail                         *bool
@@ -189,6 +190,11 @@ func (r ApiGetVEOPStandardContentMetadataRequest) Configuration(configuration st
 
 func (r ApiGetVEOPStandardContentMetadataRequest) LinkDocumentId(linkDocumentId string) ApiGetVEOPStandardContentMetadataRequest {
 	r.linkDocumentId = &linkDocumentId
+	return r
+}
+
+func (r ApiGetVEOPStandardContentMetadataRequest) CompanyId(companyId string) ApiGetVEOPStandardContentMetadataRequest {
+	r.companyId = &companyId
 	return r
 }
 
@@ -270,6 +276,9 @@ func (a *MetadataApiService) GetVEOPStandardContentMetadataExecute(r ApiGetVEOPS
 	}
 	if r.linkDocumentId != nil {
 		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.companyId != nil {
+		localVarQueryParams.Add("companyId", parameterToString(*r.companyId, ""))
 	}
 	if r.includeComputedProperties != nil {
 		localVarQueryParams.Add("includeComputedProperties", parameterToString(*r.includeComputedProperties, ""))
@@ -1292,8 +1301,14 @@ type ApiUpdateVEOPStandardContentPartMetadataRequest struct {
 	ctx            context.Context
 	ApiService     *MetadataApiService
 	did            string
-	linkDocumentId *string
 	body           *string
+	linkDocumentId *string
+	companyId      *string
+}
+
+func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Body(body string) ApiUpdateVEOPStandardContentPartMetadataRequest {
+	r.body = &body
+	return r
 }
 
 // The ID of the document in which you have inserted the standard content part.
@@ -1302,8 +1317,8 @@ func (r ApiUpdateVEOPStandardContentPartMetadataRequest) LinkDocumentId(linkDocu
 	return r
 }
 
-func (r ApiUpdateVEOPStandardContentPartMetadataRequest) Body(body string) ApiUpdateVEOPStandardContentPartMetadataRequest {
-	r.body = &body
+func (r ApiUpdateVEOPStandardContentPartMetadataRequest) CompanyId(companyId string) ApiUpdateVEOPStandardContentPartMetadataRequest {
+	r.companyId = &companyId
 	return r
 }
 
@@ -1350,14 +1365,16 @@ func (a *MetadataApiService) UpdateVEOPStandardContentPartMetadataExecute(r ApiU
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.linkDocumentId == nil {
-		return localVarReturnValue, nil, reportError("linkDocumentId is required and must be specified")
-	}
 	if r.body == nil {
 		return localVarReturnValue, nil, reportError("body is required and must be specified")
 	}
 
-	localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	if r.linkDocumentId != nil {
+		localVarQueryParams.Add("linkDocumentId", parameterToString(*r.linkDocumentId, ""))
+	}
+	if r.companyId != nil {
+		localVarQueryParams.Add("companyId", parameterToString(*r.companyId, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
 

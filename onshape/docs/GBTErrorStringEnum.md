@@ -3483,6 +3483,32 @@
 
 * `GBTErrorStringEnumSimulationBoundaryConditionDirectionNotSpecified` (value: `"SIMULATION_BOUNDARY_CONDITION_DIRECTION_NOT_SPECIFIED"`)
 
+* `GBTErrorStringEnumSmBendAngleTooSmall` (value: `"SM_BEND_ANGLE_TOO_SMALL"`)
+
+* `GBTErrorStringEnumPcbHoleNoBasePlane` (value: `"PCB_HOLE_NO_BASE_PLANE"`)
+
+* `GBTErrorStringEnumPcbHoleNoInteriorFace` (value: `"PCB_HOLE_NO_INTERIOR_FACE"`)
+
+* `GBTErrorStringEnumPcbHoleDuplicateHoleId` (value: `"PCB_HOLE_DUPLICATE_HOLE_ID"`)
+
+* `GBTErrorStringEnumPcbHoleInteriorFacesMustBelongToSameBody` (value: `"PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_BODY"`)
+
+* `GBTErrorStringEnumPcbHoleLessThan2ParallelFaces` (value: `"PCB_HOLE_LESS_THAN_2_PARALLEL_FACES"`)
+
+* `GBTErrorStringEnumPcbHoleMoreThan2ParallelFaces` (value: `"PCB_HOLE_MORE_THAN_2_PARALLEL_FACES"`)
+
+* `GBTErrorStringEnumPcbHoleFaceOnOutlineOfRegion` (value: `"PCB_HOLE_FACE_ON_OUTLINE_OF_REGION"`)
+
+* `GBTErrorStringEnumPcbHoleInteriorFacesMustBelongToSameHole` (value: `"PCB_HOLE_INTERIOR_FACES_MUST_BELONG_TO_SAME_HOLE"`)
+
+* `GBTErrorStringEnumPcbHoleAlreadyTagged` (value: `"PCB_HOLE_ALREADY_TAGGED"`)
+
+* `GBTErrorStringEnumMateConnectorStackedAndMultipleEntities` (value: `"MATE_CONNECTOR_STACKED_AND_MULTIPLE_ENTITIES"`)
+
+* `GBTErrorStringEnumCycleOfOnlyMateConnectors` (value: `"CYCLE_OF_ONLY_MATE_CONNECTORS"`)
+
+* `GBTErrorStringEnumDrawingEmptyViewCorrespondenceFailed` (value: `"DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

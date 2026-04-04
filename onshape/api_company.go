@@ -77,7 +77,7 @@ List of global permissions to grant. See [Onshape Help: Global Permissions](http
 
   - `19`: Transfer documents out of Enterprise
 
-  - `20`: Sync to Arena
+  - `20`: Sync to configured PLM Integration in Enterprise settings
 
   - `21`: Create tasks
 
@@ -327,7 +327,7 @@ type ApiClearGlobalPermissionsRequest struct {
 	permission *[]int32
 }
 
-// List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * &#x60;0&#x60;: Manage role based access control   * &#x60;1&#x60;: Manage users, teams, and aliases   * &#x60;2&#x60;: Enterprise administrator   * &#x60;3&#x60;: Permanently delete   * &#x60;4&#x60;: Analytics administrator   * &#x60;5&#x60;: Invite guest users   * &#x60;6&#x60;: Create projects   * &#x60;7&#x60;: Approve releases   * &#x60;8&#x60;: Enable link sharing   * &#x60;9&#x60;: Create releases   * &#x60;10&#x60;: Allow access to the App Store   * &#x60;11&#x60;: Create documents and folders in the Enterprise root   * &#x60;12&#x60;: Allow access to public documents   * &#x60;17&#x60;: Manage non-geometric items   * &#x60;18&#x60;: Manage workflows   * &#x60;19&#x60;: Transfer documents out of Enterprise   * &#x60;20&#x60;: Sync to Arena   * &#x60;21&#x60;: Create tasks   * &#x60;22&#x60;: Manage standard content metadata   * &#x60;23&#x60;: Workspace protection permissions   * &#x60;24&#x60;: Import files   * &#x60;25&#x60;: Use revision tools  * &#x60;26&#x60;: Export files
+// List of global permissions to grant. See [Onshape Help: Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin) for details on each of the available permissions.   * &#x60;0&#x60;: Manage role based access control   * &#x60;1&#x60;: Manage users, teams, and aliases   * &#x60;2&#x60;: Enterprise administrator   * &#x60;3&#x60;: Permanently delete   * &#x60;4&#x60;: Analytics administrator   * &#x60;5&#x60;: Invite guest users   * &#x60;6&#x60;: Create projects   * &#x60;7&#x60;: Approve releases   * &#x60;8&#x60;: Enable link sharing   * &#x60;9&#x60;: Create releases   * &#x60;10&#x60;: Allow access to the App Store   * &#x60;11&#x60;: Create documents and folders in the Enterprise root   * &#x60;12&#x60;: Allow access to public documents   * &#x60;17&#x60;: Manage non-geometric items   * &#x60;18&#x60;: Manage workflows   * &#x60;19&#x60;: Transfer documents out of Enterprise   * &#x60;20&#x60;: Sync to configured PLM Integration in Enterprise settings   * &#x60;21&#x60;: Create tasks   * &#x60;22&#x60;: Manage standard content metadata   * &#x60;23&#x60;: Workspace protection permissions   * &#x60;24&#x60;: Import files   * &#x60;25&#x60;: Use revision tools  * &#x60;26&#x60;: Export files
 func (r ApiClearGlobalPermissionsRequest) Permission(permission []int32) ApiClearGlobalPermissionsRequest {
 	r.permission = &permission
 	return r
@@ -674,6 +674,177 @@ func (a *CompanyApiService) GetCompanyExecute(r ApiGetCompanyRequest) (*BTCompan
 			error: localVarHTTPResponse.Status,
 		}
 		var v BTCompanyInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiGetCompanyUsersRequest struct {
+	ctx                      context.Context
+	ApiService               *CompanyApiService
+	cid                      string
+	sortColumn               *string
+	sortOrder                *string
+	q                        *string
+	includeGlobalPermissions *bool
+	offset                   *int32
+	limit                    *int32
+}
+
+// &#x60;createdAt | modifiedAt | name | light | lastLoginTime | userRole | state&#x60;
+func (r ApiGetCompanyUsersRequest) SortColumn(sortColumn string) ApiGetCompanyUsersRequest {
+	r.sortColumn = &sortColumn
+	return r
+}
+
+// &#x60;desc&#x60; (descending, default) | &#x60;asc&#x60; (ascending)
+func (r ApiGetCompanyUsersRequest) SortOrder(sortOrder string) ApiGetCompanyUsersRequest {
+	r.sortOrder = &sortOrder
+	return r
+}
+
+// Search string to filter users by name or email.
+func (r ApiGetCompanyUsersRequest) Q(q string) ApiGetCompanyUsersRequest {
+	r.q = &q
+	return r
+}
+
+// Whether to include global permission info for each user.
+func (r ApiGetCompanyUsersRequest) IncludeGlobalPermissions(includeGlobalPermissions bool) ApiGetCompanyUsersRequest {
+	r.includeGlobalPermissions = &includeGlobalPermissions
+	return r
+}
+
+// Offset. Determines where search results begin. Default value is 0.
+func (r ApiGetCompanyUsersRequest) Offset(offset int32) ApiGetCompanyUsersRequest {
+	r.offset = &offset
+	return r
+}
+
+// Number of results to return per page. Default value is 20 (also the maximum).
+func (r ApiGetCompanyUsersRequest) Limit(limit int32) ApiGetCompanyUsersRequest {
+	r.limit = &limit
+	return r
+}
+
+func (r ApiGetCompanyUsersRequest) Execute() (*BTListResponseBTCompanyUserInfo, *http.Response, error) {
+	return r.ApiService.GetCompanyUsersExecute(r)
+}
+
+/*
+GetCompanyUsers Get a list of members in a company.
+
+Returns a list of members in the specified company.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param cid Company ID
+	@return ApiGetCompanyUsersRequest
+*/
+func (a *CompanyApiService) GetCompanyUsers(ctx context.Context, cid string) ApiGetCompanyUsersRequest {
+	return ApiGetCompanyUsersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		cid:        cid,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTListResponseBTCompanyUserInfo
+func (a *CompanyApiService) GetCompanyUsersExecute(r ApiGetCompanyUsersRequest) (*BTListResponseBTCompanyUserInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTListResponseBTCompanyUserInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CompanyApiService.GetCompanyUsers")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/companies/{cid}/users"
+	localVarPath = strings.Replace(localVarPath, "{"+"cid"+"}", url.PathEscape(parameterToString(r.cid, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.sortColumn != nil {
+		localVarQueryParams.Add("sortColumn", parameterToString(*r.sortColumn, ""))
+	}
+	if r.sortOrder != nil {
+		localVarQueryParams.Add("sortOrder", parameterToString(*r.sortOrder, ""))
+	}
+	if r.q != nil {
+		localVarQueryParams.Add("q", parameterToString(*r.q, ""))
+	}
+	if r.includeGlobalPermissions != nil {
+		localVarQueryParams.Add("includeGlobalPermissions", parameterToString(*r.includeGlobalPermissions, ""))
+	}
+	if r.offset != nil {
+		localVarQueryParams.Add("offset", parameterToString(*r.offset, ""))
+	}
+	if r.limit != nil {
+		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTListResponseBTCompanyUserInfo
 		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
 		if err != nil {
 			newErr.error = err.Error()

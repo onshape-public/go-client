@@ -79,6 +79,8 @@
 
 * `GBTUIHintQueryVariableName` (value: `"QUERY_VARIABLE_NAME"`)
 
+* `GBTUIHintHideLabel` (value: `"HIDE_LABEL"`)
+
 * `GBTUIHintUnknown` (value: `"UNKNOWN"`)
 
 

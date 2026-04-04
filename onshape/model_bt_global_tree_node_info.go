@@ -80,6 +80,11 @@ func (o *BTDocumentSummarySearchInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNode
 	return &BTGlobalTreeNodeInfo{o}
 }
 
+// BTSmartFolderInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTSmartFolderInfo wrapped in BTGlobalTreeNodeInfo
+func (o *BTSmartFolderInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
+	return &BTGlobalTreeNodeInfo{o}
+}
+
 // BTTeamSummaryInfoAsBTGlobalTreeNodeInfo is a convenience function that returns BTTeamSummaryInfo wrapped in BTGlobalTreeNodeInfo
 func (o *BTTeamSummaryInfo) AsBTGlobalTreeNodeInfo() *BTGlobalTreeNodeInfo {
 	return &BTGlobalTreeNodeInfo{o}
@@ -1377,6 +1382,20 @@ func (dst *BTGlobalTreeNodeInfo) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTGlobalTreeNodeInfo = nil
 			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTResourceOwnerInfo: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'smartfolder'
+	if jsonDict["jsonType"] == "smartfolder" {
+		// try to unmarshal JSON data into BTSmartFolderInfo
+		var qr *BTSmartFolderInfo
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTGlobalTreeNodeInfo = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTGlobalTreeNodeInfo = nil
+			return fmt.Errorf("failed to unmarshal BTGlobalTreeNodeInfo as BTSmartFolderInfo: %s", err.Error())
 		}
 	}
 

@@ -22,7 +22,8 @@ type BTBillOfMaterialsObjectWithPropertiesInfo struct {
 	// Id of the resource.
 	Id *string `json:"id,omitempty"`
 	// Name of the resource.
-	Name *string `json:"name,omitempty"`
+	Name                       *string                                 `json:"name,omitempty"`
+	SelectedMetadataEnumValues *map[string]BTSelectedMetadataEnumValue `json:"selectedMetadataEnumValues,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -172,6 +173,38 @@ func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetName(v string) {
 	o.Name = &v
 }
 
+// GetSelectedMetadataEnumValues returns the SelectedMetadataEnumValues field value if set, zero value otherwise.
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetSelectedMetadataEnumValues() map[string]BTSelectedMetadataEnumValue {
+	if o == nil || o.SelectedMetadataEnumValues == nil {
+		var ret map[string]BTSelectedMetadataEnumValue
+		return ret
+	}
+	return *o.SelectedMetadataEnumValues
+}
+
+// GetSelectedMetadataEnumValuesOk returns a tuple with the SelectedMetadataEnumValues field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetSelectedMetadataEnumValuesOk() (*map[string]BTSelectedMetadataEnumValue, bool) {
+	if o == nil || o.SelectedMetadataEnumValues == nil {
+		return nil, false
+	}
+	return o.SelectedMetadataEnumValues, true
+}
+
+// HasSelectedMetadataEnumValues returns a boolean if a field has been set.
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) HasSelectedMetadataEnumValues() bool {
+	if o != nil && o.SelectedMetadataEnumValues != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSelectedMetadataEnumValues gets a reference to the given map[string]BTSelectedMetadataEnumValue and assigns it to the SelectedMetadataEnumValues field.
+func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetSelectedMetadataEnumValues(v map[string]BTSelectedMetadataEnumValue) {
+	o.SelectedMetadataEnumValues = &v
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
@@ -217,6 +250,9 @@ func (o BTBillOfMaterialsObjectWithPropertiesInfo) MarshalJSON() ([]byte, error)
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.SelectedMetadataEnumValues != nil {
+		toSerialize["selectedMetadataEnumValues"] = o.SelectedMetadataEnumValues
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

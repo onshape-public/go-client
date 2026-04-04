@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 ## GetVEOPStandardContentMetadata
 
-> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+> BTMetadataObjectInfo GetVEOPStandardContentMetadata(ctx, did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).CompanyId(companyId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
 
 Get the metadata for a standard content part.
 
@@ -128,13 +128,14 @@ func main() {
     pid := "pid_example" // string | 
     configuration := "configuration_example" // string |  (optional)
     linkDocumentId := "linkDocumentId_example" // string |  (optional)
+    companyId := "companyId_example" // string |  (optional)
     includeComputedProperties := true // bool |  (optional) (default to true)
     includeComputedAssemblyProperties := true // bool |  (optional) (default to false)
     thumbnail := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
+    resp, r, err := apiClient.MetadataApi.GetVEOPStandardContentMetadata(context.Background(), did, vid, eid, pid).Configuration(configuration).LinkDocumentId(linkDocumentId).CompanyId(companyId).IncludeComputedProperties(includeComputedProperties).IncludeComputedAssemblyProperties(includeComputedAssemblyProperties).Thumbnail(thumbnail).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.GetVEOPStandardContentMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,6 +169,7 @@ Name | Type | Description  | Notes
 
  **configuration** | **string** |  | 
  **linkDocumentId** | **string** |  | 
+ **companyId** | **string** |  | 
  **includeComputedProperties** | **bool** |  | [default to true]
  **includeComputedAssemblyProperties** | **bool** |  | [default to false]
  **thumbnail** | **bool** |  | [default to false]
@@ -653,7 +655,7 @@ Name | Type | Description  | Notes
 
 ## UpdateVEOPStandardContentPartMetadata
 
-> map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did).LinkDocumentId(linkDocumentId).Body(body).Execute()
+> map[string]interface{} UpdateVEOPStandardContentPartMetadata(ctx, did).Body(body).LinkDocumentId(linkDocumentId).CompanyId(companyId).Execute()
 
 Update the metadata for a standard content part.
 
@@ -673,12 +675,13 @@ import (
 
 func main() {
     did := "did_example" // string | The ID of the document that owns the standard content part.
-    linkDocumentId := "linkDocumentId_example" // string | The ID of the document in which you have inserted the standard content part.
     body := "body_example" // string | 
+    linkDocumentId := "linkDocumentId_example" // string | The ID of the document in which you have inserted the standard content part. (optional)
+    companyId := "companyId_example" // string |  (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.MetadataApi.UpdateVEOPStandardContentPartMetadata(context.Background(), did).LinkDocumentId(linkDocumentId).Body(body).Execute()
+    resp, r, err := apiClient.MetadataApi.UpdateVEOPStandardContentPartMetadata(context.Background(), did).Body(body).LinkDocumentId(linkDocumentId).CompanyId(companyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MetadataApi.UpdateVEOPStandardContentPartMetadata``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -704,8 +707,9 @@ Other parameters are passed through a pointer to a apiUpdateVEOPStandardContentP
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **linkDocumentId** | **string** | The ID of the document in which you have inserted the standard content part. | 
  **body** | **string** |  | 
+ **linkDocumentId** | **string** | The ID of the document in which you have inserted the standard content part. | 
+ **companyId** | **string** |  | 
 
 ### Return type
 

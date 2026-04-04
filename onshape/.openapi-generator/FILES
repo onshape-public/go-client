@@ -166,6 +166,8 @@ docs/BTAssemblyMirror2996AllOf.md
 docs/BTAssemblyMirrorFeatureInterface.md
 docs/BTAssemblyModificationParams.md
 docs/BTAssemblyOccurrenceInfo.md
+docs/BTAssemblyParametricInstanceChildInfo.md
+docs/BTAssemblyParametricInstanceInfo.md
 docs/BTAssemblyPartBodyType.md
 docs/BTAssemblyPartInfo.md
 docs/BTAssemblyPattern1974.md
@@ -550,6 +552,8 @@ docs/BTInsertablePartDisplayData3103AllOf.md
 docs/BTInsertableSketchDisplayData3775.md
 docs/BTInsertableSketchDisplayData3775AllOf.md
 docs/BTInsertablesListResponse.md
+docs/BTInspectionTableCrossHighlightData4177.md
+docs/BTInspectionTableCrossHighlightData4177AllOf.md
 docs/BTInspectionTableRowMetadata2485.md
 docs/BTInspectionTableRowMetadata2485AllOf.md
 docs/BTInstance642.md
@@ -596,6 +600,7 @@ docs/BTListResponseBTAliasInfo.md
 docs/BTListResponseBTCategoryPropertyInfo.md
 docs/BTListResponseBTCommentInfo.md
 docs/BTListResponseBTCompanyInfo.md
+docs/BTListResponseBTCompanyUserInfo.md
 docs/BTListResponseBTInsertableInfo.md
 docs/BTListResponseBTItemInfo.md
 docs/BTListResponseBTObjectWorkflowInfo.md
@@ -1182,6 +1187,7 @@ docs/BTSectionGeometryFilter4161.md
 docs/BTSectionGeometryFilter4161AllOf.md
 docs/BTSectionPlaneInfo.md
 docs/BTSelectItemViewStateInfo.md
+docs/BTSelectedMetadataEnumValue.md
 docs/BTSessionCredentialInfo.md
 docs/BTSetFeatureRollbackCall1899.md
 docs/BTSetFeatureRollbackCall1899AllOf.md
@@ -1225,6 +1231,10 @@ docs/BTSketchSolveStatusFilter3657AllOf.md
 docs/BTSketchSplineDisplayData359.md
 docs/BTSketchSplineDisplayData359AllOf.md
 docs/BTSketchTextDisplayData1707.md
+docs/BTSmartFolderInfo.md
+docs/BTSmartFolderInfoAllOf.md
+docs/BTSmartFolderPredicateInfo.md
+docs/BTSmartFolderSortInfo.md
 docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
@@ -1269,6 +1279,11 @@ docs/BTTableAssemblyCrossHighlightDataItem2659.md
 docs/BTTableBaseCrossHighlightData2609.md
 docs/BTTableBaseRowMetadata3181.md
 docs/BTTableCell1114.md
+docs/BTTableCellModifier4883.md
+docs/BTTableCellModifierForceShowConfigured5170.md
+docs/BTTableCellModifierInfo4585.md
+docs/BTTableCellModifierInfo4585AllOf.md
+docs/BTTableCellModifierOpenFeature1614.md
 docs/BTTableCellParameter2399.md
 docs/BTTableCellParameter2399AllOf.md
 docs/BTTableCellParameterWithValue2122.md
@@ -1708,6 +1723,8 @@ model_bt_assembly_mirror_2996.go
 model_bt_assembly_mirror_feature_interface.go
 model_bt_assembly_modification_params.go
 model_bt_assembly_occurrence_info.go
+model_bt_assembly_parametric_instance_child_info.go
+model_bt_assembly_parametric_instance_info.go
 model_bt_assembly_part_body_type.go
 model_bt_assembly_part_info.go
 model_bt_assembly_pattern_1974.go
@@ -1971,6 +1988,7 @@ model_bt_insertable_info.go
 model_bt_insertable_part_display_data_3103.go
 model_bt_insertable_sketch_display_data_3775.go
 model_bt_insertables_list_response.go
+model_bt_inspection_table_cross_highlight_data_4177.go
 model_bt_inspection_table_row_metadata_2485.go
 model_bt_instance_642.go
 model_bt_instance_base_2263.go
@@ -1993,6 +2011,7 @@ model_bt_list_response_bt_alias_info.go
 model_bt_list_response_bt_category_property_info.go
 model_bt_list_response_bt_comment_info.go
 model_bt_list_response_bt_company_info.go
+model_bt_list_response_bt_company_user_info.go
 model_bt_list_response_bt_insertable_info.go
 model_bt_list_response_bt_item_info.go
 model_bt_list_response_bt_object_workflow_info.go
@@ -2212,6 +2231,7 @@ model_bt_search_entity_type.go
 model_bt_section_geometry_filter_4161.go
 model_bt_section_plane_info.go
 model_bt_select_item_view_state_info.go
+model_bt_selected_metadata_enum_value.go
 model_bt_session_credential_info.go
 model_bt_set_feature_rollback_call_1899.go
 model_bt_set_feature_rollback_response_1042.go
@@ -2242,6 +2262,9 @@ model_bt_sketch_point_display_data_358.go
 model_bt_sketch_solve_status_filter_3657.go
 model_bt_sketch_spline_display_data_359.go
 model_bt_sketch_text_display_data_1707.go
+model_bt_smart_folder_info.go
+model_bt_smart_folder_predicate_info.go
+model_bt_smart_folder_sort_info.go
 model_bt_sphere_description_1263.go
 model_bt_spline_control_polygon_filter_1130.go
 model_bt_spline_description_2118.go
@@ -2275,6 +2298,10 @@ model_bt_table_assembly_cross_highlight_data_item_2659.go
 model_bt_table_base_cross_highlight_data_2609.go
 model_bt_table_base_row_metadata_3181.go
 model_bt_table_cell_1114.go
+model_bt_table_cell_modifier_4883.go
+model_bt_table_cell_modifier_force_show_configured_5170.go
+model_bt_table_cell_modifier_info_4585.go
+model_bt_table_cell_modifier_open_feature_1614.go
 model_bt_table_cell_parameter_2399.go
 model_bt_table_cell_parameter_with_value_2122.go
 model_bt_table_cell_property_parameter_2983.go

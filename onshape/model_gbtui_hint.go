@@ -58,6 +58,7 @@ const (
 	GBTUIHintNoQueryVariable                  GBTUIHint = "NO_QUERY_VARIABLE"
 	GBTUIHintAllowFlatSketchSelection         GBTUIHint = "ALLOW_FLAT_SKETCH_SELECTION"
 	GBTUIHintQueryVariableName                GBTUIHint = "QUERY_VARIABLE_NAME"
+	GBTUIHintHideLabel                        GBTUIHint = "HIDE_LABEL"
 	GBTUIHintUnknown                          GBTUIHint = "UNKNOWN"
 )
 
@@ -101,6 +102,7 @@ var AllowedGBTUIHintEnumValues = []GBTUIHint{
 	"NO_QUERY_VARIABLE",
 	"ALLOW_FLAT_SKETCH_SELECTION",
 	"QUERY_VARIABLE_NAME",
+	"HIDE_LABEL",
 	"UNKNOWN",
 }
 

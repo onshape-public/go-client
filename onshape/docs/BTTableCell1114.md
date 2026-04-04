@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **IsEverVisible** | Pointer to **bool** |  | [optional] 
 **IsReadOnly** | Pointer to **bool** |  | [optional] 
+**Modifiers** | Pointer to [**[]BTTableCellModifier4883**](BTTableCellModifier4883.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetIsReadOnly sets IsReadOnly field to given value.
 `func (o *BTTableCell1114) HasIsReadOnly() bool`
 
 HasIsReadOnly returns a boolean if a field has been set.
+
+### GetModifiers
+
+`func (o *BTTableCell1114) GetModifiers() []BTTableCellModifier4883`
+
+GetModifiers returns the Modifiers field if non-nil, zero value otherwise.
+
+### GetModifiersOk
+
+`func (o *BTTableCell1114) GetModifiersOk() (*[]BTTableCellModifier4883, bool)`
+
+GetModifiersOk returns a tuple with the Modifiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiers
+
+`func (o *BTTableCell1114) SetModifiers(v []BTTableCellModifier4883)`
+
+SetModifiers sets Modifiers field to given value.
+
+### HasModifiers
+
+`func (o *BTTableCell1114) HasModifiers() bool`
+
+HasModifiers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

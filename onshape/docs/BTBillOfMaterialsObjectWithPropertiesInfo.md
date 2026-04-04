@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
+**SelectedMetadataEnumValues** | Pointer to [**map[string]BTSelectedMetadataEnumValue**](BTSelectedMetadataEnumValue.md) |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetName sets Name field to given value.
 `func (o *BTBillOfMaterialsObjectWithPropertiesInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetSelectedMetadataEnumValues() map[string]BTSelectedMetadataEnumValue`
+
+GetSelectedMetadataEnumValues returns the SelectedMetadataEnumValues field if non-nil, zero value otherwise.
+
+### GetSelectedMetadataEnumValuesOk
+
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) GetSelectedMetadataEnumValuesOk() (*map[string]BTSelectedMetadataEnumValue, bool)`
+
+GetSelectedMetadataEnumValuesOk returns a tuple with the SelectedMetadataEnumValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) SetSelectedMetadataEnumValues(v map[string]BTSelectedMetadataEnumValue)`
+
+SetSelectedMetadataEnumValues sets SelectedMetadataEnumValues field to given value.
+
+### HasSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsObjectWithPropertiesInfo) HasSelectedMetadataEnumValues() bool`
+
+HasSelectedMetadataEnumValues returns a boolean if a field has been set.
 
 ### GetViewRef
 

@@ -175,7 +175,7 @@ func (r ApiCreateReleasePackageRequest) Execute() (map[string]interface{}, *http
 /*
 CreateReleasePackage Create a new release candidate for one or more items.
 
-This endpoint creates a release candidate with items added to it. It does **not** <b>not</b> release the candidate. Once the release candidate is successfully created, use [updateReleasePackage](#/Release/updateReleasePackage) to update all desired item/candidate properties, and transition it to the desired release state. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
+This endpoint creates a release candidate with items added to it. It does <b>not</b> release the candidate. Once the release candidate is successfully created, use [updateReleasePackage](#/ReleasePackage/updateReleasePackage) to update all desired item/candidate properties, and transition it to the desired release state. See [API Guide: Release Management](https://onshape-public.github.io/docs/api-adv/relmgmt/) for examples.
 
 To add items from other documents, you must select `Allow adding items from other documents` in your [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog).
 

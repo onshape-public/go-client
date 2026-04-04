@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **RelatedOccurrences** | Pointer to **[]string** | Occurrence IDs in the assembly that refer to the part described by this BOM row. | [optional] 
 **RowId** | Pointer to **string** |  | [optional] 
+**SelectedMetadataEnumValues** | Pointer to [**map[string]BTSelectedMetadataEnumValue**](BTSelectedMetadataEnumValue.md) |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
@@ -232,6 +233,31 @@ SetRowId sets RowId field to given value.
 `func (o *BTBillOfMaterialsRowInfo) HasRowId() bool`
 
 HasRowId returns a boolean if a field has been set.
+
+### GetSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsRowInfo) GetSelectedMetadataEnumValues() map[string]BTSelectedMetadataEnumValue`
+
+GetSelectedMetadataEnumValues returns the SelectedMetadataEnumValues field if non-nil, zero value otherwise.
+
+### GetSelectedMetadataEnumValuesOk
+
+`func (o *BTBillOfMaterialsRowInfo) GetSelectedMetadataEnumValuesOk() (*map[string]BTSelectedMetadataEnumValue, bool)`
+
+GetSelectedMetadataEnumValuesOk returns a tuple with the SelectedMetadataEnumValues field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsRowInfo) SetSelectedMetadataEnumValues(v map[string]BTSelectedMetadataEnumValue)`
+
+SetSelectedMetadataEnumValues sets SelectedMetadataEnumValues field to given value.
+
+### HasSelectedMetadataEnumValues
+
+`func (o *BTBillOfMaterialsRowInfo) HasSelectedMetadataEnumValues() bool`
+
+HasSelectedMetadataEnumValues returns a boolean if a field has been set.
 
 ### GetViewRef
 

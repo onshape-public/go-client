@@ -7,8 +7,8 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData2609.md) |  | [optional] 
 **Info** | Pointer to **string** |  | [optional] 
-**IsFullyEditable** | Pointer to **bool** |  | [optional] 
 **IsRecursiveImport** | Pointer to **bool** |  | [optional] 
+**IsRowEditable** | Pointer to **bool** |  | [optional] 
 **LastWritingFeatureNodeId** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -105,31 +105,6 @@ SetInfo sets Info field to given value.
 
 HasInfo returns a boolean if a field has been set.
 
-### GetIsFullyEditable
-
-`func (o *BTVariableTableRowMetadata3912AllOf) GetIsFullyEditable() bool`
-
-GetIsFullyEditable returns the IsFullyEditable field if non-nil, zero value otherwise.
-
-### GetIsFullyEditableOk
-
-`func (o *BTVariableTableRowMetadata3912AllOf) GetIsFullyEditableOk() (*bool, bool)`
-
-GetIsFullyEditableOk returns a tuple with the IsFullyEditable field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsFullyEditable
-
-`func (o *BTVariableTableRowMetadata3912AllOf) SetIsFullyEditable(v bool)`
-
-SetIsFullyEditable sets IsFullyEditable field to given value.
-
-### HasIsFullyEditable
-
-`func (o *BTVariableTableRowMetadata3912AllOf) HasIsFullyEditable() bool`
-
-HasIsFullyEditable returns a boolean if a field has been set.
-
 ### GetIsRecursiveImport
 
 `func (o *BTVariableTableRowMetadata3912AllOf) GetIsRecursiveImport() bool`
@@ -154,6 +129,31 @@ SetIsRecursiveImport sets IsRecursiveImport field to given value.
 `func (o *BTVariableTableRowMetadata3912AllOf) HasIsRecursiveImport() bool`
 
 HasIsRecursiveImport returns a boolean if a field has been set.
+
+### GetIsRowEditable
+
+`func (o *BTVariableTableRowMetadata3912AllOf) GetIsRowEditable() bool`
+
+GetIsRowEditable returns the IsRowEditable field if non-nil, zero value otherwise.
+
+### GetIsRowEditableOk
+
+`func (o *BTVariableTableRowMetadata3912AllOf) GetIsRowEditableOk() (*bool, bool)`
+
+GetIsRowEditableOk returns a tuple with the IsRowEditable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsRowEditable
+
+`func (o *BTVariableTableRowMetadata3912AllOf) SetIsRowEditable(v bool)`
+
+SetIsRowEditable sets IsRowEditable field to given value.
+
+### HasIsRowEditable
+
+`func (o *BTVariableTableRowMetadata3912AllOf) HasIsRowEditable() bool`
+
+HasIsRowEditable returns a boolean if a field has been set.
 
 ### GetLastWritingFeatureNodeId
 
