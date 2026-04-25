@@ -17,10 +17,14 @@ import (
 // BTGraphicsBuffer2668 struct for BTGraphicsBuffer2668
 type BTGraphicsBuffer2668 struct {
 	// Type of JSON object.
-	BtType                               *string                  `json:"btType,omitempty"`
-	BufferData                           *BTImmutableByteArray    `json:"bufferData,omitempty"`
-	MapGraphicsAttributeToComponentCount *map[string]int32        `json:"mapGraphicsAttributeToComponentCount,omitempty"`
-	Target                               *GBTGraphicsBufferTarget `json:"target,omitempty"`
+	BtType                               *string                   `json:"btType,omitempty"`
+	BufferData                           *BTImmutableByteArray     `json:"bufferData,omitempty"`
+	GroupTypeOffsetAndCount              []int32                   `json:"groupTypeOffsetAndCount,omitempty"`
+	MapGraphicsAttributeToComponentCount *map[string]int32         `json:"mapGraphicsAttributeToComponentCount,omitempty"`
+	PrimitiveType                        *GBTGraphicsPrimitiveType `json:"primitiveType,omitempty"`
+	Target                               *GBTGraphicsBufferTarget  `json:"target,omitempty"`
+	TargetByteOffsetAndCount             []int32                   `json:"targetByteOffsetAndCount,omitempty"`
+	Targets                              []GBTGraphicsBufferTarget `json:"targets,omitempty"`
 }
 
 // NewBTGraphicsBuffer2668 instantiates a new BTGraphicsBuffer2668 object
@@ -104,6 +108,38 @@ func (o *BTGraphicsBuffer2668) SetBufferData(v BTImmutableByteArray) {
 	o.BufferData = &v
 }
 
+// GetGroupTypeOffsetAndCount returns the GroupTypeOffsetAndCount field value if set, zero value otherwise.
+func (o *BTGraphicsBuffer2668) GetGroupTypeOffsetAndCount() []int32 {
+	if o == nil || o.GroupTypeOffsetAndCount == nil {
+		var ret []int32
+		return ret
+	}
+	return o.GroupTypeOffsetAndCount
+}
+
+// GetGroupTypeOffsetAndCountOk returns a tuple with the GroupTypeOffsetAndCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGraphicsBuffer2668) GetGroupTypeOffsetAndCountOk() ([]int32, bool) {
+	if o == nil || o.GroupTypeOffsetAndCount == nil {
+		return nil, false
+	}
+	return o.GroupTypeOffsetAndCount, true
+}
+
+// HasGroupTypeOffsetAndCount returns a boolean if a field has been set.
+func (o *BTGraphicsBuffer2668) HasGroupTypeOffsetAndCount() bool {
+	if o != nil && o.GroupTypeOffsetAndCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGroupTypeOffsetAndCount gets a reference to the given []int32 and assigns it to the GroupTypeOffsetAndCount field.
+func (o *BTGraphicsBuffer2668) SetGroupTypeOffsetAndCount(v []int32) {
+	o.GroupTypeOffsetAndCount = v
+}
+
 // GetMapGraphicsAttributeToComponentCount returns the MapGraphicsAttributeToComponentCount field value if set, zero value otherwise.
 func (o *BTGraphicsBuffer2668) GetMapGraphicsAttributeToComponentCount() map[string]int32 {
 	if o == nil || o.MapGraphicsAttributeToComponentCount == nil {
@@ -134,6 +170,38 @@ func (o *BTGraphicsBuffer2668) HasMapGraphicsAttributeToComponentCount() bool {
 // SetMapGraphicsAttributeToComponentCount gets a reference to the given map[string]int32 and assigns it to the MapGraphicsAttributeToComponentCount field.
 func (o *BTGraphicsBuffer2668) SetMapGraphicsAttributeToComponentCount(v map[string]int32) {
 	o.MapGraphicsAttributeToComponentCount = &v
+}
+
+// GetPrimitiveType returns the PrimitiveType field value if set, zero value otherwise.
+func (o *BTGraphicsBuffer2668) GetPrimitiveType() GBTGraphicsPrimitiveType {
+	if o == nil || o.PrimitiveType == nil {
+		var ret GBTGraphicsPrimitiveType
+		return ret
+	}
+	return *o.PrimitiveType
+}
+
+// GetPrimitiveTypeOk returns a tuple with the PrimitiveType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGraphicsBuffer2668) GetPrimitiveTypeOk() (*GBTGraphicsPrimitiveType, bool) {
+	if o == nil || o.PrimitiveType == nil {
+		return nil, false
+	}
+	return o.PrimitiveType, true
+}
+
+// HasPrimitiveType returns a boolean if a field has been set.
+func (o *BTGraphicsBuffer2668) HasPrimitiveType() bool {
+	if o != nil && o.PrimitiveType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPrimitiveType gets a reference to the given GBTGraphicsPrimitiveType and assigns it to the PrimitiveType field.
+func (o *BTGraphicsBuffer2668) SetPrimitiveType(v GBTGraphicsPrimitiveType) {
+	o.PrimitiveType = &v
 }
 
 // GetTarget returns the Target field value if set, zero value otherwise.
@@ -168,6 +236,70 @@ func (o *BTGraphicsBuffer2668) SetTarget(v GBTGraphicsBufferTarget) {
 	o.Target = &v
 }
 
+// GetTargetByteOffsetAndCount returns the TargetByteOffsetAndCount field value if set, zero value otherwise.
+func (o *BTGraphicsBuffer2668) GetTargetByteOffsetAndCount() []int32 {
+	if o == nil || o.TargetByteOffsetAndCount == nil {
+		var ret []int32
+		return ret
+	}
+	return o.TargetByteOffsetAndCount
+}
+
+// GetTargetByteOffsetAndCountOk returns a tuple with the TargetByteOffsetAndCount field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGraphicsBuffer2668) GetTargetByteOffsetAndCountOk() ([]int32, bool) {
+	if o == nil || o.TargetByteOffsetAndCount == nil {
+		return nil, false
+	}
+	return o.TargetByteOffsetAndCount, true
+}
+
+// HasTargetByteOffsetAndCount returns a boolean if a field has been set.
+func (o *BTGraphicsBuffer2668) HasTargetByteOffsetAndCount() bool {
+	if o != nil && o.TargetByteOffsetAndCount != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargetByteOffsetAndCount gets a reference to the given []int32 and assigns it to the TargetByteOffsetAndCount field.
+func (o *BTGraphicsBuffer2668) SetTargetByteOffsetAndCount(v []int32) {
+	o.TargetByteOffsetAndCount = v
+}
+
+// GetTargets returns the Targets field value if set, zero value otherwise.
+func (o *BTGraphicsBuffer2668) GetTargets() []GBTGraphicsBufferTarget {
+	if o == nil || o.Targets == nil {
+		var ret []GBTGraphicsBufferTarget
+		return ret
+	}
+	return o.Targets
+}
+
+// GetTargetsOk returns a tuple with the Targets field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTGraphicsBuffer2668) GetTargetsOk() ([]GBTGraphicsBufferTarget, bool) {
+	if o == nil || o.Targets == nil {
+		return nil, false
+	}
+	return o.Targets, true
+}
+
+// HasTargets returns a boolean if a field has been set.
+func (o *BTGraphicsBuffer2668) HasTargets() bool {
+	if o != nil && o.Targets != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTargets gets a reference to the given []GBTGraphicsBufferTarget and assigns it to the Targets field.
+func (o *BTGraphicsBuffer2668) SetTargets(v []GBTGraphicsBufferTarget) {
+	o.Targets = v
+}
+
 func (o BTGraphicsBuffer2668) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
@@ -176,11 +308,23 @@ func (o BTGraphicsBuffer2668) MarshalJSON() ([]byte, error) {
 	if o.BufferData != nil {
 		toSerialize["bufferData"] = o.BufferData
 	}
+	if o.GroupTypeOffsetAndCount != nil {
+		toSerialize["groupTypeOffsetAndCount"] = o.GroupTypeOffsetAndCount
+	}
 	if o.MapGraphicsAttributeToComponentCount != nil {
 		toSerialize["mapGraphicsAttributeToComponentCount"] = o.MapGraphicsAttributeToComponentCount
 	}
+	if o.PrimitiveType != nil {
+		toSerialize["primitiveType"] = o.PrimitiveType
+	}
 	if o.Target != nil {
 		toSerialize["target"] = o.Target
+	}
+	if o.TargetByteOffsetAndCount != nil {
+		toSerialize["targetByteOffsetAndCount"] = o.TargetByteOffsetAndCount
+	}
+	if o.Targets != nil {
+		toSerialize["targets"] = o.Targets
 	}
 	return json.Marshal(toSerialize)
 }

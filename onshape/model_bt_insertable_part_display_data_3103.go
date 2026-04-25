@@ -18,6 +18,7 @@ import (
 type BTInsertablePartDisplayData3103 struct {
 	BTInsertableDisplayData2405
 	BtType                   *string                                     `json:"btType,omitempty"`
+	Buffers                  []BTGraphicsBuffer2668                      `json:"buffers,omitempty"`
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
 	Id                       *string                                     `json:"id,omitempty"`
@@ -78,6 +79,38 @@ func (o *BTInsertablePartDisplayData3103) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *BTInsertablePartDisplayData3103) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetBuffers returns the Buffers field value if set, zero value otherwise.
+func (o *BTInsertablePartDisplayData3103) GetBuffers() []BTGraphicsBuffer2668 {
+	if o == nil || o.Buffers == nil {
+		var ret []BTGraphicsBuffer2668
+		return ret
+	}
+	return o.Buffers
+}
+
+// GetBuffersOk returns a tuple with the Buffers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertablePartDisplayData3103) GetBuffersOk() ([]BTGraphicsBuffer2668, bool) {
+	if o == nil || o.Buffers == nil {
+		return nil, false
+	}
+	return o.Buffers, true
+}
+
+// HasBuffers returns a boolean if a field has been set.
+func (o *BTInsertablePartDisplayData3103) HasBuffers() bool {
+	if o != nil && o.Buffers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBuffers gets a reference to the given []BTGraphicsBuffer2668 and assigns it to the Buffers field.
+func (o *BTInsertablePartDisplayData3103) SetBuffers(v []BTGraphicsBuffer2668) {
+	o.Buffers = v
 }
 
 // GetFullElementId returns the FullElementId field value if set, zero value otherwise.
@@ -444,6 +477,9 @@ func (o BTInsertablePartDisplayData3103) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Buffers != nil {
+		toSerialize["buffers"] = o.Buffers
 	}
 	if o.FullElementId != nil {
 		toSerialize["fullElementId"] = o.FullElementId

@@ -17,28 +17,31 @@ import (
 // BTChamferCalloutDisplayData4471 struct for BTChamferCalloutDisplayData4471
 type BTChamferCalloutDisplayData4471 struct {
 	BTAnnotationDisplayData3225
-	AnnotationId         *string                         `json:"annotationId,omitempty"`
-	AnnotationPlane      *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
-	BasePlane            *BTCoordinateSystem387          `json:"basePlane,omitempty"`
-	BtType               *string                         `json:"btType,omitempty"`
-	CharacteristicId     *string                         `json:"characteristicId,omitempty"`
-	DeterministicId      *string                         `json:"deterministicId,omitempty"`
-	DxdySegments         []BTVector2d1812                `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane *bool                           `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion           *bool                           `json:"isDeletion,omitempty"`
-	IsDerived            *bool                           `json:"isDerived,omitempty"`
-	MainConstraintId     *string                         `json:"mainConstraintId,omitempty"`
-	MainFeatureId        *string                         `json:"mainFeatureId,omitempty"`
-	MainParameterId      *string                         `json:"mainParameterId,omitempty"`
-	MainPartId           *string                         `json:"mainPartId,omitempty"`
-	AllChamferFaces      []string                        `json:"allChamferFaces,omitempty"`
-	Angle                *BTTolerantValueDisplayData3483 `json:"angle,omitempty"`
-	Distance             *BTTolerantValueDisplayData3483 `json:"distance,omitempty"`
-	FeatureId            *string                         `json:"featureId,omitempty"`
-	FeatureParameterIds  []string                        `json:"featureParameterIds,omitempty"`
-	IsInvalid            *bool                           `json:"isInvalid,omitempty"`
-	LabelLocation        *BTVector2d1812                 `json:"labelLocation,omitempty"`
-	PartId               *string                         `json:"partId,omitempty"`
+	AllReferences          []string                        `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                           `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                         `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
+	BasePlane              *BTCoordinateSystem387          `json:"basePlane,omitempty"`
+	BtType                 *string                         `json:"btType,omitempty"`
+	CharacteristicId       *string                         `json:"characteristicId,omitempty"`
+	DeterministicId        *string                         `json:"deterministicId,omitempty"`
+	DxdySegments           []BTVector2d1812                `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane   *bool                           `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion             *bool                           `json:"isDeletion,omitempty"`
+	IsDerived              *bool                           `json:"isDerived,omitempty"`
+	MainConstraintId       *string                         `json:"mainConstraintId,omitempty"`
+	MainFeatureId          *string                         `json:"mainFeatureId,omitempty"`
+	MainParameterId        *string                         `json:"mainParameterId,omitempty"`
+	MainPartId             *string                         `json:"mainPartId,omitempty"`
+	ParentCharacteristicId *string                         `json:"parentCharacteristicId,omitempty"`
+	AllChamferFaces        []string                        `json:"allChamferFaces,omitempty"`
+	Angle                  *BTTolerantValueDisplayData3483 `json:"angle,omitempty"`
+	Distance               *BTTolerantValueDisplayData3483 `json:"distance,omitempty"`
+	FeatureId              *string                         `json:"featureId,omitempty"`
+	FeatureParameterIds    []string                        `json:"featureParameterIds,omitempty"`
+	IsInvalid              *bool                           `json:"isInvalid,omitempty"`
+	LabelLocation          *BTVector2d1812                 `json:"labelLocation,omitempty"`
+	PartId                 *string                         `json:"partId,omitempty"`
 }
 
 // NewBTChamferCalloutDisplayData4471 instantiates a new BTChamferCalloutDisplayData4471 object
@@ -56,6 +59,70 @@ func NewBTChamferCalloutDisplayData4471() *BTChamferCalloutDisplayData4471 {
 func NewBTChamferCalloutDisplayData4471WithDefaults() *BTChamferCalloutDisplayData4471 {
 	this := BTChamferCalloutDisplayData4471{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTChamferCalloutDisplayData4471) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTChamferCalloutDisplayData4471) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTChamferCalloutDisplayData4471) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTChamferCalloutDisplayData4471) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTChamferCalloutDisplayData4471) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTChamferCalloutDisplayData4471) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTChamferCalloutDisplayData4471) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTChamferCalloutDisplayData4471) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
@@ -506,6 +573,38 @@ func (o *BTChamferCalloutDisplayData4471) SetMainPartId(v string) {
 	o.MainPartId = &v
 }
 
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *BTChamferCalloutDisplayData4471) GetParentCharacteristicId() string {
+	if o == nil || o.ParentCharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentCharacteristicId
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTChamferCalloutDisplayData4471) GetParentCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.ParentCharacteristicId == nil {
+		return nil, false
+	}
+	return o.ParentCharacteristicId, true
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *BTChamferCalloutDisplayData4471) HasParentCharacteristicId() bool {
+	if o != nil && o.ParentCharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *BTChamferCalloutDisplayData4471) SetParentCharacteristicId(v string) {
+	o.ParentCharacteristicId = &v
+}
+
 // GetAllChamferFaces returns the AllChamferFaces field value if set, zero value otherwise.
 func (o *BTChamferCalloutDisplayData4471) GetAllChamferFaces() []string {
 	if o == nil || o.AllChamferFaces == nil {
@@ -772,6 +871,12 @@ func (o BTChamferCalloutDisplayData4471) MarshalJSON() ([]byte, error) {
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
 	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
+	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
 	}
@@ -813,6 +918,9 @@ func (o BTChamferCalloutDisplayData4471) MarshalJSON() ([]byte, error) {
 	}
 	if o.MainPartId != nil {
 		toSerialize["mainPartId"] = o.MainPartId
+	}
+	if o.ParentCharacteristicId != nil {
+		toSerialize["parentCharacteristicId"] = o.ParentCharacteristicId
 	}
 	if o.AllChamferFaces != nil {
 		toSerialize["allChamferFaces"] = o.AllChamferFaces

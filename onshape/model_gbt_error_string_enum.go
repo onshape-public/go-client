@@ -1772,7 +1772,10 @@ const (
 	GBTErrorStringEnumPcbHoleAlreadyTagged                                        GBTErrorStringEnum = "PCB_HOLE_ALREADY_TAGGED"
 	GBTErrorStringEnumMateConnectorStackedAndMultipleEntities                     GBTErrorStringEnum = "MATE_CONNECTOR_STACKED_AND_MULTIPLE_ENTITIES"
 	GBTErrorStringEnumCycleOfOnlyMateConnectors                                   GBTErrorStringEnum = "CYCLE_OF_ONLY_MATE_CONNECTORS"
+	GBTErrorStringEnumSketchCurveWithNonPeriodicUnboundedGeometry                 GBTErrorStringEnum = "SKETCH_CURVE_WITH_NON_PERIODIC_UNBOUNDED_GEOMETRY"
 	GBTErrorStringEnumDrawingEmptyViewCorrespondenceFailed                        GBTErrorStringEnum = "DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED"
+	GBTErrorStringEnumRendererFailedToLoadDisplayData                             GBTErrorStringEnum = "RENDERER_FAILED_TO_LOAD_DISPLAY_DATA"
+	GBTErrorStringEnumSheetMetalDeripFailed                                       GBTErrorStringEnum = "SHEET_METAL_DERIP_FAILED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3530,7 +3533,10 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"PCB_HOLE_ALREADY_TAGGED",
 	"MATE_CONNECTOR_STACKED_AND_MULTIPLE_ENTITIES",
 	"CYCLE_OF_ONLY_MATE_CONNECTORS",
+	"SKETCH_CURVE_WITH_NON_PERIODIC_UNBOUNDED_GEOMETRY",
 	"DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED",
+	"RENDERER_FAILED_TO_LOAD_DISPLAY_DATA",
+	"SHEET_METAL_DERIP_FAILED",
 	"UNKNOWN",
 }
 

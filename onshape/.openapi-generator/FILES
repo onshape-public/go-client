@@ -1484,6 +1484,7 @@ docs/GBTEntityType.md
 docs/GBTErrorStringEnum.md
 docs/GBTExportResolution.md
 docs/GBTExportUnit.md
+docs/GBTFeatureDimensionType.md
 docs/GBTFeatureFilterExclusion.md
 docs/GBTFieldWeldFlag.md
 docs/GBTFilterFlattenedGeometryOptions.md
@@ -1491,6 +1492,7 @@ docs/GBTGTolConstraintType.md
 docs/GBTGTolExtendedConstraintType.md
 docs/GBTGeometryType.md
 docs/GBTGraphicsBufferTarget.md
+docs/GBTGraphicsPrimitiveType.md
 docs/GBTHoleType.md
 docs/GBTInsertableType.md
 docs/GBTLoadType.md
@@ -2699,11 +2701,13 @@ model_gbt_entity_type.go
 model_gbt_error_string_enum.go
 model_gbt_export_resolution.go
 model_gbt_export_unit.go
+model_gbt_feature_dimension_type.go
 model_gbt_feature_filter_exclusion.go
 model_gbt_field_weld_flag.go
 model_gbt_filter_flattened_geometry_options.go
 model_gbt_geometry_type.go
 model_gbt_graphics_buffer_target.go
+model_gbt_graphics_primitive_type.go
 model_gbt_hole_type.go
 model_gbt_insertable_type.go
 model_gbt_load_type.go

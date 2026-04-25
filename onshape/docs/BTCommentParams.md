@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AnnotationType** | Pointer to **int32** |  | [optional] 
 **AssemblyFeature** | Pointer to **string** |  | [optional] 
 **Assignee** | Pointer to **string** | Assign the comment during creation. Comments cannot be reassigned during an update at this time. | [optional] 
+**CalloutInstanceId** | Pointer to **string** |  | [optional] 
 **Coordinates** | Pointer to [**CoordinatesParams**](CoordinatesParams.md) |  | [optional] 
 **DimensionConstraintId** | Pointer to **string** |  | [optional] 
 **DimensionFeatureId** | Pointer to **string** |  | [optional] 
@@ -145,6 +146,31 @@ SetAssignee sets Assignee field to given value.
 `func (o *BTCommentParams) HasAssignee() bool`
 
 HasAssignee returns a boolean if a field has been set.
+
+### GetCalloutInstanceId
+
+`func (o *BTCommentParams) GetCalloutInstanceId() string`
+
+GetCalloutInstanceId returns the CalloutInstanceId field if non-nil, zero value otherwise.
+
+### GetCalloutInstanceIdOk
+
+`func (o *BTCommentParams) GetCalloutInstanceIdOk() (*string, bool)`
+
+GetCalloutInstanceIdOk returns a tuple with the CalloutInstanceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCalloutInstanceId
+
+`func (o *BTCommentParams) SetCalloutInstanceId(v string)`
+
+SetCalloutInstanceId sets CalloutInstanceId field to given value.
+
+### HasCalloutInstanceId
+
+`func (o *BTCommentParams) HasCalloutInstanceId() bool`
+
+HasCalloutInstanceId returns a boolean if a field has been set.
 
 ### GetCoordinates
 

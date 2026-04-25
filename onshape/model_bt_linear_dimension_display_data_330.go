@@ -47,6 +47,106 @@ func NewBTLinearDimensionDisplayData330WithDefaults() *BTLinearDimensionDisplayD
 	return &this
 }
 
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTLinearDimensionDisplayData330) GetAllReferences() []string {
+	type getResult interface {
+		GetAllReferences() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferences()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLinearDimensionDisplayData330) GetAllReferencesOk() ([]string, bool) {
+	type getResult interface {
+		GetAllReferencesOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTLinearDimensionDisplayData330) HasAllReferences() bool {
+	type getResult interface {
+		HasAllReferences() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferences()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTLinearDimensionDisplayData330) SetAllReferences(v []string) {
+	type getResult interface {
+		SetAllReferences(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferences(v)
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTLinearDimensionDisplayData330) GetAllReferencesPopulated() bool {
+	type getResult interface {
+		GetAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulated()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTLinearDimensionDisplayData330) GetAllReferencesPopulatedOk() (*bool, bool) {
+	type getResult interface {
+		GetAllReferencesPopulatedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulatedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTLinearDimensionDisplayData330) HasAllReferencesPopulated() bool {
+	type getResult interface {
+		HasAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferencesPopulated()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTLinearDimensionDisplayData330) SetAllReferencesPopulated(v bool) {
+	type getResult interface {
+		SetAllReferencesPopulated(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferencesPopulated(v)
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTLinearDimensionDisplayData330) GetBtType() string {
 	type getResult interface {
@@ -1802,39 +1902,41 @@ func (v *NullableBTLinearDimensionDisplayData330) UnmarshalJSON(src []byte) erro
 
 type base_BTLinearDimensionDisplayData330 struct {
 	BTDimensionDisplayData323
-	BtType                *string                 `json:"btType,omitempty"`
-	CharacteristicId      *string                 `json:"characteristicId,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
-	FeatureId             *string                 `json:"featureId,omitempty"`
-	FitClass              *string                 `json:"fitClass,omitempty"`
-	HasMaximumLimit_      *bool                   `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool                   `json:"hasMinimumLimit,omitempty"`
-	Id                    *string                 `json:"id,omitempty"`
-	IsAnnotationDimension *bool                   `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool                   `json:"isAssociatedWithFlat,omitempty"`
-	IsDerived             *bool                   `json:"isDerived,omitempty"`
-	IsDriven              *bool                   `json:"isDriven,omitempty"`
-	IsOverDefined         *bool                   `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64                `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64                `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64                `json:"minimumLimit,omitempty"`
-	ParameterId           *string                 `json:"parameterId,omitempty"`
-	PartId                *string                 `json:"partId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386          `json:"planeMatrix,omitempty"`
-	Precision             *GBTTolerancePrecision  `json:"precision,omitempty"`
-	ToleranceType         *GBTToleranceType       `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64                `json:"upperTolerance,omitempty"`
-	Value                 *float64                `json:"value,omitempty"`
-	HasExtension          *bool                   `json:"hasExtension,omitempty"`
-	PositionX             *float64                `json:"positionX,omitempty"`
-	PositionY             *float64                `json:"positionY,omitempty"`
-	WitnessEndPoint0X     *float64                `json:"witnessEndPoint0X,omitempty"`
-	WitnessEndPoint0Y     *float64                `json:"witnessEndPoint0Y,omitempty"`
-	WitnessEndPoint1X     *float64                `json:"witnessEndPoint1X,omitempty"`
-	WitnessEndPoint1Y     *float64                `json:"witnessEndPoint1Y,omitempty"`
-	WitnessExtension0Z    *float64                `json:"witnessExtension0Z,omitempty"`
-	WitnessExtension1Z    *float64                `json:"witnessExtension1Z,omitempty"`
-	WitnessExtensionCurve *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
+	AllReferences          []string                `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                   `json:"allReferencesPopulated,omitempty"`
+	BtType                 *string                 `json:"btType,omitempty"`
+	CharacteristicId       *string                 `json:"characteristicId,omitempty"`
+	CoordinateSystem       *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
+	FeatureId              *string                 `json:"featureId,omitempty"`
+	FitClass               *string                 `json:"fitClass,omitempty"`
+	HasMaximumLimit_       *bool                   `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_       *bool                   `json:"hasMinimumLimit,omitempty"`
+	Id                     *string                 `json:"id,omitempty"`
+	IsAnnotationDimension  *bool                   `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat   *bool                   `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived              *bool                   `json:"isDerived,omitempty"`
+	IsDriven               *bool                   `json:"isDriven,omitempty"`
+	IsOverDefined          *bool                   `json:"isOverDefined,omitempty"`
+	LowerTolerance         *float64                `json:"lowerTolerance,omitempty"`
+	MaximumLimit           *float64                `json:"maximumLimit,omitempty"`
+	MinimumLimit           *float64                `json:"minimumLimit,omitempty"`
+	ParameterId            *string                 `json:"parameterId,omitempty"`
+	PartId                 *string                 `json:"partId,omitempty"`
+	PlaneMatrix            *BTBSMatrix386          `json:"planeMatrix,omitempty"`
+	Precision              *GBTTolerancePrecision  `json:"precision,omitempty"`
+	ToleranceType          *GBTToleranceType       `json:"toleranceType,omitempty"`
+	UpperTolerance         *float64                `json:"upperTolerance,omitempty"`
+	Value                  *float64                `json:"value,omitempty"`
+	HasExtension           *bool                   `json:"hasExtension,omitempty"`
+	PositionX              *float64                `json:"positionX,omitempty"`
+	PositionY              *float64                `json:"positionY,omitempty"`
+	WitnessEndPoint0X      *float64                `json:"witnessEndPoint0X,omitempty"`
+	WitnessEndPoint0Y      *float64                `json:"witnessEndPoint0Y,omitempty"`
+	WitnessEndPoint1X      *float64                `json:"witnessEndPoint1X,omitempty"`
+	WitnessEndPoint1Y      *float64                `json:"witnessEndPoint1Y,omitempty"`
+	WitnessExtension0Z     *float64                `json:"witnessExtension0Z,omitempty"`
+	WitnessExtension1Z     *float64                `json:"witnessExtension1Z,omitempty"`
+	WitnessExtensionCurve  *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
 }
 
 // Newbase_BTLinearDimensionDisplayData330 instantiates a new base_BTLinearDimensionDisplayData330 object
@@ -1852,6 +1954,70 @@ func Newbase_BTLinearDimensionDisplayData330() *base_BTLinearDimensionDisplayDat
 func Newbase_BTLinearDimensionDisplayData330WithDefaults() *base_BTLinearDimensionDisplayData330 {
 	this := base_BTLinearDimensionDisplayData330{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *base_BTLinearDimensionDisplayData330) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTLinearDimensionDisplayData330) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *base_BTLinearDimensionDisplayData330) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *base_BTLinearDimensionDisplayData330) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *base_BTLinearDimensionDisplayData330) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTLinearDimensionDisplayData330) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *base_BTLinearDimensionDisplayData330) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *base_BTLinearDimensionDisplayData330) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -2919,6 +3085,12 @@ func (o base_BTLinearDimensionDisplayData330) MarshalJSON() ([]byte, error) {
 	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
 	if errBTDimensionDisplayData323 != nil {
 		return []byte{}, errBTDimensionDisplayData323
+	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType

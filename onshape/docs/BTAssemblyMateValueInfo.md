@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **FeatureId** | Pointer to **string** | The ID of the assembly mate feature. | [optional] 
 **JsonType** | **string** |  | 
 **MateName** | Pointer to **string** | The name of the assembly mate feature. | [optional] 
+**OwnerOccurrencePath** | Pointer to **[]string** | The path to the assembly owning this mate. | [optional] 
 
 ## Methods
 
@@ -96,6 +97,31 @@ SetMateName sets MateName field to given value.
 `func (o *BTAssemblyMateValueInfo) HasMateName() bool`
 
 HasMateName returns a boolean if a field has been set.
+
+### GetOwnerOccurrencePath
+
+`func (o *BTAssemblyMateValueInfo) GetOwnerOccurrencePath() []string`
+
+GetOwnerOccurrencePath returns the OwnerOccurrencePath field if non-nil, zero value otherwise.
+
+### GetOwnerOccurrencePathOk
+
+`func (o *BTAssemblyMateValueInfo) GetOwnerOccurrencePathOk() (*[]string, bool)`
+
+GetOwnerOccurrencePathOk returns a tuple with the OwnerOccurrencePath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwnerOccurrencePath
+
+`func (o *BTAssemblyMateValueInfo) SetOwnerOccurrencePath(v []string)`
+
+SetOwnerOccurrencePath sets OwnerOccurrencePath field to given value.
+
+### HasOwnerOccurrencePath
+
+`func (o *BTAssemblyMateValueInfo) HasOwnerOccurrencePath() bool`
+
+HasOwnerOccurrencePath returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -92,6 +92,106 @@ func NewBTDimensionDisplayData323WithDefaults() *BTDimensionDisplayData323 {
 	return &this
 }
 
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTDimensionDisplayData323) GetAllReferences() []string {
+	type getResult interface {
+		GetAllReferences() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferences()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDimensionDisplayData323) GetAllReferencesOk() ([]string, bool) {
+	type getResult interface {
+		GetAllReferencesOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTDimensionDisplayData323) HasAllReferences() bool {
+	type getResult interface {
+		HasAllReferences() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferences()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTDimensionDisplayData323) SetAllReferences(v []string) {
+	type getResult interface {
+		SetAllReferences(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferences(v)
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTDimensionDisplayData323) GetAllReferencesPopulated() bool {
+	type getResult interface {
+		GetAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulated()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDimensionDisplayData323) GetAllReferencesPopulatedOk() (*bool, bool) {
+	type getResult interface {
+		GetAllReferencesPopulatedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulatedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTDimensionDisplayData323) HasAllReferencesPopulated() bool {
+	type getResult interface {
+		HasAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferencesPopulated()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTDimensionDisplayData323) SetAllReferencesPopulated(v bool) {
+	type getResult interface {
+		SetAllReferencesPopulated(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferencesPopulated(v)
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTDimensionDisplayData323) GetBtType() string {
 	type getResult interface {
@@ -1472,6 +1572,8 @@ func (v *NullableBTDimensionDisplayData323) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTDimensionDisplayData323 struct {
+	AllReferences          []string `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool    `json:"allReferencesPopulated,omitempty"`
 	// Type of JSON object.
 	BtType                *string                `json:"btType,omitempty"`
 	CharacteristicId      *string                `json:"characteristicId,omitempty"`
@@ -1513,6 +1615,70 @@ func Newbase_BTDimensionDisplayData323() *base_BTDimensionDisplayData323 {
 func Newbase_BTDimensionDisplayData323WithDefaults() *base_BTDimensionDisplayData323 {
 	this := base_BTDimensionDisplayData323{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *base_BTDimensionDisplayData323) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDimensionDisplayData323) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *base_BTDimensionDisplayData323) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *base_BTDimensionDisplayData323) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *base_BTDimensionDisplayData323) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDimensionDisplayData323) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *base_BTDimensionDisplayData323) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *base_BTDimensionDisplayData323) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -2253,6 +2419,12 @@ func (o *base_BTDimensionDisplayData323) SetValue(v float64) {
 
 func (o base_BTDimensionDisplayData323) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

@@ -22,6 +22,7 @@ type BTCommentInfo struct {
 	AssignedAt            *JSONTime                `json:"assignedAt,omitempty"`
 	Assignee              *BTUserSummaryInfo       `json:"assignee,omitempty"`
 	Attachment            *BTCommentAttachmentInfo `json:"attachment,omitempty"`
+	CalloutInstanceId     *string                  `json:"calloutInstanceId,omitempty"`
 	CanDelete             *bool                    `json:"canDelete,omitempty"`
 	CanResolveOrReopen    *bool                    `json:"canResolveOrReopen,omitempty"`
 	Coordinates           *CoordinatesInfo         `json:"coordinates,omitempty"`
@@ -270,6 +271,38 @@ func (o *BTCommentInfo) HasAttachment() bool {
 // SetAttachment gets a reference to the given BTCommentAttachmentInfo and assigns it to the Attachment field.
 func (o *BTCommentInfo) SetAttachment(v BTCommentAttachmentInfo) {
 	o.Attachment = &v
+}
+
+// GetCalloutInstanceId returns the CalloutInstanceId field value if set, zero value otherwise.
+func (o *BTCommentInfo) GetCalloutInstanceId() string {
+	if o == nil || o.CalloutInstanceId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CalloutInstanceId
+}
+
+// GetCalloutInstanceIdOk returns a tuple with the CalloutInstanceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentInfo) GetCalloutInstanceIdOk() (*string, bool) {
+	if o == nil || o.CalloutInstanceId == nil {
+		return nil, false
+	}
+	return o.CalloutInstanceId, true
+}
+
+// HasCalloutInstanceId returns a boolean if a field has been set.
+func (o *BTCommentInfo) HasCalloutInstanceId() bool {
+	if o != nil && o.CalloutInstanceId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCalloutInstanceId gets a reference to the given string and assigns it to the CalloutInstanceId field.
+func (o *BTCommentInfo) SetCalloutInstanceId(v string) {
+	o.CalloutInstanceId = &v
 }
 
 // GetCanDelete returns the CanDelete field value if set, zero value otherwise.
@@ -1411,6 +1444,9 @@ func (o BTCommentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Attachment != nil {
 		toSerialize["attachment"] = o.Attachment
+	}
+	if o.CalloutInstanceId != nil {
+		toSerialize["calloutInstanceId"] = o.CalloutInstanceId
 	}
 	if o.CanDelete != nil {
 		toSerialize["canDelete"] = o.CanDelete

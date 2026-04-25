@@ -18,6 +18,7 @@ import (
 type BTWebhookInfo struct {
 	// Company admins can register webhooks to listen to all company events.
 	CompanyId         *string            `json:"companyId,omitempty"`
+	CreatedAt         *JSONTime          `json:"createdAt,omitempty"`
 	CreatedBy         *BTUserSummaryInfo `json:"createdBy,omitempty"`
 	Data              *string            `json:"data,omitempty"`
 	Description       *string            `json:"description,omitempty"`
@@ -33,7 +34,8 @@ type BTWebhookInfo struct {
 	// Id of the resource.
 	Id *string `json:"id,omitempty"`
 	// Transient webhooks are automatically cleaned up after a period of inactivity.
-	IsTransient *bool `json:"isTransient,omitempty"`
+	IsTransient *bool     `json:"isTransient,omitempty"`
+	ModifiedAt  *JSONTime `json:"modifiedAt,omitempty"`
 	// Name of the resource.
 	Name      *string           `json:"name,omitempty"`
 	Options   *BTWebhookOptions `json:"options,omitempty"`
@@ -94,6 +96,38 @@ func (o *BTWebhookInfo) HasCompanyId() bool {
 // SetCompanyId gets a reference to the given string and assigns it to the CompanyId field.
 func (o *BTWebhookInfo) SetCompanyId(v string) {
 	o.CompanyId = &v
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *BTWebhookInfo) GetCreatedAt() JSONTime {
+	if o == nil || o.CreatedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.CreatedAt
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebhookInfo) GetCreatedAtOk() (*JSONTime, bool) {
+	if o == nil || o.CreatedAt == nil {
+		return nil, false
+	}
+	return o.CreatedAt, true
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *BTWebhookInfo) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given JSONTime and assigns it to the CreatedAt field.
+func (o *BTWebhookInfo) SetCreatedAt(v JSONTime) {
+	o.CreatedAt = &v
 }
 
 // GetCreatedBy returns the CreatedBy field value if set, zero value otherwise.
@@ -448,6 +482,38 @@ func (o *BTWebhookInfo) SetIsTransient(v bool) {
 	o.IsTransient = &v
 }
 
+// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
+func (o *BTWebhookInfo) GetModifiedAt() JSONTime {
+	if o == nil || o.ModifiedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ModifiedAt
+}
+
+// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWebhookInfo) GetModifiedAtOk() (*JSONTime, bool) {
+	if o == nil || o.ModifiedAt == nil {
+		return nil, false
+	}
+	return o.ModifiedAt, true
+}
+
+// HasModifiedAt returns a boolean if a field has been set.
+func (o *BTWebhookInfo) HasModifiedAt() bool {
+	if o != nil && o.ModifiedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
+func (o *BTWebhookInfo) SetModifiedAt(v JSONTime) {
+	o.ModifiedAt = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTWebhookInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -613,6 +679,9 @@ func (o BTWebhookInfo) MarshalJSON() ([]byte, error) {
 	if o.CompanyId != nil {
 		toSerialize["companyId"] = o.CompanyId
 	}
+	if o.CreatedAt != nil {
+		toSerialize["createdAt"] = o.CreatedAt
+	}
 	if o.CreatedBy != nil {
 		toSerialize["createdBy"] = o.CreatedBy
 	}
@@ -645,6 +714,9 @@ func (o BTWebhookInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsTransient != nil {
 		toSerialize["isTransient"] = o.IsTransient
+	}
+	if o.ModifiedAt != nil {
+		toSerialize["modifiedAt"] = o.ModifiedAt
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

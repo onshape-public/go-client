@@ -6,8 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BufferData** | Pointer to [**BTImmutableByteArray**](BTImmutableByteArray.md) |  | [optional] 
+**GroupTypeOffsetAndCount** | Pointer to **[]int32** |  | [optional] 
 **MapGraphicsAttributeToComponentCount** | Pointer to **map[string]int32** |  | [optional] 
+**PrimitiveType** | Pointer to [**GBTGraphicsPrimitiveType**](GBTGraphicsPrimitiveType.md) |  | [optional] 
 **Target** | Pointer to [**GBTGraphicsBufferTarget**](GBTGraphicsBufferTarget.md) |  | [optional] 
+**TargetByteOffsetAndCount** | Pointer to **[]int32** |  | [optional] 
+**Targets** | Pointer to [**[]GBTGraphicsBufferTarget**](GBTGraphicsBufferTarget.md) |  | [optional] 
 
 ## Methods
 
@@ -78,6 +82,31 @@ SetBufferData sets BufferData field to given value.
 
 HasBufferData returns a boolean if a field has been set.
 
+### GetGroupTypeOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) GetGroupTypeOffsetAndCount() []int32`
+
+GetGroupTypeOffsetAndCount returns the GroupTypeOffsetAndCount field if non-nil, zero value otherwise.
+
+### GetGroupTypeOffsetAndCountOk
+
+`func (o *BTGraphicsBuffer2668) GetGroupTypeOffsetAndCountOk() (*[]int32, bool)`
+
+GetGroupTypeOffsetAndCountOk returns a tuple with the GroupTypeOffsetAndCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupTypeOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) SetGroupTypeOffsetAndCount(v []int32)`
+
+SetGroupTypeOffsetAndCount sets GroupTypeOffsetAndCount field to given value.
+
+### HasGroupTypeOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) HasGroupTypeOffsetAndCount() bool`
+
+HasGroupTypeOffsetAndCount returns a boolean if a field has been set.
+
 ### GetMapGraphicsAttributeToComponentCount
 
 `func (o *BTGraphicsBuffer2668) GetMapGraphicsAttributeToComponentCount() map[string]int32`
@@ -103,6 +132,31 @@ SetMapGraphicsAttributeToComponentCount sets MapGraphicsAttributeToComponentCoun
 
 HasMapGraphicsAttributeToComponentCount returns a boolean if a field has been set.
 
+### GetPrimitiveType
+
+`func (o *BTGraphicsBuffer2668) GetPrimitiveType() GBTGraphicsPrimitiveType`
+
+GetPrimitiveType returns the PrimitiveType field if non-nil, zero value otherwise.
+
+### GetPrimitiveTypeOk
+
+`func (o *BTGraphicsBuffer2668) GetPrimitiveTypeOk() (*GBTGraphicsPrimitiveType, bool)`
+
+GetPrimitiveTypeOk returns a tuple with the PrimitiveType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrimitiveType
+
+`func (o *BTGraphicsBuffer2668) SetPrimitiveType(v GBTGraphicsPrimitiveType)`
+
+SetPrimitiveType sets PrimitiveType field to given value.
+
+### HasPrimitiveType
+
+`func (o *BTGraphicsBuffer2668) HasPrimitiveType() bool`
+
+HasPrimitiveType returns a boolean if a field has been set.
+
 ### GetTarget
 
 `func (o *BTGraphicsBuffer2668) GetTarget() GBTGraphicsBufferTarget`
@@ -127,6 +181,56 @@ SetTarget sets Target field to given value.
 `func (o *BTGraphicsBuffer2668) HasTarget() bool`
 
 HasTarget returns a boolean if a field has been set.
+
+### GetTargetByteOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) GetTargetByteOffsetAndCount() []int32`
+
+GetTargetByteOffsetAndCount returns the TargetByteOffsetAndCount field if non-nil, zero value otherwise.
+
+### GetTargetByteOffsetAndCountOk
+
+`func (o *BTGraphicsBuffer2668) GetTargetByteOffsetAndCountOk() (*[]int32, bool)`
+
+GetTargetByteOffsetAndCountOk returns a tuple with the TargetByteOffsetAndCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargetByteOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) SetTargetByteOffsetAndCount(v []int32)`
+
+SetTargetByteOffsetAndCount sets TargetByteOffsetAndCount field to given value.
+
+### HasTargetByteOffsetAndCount
+
+`func (o *BTGraphicsBuffer2668) HasTargetByteOffsetAndCount() bool`
+
+HasTargetByteOffsetAndCount returns a boolean if a field has been set.
+
+### GetTargets
+
+`func (o *BTGraphicsBuffer2668) GetTargets() []GBTGraphicsBufferTarget`
+
+GetTargets returns the Targets field if non-nil, zero value otherwise.
+
+### GetTargetsOk
+
+`func (o *BTGraphicsBuffer2668) GetTargetsOk() (*[]GBTGraphicsBufferTarget, bool)`
+
+GetTargetsOk returns a tuple with the Targets field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTargets
+
+`func (o *BTGraphicsBuffer2668) SetTargets(v []GBTGraphicsBufferTarget)`
+
+SetTargets sets Targets field to given value.
+
+### HasTargets
+
+`func (o *BTGraphicsBuffer2668) HasTargets() bool`
+
+HasTargets returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -25,8 +25,12 @@ type BTObjectWorkflowInfo struct {
 	// Whether workflowable object has been discarded.
 	IsDiscarded *bool `json:"isDiscarded,omitempty"`
 	// Whether workflowable object has reached terminal state and is frozen.
-	IsFrozen      *bool                `json:"isFrozen,omitempty"`
-	MetadataState *BTMetadataStateType `json:"metadataState,omitempty"`
+	IsFrozen *bool `json:"isFrozen,omitempty"`
+	// The timestamp of the last workflow action.
+	LastAttemptTimestamp *JSONTime `json:"lastAttemptTimestamp,omitempty"`
+	// The error message from the last failed workflow action, if any.
+	LastEncounteredErrorMessage *string              `json:"lastEncounteredErrorMessage,omitempty"`
+	MetadataState               *BTMetadataStateType `json:"metadataState,omitempty"`
 	// Name of the resource.
 	Name       *string                `json:"name,omitempty"`
 	ObjectType *BTAPIWorkflowableType `json:"objectType,omitempty"`
@@ -213,6 +217,70 @@ func (o *BTObjectWorkflowInfo) HasIsFrozen() bool {
 // SetIsFrozen gets a reference to the given bool and assigns it to the IsFrozen field.
 func (o *BTObjectWorkflowInfo) SetIsFrozen(v bool) {
 	o.IsFrozen = &v
+}
+
+// GetLastAttemptTimestamp returns the LastAttemptTimestamp field value if set, zero value otherwise.
+func (o *BTObjectWorkflowInfo) GetLastAttemptTimestamp() JSONTime {
+	if o == nil || o.LastAttemptTimestamp == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.LastAttemptTimestamp
+}
+
+// GetLastAttemptTimestampOk returns a tuple with the LastAttemptTimestamp field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTObjectWorkflowInfo) GetLastAttemptTimestampOk() (*JSONTime, bool) {
+	if o == nil || o.LastAttemptTimestamp == nil {
+		return nil, false
+	}
+	return o.LastAttemptTimestamp, true
+}
+
+// HasLastAttemptTimestamp returns a boolean if a field has been set.
+func (o *BTObjectWorkflowInfo) HasLastAttemptTimestamp() bool {
+	if o != nil && o.LastAttemptTimestamp != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLastAttemptTimestamp gets a reference to the given JSONTime and assigns it to the LastAttemptTimestamp field.
+func (o *BTObjectWorkflowInfo) SetLastAttemptTimestamp(v JSONTime) {
+	o.LastAttemptTimestamp = &v
+}
+
+// GetLastEncounteredErrorMessage returns the LastEncounteredErrorMessage field value if set, zero value otherwise.
+func (o *BTObjectWorkflowInfo) GetLastEncounteredErrorMessage() string {
+	if o == nil || o.LastEncounteredErrorMessage == nil {
+		var ret string
+		return ret
+	}
+	return *o.LastEncounteredErrorMessage
+}
+
+// GetLastEncounteredErrorMessageOk returns a tuple with the LastEncounteredErrorMessage field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTObjectWorkflowInfo) GetLastEncounteredErrorMessageOk() (*string, bool) {
+	if o == nil || o.LastEncounteredErrorMessage == nil {
+		return nil, false
+	}
+	return o.LastEncounteredErrorMessage, true
+}
+
+// HasLastEncounteredErrorMessage returns a boolean if a field has been set.
+func (o *BTObjectWorkflowInfo) HasLastEncounteredErrorMessage() bool {
+	if o != nil && o.LastEncounteredErrorMessage != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetLastEncounteredErrorMessage gets a reference to the given string and assigns it to the LastEncounteredErrorMessage field.
+func (o *BTObjectWorkflowInfo) SetLastEncounteredErrorMessage(v string) {
+	o.LastEncounteredErrorMessage = &v
 }
 
 // GetMetadataState returns the MetadataState field value if set, zero value otherwise.
@@ -423,6 +491,12 @@ func (o BTObjectWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsFrozen != nil {
 		toSerialize["isFrozen"] = o.IsFrozen
+	}
+	if o.LastAttemptTimestamp != nil {
+		toSerialize["lastAttemptTimestamp"] = o.LastAttemptTimestamp
+	}
+	if o.LastEncounteredErrorMessage != nil {
+		toSerialize["lastEncounteredErrorMessage"] = o.LastEncounteredErrorMessage
 	}
 	if o.MetadataState != nil {
 		toSerialize["metadataState"] = o.MetadataState

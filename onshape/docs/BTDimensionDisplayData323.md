@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllReferences** | Pointer to **[]string** |  | [optional] 
+**AllReferencesPopulated** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CharacteristicId** | Pointer to **string** |  | [optional] 
 **CoordinateSystem** | Pointer to [**BTMatrix3x3340**](BTMatrix3x3340.md) |  | [optional] 
@@ -46,6 +48,56 @@ will change when the set of required properties is changed
 NewBTDimensionDisplayData323WithDefaults instantiates a new BTDimensionDisplayData323 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllReferences
+
+`func (o *BTDimensionDisplayData323) GetAllReferences() []string`
+
+GetAllReferences returns the AllReferences field if non-nil, zero value otherwise.
+
+### GetAllReferencesOk
+
+`func (o *BTDimensionDisplayData323) GetAllReferencesOk() (*[]string, bool)`
+
+GetAllReferencesOk returns a tuple with the AllReferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllReferences
+
+`func (o *BTDimensionDisplayData323) SetAllReferences(v []string)`
+
+SetAllReferences sets AllReferences field to given value.
+
+### HasAllReferences
+
+`func (o *BTDimensionDisplayData323) HasAllReferences() bool`
+
+HasAllReferences returns a boolean if a field has been set.
+
+### GetAllReferencesPopulated
+
+`func (o *BTDimensionDisplayData323) GetAllReferencesPopulated() bool`
+
+GetAllReferencesPopulated returns the AllReferencesPopulated field if non-nil, zero value otherwise.
+
+### GetAllReferencesPopulatedOk
+
+`func (o *BTDimensionDisplayData323) GetAllReferencesPopulatedOk() (*bool, bool)`
+
+GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllReferencesPopulated
+
+`func (o *BTDimensionDisplayData323) SetAllReferencesPopulated(v bool)`
+
+SetAllReferencesPopulated sets AllReferencesPopulated field to given value.
+
+### HasAllReferencesPopulated
+
+`func (o *BTDimensionDisplayData323) HasAllReferencesPopulated() bool`
+
+HasAllReferencesPopulated returns a boolean if a field has been set.
 
 ### GetBtType
 

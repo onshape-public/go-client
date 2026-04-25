@@ -140,14 +140,15 @@ type BTTranslateFormatParams struct {
 	TextAsGeometry  *bool   `json:"textAsGeometry,omitempty"`
 	TextOption      *string `json:"textOption,omitempty"`
 	// Automatically download a translated file.
-	TriggerAutoDownload            *bool              `json:"triggerAutoDownload,omitempty"`
-	Unit                           *string            `json:"unit,omitempty"`
-	UploadId                       *string            `json:"uploadId,omitempty"`
-	UrdfMeshFormat                 *GBTUrdfMeshFormat `json:"urdfMeshFormat,omitempty"`
-	UseFileNameToSetSinglePartName *bool              `json:"useFileNameToSetSinglePartName,omitempty"`
-	UseGltfCompression             *bool              `json:"useGltfCompression,omitempty"`
-	UseIGESImportPostProcessing    *bool              `json:"useIGESImportPostProcessing,omitempty"`
-	UseIgesCompatibilityMode       *bool              `json:"useIgesCompatibilityMode,omitempty"`
+	TriggerAutoDownload            *bool               `json:"triggerAutoDownload,omitempty"`
+	Unit                           *string             `json:"unit,omitempty"`
+	UploadId                       *string             `json:"uploadId,omitempty"`
+	UrdfMeshFormat                 *GBTUrdfMeshFormat  `json:"urdfMeshFormat,omitempty"`
+	UrdfStlEncoding                *GBTStlEncodingType `json:"urdfStlEncoding,omitempty"`
+	UseFileNameToSetSinglePartName *bool               `json:"useFileNameToSetSinglePartName,omitempty"`
+	UseGltfCompression             *bool               `json:"useGltfCompression,omitempty"`
+	UseIGESImportPostProcessing    *bool               `json:"useIGESImportPostProcessing,omitempty"`
+	UseIgesCompatibilityMode       *bool               `json:"useIgesCompatibilityMode,omitempty"`
 	// Number of days to keep the link valid for.
 	ValidForDays *int32 `json:"validForDays,omitempty"`
 	// Parasolid version number as string. Use '0' for the latest.
@@ -171,6 +172,8 @@ func NewBTTranslateFormatParams(formatName string) *BTTranslateFormatParams {
 	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
 	this.StlMode = &stlMode
+	var urdfStlEncoding GBTStlEncodingType = GBTStlEncodingTypeText
+	this.UrdfStlEncoding = &urdfStlEncoding
 	var versionString string = "0"
 	this.VersionString = &versionString
 	return &this
@@ -191,6 +194,8 @@ func NewBTTranslateFormatParamsWithDefaults() *BTTranslateFormatParams {
 	this.StepVersionString = &stepVersionString
 	var stlMode GBTStlEncodingType = GBTStlEncodingTypeText
 	this.StlMode = &stlMode
+	var urdfStlEncoding GBTStlEncodingType = GBTStlEncodingTypeText
+	this.UrdfStlEncoding = &urdfStlEncoding
 	var versionString string = "0"
 	this.VersionString = &versionString
 	return &this
@@ -3196,6 +3201,38 @@ func (o *BTTranslateFormatParams) SetUrdfMeshFormat(v GBTUrdfMeshFormat) {
 	o.UrdfMeshFormat = &v
 }
 
+// GetUrdfStlEncoding returns the UrdfStlEncoding field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUrdfStlEncoding() GBTStlEncodingType {
+	if o == nil || o.UrdfStlEncoding == nil {
+		var ret GBTStlEncodingType
+		return ret
+	}
+	return *o.UrdfStlEncoding
+}
+
+// GetUrdfStlEncodingOk returns a tuple with the UrdfStlEncoding field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUrdfStlEncodingOk() (*GBTStlEncodingType, bool) {
+	if o == nil || o.UrdfStlEncoding == nil {
+		return nil, false
+	}
+	return o.UrdfStlEncoding, true
+}
+
+// HasUrdfStlEncoding returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUrdfStlEncoding() bool {
+	if o != nil && o.UrdfStlEncoding != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUrdfStlEncoding gets a reference to the given GBTStlEncodingType and assigns it to the UrdfStlEncoding field.
+func (o *BTTranslateFormatParams) SetUrdfStlEncoding(v GBTStlEncodingType) {
+	o.UrdfStlEncoding = &v
+}
+
 // GetUseFileNameToSetSinglePartName returns the UseFileNameToSetSinglePartName field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUseFileNameToSetSinglePartName() bool {
 	if o == nil || o.UseFileNameToSetSinglePartName == nil {
@@ -3671,6 +3708,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UrdfMeshFormat != nil {
 		toSerialize["urdfMeshFormat"] = o.UrdfMeshFormat
+	}
+	if o.UrdfStlEncoding != nil {
+		toSerialize["urdfStlEncoding"] = o.UrdfStlEncoding
 	}
 	if o.UseFileNameToSetSinglePartName != nil {
 		toSerialize["useFileNameToSetSinglePartName"] = o.UseFileNameToSetSinglePartName

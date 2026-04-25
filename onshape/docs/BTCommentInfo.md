@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **AssignedAt** | Pointer to **JSONTime** |  | [optional] 
 **Assignee** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Attachment** | Pointer to [**BTCommentAttachmentInfo**](BTCommentAttachmentInfo.md) |  | [optional] 
+**CalloutInstanceId** | Pointer to **string** |  | [optional] 
 **CanDelete** | Pointer to **bool** |  | [optional] 
 **CanResolveOrReopen** | Pointer to **bool** |  | [optional] 
 **Coordinates** | Pointer to [**CoordinatesInfo**](CoordinatesInfo.md) |  | [optional] 
@@ -214,6 +215,31 @@ SetAttachment sets Attachment field to given value.
 `func (o *BTCommentInfo) HasAttachment() bool`
 
 HasAttachment returns a boolean if a field has been set.
+
+### GetCalloutInstanceId
+
+`func (o *BTCommentInfo) GetCalloutInstanceId() string`
+
+GetCalloutInstanceId returns the CalloutInstanceId field if non-nil, zero value otherwise.
+
+### GetCalloutInstanceIdOk
+
+`func (o *BTCommentInfo) GetCalloutInstanceIdOk() (*string, bool)`
+
+GetCalloutInstanceIdOk returns a tuple with the CalloutInstanceId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCalloutInstanceId
+
+`func (o *BTCommentInfo) SetCalloutInstanceId(v string)`
+
+SetCalloutInstanceId sets CalloutInstanceId field to given value.
+
+### HasCalloutInstanceId
+
+`func (o *BTCommentInfo) HasCalloutInstanceId() bool`
+
+HasCalloutInstanceId returns a boolean if a field has been set.
 
 ### GetCanDelete
 

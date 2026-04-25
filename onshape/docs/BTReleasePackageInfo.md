@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Description** | Pointer to **string** |  | [optional] 
 **Detailed** | Pointer to **bool** |  | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
+**HasRevertedToRevisionItems** | Pointer to **bool** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsObsoletion** | Pointer to **bool** |  | [optional] 
@@ -306,6 +307,31 @@ SetDocumentId sets DocumentId field to given value.
 `func (o *BTReleasePackageInfo) HasDocumentId() bool`
 
 HasDocumentId returns a boolean if a field has been set.
+
+### GetHasRevertedToRevisionItems
+
+`func (o *BTReleasePackageInfo) GetHasRevertedToRevisionItems() bool`
+
+GetHasRevertedToRevisionItems returns the HasRevertedToRevisionItems field if non-nil, zero value otherwise.
+
+### GetHasRevertedToRevisionItemsOk
+
+`func (o *BTReleasePackageInfo) GetHasRevertedToRevisionItemsOk() (*bool, bool)`
+
+GetHasRevertedToRevisionItemsOk returns a tuple with the HasRevertedToRevisionItems field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasRevertedToRevisionItems
+
+`func (o *BTReleasePackageInfo) SetHasRevertedToRevisionItems(v bool)`
+
+SetHasRevertedToRevisionItems sets HasRevertedToRevisionItems field to given value.
+
+### HasHasRevertedToRevisionItems
+
+`func (o *BTReleasePackageInfo) HasHasRevertedToRevisionItems() bool`
+
+HasHasRevertedToRevisionItems returns a boolean if a field has been set.
 
 ### GetHref
 
