@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsDiscarded** | Pointer to **bool** | Whether workflowable object has been discarded. | [optional] 
 **IsFrozen** | Pointer to **bool** | Whether workflowable object has reached terminal state and is frozen. | [optional] 
+**LastAttemptTimestamp** | Pointer to **JSONTime** | The timestamp of the last workflow action. | [optional] 
+**LastEncounteredErrorMessage** | Pointer to **string** | The error message from the last failed workflow action, if any. | [optional] 
 **MetadataState** | Pointer to [**BTMetadataStateType**](BTMetadataStateType.md) |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectType** | Pointer to [**BTAPIWorkflowableType**](BTAPIWorkflowableType.md) |  | [optional] 
@@ -159,6 +161,56 @@ SetIsFrozen sets IsFrozen field to given value.
 `func (o *BTObjectWorkflowInfo) HasIsFrozen() bool`
 
 HasIsFrozen returns a boolean if a field has been set.
+
+### GetLastAttemptTimestamp
+
+`func (o *BTObjectWorkflowInfo) GetLastAttemptTimestamp() JSONTime`
+
+GetLastAttemptTimestamp returns the LastAttemptTimestamp field if non-nil, zero value otherwise.
+
+### GetLastAttemptTimestampOk
+
+`func (o *BTObjectWorkflowInfo) GetLastAttemptTimestampOk() (*JSONTime, bool)`
+
+GetLastAttemptTimestampOk returns a tuple with the LastAttemptTimestamp field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastAttemptTimestamp
+
+`func (o *BTObjectWorkflowInfo) SetLastAttemptTimestamp(v JSONTime)`
+
+SetLastAttemptTimestamp sets LastAttemptTimestamp field to given value.
+
+### HasLastAttemptTimestamp
+
+`func (o *BTObjectWorkflowInfo) HasLastAttemptTimestamp() bool`
+
+HasLastAttemptTimestamp returns a boolean if a field has been set.
+
+### GetLastEncounteredErrorMessage
+
+`func (o *BTObjectWorkflowInfo) GetLastEncounteredErrorMessage() string`
+
+GetLastEncounteredErrorMessage returns the LastEncounteredErrorMessage field if non-nil, zero value otherwise.
+
+### GetLastEncounteredErrorMessageOk
+
+`func (o *BTObjectWorkflowInfo) GetLastEncounteredErrorMessageOk() (*string, bool)`
+
+GetLastEncounteredErrorMessageOk returns a tuple with the LastEncounteredErrorMessage field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastEncounteredErrorMessage
+
+`func (o *BTObjectWorkflowInfo) SetLastEncounteredErrorMessage(v string)`
+
+SetLastEncounteredErrorMessage sets LastEncounteredErrorMessage field to given value.
+
+### HasLastEncounteredErrorMessage
+
+`func (o *BTObjectWorkflowInfo) HasLastEncounteredErrorMessage() bool`
+
+HasLastEncounteredErrorMessage returns a boolean if a field has been set.
 
 ### GetMetadataState
 

@@ -35,6 +35,7 @@ const (
 	BTApiVersionV12ValidateElementTypeForTranslations           BTApiVersion = "V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"
 	BTApiVersionV13SourceTargetDocumentVersionsToMove           BTApiVersion = "V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"
 	BTApiVersionV14FixReferenceType                             BTApiVersion = "V14_FIX_REFERENCE_TYPE"
+	BTApiVersionV15AddSketchCheck                               BTApiVersion = "V15_ADD_SKETCH_CHECK"
 )
 
 // All allowed values of BTApiVersion enum
@@ -54,6 +55,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS",
 	"V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE",
 	"V14_FIX_REFERENCE_TYPE",
+	"V15_ADD_SKETCH_CHECK",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

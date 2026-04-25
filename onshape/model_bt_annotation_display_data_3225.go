@@ -67,6 +67,106 @@ func NewBTAnnotationDisplayData3225WithDefaults() *BTAnnotationDisplayData3225 {
 	return &this
 }
 
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetAllReferences() []string {
+	type getResult interface {
+		GetAllReferences() []string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferences()
+	} else {
+		var de []string
+		return de
+	}
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetAllReferencesOk() ([]string, bool) {
+	type getResult interface {
+		GetAllReferencesOk() ([]string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasAllReferences() bool {
+	type getResult interface {
+		HasAllReferences() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferences()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTAnnotationDisplayData3225) SetAllReferences(v []string) {
+	type getResult interface {
+		SetAllReferences(v []string)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferences(v)
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetAllReferencesPopulated() bool {
+	type getResult interface {
+		GetAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulated()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetAllReferencesPopulatedOk() (*bool, bool) {
+	type getResult interface {
+		GetAllReferencesPopulatedOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAllReferencesPopulatedOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasAllReferencesPopulated() bool {
+	type getResult interface {
+		HasAllReferencesPopulated() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAllReferencesPopulated()
+	} else {
+		return false
+	}
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTAnnotationDisplayData3225) SetAllReferencesPopulated(v bool) {
+	type getResult interface {
+		SetAllReferencesPopulated(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetAllReferencesPopulated(v)
+}
+
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetAnnotationId() string {
 	type getResult interface {
@@ -767,6 +867,56 @@ func (o *BTAnnotationDisplayData3225) SetMainPartId(v string) {
 	o.GetActualInstance().(getResult).SetMainPartId(v)
 }
 
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetParentCharacteristicId() string {
+	type getResult interface {
+		GetParentCharacteristicId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentCharacteristicId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetParentCharacteristicIdOk() (*string, bool) {
+	type getResult interface {
+		GetParentCharacteristicIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetParentCharacteristicIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasParentCharacteristicId() bool {
+	type getResult interface {
+		HasParentCharacteristicId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasParentCharacteristicId()
+	} else {
+		return false
+	}
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *BTAnnotationDisplayData3225) SetParentCharacteristicId(v string) {
+	type getResult interface {
+		SetParentCharacteristicId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetParentCharacteristicId(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTAnnotationDisplayData3225) UnmarshalJSON(data []byte) error {
 	var err error
@@ -927,21 +1077,24 @@ func (v *NullableBTAnnotationDisplayData3225) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTAnnotationDisplayData3225 struct {
-	AnnotationId    *string                `json:"annotationId,omitempty"`
-	AnnotationPlane *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
-	BasePlane       *BTCoordinateSystem387 `json:"basePlane,omitempty"`
+	AllReferences          []string               `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                  `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
+	BasePlane              *BTCoordinateSystem387 `json:"basePlane,omitempty"`
 	// Type of JSON object.
-	BtType               *string          `json:"btType,omitempty"`
-	CharacteristicId     *string          `json:"characteristicId,omitempty"`
-	DeterministicId      *string          `json:"deterministicId,omitempty"`
-	DxdySegments         []BTVector2d1812 `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane *bool            `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion           *bool            `json:"isDeletion,omitempty"`
-	IsDerived            *bool            `json:"isDerived,omitempty"`
-	MainConstraintId     *string          `json:"mainConstraintId,omitempty"`
-	MainFeatureId        *string          `json:"mainFeatureId,omitempty"`
-	MainParameterId      *string          `json:"mainParameterId,omitempty"`
-	MainPartId           *string          `json:"mainPartId,omitempty"`
+	BtType                 *string          `json:"btType,omitempty"`
+	CharacteristicId       *string          `json:"characteristicId,omitempty"`
+	DeterministicId        *string          `json:"deterministicId,omitempty"`
+	DxdySegments           []BTVector2d1812 `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane   *bool            `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion             *bool            `json:"isDeletion,omitempty"`
+	IsDerived              *bool            `json:"isDerived,omitempty"`
+	MainConstraintId       *string          `json:"mainConstraintId,omitempty"`
+	MainFeatureId          *string          `json:"mainFeatureId,omitempty"`
+	MainParameterId        *string          `json:"mainParameterId,omitempty"`
+	MainPartId             *string          `json:"mainPartId,omitempty"`
+	ParentCharacteristicId *string          `json:"parentCharacteristicId,omitempty"`
 }
 
 // Newbase_BTAnnotationDisplayData3225 instantiates a new base_BTAnnotationDisplayData3225 object
@@ -959,6 +1112,70 @@ func Newbase_BTAnnotationDisplayData3225() *base_BTAnnotationDisplayData3225 {
 func Newbase_BTAnnotationDisplayData3225WithDefaults() *base_BTAnnotationDisplayData3225 {
 	this := base_BTAnnotationDisplayData3225{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *base_BTAnnotationDisplayData3225) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *base_BTAnnotationDisplayData3225) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
@@ -1409,8 +1626,46 @@ func (o *base_BTAnnotationDisplayData3225) SetMainPartId(v string) {
 	o.MainPartId = &v
 }
 
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetParentCharacteristicId() string {
+	if o == nil || o.ParentCharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentCharacteristicId
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetParentCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.ParentCharacteristicId == nil {
+		return nil, false
+	}
+	return o.ParentCharacteristicId, true
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasParentCharacteristicId() bool {
+	if o != nil && o.ParentCharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *base_BTAnnotationDisplayData3225) SetParentCharacteristicId(v string) {
+	o.ParentCharacteristicId = &v
+}
+
 func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
+	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
 	}
@@ -1452,6 +1707,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.MainPartId != nil {
 		toSerialize["mainPartId"] = o.MainPartId
+	}
+	if o.ParentCharacteristicId != nil {
+		toSerialize["parentCharacteristicId"] = o.ParentCharacteristicId
 	}
 	return json.Marshal(toSerialize)
 }

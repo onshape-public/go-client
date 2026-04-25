@@ -16,16 +16,17 @@ import (
 
 // BTReleasePackageInfo struct for BTReleasePackageInfo
 type BTReleasePackageInfo struct {
-	AddAllDrawingsActive *bool                   `json:"addAllDrawingsActive,omitempty"`
-	ChangeOrderId        *string                 `json:"changeOrderId,omitempty"`
-	ColumnNames          *map[string]string      `json:"columnNames,omitempty"`
-	Comments             []BTCommentInfo         `json:"comments,omitempty"`
-	CompanyId            *string                 `json:"companyId,omitempty"`
-	CreatedAt            *JSONTime               `json:"createdAt,omitempty"`
-	CreatedBy            *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
-	Description          *string                 `json:"description,omitempty"`
-	Detailed             *bool                   `json:"detailed,omitempty"`
-	DocumentId           *string                 `json:"documentId,omitempty"`
+	AddAllDrawingsActive       *bool                   `json:"addAllDrawingsActive,omitempty"`
+	ChangeOrderId              *string                 `json:"changeOrderId,omitempty"`
+	ColumnNames                *map[string]string      `json:"columnNames,omitempty"`
+	Comments                   []BTCommentInfo         `json:"comments,omitempty"`
+	CompanyId                  *string                 `json:"companyId,omitempty"`
+	CreatedAt                  *JSONTime               `json:"createdAt,omitempty"`
+	CreatedBy                  *BTUserBasicSummaryInfo `json:"createdBy,omitempty"`
+	Description                *string                 `json:"description,omitempty"`
+	Detailed                   *bool                   `json:"detailed,omitempty"`
+	DocumentId                 *string                 `json:"documentId,omitempty"`
+	HasRevertedToRevisionItems *bool                   `json:"hasRevertedToRevisionItems,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -391,6 +392,38 @@ func (o *BTReleasePackageInfo) HasDocumentId() bool {
 // SetDocumentId gets a reference to the given string and assigns it to the DocumentId field.
 func (o *BTReleasePackageInfo) SetDocumentId(v string) {
 	o.DocumentId = &v
+}
+
+// GetHasRevertedToRevisionItems returns the HasRevertedToRevisionItems field value if set, zero value otherwise.
+func (o *BTReleasePackageInfo) GetHasRevertedToRevisionItems() bool {
+	if o == nil || o.HasRevertedToRevisionItems == nil {
+		var ret bool
+		return ret
+	}
+	return *o.HasRevertedToRevisionItems
+}
+
+// GetHasRevertedToRevisionItemsOk returns a tuple with the HasRevertedToRevisionItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageInfo) GetHasRevertedToRevisionItemsOk() (*bool, bool) {
+	if o == nil || o.HasRevertedToRevisionItems == nil {
+		return nil, false
+	}
+	return o.HasRevertedToRevisionItems, true
+}
+
+// HasHasRevertedToRevisionItems returns a boolean if a field has been set.
+func (o *BTReleasePackageInfo) HasHasRevertedToRevisionItems() bool {
+	if o != nil && o.HasRevertedToRevisionItems != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetHasRevertedToRevisionItems gets a reference to the given bool and assigns it to the HasRevertedToRevisionItems field.
+func (o *BTReleasePackageInfo) SetHasRevertedToRevisionItems(v bool) {
+	o.HasRevertedToRevisionItems = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -1160,6 +1193,9 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
+	}
+	if o.HasRevertedToRevisionItems != nil {
+		toSerialize["hasRevertedToRevisionItems"] = o.HasRevertedToRevisionItems
 	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href

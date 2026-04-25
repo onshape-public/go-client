@@ -33,6 +33,8 @@
 
 * `BTApiVersionV14FixReferenceType` (value: `"V14_FIX_REFERENCE_TYPE"`)
 
+* `BTApiVersionV15AddSketchCheck` (value: `"V15_ADD_SKETCH_CHECK"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

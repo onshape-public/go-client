@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ConstraintId** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **CrossHighlightDataIfAny** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
+**DimensionType** | Pointer to [**GBTFeatureDimensionType**](GBTFeatureDimensionType.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **HasDefaultTolerances** | Pointer to **bool** |  | [optional] 
 **HoleCalloutId** | Pointer to **string** |  | [optional] 
@@ -212,6 +213,31 @@ SetCrossHighlightDataIfAny sets CrossHighlightDataIfAny field to given value.
 `func (o *BTInspectionTableRowMetadata2485) HasCrossHighlightDataIfAny() bool`
 
 HasCrossHighlightDataIfAny returns a boolean if a field has been set.
+
+### GetDimensionType
+
+`func (o *BTInspectionTableRowMetadata2485) GetDimensionType() GBTFeatureDimensionType`
+
+GetDimensionType returns the DimensionType field if non-nil, zero value otherwise.
+
+### GetDimensionTypeOk
+
+`func (o *BTInspectionTableRowMetadata2485) GetDimensionTypeOk() (*GBTFeatureDimensionType, bool)`
+
+GetDimensionTypeOk returns a tuple with the DimensionType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDimensionType
+
+`func (o *BTInspectionTableRowMetadata2485) SetDimensionType(v GBTFeatureDimensionType)`
+
+SetDimensionType sets DimensionType field to given value.
+
+### HasDimensionType
+
+`func (o *BTInspectionTableRowMetadata2485) HasDimensionType() bool`
+
+HasDimensionType returns a boolean if a field has been set.
 
 ### GetFeatureId
 

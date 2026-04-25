@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AllReferences** | Pointer to **[]string** |  | [optional] 
+**AllReferencesPopulated** | Pointer to **bool** |  | [optional] 
 **AnnotationId** | Pointer to **string** |  | [optional] 
 **AnnotationPlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **BasePlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
@@ -18,6 +20,7 @@ Name | Type | Description | Notes
 **MainFeatureId** | Pointer to **string** |  | [optional] 
 **MainParameterId** | Pointer to **string** |  | [optional] 
 **MainPartId** | Pointer to **string** |  | [optional] 
+**ParentCharacteristicId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -37,6 +40,56 @@ will change when the set of required properties is changed
 NewBTAnnotationDisplayData3225WithDefaults instantiates a new BTAnnotationDisplayData3225 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAllReferences
+
+`func (o *BTAnnotationDisplayData3225) GetAllReferences() []string`
+
+GetAllReferences returns the AllReferences field if non-nil, zero value otherwise.
+
+### GetAllReferencesOk
+
+`func (o *BTAnnotationDisplayData3225) GetAllReferencesOk() (*[]string, bool)`
+
+GetAllReferencesOk returns a tuple with the AllReferences field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllReferences
+
+`func (o *BTAnnotationDisplayData3225) SetAllReferences(v []string)`
+
+SetAllReferences sets AllReferences field to given value.
+
+### HasAllReferences
+
+`func (o *BTAnnotationDisplayData3225) HasAllReferences() bool`
+
+HasAllReferences returns a boolean if a field has been set.
+
+### GetAllReferencesPopulated
+
+`func (o *BTAnnotationDisplayData3225) GetAllReferencesPopulated() bool`
+
+GetAllReferencesPopulated returns the AllReferencesPopulated field if non-nil, zero value otherwise.
+
+### GetAllReferencesPopulatedOk
+
+`func (o *BTAnnotationDisplayData3225) GetAllReferencesPopulatedOk() (*bool, bool)`
+
+GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllReferencesPopulated
+
+`func (o *BTAnnotationDisplayData3225) SetAllReferencesPopulated(v bool)`
+
+SetAllReferencesPopulated sets AllReferencesPopulated field to given value.
+
+### HasAllReferencesPopulated
+
+`func (o *BTAnnotationDisplayData3225) HasAllReferencesPopulated() bool`
+
+HasAllReferencesPopulated returns a boolean if a field has been set.
 
 ### GetAnnotationId
 
@@ -387,6 +440,31 @@ SetMainPartId sets MainPartId field to given value.
 `func (o *BTAnnotationDisplayData3225) HasMainPartId() bool`
 
 HasMainPartId returns a boolean if a field has been set.
+
+### GetParentCharacteristicId
+
+`func (o *BTAnnotationDisplayData3225) GetParentCharacteristicId() string`
+
+GetParentCharacteristicId returns the ParentCharacteristicId field if non-nil, zero value otherwise.
+
+### GetParentCharacteristicIdOk
+
+`func (o *BTAnnotationDisplayData3225) GetParentCharacteristicIdOk() (*string, bool)`
+
+GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParentCharacteristicId
+
+`func (o *BTAnnotationDisplayData3225) SetParentCharacteristicId(v string)`
+
+SetParentCharacteristicId sets ParentCharacteristicId field to given value.
+
+### HasParentCharacteristicId
+
+`func (o *BTAnnotationDisplayData3225) HasParentCharacteristicId() bool`
+
+HasParentCharacteristicId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

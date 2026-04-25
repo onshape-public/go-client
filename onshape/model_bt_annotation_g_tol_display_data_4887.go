@@ -17,23 +17,26 @@ import (
 // BTAnnotationGTolDisplayData4887 struct for BTAnnotationGTolDisplayData4887
 type BTAnnotationGTolDisplayData4887 struct {
 	BTAnnotationDisplayData3225
-	AnnotationId         *string                              `json:"annotationId,omitempty"`
-	AnnotationPlane      *BTCoordinateSystem387               `json:"annotationPlane,omitempty"`
-	BasePlane            *BTCoordinateSystem387               `json:"basePlane,omitempty"`
-	BtType               *string                              `json:"btType,omitempty"`
-	CharacteristicId     *string                              `json:"characteristicId,omitempty"`
-	DeterministicId      *string                              `json:"deterministicId,omitempty"`
-	DxdySegments         []BTVector2d1812                     `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane *bool                                `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion           *bool                                `json:"isDeletion,omitempty"`
-	IsDerived            *bool                                `json:"isDerived,omitempty"`
-	MainConstraintId     *string                              `json:"mainConstraintId,omitempty"`
-	MainFeatureId        *string                              `json:"mainFeatureId,omitempty"`
-	MainParameterId      *string                              `json:"mainParameterId,omitempty"`
-	MainPartId           *string                              `json:"mainPartId,omitempty"`
-	Lower                *string                              `json:"lower,omitempty"`
-	Rows                 []BTAnnotationGTolRowDisplayData4397 `json:"rows,omitempty"`
-	Upper                *string                              `json:"upper,omitempty"`
+	AllReferences          []string                             `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                                `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                              `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387               `json:"annotationPlane,omitempty"`
+	BasePlane              *BTCoordinateSystem387               `json:"basePlane,omitempty"`
+	BtType                 *string                              `json:"btType,omitempty"`
+	CharacteristicId       *string                              `json:"characteristicId,omitempty"`
+	DeterministicId        *string                              `json:"deterministicId,omitempty"`
+	DxdySegments           []BTVector2d1812                     `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane   *bool                                `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion             *bool                                `json:"isDeletion,omitempty"`
+	IsDerived              *bool                                `json:"isDerived,omitempty"`
+	MainConstraintId       *string                              `json:"mainConstraintId,omitempty"`
+	MainFeatureId          *string                              `json:"mainFeatureId,omitempty"`
+	MainParameterId        *string                              `json:"mainParameterId,omitempty"`
+	MainPartId             *string                              `json:"mainPartId,omitempty"`
+	ParentCharacteristicId *string                              `json:"parentCharacteristicId,omitempty"`
+	Lower                  *string                              `json:"lower,omitempty"`
+	Rows                   []BTAnnotationGTolRowDisplayData4397 `json:"rows,omitempty"`
+	Upper                  *string                              `json:"upper,omitempty"`
 }
 
 // NewBTAnnotationGTolDisplayData4887 instantiates a new BTAnnotationGTolDisplayData4887 object
@@ -51,6 +54,70 @@ func NewBTAnnotationGTolDisplayData4887() *BTAnnotationGTolDisplayData4887 {
 func NewBTAnnotationGTolDisplayData4887WithDefaults() *BTAnnotationGTolDisplayData4887 {
 	this := BTAnnotationGTolDisplayData4887{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTAnnotationGTolDisplayData4887) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTAnnotationGTolDisplayData4887) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
@@ -501,6 +568,38 @@ func (o *BTAnnotationGTolDisplayData4887) SetMainPartId(v string) {
 	o.MainPartId = &v
 }
 
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *BTAnnotationGTolDisplayData4887) GetParentCharacteristicId() string {
+	if o == nil || o.ParentCharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentCharacteristicId
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationGTolDisplayData4887) GetParentCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.ParentCharacteristicId == nil {
+		return nil, false
+	}
+	return o.ParentCharacteristicId, true
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *BTAnnotationGTolDisplayData4887) HasParentCharacteristicId() bool {
+	if o != nil && o.ParentCharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *BTAnnotationGTolDisplayData4887) SetParentCharacteristicId(v string) {
+	o.ParentCharacteristicId = &v
+}
+
 // GetLower returns the Lower field value if set, zero value otherwise.
 func (o *BTAnnotationGTolDisplayData4887) GetLower() string {
 	if o == nil || o.Lower == nil {
@@ -607,6 +706,12 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
 	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
+	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
 	}
@@ -648,6 +753,9 @@ func (o BTAnnotationGTolDisplayData4887) MarshalJSON() ([]byte, error) {
 	}
 	if o.MainPartId != nil {
 		toSerialize["mainPartId"] = o.MainPartId
+	}
+	if o.ParentCharacteristicId != nil {
+		toSerialize["parentCharacteristicId"] = o.ParentCharacteristicId
 	}
 	if o.Lower != nil {
 		toSerialize["lower"] = o.Lower

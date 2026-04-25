@@ -7,6 +7,8 @@
 
 * `GBTUrdfMeshFormatGltf` (value: `"GLTF"`)
 
+* `GBTUrdfMeshFormatObj` (value: `"OBJ"`)
+
 * `GBTUrdfMeshFormatUnknown` (value: `"UNKNOWN"`)
 
 

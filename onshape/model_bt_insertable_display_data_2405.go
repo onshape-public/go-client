@@ -97,6 +97,56 @@ func (o *BTInsertableDisplayData2405) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetBuffers returns the Buffers field value if set, zero value otherwise.
+func (o *BTInsertableDisplayData2405) GetBuffers() []BTGraphicsBuffer2668 {
+	type getResult interface {
+		GetBuffers() []BTGraphicsBuffer2668
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBuffers()
+	} else {
+		var de []BTGraphicsBuffer2668
+		return de
+	}
+}
+
+// GetBuffersOk returns a tuple with the Buffers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableDisplayData2405) GetBuffersOk() ([]BTGraphicsBuffer2668, bool) {
+	type getResult interface {
+		GetBuffersOk() ([]BTGraphicsBuffer2668, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetBuffersOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasBuffers returns a boolean if a field has been set.
+func (o *BTInsertableDisplayData2405) HasBuffers() bool {
+	type getResult interface {
+		HasBuffers() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasBuffers()
+	} else {
+		return false
+	}
+}
+
+// SetBuffers gets a reference to the given []BTGraphicsBuffer2668 and assigns it to the Buffers field.
+func (o *BTInsertableDisplayData2405) SetBuffers(v []BTGraphicsBuffer2668) {
+	type getResult interface {
+		SetBuffers(v []BTGraphicsBuffer2668)
+	}
+
+	o.GetActualInstance().(getResult).SetBuffers(v)
+}
+
 // GetFullElementId returns the FullElementId field value if set, zero value otherwise.
 func (o *BTInsertableDisplayData2405) GetFullElementId() BTFullElementId756 {
 	type getResult interface {
@@ -553,6 +603,7 @@ func (v *NullableBTInsertableDisplayData2405) UnmarshalJSON(src []byte) error {
 type base_BTInsertableDisplayData2405 struct {
 	// Type of JSON object.
 	BtType                   *string                                     `json:"btType,omitempty"`
+	Buffers                  []BTGraphicsBuffer2668                      `json:"buffers,omitempty"`
 	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
 	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
 	Id                       *string                                     `json:"id,omitempty"`
@@ -609,6 +660,38 @@ func (o *base_BTInsertableDisplayData2405) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTInsertableDisplayData2405) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetBuffers returns the Buffers field value if set, zero value otherwise.
+func (o *base_BTInsertableDisplayData2405) GetBuffers() []BTGraphicsBuffer2668 {
+	if o == nil || o.Buffers == nil {
+		var ret []BTGraphicsBuffer2668
+		return ret
+	}
+	return o.Buffers
+}
+
+// GetBuffersOk returns a tuple with the Buffers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInsertableDisplayData2405) GetBuffersOk() ([]BTGraphicsBuffer2668, bool) {
+	if o == nil || o.Buffers == nil {
+		return nil, false
+	}
+	return o.Buffers, true
+}
+
+// HasBuffers returns a boolean if a field has been set.
+func (o *base_BTInsertableDisplayData2405) HasBuffers() bool {
+	if o != nil && o.Buffers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBuffers gets a reference to the given []BTGraphicsBuffer2668 and assigns it to the Buffers field.
+func (o *base_BTInsertableDisplayData2405) SetBuffers(v []BTGraphicsBuffer2668) {
+	o.Buffers = v
 }
 
 // GetFullElementId returns the FullElementId field value if set, zero value otherwise.
@@ -839,6 +922,9 @@ func (o base_BTInsertableDisplayData2405) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.Buffers != nil {
+		toSerialize["buffers"] = o.Buffers
 	}
 	if o.FullElementId != nil {
 		toSerialize["fullElementId"] = o.FullElementId

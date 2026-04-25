@@ -17,16 +17,17 @@ import (
 // BTOccurrenceData75 struct for BTOccurrenceData75
 type BTOccurrenceData75 struct {
 	// Type of JSON object.
-	BtType                          *string                                `json:"btType,omitempty"`
-	FeatureData                     *map[string]BTFeatureOccurrenceData775 `json:"featureData,omitempty"`
-	ForceHighestQualityTessellation *bool                                  `json:"forceHighestQualityTessellation,omitempty"`
-	Hidden                          *bool                                  `json:"hidden,omitempty"`
-	IsFixed                         *bool                                  `json:"isFixed,omitempty"`
-	IsHidden                        *bool                                  `json:"isHidden,omitempty"`
-	LockInfo                        *BTLockedSubAssembly4590               `json:"lockInfo,omitempty"`
-	NodeId                          *string                                `json:"nodeId,omitempty"`
-	Occurrence                      *BTOccurrence74                        `json:"occurrence,omitempty"`
-	Transform                       *BTBSMatrix386                         `json:"transform,omitempty"`
+	BtType                           *string                                `json:"btType,omitempty"`
+	FeatureData                      *map[string]BTFeatureOccurrenceData775 `json:"featureData,omitempty"`
+	ForceHighestQualityTessellation  *bool                                  `json:"forceHighestQualityTessellation,omitempty"`
+	Hidden                           *bool                                  `json:"hidden,omitempty"`
+	IsFixed                          *bool                                  `json:"isFixed,omitempty"`
+	IsHidden                         *bool                                  `json:"isHidden,omitempty"`
+	LockInfo                         *BTLockedSubAssembly4590               `json:"lockInfo,omitempty"`
+	NodeId                           *string                                `json:"nodeId,omitempty"`
+	Occurrence                       *BTOccurrence74                        `json:"occurrence,omitempty"`
+	OccurrenceAndDeterministicNodeId *BTOccurrenceData75                    `json:"occurrenceAndDeterministicNodeId,omitempty"`
+	Transform                        *BTBSMatrix386                         `json:"transform,omitempty"`
 }
 
 // NewBTOccurrenceData75 instantiates a new BTOccurrenceData75 object
@@ -334,6 +335,38 @@ func (o *BTOccurrenceData75) SetOccurrence(v BTOccurrence74) {
 	o.Occurrence = &v
 }
 
+// GetOccurrenceAndDeterministicNodeId returns the OccurrenceAndDeterministicNodeId field value if set, zero value otherwise.
+func (o *BTOccurrenceData75) GetOccurrenceAndDeterministicNodeId() BTOccurrenceData75 {
+	if o == nil || o.OccurrenceAndDeterministicNodeId == nil {
+		var ret BTOccurrenceData75
+		return ret
+	}
+	return *o.OccurrenceAndDeterministicNodeId
+}
+
+// GetOccurrenceAndDeterministicNodeIdOk returns a tuple with the OccurrenceAndDeterministicNodeId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOccurrenceData75) GetOccurrenceAndDeterministicNodeIdOk() (*BTOccurrenceData75, bool) {
+	if o == nil || o.OccurrenceAndDeterministicNodeId == nil {
+		return nil, false
+	}
+	return o.OccurrenceAndDeterministicNodeId, true
+}
+
+// HasOccurrenceAndDeterministicNodeId returns a boolean if a field has been set.
+func (o *BTOccurrenceData75) HasOccurrenceAndDeterministicNodeId() bool {
+	if o != nil && o.OccurrenceAndDeterministicNodeId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOccurrenceAndDeterministicNodeId gets a reference to the given BTOccurrenceData75 and assigns it to the OccurrenceAndDeterministicNodeId field.
+func (o *BTOccurrenceData75) SetOccurrenceAndDeterministicNodeId(v BTOccurrenceData75) {
+	o.OccurrenceAndDeterministicNodeId = &v
+}
+
 // GetTransform returns the Transform field value if set, zero value otherwise.
 func (o *BTOccurrenceData75) GetTransform() BTBSMatrix386 {
 	if o == nil || o.Transform == nil {
@@ -394,6 +427,9 @@ func (o BTOccurrenceData75) MarshalJSON() ([]byte, error) {
 	}
 	if o.Occurrence != nil {
 		toSerialize["occurrence"] = o.Occurrence
+	}
+	if o.OccurrenceAndDeterministicNodeId != nil {
+		toSerialize["occurrenceAndDeterministicNodeId"] = o.OccurrenceAndDeterministicNodeId
 	}
 	if o.Transform != nil {
 		toSerialize["transform"] = o.Transform

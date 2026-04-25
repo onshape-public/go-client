@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CompanyId** | Pointer to **string** | Company admins can register webhooks to listen to all company events. | [optional] 
+**CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **CreatedBy** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsTransient** | Pointer to **bool** | Transient webhooks are automatically cleaned up after a period of inactivity. | [optional] [default to true]
+**ModifiedAt** | Pointer to **JSONTime** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **Options** | Pointer to [**BTWebhookOptions**](BTWebhookOptions.md) |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
@@ -65,6 +67,31 @@ SetCompanyId sets CompanyId field to given value.
 `func (o *BTWebhookInfo) HasCompanyId() bool`
 
 HasCompanyId returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *BTWebhookInfo) GetCreatedAt() JSONTime`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *BTWebhookInfo) GetCreatedAtOk() (*JSONTime, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *BTWebhookInfo) SetCreatedAt(v JSONTime)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *BTWebhookInfo) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
 
 ### GetCreatedBy
 
@@ -340,6 +367,31 @@ SetIsTransient sets IsTransient field to given value.
 `func (o *BTWebhookInfo) HasIsTransient() bool`
 
 HasIsTransient returns a boolean if a field has been set.
+
+### GetModifiedAt
+
+`func (o *BTWebhookInfo) GetModifiedAt() JSONTime`
+
+GetModifiedAt returns the ModifiedAt field if non-nil, zero value otherwise.
+
+### GetModifiedAtOk
+
+`func (o *BTWebhookInfo) GetModifiedAtOk() (*JSONTime, bool)`
+
+GetModifiedAtOk returns a tuple with the ModifiedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedAt
+
+`func (o *BTWebhookInfo) SetModifiedAt(v JSONTime)`
+
+SetModifiedAt sets ModifiedAt field to given value.
+
+### HasModifiedAt
+
+`func (o *BTWebhookInfo) HasModifiedAt() bool`
+
+HasModifiedAt returns a boolean if a field has been set.
 
 ### GetName
 

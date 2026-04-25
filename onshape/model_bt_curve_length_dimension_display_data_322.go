@@ -17,31 +17,33 @@ import (
 // BTCurveLengthDimensionDisplayData322 struct for BTCurveLengthDimensionDisplayData322
 type BTCurveLengthDimensionDisplayData322 struct {
 	BTDimensionDisplayData323
-	BtType                *string                `json:"btType,omitempty"`
-	CharacteristicId      *string                `json:"characteristicId,omitempty"`
-	CoordinateSystem      *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
-	FeatureId             *string                `json:"featureId,omitempty"`
-	FitClass              *string                `json:"fitClass,omitempty"`
-	HasMaximumLimit_      *bool                  `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_      *bool                  `json:"hasMinimumLimit,omitempty"`
-	Id                    *string                `json:"id,omitempty"`
-	IsAnnotationDimension *bool                  `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat  *bool                  `json:"isAssociatedWithFlat,omitempty"`
-	IsDerived             *bool                  `json:"isDerived,omitempty"`
-	IsDriven              *bool                  `json:"isDriven,omitempty"`
-	IsOverDefined         *bool                  `json:"isOverDefined,omitempty"`
-	LowerTolerance        *float64               `json:"lowerTolerance,omitempty"`
-	MaximumLimit          *float64               `json:"maximumLimit,omitempty"`
-	MinimumLimit          *float64               `json:"minimumLimit,omitempty"`
-	ParameterId           *string                `json:"parameterId,omitempty"`
-	PartId                *string                `json:"partId,omitempty"`
-	PlaneMatrix           *BTBSMatrix386         `json:"planeMatrix,omitempty"`
-	Precision             *GBTTolerancePrecision `json:"precision,omitempty"`
-	ToleranceType         *GBTToleranceType      `json:"toleranceType,omitempty"`
-	UpperTolerance        *float64               `json:"upperTolerance,omitempty"`
-	Value                 *float64               `json:"value,omitempty"`
-	PositionX             *float64               `json:"positionX,omitempty"`
-	PositionY             *float64               `json:"positionY,omitempty"`
+	AllReferences          []string               `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                  `json:"allReferencesPopulated,omitempty"`
+	BtType                 *string                `json:"btType,omitempty"`
+	CharacteristicId       *string                `json:"characteristicId,omitempty"`
+	CoordinateSystem       *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
+	FeatureId              *string                `json:"featureId,omitempty"`
+	FitClass               *string                `json:"fitClass,omitempty"`
+	HasMaximumLimit_       *bool                  `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_       *bool                  `json:"hasMinimumLimit,omitempty"`
+	Id                     *string                `json:"id,omitempty"`
+	IsAnnotationDimension  *bool                  `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat   *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived              *bool                  `json:"isDerived,omitempty"`
+	IsDriven               *bool                  `json:"isDriven,omitempty"`
+	IsOverDefined          *bool                  `json:"isOverDefined,omitempty"`
+	LowerTolerance         *float64               `json:"lowerTolerance,omitempty"`
+	MaximumLimit           *float64               `json:"maximumLimit,omitempty"`
+	MinimumLimit           *float64               `json:"minimumLimit,omitempty"`
+	ParameterId            *string                `json:"parameterId,omitempty"`
+	PartId                 *string                `json:"partId,omitempty"`
+	PlaneMatrix            *BTBSMatrix386         `json:"planeMatrix,omitempty"`
+	Precision              *GBTTolerancePrecision `json:"precision,omitempty"`
+	ToleranceType          *GBTToleranceType      `json:"toleranceType,omitempty"`
+	UpperTolerance         *float64               `json:"upperTolerance,omitempty"`
+	Value                  *float64               `json:"value,omitempty"`
+	PositionX              *float64               `json:"positionX,omitempty"`
+	PositionY              *float64               `json:"positionY,omitempty"`
 }
 
 // NewBTCurveLengthDimensionDisplayData322 instantiates a new BTCurveLengthDimensionDisplayData322 object
@@ -59,6 +61,70 @@ func NewBTCurveLengthDimensionDisplayData322() *BTCurveLengthDimensionDisplayDat
 func NewBTCurveLengthDimensionDisplayData322WithDefaults() *BTCurveLengthDimensionDisplayData322 {
 	this := BTCurveLengthDimensionDisplayData322{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTCurveLengthDimensionDisplayData322) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveLengthDimensionDisplayData322) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTCurveLengthDimensionDisplayData322) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTCurveLengthDimensionDisplayData322) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTCurveLengthDimensionDisplayData322) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCurveLengthDimensionDisplayData322) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTCurveLengthDimensionDisplayData322) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTCurveLengthDimensionDisplayData322) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -870,6 +936,12 @@ func (o BTCurveLengthDimensionDisplayData322) MarshalJSON() ([]byte, error) {
 	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
 	if errBTDimensionDisplayData323 != nil {
 		return []byte{}, errBTDimensionDisplayData323
+	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType

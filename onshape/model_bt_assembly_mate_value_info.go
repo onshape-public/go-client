@@ -21,6 +21,8 @@ type BTAssemblyMateValueInfo struct {
 	JsonType  string  `json:"jsonType"`
 	// The name of the assembly mate feature.
 	MateName *string `json:"mateName,omitempty"`
+	// The path to the assembly owning this mate.
+	OwnerOccurrencePath []string `json:"ownerOccurrencePath,omitempty"`
 }
 
 // NewBTAssemblyMateValueInfo instantiates a new BTAssemblyMateValueInfo object
@@ -129,6 +131,38 @@ func (o *BTAssemblyMateValueInfo) SetMateName(v string) {
 	o.MateName = &v
 }
 
+// GetOwnerOccurrencePath returns the OwnerOccurrencePath field value if set, zero value otherwise.
+func (o *BTAssemblyMateValueInfo) GetOwnerOccurrencePath() []string {
+	if o == nil || o.OwnerOccurrencePath == nil {
+		var ret []string
+		return ret
+	}
+	return o.OwnerOccurrencePath
+}
+
+// GetOwnerOccurrencePathOk returns a tuple with the OwnerOccurrencePath field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyMateValueInfo) GetOwnerOccurrencePathOk() ([]string, bool) {
+	if o == nil || o.OwnerOccurrencePath == nil {
+		return nil, false
+	}
+	return o.OwnerOccurrencePath, true
+}
+
+// HasOwnerOccurrencePath returns a boolean if a field has been set.
+func (o *BTAssemblyMateValueInfo) HasOwnerOccurrencePath() bool {
+	if o != nil && o.OwnerOccurrencePath != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOwnerOccurrencePath gets a reference to the given []string and assigns it to the OwnerOccurrencePath field.
+func (o *BTAssemblyMateValueInfo) SetOwnerOccurrencePath(v []string) {
+	o.OwnerOccurrencePath = v
+}
+
 func (o BTAssemblyMateValueInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.FeatureId != nil {
@@ -139,6 +173,9 @@ func (o BTAssemblyMateValueInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.MateName != nil {
 		toSerialize["mateName"] = o.MateName
+	}
+	if o.OwnerOccurrencePath != nil {
+		toSerialize["ownerOccurrencePath"] = o.OwnerOccurrencePath
 	}
 	return json.Marshal(toSerialize)
 }

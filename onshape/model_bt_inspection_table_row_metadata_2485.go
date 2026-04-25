@@ -24,6 +24,7 @@ type BTInspectionTableRowMetadata2485 struct {
 	ChamferCalloutId        *string                        `json:"chamferCalloutId,omitempty"`
 	ConstraintId            *string                        `json:"constraintId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753 `json:"crossHighlightData,omitempty"`
+	DimensionType           *GBTFeatureDimensionType       `json:"dimensionType,omitempty"`
 	FeatureId               *string                        `json:"featureId,omitempty"`
 	HasDefaultTolerances    *bool                          `json:"hasDefaultTolerances,omitempty"`
 	HoleCalloutId           *string                        `json:"holeCalloutId,omitempty"`
@@ -272,6 +273,38 @@ func (o *BTInspectionTableRowMetadata2485) HasCrossHighlightData() bool {
 // SetCrossHighlightData gets a reference to the given BTTableCrossHighlightData1753 and assigns it to the CrossHighlightData field.
 func (o *BTInspectionTableRowMetadata2485) SetCrossHighlightData(v BTTableCrossHighlightData1753) {
 	o.CrossHighlightData = &v
+}
+
+// GetDimensionType returns the DimensionType field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetDimensionType() GBTFeatureDimensionType {
+	if o == nil || o.DimensionType == nil {
+		var ret GBTFeatureDimensionType
+		return ret
+	}
+	return *o.DimensionType
+}
+
+// GetDimensionTypeOk returns a tuple with the DimensionType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetDimensionTypeOk() (*GBTFeatureDimensionType, bool) {
+	if o == nil || o.DimensionType == nil {
+		return nil, false
+	}
+	return o.DimensionType, true
+}
+
+// HasDimensionType returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasDimensionType() bool {
+	if o != nil && o.DimensionType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDimensionType gets a reference to the given GBTFeatureDimensionType and assigns it to the DimensionType field.
+func (o *BTInspectionTableRowMetadata2485) SetDimensionType(v GBTFeatureDimensionType) {
+	o.DimensionType = &v
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
@@ -528,6 +561,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
+	}
+	if o.DimensionType != nil {
+		toSerialize["dimensionType"] = o.DimensionType
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId

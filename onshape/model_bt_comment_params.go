@@ -21,6 +21,7 @@ type BTCommentParams struct {
 	AssemblyFeature *string `json:"assemblyFeature,omitempty"`
 	// Assign the comment during creation. Comments cannot be reassigned during an update at this time.
 	Assignee              *string            `json:"assignee,omitempty"`
+	CalloutInstanceId     *string            `json:"calloutInstanceId,omitempty"`
 	Coordinates           *CoordinatesParams `json:"coordinates,omitempty"`
 	DimensionConstraintId *string            `json:"dimensionConstraintId,omitempty"`
 	DimensionFeatureId    *string            `json:"dimensionFeatureId,omitempty"`
@@ -184,6 +185,38 @@ func (o *BTCommentParams) HasAssignee() bool {
 // SetAssignee gets a reference to the given string and assigns it to the Assignee field.
 func (o *BTCommentParams) SetAssignee(v string) {
 	o.Assignee = &v
+}
+
+// GetCalloutInstanceId returns the CalloutInstanceId field value if set, zero value otherwise.
+func (o *BTCommentParams) GetCalloutInstanceId() string {
+	if o == nil || o.CalloutInstanceId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CalloutInstanceId
+}
+
+// GetCalloutInstanceIdOk returns a tuple with the CalloutInstanceId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentParams) GetCalloutInstanceIdOk() (*string, bool) {
+	if o == nil || o.CalloutInstanceId == nil {
+		return nil, false
+	}
+	return o.CalloutInstanceId, true
+}
+
+// HasCalloutInstanceId returns a boolean if a field has been set.
+func (o *BTCommentParams) HasCalloutInstanceId() bool {
+	if o != nil && o.CalloutInstanceId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCalloutInstanceId gets a reference to the given string and assigns it to the CalloutInstanceId field.
+func (o *BTCommentParams) SetCalloutInstanceId(v string) {
+	o.CalloutInstanceId = &v
 }
 
 // GetCoordinates returns the Coordinates field value if set, zero value otherwise.
@@ -775,6 +808,9 @@ func (o BTCommentParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.Assignee != nil {
 		toSerialize["assignee"] = o.Assignee
+	}
+	if o.CalloutInstanceId != nil {
+		toSerialize["calloutInstanceId"] = o.CalloutInstanceId
 	}
 	if o.Coordinates != nil {
 		toSerialize["coordinates"] = o.Coordinates

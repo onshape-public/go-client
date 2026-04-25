@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **LockInfo** | Pointer to [**BTLockedSubAssembly4590**](BTLockedSubAssembly4590.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
 **Occurrence** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
+**OccurrenceAndDeterministicNodeId** | Pointer to [**BTOccurrenceData75**](BTOccurrenceData75.md) |  | [optional] 
 **Transform** | Pointer to [**BTBSMatrix386**](BTBSMatrix386.md) |  | [optional] 
 
 ## Methods
@@ -258,6 +259,31 @@ SetOccurrence sets Occurrence field to given value.
 `func (o *BTOccurrenceData75) HasOccurrence() bool`
 
 HasOccurrence returns a boolean if a field has been set.
+
+### GetOccurrenceAndDeterministicNodeId
+
+`func (o *BTOccurrenceData75) GetOccurrenceAndDeterministicNodeId() BTOccurrenceData75`
+
+GetOccurrenceAndDeterministicNodeId returns the OccurrenceAndDeterministicNodeId field if non-nil, zero value otherwise.
+
+### GetOccurrenceAndDeterministicNodeIdOk
+
+`func (o *BTOccurrenceData75) GetOccurrenceAndDeterministicNodeIdOk() (*BTOccurrenceData75, bool)`
+
+GetOccurrenceAndDeterministicNodeIdOk returns a tuple with the OccurrenceAndDeterministicNodeId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOccurrenceAndDeterministicNodeId
+
+`func (o *BTOccurrenceData75) SetOccurrenceAndDeterministicNodeId(v BTOccurrenceData75)`
+
+SetOccurrenceAndDeterministicNodeId sets OccurrenceAndDeterministicNodeId field to given value.
+
+### HasOccurrenceAndDeterministicNodeId
+
+`func (o *BTOccurrenceData75) HasOccurrenceAndDeterministicNodeId() bool`
+
+HasOccurrenceAndDeterministicNodeId returns a boolean if a field has been set.
 
 ### GetTransform
 

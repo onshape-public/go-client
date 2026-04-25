@@ -17,39 +17,42 @@ import (
 // BTHoleCalloutDisplayData3452 struct for BTHoleCalloutDisplayData3452
 type BTHoleCalloutDisplayData3452 struct {
 	BTAnnotationDisplayData3225
-	AnnotationId         *string                         `json:"annotationId,omitempty"`
-	AnnotationPlane      *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
-	BasePlane            *BTCoordinateSystem387          `json:"basePlane,omitempty"`
-	BtType               *string                         `json:"btType,omitempty"`
-	CharacteristicId     *string                         `json:"characteristicId,omitempty"`
-	DeterministicId      *string                         `json:"deterministicId,omitempty"`
-	DxdySegments         []BTVector2d1812                `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane *bool                           `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion           *bool                           `json:"isDeletion,omitempty"`
-	IsDerived            *bool                           `json:"isDerived,omitempty"`
-	MainConstraintId     *string                         `json:"mainConstraintId,omitempty"`
-	MainFeatureId        *string                         `json:"mainFeatureId,omitempty"`
-	MainParameterId      *string                         `json:"mainParameterId,omitempty"`
-	MainPartId           *string                         `json:"mainPartId,omitempty"`
-	AllHoleFaces         []string                        `json:"allHoleFaces,omitempty"`
-	CounterboreDepth     *BTTolerantValueDisplayData3483 `json:"counterboreDepth,omitempty"`
-	CounterboreDiameter  *BTTolerantValueDisplayData3483 `json:"counterboreDiameter,omitempty"`
-	CountersinkAngle     *BTTolerantValueDisplayData3483 `json:"countersinkAngle,omitempty"`
-	CountersinkDiameter  *BTTolerantValueDisplayData3483 `json:"countersinkDiameter,omitempty"`
-	Depth                *BTTolerantValueDisplayData3483 `json:"depth,omitempty"`
-	Diameter             *BTTolerantValueDisplayData3483 `json:"diameter,omitempty"`
-	FeatureId            *string                         `json:"featureId,omitempty"`
-	HasDefaultTolerances *bool                           `json:"hasDefaultTolerances,omitempty"`
-	HoleType             *GBTHoleType                    `json:"holeType,omitempty"`
-	InstanceId           *string                         `json:"instanceId,omitempty"`
-	IsPipeTap            *bool                           `json:"isPipeTap,omitempty"`
-	IsTaperedPipeTap     *bool                           `json:"isTaperedPipeTap,omitempty"`
-	IsTapped             *bool                           `json:"isTapped,omitempty"`
-	LabelLocation        *BTVector2d1812                 `json:"labelLocation,omitempty"`
-	PartId               *string                         `json:"partId,omitempty"`
-	ReferenceRadius      *float64                        `json:"referenceRadius,omitempty"`
-	TapSize              *string                         `json:"tapSize,omitempty"`
-	TappedDepth          *BTTolerantValueDisplayData3483 `json:"tappedDepth,omitempty"`
+	AllReferences          []string                        `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                           `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                         `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387          `json:"annotationPlane,omitempty"`
+	BasePlane              *BTCoordinateSystem387          `json:"basePlane,omitempty"`
+	BtType                 *string                         `json:"btType,omitempty"`
+	CharacteristicId       *string                         `json:"characteristicId,omitempty"`
+	DeterministicId        *string                         `json:"deterministicId,omitempty"`
+	DxdySegments           []BTVector2d1812                `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane   *bool                           `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion             *bool                           `json:"isDeletion,omitempty"`
+	IsDerived              *bool                           `json:"isDerived,omitempty"`
+	MainConstraintId       *string                         `json:"mainConstraintId,omitempty"`
+	MainFeatureId          *string                         `json:"mainFeatureId,omitempty"`
+	MainParameterId        *string                         `json:"mainParameterId,omitempty"`
+	MainPartId             *string                         `json:"mainPartId,omitempty"`
+	ParentCharacteristicId *string                         `json:"parentCharacteristicId,omitempty"`
+	AllHoleFaces           []string                        `json:"allHoleFaces,omitempty"`
+	CounterboreDepth       *BTTolerantValueDisplayData3483 `json:"counterboreDepth,omitempty"`
+	CounterboreDiameter    *BTTolerantValueDisplayData3483 `json:"counterboreDiameter,omitempty"`
+	CountersinkAngle       *BTTolerantValueDisplayData3483 `json:"countersinkAngle,omitempty"`
+	CountersinkDiameter    *BTTolerantValueDisplayData3483 `json:"countersinkDiameter,omitempty"`
+	Depth                  *BTTolerantValueDisplayData3483 `json:"depth,omitempty"`
+	Diameter               *BTTolerantValueDisplayData3483 `json:"diameter,omitempty"`
+	FeatureId              *string                         `json:"featureId,omitempty"`
+	HasDefaultTolerances   *bool                           `json:"hasDefaultTolerances,omitempty"`
+	HoleType               *GBTHoleType                    `json:"holeType,omitempty"`
+	InstanceId             *string                         `json:"instanceId,omitempty"`
+	IsPipeTap              *bool                           `json:"isPipeTap,omitempty"`
+	IsTaperedPipeTap       *bool                           `json:"isTaperedPipeTap,omitempty"`
+	IsTapped               *bool                           `json:"isTapped,omitempty"`
+	LabelLocation          *BTVector2d1812                 `json:"labelLocation,omitempty"`
+	PartId                 *string                         `json:"partId,omitempty"`
+	ReferenceRadius        *float64                        `json:"referenceRadius,omitempty"`
+	TapSize                *string                         `json:"tapSize,omitempty"`
+	TappedDepth            *BTTolerantValueDisplayData3483 `json:"tappedDepth,omitempty"`
 }
 
 // NewBTHoleCalloutDisplayData3452 instantiates a new BTHoleCalloutDisplayData3452 object
@@ -67,6 +70,70 @@ func NewBTHoleCalloutDisplayData3452() *BTHoleCalloutDisplayData3452 {
 func NewBTHoleCalloutDisplayData3452WithDefaults() *BTHoleCalloutDisplayData3452 {
 	this := BTHoleCalloutDisplayData3452{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTHoleCalloutDisplayData3452) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTHoleCalloutDisplayData3452) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
@@ -515,6 +582,38 @@ func (o *BTHoleCalloutDisplayData3452) HasMainPartId() bool {
 // SetMainPartId gets a reference to the given string and assigns it to the MainPartId field.
 func (o *BTHoleCalloutDisplayData3452) SetMainPartId(v string) {
 	o.MainPartId = &v
+}
+
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *BTHoleCalloutDisplayData3452) GetParentCharacteristicId() string {
+	if o == nil || o.ParentCharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentCharacteristicId
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTHoleCalloutDisplayData3452) GetParentCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.ParentCharacteristicId == nil {
+		return nil, false
+	}
+	return o.ParentCharacteristicId, true
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *BTHoleCalloutDisplayData3452) HasParentCharacteristicId() bool {
+	if o != nil && o.ParentCharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *BTHoleCalloutDisplayData3452) SetParentCharacteristicId(v string) {
+	o.ParentCharacteristicId = &v
 }
 
 // GetAllHoleFaces returns the AllHoleFaces field value if set, zero value otherwise.
@@ -1135,6 +1234,12 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
 	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
+	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
 	}
@@ -1176,6 +1281,9 @@ func (o BTHoleCalloutDisplayData3452) MarshalJSON() ([]byte, error) {
 	}
 	if o.MainPartId != nil {
 		toSerialize["mainPartId"] = o.MainPartId
+	}
+	if o.ParentCharacteristicId != nil {
+		toSerialize["parentCharacteristicId"] = o.ParentCharacteristicId
 	}
 	if o.AllHoleFaces != nil {
 		toSerialize["allHoleFaces"] = o.AllHoleFaces

@@ -22,6 +22,7 @@ type GBTUrdfMeshFormat string
 const (
 	GBTUrdfMeshFormatStl     GBTUrdfMeshFormat = "STL"
 	GBTUrdfMeshFormatGltf    GBTUrdfMeshFormat = "GLTF"
+	GBTUrdfMeshFormatObj     GBTUrdfMeshFormat = "OBJ"
 	GBTUrdfMeshFormatUnknown GBTUrdfMeshFormat = "UNKNOWN"
 )
 
@@ -29,6 +30,7 @@ const (
 var AllowedGBTUrdfMeshFormatEnumValues = []GBTUrdfMeshFormat{
 	"STL",
 	"GLTF",
+	"OBJ",
 	"UNKNOWN",
 }
 

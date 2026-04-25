@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableBaseCrossHighlightData2609**](BTTableBaseCrossHighlightData2609.md) |  | [optional] 
-**Info** | Pointer to **string** |  | [optional] 
 **IsRecursiveImport** | Pointer to **bool** |  | [optional] 
 **IsRowEditable** | Pointer to **bool** |  | [optional] 
 **LastWritingFeatureNodeId** | Pointer to **string** |  | [optional] 
@@ -79,31 +78,6 @@ SetCrossHighlightData sets CrossHighlightData field to given value.
 `func (o *BTVariableTableRowMetadata3912AllOf) HasCrossHighlightData() bool`
 
 HasCrossHighlightData returns a boolean if a field has been set.
-
-### GetInfo
-
-`func (o *BTVariableTableRowMetadata3912AllOf) GetInfo() string`
-
-GetInfo returns the Info field if non-nil, zero value otherwise.
-
-### GetInfoOk
-
-`func (o *BTVariableTableRowMetadata3912AllOf) GetInfoOk() (*string, bool)`
-
-GetInfoOk returns a tuple with the Info field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInfo
-
-`func (o *BTVariableTableRowMetadata3912AllOf) SetInfo(v string)`
-
-SetInfo sets Info field to given value.
-
-### HasInfo
-
-`func (o *BTVariableTableRowMetadata3912AllOf) HasInfo() bool`
-
-HasInfo returns a boolean if a field has been set.
 
 ### GetIsRecursiveImport
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AiDescription** | Pointer to **string** | Document AI description. | [optional] 
 **Description** | Pointer to **string** | Document description. | [optional] 
 **Elements** | Pointer to [**[]BTDocumentElementCreationDescriptor**](BTDocumentElementCreationDescriptor.md) | List of element IDs to include in the document. | [optional] 
 **ForceExportRules** | Pointer to **bool** | &#x60;true&#x60; if the current user can toggle the Force Export Rule flag on a document. | [optional] 
@@ -40,31 +39,6 @@ will change when the set of required properties is changed
 NewBTDocumentParamsWithDefaults instantiates a new BTDocumentParams object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetAiDescription
-
-`func (o *BTDocumentParams) GetAiDescription() string`
-
-GetAiDescription returns the AiDescription field if non-nil, zero value otherwise.
-
-### GetAiDescriptionOk
-
-`func (o *BTDocumentParams) GetAiDescriptionOk() (*string, bool)`
-
-GetAiDescriptionOk returns a tuple with the AiDescription field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAiDescription
-
-`func (o *BTDocumentParams) SetAiDescription(v string)`
-
-SetAiDescription sets AiDescription field to given value.
-
-### HasAiDescription
-
-`func (o *BTDocumentParams) HasAiDescription() bool`
-
-HasAiDescription returns a boolean if a field has been set.
 
 ### GetDescription
 

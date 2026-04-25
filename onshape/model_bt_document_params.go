@@ -16,8 +16,6 @@ import (
 
 // BTDocumentParams Parameters for creating and updating documents.
 type BTDocumentParams struct {
-	// Document AI description.
-	AiDescription *string `json:"aiDescription,omitempty"`
 	// Document description.
 	Description *string `json:"description,omitempty"`
 	// List of element IDs to include in the document.
@@ -71,38 +69,6 @@ func NewBTDocumentParamsWithDefaults() *BTDocumentParams {
 	var ownerType int32 = 0
 	this.OwnerType = &ownerType
 	return &this
-}
-
-// GetAiDescription returns the AiDescription field value if set, zero value otherwise.
-func (o *BTDocumentParams) GetAiDescription() string {
-	if o == nil || o.AiDescription == nil {
-		var ret string
-		return ret
-	}
-	return *o.AiDescription
-}
-
-// GetAiDescriptionOk returns a tuple with the AiDescription field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentParams) GetAiDescriptionOk() (*string, bool) {
-	if o == nil || o.AiDescription == nil {
-		return nil, false
-	}
-	return o.AiDescription, true
-}
-
-// HasAiDescription returns a boolean if a field has been set.
-func (o *BTDocumentParams) HasAiDescription() bool {
-	if o != nil && o.AiDescription != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAiDescription gets a reference to the given string and assigns it to the AiDescription field.
-func (o *BTDocumentParams) SetAiDescription(v string) {
-	o.AiDescription = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -619,9 +585,6 @@ func (o *BTDocumentParams) SetTags(v []string) {
 
 func (o BTDocumentParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AiDescription != nil {
-		toSerialize["aiDescription"] = o.AiDescription
-	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
 	}

@@ -17,6 +17,8 @@ import (
 // BTRadialDistanceDimensionDisplayData2644 struct for BTRadialDistanceDimensionDisplayData2644
 type BTRadialDistanceDimensionDisplayData2644 struct {
 	BTDimensionDisplayData323
+	AllReferences              []string               `json:"allReferences,omitempty"`
+	AllReferencesPopulated     *bool                  `json:"allReferencesPopulated,omitempty"`
 	BtType                     *string                `json:"btType,omitempty"`
 	CharacteristicId           *string                `json:"characteristicId,omitempty"`
 	CoordinateSystem           *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
@@ -65,6 +67,70 @@ func NewBTRadialDistanceDimensionDisplayData2644() *BTRadialDistanceDimensionDis
 func NewBTRadialDistanceDimensionDisplayData2644WithDefaults() *BTRadialDistanceDimensionDisplayData2644 {
 	this := BTRadialDistanceDimensionDisplayData2644{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTRadialDistanceDimensionDisplayData2644) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTRadialDistanceDimensionDisplayData2644) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -1068,6 +1134,12 @@ func (o BTRadialDistanceDimensionDisplayData2644) MarshalJSON() ([]byte, error) 
 	errBTDimensionDisplayData323 = json.Unmarshal([]byte(serializedBTDimensionDisplayData323), &toSerialize)
 	if errBTDimensionDisplayData323 != nil {
 		return []byte{}, errBTDimensionDisplayData323
+	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType

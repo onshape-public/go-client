@@ -20,7 +20,6 @@ type BTVariableTableRowMetadata3912 struct {
 	BtType                   *string                            `json:"btType,omitempty"`
 	CrossHighlightDataIfAny  *BTTableBaseCrossHighlightData2609 `json:"crossHighlightDataIfAny,omitempty"`
 	CrossHighlightData       *BTTableBaseCrossHighlightData2609 `json:"crossHighlightData,omitempty"`
-	Info                     *string                            `json:"info,omitempty"`
 	IsRecursiveImport        *bool                              `json:"isRecursiveImport,omitempty"`
 	IsRowEditable            *bool                              `json:"isRowEditable,omitempty"`
 	LastWritingFeatureNodeId *string                            `json:"lastWritingFeatureNodeId,omitempty"`
@@ -139,38 +138,6 @@ func (o *BTVariableTableRowMetadata3912) SetCrossHighlightData(v BTTableBaseCros
 	o.CrossHighlightData = &v
 }
 
-// GetInfo returns the Info field value if set, zero value otherwise.
-func (o *BTVariableTableRowMetadata3912) GetInfo() string {
-	if o == nil || o.Info == nil {
-		var ret string
-		return ret
-	}
-	return *o.Info
-}
-
-// GetInfoOk returns a tuple with the Info field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTVariableTableRowMetadata3912) GetInfoOk() (*string, bool) {
-	if o == nil || o.Info == nil {
-		return nil, false
-	}
-	return o.Info, true
-}
-
-// HasInfo returns a boolean if a field has been set.
-func (o *BTVariableTableRowMetadata3912) HasInfo() bool {
-	if o != nil && o.Info != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetInfo gets a reference to the given string and assigns it to the Info field.
-func (o *BTVariableTableRowMetadata3912) SetInfo(v string) {
-	o.Info = &v
-}
-
 // GetIsRecursiveImport returns the IsRecursiveImport field value if set, zero value otherwise.
 func (o *BTVariableTableRowMetadata3912) GetIsRecursiveImport() bool {
 	if o == nil || o.IsRecursiveImport == nil {
@@ -285,9 +252,6 @@ func (o BTVariableTableRowMetadata3912) MarshalJSON() ([]byte, error) {
 	}
 	if o.CrossHighlightData != nil {
 		toSerialize["crossHighlightData"] = o.CrossHighlightData
-	}
-	if o.Info != nil {
-		toSerialize["info"] = o.Info
 	}
 	if o.IsRecursiveImport != nil {
 		toSerialize["isRecursiveImport"] = o.IsRecursiveImport

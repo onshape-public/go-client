@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**Buffers** | Pointer to [**[]BTGraphicsBuffer2668**](BTGraphicsBuffer2668.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **GraphicsBuffers** | Pointer to [**map[string]map[string]BTGraphicsBuffer2668**](map.md) |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -56,6 +57,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTInsertableDisplayData2405) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBuffers
+
+`func (o *BTInsertableDisplayData2405) GetBuffers() []BTGraphicsBuffer2668`
+
+GetBuffers returns the Buffers field if non-nil, zero value otherwise.
+
+### GetBuffersOk
+
+`func (o *BTInsertableDisplayData2405) GetBuffersOk() (*[]BTGraphicsBuffer2668, bool)`
+
+GetBuffersOk returns a tuple with the Buffers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBuffers
+
+`func (o *BTInsertableDisplayData2405) SetBuffers(v []BTGraphicsBuffer2668)`
+
+SetBuffers sets Buffers field to given value.
+
+### HasBuffers
+
+`func (o *BTInsertableDisplayData2405) HasBuffers() bool`
+
+HasBuffers returns a boolean if a field has been set.
 
 ### GetFullElementId
 

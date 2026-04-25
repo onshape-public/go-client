@@ -17,20 +17,23 @@ import (
 // BTAnnotationDeleteDisplayData1815 struct for BTAnnotationDeleteDisplayData1815
 type BTAnnotationDeleteDisplayData1815 struct {
 	BTAnnotationDisplayData3225
-	AnnotationId         *string                `json:"annotationId,omitempty"`
-	AnnotationPlane      *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
-	BasePlane            *BTCoordinateSystem387 `json:"basePlane,omitempty"`
-	BtType               *string                `json:"btType,omitempty"`
-	CharacteristicId     *string                `json:"characteristicId,omitempty"`
-	DeterministicId      *string                `json:"deterministicId,omitempty"`
-	DxdySegments         []BTVector2d1812       `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane *bool                  `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion           *bool                  `json:"isDeletion,omitempty"`
-	IsDerived            *bool                  `json:"isDerived,omitempty"`
-	MainConstraintId     *string                `json:"mainConstraintId,omitempty"`
-	MainFeatureId        *string                `json:"mainFeatureId,omitempty"`
-	MainParameterId      *string                `json:"mainParameterId,omitempty"`
-	MainPartId           *string                `json:"mainPartId,omitempty"`
+	AllReferences          []string               `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                  `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
+	BasePlane              *BTCoordinateSystem387 `json:"basePlane,omitempty"`
+	BtType                 *string                `json:"btType,omitempty"`
+	CharacteristicId       *string                `json:"characteristicId,omitempty"`
+	DeterministicId        *string                `json:"deterministicId,omitempty"`
+	DxdySegments           []BTVector2d1812       `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane   *bool                  `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion             *bool                  `json:"isDeletion,omitempty"`
+	IsDerived              *bool                  `json:"isDerived,omitempty"`
+	MainConstraintId       *string                `json:"mainConstraintId,omitempty"`
+	MainFeatureId          *string                `json:"mainFeatureId,omitempty"`
+	MainParameterId        *string                `json:"mainParameterId,omitempty"`
+	MainPartId             *string                `json:"mainPartId,omitempty"`
+	ParentCharacteristicId *string                `json:"parentCharacteristicId,omitempty"`
 }
 
 // NewBTAnnotationDeleteDisplayData1815 instantiates a new BTAnnotationDeleteDisplayData1815 object
@@ -48,6 +51,70 @@ func NewBTAnnotationDeleteDisplayData1815() *BTAnnotationDeleteDisplayData1815 {
 func NewBTAnnotationDeleteDisplayData1815WithDefaults() *BTAnnotationDeleteDisplayData1815 {
 	this := BTAnnotationDeleteDisplayData1815{}
 	return &this
+}
+
+// GetAllReferences returns the AllReferences field value if set, zero value otherwise.
+func (o *BTAnnotationDeleteDisplayData1815) GetAllReferences() []string {
+	if o == nil || o.AllReferences == nil {
+		var ret []string
+		return ret
+	}
+	return o.AllReferences
+}
+
+// GetAllReferencesOk returns a tuple with the AllReferences field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDeleteDisplayData1815) GetAllReferencesOk() ([]string, bool) {
+	if o == nil || o.AllReferences == nil {
+		return nil, false
+	}
+	return o.AllReferences, true
+}
+
+// HasAllReferences returns a boolean if a field has been set.
+func (o *BTAnnotationDeleteDisplayData1815) HasAllReferences() bool {
+	if o != nil && o.AllReferences != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferences gets a reference to the given []string and assigns it to the AllReferences field.
+func (o *BTAnnotationDeleteDisplayData1815) SetAllReferences(v []string) {
+	o.AllReferences = v
+}
+
+// GetAllReferencesPopulated returns the AllReferencesPopulated field value if set, zero value otherwise.
+func (o *BTAnnotationDeleteDisplayData1815) GetAllReferencesPopulated() bool {
+	if o == nil || o.AllReferencesPopulated == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AllReferencesPopulated
+}
+
+// GetAllReferencesPopulatedOk returns a tuple with the AllReferencesPopulated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDeleteDisplayData1815) GetAllReferencesPopulatedOk() (*bool, bool) {
+	if o == nil || o.AllReferencesPopulated == nil {
+		return nil, false
+	}
+	return o.AllReferencesPopulated, true
+}
+
+// HasAllReferencesPopulated returns a boolean if a field has been set.
+func (o *BTAnnotationDeleteDisplayData1815) HasAllReferencesPopulated() bool {
+	if o != nil && o.AllReferencesPopulated != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAllReferencesPopulated gets a reference to the given bool and assigns it to the AllReferencesPopulated field.
+func (o *BTAnnotationDeleteDisplayData1815) SetAllReferencesPopulated(v bool) {
+	o.AllReferencesPopulated = &v
 }
 
 // GetAnnotationId returns the AnnotationId field value if set, zero value otherwise.
@@ -498,6 +565,38 @@ func (o *BTAnnotationDeleteDisplayData1815) SetMainPartId(v string) {
 	o.MainPartId = &v
 }
 
+// GetParentCharacteristicId returns the ParentCharacteristicId field value if set, zero value otherwise.
+func (o *BTAnnotationDeleteDisplayData1815) GetParentCharacteristicId() string {
+	if o == nil || o.ParentCharacteristicId == nil {
+		var ret string
+		return ret
+	}
+	return *o.ParentCharacteristicId
+}
+
+// GetParentCharacteristicIdOk returns a tuple with the ParentCharacteristicId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDeleteDisplayData1815) GetParentCharacteristicIdOk() (*string, bool) {
+	if o == nil || o.ParentCharacteristicId == nil {
+		return nil, false
+	}
+	return o.ParentCharacteristicId, true
+}
+
+// HasParentCharacteristicId returns a boolean if a field has been set.
+func (o *BTAnnotationDeleteDisplayData1815) HasParentCharacteristicId() bool {
+	if o != nil && o.ParentCharacteristicId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetParentCharacteristicId gets a reference to the given string and assigns it to the ParentCharacteristicId field.
+func (o *BTAnnotationDeleteDisplayData1815) SetParentCharacteristicId(v string) {
+	o.ParentCharacteristicId = &v
+}
+
 func (o BTAnnotationDeleteDisplayData1815) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTAnnotationDisplayData3225, errBTAnnotationDisplayData3225 := json.Marshal(o.BTAnnotationDisplayData3225)
@@ -507,6 +606,12 @@ func (o BTAnnotationDeleteDisplayData1815) MarshalJSON() ([]byte, error) {
 	errBTAnnotationDisplayData3225 = json.Unmarshal([]byte(serializedBTAnnotationDisplayData3225), &toSerialize)
 	if errBTAnnotationDisplayData3225 != nil {
 		return []byte{}, errBTAnnotationDisplayData3225
+	}
+	if o.AllReferences != nil {
+		toSerialize["allReferences"] = o.AllReferences
+	}
+	if o.AllReferencesPopulated != nil {
+		toSerialize["allReferencesPopulated"] = o.AllReferencesPopulated
 	}
 	if o.AnnotationId != nil {
 		toSerialize["annotationId"] = o.AnnotationId
@@ -549,6 +654,9 @@ func (o BTAnnotationDeleteDisplayData1815) MarshalJSON() ([]byte, error) {
 	}
 	if o.MainPartId != nil {
 		toSerialize["mainPartId"] = o.MainPartId
+	}
+	if o.ParentCharacteristicId != nil {
+		toSerialize["parentCharacteristicId"] = o.ParentCharacteristicId
 	}
 	return json.Marshal(toSerialize)
 }

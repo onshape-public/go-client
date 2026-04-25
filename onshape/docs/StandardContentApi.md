@@ -1,6 +1,6 @@
 # \StandardContentApi
 
-All URIs are relative to *https://cad.onshape.com/api/v14*
+All URIs are relative to *https://cad.onshape.com/api/v15*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

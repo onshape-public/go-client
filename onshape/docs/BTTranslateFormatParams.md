@@ -98,6 +98,7 @@ Name | Type | Description | Notes
 **Unit** | Pointer to **string** |  | [optional] 
 **UploadId** | Pointer to **string** |  | [optional] 
 **UrdfMeshFormat** | Pointer to [**GBTUrdfMeshFormat**](GBTUrdfMeshFormat.md) |  | [optional] 
+**UrdfStlEncoding** | Pointer to [**GBTStlEncodingType**](GBTStlEncodingType.md) |  | [optional] [default to GBTStlEncodingTypeText]
 **UseFileNameToSetSinglePartName** | Pointer to **bool** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
 **UseIGESImportPostProcessing** | Pointer to **bool** |  | [optional] 
@@ -2468,6 +2469,31 @@ SetUrdfMeshFormat sets UrdfMeshFormat field to given value.
 `func (o *BTTranslateFormatParams) HasUrdfMeshFormat() bool`
 
 HasUrdfMeshFormat returns a boolean if a field has been set.
+
+### GetUrdfStlEncoding
+
+`func (o *BTTranslateFormatParams) GetUrdfStlEncoding() GBTStlEncodingType`
+
+GetUrdfStlEncoding returns the UrdfStlEncoding field if non-nil, zero value otherwise.
+
+### GetUrdfStlEncodingOk
+
+`func (o *BTTranslateFormatParams) GetUrdfStlEncodingOk() (*GBTStlEncodingType, bool)`
+
+GetUrdfStlEncodingOk returns a tuple with the UrdfStlEncoding field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrdfStlEncoding
+
+`func (o *BTTranslateFormatParams) SetUrdfStlEncoding(v GBTStlEncodingType)`
+
+SetUrdfStlEncoding sets UrdfStlEncoding field to given value.
+
+### HasUrdfStlEncoding
+
+`func (o *BTTranslateFormatParams) HasUrdfStlEncoding() bool`
+
+HasUrdfStlEncoding returns a boolean if a field has been set.
 
 ### GetUseFileNameToSetSinglePartName
 
