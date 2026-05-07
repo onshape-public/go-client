@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.214.78494-f6a464217da8",
+    "version" : "1.214.78623-5369df6a7f4a",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -45103,12 +45103,6 @@
               "type" : "integer",
               "format" : "int32"
             },
-            "parameters" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/BTParameterSpec-6"
-              }
-            },
             "showLabelsOnly" : {
               "type" : "boolean"
             }
@@ -50489,42 +50483,44 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTCurveDescription-1583"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "controlPoints" : {
-              "type" : "array",
-              "items" : {
-                "type" : "number",
-                "format" : "double"
-              }
-            },
-            "degree" : {
-              "type" : "integer",
-              "format" : "int32"
-            },
-            "isPeriodic" : {
-              "type" : "boolean"
-            },
-            "isRational" : {
-              "type" : "boolean"
-            },
-            "knots" : {
-              "type" : "array",
-              "items" : {
-                "type" : "number",
-                "format" : "double"
-              }
+          },
+          "controlPoints" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "format" : "double"
             }
+          },
+          "degree" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "direction" : {
+            "$ref" : "#/components/schemas/BTVector3d-389"
+          },
+          "directionOrientedWithFace" : {
+            "$ref" : "#/components/schemas/BTVector3d-389"
+          },
+          "isPeriodic" : {
+            "type" : "boolean"
+          },
+          "isRational" : {
+            "type" : "boolean"
+          },
+          "knots" : {
+            "type" : "array",
+            "items" : {
+              "type" : "number",
+              "format" : "double"
+            }
+          },
+          "origin" : {
+            "$ref" : "#/components/schemas/BTVector3d-389"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/GBTCurveTypeEnum"
           }
-        } ]
+        }
       },
       "BTSplineHandleFilter-2971" : {
         "type" : "object",
