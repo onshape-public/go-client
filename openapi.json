@@ -33075,33 +33075,38 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
+          },
+          "firstDeterministicId" : {
+            "type" : "string"
+          },
+          "firstOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "location" : {
+            "$ref" : "#/components/schemas/BTCoordinateSystem-387"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "secondDeterministicId" : {
+            "type" : "string"
+          },
+          "secondOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
-              "type" : "string"
-            },
-            "firstDeterministicId" : {
-              "type" : "string"
-            },
-            "firstOccurrence" : {
-              "$ref" : "#/components/schemas/BTOccurrence-74"
-            },
-            "location" : {
-              "$ref" : "#/components/schemas/BTCoordinateSystem-387"
-            },
-            "secondDeterministicId" : {
-              "type" : "string"
-            },
-            "secondOccurrence" : {
-              "$ref" : "#/components/schemas/BTOccurrence-74"
-            }
-          }
-        } ]
+        }
       },
       "BTGetJsonPaths-1697" : {
         "type" : "object",
@@ -40599,27 +40604,32 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "mateConnectorIds" : {
+            "type" : "array",
+            "items" : {
               "type" : "string"
-            },
-            "mateConnectorIds" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
-            },
-            "mateType" : {
-              "$ref" : "#/components/schemas/GBTMateType"
             }
+          },
+          "mateType" : {
+            "$ref" : "#/components/schemas/GBTMateType"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        } ]
+        }
       },
       "BTMateFilter-162" : {
         "type" : "object",
@@ -40658,24 +40668,29 @@
           "btType" : {
             "type" : "string",
             "description" : "Type of JSON object."
-          }
-        },
-        "allOf" : [ {
-          "$ref" : "#/components/schemas/BTAssemblyFeatureDisplayData-1783"
-        }, {
-          "type" : "object",
-          "properties" : {
-            "btType" : {
+          },
+          "hidden" : {
+            "type" : "boolean"
+          },
+          "isDerivedFeature" : {
+            "type" : "boolean"
+          },
+          "nodeId" : {
+            "type" : "string"
+          },
+          "occurrenceIds" : {
+            "type" : "array",
+            "items" : {
               "type" : "string"
-            },
-            "occurrenceIds" : {
-              "type" : "array",
-              "items" : {
-                "type" : "string"
-              }
             }
+          },
+          "ownerOccurrence" : {
+            "$ref" : "#/components/schemas/BTOccurrence-74"
+          },
+          "status" : {
+            "$ref" : "#/components/schemas/GBTAssemblyFeatureDisplayStatus"
           }
-        } ]
+        }
       },
       "BTMateOccurrenceData-1671" : {
         "type" : "object",
@@ -45102,6 +45117,12 @@
             "maxNumberOfPicks" : {
               "type" : "integer",
               "format" : "int32"
+            },
+            "parameters" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BTParameterSpec-6"
+              }
             },
             "showLabelsOnly" : {
               "type" : "boolean"
