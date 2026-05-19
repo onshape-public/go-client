@@ -1,6 +1,6 @@
 # \WorkflowApi
 
-All URIs are relative to *https://cad.onshape.com/api/v15*
+All URIs are relative to *https://cad.onshape.com/api/v16*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ## GetWorkflowById
 
-> BTObjectWorkflowInfo GetWorkflowById(ctx, objectId).Execute()
+> BTObjectWorkflowInfo GetWorkflowById(ctx, objectId).RequestId(requestId).AfterDateTime(afterDateTime).Execute()
 
 Lightweight information about the current state of a workflowable object like release package.
 
@@ -320,15 +320,18 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
     objectId := "objectId_example" // string | Id of a workflowable object like release package, task etc.
+    requestId := "requestId_example" // string | Optional request ID to filter error messages. If provided, returns the most recent error associated with that specific request. (optional)
+    afterDateTime := time.Now() // JSONTime | Optional date-time (ISO-8601 format) to filter error messages. If provided (and requestId is not), returns the most recent error after this date. (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.WorkflowApi.GetWorkflowById(context.Background(), objectId).Execute()
+    resp, r, err := apiClient.WorkflowApi.GetWorkflowById(context.Background(), objectId).RequestId(requestId).AfterDateTime(afterDateTime).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetWorkflowById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -354,6 +357,8 @@ Other parameters are passed through a pointer to a apiGetWorkflowByIdRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **requestId** | **string** | Optional request ID to filter error messages. If provided, returns the most recent error associated with that specific request. | 
+ **afterDateTime** | **JSONTime** | Optional date-time (ISO-8601 format) to filter error messages. If provided (and requestId is not), returns the most recent error after this date. | 
 
 ### Return type
 

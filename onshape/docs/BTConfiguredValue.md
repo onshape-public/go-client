@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ConfigurationParameterId** | Pointer to **string** | The configuration parameter configuring this value, if configured | [optional] 
-**ConfigurationToValue** | Pointer to **map[string]string** | Configuration to value, required if configuration parameter id is specified | [optional] 
+**ConfigurationParameterId** | Pointer to **string** | The id of the configuration input that drives this value. | [optional] 
+**ConfigurationToValue** | Pointer to **map[string]string** | Map from configuration option id to string value. | [optional] 
 
 ## Methods
 
