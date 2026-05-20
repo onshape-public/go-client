@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **HasDefaultTolerances** | Pointer to **bool** |  | [optional] 
 **HoleCalloutId** | Pointer to **string** |  | [optional] 
 **IsDerived** | Pointer to **bool** |  | [optional] 
+**OnshapeSchemaClass** | Pointer to [**GBTToleranceSchemaClass**](GBTToleranceSchemaClass.md) |  | [optional] 
 **ParameterId** | Pointer to **string** |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
 **Precision** | Pointer to [**GBTTolerancePrecision**](GBTTolerancePrecision.md) |  | [optional] 
@@ -338,6 +339,31 @@ SetIsDerived sets IsDerived field to given value.
 `func (o *BTInspectionTableRowMetadata2485) HasIsDerived() bool`
 
 HasIsDerived returns a boolean if a field has been set.
+
+### GetOnshapeSchemaClass
+
+`func (o *BTInspectionTableRowMetadata2485) GetOnshapeSchemaClass() GBTToleranceSchemaClass`
+
+GetOnshapeSchemaClass returns the OnshapeSchemaClass field if non-nil, zero value otherwise.
+
+### GetOnshapeSchemaClassOk
+
+`func (o *BTInspectionTableRowMetadata2485) GetOnshapeSchemaClassOk() (*GBTToleranceSchemaClass, bool)`
+
+GetOnshapeSchemaClassOk returns a tuple with the OnshapeSchemaClass field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnshapeSchemaClass
+
+`func (o *BTInspectionTableRowMetadata2485) SetOnshapeSchemaClass(v GBTToleranceSchemaClass)`
+
+SetOnshapeSchemaClass sets OnshapeSchemaClass field to given value.
+
+### HasOnshapeSchemaClass
+
+`func (o *BTInspectionTableRowMetadata2485) HasOnshapeSchemaClass() bool`
+
+HasOnshapeSchemaClass returns a boolean if a field has been set.
 
 ### GetParameterId
 
