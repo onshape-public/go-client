@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**ConstraintsParameters** | Pointer to [**[]BTMParameterBoolean144**](BTMParameterBoolean144.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMBoundaryCondition5556) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetConstraintsParameters
+
+`func (o *BTMBoundaryCondition5556) GetConstraintsParameters() []BTMParameterBoolean144`
+
+GetConstraintsParameters returns the ConstraintsParameters field if non-nil, zero value otherwise.
+
+### GetConstraintsParametersOk
+
+`func (o *BTMBoundaryCondition5556) GetConstraintsParametersOk() (*[]BTMParameterBoolean144, bool)`
+
+GetConstraintsParametersOk returns a tuple with the ConstraintsParameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConstraintsParameters
+
+`func (o *BTMBoundaryCondition5556) SetConstraintsParameters(v []BTMParameterBoolean144)`
+
+SetConstraintsParameters sets ConstraintsParameters field to given value.
+
+### HasConstraintsParameters
+
+`func (o *BTMBoundaryCondition5556) HasConstraintsParameters() bool`
+
+HasConstraintsParameters returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
