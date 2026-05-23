@@ -35,6 +35,8 @@
 
 * `BTApiVersionV15AddSketchCheck` (value: `"V15_ADD_SKETCH_CHECK"`)
 
+* `BTApiVersionV16AssemblyConfigureInstanceSuppression` (value: `"V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -196,7 +196,6 @@ docs/BTBExportModelParams.md
 docs/BTBGltfExportParams.md
 docs/BTBObjExportParams.md
 docs/BTBSMatrix386.md
-docs/BTBSolidworksExportParams.md
 docs/BTBStepExportParams.md
 docs/BTBaseEntityAppearanceEntry3607.md
 docs/BTBaseEntityAppearanceSettings1391.md
@@ -226,6 +225,8 @@ docs/BTBodyEntity26.md
 docs/BTBodyEntity26AllOf.md
 docs/BTBodyTypeFilter112.md
 docs/BTBodyTypeFilter112AllOf.md
+docs/BTBoundaryConditionDisplayData2478.md
+docs/BTBoundaryConditionDisplayData2478AllOf.md
 docs/BTBoundingBox1052.md
 docs/BTBoundingBoxInfo.md
 docs/BTBrokenOutEndCondition1107.md
@@ -635,6 +636,7 @@ docs/BTMAssemblyMirrorFeature3037.md
 docs/BTMAssemblyPatternFeature2241.md
 docs/BTMAssemblyReplicateFeature1351.md
 docs/BTMBoundaryCondition5556.md
+docs/BTMBoundaryCondition5556AllOf.md
 docs/BTMConfigurationData1560.md
 docs/BTMConfigurationData1560AllOf.md
 docs/BTMConfigurationParameter819.md
@@ -886,6 +888,7 @@ docs/BTObjectWorkflowInfo.md
 docs/BTOccurrence74.md
 docs/BTOccurrenceData75.md
 docs/BTOccurrenceDisplayData95.md
+docs/BTOccurrenceEntity5720.md
 docs/BTOccurrenceFilter166.md
 docs/BTOccurrenceFilter166AllOf.md
 docs/BTOccurrenceWithFullPartIds1464.md
@@ -1239,6 +1242,7 @@ docs/BTSphereDescription1263.md
 docs/BTSplineControlPolygonFilter1130.md
 docs/BTSplineControlPolygonFilter1130AllOf.md
 docs/BTSplineDescription2118.md
+docs/BTSplineDescription2118AllOf.md
 docs/BTSplineHandleFilter2971.md
 docs/BTSplineHandleFilter2971AllOf.md
 docs/BTSplineInternalPointFilter4101.md
@@ -1533,6 +1537,7 @@ docs/GBTTableColumnWidthUnits.md
 docs/GBTTableTextAlignment.md
 docs/GBTTessellationSettingEnum.md
 docs/GBTTolerancePrecision.md
+docs/GBTToleranceSchemaClass.md
 docs/GBTToleranceType.md
 docs/GBTUIHint.md
 docs/GBTUiSelectionType.md
@@ -1763,6 +1768,7 @@ model_bt_bill_of_materials_unique_item_id_2029.go
 model_bt_billing_plan_info.go
 model_bt_body_entity_26.go
 model_bt_body_type_filter_112.go
+model_bt_boundary_condition_display_data_2478.go
 model_bt_bounding_box_1052.go
 model_bt_bounding_box_info.go
 model_bt_broken_out_end_condition_1107.go
@@ -2096,6 +2102,7 @@ model_bt_object_workflow_info.go
 model_bt_occurrence_74.go
 model_bt_occurrence_data_75.go
 model_bt_occurrence_display_data_95.go
+model_bt_occurrence_entity_5720.go
 model_bt_occurrence_filter_166.go
 model_bt_occurrence_with_full_part_ids_1464.go
 model_bt_old_permission.go
@@ -2424,7 +2431,6 @@ model_btb_export_mesh_params.go
 model_btb_export_model_params.go
 model_btb_gltf_export_params.go
 model_btb_obj_export_params.go
-model_btb_solidworks_export_params.go
 model_btb_step_export_params.go
 model_btbs_matrix_386_.go
 model_btes_results_filter.go
@@ -2744,6 +2750,7 @@ model_gbt_table_column_width_units.go
 model_gbt_table_text_alignment.go
 model_gbt_tessellation_setting_enum.go
 model_gbt_tolerance_precision.go
+model_gbt_tolerance_schema_class.go
 model_gbt_tolerance_type.go
 model_gbt_urdf_mesh_format.go
 model_gbt_value_use.go

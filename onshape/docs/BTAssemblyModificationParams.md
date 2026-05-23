@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeleteInstances** | Pointer to **[]string** |  | [optional] 
-**EditDescription** | Pointer to **string** |  | [optional] 
-**SuppressInstances** | Pointer to **[]string** |  | [optional] 
-**TransformDefinitions** | Pointer to [**[]BTAssemblyTransformDefinitionParams**](BTAssemblyTransformDefinitionParams.md) |  | [optional] 
-**UnsuppressInstances** | Pointer to **[]string** |  | [optional] 
+**DeleteInstances** | Pointer to **[]string** | Node ids of the instances to delete. | [optional] 
+**EditDescription** | Pointer to **string** | Short description of the modification. | [optional] 
+**SuppressInstances** | Pointer to **[]string** | Deprecated in API v16. Use &#x60;suppressionStates&#x60; instead.Node ids of the instances to suppress. | [optional] 
+**SuppressionStates** | Pointer to [**map[string]BTOptionallyConfiguredValue**](BTOptionallyConfiguredValue.md) | Suppression states keyed by node id. Each value is either a plain suppression state (&#x60;value&#x60;: &#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;) or a configuration-controlled suppression state (&#x60;configuredValue&#x60;: a configuration parameter id and a map from configuration option id to &#x60;\&quot;true\&quot;&#x60; or &#x60;\&quot;false\&quot;&#x60;). | [optional] 
+**TransformDefinitions** | Pointer to [**[]BTAssemblyTransformDefinitionParams**](BTAssemblyTransformDefinitionParams.md) | Occurrence transform definitions. | [optional] 
+**UnsuppressInstances** | Pointer to **[]string** | Deprecated in API v16. Use &#x60;suppressionStates&#x60; instead.Node ids of the instances to unsuppress. | [optional] 
 
 ## Methods
 
@@ -103,6 +104,31 @@ SetSuppressInstances sets SuppressInstances field to given value.
 `func (o *BTAssemblyModificationParams) HasSuppressInstances() bool`
 
 HasSuppressInstances returns a boolean if a field has been set.
+
+### GetSuppressionStates
+
+`func (o *BTAssemblyModificationParams) GetSuppressionStates() map[string]BTOptionallyConfiguredValue`
+
+GetSuppressionStates returns the SuppressionStates field if non-nil, zero value otherwise.
+
+### GetSuppressionStatesOk
+
+`func (o *BTAssemblyModificationParams) GetSuppressionStatesOk() (*map[string]BTOptionallyConfiguredValue, bool)`
+
+GetSuppressionStatesOk returns a tuple with the SuppressionStates field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuppressionStates
+
+`func (o *BTAssemblyModificationParams) SetSuppressionStates(v map[string]BTOptionallyConfiguredValue)`
+
+SetSuppressionStates sets SuppressionStates field to given value.
+
+### HasSuppressionStates
+
+`func (o *BTAssemblyModificationParams) HasSuppressionStates() bool`
+
+HasSuppressionStates returns a boolean if a field has been set.
 
 ### GetTransformDefinitions
 

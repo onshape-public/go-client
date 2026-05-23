@@ -1776,6 +1776,9 @@ const (
 	GBTErrorStringEnumDrawingEmptyViewCorrespondenceFailed                        GBTErrorStringEnum = "DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED"
 	GBTErrorStringEnumRendererFailedToLoadDisplayData                             GBTErrorStringEnum = "RENDERER_FAILED_TO_LOAD_DISPLAY_DATA"
 	GBTErrorStringEnumSheetMetalDeripFailed                                       GBTErrorStringEnum = "SHEET_METAL_DERIP_FAILED"
+	GBTErrorStringEnumRestAssemblyMissingMateFeatureId                            GBTErrorStringEnum = "REST_ASSEMBLY_MISSING_MATE_FEATURE_ID"
+	GBTErrorStringEnumRestAssemblyMissingMateOwnerOccurrencePath                  GBTErrorStringEnum = "REST_ASSEMBLY_MISSING_MATE_OWNER_OCCURRENCE_PATH"
+	GBTErrorStringEnumFgsTsSolverIssueInternalErrorNoClearUserFix                 GBTErrorStringEnum = "FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3537,6 +3540,9 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"DRAWING_EMPTY_VIEW_CORRESPONDENCE_FAILED",
 	"RENDERER_FAILED_TO_LOAD_DISPLAY_DATA",
 	"SHEET_METAL_DERIP_FAILED",
+	"REST_ASSEMBLY_MISSING_MATE_FEATURE_ID",
+	"REST_ASSEMBLY_MISSING_MATE_OWNER_OCCURRENCE_PATH",
+	"FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX",
 	"UNKNOWN",
 }
 
