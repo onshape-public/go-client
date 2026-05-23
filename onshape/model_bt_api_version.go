@@ -36,6 +36,7 @@ const (
 	BTApiVersionV13SourceTargetDocumentVersionsToMove           BTApiVersion = "V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"
 	BTApiVersionV14FixReferenceType                             BTApiVersion = "V14_FIX_REFERENCE_TYPE"
 	BTApiVersionV15AddSketchCheck                               BTApiVersion = "V15_ADD_SKETCH_CHECK"
+	BTApiVersionV16AssemblyConfigureInstanceSuppression         BTApiVersion = "V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION"
 )
 
 // All allowed values of BTApiVersion enum
@@ -56,6 +57,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE",
 	"V14_FIX_REFERENCE_TYPE",
 	"V15_ADD_SKETCH_CHECK",
+	"V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION",
 }
 
 func (v *BTApiVersion) UnmarshalJSON(src []byte) error {

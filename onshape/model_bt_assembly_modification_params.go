@@ -16,11 +16,20 @@ import (
 
 // BTAssemblyModificationParams struct for BTAssemblyModificationParams
 type BTAssemblyModificationParams struct {
-	DeleteInstances      []string                              `json:"deleteInstances,omitempty"`
-	EditDescription      *string                               `json:"editDescription,omitempty"`
-	SuppressInstances    []string                              `json:"suppressInstances,omitempty"`
+	// Node ids of the instances to delete.
+	DeleteInstances []string `json:"deleteInstances,omitempty"`
+	// Short description of the modification.
+	EditDescription *string `json:"editDescription,omitempty"`
+	// Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to suppress.
+	// Deprecated
+	SuppressInstances []string `json:"suppressInstances,omitempty"`
+	// Suppression states keyed by node id. Each value is either a plain suppression state (`value`: `\"true\"` or `\"false\"`) or a configuration-controlled suppression state (`configuredValue`: a configuration parameter id and a map from configuration option id to `\"true\"` or `\"false\"`).
+	SuppressionStates *map[string]BTOptionallyConfiguredValue `json:"suppressionStates,omitempty"`
+	// Occurrence transform definitions.
 	TransformDefinitions []BTAssemblyTransformDefinitionParams `json:"transformDefinitions,omitempty"`
-	UnsuppressInstances  []string                              `json:"unsuppressInstances,omitempty"`
+	// Deprecated in API v16. Use `suppressionStates` instead.Node ids of the instances to unsuppress.
+	// Deprecated
+	UnsuppressInstances []string `json:"unsuppressInstances,omitempty"`
 }
 
 // NewBTAssemblyModificationParams instantiates a new BTAssemblyModificationParams object
@@ -105,6 +114,7 @@ func (o *BTAssemblyModificationParams) SetEditDescription(v string) {
 }
 
 // GetSuppressInstances returns the SuppressInstances field value if set, zero value otherwise.
+// Deprecated
 func (o *BTAssemblyModificationParams) GetSuppressInstances() []string {
 	if o == nil || o.SuppressInstances == nil {
 		var ret []string
@@ -115,6 +125,7 @@ func (o *BTAssemblyModificationParams) GetSuppressInstances() []string {
 
 // GetSuppressInstancesOk returns a tuple with the SuppressInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTAssemblyModificationParams) GetSuppressInstancesOk() ([]string, bool) {
 	if o == nil || o.SuppressInstances == nil {
 		return nil, false
@@ -132,8 +143,41 @@ func (o *BTAssemblyModificationParams) HasSuppressInstances() bool {
 }
 
 // SetSuppressInstances gets a reference to the given []string and assigns it to the SuppressInstances field.
+// Deprecated
 func (o *BTAssemblyModificationParams) SetSuppressInstances(v []string) {
 	o.SuppressInstances = v
+}
+
+// GetSuppressionStates returns the SuppressionStates field value if set, zero value otherwise.
+func (o *BTAssemblyModificationParams) GetSuppressionStates() map[string]BTOptionallyConfiguredValue {
+	if o == nil || o.SuppressionStates == nil {
+		var ret map[string]BTOptionallyConfiguredValue
+		return ret
+	}
+	return *o.SuppressionStates
+}
+
+// GetSuppressionStatesOk returns a tuple with the SuppressionStates field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyModificationParams) GetSuppressionStatesOk() (*map[string]BTOptionallyConfiguredValue, bool) {
+	if o == nil || o.SuppressionStates == nil {
+		return nil, false
+	}
+	return o.SuppressionStates, true
+}
+
+// HasSuppressionStates returns a boolean if a field has been set.
+func (o *BTAssemblyModificationParams) HasSuppressionStates() bool {
+	if o != nil && o.SuppressionStates != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSuppressionStates gets a reference to the given map[string]BTOptionallyConfiguredValue and assigns it to the SuppressionStates field.
+func (o *BTAssemblyModificationParams) SetSuppressionStates(v map[string]BTOptionallyConfiguredValue) {
+	o.SuppressionStates = &v
 }
 
 // GetTransformDefinitions returns the TransformDefinitions field value if set, zero value otherwise.
@@ -169,6 +213,7 @@ func (o *BTAssemblyModificationParams) SetTransformDefinitions(v []BTAssemblyTra
 }
 
 // GetUnsuppressInstances returns the UnsuppressInstances field value if set, zero value otherwise.
+// Deprecated
 func (o *BTAssemblyModificationParams) GetUnsuppressInstances() []string {
 	if o == nil || o.UnsuppressInstances == nil {
 		var ret []string
@@ -179,6 +224,7 @@ func (o *BTAssemblyModificationParams) GetUnsuppressInstances() []string {
 
 // GetUnsuppressInstancesOk returns a tuple with the UnsuppressInstances field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTAssemblyModificationParams) GetUnsuppressInstancesOk() ([]string, bool) {
 	if o == nil || o.UnsuppressInstances == nil {
 		return nil, false
@@ -196,6 +242,7 @@ func (o *BTAssemblyModificationParams) HasUnsuppressInstances() bool {
 }
 
 // SetUnsuppressInstances gets a reference to the given []string and assigns it to the UnsuppressInstances field.
+// Deprecated
 func (o *BTAssemblyModificationParams) SetUnsuppressInstances(v []string) {
 	o.UnsuppressInstances = v
 }
@@ -210,6 +257,9 @@ func (o BTAssemblyModificationParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.SuppressInstances != nil {
 		toSerialize["suppressInstances"] = o.SuppressInstances
+	}
+	if o.SuppressionStates != nil {
+		toSerialize["suppressionStates"] = o.SuppressionStates
 	}
 	if o.TransformDefinitions != nil {
 		toSerialize["transformDefinitions"] = o.TransformDefinitions
