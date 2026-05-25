@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **ItemLabelTemplate** | Pointer to **string** |  | [optional] 
 **ItemName** | Pointer to **string** |  | [optional] 
 **MaxNumberOfPicks** | Pointer to **int32** |  | [optional] 
+**Parameters** | Pointer to [**[]BTParameterSpec6**](BTParameterSpec6.md) |  | [optional] 
 **ShowLabelsOnly** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetMaxNumberOfPicks sets MaxNumberOfPicks field to given value.
 `func (o *BTParameterSpecArray2600AllOf) HasMaxNumberOfPicks() bool`
 
 HasMaxNumberOfPicks returns a boolean if a field has been set.
+
+### GetParameters
+
+`func (o *BTParameterSpecArray2600AllOf) GetParameters() []BTParameterSpec6`
+
+GetParameters returns the Parameters field if non-nil, zero value otherwise.
+
+### GetParametersOk
+
+`func (o *BTParameterSpecArray2600AllOf) GetParametersOk() (*[]BTParameterSpec6, bool)`
+
+GetParametersOk returns a tuple with the Parameters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetParameters
+
+`func (o *BTParameterSpecArray2600AllOf) SetParameters(v []BTParameterSpec6)`
+
+SetParameters sets Parameters field to given value.
+
+### HasParameters
+
+`func (o *BTParameterSpecArray2600AllOf) HasParameters() bool`
+
+HasParameters returns a boolean if a field has been set.
 
 ### GetShowLabelsOnly
 
