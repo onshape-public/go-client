@@ -567,9 +567,23 @@ func (a *WorkflowApiService) GetAuditLogExecute(r ApiGetAuditLogRequest) (*BTWor
 }
 
 type ApiGetWorkflowByIdRequest struct {
-	ctx        context.Context
-	ApiService *WorkflowApiService
-	objectId   string
+	ctx           context.Context
+	ApiService    *WorkflowApiService
+	objectId      string
+	requestId     *string
+	afterDateTime *JSONTime
+}
+
+// Optional request ID to filter error messages. If provided, returns the most recent error associated with that specific request.
+func (r ApiGetWorkflowByIdRequest) RequestId(requestId string) ApiGetWorkflowByIdRequest {
+	r.requestId = &requestId
+	return r
+}
+
+// Optional date-time (ISO-8601 format) to filter error messages. If provided (and requestId is not), returns the most recent error after this date.
+func (r ApiGetWorkflowByIdRequest) AfterDateTime(afterDateTime JSONTime) ApiGetWorkflowByIdRequest {
+	r.afterDateTime = &afterDateTime
+	return r
 }
 
 func (r ApiGetWorkflowByIdRequest) Execute() (*BTObjectWorkflowInfo, *http.Response, error) {
@@ -616,6 +630,12 @@ func (a *WorkflowApiService) GetWorkflowByIdExecute(r ApiGetWorkflowByIdRequest)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.requestId != nil {
+		localVarQueryParams.Add("requestId", parameterToString(*r.requestId, ""))
+	}
+	if r.afterDateTime != nil {
+		localVarQueryParams.Add("afterDateTime", parameterToString(*r.afterDateTime, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

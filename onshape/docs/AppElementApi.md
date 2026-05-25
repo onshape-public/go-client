@@ -1,6 +1,6 @@
 # \AppElementApi
 
-All URIs are relative to *https://cad.onshape.com/api/v15*
+All URIs are relative to *https://cad.onshape.com/api/v16*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
