@@ -29,6 +29,7 @@ type BTInspectionTableRowMetadata2485 struct {
 	HasDefaultTolerances    *bool                          `json:"hasDefaultTolerances,omitempty"`
 	HoleCalloutId           *string                        `json:"holeCalloutId,omitempty"`
 	IsDerived               *bool                          `json:"isDerived,omitempty"`
+	OnshapeSchemaClass      *GBTToleranceSchemaClass       `json:"onshapeSchemaClass,omitempty"`
 	ParameterId             *string                        `json:"parameterId,omitempty"`
 	PartId                  *string                        `json:"partId,omitempty"`
 	Precision               *GBTTolerancePrecision         `json:"precision,omitempty"`
@@ -435,6 +436,38 @@ func (o *BTInspectionTableRowMetadata2485) SetIsDerived(v bool) {
 	o.IsDerived = &v
 }
 
+// GetOnshapeSchemaClass returns the OnshapeSchemaClass field value if set, zero value otherwise.
+func (o *BTInspectionTableRowMetadata2485) GetOnshapeSchemaClass() GBTToleranceSchemaClass {
+	if o == nil || o.OnshapeSchemaClass == nil {
+		var ret GBTToleranceSchemaClass
+		return ret
+	}
+	return *o.OnshapeSchemaClass
+}
+
+// GetOnshapeSchemaClassOk returns a tuple with the OnshapeSchemaClass field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInspectionTableRowMetadata2485) GetOnshapeSchemaClassOk() (*GBTToleranceSchemaClass, bool) {
+	if o == nil || o.OnshapeSchemaClass == nil {
+		return nil, false
+	}
+	return o.OnshapeSchemaClass, true
+}
+
+// HasOnshapeSchemaClass returns a boolean if a field has been set.
+func (o *BTInspectionTableRowMetadata2485) HasOnshapeSchemaClass() bool {
+	if o != nil && o.OnshapeSchemaClass != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOnshapeSchemaClass gets a reference to the given GBTToleranceSchemaClass and assigns it to the OnshapeSchemaClass field.
+func (o *BTInspectionTableRowMetadata2485) SetOnshapeSchemaClass(v GBTToleranceSchemaClass) {
+	o.OnshapeSchemaClass = &v
+}
+
 // GetParameterId returns the ParameterId field value if set, zero value otherwise.
 func (o *BTInspectionTableRowMetadata2485) GetParameterId() string {
 	if o == nil || o.ParameterId == nil {
@@ -576,6 +609,9 @@ func (o BTInspectionTableRowMetadata2485) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDerived != nil {
 		toSerialize["isDerived"] = o.IsDerived
+	}
+	if o.OnshapeSchemaClass != nil {
+		toSerialize["onshapeSchemaClass"] = o.OnshapeSchemaClass
 	}
 	if o.ParameterId != nil {
 		toSerialize["parameterId"] = o.ParameterId

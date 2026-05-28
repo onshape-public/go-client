@@ -51,8 +51,9 @@ type BTMBoundaryCondition5556 struct {
 	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 	// If `true`, the feature references a Variable Studio.
-	VariableStudioReference *bool  `json:"variableStudioReference,omitempty"`
-	Version                 *int32 `json:"version,omitempty"`
+	VariableStudioReference *bool                    `json:"variableStudioReference,omitempty"`
+	Version                 *int32                   `json:"version,omitempty"`
+	ConstraintsParameters   []BTMParameterBoolean144 `json:"constraintsParameters,omitempty"`
 }
 
 // NewBTMBoundaryCondition5556 instantiates a new BTMBoundaryCondition5556 object
@@ -872,6 +873,38 @@ func (o *BTMBoundaryCondition5556) SetVersion(v int32) {
 	o.Version = &v
 }
 
+// GetConstraintsParameters returns the ConstraintsParameters field value if set, zero value otherwise.
+func (o *BTMBoundaryCondition5556) GetConstraintsParameters() []BTMParameterBoolean144 {
+	if o == nil || o.ConstraintsParameters == nil {
+		var ret []BTMParameterBoolean144
+		return ret
+	}
+	return o.ConstraintsParameters
+}
+
+// GetConstraintsParametersOk returns a tuple with the ConstraintsParameters field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMBoundaryCondition5556) GetConstraintsParametersOk() ([]BTMParameterBoolean144, bool) {
+	if o == nil || o.ConstraintsParameters == nil {
+		return nil, false
+	}
+	return o.ConstraintsParameters, true
+}
+
+// HasConstraintsParameters returns a boolean if a field has been set.
+func (o *BTMBoundaryCondition5556) HasConstraintsParameters() bool {
+	if o != nil && o.ConstraintsParameters != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetConstraintsParameters gets a reference to the given []BTMParameterBoolean144 and assigns it to the ConstraintsParameters field.
+func (o *BTMBoundaryCondition5556) SetConstraintsParameters(v []BTMParameterBoolean144) {
+	o.ConstraintsParameters = v
+}
+
 func (o BTMBoundaryCondition5556) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMSimulationFeature5034, errBTMSimulationFeature5034 := json.Marshal(o.BTMSimulationFeature5034)
@@ -956,6 +989,9 @@ func (o BTMBoundaryCondition5556) MarshalJSON() ([]byte, error) {
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version
+	}
+	if o.ConstraintsParameters != nil {
+		toSerialize["constraintsParameters"] = o.ConstraintsParameters
 	}
 	return json.Marshal(toSerialize)
 }

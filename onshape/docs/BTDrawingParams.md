@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **ReferenceTypeEnum** | Pointer to [**GBTAppElementReferenceType**](GBTAppElementReferenceType.md) |  | [optional] 
 **Revision** | Pointer to **string** | Create the drawing from this specific revision. | [optional] 
 **ShowCutGeomOnly** | Pointer to **bool** | Set to &#x60;true&#x60; to show only cut geometry in the drawing. | [optional] [default to false]
+**ShowMbdAnnotations** | Pointer to **bool** | Set to &#x60;true&#x60; to include MBD data in the drawing. | [optional] [default to false]
 **SimplificationOption** | Pointer to **string** | &#x60;NONE&#x60; | &#x60;ABSOLUTE&#x60; | &#x60;RATIO_TO_MODEL&#x60; | &#x60;RATIO_TO_BODY&#x60; | &#x60;AUTOMATIC&#x60; | [optional] 
 **SimplificationThreshold** | Pointer to **float64** | &#x60;NONE&#x60; | &#x60;UNKNOWN&#x60; | &#x60;SMOOTH&#x60; | &#x60;DRAFTING&#x60; | [optional] 
 **Size** | Pointer to **string** | Provide a size for the drawing. | [optional] 
@@ -949,6 +950,31 @@ SetShowCutGeomOnly sets ShowCutGeomOnly field to given value.
 `func (o *BTDrawingParams) HasShowCutGeomOnly() bool`
 
 HasShowCutGeomOnly returns a boolean if a field has been set.
+
+### GetShowMbdAnnotations
+
+`func (o *BTDrawingParams) GetShowMbdAnnotations() bool`
+
+GetShowMbdAnnotations returns the ShowMbdAnnotations field if non-nil, zero value otherwise.
+
+### GetShowMbdAnnotationsOk
+
+`func (o *BTDrawingParams) GetShowMbdAnnotationsOk() (*bool, bool)`
+
+GetShowMbdAnnotationsOk returns a tuple with the ShowMbdAnnotations field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowMbdAnnotations
+
+`func (o *BTDrawingParams) SetShowMbdAnnotations(v bool)`
+
+SetShowMbdAnnotations sets ShowMbdAnnotations field to given value.
+
+### HasShowMbdAnnotations
+
+`func (o *BTDrawingParams) HasShowMbdAnnotations() bool`
+
+HasShowMbdAnnotations returns a boolean if a field has been set.
 
 ### GetSimplificationOption
 
