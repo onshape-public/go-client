@@ -14,11 +14,11 @@ import (
 	"encoding/json"
 )
 
-// BTConfiguredValue Configured variable description, if configured
+// BTConfiguredValue A value that varies per option of a configuration input.
 type BTConfiguredValue struct {
-	// The configuration parameter configuring this value, if configured
+	// The id of the configuration input that drives this value.
 	ConfigurationParameterId *string `json:"configurationParameterId,omitempty"`
-	// Configuration to value, required if configuration parameter id is specified
+	// Map from configuration option id to string value.
 	ConfigurationToValue *map[string]string `json:"configurationToValue,omitempty"`
 }
 

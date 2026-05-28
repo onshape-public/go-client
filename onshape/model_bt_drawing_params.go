@@ -83,6 +83,8 @@ type BTDrawingParams struct {
 	Revision *string `json:"revision,omitempty"`
 	// Set to `true` to show only cut geometry in the drawing.
 	ShowCutGeomOnly *bool `json:"showCutGeomOnly,omitempty"`
+	// Set to `true` to include MBD data in the drawing.
+	ShowMbdAnnotations *bool `json:"showMbdAnnotations,omitempty"`
 	// `NONE` | `ABSOLUTE` | `RATIO_TO_MODEL` | `RATIO_TO_BODY` | `AUTOMATIC`
 	SimplificationOption *string `json:"simplificationOption,omitempty"`
 	// `NONE` | `UNKNOWN` | `SMOOTH` | `DRAFTING`
@@ -149,6 +151,8 @@ func NewBTDrawingParams() *BTDrawingParams {
 	this.PureSketch = &pureSketch
 	var showCutGeomOnly bool = false
 	this.ShowCutGeomOnly = &showCutGeomOnly
+	var showMbdAnnotations bool = false
+	this.ShowMbdAnnotations = &showMbdAnnotations
 	var titleblock bool = false
 	this.Titleblock = &titleblock
 	return &this
@@ -185,6 +189,8 @@ func NewBTDrawingParamsWithDefaults() *BTDrawingParams {
 	this.PureSketch = &pureSketch
 	var showCutGeomOnly bool = false
 	this.ShowCutGeomOnly = &showCutGeomOnly
+	var showMbdAnnotations bool = false
+	this.ShowMbdAnnotations = &showMbdAnnotations
 	var titleblock bool = false
 	this.Titleblock = &titleblock
 	return &this
@@ -1310,6 +1316,38 @@ func (o *BTDrawingParams) SetShowCutGeomOnly(v bool) {
 	o.ShowCutGeomOnly = &v
 }
 
+// GetShowMbdAnnotations returns the ShowMbdAnnotations field value if set, zero value otherwise.
+func (o *BTDrawingParams) GetShowMbdAnnotations() bool {
+	if o == nil || o.ShowMbdAnnotations == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowMbdAnnotations
+}
+
+// GetShowMbdAnnotationsOk returns a tuple with the ShowMbdAnnotations field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDrawingParams) GetShowMbdAnnotationsOk() (*bool, bool) {
+	if o == nil || o.ShowMbdAnnotations == nil {
+		return nil, false
+	}
+	return o.ShowMbdAnnotations, true
+}
+
+// HasShowMbdAnnotations returns a boolean if a field has been set.
+func (o *BTDrawingParams) HasShowMbdAnnotations() bool {
+	if o != nil && o.ShowMbdAnnotations != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowMbdAnnotations gets a reference to the given bool and assigns it to the ShowMbdAnnotations field.
+func (o *BTDrawingParams) SetShowMbdAnnotations(v bool) {
+	o.ShowMbdAnnotations = &v
+}
+
 // GetSimplificationOption returns the SimplificationOption field value if set, zero value otherwise.
 func (o *BTDrawingParams) GetSimplificationOption() string {
 	if o == nil || o.SimplificationOption == nil {
@@ -1928,6 +1966,9 @@ func (o BTDrawingParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ShowCutGeomOnly != nil {
 		toSerialize["showCutGeomOnly"] = o.ShowCutGeomOnly
+	}
+	if o.ShowMbdAnnotations != nil {
+		toSerialize["showMbdAnnotations"] = o.ShowMbdAnnotations
 	}
 	if o.SimplificationOption != nil {
 		toSerialize["simplificationOption"] = o.SimplificationOption

@@ -3515,6 +3515,12 @@
 
 * `GBTErrorStringEnumSheetMetalDeripFailed` (value: `"SHEET_METAL_DERIP_FAILED"`)
 
+* `GBTErrorStringEnumRestAssemblyMissingMateFeatureId` (value: `"REST_ASSEMBLY_MISSING_MATE_FEATURE_ID"`)
+
+* `GBTErrorStringEnumRestAssemblyMissingMateOwnerOccurrencePath` (value: `"REST_ASSEMBLY_MISSING_MATE_OWNER_OCCURRENCE_PATH"`)
+
+* `GBTErrorStringEnumFgsTsSolverIssueInternalErrorNoClearUserFix` (value: `"FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

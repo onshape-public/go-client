@@ -43,6 +43,7 @@ const (
 	BTSearchEntityTypeClassroom     BTSearchEntityType = "classroom"
 	BTSearchEntityTypeAssignment    BTSearchEntityType = "assignment"
 	BTSearchEntityTypeSubmission    BTSearchEntityType = "submission"
+	BTSearchEntityTypeApplication   BTSearchEntityType = "application"
 )
 
 // All allowed values of BTSearchEntityType enum
@@ -70,6 +71,7 @@ var AllowedBTSearchEntityTypeEnumValues = []BTSearchEntityType{
 	"classroom",
 	"assignment",
 	"submission",
+	"application",
 }
 
 func (v *BTSearchEntityType) UnmarshalJSON(src []byte) error {
