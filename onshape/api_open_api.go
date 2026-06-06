@@ -24,7 +24,6 @@ type OpenApiApiService service
 type ApiGetOpenApiRequest struct {
 	ctx                   context.Context
 	ApiService            *OpenApiApiService
-	forceReload           *bool
 	version               *string
 	versionAlias          *VersionAlias
 	noFilter              *bool
@@ -36,12 +35,6 @@ type ApiGetOpenApiRequest struct {
 	restUserRole          *BTRestUserRole
 	operationIds          *[]string
 	excludedOperationIds  *[]string
-}
-
-// Force reload the OpenApi definition. Only works when asking for the latest version.
-func (r ApiGetOpenApiRequest) ForceReload(forceReload bool) ApiGetOpenApiRequest {
-	r.forceReload = &forceReload
-	return r
 }
 
 // Specify a version of Onshape from which the OpenAPI is generated. If &#39;*&#39; is specified in any of the version fields, that indicates any version if acceptable.
@@ -151,9 +144,6 @@ func (a *OpenApiApiService) GetOpenApiExecute(r ApiGetOpenApiRequest) (*OpenAPI,
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.forceReload != nil {
-		localVarQueryParams.Add("forceReload", parameterToString(*r.forceReload, ""))
-	}
 	if r.version != nil {
 		localVarQueryParams.Add("version", parameterToString(*r.version, ""))
 	}

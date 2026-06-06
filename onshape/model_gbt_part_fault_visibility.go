@@ -15,56 +15,56 @@ import (
 	"fmt"
 )
 
-// BTVersionGraphMode the model 'BTVersionGraphMode'
-type BTVersionGraphMode string
+// GBTPartFaultVisibility the model 'GBTPartFaultVisibility'
+type GBTPartFaultVisibility string
 
-// List of BTVersionGraphMode
+// List of GBTPartFaultVisibility
 const (
-	BTVersionGraphModeAllBranches               BTVersionGraphMode = "ALL_BRANCHES"
-	BTVersionGraphModeActiveBranch              BTVersionGraphMode = "ACTIVE_BRANCH"
-	BTVersionGraphModeAllBranchesWithWorkspaces BTVersionGraphMode = "ALL_BRANCHES_WITH_WORKSPACES"
-	BTVersionGraphModeActiveBranchWithParents   BTVersionGraphMode = "ACTIVE_BRANCH_WITH_PARENTS"
+	GBTPartFaultVisibilityUnspecified GBTPartFaultVisibility = "UNSPECIFIED"
+	GBTPartFaultVisibilityHidden      GBTPartFaultVisibility = "HIDDEN"
+	GBTPartFaultVisibilityVisible     GBTPartFaultVisibility = "VISIBLE"
+	GBTPartFaultVisibilityUnknown     GBTPartFaultVisibility = "UNKNOWN"
 )
 
-// All allowed values of BTVersionGraphMode enum
-var AllowedBTVersionGraphModeEnumValues = []BTVersionGraphMode{
-	"ALL_BRANCHES",
-	"ACTIVE_BRANCH",
-	"ALL_BRANCHES_WITH_WORKSPACES",
-	"ACTIVE_BRANCH_WITH_PARENTS",
+// All allowed values of GBTPartFaultVisibility enum
+var AllowedGBTPartFaultVisibilityEnumValues = []GBTPartFaultVisibility{
+	"UNSPECIFIED",
+	"HIDDEN",
+	"VISIBLE",
+	"UNKNOWN",
 }
 
-func (v *BTVersionGraphMode) UnmarshalJSON(src []byte) error {
+func (v *GBTPartFaultVisibility) UnmarshalJSON(src []byte) error {
 	var value string
 	err := json.Unmarshal(src, &value)
 	if err != nil {
 		return err
 	}
-	enumTypeValue := BTVersionGraphMode(value)
-	for _, existing := range AllowedBTVersionGraphModeEnumValues {
+	enumTypeValue := GBTPartFaultVisibility(value)
+	for _, existing := range AllowedGBTPartFaultVisibilityEnumValues {
 		if existing == enumTypeValue {
 			*v = enumTypeValue
 			return nil
 		}
 	}
 
-	return fmt.Errorf("%+v is not a valid BTVersionGraphMode", value)
+	return fmt.Errorf("%+v is not a valid GBTPartFaultVisibility", value)
 }
 
-// NewBTVersionGraphModeFromValue returns a pointer to a valid BTVersionGraphMode
+// NewGBTPartFaultVisibilityFromValue returns a pointer to a valid GBTPartFaultVisibility
 // for the value passed as argument, or an error if the value passed is not allowed by the enum
-func NewBTVersionGraphModeFromValue(v string) (*BTVersionGraphMode, error) {
-	ev := BTVersionGraphMode(v)
+func NewGBTPartFaultVisibilityFromValue(v string) (*GBTPartFaultVisibility, error) {
+	ev := GBTPartFaultVisibility(v)
 	if ev.IsValid() {
 		return &ev, nil
 	} else {
-		return nil, fmt.Errorf("invalid value '%v' for BTVersionGraphMode: valid values are %v", v, AllowedBTVersionGraphModeEnumValues)
+		return nil, fmt.Errorf("invalid value '%v' for GBTPartFaultVisibility: valid values are %v", v, AllowedGBTPartFaultVisibilityEnumValues)
 	}
 }
 
 // IsValid return true if the value is valid for the enum, false otherwise
-func (v BTVersionGraphMode) IsValid() bool {
-	for _, existing := range AllowedBTVersionGraphModeEnumValues {
+func (v GBTPartFaultVisibility) IsValid() bool {
+	for _, existing := range AllowedGBTPartFaultVisibilityEnumValues {
 		if existing == v {
 			return true
 		}
@@ -72,43 +72,43 @@ func (v BTVersionGraphMode) IsValid() bool {
 	return false
 }
 
-// Ptr returns reference to BTVersionGraphMode value
-func (v BTVersionGraphMode) Ptr() *BTVersionGraphMode {
+// Ptr returns reference to GBTPartFaultVisibility value
+func (v GBTPartFaultVisibility) Ptr() *GBTPartFaultVisibility {
 	return &v
 }
 
-type NullableBTVersionGraphMode struct {
-	value *BTVersionGraphMode
+type NullableGBTPartFaultVisibility struct {
+	value *GBTPartFaultVisibility
 	isSet bool
 }
 
-func (v NullableBTVersionGraphMode) Get() *BTVersionGraphMode {
+func (v NullableGBTPartFaultVisibility) Get() *GBTPartFaultVisibility {
 	return v.value
 }
 
-func (v *NullableBTVersionGraphMode) Set(val *BTVersionGraphMode) {
+func (v *NullableGBTPartFaultVisibility) Set(val *GBTPartFaultVisibility) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTVersionGraphMode) IsSet() bool {
+func (v NullableGBTPartFaultVisibility) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTVersionGraphMode) Unset() {
+func (v *NullableGBTPartFaultVisibility) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTVersionGraphMode(val *BTVersionGraphMode) *NullableBTVersionGraphMode {
-	return &NullableBTVersionGraphMode{value: val, isSet: true}
+func NewNullableGBTPartFaultVisibility(val *GBTPartFaultVisibility) *NullableGBTPartFaultVisibility {
+	return &NullableGBTPartFaultVisibility{value: val, isSet: true}
 }
 
-func (v NullableBTVersionGraphMode) MarshalJSON() ([]byte, error) {
+func (v NullableGBTPartFaultVisibility) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTVersionGraphMode) UnmarshalJSON(src []byte) error {
+func (v *NullableGBTPartFaultVisibility) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

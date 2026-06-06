@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **PercentDone** | Pointer to **float64** |  | [optional] 
 **Status** | Pointer to [**GBTComputeStatus**](GBTComputeStatus.md) |  | [optional] 
 **StatusMessage** | Pointer to **string** |  | [optional] 
+**StatusMessages** | Pointer to **[]string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetStatusMessage sets StatusMessage field to given value.
 `func (o *BTMParameterProgress3232) HasStatusMessage() bool`
 
 HasStatusMessage returns a boolean if a field has been set.
+
+### GetStatusMessages
+
+`func (o *BTMParameterProgress3232) GetStatusMessages() []string`
+
+GetStatusMessages returns the StatusMessages field if non-nil, zero value otherwise.
+
+### GetStatusMessagesOk
+
+`func (o *BTMParameterProgress3232) GetStatusMessagesOk() (*[]string, bool)`
+
+GetStatusMessagesOk returns a tuple with the StatusMessages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatusMessages
+
+`func (o *BTMParameterProgress3232) SetStatusMessages(v []string)`
+
+SetStatusMessages sets StatusMessages field to given value.
+
+### HasStatusMessages
+
+`func (o *BTMParameterProgress3232) HasStatusMessages() bool`
+
+HasStatusMessages returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

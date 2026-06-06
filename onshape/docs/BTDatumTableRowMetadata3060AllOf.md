@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **CrossHighlightData** | Pointer to [**BTTableCrossHighlightData1753**](BTTableCrossHighlightData1753.md) |  | [optional] 
 **IsDerived** | Pointer to **bool** |  | [optional] 
+**PartId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetIsDerived sets IsDerived field to given value.
 `func (o *BTDatumTableRowMetadata3060AllOf) HasIsDerived() bool`
 
 HasIsDerived returns a boolean if a field has been set.
+
+### GetPartId
+
+`func (o *BTDatumTableRowMetadata3060AllOf) GetPartId() string`
+
+GetPartId returns the PartId field if non-nil, zero value otherwise.
+
+### GetPartIdOk
+
+`func (o *BTDatumTableRowMetadata3060AllOf) GetPartIdOk() (*string, bool)`
+
+GetPartIdOk returns a tuple with the PartId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPartId
+
+`func (o *BTDatumTableRowMetadata3060AllOf) SetPartId(v string)`
+
+SetPartId sets PartId field to given value.
+
+### HasPartId
+
+`func (o *BTDatumTableRowMetadata3060AllOf) HasPartId() bool`
+
+HasPartId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

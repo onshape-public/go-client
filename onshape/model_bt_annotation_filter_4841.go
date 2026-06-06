@@ -17,7 +17,8 @@ import (
 // BTAnnotationFilter4841 struct for BTAnnotationFilter4841
 type BTAnnotationFilter4841 struct {
 	BTQueryFilter183
-	BtType *string `json:"btType,omitempty"`
+	BtType         *string            `json:"btType,omitempty"`
+	AnnotationType *GBTAnnotationType `json:"annotationType,omitempty"`
 }
 
 // NewBTAnnotationFilter4841 instantiates a new BTAnnotationFilter4841 object
@@ -69,6 +70,38 @@ func (o *BTAnnotationFilter4841) SetBtType(v string) {
 	o.BtType = &v
 }
 
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *BTAnnotationFilter4841) GetAnnotationType() GBTAnnotationType {
+	if o == nil || o.AnnotationType == nil {
+		var ret GBTAnnotationType
+		return ret
+	}
+	return *o.AnnotationType
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationFilter4841) GetAnnotationTypeOk() (*GBTAnnotationType, bool) {
+	if o == nil || o.AnnotationType == nil {
+		return nil, false
+	}
+	return o.AnnotationType, true
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *BTAnnotationFilter4841) HasAnnotationType() bool {
+	if o != nil && o.AnnotationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationType gets a reference to the given GBTAnnotationType and assigns it to the AnnotationType field.
+func (o *BTAnnotationFilter4841) SetAnnotationType(v GBTAnnotationType) {
+	o.AnnotationType = &v
+}
+
 func (o BTAnnotationFilter4841) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTQueryFilter183, errBTQueryFilter183 := json.Marshal(o.BTQueryFilter183)
@@ -81,6 +114,9 @@ func (o BTAnnotationFilter4841) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.AnnotationType != nil {
+		toSerialize["annotationType"] = o.AnnotationType
 	}
 	return json.Marshal(toSerialize)
 }

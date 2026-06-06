@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationId** | Pointer to **string** |  | [optional] 
 **AnnotationType** | Pointer to **int32** |  | [optional] 
+**AppEntity** | Pointer to **string** |  | [optional] 
 **AssemblyFeatures** | Pointer to **[]string** |  | [optional] 
 **AssignedAt** | Pointer to **JSONTime** |  | [optional] 
 **Assignee** | Pointer to [**BTUserSummaryInfo**](BTUserSummaryInfo.md) |  | [optional] 
@@ -115,6 +116,31 @@ SetAnnotationType sets AnnotationType field to given value.
 `func (o *BTCommentInfo) HasAnnotationType() bool`
 
 HasAnnotationType returns a boolean if a field has been set.
+
+### GetAppEntity
+
+`func (o *BTCommentInfo) GetAppEntity() string`
+
+GetAppEntity returns the AppEntity field if non-nil, zero value otherwise.
+
+### GetAppEntityOk
+
+`func (o *BTCommentInfo) GetAppEntityOk() (*string, bool)`
+
+GetAppEntityOk returns a tuple with the AppEntity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppEntity
+
+`func (o *BTCommentInfo) SetAppEntity(v string)`
+
+SetAppEntity sets AppEntity field to given value.
+
+### HasAppEntity
+
+`func (o *BTCommentInfo) HasAppEntity() bool`
+
+HasAppEntity returns a boolean if a field has been set.
 
 ### GetAssemblyFeatures
 

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationId** | Pointer to **string** |  | [optional] 
 **AnnotationType** | Pointer to **int32** |  | [optional] 
+**AppEntity** | Pointer to **string** |  | [optional] 
 **AssemblyFeature** | Pointer to **string** |  | [optional] 
 **Assignee** | Pointer to **string** | Assign the comment during creation. Comments cannot be reassigned during an update at this time. | [optional] 
 **CalloutInstanceId** | Pointer to **string** |  | [optional] 
@@ -96,6 +97,31 @@ SetAnnotationType sets AnnotationType field to given value.
 `func (o *BTCommentParams) HasAnnotationType() bool`
 
 HasAnnotationType returns a boolean if a field has been set.
+
+### GetAppEntity
+
+`func (o *BTCommentParams) GetAppEntity() string`
+
+GetAppEntity returns the AppEntity field if non-nil, zero value otherwise.
+
+### GetAppEntityOk
+
+`func (o *BTCommentParams) GetAppEntityOk() (*string, bool)`
+
+GetAppEntityOk returns a tuple with the AppEntity field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppEntity
+
+`func (o *BTCommentParams) SetAppEntity(v string)`
+
+SetAppEntity sets AppEntity field to given value.
+
+### HasAppEntity
+
+`func (o *BTCommentParams) HasAppEntity() bool`
+
+HasAppEntity returns a boolean if a field has been set.
 
 ### GetAssemblyFeature
 

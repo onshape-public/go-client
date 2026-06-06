@@ -41,6 +41,8 @@ func (r ApiAddAttachmentRequest) Execute() (*BTCommentInfo, *http.Response, erro
 /*
 AddAttachment Add an attachment to a comment.
 
+Attach a file to the comment. The file must be in JPEG, PNG, or GIF format
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param cid
 	@return ApiAddAttachmentRequest

@@ -32,9 +32,11 @@ type BTDocumentParams struct {
 	Name *string `json:"name,omitempty"`
 	// Set to `true` to indicate that revisions are not managed for this document.
 	NotRevisionManaged *bool `json:"notRevisionManaged,omitempty"`
-	// Document notes.
+	// Deprecated. Use the /documents/{did}/notes endpoint instead.
+	// Deprecated
 	Notes *string `json:"notes,omitempty"`
-	// Historical document notes.
+	// Deprecated. Use the /documents/{did}/notes endpoint instead.
+	// Deprecated
 	OldClientNotes *string `json:"oldClientNotes,omitempty"`
 	// The document owner's email address.
 	OwnerEmail *string `json:"ownerEmail,omitempty"`
@@ -328,6 +330,7 @@ func (o *BTDocumentParams) SetNotRevisionManaged(v bool) {
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise.
+// Deprecated
 func (o *BTDocumentParams) GetNotes() string {
 	if o == nil || o.Notes == nil {
 		var ret string
@@ -338,6 +341,7 @@ func (o *BTDocumentParams) GetNotes() string {
 
 // GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTDocumentParams) GetNotesOk() (*string, bool) {
 	if o == nil || o.Notes == nil {
 		return nil, false
@@ -355,11 +359,13 @@ func (o *BTDocumentParams) HasNotes() bool {
 }
 
 // SetNotes gets a reference to the given string and assigns it to the Notes field.
+// Deprecated
 func (o *BTDocumentParams) SetNotes(v string) {
 	o.Notes = &v
 }
 
 // GetOldClientNotes returns the OldClientNotes field value if set, zero value otherwise.
+// Deprecated
 func (o *BTDocumentParams) GetOldClientNotes() string {
 	if o == nil || o.OldClientNotes == nil {
 		var ret string
@@ -370,6 +376,7 @@ func (o *BTDocumentParams) GetOldClientNotes() string {
 
 // GetOldClientNotesOk returns a tuple with the OldClientNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTDocumentParams) GetOldClientNotesOk() (*string, bool) {
 	if o == nil || o.OldClientNotes == nil {
 		return nil, false
@@ -387,6 +394,7 @@ func (o *BTDocumentParams) HasOldClientNotes() bool {
 }
 
 // SetOldClientNotes gets a reference to the given string and assigns it to the OldClientNotes field.
+// Deprecated
 func (o *BTDocumentParams) SetOldClientNotes(v string) {
 	o.OldClientNotes = &v
 }

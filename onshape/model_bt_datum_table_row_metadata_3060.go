@@ -22,6 +22,7 @@ type BTDatumTableRowMetadata3060 struct {
 	AnnotationId            *string                            `json:"annotationId,omitempty"`
 	CrossHighlightData      *BTTableCrossHighlightData1753     `json:"crossHighlightData,omitempty"`
 	IsDerived               *bool                              `json:"isDerived,omitempty"`
+	PartId                  *string                            `json:"partId,omitempty"`
 }
 
 // NewBTDatumTableRowMetadata3060 instantiates a new BTDatumTableRowMetadata3060 object
@@ -201,6 +202,38 @@ func (o *BTDatumTableRowMetadata3060) SetIsDerived(v bool) {
 	o.IsDerived = &v
 }
 
+// GetPartId returns the PartId field value if set, zero value otherwise.
+func (o *BTDatumTableRowMetadata3060) GetPartId() string {
+	if o == nil || o.PartId == nil {
+		var ret string
+		return ret
+	}
+	return *o.PartId
+}
+
+// GetPartIdOk returns a tuple with the PartId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDatumTableRowMetadata3060) GetPartIdOk() (*string, bool) {
+	if o == nil || o.PartId == nil {
+		return nil, false
+	}
+	return o.PartId, true
+}
+
+// HasPartId returns a boolean if a field has been set.
+func (o *BTDatumTableRowMetadata3060) HasPartId() bool {
+	if o != nil && o.PartId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPartId gets a reference to the given string and assigns it to the PartId field.
+func (o *BTDatumTableRowMetadata3060) SetPartId(v string) {
+	o.PartId = &v
+}
+
 func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableBaseRowMetadata3181, errBTTableBaseRowMetadata3181 := json.Marshal(o.BTTableBaseRowMetadata3181)
@@ -225,6 +258,9 @@ func (o BTDatumTableRowMetadata3060) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDerived != nil {
 		toSerialize["isDerived"] = o.IsDerived
+	}
+	if o.PartId != nil {
+		toSerialize["partId"] = o.PartId
 	}
 	return json.Marshal(toSerialize)
 }

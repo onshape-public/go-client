@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Clockwise** | Pointer to **bool** |  | [optional] 
+**IsConjugateAngle** | Pointer to **bool** |  | [optional] 
 **PositionR** | Pointer to **float64** |  | [optional] 
 **PositionT** | Pointer to **float64** |  | [optional] 
 **WitnessEndPoint0r** | Pointer to **float64** |  | [optional] 
@@ -85,6 +86,31 @@ SetClockwise sets Clockwise field to given value.
 `func (o *BTAngularDimensionDisplayData320) HasClockwise() bool`
 
 HasClockwise returns a boolean if a field has been set.
+
+### GetIsConjugateAngle
+
+`func (o *BTAngularDimensionDisplayData320) GetIsConjugateAngle() bool`
+
+GetIsConjugateAngle returns the IsConjugateAngle field if non-nil, zero value otherwise.
+
+### GetIsConjugateAngleOk
+
+`func (o *BTAngularDimensionDisplayData320) GetIsConjugateAngleOk() (*bool, bool)`
+
+GetIsConjugateAngleOk returns a tuple with the IsConjugateAngle field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsConjugateAngle
+
+`func (o *BTAngularDimensionDisplayData320) SetIsConjugateAngle(v bool)`
+
+SetIsConjugateAngle sets IsConjugateAngle field to given value.
+
+### HasIsConjugateAngle
+
+`func (o *BTAngularDimensionDisplayData320) HasIsConjugateAngle() bool`
+
+HasIsConjugateAngle returns a boolean if a field has been set.
 
 ### GetPositionR
 

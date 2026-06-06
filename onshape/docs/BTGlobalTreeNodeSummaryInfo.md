@@ -9,17 +9,12 @@ Name | Type | Description | Notes
 **CanUnshare** | Pointer to **bool** |  | [optional] 
 **CreatedWithEducationPlan** | Pointer to **bool** |  | [optional] 
 **DefaultElementId** | Pointer to **string** |  | [optional] 
-**DefaultVersionGraphMode** | Pointer to [**BTVersionGraphMode**](BTVersionGraphMode.md) |  | [optional] 
-**DefaultVersionGraphShowAutoVersions** | Pointer to **bool** |  | [optional] 
-**DefaultVersionGraphShowMerges** | Pointer to **bool** |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
-**ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
-**IsOrphaned** | Pointer to **bool** |  | [optional] 
 **IsUsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
 **Likes** | Pointer to **int64** |  | [optional] 
@@ -36,8 +31,6 @@ Name | Type | Description | Notes
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
-**TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
-**TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **UserAccountLimitsBreached** | Pointer to **bool** |  | [optional] 
@@ -186,81 +179,6 @@ SetDefaultElementId sets DefaultElementId field to given value.
 
 HasDefaultElementId returns a boolean if a field has been set.
 
-### GetDefaultVersionGraphMode
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphMode() BTVersionGraphMode`
-
-GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphModeOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool)`
-
-GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphMode
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode)`
-
-SetDefaultVersionGraphMode sets DefaultVersionGraphMode field to given value.
-
-### HasDefaultVersionGraphMode
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasDefaultVersionGraphMode() bool`
-
-HasDefaultVersionGraphMode returns a boolean if a field has been set.
-
-### GetDefaultVersionGraphShowAutoVersions
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphShowAutoVersions() bool`
-
-GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphShowAutoVersionsOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool)`
-
-GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphShowAutoVersions
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetDefaultVersionGraphShowAutoVersions(v bool)`
-
-SetDefaultVersionGraphShowAutoVersions sets DefaultVersionGraphShowAutoVersions field to given value.
-
-### HasDefaultVersionGraphShowAutoVersions
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasDefaultVersionGraphShowAutoVersions() bool`
-
-HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
-
-### GetDefaultVersionGraphShowMerges
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphShowMerges() bool`
-
-GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphShowMergesOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool)`
-
-GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphShowMerges
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetDefaultVersionGraphShowMerges(v bool)`
-
-SetDefaultVersionGraphShowMerges sets DefaultVersionGraphShowMerges field to given value.
-
-### HasDefaultVersionGraphShowMerges
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasDefaultVersionGraphShowMerges() bool`
-
-HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
-
 ### GetDefaultWorkspace
 
 `func (o *BTGlobalTreeNodeSummaryInfo) GetDefaultWorkspace() BTWorkspaceInfo`
@@ -336,31 +254,6 @@ SetDocumentType sets DocumentType field to given value.
 
 HasDocumentType returns a boolean if a field has been set.
 
-### GetElementLibrarySummaryInfo
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo`
-
-GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field if non-nil, zero value otherwise.
-
-### GetElementLibrarySummaryInfoOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetElementLibrarySummaryInfoOk() (*[]BTElementLibrarySummaryInfo, bool)`
-
-GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetElementLibrarySummaryInfo
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)`
-
-SetElementLibrarySummaryInfo sets ElementLibrarySummaryInfo field to given value.
-
-### HasElementLibrarySummaryInfo
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasElementLibrarySummaryInfo() bool`
-
-HasElementLibrarySummaryInfo returns a boolean if a field has been set.
-
 ### GetForceExportRules
 
 `func (o *BTGlobalTreeNodeSummaryInfo) GetForceExportRules() bool`
@@ -435,31 +328,6 @@ SetHasRelevantInsertables sets HasRelevantInsertables field to given value.
 `func (o *BTGlobalTreeNodeSummaryInfo) HasHasRelevantInsertables() bool`
 
 HasHasRelevantInsertables returns a boolean if a field has been set.
-
-### GetIsOrphaned
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetIsOrphaned() bool`
-
-GetIsOrphaned returns the IsOrphaned field if non-nil, zero value otherwise.
-
-### GetIsOrphanedOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetIsOrphanedOk() (*bool, bool)`
-
-GetIsOrphanedOk returns a tuple with the IsOrphaned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsOrphaned
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetIsOrphaned(v bool)`
-
-SetIsOrphaned sets IsOrphaned field to given value.
-
-### HasIsOrphaned
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasIsOrphaned() bool`
-
-HasIsOrphaned returns a boolean if a field has been set.
 
 ### GetIsUsingManagedWorkflow
 
@@ -860,56 +728,6 @@ SetThumbnail sets Thumbnail field to given value.
 `func (o *BTGlobalTreeNodeSummaryInfo) HasThumbnail() bool`
 
 HasThumbnail returns a boolean if a field has been set.
-
-### GetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetTotalWorkspacesScheduledForUpdate() int32`
-
-GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesScheduledForUpdateOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)`
-
-GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetTotalWorkspacesScheduledForUpdate(v int32)`
-
-SetTotalWorkspacesScheduledForUpdate sets TotalWorkspacesScheduledForUpdate field to given value.
-
-### HasTotalWorkspacesScheduledForUpdate
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasTotalWorkspacesScheduledForUpdate() bool`
-
-HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-
-### GetTotalWorkspacesUpdating
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetTotalWorkspacesUpdating() int32`
-
-GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesUpdatingOk
-
-`func (o *BTGlobalTreeNodeSummaryInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool)`
-
-GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesUpdating
-
-`func (o *BTGlobalTreeNodeSummaryInfo) SetTotalWorkspacesUpdating(v int32)`
-
-SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
-
-### HasTotalWorkspacesUpdating
-
-`func (o *BTGlobalTreeNodeSummaryInfo) HasTotalWorkspacesUpdating() bool`
-
-HasTotalWorkspacesUpdating returns a boolean if a field has been set.
 
 ### GetTrash
 

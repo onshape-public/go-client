@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 ## GetCompanyUsers
 
-> BTListResponseBTCompanyUserInfo GetCompanyUsers(ctx, cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).Execute()
+> BTListResponseBTCompanyUserInfo GetCompanyUsers(ctx, cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).RoleFilter(roleFilter).AfterDateAdded(afterDateAdded).BeforeDateAdded(beforeDateAdded).Execute()
 
 Get a list of members in a company.
 
@@ -399,21 +399,25 @@ import (
     "context"
     "fmt"
     "os"
+    "time"
     openapiclient "./openapi"
 )
 
 func main() {
     cid := "cid_example" // string | Company ID
-    sortColumn := "sortColumn_example" // string | `createdAt | modifiedAt | name | light | lastLoginTime | userRole | state` (optional) (default to "createdAt")
+    sortColumn := "sortColumn_example" // string | `createdAt | modifiedAt | name | firstName | lastName | email | light | lastLoginTime | userRole | state` (optional) (default to "createdAt")
     sortOrder := "sortOrder_example" // string | `desc` (descending, default) | `asc` (ascending) (optional) (default to "desc")
     q := "q_example" // string | Search string to filter users by name or email. (optional) (default to "")
     includeGlobalPermissions := true // bool | Whether to include global permission info for each user. (optional) (default to false)
     offset := int32(56) // int32 | Offset. Determines where search results begin. Default value is 0. (optional) (default to 0)
     limit := int32(56) // int32 | Number of results to return per page. Default value is 20 (also the maximum). (optional) (default to 20)
+    roleFilter := []int32{int32(123)} // []int32 | Filter by user role ordinal: `0` (OWNER), `1` (ADMIN), `2` (MEMBER). Multiple values allowed. Defaults to all roles. (optional)
+    afterDateAdded := time.Now() // JSONTime | Filter users added after this date (ISO 8601, e.g. 2026-01-01T00:00:00Z). (optional)
+    beforeDateAdded := time.Now() // JSONTime | Filter users added before this date (ISO 8601, e.g. 2026-12-31T23:59:59Z). (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.CompanyApi.GetCompanyUsers(context.Background(), cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).Execute()
+    resp, r, err := apiClient.CompanyApi.GetCompanyUsers(context.Background(), cid).SortColumn(sortColumn).SortOrder(sortOrder).Q(q).IncludeGlobalPermissions(includeGlobalPermissions).Offset(offset).Limit(limit).RoleFilter(roleFilter).AfterDateAdded(afterDateAdded).BeforeDateAdded(beforeDateAdded).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CompanyApi.GetCompanyUsers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -439,12 +443,15 @@ Other parameters are passed through a pointer to a apiGetCompanyUsersRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **sortColumn** | **string** | &#x60;createdAt | modifiedAt | name | light | lastLoginTime | userRole | state&#x60; | [default to &quot;createdAt&quot;]
+ **sortColumn** | **string** | &#x60;createdAt | modifiedAt | name | firstName | lastName | email | light | lastLoginTime | userRole | state&#x60; | [default to &quot;createdAt&quot;]
  **sortOrder** | **string** | &#x60;desc&#x60; (descending, default) | &#x60;asc&#x60; (ascending) | [default to &quot;desc&quot;]
  **q** | **string** | Search string to filter users by name or email. | [default to &quot;&quot;]
  **includeGlobalPermissions** | **bool** | Whether to include global permission info for each user. | [default to false]
  **offset** | **int32** | Offset. Determines where search results begin. Default value is 0. | [default to 0]
  **limit** | **int32** | Number of results to return per page. Default value is 20 (also the maximum). | [default to 20]
+ **roleFilter** | **[]int32** | Filter by user role ordinal: &#x60;0&#x60; (OWNER), &#x60;1&#x60; (ADMIN), &#x60;2&#x60; (MEMBER). Multiple values allowed. Defaults to all roles. | 
+ **afterDateAdded** | **JSONTime** | Filter users added after this date (ISO 8601, e.g. 2026-01-01T00:00:00Z). | 
+ **beforeDateAdded** | **JSONTime** | Filter users added before this date (ISO 8601, e.g. 2026-12-31T23:59:59Z). | 
 
 ### Return type
 

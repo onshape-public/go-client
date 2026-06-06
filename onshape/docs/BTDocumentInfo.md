@@ -6,9 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnonymousAccessAllowed** | Pointer to **bool** |  | [optional] 
 **AnonymousAllowsExport** | Pointer to **bool** |  | [optional] 
-**CanCreateTaskViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
-**CanExportViaConnectionGlobalPermisison** | Pointer to **bool** |  | [optional] 
-**CanImportViaConnectionGlobalPermission** | Pointer to **bool** |  | [optional] 
 **CanMove** | Pointer to **bool** |  | [optional] 
 **CanUnshare** | Pointer to **bool** |  | [optional] 
 **ConnectionName** | Pointer to **string** |  | [optional] 
@@ -17,16 +14,12 @@ Name | Type | Description | Notes
 **CreatedBy** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **CreatedWithEducationPlan** | Pointer to **bool** |  | [optional] 
 **DefaultElementId** | Pointer to **string** |  | [optional] 
-**DefaultVersionGraphMode** | Pointer to [**BTVersionGraphMode**](BTVersionGraphMode.md) |  | [optional] 
-**DefaultVersionGraphShowAutoVersions** | Pointer to **bool** |  | [optional] 
-**DefaultVersionGraphShowMerges** | Pointer to **bool** |  | [optional] 
 **DefaultWorkspace** | Pointer to [**BTWorkspaceInfo**](BTWorkspaceInfo.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DocumentLabels** | Pointer to [**[]BTDocumentLabelInfo**](BTDocumentLabelInfo.md) |  | [optional] 
 **DocumentThumbnailElementId** | Pointer to **string** |  | [optional] 
 **DocumentType** | Pointer to **int32** |  | [optional] 
 **DuplicateNameViolationError** | Pointer to **string** |  | [optional] 
-**ElementLibrarySummaryInfo** | Pointer to [**[]BTElementLibrarySummaryInfo**](BTElementLibrarySummaryInfo.md) |  | [optional] 
 **ForceExportRules** | Pointer to **bool** |  | [optional] 
 **HasReleaseRevisionableObjects** | Pointer to **bool** |  | [optional] 
 **HasRelevantInsertables** | Pointer to **bool** |  | [optional] 
@@ -36,7 +29,6 @@ Name | Type | Description | Notes
 **IsEnterpriseOwned** | Pointer to **bool** |  | [optional] 
 **IsExternalConnectionResource** | Pointer to **bool** |  | [optional] 
 **IsMutable** | Pointer to **bool** |  | [optional] 
-**IsOrphaned** | Pointer to **bool** |  | [optional] 
 **IsUpgradedToLatestVersion** | Pointer to **bool** |  | [optional] 
 **IsUsingManagedWorkflow** | Pointer to **bool** |  | [optional] 
 **LikedByCurrentUser** | Pointer to **bool** |  | [optional] 
@@ -62,9 +54,6 @@ Name | Type | Description | Notes
 **SupportTeamUserAndShared** | Pointer to **bool** |  | [optional] 
 **Tags** | Pointer to **[]string** |  | [optional] 
 **Thumbnail** | Pointer to [**BTThumbnailInfo**](BTThumbnailInfo.md) |  | [optional] 
-**TotalWorkspacesScheduledForUpdate** | Pointer to **int32** |  | [optional] 
-**TotalWorkspacesUpdating** | Pointer to **int32** |  | [optional] 
-**TracingEnabled** | Pointer to **bool** |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 **TrashedAt** | Pointer to **JSONTime** |  | [optional] 
 **TreeHref** | Pointer to **string** |  | [optional] 
@@ -140,81 +129,6 @@ SetAnonymousAllowsExport sets AnonymousAllowsExport field to given value.
 `func (o *BTDocumentInfo) HasAnonymousAllowsExport() bool`
 
 HasAnonymousAllowsExport returns a boolean if a field has been set.
-
-### GetCanCreateTaskViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermission() bool`
-
-GetCanCreateTaskViaConnectionGlobalPermission returns the CanCreateTaskViaConnectionGlobalPermission field if non-nil, zero value otherwise.
-
-### GetCanCreateTaskViaConnectionGlobalPermissionOk
-
-`func (o *BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool)`
-
-GetCanCreateTaskViaConnectionGlobalPermissionOk returns a tuple with the CanCreateTaskViaConnectionGlobalPermission field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanCreateTaskViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) SetCanCreateTaskViaConnectionGlobalPermission(v bool)`
-
-SetCanCreateTaskViaConnectionGlobalPermission sets CanCreateTaskViaConnectionGlobalPermission field to given value.
-
-### HasCanCreateTaskViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) HasCanCreateTaskViaConnectionGlobalPermission() bool`
-
-HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
-
-### GetCanExportViaConnectionGlobalPermisison
-
-`func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisison() bool`
-
-GetCanExportViaConnectionGlobalPermisison returns the CanExportViaConnectionGlobalPermisison field if non-nil, zero value otherwise.
-
-### GetCanExportViaConnectionGlobalPermisisonOk
-
-`func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool)`
-
-GetCanExportViaConnectionGlobalPermisisonOk returns a tuple with the CanExportViaConnectionGlobalPermisison field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanExportViaConnectionGlobalPermisison
-
-`func (o *BTDocumentInfo) SetCanExportViaConnectionGlobalPermisison(v bool)`
-
-SetCanExportViaConnectionGlobalPermisison sets CanExportViaConnectionGlobalPermisison field to given value.
-
-### HasCanExportViaConnectionGlobalPermisison
-
-`func (o *BTDocumentInfo) HasCanExportViaConnectionGlobalPermisison() bool`
-
-HasCanExportViaConnectionGlobalPermisison returns a boolean if a field has been set.
-
-### GetCanImportViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermission() bool`
-
-GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field if non-nil, zero value otherwise.
-
-### GetCanImportViaConnectionGlobalPermissionOk
-
-`func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool)`
-
-GetCanImportViaConnectionGlobalPermissionOk returns a tuple with the CanImportViaConnectionGlobalPermission field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCanImportViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) SetCanImportViaConnectionGlobalPermission(v bool)`
-
-SetCanImportViaConnectionGlobalPermission sets CanImportViaConnectionGlobalPermission field to given value.
-
-### HasCanImportViaConnectionGlobalPermission
-
-`func (o *BTDocumentInfo) HasCanImportViaConnectionGlobalPermission() bool`
-
-HasCanImportViaConnectionGlobalPermission returns a boolean if a field has been set.
 
 ### GetCanMove
 
@@ -416,81 +330,6 @@ SetDefaultElementId sets DefaultElementId field to given value.
 
 HasDefaultElementId returns a boolean if a field has been set.
 
-### GetDefaultVersionGraphMode
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphMode() BTVersionGraphMode`
-
-GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphModeOk
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool)`
-
-GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphMode
-
-`func (o *BTDocumentInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode)`
-
-SetDefaultVersionGraphMode sets DefaultVersionGraphMode field to given value.
-
-### HasDefaultVersionGraphMode
-
-`func (o *BTDocumentInfo) HasDefaultVersionGraphMode() bool`
-
-HasDefaultVersionGraphMode returns a boolean if a field has been set.
-
-### GetDefaultVersionGraphShowAutoVersions
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphShowAutoVersions() bool`
-
-GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphShowAutoVersionsOk
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool)`
-
-GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphShowAutoVersions
-
-`func (o *BTDocumentInfo) SetDefaultVersionGraphShowAutoVersions(v bool)`
-
-SetDefaultVersionGraphShowAutoVersions sets DefaultVersionGraphShowAutoVersions field to given value.
-
-### HasDefaultVersionGraphShowAutoVersions
-
-`func (o *BTDocumentInfo) HasDefaultVersionGraphShowAutoVersions() bool`
-
-HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
-
-### GetDefaultVersionGraphShowMerges
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphShowMerges() bool`
-
-GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field if non-nil, zero value otherwise.
-
-### GetDefaultVersionGraphShowMergesOk
-
-`func (o *BTDocumentInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool)`
-
-GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDefaultVersionGraphShowMerges
-
-`func (o *BTDocumentInfo) SetDefaultVersionGraphShowMerges(v bool)`
-
-SetDefaultVersionGraphShowMerges sets DefaultVersionGraphShowMerges field to given value.
-
-### HasDefaultVersionGraphShowMerges
-
-`func (o *BTDocumentInfo) HasDefaultVersionGraphShowMerges() bool`
-
-HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
-
 ### GetDefaultWorkspace
 
 `func (o *BTDocumentInfo) GetDefaultWorkspace() BTWorkspaceInfo`
@@ -640,31 +479,6 @@ SetDuplicateNameViolationError sets DuplicateNameViolationError field to given v
 `func (o *BTDocumentInfo) HasDuplicateNameViolationError() bool`
 
 HasDuplicateNameViolationError returns a boolean if a field has been set.
-
-### GetElementLibrarySummaryInfo
-
-`func (o *BTDocumentInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo`
-
-GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field if non-nil, zero value otherwise.
-
-### GetElementLibrarySummaryInfoOk
-
-`func (o *BTDocumentInfo) GetElementLibrarySummaryInfoOk() (*[]BTElementLibrarySummaryInfo, bool)`
-
-GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetElementLibrarySummaryInfo
-
-`func (o *BTDocumentInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)`
-
-SetElementLibrarySummaryInfo sets ElementLibrarySummaryInfo field to given value.
-
-### HasElementLibrarySummaryInfo
-
-`func (o *BTDocumentInfo) HasElementLibrarySummaryInfo() bool`
-
-HasElementLibrarySummaryInfo returns a boolean if a field has been set.
 
 ### GetForceExportRules
 
@@ -890,31 +704,6 @@ SetIsMutable sets IsMutable field to given value.
 `func (o *BTDocumentInfo) HasIsMutable() bool`
 
 HasIsMutable returns a boolean if a field has been set.
-
-### GetIsOrphaned
-
-`func (o *BTDocumentInfo) GetIsOrphaned() bool`
-
-GetIsOrphaned returns the IsOrphaned field if non-nil, zero value otherwise.
-
-### GetIsOrphanedOk
-
-`func (o *BTDocumentInfo) GetIsOrphanedOk() (*bool, bool)`
-
-GetIsOrphanedOk returns a tuple with the IsOrphaned field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsOrphaned
-
-`func (o *BTDocumentInfo) SetIsOrphaned(v bool)`
-
-SetIsOrphaned sets IsOrphaned field to given value.
-
-### HasIsOrphaned
-
-`func (o *BTDocumentInfo) HasIsOrphaned() bool`
-
-HasIsOrphaned returns a boolean if a field has been set.
 
 ### GetIsUpgradedToLatestVersion
 
@@ -1540,81 +1329,6 @@ SetThumbnail sets Thumbnail field to given value.
 `func (o *BTDocumentInfo) HasThumbnail() bool`
 
 HasThumbnail returns a boolean if a field has been set.
-
-### GetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32`
-
-GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesScheduledForUpdateOk
-
-`func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)`
-
-GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32)`
-
-SetTotalWorkspacesScheduledForUpdate sets TotalWorkspacesScheduledForUpdate field to given value.
-
-### HasTotalWorkspacesScheduledForUpdate
-
-`func (o *BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool`
-
-HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-
-### GetTotalWorkspacesUpdating
-
-`func (o *BTDocumentInfo) GetTotalWorkspacesUpdating() int32`
-
-GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field if non-nil, zero value otherwise.
-
-### GetTotalWorkspacesUpdatingOk
-
-`func (o *BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool)`
-
-GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTotalWorkspacesUpdating
-
-`func (o *BTDocumentInfo) SetTotalWorkspacesUpdating(v int32)`
-
-SetTotalWorkspacesUpdating sets TotalWorkspacesUpdating field to given value.
-
-### HasTotalWorkspacesUpdating
-
-`func (o *BTDocumentInfo) HasTotalWorkspacesUpdating() bool`
-
-HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-
-### GetTracingEnabled
-
-`func (o *BTDocumentInfo) GetTracingEnabled() bool`
-
-GetTracingEnabled returns the TracingEnabled field if non-nil, zero value otherwise.
-
-### GetTracingEnabledOk
-
-`func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool)`
-
-GetTracingEnabledOk returns a tuple with the TracingEnabled field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTracingEnabled
-
-`func (o *BTDocumentInfo) SetTracingEnabled(v bool)`
-
-SetTracingEnabled sets TracingEnabled field to given value.
-
-### HasTracingEnabled
-
-`func (o *BTDocumentInfo) HasTracingEnabled() bool`
-
-HasTracingEnabled returns a boolean if a field has been set.
 
 ### GetTrash
 

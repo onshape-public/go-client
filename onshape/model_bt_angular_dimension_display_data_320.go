@@ -1342,6 +1342,56 @@ func (o *BTAngularDimensionDisplayData320) SetClockwise(v bool) {
 	o.GetActualInstance().(getResult).SetClockwise(v)
 }
 
+// GetIsConjugateAngle returns the IsConjugateAngle field value if set, zero value otherwise.
+func (o *BTAngularDimensionDisplayData320) GetIsConjugateAngle() bool {
+	type getResult interface {
+		GetIsConjugateAngle() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsConjugateAngle()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsConjugateAngleOk returns a tuple with the IsConjugateAngle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAngularDimensionDisplayData320) GetIsConjugateAngleOk() (*bool, bool) {
+	type getResult interface {
+		GetIsConjugateAngleOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsConjugateAngleOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsConjugateAngle returns a boolean if a field has been set.
+func (o *BTAngularDimensionDisplayData320) HasIsConjugateAngle() bool {
+	type getResult interface {
+		HasIsConjugateAngle() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsConjugateAngle()
+	} else {
+		return false
+	}
+}
+
+// SetIsConjugateAngle gets a reference to the given bool and assigns it to the IsConjugateAngle field.
+func (o *BTAngularDimensionDisplayData320) SetIsConjugateAngle(v bool) {
+	type getResult interface {
+		SetIsConjugateAngle(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsConjugateAngle(v)
+}
+
 // GetPositionR returns the PositionR field value if set, zero value otherwise.
 func (o *BTAngularDimensionDisplayData320) GetPositionR() float64 {
 	type getResult interface {
@@ -1959,6 +2009,7 @@ type base_BTAngularDimensionDisplayData320 struct {
 	UpperTolerance         *float64               `json:"upperTolerance,omitempty"`
 	Value                  *float64               `json:"value,omitempty"`
 	Clockwise              *bool                  `json:"clockwise,omitempty"`
+	IsConjugateAngle       *bool                  `json:"isConjugateAngle,omitempty"`
 	PositionR              *float64               `json:"positionR,omitempty"`
 	PositionT              *float64               `json:"positionT,omitempty"`
 	WitnessEndPoint0r      *float64               `json:"witnessEndPoint0r,omitempty"`
@@ -2820,6 +2871,38 @@ func (o *base_BTAngularDimensionDisplayData320) SetClockwise(v bool) {
 	o.Clockwise = &v
 }
 
+// GetIsConjugateAngle returns the IsConjugateAngle field value if set, zero value otherwise.
+func (o *base_BTAngularDimensionDisplayData320) GetIsConjugateAngle() bool {
+	if o == nil || o.IsConjugateAngle == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsConjugateAngle
+}
+
+// GetIsConjugateAngleOk returns a tuple with the IsConjugateAngle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAngularDimensionDisplayData320) GetIsConjugateAngleOk() (*bool, bool) {
+	if o == nil || o.IsConjugateAngle == nil {
+		return nil, false
+	}
+	return o.IsConjugateAngle, true
+}
+
+// HasIsConjugateAngle returns a boolean if a field has been set.
+func (o *base_BTAngularDimensionDisplayData320) HasIsConjugateAngle() bool {
+	if o != nil && o.IsConjugateAngle != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsConjugateAngle gets a reference to the given bool and assigns it to the IsConjugateAngle field.
+func (o *base_BTAngularDimensionDisplayData320) SetIsConjugateAngle(v bool) {
+	o.IsConjugateAngle = &v
+}
+
 // GetPositionR returns the PositionR field value if set, zero value otherwise.
 func (o *base_BTAngularDimensionDisplayData320) GetPositionR() float64 {
 	if o == nil || o.PositionR == nil {
@@ -3227,6 +3310,9 @@ func (o base_BTAngularDimensionDisplayData320) MarshalJSON() ([]byte, error) {
 	}
 	if o.Clockwise != nil {
 		toSerialize["clockwise"] = o.Clockwise
+	}
+	if o.IsConjugateAngle != nil {
+		toSerialize["isConjugateAngle"] = o.IsConjugateAngle
 	}
 	if o.PositionR != nil {
 		toSerialize["positionR"] = o.PositionR

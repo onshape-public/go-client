@@ -42,45 +42,38 @@ type BTDocumentSummarySearchInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                             *string                       `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed              *bool                         `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport               *bool                         `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                          *bool                         `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan            *bool                         `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                    *string                       `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode             *BTVersionGraphMode           `json:"defaultVersionGraphMode,omitempty"`
-	DefaultVersionGraphShowAutoVersions *bool                         `json:"defaultVersionGraphShowAutoVersions,omitempty"`
-	DefaultVersionGraphShowMerges       *bool                         `json:"defaultVersionGraphShowMerges,omitempty"`
-	DefaultWorkspace                    *BTWorkspaceInfo              `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                      []BTDocumentLabelInfo         `json:"documentLabels,omitempty"`
-	DocumentType                        *int32                        `json:"documentType,omitempty"`
-	ElementLibrarySummaryInfo           []BTElementLibrarySummaryInfo `json:"elementLibrarySummaryInfo,omitempty"`
-	ForceExportRules                    *bool                         `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects       *bool                         `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables              *bool                         `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                          *bool                         `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow              *bool                         `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                  *bool                         `json:"likedByCurrentUser,omitempty"`
-	Likes                               *int64                        `json:"likes,omitempty"`
-	NotRevisionManaged                  *bool                         `json:"notRevisionManaged,omitempty"`
-	Notes                               *string                       `json:"notes,omitempty"`
-	NumberOfTimesCopied                 *int64                        `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced             *int64                        `json:"numberOfTimesReferenced,omitempty"`
-	Permission                          *BTOldPermission              `json:"permission,omitempty"`
-	PermissionSet                       []string                      `json:"permissionSet,omitempty"`
-	Public                              *bool                         `json:"public,omitempty"`
-	PublishedVersionId                  *string                       `json:"publishedVersionId,omitempty"`
-	RecentVersion                       *BTBaseInfo                   `json:"recentVersion,omitempty"`
-	Sequence                            *string                       `json:"sequence,omitempty"`
-	SupportTeamUserAndShared            *bool                         `json:"supportTeamUserAndShared,omitempty"`
-	Tags                                []string                      `json:"tags,omitempty"`
-	Thumbnail                           *BTThumbnailInfo              `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate   *int32                        `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating             *int32                        `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                               *bool                         `json:"trash,omitempty"`
-	TrashedAt                           *JSONTime                     `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached           *bool                         `json:"userAccountLimitsBreached,omitempty"`
-	SearchHits                          []BTDocumentSearchHitInfo     `json:"searchHits,omitempty"`
+	ViewRef                       *string                   `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed        *bool                     `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport         *bool                     `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                    *bool                     `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan      *bool                     `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId              *string                   `json:"defaultElementId,omitempty"`
+	DefaultWorkspace              *BTWorkspaceInfo          `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                []BTDocumentLabelInfo     `json:"documentLabels,omitempty"`
+	DocumentType                  *int32                    `json:"documentType,omitempty"`
+	ForceExportRules              *bool                     `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects *bool                     `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables        *bool                     `json:"hasRelevantInsertables,omitempty"`
+	IsUsingManagedWorkflow        *bool                     `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser            *bool                     `json:"likedByCurrentUser,omitempty"`
+	Likes                         *int64                    `json:"likes,omitempty"`
+	NotRevisionManaged            *bool                     `json:"notRevisionManaged,omitempty"`
+	Notes                         *string                   `json:"notes,omitempty"`
+	NumberOfTimesCopied           *int64                    `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced       *int64                    `json:"numberOfTimesReferenced,omitempty"`
+	Permission                    *BTOldPermission          `json:"permission,omitempty"`
+	PermissionSet                 []string                  `json:"permissionSet,omitempty"`
+	Public                        *bool                     `json:"public,omitempty"`
+	PublishedVersionId            *string                   `json:"publishedVersionId,omitempty"`
+	RecentVersion                 *BTBaseInfo               `json:"recentVersion,omitempty"`
+	Sequence                      *string                   `json:"sequence,omitempty"`
+	SupportTeamUserAndShared      *bool                     `json:"supportTeamUserAndShared,omitempty"`
+	Tags                          []string                  `json:"tags,omitempty"`
+	Thumbnail                     *BTThumbnailInfo          `json:"thumbnail,omitempty"`
+	Trash                         *bool                     `json:"trash,omitempty"`
+	TrashedAt                     *JSONTime                 `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached     *bool                     `json:"userAccountLimitsBreached,omitempty"`
+	SearchHits                    []BTDocumentSearchHitInfo `json:"searchHits,omitempty"`
 }
 
 // NewBTDocumentSummarySearchInfo instantiates a new BTDocumentSummarySearchInfo object
@@ -989,102 +982,6 @@ func (o *BTDocumentSummarySearchInfo) SetDefaultElementId(v string) {
 	o.DefaultElementId = &v
 }
 
-// GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphMode() BTVersionGraphMode {
-	if o == nil || o.DefaultVersionGraphMode == nil {
-		var ret BTVersionGraphMode
-		return ret
-	}
-	return *o.DefaultVersionGraphMode
-}
-
-// GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool) {
-	if o == nil || o.DefaultVersionGraphMode == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphMode, true
-}
-
-// HasDefaultVersionGraphMode returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasDefaultVersionGraphMode() bool {
-	if o != nil && o.DefaultVersionGraphMode != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphMode gets a reference to the given BTVersionGraphMode and assigns it to the DefaultVersionGraphMode field.
-func (o *BTDocumentSummarySearchInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode) {
-	o.DefaultVersionGraphMode = &v
-}
-
-// GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphShowAutoVersions() bool {
-	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultVersionGraphShowAutoVersions
-}
-
-// GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool) {
-	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphShowAutoVersions, true
-}
-
-// HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasDefaultVersionGraphShowAutoVersions() bool {
-	if o != nil && o.DefaultVersionGraphShowAutoVersions != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphShowAutoVersions gets a reference to the given bool and assigns it to the DefaultVersionGraphShowAutoVersions field.
-func (o *BTDocumentSummarySearchInfo) SetDefaultVersionGraphShowAutoVersions(v bool) {
-	o.DefaultVersionGraphShowAutoVersions = &v
-}
-
-// GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphShowMerges() bool {
-	if o == nil || o.DefaultVersionGraphShowMerges == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultVersionGraphShowMerges
-}
-
-// GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool) {
-	if o == nil || o.DefaultVersionGraphShowMerges == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphShowMerges, true
-}
-
-// HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasDefaultVersionGraphShowMerges() bool {
-	if o != nil && o.DefaultVersionGraphShowMerges != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphShowMerges gets a reference to the given bool and assigns it to the DefaultVersionGraphShowMerges field.
-func (o *BTDocumentSummarySearchInfo) SetDefaultVersionGraphShowMerges(v bool) {
-	o.DefaultVersionGraphShowMerges = &v
-}
-
 // GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetDefaultWorkspace() BTWorkspaceInfo {
 	if o == nil || o.DefaultWorkspace == nil {
@@ -1181,38 +1078,6 @@ func (o *BTDocumentSummarySearchInfo) SetDocumentType(v int32) {
 	o.DocumentType = &v
 }
 
-// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo {
-	if o == nil || o.ElementLibrarySummaryInfo == nil {
-		var ret []BTElementLibrarySummaryInfo
-		return ret
-	}
-	return o.ElementLibrarySummaryInfo
-}
-
-// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool) {
-	if o == nil || o.ElementLibrarySummaryInfo == nil {
-		return nil, false
-	}
-	return o.ElementLibrarySummaryInfo, true
-}
-
-// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasElementLibrarySummaryInfo() bool {
-	if o != nil && o.ElementLibrarySummaryInfo != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetElementLibrarySummaryInfo gets a reference to the given []BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
-func (o *BTDocumentSummarySearchInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo) {
-	o.ElementLibrarySummaryInfo = v
-}
-
 // GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetForceExportRules() bool {
 	if o == nil || o.ForceExportRules == nil {
@@ -1307,38 +1172,6 @@ func (o *BTDocumentSummarySearchInfo) HasHasRelevantInsertables() bool {
 // SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
 func (o *BTDocumentSummarySearchInfo) SetHasRelevantInsertables(v bool) {
 	o.HasRelevantInsertables = &v
-}
-
-// GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetIsOrphaned() bool {
-	if o == nil || o.IsOrphaned == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsOrphaned
-}
-
-// GetIsOrphanedOk returns a tuple with the IsOrphaned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetIsOrphanedOk() (*bool, bool) {
-	if o == nil || o.IsOrphaned == nil {
-		return nil, false
-	}
-	return o.IsOrphaned, true
-}
-
-// HasIsOrphaned returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasIsOrphaned() bool {
-	if o != nil && o.IsOrphaned != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsOrphaned gets a reference to the given bool and assigns it to the IsOrphaned field.
-func (o *BTDocumentSummarySearchInfo) SetIsOrphaned(v bool) {
-	o.IsOrphaned = &v
 }
 
 // GetIsUsingManagedWorkflow returns the IsUsingManagedWorkflow field value if set, zero value otherwise.
@@ -1853,70 +1686,6 @@ func (o *BTDocumentSummarySearchInfo) SetThumbnail(v BTThumbnailInfo) {
 	o.Thumbnail = &v
 }
 
-// GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetTotalWorkspacesScheduledForUpdate() int32 {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesScheduledForUpdate
-}
-
-// GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesScheduledForUpdate, true
-}
-
-// HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasTotalWorkspacesScheduledForUpdate() bool {
-	if o != nil && o.TotalWorkspacesScheduledForUpdate != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesScheduledForUpdate gets a reference to the given int32 and assigns it to the TotalWorkspacesScheduledForUpdate field.
-func (o *BTDocumentSummarySearchInfo) SetTotalWorkspacesScheduledForUpdate(v int32) {
-	o.TotalWorkspacesScheduledForUpdate = &v
-}
-
-// GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field value if set, zero value otherwise.
-func (o *BTDocumentSummarySearchInfo) GetTotalWorkspacesUpdating() int32 {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesUpdating
-}
-
-// GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentSummarySearchInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesUpdating, true
-}
-
-// HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-func (o *BTDocumentSummarySearchInfo) HasTotalWorkspacesUpdating() bool {
-	if o != nil && o.TotalWorkspacesUpdating != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesUpdating gets a reference to the given int32 and assigns it to the TotalWorkspacesUpdating field.
-func (o *BTDocumentSummarySearchInfo) SetTotalWorkspacesUpdating(v int32) {
-	o.TotalWorkspacesUpdating = &v
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetTrash() bool {
 	if o == nil || o.Trash == nil {
@@ -2131,15 +1900,6 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	if o.DefaultElementId != nil {
 		toSerialize["defaultElementId"] = o.DefaultElementId
 	}
-	if o.DefaultVersionGraphMode != nil {
-		toSerialize["defaultVersionGraphMode"] = o.DefaultVersionGraphMode
-	}
-	if o.DefaultVersionGraphShowAutoVersions != nil {
-		toSerialize["defaultVersionGraphShowAutoVersions"] = o.DefaultVersionGraphShowAutoVersions
-	}
-	if o.DefaultVersionGraphShowMerges != nil {
-		toSerialize["defaultVersionGraphShowMerges"] = o.DefaultVersionGraphShowMerges
-	}
 	if o.DefaultWorkspace != nil {
 		toSerialize["defaultWorkspace"] = o.DefaultWorkspace
 	}
@@ -2149,9 +1909,6 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	if o.DocumentType != nil {
 		toSerialize["documentType"] = o.DocumentType
 	}
-	if o.ElementLibrarySummaryInfo != nil {
-		toSerialize["elementLibrarySummaryInfo"] = o.ElementLibrarySummaryInfo
-	}
 	if o.ForceExportRules != nil {
 		toSerialize["forceExportRules"] = o.ForceExportRules
 	}
@@ -2160,9 +1917,6 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.HasRelevantInsertables != nil {
 		toSerialize["hasRelevantInsertables"] = o.HasRelevantInsertables
-	}
-	if o.IsOrphaned != nil {
-		toSerialize["isOrphaned"] = o.IsOrphaned
 	}
 	if o.IsUsingManagedWorkflow != nil {
 		toSerialize["isUsingManagedWorkflow"] = o.IsUsingManagedWorkflow
@@ -2211,12 +1965,6 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Thumbnail != nil {
 		toSerialize["thumbnail"] = o.Thumbnail
-	}
-	if o.TotalWorkspacesScheduledForUpdate != nil {
-		toSerialize["totalWorkspacesScheduledForUpdate"] = o.TotalWorkspacesScheduledForUpdate
-	}
-	if o.TotalWorkspacesUpdating != nil {
-		toSerialize["totalWorkspacesUpdating"] = o.TotalWorkspacesUpdating
 	}
 	if o.Trash != nil {
 		toSerialize["trash"] = o.Trash

@@ -22,6 +22,7 @@ type BTPartDisplayData17 struct {
 	BtType                           *string                              `json:"btType,omitempty"`
 	CustomProperties                 *BTPartCustomProperties1338          `json:"customProperties,omitempty"`
 	DefaultColorHash                 *string                              `json:"defaultColorHash,omitempty"`
+	FaultVisibility                  *GBTPartFaultVisibility              `json:"faultVisibility,omitempty"`
 	HasFaults                        *bool                                `json:"hasFaults,omitempty"`
 	Hidden                           *bool                                `json:"hidden,omitempty"`
 	HighBoxCorner                    *BTVector3d389                       `json:"highBoxCorner,omitempty"`
@@ -220,6 +221,38 @@ func (o *BTPartDisplayData17) HasDefaultColorHash() bool {
 // SetDefaultColorHash gets a reference to the given string and assigns it to the DefaultColorHash field.
 func (o *BTPartDisplayData17) SetDefaultColorHash(v string) {
 	o.DefaultColorHash = &v
+}
+
+// GetFaultVisibility returns the FaultVisibility field value if set, zero value otherwise.
+func (o *BTPartDisplayData17) GetFaultVisibility() GBTPartFaultVisibility {
+	if o == nil || o.FaultVisibility == nil {
+		var ret GBTPartFaultVisibility
+		return ret
+	}
+	return *o.FaultVisibility
+}
+
+// GetFaultVisibilityOk returns a tuple with the FaultVisibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartDisplayData17) GetFaultVisibilityOk() (*GBTPartFaultVisibility, bool) {
+	if o == nil || o.FaultVisibility == nil {
+		return nil, false
+	}
+	return o.FaultVisibility, true
+}
+
+// HasFaultVisibility returns a boolean if a field has been set.
+func (o *BTPartDisplayData17) HasFaultVisibility() bool {
+	if o != nil && o.FaultVisibility != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFaultVisibility gets a reference to the given GBTPartFaultVisibility and assigns it to the FaultVisibility field.
+func (o *BTPartDisplayData17) SetFaultVisibility(v GBTPartFaultVisibility) {
+	o.FaultVisibility = &v
 }
 
 // GetHasFaults returns the HasFaults field value if set, zero value otherwise.
@@ -910,6 +943,9 @@ func (o BTPartDisplayData17) MarshalJSON() ([]byte, error) {
 	}
 	if o.DefaultColorHash != nil {
 		toSerialize["defaultColorHash"] = o.DefaultColorHash
+	}
+	if o.FaultVisibility != nil {
+		toSerialize["faultVisibility"] = o.FaultVisibility
 	}
 	if o.HasFaults != nil {
 		toSerialize["hasFaults"] = o.HasFaults

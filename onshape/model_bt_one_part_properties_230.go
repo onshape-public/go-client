@@ -22,6 +22,7 @@ type BTOnePartProperties230 struct {
 	BtType                       *string                     `json:"btType,omitempty"`
 	ChangedPropertiesSet         []string                    `json:"changedPropertiesSet,omitempty"`
 	CustomProperties             *BTPartCustomProperties1338 `json:"customProperties,omitempty"`
+	FaultVisibility              *GBTPartFaultVisibility     `json:"faultVisibility,omitempty"`
 	Material                     *BTPartMaterial1445         `json:"material,omitempty"`
 	MaterialForNewCell           *BTPartMaterial1445         `json:"materialForNewCell,omitempty"`
 	Name                         *string                     `json:"name,omitempty"`
@@ -211,6 +212,38 @@ func (o *BTOnePartProperties230) HasCustomProperties() bool {
 // SetCustomProperties gets a reference to the given BTPartCustomProperties1338 and assigns it to the CustomProperties field.
 func (o *BTOnePartProperties230) SetCustomProperties(v BTPartCustomProperties1338) {
 	o.CustomProperties = &v
+}
+
+// GetFaultVisibility returns the FaultVisibility field value if set, zero value otherwise.
+func (o *BTOnePartProperties230) GetFaultVisibility() GBTPartFaultVisibility {
+	if o == nil || o.FaultVisibility == nil {
+		var ret GBTPartFaultVisibility
+		return ret
+	}
+	return *o.FaultVisibility
+}
+
+// GetFaultVisibilityOk returns a tuple with the FaultVisibility field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTOnePartProperties230) GetFaultVisibilityOk() (*GBTPartFaultVisibility, bool) {
+	if o == nil || o.FaultVisibility == nil {
+		return nil, false
+	}
+	return o.FaultVisibility, true
+}
+
+// HasFaultVisibility returns a boolean if a field has been set.
+func (o *BTOnePartProperties230) HasFaultVisibility() bool {
+	if o != nil && o.FaultVisibility != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFaultVisibility gets a reference to the given GBTPartFaultVisibility and assigns it to the FaultVisibility field.
+func (o *BTOnePartProperties230) SetFaultVisibility(v GBTPartFaultVisibility) {
+	o.FaultVisibility = &v
 }
 
 // GetMaterial returns the Material field value if set, zero value otherwise.
@@ -613,6 +646,9 @@ func (o BTOnePartProperties230) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomProperties != nil {
 		toSerialize["customProperties"] = o.CustomProperties
+	}
+	if o.FaultVisibility != nil {
+		toSerialize["faultVisibility"] = o.FaultVisibility
 	}
 	if o.Material != nil {
 		toSerialize["material"] = o.Material

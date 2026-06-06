@@ -38,6 +38,7 @@ Method | HTTP request | Description
 [**UnshareFromSupport**](DocumentApi.md#UnshareFromSupport) | **Delete** /documents/{did}/shareWithSupport | Unshare document with support.
 [**UpdateAnonymousAccess**](DocumentApi.md#UpdateAnonymousAccess) | **Post** /documents/{did}/acl/anonymousAccess | Allow or deny anonymous access to a document or publication.
 [**UpdateDocumentAttributes**](DocumentApi.md#UpdateDocumentAttributes) | **Post** /documents/{did} | Update document attributes by document ID.
+[**UpdateDocumentNotes**](DocumentApi.md#UpdateDocumentNotes) | **Post** /documents/{did}/notes | Update document notes by document ID.
 [**UpdateExternalReferencesToLatestDocuments**](DocumentApi.md#UpdateExternalReferencesToLatestDocuments) | **Post** /documents/d/{did}/w/{wid}/e/{eid}/latestdocumentreferences | Update external references to latest by document ID, workspace ID, and tab ID.
 [**UpdatePublicAccess**](DocumentApi.md#UpdatePublicAccess) | **Post** /documents/{did}/acl/public | Make a document public or private.
 
@@ -2519,6 +2520,8 @@ Name | Type | Description  | Notes
 
 Update document attributes by document ID.
 
+
+
 ### Example
 
 ```go
@@ -2564,6 +2567,78 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **bTDocumentParams** | [**BTDocumentParams**](BTDocumentParams.md) |  | 
+
+### Return type
+
+[**BTGlobalTreeNodeSummaryInfo**](BTGlobalTreeNodeSummaryInfo.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2), [BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=UTF-8; qs=0.09
+- **Accept**: application/json;charset=UTF-8; qs=0.09
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateDocumentNotes
+
+> BTGlobalTreeNodeSummaryInfo UpdateDocumentNotes(ctx, did).BTDocumentNotesParams(bTDocumentNotesParams).Execute()
+
+Update document notes by document ID.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    did := "did_example" // string | ID of the document to update
+    bTDocumentNotesParams := *openapiclient.NewBTDocumentNotesParams() // BTDocumentNotesParams | 
+
+    apiConfiguration := openapiclient.NewAPIConfiguration()
+    apiClient := openapiclient.NewAPIClient(apiConfiguration)
+    resp, r, err := apiClient.DocumentApi.UpdateDocumentNotes(context.Background(), did).BTDocumentNotesParams(bTDocumentNotesParams).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `DocumentApi.UpdateDocumentNotes``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+    // response from `UpdateDocumentNotes`: BTGlobalTreeNodeSummaryInfo
+    fmt.Fprintf(os.Stdout, "Response from `DocumentApi.UpdateDocumentNotes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**did** | **string** | ID of the document to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateDocumentNotesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **bTDocumentNotesParams** | [**BTDocumentNotesParams**](BTDocumentNotesParams.md) |  | 
 
 ### Return type
 

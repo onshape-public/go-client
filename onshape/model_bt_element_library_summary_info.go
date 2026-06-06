@@ -16,6 +16,8 @@ import (
 
 // BTElementLibrarySummaryInfo Element library metadata
 type BTElementLibrarySummaryInfo struct {
+	// If present, this library is public and this field contains the version Id of the current public version. If not present, this library is not public.
+	CurrentPublicVersion *string `json:"currentPublicVersion,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -53,6 +55,38 @@ func NewBTElementLibrarySummaryInfo() *BTElementLibrarySummaryInfo {
 func NewBTElementLibrarySummaryInfoWithDefaults() *BTElementLibrarySummaryInfo {
 	this := BTElementLibrarySummaryInfo{}
 	return &this
+}
+
+// GetCurrentPublicVersion returns the CurrentPublicVersion field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetCurrentPublicVersion() string {
+	if o == nil || o.CurrentPublicVersion == nil {
+		var ret string
+		return ret
+	}
+	return *o.CurrentPublicVersion
+}
+
+// GetCurrentPublicVersionOk returns a tuple with the CurrentPublicVersion field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetCurrentPublicVersionOk() (*string, bool) {
+	if o == nil || o.CurrentPublicVersion == nil {
+		return nil, false
+	}
+	return o.CurrentPublicVersion, true
+}
+
+// HasCurrentPublicVersion returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasCurrentPublicVersion() bool {
+	if o != nil && o.CurrentPublicVersion != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCurrentPublicVersion gets a reference to the given string and assigns it to the CurrentPublicVersion field.
+func (o *BTElementLibrarySummaryInfo) SetCurrentPublicVersion(v string) {
+	o.CurrentPublicVersion = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -377,6 +411,9 @@ func (o *BTElementLibrarySummaryInfo) SetViewRef(v string) {
 
 func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CurrentPublicVersion != nil {
+		toSerialize["currentPublicVersion"] = o.CurrentPublicVersion
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}

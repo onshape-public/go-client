@@ -28,6 +28,7 @@ api_open_api.go
 api_part.go
 api_part_number.go
 api_part_studio.go
+api_product_structure.go
 api_properties_table_template.go
 api_publication.go
 api_release_package.go
@@ -96,6 +97,7 @@ docs/BTAnnotationDeleteDisplayData1815AllOf.md
 docs/BTAnnotationDisplayData3225.md
 docs/BTAnnotationElementDisplayData894.md
 docs/BTAnnotationFilter4841.md
+docs/BTAnnotationFilter4841AllOf.md
 docs/BTAnnotationGTolDisplayData4887.md
 docs/BTAnnotationGTolDisplayData4887AllOf.md
 docs/BTAnnotationGTolRowDisplayData4397.md
@@ -350,6 +352,7 @@ docs/BTDiscount.md
 docs/BTDiscountInfo.md
 docs/BTDiscountOwnerIdPlanId.md
 docs/BTDisplayStateInfo.md
+docs/BTDocumentBaseSummaryInfo.md
 docs/BTDocumentContentsInfo.md
 docs/BTDocumentElementCreationDescriptor.md
 docs/BTDocumentElementInfo.md
@@ -363,6 +366,7 @@ docs/BTDocumentLabelInfo.md
 docs/BTDocumentLabelInfoAllOf.md
 docs/BTDocumentMergeInfo.md
 docs/BTDocumentMessageBody.md
+docs/BTDocumentNotesParams.md
 docs/BTDocumentOpenEventParams.md
 docs/BTDocumentOpenEventParamsAllOf.md
 docs/BTDocumentParams.md
@@ -847,6 +851,7 @@ docs/BTMetadataPropertyUiHintsInfo.md
 docs/BTMetadataPropertyUpdateParams.md
 docs/BTMetadataPropertyValidatorInfo.md
 docs/BTMetadataStateType.md
+docs/BTMetadataValueInfo.md
 docs/BTMetadataValueType.md
 docs/BTMicroversionId366.md
 docs/BTMicroversionIdAndConfiguration2338.md
@@ -1120,6 +1125,12 @@ docs/BTPointEntity1439.md
 docs/BTPolylineDisplayData3522.md
 docs/BTPolylineDisplayData3522AllOf.md
 docs/BTPrivacyConsentInfo.md
+docs/BTProductStructureElementInfo.md
+docs/BTProductStructureElementInfoAllOf.md
+docs/BTProductStructureItemInfo.md
+docs/BTProductStructureItemInfoAllOf.md
+docs/BTProductStructurePartInfo.md
+docs/BTProductStructurePartInfoAllOf.md
 docs/BTProjectInfo.md
 docs/BTProjectInfoAllOf.md
 docs/BTPropertiesTableTemplateInfo.md
@@ -1387,7 +1398,6 @@ docs/BTVariableTableRowMetadata3912.md
 docs/BTVariableTableRowMetadata3912AllOf.md
 docs/BTVector2d1812.md
 docs/BTVector3d389.md
-docs/BTVersionGraphMode.md
 docs/BTVersionInfo.md
 docs/BTVersionOrWorkspaceMergeInfo.md
 docs/BTVersionOrWorkspaceParams.md
@@ -1401,6 +1411,8 @@ docs/BTWebhookInfo.md
 docs/BTWebhookLifecycleMessageBody.md
 docs/BTWebhookOptions.md
 docs/BTWebhookParams.md
+docs/BTWhereUsedItemInfoList.md
+docs/BTWhereUsedVersionReferencedInfo.md
 docs/BTWidthMateDisplayData2888.md
 docs/BTWidthMateDisplayData2888AllOf.md
 docs/BTWorkflowActionInfo.md
@@ -1439,6 +1451,7 @@ docs/CommentApi.md
 docs/CompanyApi.md
 docs/CompanyRole.md
 docs/Components.md
+docs/ConfigInfo.md
 docs/ConfigurationEntry.md
 docs/ConfigurationInfoEntry.md
 docs/Contact.md
@@ -1516,6 +1529,7 @@ docs/GBTParameterLibraryRelationType.md
 docs/GBTParameterVisibilityLogicalOp.md
 docs/GBTParasolidEncodingType.md
 docs/GBTPartColorCycleVersion.md
+docs/GBTPartFaultVisibility.md
 docs/GBTPartStudioDisplayDataVersion.md
 docs/GBTPartStudioInstanceType.md
 docs/GBTPartStudioItemType.md
@@ -1588,7 +1602,9 @@ docs/PartApi.md
 docs/PartNumberApi.md
 docs/PartStudioApi.md
 docs/PathItem.md
+docs/ProductStructureApi.md
 docs/PropertiesTableTemplateApi.md
+docs/Property.md
 docs/ProratedCharges.md
 docs/PublicationApi.md
 docs/ReleasePackageApi.md
@@ -1860,6 +1876,7 @@ model_bt_discount.go
 model_bt_discount_info.go
 model_bt_discount_owner_id_plan_id.go
 model_bt_display_state_info.go
+model_bt_document_base_summary_info.go
 model_bt_document_contents_info.go
 model_bt_document_element_creation_descriptor.go
 model_bt_document_element_info.go
@@ -1870,6 +1887,7 @@ model_bt_document_info.go
 model_bt_document_label_info.go
 model_bt_document_merge_info.go
 model_bt_document_message_body.go
+model_bt_document_notes_params.go
 model_bt_document_open_event_params.go
 model_bt_document_params.go
 model_bt_document_processing_info.go
@@ -2068,6 +2086,7 @@ model_bt_metadata_property_ui_hints_info.go
 model_bt_metadata_property_update_params.go
 model_bt_metadata_property_validator_info.go
 model_bt_metadata_state_type.go
+model_bt_metadata_value_info.go
 model_bt_metadata_value_type.go
 model_bt_microversion_id_366.go
 model_bt_microversion_id_and_configuration_2338.go
@@ -2187,6 +2206,9 @@ model_bt_plm_context_info.go
 model_bt_point_entity_1439.go
 model_bt_polyline_display_data_3522.go
 model_bt_privacy_consent_info.go
+model_bt_product_structure_element_info.go
+model_bt_product_structure_item_info.go
+model_bt_product_structure_part_info.go
 model_bt_project_info.go
 model_bt_properties_table_template_info.go
 model_bt_properties_table_template_params.go
@@ -2388,7 +2410,6 @@ model_bt_variable_table_info.go
 model_bt_variable_table_row_metadata_3912.go
 model_bt_vector2d_1812.go
 model_bt_vector3d_389.go
-model_bt_version_graph_mode.go
 model_bt_version_info.go
 model_bt_version_or_workspace_merge_info.go
 model_bt_version_or_workspace_params.go
@@ -2402,6 +2423,8 @@ model_bt_webhook_info.go
 model_bt_webhook_lifecycle_message_body.go
 model_bt_webhook_options.go
 model_bt_webhook_params.go
+model_bt_where_used_item_info_list.go
+model_bt_where_used_version_referenced_info.go
 model_bt_width_mate_display_data_2888.go
 model_bt_workflow_action_info.go
 model_bt_workflow_audit_log_entry_info.go
@@ -2666,6 +2689,7 @@ model_category.go
 model_combined_sketch_entity_type.go
 model_company_role.go
 model_components.go
+model_config_info.go
 model_configuration_entry.go
 model_configuration_info_entry.go
 model_contact.go
@@ -2729,6 +2753,7 @@ model_gbt_parameter_library_relation_type.go
 model_gbt_parameter_visibility_logical_op.go
 model_gbt_parasolid_encoding_type.go
 model_gbt_part_color_cycle_version.go
+model_gbt_part_fault_visibility.go
 model_gbt_part_studio_display_data_version.go
 model_gbt_part_studio_instance_type.go
 model_gbt_part_studio_item_type.go
@@ -2799,6 +2824,7 @@ model_operation.go
 model_operation_responses.go
 model_parameter.go
 model_path_item.go
+model_property.go
 model_prorated_charges.go
 model_request_body.go
 model_role_map_entry.go

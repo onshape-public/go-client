@@ -16,6 +16,7 @@ import (
 
 // BTInsertableInfo Array of items in the current page.
 type BTInsertableInfo struct {
+	AreFaultsIgnored             *bool           `json:"areFaultsIgnored,omitempty"`
 	BodyType                     *GBTBodyType    `json:"bodyType,omitempty"`
 	ClassType                    *int32          `json:"classType,omitempty"`
 	Configuration                *string         `json:"configuration,omitempty"`
@@ -76,6 +77,38 @@ func NewBTInsertableInfo() *BTInsertableInfo {
 func NewBTInsertableInfoWithDefaults() *BTInsertableInfo {
 	this := BTInsertableInfo{}
 	return &this
+}
+
+// GetAreFaultsIgnored returns the AreFaultsIgnored field value if set, zero value otherwise.
+func (o *BTInsertableInfo) GetAreFaultsIgnored() bool {
+	if o == nil || o.AreFaultsIgnored == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AreFaultsIgnored
+}
+
+// GetAreFaultsIgnoredOk returns a tuple with the AreFaultsIgnored field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableInfo) GetAreFaultsIgnoredOk() (*bool, bool) {
+	if o == nil || o.AreFaultsIgnored == nil {
+		return nil, false
+	}
+	return o.AreFaultsIgnored, true
+}
+
+// HasAreFaultsIgnored returns a boolean if a field has been set.
+func (o *BTInsertableInfo) HasAreFaultsIgnored() bool {
+	if o != nil && o.AreFaultsIgnored != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAreFaultsIgnored gets a reference to the given bool and assigns it to the AreFaultsIgnored field.
+func (o *BTInsertableInfo) SetAreFaultsIgnored(v bool) {
+	o.AreFaultsIgnored = &v
 }
 
 // GetBodyType returns the BodyType field value if set, zero value otherwise.
@@ -1328,6 +1361,9 @@ func (o *BTInsertableInfo) SetWorkspaceName(v string) {
 
 func (o BTInsertableInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AreFaultsIgnored != nil {
+		toSerialize["areFaultsIgnored"] = o.AreFaultsIgnored
+	}
 	if o.BodyType != nil {
 		toSerialize["bodyType"] = o.BodyType
 	}

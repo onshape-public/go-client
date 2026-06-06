@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AreFaultsIgnored** | Pointer to **bool** |  | [optional] 
 **BodyType** | Pointer to [**GBTBodyType**](GBTBodyType.md) |  | [optional] 
 **ClassType** | Pointer to **int32** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
@@ -62,6 +63,31 @@ will change when the set of required properties is changed
 NewBTInsertableInfoWithDefaults instantiates a new BTInsertableInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAreFaultsIgnored
+
+`func (o *BTInsertableInfo) GetAreFaultsIgnored() bool`
+
+GetAreFaultsIgnored returns the AreFaultsIgnored field if non-nil, zero value otherwise.
+
+### GetAreFaultsIgnoredOk
+
+`func (o *BTInsertableInfo) GetAreFaultsIgnoredOk() (*bool, bool)`
+
+GetAreFaultsIgnoredOk returns a tuple with the AreFaultsIgnored field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAreFaultsIgnored
+
+`func (o *BTInsertableInfo) SetAreFaultsIgnored(v bool)`
+
+SetAreFaultsIgnored sets AreFaultsIgnored field to given value.
+
+### HasAreFaultsIgnored
+
+`func (o *BTInsertableInfo) HasAreFaultsIgnored() bool`
+
+HasAreFaultsIgnored returns a boolean if a field has been set.
 
 ### GetBodyType
 

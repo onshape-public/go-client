@@ -23,6 +23,8 @@ Method | HTTP request | Description
 
 Add an attachment to a comment.
 
+
+
 ### Example
 
 ```go
