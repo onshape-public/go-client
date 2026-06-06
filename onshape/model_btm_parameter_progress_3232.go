@@ -24,12 +24,13 @@ type BTMParameterProgress3232 struct {
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
-	ParameterId   *string           `json:"parameterId,omitempty"`
-	ParameterName *string           `json:"parameterName,omitempty"`
-	ValueString   *string           `json:"valueString,omitempty"`
-	PercentDone   *float64          `json:"percentDone,omitempty"`
-	Status        *GBTComputeStatus `json:"status,omitempty"`
-	StatusMessage *string           `json:"statusMessage,omitempty"`
+	ParameterId    *string           `json:"parameterId,omitempty"`
+	ParameterName  *string           `json:"parameterName,omitempty"`
+	ValueString    *string           `json:"valueString,omitempty"`
+	PercentDone    *float64          `json:"percentDone,omitempty"`
+	Status         *GBTComputeStatus `json:"status,omitempty"`
+	StatusMessage  *string           `json:"statusMessage,omitempty"`
+	StatusMessages []string          `json:"statusMessages,omitempty"`
 }
 
 // NewBTMParameterProgress3232 instantiates a new BTMParameterProgress3232 object
@@ -369,6 +370,38 @@ func (o *BTMParameterProgress3232) SetStatusMessage(v string) {
 	o.StatusMessage = &v
 }
 
+// GetStatusMessages returns the StatusMessages field value if set, zero value otherwise.
+func (o *BTMParameterProgress3232) GetStatusMessages() []string {
+	if o == nil || o.StatusMessages == nil {
+		var ret []string
+		return ret
+	}
+	return o.StatusMessages
+}
+
+// GetStatusMessagesOk returns a tuple with the StatusMessages field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterProgress3232) GetStatusMessagesOk() ([]string, bool) {
+	if o == nil || o.StatusMessages == nil {
+		return nil, false
+	}
+	return o.StatusMessages, true
+}
+
+// HasStatusMessages returns a boolean if a field has been set.
+func (o *BTMParameterProgress3232) HasStatusMessages() bool {
+	if o != nil && o.StatusMessages != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatusMessages gets a reference to the given []string and assigns it to the StatusMessages field.
+func (o *BTMParameterProgress3232) SetStatusMessages(v []string) {
+	o.StatusMessages = v
+}
+
 func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTMReadOnlyParameter3800, errBTMReadOnlyParameter3800 := json.Marshal(o.BTMReadOnlyParameter3800)
@@ -408,6 +441,9 @@ func (o BTMParameterProgress3232) MarshalJSON() ([]byte, error) {
 	}
 	if o.StatusMessage != nil {
 		toSerialize["statusMessage"] = o.StatusMessage
+	}
+	if o.StatusMessages != nil {
+		toSerialize["statusMessages"] = o.StatusMessages
 	}
 	return json.Marshal(toSerialize)
 }

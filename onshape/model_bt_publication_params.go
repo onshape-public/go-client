@@ -16,15 +16,19 @@ import (
 
 // BTPublicationParams struct for BTPublicationParams
 type BTPublicationParams struct {
-	Description    *string                   `json:"description,omitempty"`
-	Items          []BTPublicationItemParams `json:"items,omitempty"`
-	Name           *string                   `json:"name,omitempty"`
-	Notes          *string                   `json:"notes,omitempty"`
-	OldClientNotes *string                   `json:"oldClientNotes,omitempty"`
-	OwnerId        *string                   `json:"ownerId,omitempty"`
-	OwnerType      *int32                    `json:"ownerType,omitempty"`
-	ParentId       *string                   `json:"parentId,omitempty"`
-	ProjectId      *string                   `json:"projectId,omitempty"`
+	Description *string                   `json:"description,omitempty"`
+	Items       []BTPublicationItemParams `json:"items,omitempty"`
+	Name        *string                   `json:"name,omitempty"`
+	// Deprecated. Use the /documents/{did}/notes endpoint instead.
+	// Deprecated
+	Notes *string `json:"notes,omitempty"`
+	// Deprecated. Use the /documents/{did}/notes endpoint instead.
+	// Deprecated
+	OldClientNotes *string `json:"oldClientNotes,omitempty"`
+	OwnerId        *string `json:"ownerId,omitempty"`
+	OwnerType      *int32  `json:"ownerType,omitempty"`
+	ParentId       *string `json:"parentId,omitempty"`
+	ProjectId      *string `json:"projectId,omitempty"`
 }
 
 // NewBTPublicationParams instantiates a new BTPublicationParams object
@@ -141,6 +145,7 @@ func (o *BTPublicationParams) SetName(v string) {
 }
 
 // GetNotes returns the Notes field value if set, zero value otherwise.
+// Deprecated
 func (o *BTPublicationParams) GetNotes() string {
 	if o == nil || o.Notes == nil {
 		var ret string
@@ -151,6 +156,7 @@ func (o *BTPublicationParams) GetNotes() string {
 
 // GetNotesOk returns a tuple with the Notes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTPublicationParams) GetNotesOk() (*string, bool) {
 	if o == nil || o.Notes == nil {
 		return nil, false
@@ -168,11 +174,13 @@ func (o *BTPublicationParams) HasNotes() bool {
 }
 
 // SetNotes gets a reference to the given string and assigns it to the Notes field.
+// Deprecated
 func (o *BTPublicationParams) SetNotes(v string) {
 	o.Notes = &v
 }
 
 // GetOldClientNotes returns the OldClientNotes field value if set, zero value otherwise.
+// Deprecated
 func (o *BTPublicationParams) GetOldClientNotes() string {
 	if o == nil || o.OldClientNotes == nil {
 		var ret string
@@ -183,6 +191,7 @@ func (o *BTPublicationParams) GetOldClientNotes() string {
 
 // GetOldClientNotesOk returns a tuple with the OldClientNotes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *BTPublicationParams) GetOldClientNotesOk() (*string, bool) {
 	if o == nil || o.OldClientNotes == nil {
 		return nil, false
@@ -200,6 +209,7 @@ func (o *BTPublicationParams) HasOldClientNotes() bool {
 }
 
 // SetOldClientNotes gets a reference to the given string and assigns it to the OldClientNotes field.
+// Deprecated
 func (o *BTPublicationParams) SetOldClientNotes(v string) {
 	o.OldClientNotes = &v
 }

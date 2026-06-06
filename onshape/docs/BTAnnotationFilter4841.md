@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**AnnotationType** | Pointer to [**GBTAnnotationType**](GBTAnnotationType.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTAnnotationFilter4841) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetAnnotationType
+
+`func (o *BTAnnotationFilter4841) GetAnnotationType() GBTAnnotationType`
+
+GetAnnotationType returns the AnnotationType field if non-nil, zero value otherwise.
+
+### GetAnnotationTypeOk
+
+`func (o *BTAnnotationFilter4841) GetAnnotationTypeOk() (*GBTAnnotationType, bool)`
+
+GetAnnotationTypeOk returns a tuple with the AnnotationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnnotationType
+
+`func (o *BTAnnotationFilter4841) SetAnnotationType(v GBTAnnotationType)`
+
+SetAnnotationType sets AnnotationType field to given value.
+
+### HasAnnotationType
+
+`func (o *BTAnnotationFilter4841) HasAnnotationType() bool`
+
+HasAnnotationType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -1429,156 +1429,6 @@ func (o *BTDocumentInfo) SetDefaultElementId(v string) {
 	o.GetActualInstance().(getResult).SetDefaultElementId(v)
 }
 
-// GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetDefaultVersionGraphMode() BTVersionGraphMode {
-	type getResult interface {
-		GetDefaultVersionGraphMode() BTVersionGraphMode
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphMode()
-	} else {
-		var de BTVersionGraphMode
-		return de
-	}
-}
-
-// GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool) {
-	type getResult interface {
-		GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphModeOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDefaultVersionGraphMode returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasDefaultVersionGraphMode() bool {
-	type getResult interface {
-		HasDefaultVersionGraphMode() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDefaultVersionGraphMode()
-	} else {
-		return false
-	}
-}
-
-// SetDefaultVersionGraphMode gets a reference to the given BTVersionGraphMode and assigns it to the DefaultVersionGraphMode field.
-func (o *BTDocumentInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode) {
-	type getResult interface {
-		SetDefaultVersionGraphMode(v BTVersionGraphMode)
-	}
-
-	o.GetActualInstance().(getResult).SetDefaultVersionGraphMode(v)
-}
-
-// GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetDefaultVersionGraphShowAutoVersions() bool {
-	type getResult interface {
-		GetDefaultVersionGraphShowAutoVersions() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphShowAutoVersions()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool) {
-	type getResult interface {
-		GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphShowAutoVersionsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasDefaultVersionGraphShowAutoVersions() bool {
-	type getResult interface {
-		HasDefaultVersionGraphShowAutoVersions() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDefaultVersionGraphShowAutoVersions()
-	} else {
-		return false
-	}
-}
-
-// SetDefaultVersionGraphShowAutoVersions gets a reference to the given bool and assigns it to the DefaultVersionGraphShowAutoVersions field.
-func (o *BTDocumentInfo) SetDefaultVersionGraphShowAutoVersions(v bool) {
-	type getResult interface {
-		SetDefaultVersionGraphShowAutoVersions(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetDefaultVersionGraphShowAutoVersions(v)
-}
-
-// GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetDefaultVersionGraphShowMerges() bool {
-	type getResult interface {
-		GetDefaultVersionGraphShowMerges() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphShowMerges()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool) {
-	type getResult interface {
-		GetDefaultVersionGraphShowMergesOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetDefaultVersionGraphShowMergesOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasDefaultVersionGraphShowMerges() bool {
-	type getResult interface {
-		HasDefaultVersionGraphShowMerges() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasDefaultVersionGraphShowMerges()
-	} else {
-		return false
-	}
-}
-
-// SetDefaultVersionGraphShowMerges gets a reference to the given bool and assigns it to the DefaultVersionGraphShowMerges field.
-func (o *BTDocumentInfo) SetDefaultVersionGraphShowMerges(v bool) {
-	type getResult interface {
-		SetDefaultVersionGraphShowMerges(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetDefaultVersionGraphShowMerges(v)
-}
-
 // GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetDefaultWorkspace() BTWorkspaceInfo {
 	type getResult interface {
@@ -1729,56 +1579,6 @@ func (o *BTDocumentInfo) SetDocumentType(v int32) {
 	o.GetActualInstance().(getResult).SetDocumentType(v)
 }
 
-// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo {
-	type getResult interface {
-		GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetElementLibrarySummaryInfo()
-	} else {
-		var de []BTElementLibrarySummaryInfo
-		return de
-	}
-}
-
-// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool) {
-	type getResult interface {
-		GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetElementLibrarySummaryInfoOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasElementLibrarySummaryInfo() bool {
-	type getResult interface {
-		HasElementLibrarySummaryInfo() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasElementLibrarySummaryInfo()
-	} else {
-		return false
-	}
-}
-
-// SetElementLibrarySummaryInfo gets a reference to the given []BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
-func (o *BTDocumentInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo) {
-	type getResult interface {
-		SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo)
-	}
-
-	o.GetActualInstance().(getResult).SetElementLibrarySummaryInfo(v)
-}
-
 // GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetForceExportRules() bool {
 	type getResult interface {
@@ -1927,56 +1727,6 @@ func (o *BTDocumentInfo) SetHasRelevantInsertables(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetHasRelevantInsertables(v)
-}
-
-// GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetIsOrphaned() bool {
-	type getResult interface {
-		GetIsOrphaned() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsOrphaned()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetIsOrphanedOk returns a tuple with the IsOrphaned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetIsOrphanedOk() (*bool, bool) {
-	type getResult interface {
-		GetIsOrphanedOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetIsOrphanedOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasIsOrphaned returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasIsOrphaned() bool {
-	type getResult interface {
-		HasIsOrphaned() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasIsOrphaned()
-	} else {
-		return false
-	}
-}
-
-// SetIsOrphaned gets a reference to the given bool and assigns it to the IsOrphaned field.
-func (o *BTDocumentInfo) SetIsOrphaned(v bool) {
-	type getResult interface {
-		SetIsOrphaned(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetIsOrphaned(v)
 }
 
 // GetIsUsingManagedWorkflow returns the IsUsingManagedWorkflow field value if set, zero value otherwise.
@@ -2779,106 +2529,6 @@ func (o *BTDocumentInfo) SetThumbnail(v BTThumbnailInfo) {
 	o.GetActualInstance().(getResult).SetThumbnail(v)
 }
 
-// GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32 {
-	type getResult interface {
-		GetTotalWorkspacesScheduledForUpdate() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesScheduledForUpdate()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool) {
-	type getResult interface {
-		GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesScheduledForUpdateOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool {
-	type getResult interface {
-		HasTotalWorkspacesScheduledForUpdate() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTotalWorkspacesScheduledForUpdate()
-	} else {
-		return false
-	}
-}
-
-// SetTotalWorkspacesScheduledForUpdate gets a reference to the given int32 and assigns it to the TotalWorkspacesScheduledForUpdate field.
-func (o *BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32) {
-	type getResult interface {
-		SetTotalWorkspacesScheduledForUpdate(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetTotalWorkspacesScheduledForUpdate(v)
-}
-
-// GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTotalWorkspacesUpdating() int32 {
-	type getResult interface {
-		GetTotalWorkspacesUpdating() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesUpdating()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool) {
-	type getResult interface {
-		GetTotalWorkspacesUpdatingOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTotalWorkspacesUpdatingOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTotalWorkspacesUpdating() bool {
-	type getResult interface {
-		HasTotalWorkspacesUpdating() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTotalWorkspacesUpdating()
-	} else {
-		return false
-	}
-}
-
-// SetTotalWorkspacesUpdating gets a reference to the given int32 and assigns it to the TotalWorkspacesUpdating field.
-func (o *BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
-	type getResult interface {
-		SetTotalWorkspacesUpdating(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetTotalWorkspacesUpdating(v)
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetTrash() bool {
 	type getResult interface {
@@ -3027,156 +2677,6 @@ func (o *BTDocumentInfo) SetUserAccountLimitsBreached(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetUserAccountLimitsBreached(v)
-}
-
-// GetCanCreateTaskViaConnectionGlobalPermission returns the CanCreateTaskViaConnectionGlobalPermission field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermission() bool {
-	type getResult interface {
-		GetCanCreateTaskViaConnectionGlobalPermission() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanCreateTaskViaConnectionGlobalPermission()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetCanCreateTaskViaConnectionGlobalPermissionOk returns a tuple with the CanCreateTaskViaConnectionGlobalPermission field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool) {
-	type getResult interface {
-		GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanCreateTaskViaConnectionGlobalPermissionOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasCanCreateTaskViaConnectionGlobalPermission() bool {
-	type getResult interface {
-		HasCanCreateTaskViaConnectionGlobalPermission() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasCanCreateTaskViaConnectionGlobalPermission()
-	} else {
-		return false
-	}
-}
-
-// SetCanCreateTaskViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanCreateTaskViaConnectionGlobalPermission field.
-func (o *BTDocumentInfo) SetCanCreateTaskViaConnectionGlobalPermission(v bool) {
-	type getResult interface {
-		SetCanCreateTaskViaConnectionGlobalPermission(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetCanCreateTaskViaConnectionGlobalPermission(v)
-}
-
-// GetCanExportViaConnectionGlobalPermisison returns the CanExportViaConnectionGlobalPermisison field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisison() bool {
-	type getResult interface {
-		GetCanExportViaConnectionGlobalPermisison() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanExportViaConnectionGlobalPermisison()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetCanExportViaConnectionGlobalPermisisonOk returns a tuple with the CanExportViaConnectionGlobalPermisison field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool) {
-	type getResult interface {
-		GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanExportViaConnectionGlobalPermisisonOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasCanExportViaConnectionGlobalPermisison returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasCanExportViaConnectionGlobalPermisison() bool {
-	type getResult interface {
-		HasCanExportViaConnectionGlobalPermisison() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasCanExportViaConnectionGlobalPermisison()
-	} else {
-		return false
-	}
-}
-
-// SetCanExportViaConnectionGlobalPermisison gets a reference to the given bool and assigns it to the CanExportViaConnectionGlobalPermisison field.
-func (o *BTDocumentInfo) SetCanExportViaConnectionGlobalPermisison(v bool) {
-	type getResult interface {
-		SetCanExportViaConnectionGlobalPermisison(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetCanExportViaConnectionGlobalPermisison(v)
-}
-
-// GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermission() bool {
-	type getResult interface {
-		GetCanImportViaConnectionGlobalPermission() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanImportViaConnectionGlobalPermission()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetCanImportViaConnectionGlobalPermissionOk returns a tuple with the CanImportViaConnectionGlobalPermission field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool) {
-	type getResult interface {
-		GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetCanImportViaConnectionGlobalPermissionOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasCanImportViaConnectionGlobalPermission returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasCanImportViaConnectionGlobalPermission() bool {
-	type getResult interface {
-		HasCanImportViaConnectionGlobalPermission() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasCanImportViaConnectionGlobalPermission()
-	} else {
-		return false
-	}
-}
-
-// SetCanImportViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanImportViaConnectionGlobalPermission field.
-func (o *BTDocumentInfo) SetCanImportViaConnectionGlobalPermission(v bool) {
-	type getResult interface {
-		SetCanImportViaConnectionGlobalPermission(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetCanImportViaConnectionGlobalPermission(v)
 }
 
 // GetDocumentThumbnailElementId returns the DocumentThumbnailElementId field value if set, zero value otherwise.
@@ -3379,56 +2879,6 @@ func (o *BTDocumentInfo) SetRequireApprovedDrawingTemplatesPreference(v bool) {
 	o.GetActualInstance().(getResult).SetRequireApprovedDrawingTemplatesPreference(v)
 }
 
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *BTDocumentInfo) GetTracingEnabled() bool {
-	type getResult interface {
-		GetTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabled()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	type getResult interface {
-		GetTracingEnabledOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetTracingEnabledOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *BTDocumentInfo) HasTracingEnabled() bool {
-	type getResult interface {
-		HasTracingEnabled() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasTracingEnabled()
-	} else {
-		return false
-	}
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *BTDocumentInfo) SetTracingEnabled(v bool) {
-	type getResult interface {
-		SetTracingEnabled(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetTracingEnabled(v)
-}
-
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTDocumentInfo) UnmarshalJSON(data []byte) error {
 	var err error
@@ -3545,52 +2995,41 @@ type base_BTDocumentInfo struct {
 	TreeHref     *string      `json:"treeHref,omitempty"`
 	UnparentHref *string      `json:"unparentHref,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                                    *string                       `json:"viewRef,omitempty"`
-	AnonymousAccessAllowed                     *bool                         `json:"anonymousAccessAllowed,omitempty"`
-	AnonymousAllowsExport                      *bool                         `json:"anonymousAllowsExport,omitempty"`
-	CanUnshare                                 *bool                         `json:"canUnshare,omitempty"`
-	CreatedWithEducationPlan                   *bool                         `json:"createdWithEducationPlan,omitempty"`
-	DefaultElementId                           *string                       `json:"defaultElementId,omitempty"`
-	DefaultVersionGraphMode                    *BTVersionGraphMode           `json:"defaultVersionGraphMode,omitempty"`
-	DefaultVersionGraphShowAutoVersions        *bool                         `json:"defaultVersionGraphShowAutoVersions,omitempty"`
-	DefaultVersionGraphShowMerges              *bool                         `json:"defaultVersionGraphShowMerges,omitempty"`
-	DefaultWorkspace                           *BTWorkspaceInfo              `json:"defaultWorkspace,omitempty"`
-	DocumentLabels                             []BTDocumentLabelInfo         `json:"documentLabels,omitempty"`
-	DocumentType                               *int32                        `json:"documentType,omitempty"`
-	ElementLibrarySummaryInfo                  []BTElementLibrarySummaryInfo `json:"elementLibrarySummaryInfo,omitempty"`
-	ForceExportRules                           *bool                         `json:"forceExportRules,omitempty"`
-	HasReleaseRevisionableObjects              *bool                         `json:"hasReleaseRevisionableObjects,omitempty"`
-	HasRelevantInsertables                     *bool                         `json:"hasRelevantInsertables,omitempty"`
-	IsOrphaned                                 *bool                         `json:"isOrphaned,omitempty"`
-	IsUsingManagedWorkflow                     *bool                         `json:"isUsingManagedWorkflow,omitempty"`
-	LikedByCurrentUser                         *bool                         `json:"likedByCurrentUser,omitempty"`
-	Likes                                      *int64                        `json:"likes,omitempty"`
-	NotRevisionManaged                         *bool                         `json:"notRevisionManaged,omitempty"`
-	Notes                                      *string                       `json:"notes,omitempty"`
-	NumberOfTimesCopied                        *int64                        `json:"numberOfTimesCopied,omitempty"`
-	NumberOfTimesReferenced                    *int64                        `json:"numberOfTimesReferenced,omitempty"`
-	Permission                                 *BTOldPermission              `json:"permission,omitempty"`
-	PermissionSet                              []string                      `json:"permissionSet,omitempty"`
-	Public                                     *bool                         `json:"public,omitempty"`
-	PublishedVersionId                         *string                       `json:"publishedVersionId,omitempty"`
-	RecentVersion                              *BTBaseInfo                   `json:"recentVersion,omitempty"`
-	Sequence                                   *string                       `json:"sequence,omitempty"`
-	SupportTeamUserAndShared                   *bool                         `json:"supportTeamUserAndShared,omitempty"`
-	Tags                                       []string                      `json:"tags,omitempty"`
-	Thumbnail                                  *BTThumbnailInfo              `json:"thumbnail,omitempty"`
-	TotalWorkspacesScheduledForUpdate          *int32                        `json:"totalWorkspacesScheduledForUpdate,omitempty"`
-	TotalWorkspacesUpdating                    *int32                        `json:"totalWorkspacesUpdating,omitempty"`
-	Trash                                      *bool                         `json:"trash,omitempty"`
-	TrashedAt                                  *JSONTime                     `json:"trashedAt,omitempty"`
-	UserAccountLimitsBreached                  *bool                         `json:"userAccountLimitsBreached,omitempty"`
-	CanCreateTaskViaConnectionGlobalPermission *bool                         `json:"canCreateTaskViaConnectionGlobalPermission,omitempty"`
-	CanExportViaConnectionGlobalPermisison     *bool                         `json:"canExportViaConnectionGlobalPermisison,omitempty"`
-	CanImportViaConnectionGlobalPermission     *bool                         `json:"canImportViaConnectionGlobalPermission,omitempty"`
-	DocumentThumbnailElementId                 *string                       `json:"documentThumbnailElementId,omitempty"`
-	DuplicateNameViolationError                *string                       `json:"duplicateNameViolationError,omitempty"`
-	IsUpgradedToLatestVersion                  *bool                         `json:"isUpgradedToLatestVersion,omitempty"`
-	RequireApprovedDrawingTemplatesPreference  *bool                         `json:"requireApprovedDrawingTemplatesPreference,omitempty"`
-	TracingEnabled                             *bool                         `json:"tracingEnabled,omitempty"`
+	ViewRef                                   *string               `json:"viewRef,omitempty"`
+	AnonymousAccessAllowed                    *bool                 `json:"anonymousAccessAllowed,omitempty"`
+	AnonymousAllowsExport                     *bool                 `json:"anonymousAllowsExport,omitempty"`
+	CanUnshare                                *bool                 `json:"canUnshare,omitempty"`
+	CreatedWithEducationPlan                  *bool                 `json:"createdWithEducationPlan,omitempty"`
+	DefaultElementId                          *string               `json:"defaultElementId,omitempty"`
+	DefaultWorkspace                          *BTWorkspaceInfo      `json:"defaultWorkspace,omitempty"`
+	DocumentLabels                            []BTDocumentLabelInfo `json:"documentLabels,omitempty"`
+	DocumentType                              *int32                `json:"documentType,omitempty"`
+	ForceExportRules                          *bool                 `json:"forceExportRules,omitempty"`
+	HasReleaseRevisionableObjects             *bool                 `json:"hasReleaseRevisionableObjects,omitempty"`
+	HasRelevantInsertables                    *bool                 `json:"hasRelevantInsertables,omitempty"`
+	IsUsingManagedWorkflow                    *bool                 `json:"isUsingManagedWorkflow,omitempty"`
+	LikedByCurrentUser                        *bool                 `json:"likedByCurrentUser,omitempty"`
+	Likes                                     *int64                `json:"likes,omitempty"`
+	NotRevisionManaged                        *bool                 `json:"notRevisionManaged,omitempty"`
+	Notes                                     *string               `json:"notes,omitempty"`
+	NumberOfTimesCopied                       *int64                `json:"numberOfTimesCopied,omitempty"`
+	NumberOfTimesReferenced                   *int64                `json:"numberOfTimesReferenced,omitempty"`
+	Permission                                *BTOldPermission      `json:"permission,omitempty"`
+	PermissionSet                             []string              `json:"permissionSet,omitempty"`
+	Public                                    *bool                 `json:"public,omitempty"`
+	PublishedVersionId                        *string               `json:"publishedVersionId,omitempty"`
+	RecentVersion                             *BTBaseInfo           `json:"recentVersion,omitempty"`
+	Sequence                                  *string               `json:"sequence,omitempty"`
+	SupportTeamUserAndShared                  *bool                 `json:"supportTeamUserAndShared,omitempty"`
+	Tags                                      []string              `json:"tags,omitempty"`
+	Thumbnail                                 *BTThumbnailInfo      `json:"thumbnail,omitempty"`
+	Trash                                     *bool                 `json:"trash,omitempty"`
+	TrashedAt                                 *JSONTime             `json:"trashedAt,omitempty"`
+	UserAccountLimitsBreached                 *bool                 `json:"userAccountLimitsBreached,omitempty"`
+	DocumentThumbnailElementId                *string               `json:"documentThumbnailElementId,omitempty"`
+	DuplicateNameViolationError               *string               `json:"duplicateNameViolationError,omitempty"`
+	IsUpgradedToLatestVersion                 *bool                 `json:"isUpgradedToLatestVersion,omitempty"`
+	RequireApprovedDrawingTemplatesPreference *bool                 `json:"requireApprovedDrawingTemplatesPreference,omitempty"`
 }
 
 // Newbase_BTDocumentInfo instantiates a new base_BTDocumentInfo object
@@ -4499,102 +3938,6 @@ func (o *base_BTDocumentInfo) SetDefaultElementId(v string) {
 	o.DefaultElementId = &v
 }
 
-// GetDefaultVersionGraphMode returns the DefaultVersionGraphMode field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphMode() BTVersionGraphMode {
-	if o == nil || o.DefaultVersionGraphMode == nil {
-		var ret BTVersionGraphMode
-		return ret
-	}
-	return *o.DefaultVersionGraphMode
-}
-
-// GetDefaultVersionGraphModeOk returns a tuple with the DefaultVersionGraphMode field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphModeOk() (*BTVersionGraphMode, bool) {
-	if o == nil || o.DefaultVersionGraphMode == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphMode, true
-}
-
-// HasDefaultVersionGraphMode returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasDefaultVersionGraphMode() bool {
-	if o != nil && o.DefaultVersionGraphMode != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphMode gets a reference to the given BTVersionGraphMode and assigns it to the DefaultVersionGraphMode field.
-func (o *base_BTDocumentInfo) SetDefaultVersionGraphMode(v BTVersionGraphMode) {
-	o.DefaultVersionGraphMode = &v
-}
-
-// GetDefaultVersionGraphShowAutoVersions returns the DefaultVersionGraphShowAutoVersions field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphShowAutoVersions() bool {
-	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultVersionGraphShowAutoVersions
-}
-
-// GetDefaultVersionGraphShowAutoVersionsOk returns a tuple with the DefaultVersionGraphShowAutoVersions field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphShowAutoVersionsOk() (*bool, bool) {
-	if o == nil || o.DefaultVersionGraphShowAutoVersions == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphShowAutoVersions, true
-}
-
-// HasDefaultVersionGraphShowAutoVersions returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasDefaultVersionGraphShowAutoVersions() bool {
-	if o != nil && o.DefaultVersionGraphShowAutoVersions != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphShowAutoVersions gets a reference to the given bool and assigns it to the DefaultVersionGraphShowAutoVersions field.
-func (o *base_BTDocumentInfo) SetDefaultVersionGraphShowAutoVersions(v bool) {
-	o.DefaultVersionGraphShowAutoVersions = &v
-}
-
-// GetDefaultVersionGraphShowMerges returns the DefaultVersionGraphShowMerges field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphShowMerges() bool {
-	if o == nil || o.DefaultVersionGraphShowMerges == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DefaultVersionGraphShowMerges
-}
-
-// GetDefaultVersionGraphShowMergesOk returns a tuple with the DefaultVersionGraphShowMerges field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetDefaultVersionGraphShowMergesOk() (*bool, bool) {
-	if o == nil || o.DefaultVersionGraphShowMerges == nil {
-		return nil, false
-	}
-	return o.DefaultVersionGraphShowMerges, true
-}
-
-// HasDefaultVersionGraphShowMerges returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasDefaultVersionGraphShowMerges() bool {
-	if o != nil && o.DefaultVersionGraphShowMerges != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDefaultVersionGraphShowMerges gets a reference to the given bool and assigns it to the DefaultVersionGraphShowMerges field.
-func (o *base_BTDocumentInfo) SetDefaultVersionGraphShowMerges(v bool) {
-	o.DefaultVersionGraphShowMerges = &v
-}
-
 // GetDefaultWorkspace returns the DefaultWorkspace field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetDefaultWorkspace() BTWorkspaceInfo {
 	if o == nil || o.DefaultWorkspace == nil {
@@ -4691,38 +4034,6 @@ func (o *base_BTDocumentInfo) SetDocumentType(v int32) {
 	o.DocumentType = &v
 }
 
-// GetElementLibrarySummaryInfo returns the ElementLibrarySummaryInfo field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetElementLibrarySummaryInfo() []BTElementLibrarySummaryInfo {
-	if o == nil || o.ElementLibrarySummaryInfo == nil {
-		var ret []BTElementLibrarySummaryInfo
-		return ret
-	}
-	return o.ElementLibrarySummaryInfo
-}
-
-// GetElementLibrarySummaryInfoOk returns a tuple with the ElementLibrarySummaryInfo field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetElementLibrarySummaryInfoOk() ([]BTElementLibrarySummaryInfo, bool) {
-	if o == nil || o.ElementLibrarySummaryInfo == nil {
-		return nil, false
-	}
-	return o.ElementLibrarySummaryInfo, true
-}
-
-// HasElementLibrarySummaryInfo returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasElementLibrarySummaryInfo() bool {
-	if o != nil && o.ElementLibrarySummaryInfo != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetElementLibrarySummaryInfo gets a reference to the given []BTElementLibrarySummaryInfo and assigns it to the ElementLibrarySummaryInfo field.
-func (o *base_BTDocumentInfo) SetElementLibrarySummaryInfo(v []BTElementLibrarySummaryInfo) {
-	o.ElementLibrarySummaryInfo = v
-}
-
 // GetForceExportRules returns the ForceExportRules field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetForceExportRules() bool {
 	if o == nil || o.ForceExportRules == nil {
@@ -4817,38 +4128,6 @@ func (o *base_BTDocumentInfo) HasHasRelevantInsertables() bool {
 // SetHasRelevantInsertables gets a reference to the given bool and assigns it to the HasRelevantInsertables field.
 func (o *base_BTDocumentInfo) SetHasRelevantInsertables(v bool) {
 	o.HasRelevantInsertables = &v
-}
-
-// GetIsOrphaned returns the IsOrphaned field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetIsOrphaned() bool {
-	if o == nil || o.IsOrphaned == nil {
-		var ret bool
-		return ret
-	}
-	return *o.IsOrphaned
-}
-
-// GetIsOrphanedOk returns a tuple with the IsOrphaned field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetIsOrphanedOk() (*bool, bool) {
-	if o == nil || o.IsOrphaned == nil {
-		return nil, false
-	}
-	return o.IsOrphaned, true
-}
-
-// HasIsOrphaned returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasIsOrphaned() bool {
-	if o != nil && o.IsOrphaned != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetIsOrphaned gets a reference to the given bool and assigns it to the IsOrphaned field.
-func (o *base_BTDocumentInfo) SetIsOrphaned(v bool) {
-	o.IsOrphaned = &v
 }
 
 // GetIsUsingManagedWorkflow returns the IsUsingManagedWorkflow field value if set, zero value otherwise.
@@ -5363,70 +4642,6 @@ func (o *base_BTDocumentInfo) SetThumbnail(v BTThumbnailInfo) {
 	o.Thumbnail = &v
 }
 
-// GetTotalWorkspacesScheduledForUpdate returns the TotalWorkspacesScheduledForUpdate field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesScheduledForUpdate() int32 {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesScheduledForUpdate
-}
-
-// GetTotalWorkspacesScheduledForUpdateOk returns a tuple with the TotalWorkspacesScheduledForUpdate field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesScheduledForUpdateOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesScheduledForUpdate == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesScheduledForUpdate, true
-}
-
-// HasTotalWorkspacesScheduledForUpdate returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTotalWorkspacesScheduledForUpdate() bool {
-	if o != nil && o.TotalWorkspacesScheduledForUpdate != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesScheduledForUpdate gets a reference to the given int32 and assigns it to the TotalWorkspacesScheduledForUpdate field.
-func (o *base_BTDocumentInfo) SetTotalWorkspacesScheduledForUpdate(v int32) {
-	o.TotalWorkspacesScheduledForUpdate = &v
-}
-
-// GetTotalWorkspacesUpdating returns the TotalWorkspacesUpdating field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesUpdating() int32 {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		var ret int32
-		return ret
-	}
-	return *o.TotalWorkspacesUpdating
-}
-
-// GetTotalWorkspacesUpdatingOk returns a tuple with the TotalWorkspacesUpdating field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTotalWorkspacesUpdatingOk() (*int32, bool) {
-	if o == nil || o.TotalWorkspacesUpdating == nil {
-		return nil, false
-	}
-	return o.TotalWorkspacesUpdating, true
-}
-
-// HasTotalWorkspacesUpdating returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTotalWorkspacesUpdating() bool {
-	if o != nil && o.TotalWorkspacesUpdating != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTotalWorkspacesUpdating gets a reference to the given int32 and assigns it to the TotalWorkspacesUpdating field.
-func (o *base_BTDocumentInfo) SetTotalWorkspacesUpdating(v int32) {
-	o.TotalWorkspacesUpdating = &v
-}
-
 // GetTrash returns the Trash field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetTrash() bool {
 	if o == nil || o.Trash == nil {
@@ -5521,102 +4736,6 @@ func (o *base_BTDocumentInfo) HasUserAccountLimitsBreached() bool {
 // SetUserAccountLimitsBreached gets a reference to the given bool and assigns it to the UserAccountLimitsBreached field.
 func (o *base_BTDocumentInfo) SetUserAccountLimitsBreached(v bool) {
 	o.UserAccountLimitsBreached = &v
-}
-
-// GetCanCreateTaskViaConnectionGlobalPermission returns the CanCreateTaskViaConnectionGlobalPermission field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermission() bool {
-	if o == nil || o.CanCreateTaskViaConnectionGlobalPermission == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CanCreateTaskViaConnectionGlobalPermission
-}
-
-// GetCanCreateTaskViaConnectionGlobalPermissionOk returns a tuple with the CanCreateTaskViaConnectionGlobalPermission field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetCanCreateTaskViaConnectionGlobalPermissionOk() (*bool, bool) {
-	if o == nil || o.CanCreateTaskViaConnectionGlobalPermission == nil {
-		return nil, false
-	}
-	return o.CanCreateTaskViaConnectionGlobalPermission, true
-}
-
-// HasCanCreateTaskViaConnectionGlobalPermission returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasCanCreateTaskViaConnectionGlobalPermission() bool {
-	if o != nil && o.CanCreateTaskViaConnectionGlobalPermission != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCanCreateTaskViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanCreateTaskViaConnectionGlobalPermission field.
-func (o *base_BTDocumentInfo) SetCanCreateTaskViaConnectionGlobalPermission(v bool) {
-	o.CanCreateTaskViaConnectionGlobalPermission = &v
-}
-
-// GetCanExportViaConnectionGlobalPermisison returns the CanExportViaConnectionGlobalPermisison field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetCanExportViaConnectionGlobalPermisison() bool {
-	if o == nil || o.CanExportViaConnectionGlobalPermisison == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CanExportViaConnectionGlobalPermisison
-}
-
-// GetCanExportViaConnectionGlobalPermisisonOk returns a tuple with the CanExportViaConnectionGlobalPermisison field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetCanExportViaConnectionGlobalPermisisonOk() (*bool, bool) {
-	if o == nil || o.CanExportViaConnectionGlobalPermisison == nil {
-		return nil, false
-	}
-	return o.CanExportViaConnectionGlobalPermisison, true
-}
-
-// HasCanExportViaConnectionGlobalPermisison returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasCanExportViaConnectionGlobalPermisison() bool {
-	if o != nil && o.CanExportViaConnectionGlobalPermisison != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCanExportViaConnectionGlobalPermisison gets a reference to the given bool and assigns it to the CanExportViaConnectionGlobalPermisison field.
-func (o *base_BTDocumentInfo) SetCanExportViaConnectionGlobalPermisison(v bool) {
-	o.CanExportViaConnectionGlobalPermisison = &v
-}
-
-// GetCanImportViaConnectionGlobalPermission returns the CanImportViaConnectionGlobalPermission field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetCanImportViaConnectionGlobalPermission() bool {
-	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
-		var ret bool
-		return ret
-	}
-	return *o.CanImportViaConnectionGlobalPermission
-}
-
-// GetCanImportViaConnectionGlobalPermissionOk returns a tuple with the CanImportViaConnectionGlobalPermission field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetCanImportViaConnectionGlobalPermissionOk() (*bool, bool) {
-	if o == nil || o.CanImportViaConnectionGlobalPermission == nil {
-		return nil, false
-	}
-	return o.CanImportViaConnectionGlobalPermission, true
-}
-
-// HasCanImportViaConnectionGlobalPermission returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasCanImportViaConnectionGlobalPermission() bool {
-	if o != nil && o.CanImportViaConnectionGlobalPermission != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetCanImportViaConnectionGlobalPermission gets a reference to the given bool and assigns it to the CanImportViaConnectionGlobalPermission field.
-func (o *base_BTDocumentInfo) SetCanImportViaConnectionGlobalPermission(v bool) {
-	o.CanImportViaConnectionGlobalPermission = &v
 }
 
 // GetDocumentThumbnailElementId returns the DocumentThumbnailElementId field value if set, zero value otherwise.
@@ -5747,38 +4866,6 @@ func (o *base_BTDocumentInfo) SetRequireApprovedDrawingTemplatesPreference(v boo
 	o.RequireApprovedDrawingTemplatesPreference = &v
 }
 
-// GetTracingEnabled returns the TracingEnabled field value if set, zero value otherwise.
-func (o *base_BTDocumentInfo) GetTracingEnabled() bool {
-	if o == nil || o.TracingEnabled == nil {
-		var ret bool
-		return ret
-	}
-	return *o.TracingEnabled
-}
-
-// GetTracingEnabledOk returns a tuple with the TracingEnabled field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTDocumentInfo) GetTracingEnabledOk() (*bool, bool) {
-	if o == nil || o.TracingEnabled == nil {
-		return nil, false
-	}
-	return o.TracingEnabled, true
-}
-
-// HasTracingEnabled returns a boolean if a field has been set.
-func (o *base_BTDocumentInfo) HasTracingEnabled() bool {
-	if o != nil && o.TracingEnabled != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTracingEnabled gets a reference to the given bool and assigns it to the TracingEnabled field.
-func (o *base_BTDocumentInfo) SetTracingEnabled(v bool) {
-	o.TracingEnabled = &v
-}
-
 func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CanMove != nil {
@@ -5865,15 +4952,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.DefaultElementId != nil {
 		toSerialize["defaultElementId"] = o.DefaultElementId
 	}
-	if o.DefaultVersionGraphMode != nil {
-		toSerialize["defaultVersionGraphMode"] = o.DefaultVersionGraphMode
-	}
-	if o.DefaultVersionGraphShowAutoVersions != nil {
-		toSerialize["defaultVersionGraphShowAutoVersions"] = o.DefaultVersionGraphShowAutoVersions
-	}
-	if o.DefaultVersionGraphShowMerges != nil {
-		toSerialize["defaultVersionGraphShowMerges"] = o.DefaultVersionGraphShowMerges
-	}
 	if o.DefaultWorkspace != nil {
 		toSerialize["defaultWorkspace"] = o.DefaultWorkspace
 	}
@@ -5883,9 +4961,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.DocumentType != nil {
 		toSerialize["documentType"] = o.DocumentType
 	}
-	if o.ElementLibrarySummaryInfo != nil {
-		toSerialize["elementLibrarySummaryInfo"] = o.ElementLibrarySummaryInfo
-	}
 	if o.ForceExportRules != nil {
 		toSerialize["forceExportRules"] = o.ForceExportRules
 	}
@@ -5894,9 +4969,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.HasRelevantInsertables != nil {
 		toSerialize["hasRelevantInsertables"] = o.HasRelevantInsertables
-	}
-	if o.IsOrphaned != nil {
-		toSerialize["isOrphaned"] = o.IsOrphaned
 	}
 	if o.IsUsingManagedWorkflow != nil {
 		toSerialize["isUsingManagedWorkflow"] = o.IsUsingManagedWorkflow
@@ -5946,12 +5018,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	if o.Thumbnail != nil {
 		toSerialize["thumbnail"] = o.Thumbnail
 	}
-	if o.TotalWorkspacesScheduledForUpdate != nil {
-		toSerialize["totalWorkspacesScheduledForUpdate"] = o.TotalWorkspacesScheduledForUpdate
-	}
-	if o.TotalWorkspacesUpdating != nil {
-		toSerialize["totalWorkspacesUpdating"] = o.TotalWorkspacesUpdating
-	}
 	if o.Trash != nil {
 		toSerialize["trash"] = o.Trash
 	}
@@ -5960,15 +5026,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.UserAccountLimitsBreached != nil {
 		toSerialize["userAccountLimitsBreached"] = o.UserAccountLimitsBreached
-	}
-	if o.CanCreateTaskViaConnectionGlobalPermission != nil {
-		toSerialize["canCreateTaskViaConnectionGlobalPermission"] = o.CanCreateTaskViaConnectionGlobalPermission
-	}
-	if o.CanExportViaConnectionGlobalPermisison != nil {
-		toSerialize["canExportViaConnectionGlobalPermisison"] = o.CanExportViaConnectionGlobalPermisison
-	}
-	if o.CanImportViaConnectionGlobalPermission != nil {
-		toSerialize["canImportViaConnectionGlobalPermission"] = o.CanImportViaConnectionGlobalPermission
 	}
 	if o.DocumentThumbnailElementId != nil {
 		toSerialize["documentThumbnailElementId"] = o.DocumentThumbnailElementId
@@ -5981,9 +5038,6 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.RequireApprovedDrawingTemplatesPreference != nil {
 		toSerialize["requireApprovedDrawingTemplatesPreference"] = o.RequireApprovedDrawingTemplatesPreference
-	}
-	if o.TracingEnabled != nil {
-		toSerialize["tracingEnabled"] = o.TracingEnabled
 	}
 	return json.Marshal(toSerialize)
 }

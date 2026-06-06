@@ -4400,6 +4400,8 @@ func (r ApiUpdateDocumentAttributesRequest) Execute() (*BTGlobalTreeNodeSummaryI
 /*
 UpdateDocumentAttributes Update document attributes by document ID.
 
+Use [updateDocumentNotes](#/Document/updateDocumentNotes) to update document notes.
+
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did
 	@return ApiUpdateDocumentAttributesRequest
@@ -4457,6 +4459,128 @@ func (a *DocumentApiService) UpdateDocumentAttributesExecute(r ApiUpdateDocument
 	}
 	// body params
 	localVarPostBody = r.bTDocumentParams
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	var _ io.Reader
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		var v BTGlobalTreeNodeSummaryInfo
+		err = a.client.decode(&v, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+		if err != nil {
+			newErr.error = err.Error()
+			return localVarReturnValue, localVarHTTPResponse, newErr
+		}
+		newErr.model = v
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, &localVarHTTPResponse.Body, localVarHTTPResponse.Header.Get("Content-Type"))
+
+	if err != nil {
+		localVarBody, _ := io.ReadAll(localVarHTTPResponse.Body)
+
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUpdateDocumentNotesRequest struct {
+	ctx                   context.Context
+	ApiService            *DocumentApiService
+	did                   string
+	bTDocumentNotesParams *BTDocumentNotesParams
+}
+
+func (r ApiUpdateDocumentNotesRequest) BTDocumentNotesParams(bTDocumentNotesParams BTDocumentNotesParams) ApiUpdateDocumentNotesRequest {
+	r.bTDocumentNotesParams = &bTDocumentNotesParams
+	return r
+}
+
+func (r ApiUpdateDocumentNotesRequest) Execute() (*BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
+	return r.ApiService.UpdateDocumentNotesExecute(r)
+}
+
+/*
+UpdateDocumentNotes Update document notes by document ID.
+
+Use this endpoint to update documents notes. Use [updateDocumentAttributes](#/Document/updateDocumentAttributes) to update other document attributes.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param did ID of the document to update
+	@return ApiUpdateDocumentNotesRequest
+*/
+func (a *DocumentApiService) UpdateDocumentNotes(ctx context.Context, did string) ApiUpdateDocumentNotesRequest {
+	return ApiUpdateDocumentNotesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		did:        did,
+	}
+}
+
+// Execute executes the request
+//
+//	@return BTGlobalTreeNodeSummaryInfo
+func (a *DocumentApiService) UpdateDocumentNotesExecute(r ApiUpdateDocumentNotesRequest) (*BTGlobalTreeNodeSummaryInfo, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *BTGlobalTreeNodeSummaryInfo
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DocumentApiService.UpdateDocumentNotes")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/documents/{did}/notes"
+	localVarPath = strings.Replace(localVarPath, "{"+"did"+"}", url.PathEscape(parameterToString(r.did, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.bTDocumentNotesParams == nil {
+		return localVarReturnValue, nil, reportError("bTDocumentNotesParams is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json;charset=UTF-8; qs=0.09"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.bTDocumentNotesParams
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err

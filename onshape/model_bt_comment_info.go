@@ -18,6 +18,7 @@ import (
 type BTCommentInfo struct {
 	AnnotationId          *string                  `json:"annotationId,omitempty"`
 	AnnotationType        *int32                   `json:"annotationType,omitempty"`
+	AppEntity             *string                  `json:"appEntity,omitempty"`
 	AssemblyFeatures      []string                 `json:"assemblyFeatures,omitempty"`
 	AssignedAt            *JSONTime                `json:"assignedAt,omitempty"`
 	Assignee              *BTUserSummaryInfo       `json:"assignee,omitempty"`
@@ -143,6 +144,38 @@ func (o *BTCommentInfo) HasAnnotationType() bool {
 // SetAnnotationType gets a reference to the given int32 and assigns it to the AnnotationType field.
 func (o *BTCommentInfo) SetAnnotationType(v int32) {
 	o.AnnotationType = &v
+}
+
+// GetAppEntity returns the AppEntity field value if set, zero value otherwise.
+func (o *BTCommentInfo) GetAppEntity() string {
+	if o == nil || o.AppEntity == nil {
+		var ret string
+		return ret
+	}
+	return *o.AppEntity
+}
+
+// GetAppEntityOk returns a tuple with the AppEntity field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCommentInfo) GetAppEntityOk() (*string, bool) {
+	if o == nil || o.AppEntity == nil {
+		return nil, false
+	}
+	return o.AppEntity, true
+}
+
+// HasAppEntity returns a boolean if a field has been set.
+func (o *BTCommentInfo) HasAppEntity() bool {
+	if o != nil && o.AppEntity != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAppEntity gets a reference to the given string and assigns it to the AppEntity field.
+func (o *BTCommentInfo) SetAppEntity(v string) {
+	o.AppEntity = &v
 }
 
 // GetAssemblyFeatures returns the AssemblyFeatures field value if set, zero value otherwise.
@@ -1432,6 +1465,9 @@ func (o BTCommentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.AnnotationType != nil {
 		toSerialize["annotationType"] = o.AnnotationType
+	}
+	if o.AppEntity != nil {
+		toSerialize["appEntity"] = o.AppEntity
 	}
 	if o.AssemblyFeatures != nil {
 		toSerialize["assemblyFeatures"] = o.AssemblyFeatures

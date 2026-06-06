@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetOpenApi
 
-> OpenAPI GetOpenApi(ctx).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
+> OpenAPI GetOpenApi(ctx).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
 
 Get the OpenAPI specification for the Onshape REST API.
 
@@ -30,7 +30,6 @@ import (
 )
 
 func main() {
-    forceReload := true // bool | Force reload the OpenApi definition. Only works when asking for the latest version. (optional)
     version := "version_example" // string | Specify a version of Onshape from which the OpenAPI is generated. If '*' is specified in any of the version fields, that indicates any version if acceptable. (optional)
     versionAlias := openapiclient.VersionAlias("LAST_MINOR") // VersionAlias | Version aliases based on the currently released version. (optional)
     noFilter := true // bool | Do not filter the specification at all. (optional) (default to false)
@@ -45,7 +44,7 @@ func main() {
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.OpenApiApi.GetOpenApi(context.Background()).ForceReload(forceReload).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
+    resp, r, err := apiClient.OpenApiApi.GetOpenApi(context.Background()).Version(version).VersionAlias(versionAlias).NoFilter(noFilter).IncludedTags(includedTags).ExcludedTags(excludedTags).IncludeDeprecated(includeDeprecated).OnlyDeprecated(onlyDeprecated).DocumentationStatuses(documentationStatuses).RestUserRole(restUserRole).OperationIds(operationIds).ExcludedOperationIds(excludedOperationIds).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OpenApiApi.GetOpenApi``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -66,7 +65,6 @@ Other parameters are passed through a pointer to a apiGetOpenApiRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **forceReload** | **bool** | Force reload the OpenApi definition. Only works when asking for the latest version. | 
  **version** | **string** | Specify a version of Onshape from which the OpenAPI is generated. If &#39;*&#39; is specified in any of the version fields, that indicates any version if acceptable. | 
  **versionAlias** | [**VersionAlias**](VersionAlias.md) | Version aliases based on the currently released version. | 
  **noFilter** | **bool** | Do not filter the specification at all. | [default to false]

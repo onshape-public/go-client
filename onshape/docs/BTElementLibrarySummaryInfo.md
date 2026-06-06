@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CurrentPublicVersion** | Pointer to **string** | If present, this library is public and this field contains the version Id of the current public version. If not present, this library is not public. | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **LibraryDefinitionId** | Pointer to **string** | The ID of the definition of the element library. | [optional] 
@@ -33,6 +34,31 @@ will change when the set of required properties is changed
 NewBTElementLibrarySummaryInfoWithDefaults instantiates a new BTElementLibrarySummaryInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCurrentPublicVersion
+
+`func (o *BTElementLibrarySummaryInfo) GetCurrentPublicVersion() string`
+
+GetCurrentPublicVersion returns the CurrentPublicVersion field if non-nil, zero value otherwise.
+
+### GetCurrentPublicVersionOk
+
+`func (o *BTElementLibrarySummaryInfo) GetCurrentPublicVersionOk() (*string, bool)`
+
+GetCurrentPublicVersionOk returns a tuple with the CurrentPublicVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCurrentPublicVersion
+
+`func (o *BTElementLibrarySummaryInfo) SetCurrentPublicVersion(v string)`
+
+SetCurrentPublicVersion sets CurrentPublicVersion field to given value.
+
+### HasCurrentPublicVersion
+
+`func (o *BTElementLibrarySummaryInfo) HasCurrentPublicVersion() bool`
+
+HasCurrentPublicVersion returns a boolean if a field has been set.
 
 ### GetHref
 

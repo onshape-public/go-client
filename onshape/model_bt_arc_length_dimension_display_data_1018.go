@@ -43,6 +43,7 @@ type BTArcLengthDimensionDisplayData1018 struct {
 	UpperTolerance         *float64               `json:"upperTolerance,omitempty"`
 	Value                  *float64               `json:"value,omitempty"`
 	Clockwise              *bool                  `json:"clockwise,omitempty"`
+	IsConjugateAngle       *bool                  `json:"isConjugateAngle,omitempty"`
 	PositionR              *float64               `json:"positionR,omitempty"`
 	PositionT              *float64               `json:"positionT,omitempty"`
 	WitnessEndPoint0r      *float64               `json:"witnessEndPoint0r,omitempty"`
@@ -904,6 +905,38 @@ func (o *BTArcLengthDimensionDisplayData1018) SetClockwise(v bool) {
 	o.Clockwise = &v
 }
 
+// GetIsConjugateAngle returns the IsConjugateAngle field value if set, zero value otherwise.
+func (o *BTArcLengthDimensionDisplayData1018) GetIsConjugateAngle() bool {
+	if o == nil || o.IsConjugateAngle == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsConjugateAngle
+}
+
+// GetIsConjugateAngleOk returns a tuple with the IsConjugateAngle field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTArcLengthDimensionDisplayData1018) GetIsConjugateAngleOk() (*bool, bool) {
+	if o == nil || o.IsConjugateAngle == nil {
+		return nil, false
+	}
+	return o.IsConjugateAngle, true
+}
+
+// HasIsConjugateAngle returns a boolean if a field has been set.
+func (o *BTArcLengthDimensionDisplayData1018) HasIsConjugateAngle() bool {
+	if o != nil && o.IsConjugateAngle != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsConjugateAngle gets a reference to the given bool and assigns it to the IsConjugateAngle field.
+func (o *BTArcLengthDimensionDisplayData1018) SetIsConjugateAngle(v bool) {
+	o.IsConjugateAngle = &v
+}
+
 // GetPositionR returns the PositionR field value if set, zero value otherwise.
 func (o *BTArcLengthDimensionDisplayData1018) GetPositionR() float64 {
 	if o == nil || o.PositionR == nil {
@@ -1311,6 +1344,9 @@ func (o BTArcLengthDimensionDisplayData1018) MarshalJSON() ([]byte, error) {
 	}
 	if o.Clockwise != nil {
 		toSerialize["clockwise"] = o.Clockwise
+	}
+	if o.IsConjugateAngle != nil {
+		toSerialize["isConjugateAngle"] = o.IsConjugateAngle
 	}
 	if o.PositionR != nil {
 		toSerialize["positionR"] = o.PositionR

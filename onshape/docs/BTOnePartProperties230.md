@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ChangedPropertiesSet** | Pointer to **[]string** |  | [optional] 
 **CustomProperties** | Pointer to [**BTPartCustomProperties1338**](BTPartCustomProperties1338.md) |  | [optional] 
+**FaultVisibility** | Pointer to [**GBTPartFaultVisibility**](GBTPartFaultVisibility.md) |  | [optional] 
 **Material** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
 **MaterialForNewCell** | Pointer to [**BTPartMaterial1445**](BTPartMaterial1445.md) |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
@@ -165,6 +166,31 @@ SetCustomProperties sets CustomProperties field to given value.
 `func (o *BTOnePartProperties230) HasCustomProperties() bool`
 
 HasCustomProperties returns a boolean if a field has been set.
+
+### GetFaultVisibility
+
+`func (o *BTOnePartProperties230) GetFaultVisibility() GBTPartFaultVisibility`
+
+GetFaultVisibility returns the FaultVisibility field if non-nil, zero value otherwise.
+
+### GetFaultVisibilityOk
+
+`func (o *BTOnePartProperties230) GetFaultVisibilityOk() (*GBTPartFaultVisibility, bool)`
+
+GetFaultVisibilityOk returns a tuple with the FaultVisibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFaultVisibility
+
+`func (o *BTOnePartProperties230) SetFaultVisibility(v GBTPartFaultVisibility)`
+
+SetFaultVisibility sets FaultVisibility field to given value.
+
+### HasFaultVisibility
+
+`func (o *BTOnePartProperties230) HasFaultVisibility() bool`
+
+HasFaultVisibility returns a boolean if a field has been set.
 
 ### GetMaterial
 

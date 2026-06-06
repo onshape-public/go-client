@@ -3521,6 +3521,36 @@
 
 * `GBTErrorStringEnumFgsTsSolverIssueInternalErrorNoClearUserFix` (value: `"FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX"`)
 
+* `GBTErrorStringEnumSimulationFeatureHasError` (value: `"SIMULATION_FEATURE_HAS_ERROR"`)
+
+* `GBTErrorStringEnumAssemblyCosmeticConfigNotSupported` (value: `"ASSEMBLY_COSMETIC_CONFIG_NOT_SUPPORTED"`)
+
+* `GBTErrorStringEnumSheetMetalFailedToGetFlatTransform` (value: `"SHEET_METAL_FAILED_TO_GET_FLAT_TRANSFORM"`)
+
+* `GBTErrorStringEnumPcbPartsToUnfoldMismatch` (value: `"PCB_PARTS_TO_UNFOLD_MISMATCH"`)
+
+* `GBTErrorStringEnumExportAssemblyTooLarge` (value: `"EXPORT_ASSEMBLY_TOO_LARGE"`)
+
+* `GBTErrorStringEnumSweepTwistNonManifold` (value: `"SWEEP_TWIST_NON_MANIFOLD"`)
+
+* `GBTErrorStringEnumFitSplineNegativeTargetLength` (value: `"FIT_SPLINE_NEGATIVE_TARGET_LENGTH"`)
+
+* `GBTErrorStringEnumFitSplineLengthNoDof` (value: `"FIT_SPLINE_LENGTH_NO_DOF"`)
+
+* `GBTErrorStringEnumFitSplineLengthConvergenceFailure` (value: `"FIT_SPLINE_LENGTH_CONVERGENCE_FAILURE"`)
+
+* `GBTErrorStringEnumGenerativeKeepInConflictsWithKeepOut` (value: `"GENERATIVE_KEEP_IN_CONFLICTS_WITH_KEEP_OUT"`)
+
+* `GBTErrorStringEnumGenerativeKeepOutConflictsWithPartInstance` (value: `"GENERATIVE_KEEP_OUT_CONFLICTS_WITH_PART_INSTANCE"`)
+
+* `GBTErrorStringEnumSimulationLoadHasError` (value: `"SIMULATION_LOAD_HAS_ERROR"`)
+
+* `GBTErrorStringEnumFitSplineLengthNoLine` (value: `"FIT_SPLINE_LENGTH_NO_LINE"`)
+
+* `GBTErrorStringEnumSweepScaleLessThanZero` (value: `"SWEEP_SCALE_LESS_THAN_ZERO"`)
+
+* `GBTErrorStringEnumSweepExtendHasNoEffect` (value: `"SWEEP_EXTEND_HAS_NO_EFFECT"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

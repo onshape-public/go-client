@@ -1779,6 +1779,21 @@ const (
 	GBTErrorStringEnumRestAssemblyMissingMateFeatureId                            GBTErrorStringEnum = "REST_ASSEMBLY_MISSING_MATE_FEATURE_ID"
 	GBTErrorStringEnumRestAssemblyMissingMateOwnerOccurrencePath                  GBTErrorStringEnum = "REST_ASSEMBLY_MISSING_MATE_OWNER_OCCURRENCE_PATH"
 	GBTErrorStringEnumFgsTsSolverIssueInternalErrorNoClearUserFix                 GBTErrorStringEnum = "FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX"
+	GBTErrorStringEnumSimulationFeatureHasError                                   GBTErrorStringEnum = "SIMULATION_FEATURE_HAS_ERROR"
+	GBTErrorStringEnumAssemblyCosmeticConfigNotSupported                          GBTErrorStringEnum = "ASSEMBLY_COSMETIC_CONFIG_NOT_SUPPORTED"
+	GBTErrorStringEnumSheetMetalFailedToGetFlatTransform                          GBTErrorStringEnum = "SHEET_METAL_FAILED_TO_GET_FLAT_TRANSFORM"
+	GBTErrorStringEnumPcbPartsToUnfoldMismatch                                    GBTErrorStringEnum = "PCB_PARTS_TO_UNFOLD_MISMATCH"
+	GBTErrorStringEnumExportAssemblyTooLarge                                      GBTErrorStringEnum = "EXPORT_ASSEMBLY_TOO_LARGE"
+	GBTErrorStringEnumSweepTwistNonManifold                                       GBTErrorStringEnum = "SWEEP_TWIST_NON_MANIFOLD"
+	GBTErrorStringEnumFitSplineNegativeTargetLength                               GBTErrorStringEnum = "FIT_SPLINE_NEGATIVE_TARGET_LENGTH"
+	GBTErrorStringEnumFitSplineLengthNoDof                                        GBTErrorStringEnum = "FIT_SPLINE_LENGTH_NO_DOF"
+	GBTErrorStringEnumFitSplineLengthConvergenceFailure                           GBTErrorStringEnum = "FIT_SPLINE_LENGTH_CONVERGENCE_FAILURE"
+	GBTErrorStringEnumGenerativeKeepInConflictsWithKeepOut                        GBTErrorStringEnum = "GENERATIVE_KEEP_IN_CONFLICTS_WITH_KEEP_OUT"
+	GBTErrorStringEnumGenerativeKeepOutConflictsWithPartInstance                  GBTErrorStringEnum = "GENERATIVE_KEEP_OUT_CONFLICTS_WITH_PART_INSTANCE"
+	GBTErrorStringEnumSimulationLoadHasError                                      GBTErrorStringEnum = "SIMULATION_LOAD_HAS_ERROR"
+	GBTErrorStringEnumFitSplineLengthNoLine                                       GBTErrorStringEnum = "FIT_SPLINE_LENGTH_NO_LINE"
+	GBTErrorStringEnumSweepScaleLessThanZero                                      GBTErrorStringEnum = "SWEEP_SCALE_LESS_THAN_ZERO"
+	GBTErrorStringEnumSweepExtendHasNoEffect                                      GBTErrorStringEnum = "SWEEP_EXTEND_HAS_NO_EFFECT"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3543,6 +3558,21 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"REST_ASSEMBLY_MISSING_MATE_FEATURE_ID",
 	"REST_ASSEMBLY_MISSING_MATE_OWNER_OCCURRENCE_PATH",
 	"FGS_TS_SOLVER_ISSUE_INTERNAL_ERROR_NO_CLEAR_USER_FIX",
+	"SIMULATION_FEATURE_HAS_ERROR",
+	"ASSEMBLY_COSMETIC_CONFIG_NOT_SUPPORTED",
+	"SHEET_METAL_FAILED_TO_GET_FLAT_TRANSFORM",
+	"PCB_PARTS_TO_UNFOLD_MISMATCH",
+	"EXPORT_ASSEMBLY_TOO_LARGE",
+	"SWEEP_TWIST_NON_MANIFOLD",
+	"FIT_SPLINE_NEGATIVE_TARGET_LENGTH",
+	"FIT_SPLINE_LENGTH_NO_DOF",
+	"FIT_SPLINE_LENGTH_CONVERGENCE_FAILURE",
+	"GENERATIVE_KEEP_IN_CONFLICTS_WITH_KEEP_OUT",
+	"GENERATIVE_KEEP_OUT_CONFLICTS_WITH_PART_INSTANCE",
+	"SIMULATION_LOAD_HAS_ERROR",
+	"FIT_SPLINE_LENGTH_NO_LINE",
+	"SWEEP_SCALE_LESS_THAN_ZERO",
+	"SWEEP_EXTEND_HAS_NO_EFFECT",
 	"UNKNOWN",
 }
 

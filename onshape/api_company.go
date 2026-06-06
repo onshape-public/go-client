@@ -708,9 +708,12 @@ type ApiGetCompanyUsersRequest struct {
 	includeGlobalPermissions *bool
 	offset                   *int32
 	limit                    *int32
+	roleFilter               *[]int32
+	afterDateAdded           *JSONTime
+	beforeDateAdded          *JSONTime
 }
 
-// &#x60;createdAt | modifiedAt | name | light | lastLoginTime | userRole | state&#x60;
+// &#x60;createdAt | modifiedAt | name | firstName | lastName | email | light | lastLoginTime | userRole | state&#x60;
 func (r ApiGetCompanyUsersRequest) SortColumn(sortColumn string) ApiGetCompanyUsersRequest {
 	r.sortColumn = &sortColumn
 	return r
@@ -743,6 +746,24 @@ func (r ApiGetCompanyUsersRequest) Offset(offset int32) ApiGetCompanyUsersReques
 // Number of results to return per page. Default value is 20 (also the maximum).
 func (r ApiGetCompanyUsersRequest) Limit(limit int32) ApiGetCompanyUsersRequest {
 	r.limit = &limit
+	return r
+}
+
+// Filter by user role ordinal: &#x60;0&#x60; (OWNER), &#x60;1&#x60; (ADMIN), &#x60;2&#x60; (MEMBER). Multiple values allowed. Defaults to all roles.
+func (r ApiGetCompanyUsersRequest) RoleFilter(roleFilter []int32) ApiGetCompanyUsersRequest {
+	r.roleFilter = &roleFilter
+	return r
+}
+
+// Filter users added after this date (ISO 8601, e.g. 2026-01-01T00:00:00Z).
+func (r ApiGetCompanyUsersRequest) AfterDateAdded(afterDateAdded JSONTime) ApiGetCompanyUsersRequest {
+	r.afterDateAdded = &afterDateAdded
+	return r
+}
+
+// Filter users added before this date (ISO 8601, e.g. 2026-12-31T23:59:59Z).
+func (r ApiGetCompanyUsersRequest) BeforeDateAdded(beforeDateAdded JSONTime) ApiGetCompanyUsersRequest {
+	r.beforeDateAdded = &beforeDateAdded
 	return r
 }
 
@@ -807,6 +828,23 @@ func (a *CompanyApiService) GetCompanyUsersExecute(r ApiGetCompanyUsersRequest) 
 	}
 	if r.limit != nil {
 		localVarQueryParams.Add("limit", parameterToString(*r.limit, ""))
+	}
+	if r.roleFilter != nil {
+		t := *r.roleFilter
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("roleFilter", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("roleFilter", parameterToString(t, "multi"))
+		}
+	}
+	if r.afterDateAdded != nil {
+		localVarQueryParams.Add("afterDateAdded", parameterToString(*r.afterDateAdded, ""))
+	}
+	if r.beforeDateAdded != nil {
+		localVarQueryParams.Add("beforeDateAdded", parameterToString(*r.beforeDateAdded, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

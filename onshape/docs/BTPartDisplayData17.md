@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CustomProperties** | Pointer to [**BTPartCustomProperties1338**](BTPartCustomProperties1338.md) |  | [optional] 
 **DefaultColorHash** | Pointer to **string** |  | [optional] 
+**FaultVisibility** | Pointer to [**GBTPartFaultVisibility**](GBTPartFaultVisibility.md) |  | [optional] 
 **HasFaults** | Pointer to **bool** |  | [optional] 
 **Hidden** | Pointer to **bool** |  | [optional] 
 **HighBoxCorner** | Pointer to [**BTVector3d389**](BTVector3d389.md) |  | [optional] 
@@ -174,6 +175,31 @@ SetDefaultColorHash sets DefaultColorHash field to given value.
 `func (o *BTPartDisplayData17) HasDefaultColorHash() bool`
 
 HasDefaultColorHash returns a boolean if a field has been set.
+
+### GetFaultVisibility
+
+`func (o *BTPartDisplayData17) GetFaultVisibility() GBTPartFaultVisibility`
+
+GetFaultVisibility returns the FaultVisibility field if non-nil, zero value otherwise.
+
+### GetFaultVisibilityOk
+
+`func (o *BTPartDisplayData17) GetFaultVisibilityOk() (*GBTPartFaultVisibility, bool)`
+
+GetFaultVisibilityOk returns a tuple with the FaultVisibility field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFaultVisibility
+
+`func (o *BTPartDisplayData17) SetFaultVisibility(v GBTPartFaultVisibility)`
+
+SetFaultVisibility sets FaultVisibility field to given value.
+
+### HasFaultVisibility
+
+`func (o *BTPartDisplayData17) HasFaultVisibility() bool`
+
+HasFaultVisibility returns a boolean if a field has been set.
 
 ### GetHasFaults
 
