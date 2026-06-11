@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.216.80922-5fbf421789c4",
+    "version" : "1.216.81127-f2f1a316440b",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -103,6 +103,9 @@
   }, {
     "name" : "PartStudio",
     "description" : "Access and modify Part Studios."
+  }, {
+    "name" : "ProductStructure",
+    "description" : "Access information on how entities are structured within designs and documents."
   }, {
     "name" : "PropertiesTableTemplate",
     "description" : "Create, access, and delete templates for properties tables."
@@ -16100,27 +16103,27 @@
     "/productstructure/whereused" : {
       "get" : {
         "tags" : [ "ProductStructure" ],
-        "summary" : "Find where an item is used",
-        "description" : "Find where an item is used",
+        "summary" : "Find where a part or assembly is used.",
+        "description" : "Only supported for Enterprise and Professional plans. See [Dev Docs: Where Used](https://onshape-public.github.io/docs/api-adv/relmgmt/#where-used) for a tutorial on using this endpoint.",
         "operationId" : "getWhereUsed",
         "parameters" : [ {
           "name" : "documentId",
           "in" : "query",
-          "description" : "The id of the document in which to perform the operation.",
+          "description" : "Document that contains the part or assembly.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "elementId",
           "in" : "query",
-          "description" : "The id of the element in which to perform the operation.",
+          "description" : "Element that contains the part or assembly.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "versionId",
           "in" : "query",
-          "description" : "The id of the version on which the operation should be performed.",
+          "description" : "Version that contains the part or assembly. One of `versionId` and `useLatestVersion` is required.",
           "schema" : {
             "type" : "string"
           }
@@ -16134,14 +16137,14 @@
         }, {
           "name" : "partId",
           "in" : "query",
-          "description" : "Id of the part on which to perform the operation.",
+          "description" : "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
           "schema" : {
             "type" : "string"
           }
         }, {
           "name" : "partNumber",
           "in" : "query",
-          "description" : "Part number on which to perform the operation.",
+          "description" : "Part to find. When `elementId` is a Part Studio, `partId` or `partNumber` is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.",
           "schema" : {
             "type" : "string"
           }
@@ -16156,7 +16159,7 @@
         }, {
           "name" : "filter",
           "in" : "query",
-          "description" : "Result filter ordinal. `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 4: ALL_WORKSPACES (deprecated), 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`.",
+          "description" : "Filter results by one of the following:  `0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION`.",
           "schema" : {
             "type" : "integer",
             "format" : "int32"
@@ -16164,14 +16167,14 @@
         }, {
           "name" : "includeVersionInfo",
           "in" : "query",
-          "description" : "If true, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.",
+          "description" : "If `true`, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.",
           "schema" : {
             "type" : "boolean"
           }
         }, {
           "name" : "useLatestVersion",
           "in" : "query",
-          "description" : "If true, automatically resolve to the most recent referenced document version for the queried item. This is only used when includeVersionInfo=true, documentId is provided, and versionId is not specified.",
+          "description" : "If `true`, automatically resolves to the most recent referenced document version for the queried item. One of `versionId` and `useLatestVersion` is required.",
           "schema" : {
             "type" : "boolean",
             "default" : false
@@ -16179,7 +16182,7 @@
         }, {
           "name" : "limitToTypes",
           "in" : "query",
-          "description" : "Comma-separated list of referring element type ordinals to limit results to. Valid values: 0 (PARTSTUDIO), 1 (ASSEMBLY), 2 (DRAWING).",
+          "description" : "Comma-separated list of element types to limit results to. Valid values: `0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING`.",
           "schema" : {
             "pattern" : "^(\\d(,\\d)*)*$",
             "type" : "string",
@@ -28874,10 +28877,13 @@
       "BTDiffInfo" : {
         "type" : "object",
         "properties" : {
-          "changes" : {
+          "collectionChanges" : {
             "type" : "object",
             "additionalProperties" : {
-              "$ref" : "#/components/schemas/BTDiffInfo"
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/components/schemas/BTDiffInfo"
+              }
             }
           },
           "entityType" : {
@@ -45229,12 +45235,6 @@
             "maxNumberOfPicks" : {
               "type" : "integer",
               "format" : "int32"
-            },
-            "parameters" : {
-              "type" : "array",
-              "items" : {
-                "$ref" : "#/components/schemas/BTParameterSpec-6"
-              }
             },
             "showLabelsOnly" : {
               "type" : "boolean"
