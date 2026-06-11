@@ -36,19 +36,19 @@ type ApiGetWhereUsedRequest struct {
 	limitToTypes       *string
 }
 
-// The id of the document in which to perform the operation.
+// Document that contains the part or assembly.
 func (r ApiGetWhereUsedRequest) DocumentId(documentId string) ApiGetWhereUsedRequest {
 	r.documentId = &documentId
 	return r
 }
 
-// The id of the element in which to perform the operation.
+// Element that contains the part or assembly.
 func (r ApiGetWhereUsedRequest) ElementId(elementId string) ApiGetWhereUsedRequest {
 	r.elementId = &elementId
 	return r
 }
 
-// The id of the version on which the operation should be performed.
+// Version that contains the part or assembly. One of &#x60;versionId&#x60; and &#x60;useLatestVersion&#x60; is required.
 func (r ApiGetWhereUsedRequest) VersionId(versionId string) ApiGetWhereUsedRequest {
 	r.versionId = &versionId
 	return r
@@ -60,13 +60,13 @@ func (r ApiGetWhereUsedRequest) Configuration(configuration string) ApiGetWhereU
 	return r
 }
 
-// Id of the part on which to perform the operation.
+// Part to find. When &#x60;elementId&#x60; is a Part Studio, &#x60;partId&#x60; or &#x60;partNumber&#x60; is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.
 func (r ApiGetWhereUsedRequest) PartId(partId string) ApiGetWhereUsedRequest {
 	r.partId = &partId
 	return r
 }
 
-// Part number on which to perform the operation.
+// Part to find. When &#x60;elementId&#x60; is a Part Studio, &#x60;partId&#x60; or &#x60;partNumber&#x60; is required. Call [getPartsWMVE](https://cad.onshape.com/glassworks/explorer/#/Part/getPartsWMVE) to get a list of parts in the Part Studio.
 func (r ApiGetWhereUsedRequest) PartNumber(partNumber string) ApiGetWhereUsedRequest {
 	r.partNumber = &partNumber
 	return r
@@ -78,25 +78,25 @@ func (r ApiGetWhereUsedRequest) IncludeProperties(includeProperties bool) ApiGet
 	return r
 }
 
-// Result filter ordinal. &#x60;0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 4: ALL_WORKSPACES (deprecated), 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION&#x60;.
+// Filter results by one of the following:  &#x60;0: LATEST_REVISION, 1: ALL_REVISIONS, 2: ALL_VERSIONS (default), 3: ALL, 5: LATEST_VERSIONS, 6: MOST_RECENT_REVISION&#x60;.
 func (r ApiGetWhereUsedRequest) Filter(filter int32) ApiGetWhereUsedRequest {
 	r.filter = &filter
 	return r
 }
 
-// If true, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.
+// If &#x60;true&#x60;, include the list of document versions in which the queried item has been referenced by other documents. Each entry contains the version ID and name.
 func (r ApiGetWhereUsedRequest) IncludeVersionInfo(includeVersionInfo bool) ApiGetWhereUsedRequest {
 	r.includeVersionInfo = &includeVersionInfo
 	return r
 }
 
-// If true, automatically resolve to the most recent referenced document version for the queried item. This is only used when includeVersionInfo&#x3D;true, documentId is provided, and versionId is not specified.
+// If &#x60;true&#x60;, automatically resolves to the most recent referenced document version for the queried item. One of &#x60;versionId&#x60; and &#x60;useLatestVersion&#x60; is required.
 func (r ApiGetWhereUsedRequest) UseLatestVersion(useLatestVersion bool) ApiGetWhereUsedRequest {
 	r.useLatestVersion = &useLatestVersion
 	return r
 }
 
-// Comma-separated list of referring element type ordinals to limit results to. Valid values: 0 (PARTSTUDIO), 1 (ASSEMBLY), 2 (DRAWING).
+// Comma-separated list of element types to limit results to. Valid values: &#x60;0: PARTSTUDIO, 1: ASSEMBLY, 2: DRAWING&#x60;.
 func (r ApiGetWhereUsedRequest) LimitToTypes(limitToTypes string) ApiGetWhereUsedRequest {
 	r.limitToTypes = &limitToTypes
 	return r
@@ -107,9 +107,9 @@ func (r ApiGetWhereUsedRequest) Execute() (*BTWhereUsedItemInfoList, *http.Respo
 }
 
 /*
-GetWhereUsed Find where an item is used
+GetWhereUsed Find where a part or assembly is used.
 
-Find where an item is used
+Only supported for Enterprise and Professional plans. See [Dev Docs: Where Used](https://onshape-public.github.io/docs/api-adv/relmgmt/#where-used) for a tutorial on using this endpoint.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@return ApiGetWhereUsedRequest
