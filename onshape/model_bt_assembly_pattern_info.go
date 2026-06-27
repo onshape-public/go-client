@@ -22,6 +22,7 @@ type BTAssemblyPatternInfo struct {
 	Name *string `json:"name,omitempty"`
 	// Mapping of seed to pattern instance ids.
 	SeedToPatternInstances *map[string][]string `json:"seedToPatternInstances,omitempty"`
+	Status                 *GBTNodeStatusType   `json:"status,omitempty"`
 	// If pattern is suppressed.
 	Suppressed *bool           `json:"suppressed,omitempty"`
 	Type       *GBTPatternType `json:"type,omitempty"`
@@ -140,6 +141,38 @@ func (o *BTAssemblyPatternInfo) SetSeedToPatternInstances(v map[string][]string)
 	o.SeedToPatternInstances = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *BTAssemblyPatternInfo) GetStatus() GBTNodeStatusType {
+	if o == nil || o.Status == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyPatternInfo) GetStatusOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *BTAssemblyPatternInfo) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given GBTNodeStatusType and assigns it to the Status field.
+func (o *BTAssemblyPatternInfo) SetStatus(v GBTNodeStatusType) {
+	o.Status = &v
+}
+
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
 func (o *BTAssemblyPatternInfo) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
@@ -214,6 +247,9 @@ func (o BTAssemblyPatternInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SeedToPatternInstances != nil {
 		toSerialize["seedToPatternInstances"] = o.SeedToPatternInstances
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

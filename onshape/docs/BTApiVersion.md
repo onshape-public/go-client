@@ -23,7 +23,7 @@
 
 * `BTApiVersionV9IncludeDeterministicIdsToQueryResponses` (value: `"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"`)
 
-* `BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams` (value: `"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"`)
+* `BTApiVersionV10ValidateVisibilityConditionsForPsConfigParams` (value: `"V10_VALIDATE_VISIBILITY_CONDITIONS_FOR_PS_CONFIG_PARAMS"`)
 
 * `BTApiVersionV11ExcludeZipContentsByDefault` (value: `"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"`)
 

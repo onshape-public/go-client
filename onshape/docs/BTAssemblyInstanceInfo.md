@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **DocumentMicroversion** | Pointer to **string** |  | [optional] 
 **DocumentVersion** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
+**ErrorStatus** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
 **FullConfiguration** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -164,6 +165,31 @@ SetElementId sets ElementId field to given value.
 `func (o *BTAssemblyInstanceInfo) HasElementId() bool`
 
 HasElementId returns a boolean if a field has been set.
+
+### GetErrorStatus
+
+`func (o *BTAssemblyInstanceInfo) GetErrorStatus() GBTNodeStatusType`
+
+GetErrorStatus returns the ErrorStatus field if non-nil, zero value otherwise.
+
+### GetErrorStatusOk
+
+`func (o *BTAssemblyInstanceInfo) GetErrorStatusOk() (*GBTNodeStatusType, bool)`
+
+GetErrorStatusOk returns a tuple with the ErrorStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetErrorStatus
+
+`func (o *BTAssemblyInstanceInfo) SetErrorStatus(v GBTNodeStatusType)`
+
+SetErrorStatus sets ErrorStatus field to given value.
+
+### HasErrorStatus
+
+`func (o *BTAssemblyInstanceInfo) HasErrorStatus() bool`
+
+HasErrorStatus returns a boolean if a field has been set.
 
 ### GetFeatureId
 

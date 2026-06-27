@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the pattern. | [optional] 
 **Name** | Pointer to **string** | Name of the pattern. | [optional] 
 **SeedToPatternInstances** | Pointer to **map[string][]string** | Mapping of seed to pattern instance ids. | [optional] 
+**Status** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If pattern is suppressed. | [optional] 
 **Type** | Pointer to [**GBTPatternType**](GBTPatternType.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetSeedToPatternInstances sets SeedToPatternInstances field to given value.
 `func (o *BTAssemblyPatternInfo) HasSeedToPatternInstances() bool`
 
 HasSeedToPatternInstances returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *BTAssemblyPatternInfo) GetStatus() GBTNodeStatusType`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *BTAssemblyPatternInfo) GetStatusOk() (*GBTNodeStatusType, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *BTAssemblyPatternInfo) SetStatus(v GBTNodeStatusType)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *BTAssemblyPatternInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetSuppressed
 

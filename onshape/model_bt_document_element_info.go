@@ -29,6 +29,7 @@ type BTDocumentElementInfo struct {
 	Filename             *string                  `json:"filename,omitempty"`
 	ForceUnits           *string                  `json:"forceUnits,omitempty"`
 	ForeignDataId        *string                  `json:"foreignDataId,omitempty"`
+	FrequencyUnits       *string                  `json:"frequencyUnits,omitempty"`
 	Id                   *string                  `json:"id,omitempty"`
 	LengthUnits          *string                  `json:"lengthUnits,omitempty"`
 	MassUnits            *string                  `json:"massUnits,omitempty"`
@@ -479,6 +480,38 @@ func (o *BTDocumentElementInfo) HasForeignDataId() bool {
 // SetForeignDataId gets a reference to the given string and assigns it to the ForeignDataId field.
 func (o *BTDocumentElementInfo) SetForeignDataId(v string) {
 	o.ForeignDataId = &v
+}
+
+// GetFrequencyUnits returns the FrequencyUnits field value if set, zero value otherwise.
+func (o *BTDocumentElementInfo) GetFrequencyUnits() string {
+	if o == nil || o.FrequencyUnits == nil {
+		var ret string
+		return ret
+	}
+	return *o.FrequencyUnits
+}
+
+// GetFrequencyUnitsOk returns a tuple with the FrequencyUnits field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentElementInfo) GetFrequencyUnitsOk() (*string, bool) {
+	if o == nil || o.FrequencyUnits == nil {
+		return nil, false
+	}
+	return o.FrequencyUnits, true
+}
+
+// HasFrequencyUnits returns a boolean if a field has been set.
+func (o *BTDocumentElementInfo) HasFrequencyUnits() bool {
+	if o != nil && o.FrequencyUnits != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetFrequencyUnits gets a reference to the given string and assigns it to the FrequencyUnits field.
+func (o *BTDocumentElementInfo) SetFrequencyUnits(v string) {
+	o.FrequencyUnits = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -1065,6 +1098,9 @@ func (o BTDocumentElementInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ForeignDataId != nil {
 		toSerialize["foreignDataId"] = o.ForeignDataId
+	}
+	if o.FrequencyUnits != nil {
+		toSerialize["frequencyUnits"] = o.FrequencyUnits
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

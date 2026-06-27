@@ -16,10 +16,11 @@ import (
 
 // BTAssemblyOccurrenceInfo struct for BTAssemblyOccurrenceInfo
 type BTAssemblyOccurrenceInfo struct {
-	Fixed     *bool     `json:"fixed,omitempty"`
-	Hidden    *bool     `json:"hidden,omitempty"`
-	Path      []string  `json:"path,omitempty"`
-	Transform []float64 `json:"transform,omitempty"`
+	Fixed        *bool                         `json:"fixed,omitempty"`
+	Hidden       *bool                         `json:"hidden,omitempty"`
+	MateStatuses *map[string]GBTNodeStatusType `json:"mateStatuses,omitempty"`
+	Path         []string                      `json:"path,omitempty"`
+	Transform    []float64                     `json:"transform,omitempty"`
 }
 
 // NewBTAssemblyOccurrenceInfo instantiates a new BTAssemblyOccurrenceInfo object
@@ -103,6 +104,38 @@ func (o *BTAssemblyOccurrenceInfo) SetHidden(v bool) {
 	o.Hidden = &v
 }
 
+// GetMateStatuses returns the MateStatuses field value if set, zero value otherwise.
+func (o *BTAssemblyOccurrenceInfo) GetMateStatuses() map[string]GBTNodeStatusType {
+	if o == nil || o.MateStatuses == nil {
+		var ret map[string]GBTNodeStatusType
+		return ret
+	}
+	return *o.MateStatuses
+}
+
+// GetMateStatusesOk returns a tuple with the MateStatuses field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyOccurrenceInfo) GetMateStatusesOk() (*map[string]GBTNodeStatusType, bool) {
+	if o == nil || o.MateStatuses == nil {
+		return nil, false
+	}
+	return o.MateStatuses, true
+}
+
+// HasMateStatuses returns a boolean if a field has been set.
+func (o *BTAssemblyOccurrenceInfo) HasMateStatuses() bool {
+	if o != nil && o.MateStatuses != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMateStatuses gets a reference to the given map[string]GBTNodeStatusType and assigns it to the MateStatuses field.
+func (o *BTAssemblyOccurrenceInfo) SetMateStatuses(v map[string]GBTNodeStatusType) {
+	o.MateStatuses = &v
+}
+
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *BTAssemblyOccurrenceInfo) GetPath() []string {
 	if o == nil || o.Path == nil {
@@ -174,6 +207,9 @@ func (o BTAssemblyOccurrenceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Hidden != nil {
 		toSerialize["hidden"] = o.Hidden
+	}
+	if o.MateStatuses != nil {
+		toSerialize["mateStatuses"] = o.MateStatuses
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path

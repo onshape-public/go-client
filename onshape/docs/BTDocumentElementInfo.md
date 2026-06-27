@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **Filename** | Pointer to **string** |  | [optional] 
 **ForceUnits** | Pointer to **string** |  | [optional] 
 **ForeignDataId** | Pointer to **string** |  | [optional] 
+**FrequencyUnits** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LengthUnits** | Pointer to **string** |  | [optional] 
 **MassUnits** | Pointer to **string** |  | [optional] 
@@ -378,6 +379,31 @@ SetForeignDataId sets ForeignDataId field to given value.
 `func (o *BTDocumentElementInfo) HasForeignDataId() bool`
 
 HasForeignDataId returns a boolean if a field has been set.
+
+### GetFrequencyUnits
+
+`func (o *BTDocumentElementInfo) GetFrequencyUnits() string`
+
+GetFrequencyUnits returns the FrequencyUnits field if non-nil, zero value otherwise.
+
+### GetFrequencyUnitsOk
+
+`func (o *BTDocumentElementInfo) GetFrequencyUnitsOk() (*string, bool)`
+
+GetFrequencyUnitsOk returns a tuple with the FrequencyUnits field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFrequencyUnits
+
+`func (o *BTDocumentElementInfo) SetFrequencyUnits(v string)`
+
+SetFrequencyUnits sets FrequencyUnits field to given value.
+
+### HasFrequencyUnits
+
+`func (o *BTDocumentElementInfo) HasFrequencyUnits() bool`
+
+HasFrequencyUnits returns a boolean if a field has been set.
 
 ### GetId
 

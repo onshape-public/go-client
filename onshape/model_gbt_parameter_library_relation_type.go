@@ -20,17 +20,15 @@ type GBTParameterLibraryRelationType string
 
 // List of GBTParameterLibraryRelationType
 const (
-	GBTParameterLibraryRelationTypeNone       GBTParameterLibraryRelationType = "NONE"
-	GBTParameterLibraryRelationTypeControlled GBTParameterLibraryRelationType = "CONTROLLED"
-	GBTParameterLibraryRelationTypeOverride   GBTParameterLibraryRelationType = "OVERRIDE"
-	GBTParameterLibraryRelationTypeUnknown    GBTParameterLibraryRelationType = "UNKNOWN"
+	GBTParameterLibraryRelationTypeDefault             GBTParameterLibraryRelationType = "DEFAULT"
+	GBTParameterLibraryRelationTypeIgnoreLibraryValues GBTParameterLibraryRelationType = "IGNORE_LIBRARY_VALUES"
+	GBTParameterLibraryRelationTypeUnknown             GBTParameterLibraryRelationType = "UNKNOWN"
 )
 
 // All allowed values of GBTParameterLibraryRelationType enum
 var AllowedGBTParameterLibraryRelationTypeEnumValues = []GBTParameterLibraryRelationType{
-	"NONE",
-	"CONTROLLED",
-	"OVERRIDE",
+	"DEFAULT",
+	"IGNORE_LIBRARY_VALUES",
 	"UNKNOWN",
 }
 

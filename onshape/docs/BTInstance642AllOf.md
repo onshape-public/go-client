@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **NodeWithReferenceList** | Pointer to [**[]BTNodeWithReference**](BTNodeWithReference.md) |  | [optional] 
 **ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
 **Parameters** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
+**Properties** | Pointer to [**BTInstanceProperties4828**](BTInstanceProperties4828.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **VersionIdIfExternal** | Pointer to **string** |  | [optional] 
@@ -390,6 +391,31 @@ SetParameters sets Parameters field to given value.
 `func (o *BTInstance642AllOf) HasParameters() bool`
 
 HasParameters returns a boolean if a field has been set.
+
+### GetProperties
+
+`func (o *BTInstance642AllOf) GetProperties() BTInstanceProperties4828`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *BTInstance642AllOf) GetPropertiesOk() (*BTInstanceProperties4828, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *BTInstance642AllOf) SetProperties(v BTInstanceProperties4828)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *BTInstance642AllOf) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
 
 ### GetReferenceParameter
 

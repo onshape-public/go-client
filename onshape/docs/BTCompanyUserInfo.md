@@ -13,7 +13,9 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
 **Light** | Pointer to **bool** |  | [optional] 
+**MakePersonalCopies** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
+**ScheduledRemovalDate** | Pointer to **JSONTime** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **User** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **UserRolePriority** | Pointer to [**UserRolePriority**](UserRolePriority.md) |  | [optional] 
@@ -263,6 +265,31 @@ SetLight sets Light field to given value.
 
 HasLight returns a boolean if a field has been set.
 
+### GetMakePersonalCopies
+
+`func (o *BTCompanyUserInfo) GetMakePersonalCopies() bool`
+
+GetMakePersonalCopies returns the MakePersonalCopies field if non-nil, zero value otherwise.
+
+### GetMakePersonalCopiesOk
+
+`func (o *BTCompanyUserInfo) GetMakePersonalCopiesOk() (*bool, bool)`
+
+GetMakePersonalCopiesOk returns a tuple with the MakePersonalCopies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMakePersonalCopies
+
+`func (o *BTCompanyUserInfo) SetMakePersonalCopies(v bool)`
+
+SetMakePersonalCopies sets MakePersonalCopies field to given value.
+
+### HasMakePersonalCopies
+
+`func (o *BTCompanyUserInfo) HasMakePersonalCopies() bool`
+
+HasMakePersonalCopies returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *BTCompanyUserInfo) GetName() string`
@@ -287,6 +314,31 @@ SetName sets Name field to given value.
 `func (o *BTCompanyUserInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetScheduledRemovalDate
+
+`func (o *BTCompanyUserInfo) GetScheduledRemovalDate() JSONTime`
+
+GetScheduledRemovalDate returns the ScheduledRemovalDate field if non-nil, zero value otherwise.
+
+### GetScheduledRemovalDateOk
+
+`func (o *BTCompanyUserInfo) GetScheduledRemovalDateOk() (*JSONTime, bool)`
+
+GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScheduledRemovalDate
+
+`func (o *BTCompanyUserInfo) SetScheduledRemovalDate(v JSONTime)`
+
+SetScheduledRemovalDate sets ScheduledRemovalDate field to given value.
+
+### HasScheduledRemovalDate
+
+`func (o *BTCompanyUserInfo) HasScheduledRemovalDate() bool`
+
+HasScheduledRemovalDate returns a boolean if a field has been set.
 
 ### GetState
 

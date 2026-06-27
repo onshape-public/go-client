@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AllReferencesPopulated** | Pointer to **bool** |  | [optional] 
 **AnnotationId** | Pointer to **string** |  | [optional] 
 **AnnotationPlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
+**AttachmentLocation** | Pointer to [**GBTAnnotationAttachmentLocation**](GBTAnnotationAttachmentLocation.md) |  | [optional] 
 **BasePlane** | Pointer to [**BTCoordinateSystem387**](BTCoordinateSystem387.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CharacteristicId** | Pointer to **string** |  | [optional] 
@@ -16,6 +17,7 @@ Name | Type | Description | Notes
 **IsConstrainedToPlane** | Pointer to **bool** |  | [optional] 
 **IsDeletion** | Pointer to **bool** |  | [optional] 
 **IsDerived** | Pointer to **bool** |  | [optional] 
+**MainAnnotationId** | Pointer to **string** |  | [optional] 
 **MainConstraintId** | Pointer to **string** |  | [optional] 
 **MainFeatureId** | Pointer to **string** |  | [optional] 
 **MainParameterId** | Pointer to **string** |  | [optional] 
@@ -140,6 +142,31 @@ SetAnnotationPlane sets AnnotationPlane field to given value.
 `func (o *BTAnnotationDisplayData3225) HasAnnotationPlane() bool`
 
 HasAnnotationPlane returns a boolean if a field has been set.
+
+### GetAttachmentLocation
+
+`func (o *BTAnnotationDisplayData3225) GetAttachmentLocation() GBTAnnotationAttachmentLocation`
+
+GetAttachmentLocation returns the AttachmentLocation field if non-nil, zero value otherwise.
+
+### GetAttachmentLocationOk
+
+`func (o *BTAnnotationDisplayData3225) GetAttachmentLocationOk() (*GBTAnnotationAttachmentLocation, bool)`
+
+GetAttachmentLocationOk returns a tuple with the AttachmentLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachmentLocation
+
+`func (o *BTAnnotationDisplayData3225) SetAttachmentLocation(v GBTAnnotationAttachmentLocation)`
+
+SetAttachmentLocation sets AttachmentLocation field to given value.
+
+### HasAttachmentLocation
+
+`func (o *BTAnnotationDisplayData3225) HasAttachmentLocation() bool`
+
+HasAttachmentLocation returns a boolean if a field has been set.
 
 ### GetBasePlane
 
@@ -340,6 +367,31 @@ SetIsDerived sets IsDerived field to given value.
 `func (o *BTAnnotationDisplayData3225) HasIsDerived() bool`
 
 HasIsDerived returns a boolean if a field has been set.
+
+### GetMainAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) GetMainAnnotationId() string`
+
+GetMainAnnotationId returns the MainAnnotationId field if non-nil, zero value otherwise.
+
+### GetMainAnnotationIdOk
+
+`func (o *BTAnnotationDisplayData3225) GetMainAnnotationIdOk() (*string, bool)`
+
+GetMainAnnotationIdOk returns a tuple with the MainAnnotationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMainAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) SetMainAnnotationId(v string)`
+
+SetMainAnnotationId sets MainAnnotationId field to given value.
+
+### HasMainAnnotationId
+
+`func (o *BTAnnotationDisplayData3225) HasMainAnnotationId() bool`
+
+HasMainAnnotationId returns a boolean if a field has been set.
 
 ### GetMainConstraintId
 

@@ -36,6 +36,8 @@ type BTElementLibrarySummaryInfo struct {
 	OwnerType *int32 `json:"ownerType,omitempty"`
 	// The id of the root folder of the library
 	SourceFolderId *string `json:"sourceFolderId,omitempty"`
+	// If true, the current user is subscribed to this library. Applies only to public libraries.
+	Subscribed *bool `json:"subscribed,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -377,6 +379,38 @@ func (o *BTElementLibrarySummaryInfo) SetSourceFolderId(v string) {
 	o.SourceFolderId = &v
 }
 
+// GetSubscribed returns the Subscribed field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetSubscribed() bool {
+	if o == nil || o.Subscribed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Subscribed
+}
+
+// GetSubscribedOk returns a tuple with the Subscribed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetSubscribedOk() (*bool, bool) {
+	if o == nil || o.Subscribed == nil {
+		return nil, false
+	}
+	return o.Subscribed, true
+}
+
+// HasSubscribed returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasSubscribed() bool {
+	if o != nil && o.Subscribed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscribed gets a reference to the given bool and assigns it to the Subscribed field.
+func (o *BTElementLibrarySummaryInfo) SetSubscribed(v bool) {
+	o.Subscribed = &v
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *BTElementLibrarySummaryInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
@@ -440,6 +474,9 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.SourceFolderId != nil {
 		toSerialize["sourceFolderId"] = o.SourceFolderId
+	}
+	if o.Subscribed != nil {
+		toSerialize["subscribed"] = o.Subscribed
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

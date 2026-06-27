@@ -21,7 +21,8 @@ type BTAssemblyParametricInstanceInfo struct {
 	// Id of the Part Studio instance.
 	Id *string `json:"id,omitempty"`
 	// Name of the parametric instance.
-	Name *string `json:"name,omitempty"`
+	Name   *string            `json:"name,omitempty"`
+	Status *GBTNodeStatusType `json:"status,omitempty"`
 	// If the parametric is suppressed.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// Type of parametric instance.
@@ -141,6 +142,38 @@ func (o *BTAssemblyParametricInstanceInfo) SetName(v string) {
 	o.Name = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *BTAssemblyParametricInstanceInfo) GetStatus() GBTNodeStatusType {
+	if o == nil || o.Status == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyParametricInstanceInfo) GetStatusOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *BTAssemblyParametricInstanceInfo) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given GBTNodeStatusType and assigns it to the Status field.
+func (o *BTAssemblyParametricInstanceInfo) SetStatus(v GBTNodeStatusType) {
+	o.Status = &v
+}
+
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
 func (o *BTAssemblyParametricInstanceInfo) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
@@ -215,6 +248,9 @@ func (o BTAssemblyParametricInstanceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

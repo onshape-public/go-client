@@ -21,6 +21,7 @@ type BTAssemblyInstanceInfo struct {
 	DocumentMicroversion *string                   `json:"documentMicroversion,omitempty"`
 	DocumentVersion      *string                   `json:"documentVersion,omitempty"`
 	ElementId            *string                   `json:"elementId,omitempty"`
+	ErrorStatus          *GBTNodeStatusType        `json:"errorStatus,omitempty"`
 	FeatureId            *string                   `json:"featureId,omitempty"`
 	FullConfiguration    *string                   `json:"fullConfiguration,omitempty"`
 	Id                   *string                   `json:"id,omitempty"`
@@ -209,6 +210,38 @@ func (o *BTAssemblyInstanceInfo) HasElementId() bool {
 // SetElementId gets a reference to the given string and assigns it to the ElementId field.
 func (o *BTAssemblyInstanceInfo) SetElementId(v string) {
 	o.ElementId = &v
+}
+
+// GetErrorStatus returns the ErrorStatus field value if set, zero value otherwise.
+func (o *BTAssemblyInstanceInfo) GetErrorStatus() GBTNodeStatusType {
+	if o == nil || o.ErrorStatus == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.ErrorStatus
+}
+
+// GetErrorStatusOk returns a tuple with the ErrorStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyInstanceInfo) GetErrorStatusOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.ErrorStatus == nil {
+		return nil, false
+	}
+	return o.ErrorStatus, true
+}
+
+// HasErrorStatus returns a boolean if a field has been set.
+func (o *BTAssemblyInstanceInfo) HasErrorStatus() bool {
+	if o != nil && o.ErrorStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetErrorStatus gets a reference to the given GBTNodeStatusType and assigns it to the ErrorStatus field.
+func (o *BTAssemblyInstanceInfo) SetErrorStatus(v GBTNodeStatusType) {
+	o.ErrorStatus = &v
 }
 
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
@@ -579,6 +612,9 @@ func (o BTAssemblyInstanceInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId
+	}
+	if o.ErrorStatus != nil {
+		toSerialize["errorStatus"] = o.ErrorStatus
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId

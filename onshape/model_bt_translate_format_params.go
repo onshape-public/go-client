@@ -146,6 +146,7 @@ type BTTranslateFormatParams struct {
 	UrdfMeshFormat                 *GBTUrdfMeshFormat  `json:"urdfMeshFormat,omitempty"`
 	UrdfStlEncoding                *GBTStlEncodingType `json:"urdfStlEncoding,omitempty"`
 	UseFileNameToSetSinglePartName *bool               `json:"useFileNameToSetSinglePartName,omitempty"`
+	UseGlbCompression              *bool               `json:"useGlbCompression,omitempty"`
 	UseGltfCompression             *bool               `json:"useGltfCompression,omitempty"`
 	UseIGESImportPostProcessing    *bool               `json:"useIGESImportPostProcessing,omitempty"`
 	UseIgesCompatibilityMode       *bool               `json:"useIgesCompatibilityMode,omitempty"`
@@ -3265,6 +3266,38 @@ func (o *BTTranslateFormatParams) SetUseFileNameToSetSinglePartName(v bool) {
 	o.UseFileNameToSetSinglePartName = &v
 }
 
+// GetUseGlbCompression returns the UseGlbCompression field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetUseGlbCompression() bool {
+	if o == nil || o.UseGlbCompression == nil {
+		var ret bool
+		return ret
+	}
+	return *o.UseGlbCompression
+}
+
+// GetUseGlbCompressionOk returns a tuple with the UseGlbCompression field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetUseGlbCompressionOk() (*bool, bool) {
+	if o == nil || o.UseGlbCompression == nil {
+		return nil, false
+	}
+	return o.UseGlbCompression, true
+}
+
+// HasUseGlbCompression returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasUseGlbCompression() bool {
+	if o != nil && o.UseGlbCompression != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUseGlbCompression gets a reference to the given bool and assigns it to the UseGlbCompression field.
+func (o *BTTranslateFormatParams) SetUseGlbCompression(v bool) {
+	o.UseGlbCompression = &v
+}
+
 // GetUseGltfCompression returns the UseGltfCompression field value if set, zero value otherwise.
 func (o *BTTranslateFormatParams) GetUseGltfCompression() bool {
 	if o == nil || o.UseGltfCompression == nil {
@@ -3714,6 +3747,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.UseFileNameToSetSinglePartName != nil {
 		toSerialize["useFileNameToSetSinglePartName"] = o.UseFileNameToSetSinglePartName
+	}
+	if o.UseGlbCompression != nil {
+		toSerialize["useGlbCompression"] = o.UseGlbCompression
 	}
 	if o.UseGltfCompression != nil {
 		toSerialize["useGltfCompression"] = o.UseGltfCompression

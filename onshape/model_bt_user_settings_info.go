@@ -18,6 +18,8 @@ import (
 type BTUserSettingsInfo struct {
 	AxisRotationLock                     *bool                                  `json:"axisRotationLock,omitempty"`
 	CommonUnits                          *BTCommonUnitsInfo                     `json:"commonUnits,omitempty"`
+	ContextTranslucencySliderValue       *float32                               `json:"contextTranslucencySliderValue,omitempty"`
+	ContextTranslucent                   *bool                                  `json:"contextTranslucent,omitempty"`
 	CustomColors                         []string                               `json:"customColors,omitempty"`
 	DefaultUnits                         *BTDefaultUnitsInfo                    `json:"defaultUnits,omitempty"`
 	DisplayAssemblyProperties            *bool                                  `json:"displayAssemblyProperties,omitempty"`
@@ -137,6 +139,70 @@ func (o *BTUserSettingsInfo) HasCommonUnits() bool {
 // SetCommonUnits gets a reference to the given BTCommonUnitsInfo and assigns it to the CommonUnits field.
 func (o *BTUserSettingsInfo) SetCommonUnits(v BTCommonUnitsInfo) {
 	o.CommonUnits = &v
+}
+
+// GetContextTranslucencySliderValue returns the ContextTranslucencySliderValue field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetContextTranslucencySliderValue() float32 {
+	if o == nil || o.ContextTranslucencySliderValue == nil {
+		var ret float32
+		return ret
+	}
+	return *o.ContextTranslucencySliderValue
+}
+
+// GetContextTranslucencySliderValueOk returns a tuple with the ContextTranslucencySliderValue field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetContextTranslucencySliderValueOk() (*float32, bool) {
+	if o == nil || o.ContextTranslucencySliderValue == nil {
+		return nil, false
+	}
+	return o.ContextTranslucencySliderValue, true
+}
+
+// HasContextTranslucencySliderValue returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasContextTranslucencySliderValue() bool {
+	if o != nil && o.ContextTranslucencySliderValue != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetContextTranslucencySliderValue gets a reference to the given float32 and assigns it to the ContextTranslucencySliderValue field.
+func (o *BTUserSettingsInfo) SetContextTranslucencySliderValue(v float32) {
+	o.ContextTranslucencySliderValue = &v
+}
+
+// GetContextTranslucent returns the ContextTranslucent field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetContextTranslucent() bool {
+	if o == nil || o.ContextTranslucent == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ContextTranslucent
+}
+
+// GetContextTranslucentOk returns a tuple with the ContextTranslucent field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetContextTranslucentOk() (*bool, bool) {
+	if o == nil || o.ContextTranslucent == nil {
+		return nil, false
+	}
+	return o.ContextTranslucent, true
+}
+
+// HasContextTranslucent returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasContextTranslucent() bool {
+	if o != nil && o.ContextTranslucent != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetContextTranslucent gets a reference to the given bool and assigns it to the ContextTranslucent field.
+func (o *BTUserSettingsInfo) SetContextTranslucent(v bool) {
+	o.ContextTranslucent = &v
 }
 
 // GetCustomColors returns the CustomColors field value if set, zero value otherwise.
@@ -1362,6 +1428,12 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CommonUnits != nil {
 		toSerialize["commonUnits"] = o.CommonUnits
+	}
+	if o.ContextTranslucencySliderValue != nil {
+		toSerialize["contextTranslucencySliderValue"] = o.ContextTranslucencySliderValue
+	}
+	if o.ContextTranslucent != nil {
+		toSerialize["contextTranslucent"] = o.ContextTranslucent
 	}
 	if o.CustomColors != nil {
 		toSerialize["customColors"] = o.CustomColors
