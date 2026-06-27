@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **DefinedByComponents** | Pointer to **bool** |  | [optional] 
 **DirectionFlipped** | Pointer to **bool** |  | [optional] 
-**FgsBaseUnits** | Pointer to **string** |  | [optional] 
+**FgsUnits** | Pointer to **string** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
 **LoadType** | Pointer to [**GBTLoadType**](GBTLoadType.md) |  | [optional] 
@@ -110,30 +110,30 @@ SetDirectionFlipped sets DirectionFlipped field to given value.
 
 HasDirectionFlipped returns a boolean if a field has been set.
 
-### GetFgsBaseUnits
+### GetFgsUnits
 
-`func (o *BTMLoad3538) GetFgsBaseUnits() string`
+`func (o *BTMLoad3538) GetFgsUnits() string`
 
-GetFgsBaseUnits returns the FgsBaseUnits field if non-nil, zero value otherwise.
+GetFgsUnits returns the FgsUnits field if non-nil, zero value otherwise.
 
-### GetFgsBaseUnitsOk
+### GetFgsUnitsOk
 
-`func (o *BTMLoad3538) GetFgsBaseUnitsOk() (*string, bool)`
+`func (o *BTMLoad3538) GetFgsUnitsOk() (*string, bool)`
 
-GetFgsBaseUnitsOk returns a tuple with the FgsBaseUnits field if it's non-nil, zero value otherwise
+GetFgsUnitsOk returns a tuple with the FgsUnits field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetFgsBaseUnits
+### SetFgsUnits
 
-`func (o *BTMLoad3538) SetFgsBaseUnits(v string)`
+`func (o *BTMLoad3538) SetFgsUnits(v string)`
 
-SetFgsBaseUnits sets FgsBaseUnits field to given value.
+SetFgsUnits sets FgsUnits field to given value.
 
-### HasFgsBaseUnits
+### HasFgsUnits
 
-`func (o *BTMLoad3538) HasFgsBaseUnits() bool`
+`func (o *BTMLoad3538) HasFgsUnits() bool`
 
-HasFgsBaseUnits returns a boolean if a field has been set.
+HasFgsUnits returns a boolean if a field has been set.
 
 ### GetLoadComponentParameterIds
 

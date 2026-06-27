@@ -100,6 +100,7 @@ Name | Type | Description | Notes
 **UrdfMeshFormat** | Pointer to [**GBTUrdfMeshFormat**](GBTUrdfMeshFormat.md) |  | [optional] 
 **UrdfStlEncoding** | Pointer to [**GBTStlEncodingType**](GBTStlEncodingType.md) |  | [optional] [default to GBTStlEncodingTypeText]
 **UseFileNameToSetSinglePartName** | Pointer to **bool** |  | [optional] 
+**UseGlbCompression** | Pointer to **bool** |  | [optional] 
 **UseGltfCompression** | Pointer to **bool** |  | [optional] 
 **UseIGESImportPostProcessing** | Pointer to **bool** |  | [optional] 
 **UseIgesCompatibilityMode** | Pointer to **bool** |  | [optional] 
@@ -2519,6 +2520,31 @@ SetUseFileNameToSetSinglePartName sets UseFileNameToSetSinglePartName field to g
 `func (o *BTTranslateFormatParams) HasUseFileNameToSetSinglePartName() bool`
 
 HasUseFileNameToSetSinglePartName returns a boolean if a field has been set.
+
+### GetUseGlbCompression
+
+`func (o *BTTranslateFormatParams) GetUseGlbCompression() bool`
+
+GetUseGlbCompression returns the UseGlbCompression field if non-nil, zero value otherwise.
+
+### GetUseGlbCompressionOk
+
+`func (o *BTTranslateFormatParams) GetUseGlbCompressionOk() (*bool, bool)`
+
+GetUseGlbCompressionOk returns a tuple with the UseGlbCompression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseGlbCompression
+
+`func (o *BTTranslateFormatParams) SetUseGlbCompression(v bool)`
+
+SetUseGlbCompression sets UseGlbCompression field to given value.
+
+### HasUseGlbCompression
+
+`func (o *BTTranslateFormatParams) HasUseGlbCompression() bool`
+
+HasUseGlbCompression returns a boolean if a field has been set.
 
 ### GetUseGltfCompression
 

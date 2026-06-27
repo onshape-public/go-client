@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **ParentSuppressed** | Pointer to **bool** |  | [optional] 
+**Properties** | Pointer to [**BTInstanceProperties4828**](BTInstanceProperties4828.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 **SuppressedFieldIndex** | Pointer to **int32** |  | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
@@ -80,6 +81,31 @@ SetParentSuppressed sets ParentSuppressed field to given value.
 `func (o *BTInstanceControlNode750) HasParentSuppressed() bool`
 
 HasParentSuppressed returns a boolean if a field has been set.
+
+### GetProperties
+
+`func (o *BTInstanceControlNode750) GetProperties() BTInstanceProperties4828`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *BTInstanceControlNode750) GetPropertiesOk() (*BTInstanceProperties4828, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *BTInstanceControlNode750) SetProperties(v BTInstanceProperties4828)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *BTInstanceControlNode750) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
 
 ### GetSuppressed
 

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **OwnerId** | Pointer to **string** | The owner Id of an element library (either Onshape, company, or user). | [optional] 
 **OwnerType** | Pointer to **int32** | The type of library owner, Onshape, user, or company | [optional] 
 **SourceFolderId** | Pointer to **string** | The id of the root folder of the library | [optional] 
+**Subscribed** | Pointer to **bool** | If true, the current user is subscribed to this library. Applies only to public libraries. | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
@@ -284,6 +285,31 @@ SetSourceFolderId sets SourceFolderId field to given value.
 `func (o *BTElementLibrarySummaryInfo) HasSourceFolderId() bool`
 
 HasSourceFolderId returns a boolean if a field has been set.
+
+### GetSubscribed
+
+`func (o *BTElementLibrarySummaryInfo) GetSubscribed() bool`
+
+GetSubscribed returns the Subscribed field if non-nil, zero value otherwise.
+
+### GetSubscribedOk
+
+`func (o *BTElementLibrarySummaryInfo) GetSubscribedOk() (*bool, bool)`
+
+GetSubscribedOk returns a tuple with the Subscribed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscribed
+
+`func (o *BTElementLibrarySummaryInfo) SetSubscribed(v bool)`
+
+SetSubscribed sets Subscribed field to given value.
+
+### HasSubscribed
+
+`func (o *BTElementLibrarySummaryInfo) HasSubscribed() bool`
+
+HasSubscribed returns a boolean if a field has been set.
 
 ### GetViewRef
 

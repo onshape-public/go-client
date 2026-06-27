@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **FeatureData** | Pointer to [**BTAssemblyFeatureDataInfo**](BTAssemblyFeatureDataInfo.md) |  | [optional] 
 **FeatureType** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -102,6 +103,31 @@ SetId sets Id field to given value.
 `func (o *BTAssemblyFeatureInfo) HasId() bool`
 
 HasId returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *BTAssemblyFeatureInfo) GetStatus() GBTNodeStatusType`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *BTAssemblyFeatureInfo) GetStatusOk() (*GBTNodeStatusType, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *BTAssemblyFeatureInfo) SetStatus(v GBTNodeStatusType)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *BTAssemblyFeatureInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetSuppressed
 

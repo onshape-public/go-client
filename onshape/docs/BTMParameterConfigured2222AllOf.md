@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** |  | [optional] 
 **ConfigurationParameterId** | Pointer to **string** |  | [optional] 
 **ConfigurationParameterIdFieldIndex** | Pointer to **int32** |  | [optional] 
+**PassThroughBoolean** | Pointer to **bool** |  | [optional] 
 **Values** | Pointer to [**[]BTMConfiguredValue1341**](BTMConfiguredValue1341.md) |  | [optional] 
 **ValuesFieldIndex** | Pointer to **int32** |  | [optional] 
 
@@ -103,6 +104,31 @@ SetConfigurationParameterIdFieldIndex sets ConfigurationParameterIdFieldIndex fi
 `func (o *BTMParameterConfigured2222AllOf) HasConfigurationParameterIdFieldIndex() bool`
 
 HasConfigurationParameterIdFieldIndex returns a boolean if a field has been set.
+
+### GetPassThroughBoolean
+
+`func (o *BTMParameterConfigured2222AllOf) GetPassThroughBoolean() bool`
+
+GetPassThroughBoolean returns the PassThroughBoolean field if non-nil, zero value otherwise.
+
+### GetPassThroughBooleanOk
+
+`func (o *BTMParameterConfigured2222AllOf) GetPassThroughBooleanOk() (*bool, bool)`
+
+GetPassThroughBooleanOk returns a tuple with the PassThroughBoolean field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPassThroughBoolean
+
+`func (o *BTMParameterConfigured2222AllOf) SetPassThroughBoolean(v bool)`
+
+SetPassThroughBoolean sets PassThroughBoolean field to given value.
+
+### HasPassThroughBoolean
+
+`func (o *BTMParameterConfigured2222AllOf) HasPassThroughBoolean() bool`
+
+HasPassThroughBoolean returns a boolean if a field has been set.
 
 ### GetValues
 

@@ -29,6 +29,7 @@ type BTMParameterConfigured2222 struct {
 	ValueString                        *string                  `json:"valueString,omitempty"`
 	ConfigurationParameterId           *string                  `json:"configurationParameterId,omitempty"`
 	ConfigurationParameterIdFieldIndex *int32                   `json:"configurationParameterIdFieldIndex,omitempty"`
+	PassThroughBoolean                 *bool                    `json:"passThroughBoolean,omitempty"`
 	Values                             []BTMConfiguredValue1341 `json:"values,omitempty"`
 	ValuesFieldIndex                   *int32                   `json:"valuesFieldIndex,omitempty"`
 }
@@ -338,6 +339,38 @@ func (o *BTMParameterConfigured2222) SetConfigurationParameterIdFieldIndex(v int
 	o.ConfigurationParameterIdFieldIndex = &v
 }
 
+// GetPassThroughBoolean returns the PassThroughBoolean field value if set, zero value otherwise.
+func (o *BTMParameterConfigured2222) GetPassThroughBoolean() bool {
+	if o == nil || o.PassThroughBoolean == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PassThroughBoolean
+}
+
+// GetPassThroughBooleanOk returns a tuple with the PassThroughBoolean field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterConfigured2222) GetPassThroughBooleanOk() (*bool, bool) {
+	if o == nil || o.PassThroughBoolean == nil {
+		return nil, false
+	}
+	return o.PassThroughBoolean, true
+}
+
+// HasPassThroughBoolean returns a boolean if a field has been set.
+func (o *BTMParameterConfigured2222) HasPassThroughBoolean() bool {
+	if o != nil && o.PassThroughBoolean != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPassThroughBoolean gets a reference to the given bool and assigns it to the PassThroughBoolean field.
+func (o *BTMParameterConfigured2222) SetPassThroughBoolean(v bool) {
+	o.PassThroughBoolean = &v
+}
+
 // GetValues returns the Values field value if set, zero value otherwise.
 func (o *BTMParameterConfigured2222) GetValues() []BTMConfiguredValue1341 {
 	if o == nil || o.Values == nil {
@@ -438,6 +471,9 @@ func (o BTMParameterConfigured2222) MarshalJSON() ([]byte, error) {
 	}
 	if o.ConfigurationParameterIdFieldIndex != nil {
 		toSerialize["configurationParameterIdFieldIndex"] = o.ConfigurationParameterIdFieldIndex
+	}
+	if o.PassThroughBoolean != nil {
+		toSerialize["passThroughBoolean"] = o.PassThroughBoolean
 	}
 	if o.Values != nil {
 		toSerialize["values"] = o.Values

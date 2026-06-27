@@ -267,6 +267,56 @@ func (o *BTAnnotationDisplayData3225) SetAnnotationPlane(v BTCoordinateSystem387
 	o.GetActualInstance().(getResult).SetAnnotationPlane(v)
 }
 
+// GetAttachmentLocation returns the AttachmentLocation field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetAttachmentLocation() GBTAnnotationAttachmentLocation {
+	type getResult interface {
+		GetAttachmentLocation() GBTAnnotationAttachmentLocation
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAttachmentLocation()
+	} else {
+		var de GBTAnnotationAttachmentLocation
+		return de
+	}
+}
+
+// GetAttachmentLocationOk returns a tuple with the AttachmentLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetAttachmentLocationOk() (*GBTAnnotationAttachmentLocation, bool) {
+	type getResult interface {
+		GetAttachmentLocationOk() (*GBTAnnotationAttachmentLocation, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAttachmentLocationOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAttachmentLocation returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasAttachmentLocation() bool {
+	type getResult interface {
+		HasAttachmentLocation() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAttachmentLocation()
+	} else {
+		return false
+	}
+}
+
+// SetAttachmentLocation gets a reference to the given GBTAnnotationAttachmentLocation and assigns it to the AttachmentLocation field.
+func (o *BTAnnotationDisplayData3225) SetAttachmentLocation(v GBTAnnotationAttachmentLocation) {
+	type getResult interface {
+		SetAttachmentLocation(v GBTAnnotationAttachmentLocation)
+	}
+
+	o.GetActualInstance().(getResult).SetAttachmentLocation(v)
+}
+
 // GetBasePlane returns the BasePlane field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetBasePlane() BTCoordinateSystem387 {
 	type getResult interface {
@@ -665,6 +715,56 @@ func (o *BTAnnotationDisplayData3225) SetIsDerived(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsDerived(v)
+}
+
+// GetMainAnnotationId returns the MainAnnotationId field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetMainAnnotationId() string {
+	type getResult interface {
+		GetMainAnnotationId() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainAnnotationId()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetMainAnnotationIdOk returns a tuple with the MainAnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetMainAnnotationIdOk() (*string, bool) {
+	type getResult interface {
+		GetMainAnnotationIdOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetMainAnnotationIdOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasMainAnnotationId returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasMainAnnotationId() bool {
+	type getResult interface {
+		HasMainAnnotationId() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasMainAnnotationId()
+	} else {
+		return false
+	}
+}
+
+// SetMainAnnotationId gets a reference to the given string and assigns it to the MainAnnotationId field.
+func (o *BTAnnotationDisplayData3225) SetMainAnnotationId(v string) {
+	type getResult interface {
+		SetMainAnnotationId(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetMainAnnotationId(v)
 }
 
 // GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
@@ -1077,11 +1177,12 @@ func (v *NullableBTAnnotationDisplayData3225) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTAnnotationDisplayData3225 struct {
-	AllReferences          []string               `json:"allReferences,omitempty"`
-	AllReferencesPopulated *bool                  `json:"allReferencesPopulated,omitempty"`
-	AnnotationId           *string                `json:"annotationId,omitempty"`
-	AnnotationPlane        *BTCoordinateSystem387 `json:"annotationPlane,omitempty"`
-	BasePlane              *BTCoordinateSystem387 `json:"basePlane,omitempty"`
+	AllReferences          []string                         `json:"allReferences,omitempty"`
+	AllReferencesPopulated *bool                            `json:"allReferencesPopulated,omitempty"`
+	AnnotationId           *string                          `json:"annotationId,omitempty"`
+	AnnotationPlane        *BTCoordinateSystem387           `json:"annotationPlane,omitempty"`
+	AttachmentLocation     *GBTAnnotationAttachmentLocation `json:"attachmentLocation,omitempty"`
+	BasePlane              *BTCoordinateSystem387           `json:"basePlane,omitempty"`
 	// Type of JSON object.
 	BtType                 *string          `json:"btType,omitempty"`
 	CharacteristicId       *string          `json:"characteristicId,omitempty"`
@@ -1090,6 +1191,7 @@ type base_BTAnnotationDisplayData3225 struct {
 	IsConstrainedToPlane   *bool            `json:"isConstrainedToPlane,omitempty"`
 	IsDeletion             *bool            `json:"isDeletion,omitempty"`
 	IsDerived              *bool            `json:"isDerived,omitempty"`
+	MainAnnotationId       *string          `json:"mainAnnotationId,omitempty"`
 	MainConstraintId       *string          `json:"mainConstraintId,omitempty"`
 	MainFeatureId          *string          `json:"mainFeatureId,omitempty"`
 	MainParameterId        *string          `json:"mainParameterId,omitempty"`
@@ -1240,6 +1342,38 @@ func (o *base_BTAnnotationDisplayData3225) HasAnnotationPlane() bool {
 // SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
 func (o *base_BTAnnotationDisplayData3225) SetAnnotationPlane(v BTCoordinateSystem387) {
 	o.AnnotationPlane = &v
+}
+
+// GetAttachmentLocation returns the AttachmentLocation field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetAttachmentLocation() GBTAnnotationAttachmentLocation {
+	if o == nil || o.AttachmentLocation == nil {
+		var ret GBTAnnotationAttachmentLocation
+		return ret
+	}
+	return *o.AttachmentLocation
+}
+
+// GetAttachmentLocationOk returns a tuple with the AttachmentLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetAttachmentLocationOk() (*GBTAnnotationAttachmentLocation, bool) {
+	if o == nil || o.AttachmentLocation == nil {
+		return nil, false
+	}
+	return o.AttachmentLocation, true
+}
+
+// HasAttachmentLocation returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasAttachmentLocation() bool {
+	if o != nil && o.AttachmentLocation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachmentLocation gets a reference to the given GBTAnnotationAttachmentLocation and assigns it to the AttachmentLocation field.
+func (o *base_BTAnnotationDisplayData3225) SetAttachmentLocation(v GBTAnnotationAttachmentLocation) {
+	o.AttachmentLocation = &v
 }
 
 // GetBasePlane returns the BasePlane field value if set, zero value otherwise.
@@ -1498,6 +1632,38 @@ func (o *base_BTAnnotationDisplayData3225) SetIsDerived(v bool) {
 	o.IsDerived = &v
 }
 
+// GetMainAnnotationId returns the MainAnnotationId field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetMainAnnotationId() string {
+	if o == nil || o.MainAnnotationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.MainAnnotationId
+}
+
+// GetMainAnnotationIdOk returns a tuple with the MainAnnotationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetMainAnnotationIdOk() (*string, bool) {
+	if o == nil || o.MainAnnotationId == nil {
+		return nil, false
+	}
+	return o.MainAnnotationId, true
+}
+
+// HasMainAnnotationId returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasMainAnnotationId() bool {
+	if o != nil && o.MainAnnotationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMainAnnotationId gets a reference to the given string and assigns it to the MainAnnotationId field.
+func (o *base_BTAnnotationDisplayData3225) SetMainAnnotationId(v string) {
+	o.MainAnnotationId = &v
+}
+
 // GetMainConstraintId returns the MainConstraintId field value if set, zero value otherwise.
 func (o *base_BTAnnotationDisplayData3225) GetMainConstraintId() string {
 	if o == nil || o.MainConstraintId == nil {
@@ -1672,6 +1838,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
+	if o.AttachmentLocation != nil {
+		toSerialize["attachmentLocation"] = o.AttachmentLocation
+	}
 	if o.BasePlane != nil {
 		toSerialize["basePlane"] = o.BasePlane
 	}
@@ -1695,6 +1864,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDerived != nil {
 		toSerialize["isDerived"] = o.IsDerived
+	}
+	if o.MainAnnotationId != nil {
+		toSerialize["mainAnnotationId"] = o.MainAnnotationId
 	}
 	if o.MainConstraintId != nil {
 		toSerialize["mainConstraintId"] = o.MainConstraintId

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Fixed** | Pointer to **bool** |  | [optional] 
 **Hidden** | Pointer to **bool** |  | [optional] 
+**MateStatuses** | Pointer to [**map[string]GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
 **Transform** | Pointer to **[]float64** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetHidden sets Hidden field to given value.
 `func (o *BTAssemblyOccurrenceInfo) HasHidden() bool`
 
 HasHidden returns a boolean if a field has been set.
+
+### GetMateStatuses
+
+`func (o *BTAssemblyOccurrenceInfo) GetMateStatuses() map[string]GBTNodeStatusType`
+
+GetMateStatuses returns the MateStatuses field if non-nil, zero value otherwise.
+
+### GetMateStatusesOk
+
+`func (o *BTAssemblyOccurrenceInfo) GetMateStatusesOk() (*map[string]GBTNodeStatusType, bool)`
+
+GetMateStatusesOk returns a tuple with the MateStatuses field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMateStatuses
+
+`func (o *BTAssemblyOccurrenceInfo) SetMateStatuses(v map[string]GBTNodeStatusType)`
+
+SetMateStatuses sets MateStatuses field to given value.
+
+### HasMateStatuses
+
+`func (o *BTAssemblyOccurrenceInfo) HasMateStatuses() bool`
+
+HasMateStatuses returns a boolean if a field has been set.
 
 ### GetPath
 

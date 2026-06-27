@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Children** | Pointer to [**[]BTAssemblyParametricInstanceChildInfo**](BTAssemblyParametricInstanceChildInfo.md) | Child instances. | [optional] 
 **Id** | Pointer to **string** | Id of the Part Studio instance. | [optional] 
 **Name** | Pointer to **string** | Name of the parametric instance. | [optional] 
+**Status** | Pointer to [**GBTNodeStatusType**](GBTNodeStatusType.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If the parametric is suppressed. | [optional] 
 **Type** | Pointer to **string** | Type of parametric instance. | [optional] 
 
@@ -103,6 +104,31 @@ SetName sets Name field to given value.
 `func (o *BTAssemblyParametricInstanceInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *BTAssemblyParametricInstanceInfo) GetStatus() GBTNodeStatusType`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *BTAssemblyParametricInstanceInfo) GetStatusOk() (*GBTNodeStatusType, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *BTAssemblyParametricInstanceInfo) SetStatus(v GBTNodeStatusType)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *BTAssemblyParametricInstanceInfo) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetSuppressed
 

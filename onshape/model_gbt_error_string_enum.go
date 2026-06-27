@@ -1794,6 +1794,26 @@ const (
 	GBTErrorStringEnumFitSplineLengthNoLine                                       GBTErrorStringEnum = "FIT_SPLINE_LENGTH_NO_LINE"
 	GBTErrorStringEnumSweepScaleLessThanZero                                      GBTErrorStringEnum = "SWEEP_SCALE_LESS_THAN_ZERO"
 	GBTErrorStringEnumSweepExtendHasNoEffect                                      GBTErrorStringEnum = "SWEEP_EXTEND_HAS_NO_EFFECT"
+	GBTErrorStringEnumAnnotationSymbolNotSupported                                GBTErrorStringEnum = "ANNOTATION_SYMBOL_NOT_SUPPORTED"
+	GBTErrorStringEnumSheetMetalUnfoldNoPartSelected                              GBTErrorStringEnum = "SHEET_METAL_UNFOLD_NO_PART_SELECTED"
+	GBTErrorStringEnumSheetMetalUnfoldNoBendOrRolledWallSelected                  GBTErrorStringEnum = "SHEET_METAL_UNFOLD_NO_BEND_OR_ROLLED_WALL_SELECTED"
+	GBTErrorStringEnumSheetMetalUnfoldSelectFromSamePart                          GBTErrorStringEnum = "SHEET_METAL_UNFOLD_SELECT_FROM_SAME_PART"
+	GBTErrorStringEnumSheetMetalUnfoldNothingToUnfold                             GBTErrorStringEnum = "SHEET_METAL_UNFOLD_NOTHING_TO_UNFOLD"
+	GBTErrorStringEnumSheetMetalUnfoldNoHoldEntity                                GBTErrorStringEnum = "SHEET_METAL_UNFOLD_NO_HOLD_ENTITY"
+	GBTErrorStringEnumSheetMetalUnfoldSingleHoldEntity                            GBTErrorStringEnum = "SHEET_METAL_UNFOLD_SINGLE_HOLD_ENTITY"
+	GBTErrorStringEnumSheetMetalUnfoldHoldEntityNotOnPart                         GBTErrorStringEnum = "SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_ON_PART"
+	GBTErrorStringEnumSheetMetalUnfoldEntityNotWallOrJoint                        GBTErrorStringEnum = "SHEET_METAL_UNFOLD_ENTITY_NOT_WALL_OR_JOINT"
+	GBTErrorStringEnumSheetMetalUnfoldJointNoType                                 GBTErrorStringEnum = "SHEET_METAL_UNFOLD_JOINT_NO_TYPE"
+	GBTErrorStringEnumSheetMetalUnfoldJointNotABend                               GBTErrorStringEnum = "SHEET_METAL_UNFOLD_JOINT_NOT_A_BEND"
+	GBTErrorStringEnumSheetMetalUnfoldHoldEntityNotWallOrBoundaryEdge             GBTErrorStringEnum = "SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_WALL_OR_BOUNDARY_EDGE"
+	GBTErrorStringEnumRestEmptyRequestBody                                        GBTErrorStringEnum = "REST_EMPTY_REQUEST_BODY"
+	GBTErrorStringEnumMutualTrimNonContiguousFaceSelection                        GBTErrorStringEnum = "MUTUAL_TRIM_NON_CONTIGUOUS_FACE_SELECTION"
+	GBTErrorStringEnumBsurfInconsistentBoundaryTangent                            GBTErrorStringEnum = "BSURF_INCONSISTENT_BOUNDARY_TANGENT"
+	GBTErrorStringEnumBsurfInconsistentBoundaryCurvature                          GBTErrorStringEnum = "BSURF_INCONSISTENT_BOUNDARY_CURVATURE"
+	GBTErrorStringEnumBsurfBoundaryConditionsRelaxedInfo                          GBTErrorStringEnum = "BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO"
+	GBTErrorStringEnumAsyncSimulationVersionNotSelected                           GBTErrorStringEnum = "ASYNC_SIMULATION_VERSION_NOT_SELECTED"
+	GBTErrorStringEnumAsyncSimulationInvalidPosition                              GBTErrorStringEnum = "ASYNC_SIMULATION_INVALID_POSITION"
+	GBTErrorStringEnumFixedPartRequiredForSimulationNoBoundaryCondition           GBTErrorStringEnum = "FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3573,6 +3593,26 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"FIT_SPLINE_LENGTH_NO_LINE",
 	"SWEEP_SCALE_LESS_THAN_ZERO",
 	"SWEEP_EXTEND_HAS_NO_EFFECT",
+	"ANNOTATION_SYMBOL_NOT_SUPPORTED",
+	"SHEET_METAL_UNFOLD_NO_PART_SELECTED",
+	"SHEET_METAL_UNFOLD_NO_BEND_OR_ROLLED_WALL_SELECTED",
+	"SHEET_METAL_UNFOLD_SELECT_FROM_SAME_PART",
+	"SHEET_METAL_UNFOLD_NOTHING_TO_UNFOLD",
+	"SHEET_METAL_UNFOLD_NO_HOLD_ENTITY",
+	"SHEET_METAL_UNFOLD_SINGLE_HOLD_ENTITY",
+	"SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_ON_PART",
+	"SHEET_METAL_UNFOLD_ENTITY_NOT_WALL_OR_JOINT",
+	"SHEET_METAL_UNFOLD_JOINT_NO_TYPE",
+	"SHEET_METAL_UNFOLD_JOINT_NOT_A_BEND",
+	"SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_WALL_OR_BOUNDARY_EDGE",
+	"REST_EMPTY_REQUEST_BODY",
+	"MUTUAL_TRIM_NON_CONTIGUOUS_FACE_SELECTION",
+	"BSURF_INCONSISTENT_BOUNDARY_TANGENT",
+	"BSURF_INCONSISTENT_BOUNDARY_CURVATURE",
+	"BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO",
+	"ASYNC_SIMULATION_VERSION_NOT_SELECTED",
+	"ASYNC_SIMULATION_INVALID_POSITION",
+	"FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION",
 	"UNKNOWN",
 }
 

@@ -63,6 +63,7 @@ type BTAssemblyInstance947 struct {
 	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	ParameterLibraries                      []BTMParameter1                             `json:"parameterLibraries,omitempty"`
 	Parameters                              []BTMParameter1                             `json:"parameters,omitempty"`
+	Properties                              *BTInstanceProperties4828                   `json:"properties,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	VersionId                               *string                                     `json:"versionId,omitempty"`
 	VersionIdIfExternal                     *string                                     `json:"versionIdIfExternal,omitempty"`
@@ -1493,6 +1494,38 @@ func (o *BTAssemblyInstance947) SetParameters(v []BTMParameter1) {
 	o.Parameters = v
 }
 
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *BTAssemblyInstance947) GetProperties() BTInstanceProperties4828 {
+	if o == nil || o.Properties == nil {
+		var ret BTInstanceProperties4828
+		return ret
+	}
+	return *o.Properties
+}
+
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyInstance947) GetPropertiesOk() (*BTInstanceProperties4828, bool) {
+	if o == nil || o.Properties == nil {
+		return nil, false
+	}
+	return o.Properties, true
+}
+
+// HasProperties returns a boolean if a field has been set.
+func (o *BTAssemblyInstance947) HasProperties() bool {
+	if o != nil && o.Properties != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProperties gets a reference to the given BTInstanceProperties4828 and assigns it to the Properties field.
+func (o *BTAssemblyInstance947) SetProperties(v BTInstanceProperties4828) {
+	o.Properties = &v
+}
+
 // GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
 func (o *BTAssemblyInstance947) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
 	if o == nil || o.ReferenceParameter == nil {
@@ -1730,6 +1763,9 @@ func (o BTAssemblyInstance947) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameters != nil {
 		toSerialize["parameters"] = o.Parameters
+	}
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter

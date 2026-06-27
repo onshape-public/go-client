@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AxisRotationLock** | Pointer to **bool** |  | [optional] 
 **CommonUnits** | Pointer to [**BTCommonUnitsInfo**](BTCommonUnitsInfo.md) |  | [optional] 
+**ContextTranslucencySliderValue** | Pointer to **float32** |  | [optional] 
+**ContextTranslucent** | Pointer to **bool** |  | [optional] 
 **CustomColors** | Pointer to **[]string** |  | [optional] 
 **DefaultUnits** | Pointer to [**BTDefaultUnitsInfo**](BTDefaultUnitsInfo.md) |  | [optional] 
 **DisplayAssemblyProperties** | Pointer to **bool** |  | [optional] 
@@ -113,6 +115,56 @@ SetCommonUnits sets CommonUnits field to given value.
 `func (o *BTUserSettingsInfo) HasCommonUnits() bool`
 
 HasCommonUnits returns a boolean if a field has been set.
+
+### GetContextTranslucencySliderValue
+
+`func (o *BTUserSettingsInfo) GetContextTranslucencySliderValue() float32`
+
+GetContextTranslucencySliderValue returns the ContextTranslucencySliderValue field if non-nil, zero value otherwise.
+
+### GetContextTranslucencySliderValueOk
+
+`func (o *BTUserSettingsInfo) GetContextTranslucencySliderValueOk() (*float32, bool)`
+
+GetContextTranslucencySliderValueOk returns a tuple with the ContextTranslucencySliderValue field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContextTranslucencySliderValue
+
+`func (o *BTUserSettingsInfo) SetContextTranslucencySliderValue(v float32)`
+
+SetContextTranslucencySliderValue sets ContextTranslucencySliderValue field to given value.
+
+### HasContextTranslucencySliderValue
+
+`func (o *BTUserSettingsInfo) HasContextTranslucencySliderValue() bool`
+
+HasContextTranslucencySliderValue returns a boolean if a field has been set.
+
+### GetContextTranslucent
+
+`func (o *BTUserSettingsInfo) GetContextTranslucent() bool`
+
+GetContextTranslucent returns the ContextTranslucent field if non-nil, zero value otherwise.
+
+### GetContextTranslucentOk
+
+`func (o *BTUserSettingsInfo) GetContextTranslucentOk() (*bool, bool)`
+
+GetContextTranslucentOk returns a tuple with the ContextTranslucent field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetContextTranslucent
+
+`func (o *BTUserSettingsInfo) SetContextTranslucent(v bool)`
+
+SetContextTranslucent sets ContextTranslucent field to given value.
+
+### HasContextTranslucent
+
+`func (o *BTUserSettingsInfo) HasContextTranslucent() bool`
+
+HasContextTranslucent returns a boolean if a field has been set.
 
 ### GetCustomColors
 

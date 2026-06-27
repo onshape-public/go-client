@@ -33,6 +33,7 @@ type BTUserAdminInfo struct {
 	FirstName                  *string                  `json:"firstName,omitempty"`
 	LastName                   *string                  `json:"lastName,omitempty"`
 	Company                    *BTCompanySummaryInfo    `json:"company,omitempty"`
+	CompanyUserState           *int32                   `json:"companyUserState,omitempty"`
 	ConfirmationRequested      *bool                    `json:"confirmationRequested,omitempty"`
 	DocumentationNameOverride  *string                  `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions          *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
@@ -513,6 +514,38 @@ func (o *BTUserAdminInfo) HasCompany() bool {
 // SetCompany gets a reference to the given BTCompanySummaryInfo and assigns it to the Company field.
 func (o *BTUserAdminInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
+}
+
+// GetCompanyUserState returns the CompanyUserState field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetCompanyUserState() int32 {
+	if o == nil || o.CompanyUserState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.CompanyUserState
+}
+
+// GetCompanyUserStateOk returns a tuple with the CompanyUserState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetCompanyUserStateOk() (*int32, bool) {
+	if o == nil || o.CompanyUserState == nil {
+		return nil, false
+	}
+	return o.CompanyUserState, true
+}
+
+// HasCompanyUserState returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasCompanyUserState() bool {
+	if o != nil && o.CompanyUserState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanyUserState gets a reference to the given int32 and assigns it to the CompanyUserState field.
+func (o *BTUserAdminInfo) SetCompanyUserState(v int32) {
+	o.CompanyUserState = &v
 }
 
 // GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
@@ -2283,6 +2316,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.CompanyUserState != nil {
+		toSerialize["companyUserState"] = o.CompanyUserState
 	}
 	if o.ConfirmationRequested != nil {
 		toSerialize["confirmationRequested"] = o.ConfirmationRequested

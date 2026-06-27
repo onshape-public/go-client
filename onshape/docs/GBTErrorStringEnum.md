@@ -3551,6 +3551,46 @@
 
 * `GBTErrorStringEnumSweepExtendHasNoEffect` (value: `"SWEEP_EXTEND_HAS_NO_EFFECT"`)
 
+* `GBTErrorStringEnumAnnotationSymbolNotSupported` (value: `"ANNOTATION_SYMBOL_NOT_SUPPORTED"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldNoPartSelected` (value: `"SHEET_METAL_UNFOLD_NO_PART_SELECTED"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldNoBendOrRolledWallSelected` (value: `"SHEET_METAL_UNFOLD_NO_BEND_OR_ROLLED_WALL_SELECTED"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldSelectFromSamePart` (value: `"SHEET_METAL_UNFOLD_SELECT_FROM_SAME_PART"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldNothingToUnfold` (value: `"SHEET_METAL_UNFOLD_NOTHING_TO_UNFOLD"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldNoHoldEntity` (value: `"SHEET_METAL_UNFOLD_NO_HOLD_ENTITY"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldSingleHoldEntity` (value: `"SHEET_METAL_UNFOLD_SINGLE_HOLD_ENTITY"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldHoldEntityNotOnPart` (value: `"SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_ON_PART"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldEntityNotWallOrJoint` (value: `"SHEET_METAL_UNFOLD_ENTITY_NOT_WALL_OR_JOINT"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldJointNoType` (value: `"SHEET_METAL_UNFOLD_JOINT_NO_TYPE"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldJointNotABend` (value: `"SHEET_METAL_UNFOLD_JOINT_NOT_A_BEND"`)
+
+* `GBTErrorStringEnumSheetMetalUnfoldHoldEntityNotWallOrBoundaryEdge` (value: `"SHEET_METAL_UNFOLD_HOLD_ENTITY_NOT_WALL_OR_BOUNDARY_EDGE"`)
+
+* `GBTErrorStringEnumRestEmptyRequestBody` (value: `"REST_EMPTY_REQUEST_BODY"`)
+
+* `GBTErrorStringEnumMutualTrimNonContiguousFaceSelection` (value: `"MUTUAL_TRIM_NON_CONTIGUOUS_FACE_SELECTION"`)
+
+* `GBTErrorStringEnumBsurfInconsistentBoundaryTangent` (value: `"BSURF_INCONSISTENT_BOUNDARY_TANGENT"`)
+
+* `GBTErrorStringEnumBsurfInconsistentBoundaryCurvature` (value: `"BSURF_INCONSISTENT_BOUNDARY_CURVATURE"`)
+
+* `GBTErrorStringEnumBsurfBoundaryConditionsRelaxedInfo` (value: `"BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO"`)
+
+* `GBTErrorStringEnumAsyncSimulationVersionNotSelected` (value: `"ASYNC_SIMULATION_VERSION_NOT_SELECTED"`)
+
+* `GBTErrorStringEnumAsyncSimulationInvalidPosition` (value: `"ASYNC_SIMULATION_INVALID_POSITION"`)
+
+* `GBTErrorStringEnumFixedPartRequiredForSimulationNoBoundaryCondition` (value: `"FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION"`)
+
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 
 

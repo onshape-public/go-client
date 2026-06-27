@@ -57,7 +57,7 @@ type BTMLoad3538 struct {
 	Version                                *int32                                    `json:"version,omitempty"`
 	DefinedByComponents                    *bool                                     `json:"definedByComponents,omitempty"`
 	DirectionFlipped                       *bool                                     `json:"directionFlipped,omitempty"`
-	FgsBaseUnits                           *string                                   `json:"fgsBaseUnits,omitempty"`
+	FgsUnits                               *string                                   `json:"fgsUnits,omitempty"`
 	LoadComponentParameterIds              *map[string]string                        `json:"loadComponentParameterIds,omitempty"`
 	LoadRegionParameterId                  *string                                   `json:"loadRegionParameterId,omitempty"`
 	LoadType                               *GBTLoadType                              `json:"loadType,omitempty"`
@@ -980,36 +980,36 @@ func (o *BTMLoad3538) SetDirectionFlipped(v bool) {
 	o.DirectionFlipped = &v
 }
 
-// GetFgsBaseUnits returns the FgsBaseUnits field value if set, zero value otherwise.
-func (o *BTMLoad3538) GetFgsBaseUnits() string {
-	if o == nil || o.FgsBaseUnits == nil {
+// GetFgsUnits returns the FgsUnits field value if set, zero value otherwise.
+func (o *BTMLoad3538) GetFgsUnits() string {
+	if o == nil || o.FgsUnits == nil {
 		var ret string
 		return ret
 	}
-	return *o.FgsBaseUnits
+	return *o.FgsUnits
 }
 
-// GetFgsBaseUnitsOk returns a tuple with the FgsBaseUnits field value if set, nil otherwise
+// GetFgsUnitsOk returns a tuple with the FgsUnits field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTMLoad3538) GetFgsBaseUnitsOk() (*string, bool) {
-	if o == nil || o.FgsBaseUnits == nil {
+func (o *BTMLoad3538) GetFgsUnitsOk() (*string, bool) {
+	if o == nil || o.FgsUnits == nil {
 		return nil, false
 	}
-	return o.FgsBaseUnits, true
+	return o.FgsUnits, true
 }
 
-// HasFgsBaseUnits returns a boolean if a field has been set.
-func (o *BTMLoad3538) HasFgsBaseUnits() bool {
-	if o != nil && o.FgsBaseUnits != nil {
+// HasFgsUnits returns a boolean if a field has been set.
+func (o *BTMLoad3538) HasFgsUnits() bool {
+	if o != nil && o.FgsUnits != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetFgsBaseUnits gets a reference to the given string and assigns it to the FgsBaseUnits field.
-func (o *BTMLoad3538) SetFgsBaseUnits(v string) {
-	o.FgsBaseUnits = &v
+// SetFgsUnits gets a reference to the given string and assigns it to the FgsUnits field.
+func (o *BTMLoad3538) SetFgsUnits(v string) {
+	o.FgsUnits = &v
 }
 
 // GetLoadComponentParameterIds returns the LoadComponentParameterIds field value if set, zero value otherwise.
@@ -1330,8 +1330,8 @@ func (o BTMLoad3538) MarshalJSON() ([]byte, error) {
 	if o.DirectionFlipped != nil {
 		toSerialize["directionFlipped"] = o.DirectionFlipped
 	}
-	if o.FgsBaseUnits != nil {
-		toSerialize["fgsBaseUnits"] = o.FgsBaseUnits
+	if o.FgsUnits != nil {
+		toSerialize["fgsUnits"] = o.FgsUnits
 	}
 	if o.LoadComponentParameterIds != nil {
 		toSerialize["loadComponentParameterIds"] = o.LoadComponentParameterIds

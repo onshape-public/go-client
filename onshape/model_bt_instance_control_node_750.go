@@ -19,11 +19,12 @@ type BTInstanceControlNode750 struct {
 	BTMNode19
 	BtType *string `json:"btType,omitempty"`
 	// Microversion that resulted from the import.
-	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
-	NodeId               *string `json:"nodeId,omitempty"`
-	ParentSuppressed     *bool   `json:"parentSuppressed,omitempty"`
-	Suppressed           *bool   `json:"suppressed,omitempty"`
-	SuppressedFieldIndex *int32  `json:"suppressedFieldIndex,omitempty"`
+	ImportMicroversion   *string                   `json:"importMicroversion,omitempty"`
+	NodeId               *string                   `json:"nodeId,omitempty"`
+	ParentSuppressed     *bool                     `json:"parentSuppressed,omitempty"`
+	Properties           *BTInstanceProperties4828 `json:"properties,omitempty"`
+	Suppressed           *bool                     `json:"suppressed,omitempty"`
+	SuppressedFieldIndex *int32                    `json:"suppressedFieldIndex,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
 	SuppressionConfigured      *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState           *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
@@ -173,6 +174,38 @@ func (o *BTInstanceControlNode750) HasParentSuppressed() bool {
 // SetParentSuppressed gets a reference to the given bool and assigns it to the ParentSuppressed field.
 func (o *BTInstanceControlNode750) SetParentSuppressed(v bool) {
 	o.ParentSuppressed = &v
+}
+
+// GetProperties returns the Properties field value if set, zero value otherwise.
+func (o *BTInstanceControlNode750) GetProperties() BTInstanceProperties4828 {
+	if o == nil || o.Properties == nil {
+		var ret BTInstanceProperties4828
+		return ret
+	}
+	return *o.Properties
+}
+
+// GetPropertiesOk returns a tuple with the Properties field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceControlNode750) GetPropertiesOk() (*BTInstanceProperties4828, bool) {
+	if o == nil || o.Properties == nil {
+		return nil, false
+	}
+	return o.Properties, true
+}
+
+// HasProperties returns a boolean if a field has been set.
+func (o *BTInstanceControlNode750) HasProperties() bool {
+	if o != nil && o.Properties != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetProperties gets a reference to the given BTInstanceProperties4828 and assigns it to the Properties field.
+func (o *BTInstanceControlNode750) SetProperties(v BTInstanceProperties4828) {
+	o.Properties = &v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
@@ -356,6 +389,9 @@ func (o BTInstanceControlNode750) MarshalJSON() ([]byte, error) {
 	}
 	if o.ParentSuppressed != nil {
 		toSerialize["parentSuppressed"] = o.ParentSuppressed
+	}
+	if o.Properties != nil {
+		toSerialize["properties"] = o.Properties
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

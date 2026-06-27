@@ -19,6 +19,7 @@ type BTAssemblyFeatureInfo struct {
 	FeatureData *BTAssemblyFeatureDataInfo `json:"featureData,omitempty"`
 	FeatureType *string                    `json:"featureType,omitempty"`
 	Id          *string                    `json:"id,omitempty"`
+	Status      *GBTNodeStatusType         `json:"status,omitempty"`
 	Suppressed  *bool                      `json:"suppressed,omitempty"`
 }
 
@@ -135,6 +136,38 @@ func (o *BTAssemblyFeatureInfo) SetId(v string) {
 	o.Id = &v
 }
 
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *BTAssemblyFeatureInfo) GetStatus() GBTNodeStatusType {
+	if o == nil || o.Status == nil {
+		var ret GBTNodeStatusType
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyFeatureInfo) GetStatusOk() (*GBTNodeStatusType, bool) {
+	if o == nil || o.Status == nil {
+		return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *BTAssemblyFeatureInfo) HasStatus() bool {
+	if o != nil && o.Status != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given GBTNodeStatusType and assigns it to the Status field.
+func (o *BTAssemblyFeatureInfo) SetStatus(v GBTNodeStatusType) {
+	o.Status = &v
+}
+
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
 func (o *BTAssemblyFeatureInfo) GetSuppressed() bool {
 	if o == nil || o.Suppressed == nil {
@@ -177,6 +210,9 @@ func (o BTAssemblyFeatureInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
+	}
+	if o.Status != nil {
+		toSerialize["status"] = o.Status
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

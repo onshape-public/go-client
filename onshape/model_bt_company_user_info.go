@@ -24,14 +24,16 @@ type BTCompanyUserInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id            *string   `json:"id,omitempty"`
-	LastLoginTime *JSONTime `json:"lastLoginTime,omitempty"`
-	Light         *bool     `json:"light,omitempty"`
+	Id                 *string   `json:"id,omitempty"`
+	LastLoginTime      *JSONTime `json:"lastLoginTime,omitempty"`
+	Light              *bool     `json:"light,omitempty"`
+	MakePersonalCopies *bool     `json:"makePersonalCopies,omitempty"`
 	// Name of the resource.
-	Name             *string                 `json:"name,omitempty"`
-	State            *int32                  `json:"state,omitempty"`
-	User             *BTUserBasicSummaryInfo `json:"user,omitempty"`
-	UserRolePriority *UserRolePriority       `json:"userRolePriority,omitempty"`
+	Name                 *string                 `json:"name,omitempty"`
+	ScheduledRemovalDate *JSONTime               `json:"scheduledRemovalDate,omitempty"`
+	State                *int32                  `json:"state,omitempty"`
+	User                 *BTUserBasicSummaryInfo `json:"user,omitempty"`
+	UserRolePriority     *UserRolePriority       `json:"userRolePriority,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -341,6 +343,38 @@ func (o *BTCompanyUserInfo) SetLight(v bool) {
 	o.Light = &v
 }
 
+// GetMakePersonalCopies returns the MakePersonalCopies field value if set, zero value otherwise.
+func (o *BTCompanyUserInfo) GetMakePersonalCopies() bool {
+	if o == nil || o.MakePersonalCopies == nil {
+		var ret bool
+		return ret
+	}
+	return *o.MakePersonalCopies
+}
+
+// GetMakePersonalCopiesOk returns a tuple with the MakePersonalCopies field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserInfo) GetMakePersonalCopiesOk() (*bool, bool) {
+	if o == nil || o.MakePersonalCopies == nil {
+		return nil, false
+	}
+	return o.MakePersonalCopies, true
+}
+
+// HasMakePersonalCopies returns a boolean if a field has been set.
+func (o *BTCompanyUserInfo) HasMakePersonalCopies() bool {
+	if o != nil && o.MakePersonalCopies != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMakePersonalCopies gets a reference to the given bool and assigns it to the MakePersonalCopies field.
+func (o *BTCompanyUserInfo) SetMakePersonalCopies(v bool) {
+	o.MakePersonalCopies = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTCompanyUserInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -371,6 +405,38 @@ func (o *BTCompanyUserInfo) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *BTCompanyUserInfo) SetName(v string) {
 	o.Name = &v
+}
+
+// GetScheduledRemovalDate returns the ScheduledRemovalDate field value if set, zero value otherwise.
+func (o *BTCompanyUserInfo) GetScheduledRemovalDate() JSONTime {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ScheduledRemovalDate
+}
+
+// GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserInfo) GetScheduledRemovalDateOk() (*JSONTime, bool) {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		return nil, false
+	}
+	return o.ScheduledRemovalDate, true
+}
+
+// HasScheduledRemovalDate returns a boolean if a field has been set.
+func (o *BTCompanyUserInfo) HasScheduledRemovalDate() bool {
+	if o != nil && o.ScheduledRemovalDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheduledRemovalDate gets a reference to the given JSONTime and assigns it to the ScheduledRemovalDate field.
+func (o *BTCompanyUserInfo) SetScheduledRemovalDate(v JSONTime) {
+	o.ScheduledRemovalDate = &v
 }
 
 // GetState returns the State field value if set, zero value otherwise.
@@ -530,8 +596,14 @@ func (o BTCompanyUserInfo) MarshalJSON() ([]byte, error) {
 	if o.Light != nil {
 		toSerialize["light"] = o.Light
 	}
+	if o.MakePersonalCopies != nil {
+		toSerialize["makePersonalCopies"] = o.MakePersonalCopies
+	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.ScheduledRemovalDate != nil {
+		toSerialize["scheduledRemovalDate"] = o.ScheduledRemovalDate
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

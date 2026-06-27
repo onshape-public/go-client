@@ -3,11 +3,9 @@
 ## Enum
 
 
-* `GBTParameterLibraryRelationTypeNone` (value: `"NONE"`)
+* `GBTParameterLibraryRelationTypeDefault` (value: `"DEFAULT"`)
 
-* `GBTParameterLibraryRelationTypeControlled` (value: `"CONTROLLED"`)
-
-* `GBTParameterLibraryRelationTypeOverride` (value: `"OVERRIDE"`)
+* `GBTParameterLibraryRelationTypeIgnoreLibraryValues` (value: `"IGNORE_LIBRARY_VALUES"`)
 
 * `GBTParameterLibraryRelationTypeUnknown` (value: `"UNKNOWN"`)
 

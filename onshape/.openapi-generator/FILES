@@ -508,6 +508,7 @@ docs/BTGeneratedGraphicsAppearance4159.md
 docs/BTGeometryFilter130.md
 docs/BTGeometryFilter130AllOf.md
 docs/BTGeometryMateDisplayData1050.md
+docs/BTGeometryMateDisplayData1050AllOf.md
 docs/BTGetJsonPaths1697.md
 docs/BTGetJsonPathsResponse1544.md
 docs/BTGetJsonResponse2137.md
@@ -568,6 +569,7 @@ docs/BTInstanceControlNode750.md
 docs/BTInstanceControlNode750AllOf.md
 docs/BTInstanceFolder3627.md
 docs/BTInstanceFolder3627AllOf.md
+docs/BTInstanceProperties4828.md
 docs/BTInstanceStandardContentData2081.md
 docs/BTInstanceStandardContentData2081AllOf.md
 docs/BTInstanceWithReference.md
@@ -615,6 +617,7 @@ docs/BTListResponseBTTranslationRequestInfo.md
 docs/BTListResponseBTWebhookInfo.md
 docs/BTListResponseBTWorkflowObserverOptionInfo.md
 docs/BTLoadDisplayData837.md
+docs/BTLoadDisplayData837AllOf.md
 docs/BTLocationInfo226.md
 docs/BTLockedAtCurrentPosition4006.md
 docs/BTLockedAtNamedPosition3201.md
@@ -799,6 +802,7 @@ docs/BTMSketchTextEntity1761AllOf.md
 docs/BTMSuppressionState1924.md
 docs/BTMSuppressionState1924AllOf.md
 docs/BTMSuppressionStateConfigured2598.md
+docs/BTMSuppressionStateConfigured2598AllOf.md
 docs/BTMSuppressionStateExpression1811.md
 docs/BTMSuppressionStateExpression1811AllOf.md
 docs/BTMSuppressionStateParentSuppressed5404.md
@@ -819,9 +823,11 @@ docs/BTMateConnectorEntity28AllOf.md
 docs/BTMateConnectorFilter163.md
 docs/BTMateConnectorFilter163AllOf.md
 docs/BTMateDisplayData1358.md
+docs/BTMateDisplayData1358AllOf.md
 docs/BTMateFilter162.md
 docs/BTMateFilter162AllOf.md
 docs/BTMateGroupDisplayData1990.md
+docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
 docs/BTMaterialLibraryMetadataInfo.md
@@ -896,6 +902,7 @@ docs/BTOccurrenceWithFullPartIds1464.md
 docs/BTOccurrenceWithFullPartIds1464AllOf.md
 docs/BTOldPermission.md
 docs/BTOneConfigurationPartProperties1661.md
+docs/BTOneConfigurationProperties1900.md
 docs/BTOnePartProperties230.md
 docs/BTOptionallyConfiguredValue.md
 docs/BTOrFilter167.md
@@ -1467,6 +1474,7 @@ docs/ExportRuleApi.md
 docs/ExternalDocumentation.md
 docs/FeatureStudioApi.md
 docs/FolderApi.md
+docs/GBTAnnotationAttachmentLocation.md
 docs/GBTAnnotationType.md
 docs/GBTAppElementAssociativeDataType.md
 docs/GBTAppElementReferenceType.md
@@ -2016,6 +2024,7 @@ model_bt_instance_642.go
 model_bt_instance_base_2263.go
 model_bt_instance_control_node_750.go
 model_bt_instance_folder_3627.go
+model_bt_instance_properties_4828.go
 model_bt_instance_standard_content_data_2081.go
 model_bt_instance_with_reference.go
 model_bt_item_info.go
@@ -2122,6 +2131,7 @@ model_bt_occurrence_filter_166.go
 model_bt_occurrence_with_full_part_ids_1464.go
 model_bt_old_permission.go
 model_bt_one_configuration_part_properties_1661.go
+model_bt_one_configuration_properties_1900.go
 model_bt_one_part_properties_230.go
 model_bt_optionally_configured_value.go
 model_bt_origin_display_data_934.go
@@ -2698,6 +2708,7 @@ model_encoding.go
 model_entry.go
 model_example.go
 model_external_documentation.go
+model_gbt_annotation_attachment_location.go
 model_gbt_annotation_type.go
 model_gbt_app_element_associative_data_type.go
 model_gbt_app_element_reference_type.go

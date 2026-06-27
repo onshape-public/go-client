@@ -20,23 +20,23 @@ type BTApiVersion string
 
 // List of BTApiVersion
 const (
-	BTApiVersionUndefined                                       BTApiVersion = "UNDEFINED"
-	BTApiVersionV1Start                                         BTApiVersion = "V1_START"
-	BTApiVersionV2SerializationUnification                      BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
-	BTApiVersionV3NewBomFormat                                  BTApiVersion = "V3_NEW_BOM_FORMAT"
-	BTApiVersionV4TransactionsNoNew                             BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
-	BTApiVersionV5BodyDetailsCompositeReference                 BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
-	BTApiVersionV6JsonEditResponseBugfix                        BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
-	BTApiVersionV7SketchEndpointIncludesSolveStatus             BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
-	BTApiVersionV8RestoreNoopNoNewMicroversion                  BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
-	BTApiVersionV9IncludeDeterministicIdsToQueryResponses       BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
-	BTApiVersionV10ValidateVisibiltyConditionsForPsConfigParams BTApiVersion = "V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS"
-	BTApiVersionV11ExcludeZipContentsByDefault                  BTApiVersion = "V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"
-	BTApiVersionV12ValidateElementTypeForTranslations           BTApiVersion = "V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"
-	BTApiVersionV13SourceTargetDocumentVersionsToMove           BTApiVersion = "V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"
-	BTApiVersionV14FixReferenceType                             BTApiVersion = "V14_FIX_REFERENCE_TYPE"
-	BTApiVersionV15AddSketchCheck                               BTApiVersion = "V15_ADD_SKETCH_CHECK"
-	BTApiVersionV16AssemblyConfigureInstanceSuppression         BTApiVersion = "V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION"
+	BTApiVersionUndefined                                        BTApiVersion = "UNDEFINED"
+	BTApiVersionV1Start                                          BTApiVersion = "V1_START"
+	BTApiVersionV2SerializationUnification                       BTApiVersion = "V2_SERIALIZATION_UNIFICATION"
+	BTApiVersionV3NewBomFormat                                   BTApiVersion = "V3_NEW_BOM_FORMAT"
+	BTApiVersionV4TransactionsNoNew                              BTApiVersion = "V4_TRANSACTIONS_NO_NEW"
+	BTApiVersionV5BodyDetailsCompositeReference                  BTApiVersion = "V5_BODY_DETAILS_COMPOSITE_REFERENCE"
+	BTApiVersionV6JsonEditResponseBugfix                         BTApiVersion = "V6_JSON_EDIT_RESPONSE_BUGFIX"
+	BTApiVersionV7SketchEndpointIncludesSolveStatus              BTApiVersion = "V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS"
+	BTApiVersionV8RestoreNoopNoNewMicroversion                   BTApiVersion = "V8_RESTORE_NOOP_NO_NEW_MICROVERSION"
+	BTApiVersionV9IncludeDeterministicIdsToQueryResponses        BTApiVersion = "V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES"
+	BTApiVersionV10ValidateVisibilityConditionsForPsConfigParams BTApiVersion = "V10_VALIDATE_VISIBILITY_CONDITIONS_FOR_PS_CONFIG_PARAMS"
+	BTApiVersionV11ExcludeZipContentsByDefault                   BTApiVersion = "V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT"
+	BTApiVersionV12ValidateElementTypeForTranslations            BTApiVersion = "V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS"
+	BTApiVersionV13SourceTargetDocumentVersionsToMove            BTApiVersion = "V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE"
+	BTApiVersionV14FixReferenceType                              BTApiVersion = "V14_FIX_REFERENCE_TYPE"
+	BTApiVersionV15AddSketchCheck                                BTApiVersion = "V15_ADD_SKETCH_CHECK"
+	BTApiVersionV16AssemblyConfigureInstanceSuppression          BTApiVersion = "V16_ASSEMBLY_CONFIGURE_INSTANCE_SUPPRESSION"
 )
 
 // All allowed values of BTApiVersion enum
@@ -51,7 +51,7 @@ var AllowedBTApiVersionEnumValues = []BTApiVersion{
 	"V7_SKETCH_ENDPOINT_INCLUDES_SOLVE_STATUS",
 	"V8_RESTORE_NOOP_NO_NEW_MICROVERSION",
 	"V9_INCLUDE_DETERMINISTIC_IDS_TO_QUERY_RESPONSES",
-	"V10_VALIDATE_VISIBILTY_CONDITIONS_FOR_PS_CONFIG_PARAMS",
+	"V10_VALIDATE_VISIBILITY_CONDITIONS_FOR_PS_CONFIG_PARAMS",
 	"V11_EXCLUDE_ZIP_CONTENTS_BY_DEFAULT",
 	"V12_VALIDATE_ELEMENT_TYPE_FOR_TRANSLATIONS",
 	"V13_SOURCE_TARGET_DOCUMENT_VERSIONS_TO_MOVE",

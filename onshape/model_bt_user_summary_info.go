@@ -704,6 +704,56 @@ func (o *BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.GetActualInstance().(getResult).SetCompany(v)
 }
 
+// GetCompanyUserState returns the CompanyUserState field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetCompanyUserState() int32 {
+	type getResult interface {
+		GetCompanyUserState() int32
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCompanyUserState()
+	} else {
+		var de int32
+		return de
+	}
+}
+
+// GetCompanyUserStateOk returns a tuple with the CompanyUserState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetCompanyUserStateOk() (*int32, bool) {
+	type getResult interface {
+		GetCompanyUserStateOk() (*int32, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetCompanyUserStateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasCompanyUserState returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasCompanyUserState() bool {
+	type getResult interface {
+		HasCompanyUserState() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasCompanyUserState()
+	} else {
+		return false
+	}
+}
+
+// SetCompanyUserState gets a reference to the given int32 and assigns it to the CompanyUserState field.
+func (o *BTUserSummaryInfo) SetCompanyUserState(v int32) {
+	type getResult interface {
+		SetCompanyUserState(v int32)
+	}
+
+	o.GetActualInstance().(getResult).SetCompanyUserState(v)
+}
+
 // GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetConfirmationRequested() bool {
 	type getResult interface {
@@ -1381,6 +1431,7 @@ type base_BTUserSummaryInfo struct {
 	FirstName                 *string               `json:"firstName,omitempty"`
 	LastName                  *string               `json:"lastName,omitempty"`
 	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
+	CompanyUserState          *int32                `json:"companyUserState,omitempty"`
 	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
 	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
 	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
@@ -1819,6 +1870,38 @@ func (o *base_BTUserSummaryInfo) SetCompany(v BTCompanySummaryInfo) {
 	o.Company = &v
 }
 
+// GetCompanyUserState returns the CompanyUserState field value if set, zero value otherwise.
+func (o *base_BTUserSummaryInfo) GetCompanyUserState() int32 {
+	if o == nil || o.CompanyUserState == nil {
+		var ret int32
+		return ret
+	}
+	return *o.CompanyUserState
+}
+
+// GetCompanyUserStateOk returns a tuple with the CompanyUserState field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetCompanyUserStateOk() (*int32, bool) {
+	if o == nil || o.CompanyUserState == nil {
+		return nil, false
+	}
+	return o.CompanyUserState, true
+}
+
+// HasCompanyUserState returns a boolean if a field has been set.
+func (o *base_BTUserSummaryInfo) HasCompanyUserState() bool {
+	if o != nil && o.CompanyUserState != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanyUserState gets a reference to the given int32 and assigns it to the CompanyUserState field.
+func (o *base_BTUserSummaryInfo) SetCompanyUserState(v int32) {
+	o.CompanyUserState = &v
+}
+
 // GetConfirmationRequested returns the ConfirmationRequested field value if set, zero value otherwise.
 func (o *base_BTUserSummaryInfo) GetConfirmationRequested() bool {
 	if o == nil || o.ConfirmationRequested == nil {
@@ -2179,6 +2262,9 @@ func (o base_BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Company != nil {
 		toSerialize["company"] = o.Company
+	}
+	if o.CompanyUserState != nil {
+		toSerialize["companyUserState"] = o.CompanyUserState
 	}
 	if o.ConfirmationRequested != nil {
 		toSerialize["confirmationRequested"] = o.ConfirmationRequested

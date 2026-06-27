@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Company** | Pointer to [**BTCompanySummaryInfo**](BTCompanySummaryInfo.md) |  | [optional] 
+**CompanyUserState** | Pointer to **int32** |  | [optional] 
 **ConfirmationRequested** | Pointer to **bool** |  | [optional] 
 **DocumentationNameOverride** | Pointer to **string** |  | [optional] 
 **GlobalPermissions** | Pointer to [**GlobalPermissionInfo**](GlobalPermissionInfo.md) |  | [optional] 
@@ -59,6 +60,31 @@ SetCompany sets Company field to given value.
 `func (o *BTUserSummaryInfo) HasCompany() bool`
 
 HasCompany returns a boolean if a field has been set.
+
+### GetCompanyUserState
+
+`func (o *BTUserSummaryInfo) GetCompanyUserState() int32`
+
+GetCompanyUserState returns the CompanyUserState field if non-nil, zero value otherwise.
+
+### GetCompanyUserStateOk
+
+`func (o *BTUserSummaryInfo) GetCompanyUserStateOk() (*int32, bool)`
+
+GetCompanyUserStateOk returns a tuple with the CompanyUserState field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyUserState
+
+`func (o *BTUserSummaryInfo) SetCompanyUserState(v int32)`
+
+SetCompanyUserState sets CompanyUserState field to given value.
+
+### HasCompanyUserState
+
+`func (o *BTUserSummaryInfo) HasCompanyUserState() bool`
+
+HasCompanyUserState returns a boolean if a field has been set.
 
 ### GetConfirmationRequested
 
