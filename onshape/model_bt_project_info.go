@@ -45,7 +45,7 @@ type BTProjectInfo struct {
 	ViewRef          *string                     `json:"viewRef,omitempty"`
 	PermissionScheme *BTRbacPermissionSchemeInfo `json:"permissionScheme,omitempty"`
 	PermissionSet    []string                    `json:"permissionSet,omitempty"`
-	PlmContext       *BTPlmContextInfo           `json:"plmContext,omitempty"`
+	PlmContext       *BTPLMContextInfo           `json:"plmContext,omitempty"`
 	RoleMapEntries   []RoleMapEntry              `json:"roleMapEntries,omitempty"`
 	Trash            *bool                       `json:"trash,omitempty"`
 }
@@ -861,9 +861,9 @@ func (o *BTProjectInfo) SetPermissionSet(v []string) {
 }
 
 // GetPlmContext returns the PlmContext field value if set, zero value otherwise.
-func (o *BTProjectInfo) GetPlmContext() BTPlmContextInfo {
+func (o *BTProjectInfo) GetPlmContext() BTPLMContextInfo {
 	if o == nil || o.PlmContext == nil {
-		var ret BTPlmContextInfo
+		var ret BTPLMContextInfo
 		return ret
 	}
 	return *o.PlmContext
@@ -871,7 +871,7 @@ func (o *BTProjectInfo) GetPlmContext() BTPlmContextInfo {
 
 // GetPlmContextOk returns a tuple with the PlmContext field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTProjectInfo) GetPlmContextOk() (*BTPlmContextInfo, bool) {
+func (o *BTProjectInfo) GetPlmContextOk() (*BTPLMContextInfo, bool) {
 	if o == nil || o.PlmContext == nil {
 		return nil, false
 	}
@@ -887,8 +887,8 @@ func (o *BTProjectInfo) HasPlmContext() bool {
 	return false
 }
 
-// SetPlmContext gets a reference to the given BTPlmContextInfo and assigns it to the PlmContext field.
-func (o *BTProjectInfo) SetPlmContext(v BTPlmContextInfo) {
+// SetPlmContext gets a reference to the given BTPLMContextInfo and assigns it to the PlmContext field.
+func (o *BTProjectInfo) SetPlmContext(v BTPLMContextInfo) {
 	o.PlmContext = &v
 }
 

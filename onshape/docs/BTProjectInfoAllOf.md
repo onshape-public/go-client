@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PermissionScheme** | Pointer to [**BTRbacPermissionSchemeInfo**](BTRbacPermissionSchemeInfo.md) |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
-**PlmContext** | Pointer to [**BTPlmContextInfo**](BTPlmContextInfo.md) |  | [optional] 
+**PlmContext** | Pointer to [**BTPLMContextInfo**](BTPLMContextInfo.md) |  | [optional] 
 **RoleMapEntries** | Pointer to [**[]RoleMapEntry**](RoleMapEntry.md) |  | [optional] 
 **Trash** | Pointer to **bool** |  | [optional] 
 
@@ -81,20 +81,20 @@ HasPermissionSet returns a boolean if a field has been set.
 
 ### GetPlmContext
 
-`func (o *BTProjectInfoAllOf) GetPlmContext() BTPlmContextInfo`
+`func (o *BTProjectInfoAllOf) GetPlmContext() BTPLMContextInfo`
 
 GetPlmContext returns the PlmContext field if non-nil, zero value otherwise.
 
 ### GetPlmContextOk
 
-`func (o *BTProjectInfoAllOf) GetPlmContextOk() (*BTPlmContextInfo, bool)`
+`func (o *BTProjectInfoAllOf) GetPlmContextOk() (*BTPLMContextInfo, bool)`
 
 GetPlmContextOk returns a tuple with the PlmContext field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPlmContext
 
-`func (o *BTProjectInfoAllOf) SetPlmContext(v BTPlmContextInfo)`
+`func (o *BTProjectInfoAllOf) SetPlmContext(v BTPLMContextInfo)`
 
 SetPlmContext sets PlmContext field to given value.
 
