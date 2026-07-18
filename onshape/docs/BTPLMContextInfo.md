@@ -1,4 +1,4 @@
-# BTPlmContextInfo
+# BTPLMContextInfo
 
 ## Properties
 
@@ -8,45 +8,45 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewBTPlmContextInfo
+### NewBTPLMContextInfo
 
-`func NewBTPlmContextInfo() *BTPlmContextInfo`
+`func NewBTPLMContextInfo() *BTPLMContextInfo`
 
-NewBTPlmContextInfo instantiates a new BTPlmContextInfo object
+NewBTPLMContextInfo instantiates a new BTPLMContextInfo object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBTPlmContextInfoWithDefaults
+### NewBTPLMContextInfoWithDefaults
 
-`func NewBTPlmContextInfoWithDefaults() *BTPlmContextInfo`
+`func NewBTPLMContextInfoWithDefaults() *BTPLMContextInfo`
 
-NewBTPlmContextInfoWithDefaults instantiates a new BTPlmContextInfo object
+NewBTPLMContextInfoWithDefaults instantiates a new BTPLMContextInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetDescription
 
-`func (o *BTPlmContextInfo) GetDescription() string`
+`func (o *BTPLMContextInfo) GetDescription() string`
 
 GetDescription returns the Description field if non-nil, zero value otherwise.
 
 ### GetDescriptionOk
 
-`func (o *BTPlmContextInfo) GetDescriptionOk() (*string, bool)`
+`func (o *BTPLMContextInfo) GetDescriptionOk() (*string, bool)`
 
 GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDescription
 
-`func (o *BTPlmContextInfo) SetDescription(v string)`
+`func (o *BTPLMContextInfo) SetDescription(v string)`
 
 SetDescription sets Description field to given value.
 
 ### HasDescription
 
-`func (o *BTPlmContextInfo) HasDescription() bool`
+`func (o *BTPLMContextInfo) HasDescription() bool`
 
 HasDescription returns a boolean if a field has been set.
 

@@ -14,30 +14,30 @@ import (
 	"encoding/json"
 )
 
-// BTPlmContextInfo PLM Context information .
-type BTPlmContextInfo struct {
+// BTPLMContextInfo PLM Context information .
+type BTPLMContextInfo struct {
 	Description *string `json:"description,omitempty"`
 }
 
-// NewBTPlmContextInfo instantiates a new BTPlmContextInfo object
+// NewBTPLMContextInfo instantiates a new BTPLMContextInfo object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBTPlmContextInfo() *BTPlmContextInfo {
-	this := BTPlmContextInfo{}
+func NewBTPLMContextInfo() *BTPLMContextInfo {
+	this := BTPLMContextInfo{}
 	return &this
 }
 
-// NewBTPlmContextInfoWithDefaults instantiates a new BTPlmContextInfo object
+// NewBTPLMContextInfoWithDefaults instantiates a new BTPLMContextInfo object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewBTPlmContextInfoWithDefaults() *BTPlmContextInfo {
-	this := BTPlmContextInfo{}
+func NewBTPLMContextInfoWithDefaults() *BTPLMContextInfo {
+	this := BTPLMContextInfo{}
 	return &this
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *BTPlmContextInfo) GetDescription() string {
+func (o *BTPLMContextInfo) GetDescription() string {
 	if o == nil || o.Description == nil {
 		var ret string
 		return ret
@@ -47,7 +47,7 @@ func (o *BTPlmContextInfo) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BTPlmContextInfo) GetDescriptionOk() (*string, bool) {
+func (o *BTPLMContextInfo) GetDescriptionOk() (*string, bool) {
 	if o == nil || o.Description == nil {
 		return nil, false
 	}
@@ -55,7 +55,7 @@ func (o *BTPlmContextInfo) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *BTPlmContextInfo) HasDescription() bool {
+func (o *BTPLMContextInfo) HasDescription() bool {
 	if o != nil && o.Description != nil {
 		return true
 	}
@@ -64,11 +64,11 @@ func (o *BTPlmContextInfo) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *BTPlmContextInfo) SetDescription(v string) {
+func (o *BTPLMContextInfo) SetDescription(v string) {
 	o.Description = &v
 }
 
-func (o BTPlmContextInfo) MarshalJSON() ([]byte, error) {
+func (o BTPLMContextInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description
@@ -76,38 +76,38 @@ func (o BTPlmContextInfo) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableBTPlmContextInfo struct {
-	value *BTPlmContextInfo
+type NullableBTPLMContextInfo struct {
+	value *BTPLMContextInfo
 	isSet bool
 }
 
-func (v NullableBTPlmContextInfo) Get() *BTPlmContextInfo {
+func (v NullableBTPLMContextInfo) Get() *BTPLMContextInfo {
 	return v.value
 }
 
-func (v *NullableBTPlmContextInfo) Set(val *BTPlmContextInfo) {
+func (v *NullableBTPLMContextInfo) Set(val *BTPLMContextInfo) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableBTPlmContextInfo) IsSet() bool {
+func (v NullableBTPLMContextInfo) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableBTPlmContextInfo) Unset() {
+func (v *NullableBTPLMContextInfo) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableBTPlmContextInfo(val *BTPlmContextInfo) *NullableBTPlmContextInfo {
-	return &NullableBTPlmContextInfo{value: val, isSet: true}
+func NewNullableBTPLMContextInfo(val *BTPLMContextInfo) *NullableBTPLMContextInfo {
+	return &NullableBTPLMContextInfo{value: val, isSet: true}
 }
 
-func (v NullableBTPlmContextInfo) MarshalJSON() ([]byte, error) {
+func (v NullableBTPLMContextInfo) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableBTPlmContextInfo) UnmarshalJSON(src []byte) error {
+func (v *NullableBTPLMContextInfo) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

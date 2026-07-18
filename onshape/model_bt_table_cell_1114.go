@@ -20,6 +20,11 @@ type BTTableCell1114 struct {
 	implBTTableCell1114 interface{}
 }
 
+// BTTableCellConfigurationParameter3590AsBTTableCell1114 is a convenience function that returns BTTableCellConfigurationParameter3590 wrapped in BTTableCell1114
+func (o *BTTableCellConfigurationParameter3590) AsBTTableCell1114() *BTTableCell1114 {
+	return &BTTableCell1114{o}
+}
+
 // BTTableCellParameterWithValue2122AsBTTableCell1114 is a convenience function that returns BTTableCellParameterWithValue2122 wrapped in BTTableCell1114
 func (o *BTTableCellParameterWithValue2122) AsBTTableCell1114() *BTTableCell1114 {
 	return &BTTableCell1114{o}
@@ -311,6 +316,20 @@ func (dst *BTTableCell1114) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTTableCell1114 = nil
 			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableTestCellString2112: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTTableCellConfigurationParameter-3590'
+	if jsonDict["btType"] == "BTTableCellConfigurationParameter-3590" {
+		// try to unmarshal JSON data into BTTableCellConfigurationParameter3590
+		var qr *BTTableCellConfigurationParameter3590
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableCell1114 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableCell1114 = nil
+			return fmt.Errorf("failed to unmarshal BTTableCell1114 as BTTableCellConfigurationParameter3590: %s", err.Error())
 		}
 	}
 
