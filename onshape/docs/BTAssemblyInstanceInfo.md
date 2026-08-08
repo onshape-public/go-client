@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Configuration** | Pointer to **string** |  | [optional] 
+**Designator** | Pointer to **string** | Reference designator of the instance. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **DocumentMicroversion** | Pointer to **string** |  | [optional] 
 **DocumentVersion** | Pointer to **string** |  | [optional] 
@@ -65,6 +66,31 @@ SetConfiguration sets Configuration field to given value.
 `func (o *BTAssemblyInstanceInfo) HasConfiguration() bool`
 
 HasConfiguration returns a boolean if a field has been set.
+
+### GetDesignator
+
+`func (o *BTAssemblyInstanceInfo) GetDesignator() string`
+
+GetDesignator returns the Designator field if non-nil, zero value otherwise.
+
+### GetDesignatorOk
+
+`func (o *BTAssemblyInstanceInfo) GetDesignatorOk() (*string, bool)`
+
+GetDesignatorOk returns a tuple with the Designator field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDesignator
+
+`func (o *BTAssemblyInstanceInfo) SetDesignator(v string)`
+
+SetDesignator sets Designator field to given value.
+
+### HasDesignator
+
+`func (o *BTAssemblyInstanceInfo) HasDesignator() bool`
+
+HasDesignator returns a boolean if a field has been set.
 
 ### GetDocumentId
 

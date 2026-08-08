@@ -16,12 +16,13 @@ import (
 
 // BTCardInfo struct for BTCardInfo
 type BTCardInfo struct {
-	BillingAddress *BTAddressInfo `json:"billingAddress,omitempty"`
-	ExpMonth       *int32         `json:"expMonth,omitempty"`
-	ExpYear        *int32         `json:"expYear,omitempty"`
-	Last4          *string        `json:"last4,omitempty"`
-	Name           *string        `json:"name,omitempty"`
-	Type           *string        `json:"type,omitempty"`
+	BillingAddress  *BTAddressInfo `json:"billingAddress,omitempty"`
+	ExpMonth        *int32         `json:"expMonth,omitempty"`
+	ExpYear         *int32         `json:"expYear,omitempty"`
+	Last4           *string        `json:"last4,omitempty"`
+	Name            *string        `json:"name,omitempty"`
+	PaymentMethodId *string        `json:"paymentMethodId,omitempty"`
+	Type            *string        `json:"type,omitempty"`
 }
 
 // NewBTCardInfo instantiates a new BTCardInfo object
@@ -201,6 +202,38 @@ func (o *BTCardInfo) SetName(v string) {
 	o.Name = &v
 }
 
+// GetPaymentMethodId returns the PaymentMethodId field value if set, zero value otherwise.
+func (o *BTCardInfo) GetPaymentMethodId() string {
+	if o == nil || o.PaymentMethodId == nil {
+		var ret string
+		return ret
+	}
+	return *o.PaymentMethodId
+}
+
+// GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCardInfo) GetPaymentMethodIdOk() (*string, bool) {
+	if o == nil || o.PaymentMethodId == nil {
+		return nil, false
+	}
+	return o.PaymentMethodId, true
+}
+
+// HasPaymentMethodId returns a boolean if a field has been set.
+func (o *BTCardInfo) HasPaymentMethodId() bool {
+	if o != nil && o.PaymentMethodId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPaymentMethodId gets a reference to the given string and assigns it to the PaymentMethodId field.
+func (o *BTCardInfo) SetPaymentMethodId(v string) {
+	o.PaymentMethodId = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *BTCardInfo) GetType() string {
 	if o == nil || o.Type == nil {
@@ -249,6 +282,9 @@ func (o BTCardInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
+	}
+	if o.PaymentMethodId != nil {
+		toSerialize["paymentMethodId"] = o.PaymentMethodId
 	}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type

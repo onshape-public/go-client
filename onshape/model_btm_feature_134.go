@@ -90,8 +90,8 @@ func (o *BTMAssemblyFeature887) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
-// BTMLoad3538AsBTMFeature134 is a convenience function that returns BTMLoad3538 wrapped in BTMFeature134
-func (o *BTMLoad3538) AsBTMFeature134() *BTMFeature134 {
+// BTMAssemblyParametricInstanceFeature5441AsBTMFeature134 is a convenience function that returns BTMAssemblyParametricInstanceFeature5441 wrapped in BTMFeature134
+func (o *BTMAssemblyParametricInstanceFeature5441) AsBTMFeature134() *BTMFeature134 {
 	return &BTMFeature134{o}
 }
 
@@ -1113,6 +1113,20 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		}
 	}
 
+	// check if the discriminator value is 'BTMAssemblyParametricInstanceFeature-5441'
+	if jsonDict["btType"] == "BTMAssemblyParametricInstanceFeature-5441" {
+		// try to unmarshal JSON data into BTMAssemblyParametricInstanceFeature5441
+		var qr *BTMAssemblyParametricInstanceFeature5441
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTMFeature134 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTMFeature134 = nil
+			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMAssemblyParametricInstanceFeature5441: %s", err.Error())
+		}
+	}
+
 	// check if the discriminator value is 'BTMGenerativeDesignFeature-3195'
 	if jsonDict["btType"] == "BTMGenerativeDesignFeature-3195" {
 		// try to unmarshal JSON data into BTMGenerativeDesignFeature3195
@@ -1138,20 +1152,6 @@ func (dst *BTMFeature134) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMFeature134 = nil
 			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMGeometryMate1260: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMLoad-3538'
-	if jsonDict["btType"] == "BTMLoad-3538" {
-		// try to unmarshal JSON data into BTMLoad3538
-		var qr *BTMLoad3538
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMFeature134 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMFeature134 = nil
-			return fmt.Errorf("failed to unmarshal BTMFeature134 as BTMLoad3538: %s", err.Error())
 		}
 	}
 

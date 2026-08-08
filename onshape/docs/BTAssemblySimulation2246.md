@@ -4,29 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
-**FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureId** | Pointer to **string** | Unique ID of the feature instance within this Part Studio. | [optional] 
-**FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
 **FeatureType** | Pointer to **string** | The name of the feature spec that this feature instantiates. | [optional] 
-**FieldIndexForOwnedMateConnectors** | Pointer to **int32** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **InertialRelief** | Pointer to **bool** |  | [optional] 
 **MateConnectorFeature** | Pointer to **bool** |  | [optional] 
-**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **Modal** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
 **NumberOfModes** | Pointer to **float64** |  | [optional] 
-**OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 **ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
-**ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
-**SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
@@ -53,31 +45,6 @@ NewBTAssemblySimulation2246WithDefaults instantiates a new BTAssemblySimulation2
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetAuxiliaryTreeFeature
-
-`func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeature() bool`
-
-GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field if non-nil, zero value otherwise.
-
-### GetAuxiliaryTreeFeatureOk
-
-`func (o *BTAssemblySimulation2246) GetAuxiliaryTreeFeatureOk() (*bool, bool)`
-
-GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuxiliaryTreeFeature
-
-`func (o *BTAssemblySimulation2246) SetAuxiliaryTreeFeature(v bool)`
-
-SetAuxiliaryTreeFeature sets AuxiliaryTreeFeature field to given value.
-
-### HasAuxiliaryTreeFeature
-
-`func (o *BTAssemblySimulation2246) HasAuxiliaryTreeFeature() bool`
-
-HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-
 ### GetBtType
 
 `func (o *BTAssemblySimulation2246) GetBtType() string`
@@ -102,31 +69,6 @@ SetBtType sets BtType field to given value.
 `func (o *BTAssemblySimulation2246) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
-
-### GetFeatureFolder
-
-`func (o *BTAssemblySimulation2246) GetFeatureFolder() bool`
-
-GetFeatureFolder returns the FeatureFolder field if non-nil, zero value otherwise.
-
-### GetFeatureFolderOk
-
-`func (o *BTAssemblySimulation2246) GetFeatureFolderOk() (*bool, bool)`
-
-GetFeatureFolderOk returns a tuple with the FeatureFolder field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFeatureFolder
-
-`func (o *BTAssemblySimulation2246) SetFeatureFolder(v bool)`
-
-SetFeatureFolder sets FeatureFolder field to given value.
-
-### HasFeatureFolder
-
-`func (o *BTAssemblySimulation2246) HasFeatureFolder() bool`
-
-HasFeatureFolder returns a boolean if a field has been set.
 
 ### GetFeatureId
 
@@ -153,31 +95,6 @@ SetFeatureId sets FeatureId field to given value.
 
 HasFeatureId returns a boolean if a field has been set.
 
-### GetFeatureListFieldIndex
-
-`func (o *BTAssemblySimulation2246) GetFeatureListFieldIndex() int32`
-
-GetFeatureListFieldIndex returns the FeatureListFieldIndex field if non-nil, zero value otherwise.
-
-### GetFeatureListFieldIndexOk
-
-`func (o *BTAssemblySimulation2246) GetFeatureListFieldIndexOk() (*int32, bool)`
-
-GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFeatureListFieldIndex
-
-`func (o *BTAssemblySimulation2246) SetFeatureListFieldIndex(v int32)`
-
-SetFeatureListFieldIndex sets FeatureListFieldIndex field to given value.
-
-### HasFeatureListFieldIndex
-
-`func (o *BTAssemblySimulation2246) HasFeatureListFieldIndex() bool`
-
-HasFeatureListFieldIndex returns a boolean if a field has been set.
-
 ### GetFeatureType
 
 `func (o *BTAssemblySimulation2246) GetFeatureType() string`
@@ -202,31 +119,6 @@ SetFeatureType sets FeatureType field to given value.
 `func (o *BTAssemblySimulation2246) HasFeatureType() bool`
 
 HasFeatureType returns a boolean if a field has been set.
-
-### GetFieldIndexForOwnedMateConnectors
-
-`func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectors() int32`
-
-GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field if non-nil, zero value otherwise.
-
-### GetFieldIndexForOwnedMateConnectorsOk
-
-`func (o *BTAssemblySimulation2246) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool)`
-
-GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldIndexForOwnedMateConnectors
-
-`func (o *BTAssemblySimulation2246) SetFieldIndexForOwnedMateConnectors(v int32)`
-
-SetFieldIndexForOwnedMateConnectors sets FieldIndexForOwnedMateConnectors field to given value.
-
-### HasFieldIndexForOwnedMateConnectors
-
-`func (o *BTAssemblySimulation2246) HasFieldIndexForOwnedMateConnectors() bool`
-
-HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 
@@ -302,31 +194,6 @@ SetMateConnectorFeature sets MateConnectorFeature field to given value.
 `func (o *BTAssemblySimulation2246) HasMateConnectorFeature() bool`
 
 HasMateConnectorFeature returns a boolean if a field has been set.
-
-### GetMateConnectors
-
-`func (o *BTAssemblySimulation2246) GetMateConnectors() []BTMMateConnector66`
-
-GetMateConnectors returns the MateConnectors field if non-nil, zero value otherwise.
-
-### GetMateConnectorsOk
-
-`func (o *BTAssemblySimulation2246) GetMateConnectorsOk() (*[]BTMMateConnector66, bool)`
-
-GetMateConnectorsOk returns a tuple with the MateConnectors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMateConnectors
-
-`func (o *BTAssemblySimulation2246) SetMateConnectors(v []BTMMateConnector66)`
-
-SetMateConnectors sets MateConnectors field to given value.
-
-### HasMateConnectors
-
-`func (o *BTAssemblySimulation2246) HasMateConnectors() bool`
-
-HasMateConnectors returns a boolean if a field has been set.
 
 ### GetModal
 
@@ -453,31 +320,6 @@ SetNumberOfModes sets NumberOfModes field to given value.
 
 HasNumberOfModes returns a boolean if a field has been set.
 
-### GetOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904`
-
-GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field if non-nil, zero value otherwise.
-
-### GetOccurrenceQueriesFromAllConfigurationsOk
-
-`func (o *BTAssemblySimulation2246) GetOccurrenceQueriesFromAllConfigurationsOk() (*[]BTMIndividualQueryWithOccurrenceBase904, bool)`
-
-GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTAssemblySimulation2246) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904)`
-
-SetOccurrenceQueriesFromAllConfigurations sets OccurrenceQueriesFromAllConfigurations field to given value.
-
-### HasOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTAssemblySimulation2246) HasOccurrenceQueriesFromAllConfigurations() bool`
-
-HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-
 ### GetParameterLibraries
 
 `func (o *BTAssemblySimulation2246) GetParameterLibraries() []BTMParameter1`
@@ -502,31 +344,6 @@ SetParameterLibraries sets ParameterLibraries field to given value.
 `func (o *BTAssemblySimulation2246) HasParameterLibraries() bool`
 
 HasParameterLibraries returns a boolean if a field has been set.
-
-### GetParametricInstanceFeature
-
-`func (o *BTAssemblySimulation2246) GetParametricInstanceFeature() bool`
-
-GetParametricInstanceFeature returns the ParametricInstanceFeature field if non-nil, zero value otherwise.
-
-### GetParametricInstanceFeatureOk
-
-`func (o *BTAssemblySimulation2246) GetParametricInstanceFeatureOk() (*bool, bool)`
-
-GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParametricInstanceFeature
-
-`func (o *BTAssemblySimulation2246) SetParametricInstanceFeature(v bool)`
-
-SetParametricInstanceFeature sets ParametricInstanceFeature field to given value.
-
-### HasParametricInstanceFeature
-
-`func (o *BTAssemblySimulation2246) HasParametricInstanceFeature() bool`
-
-HasParametricInstanceFeature returns a boolean if a field has been set.
 
 ### GetParentSuppressed
 
@@ -602,31 +419,6 @@ SetSubFeatures sets SubFeatures field to given value.
 `func (o *BTAssemblySimulation2246) HasSubFeatures() bool`
 
 HasSubFeatures returns a boolean if a field has been set.
-
-### GetSubFeaturesNotUsedInQuery
-
-`func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQuery() []BTMFeature134`
-
-GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field if non-nil, zero value otherwise.
-
-### GetSubFeaturesNotUsedInQueryOk
-
-`func (o *BTAssemblySimulation2246) GetSubFeaturesNotUsedInQueryOk() (*[]BTMFeature134, bool)`
-
-GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubFeaturesNotUsedInQuery
-
-`func (o *BTAssemblySimulation2246) SetSubFeaturesNotUsedInQuery(v []BTMFeature134)`
-
-SetSubFeaturesNotUsedInQuery sets SubFeaturesNotUsedInQuery field to given value.
-
-### HasSubFeaturesNotUsedInQuery
-
-`func (o *BTAssemblySimulation2246) HasSubFeaturesNotUsedInQuery() bool`
-
-HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
 
 ### GetSuppressed
 

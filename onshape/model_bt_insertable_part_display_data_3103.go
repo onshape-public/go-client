@@ -17,19 +17,21 @@ import (
 // BTInsertablePartDisplayData3103 struct for BTInsertablePartDisplayData3103
 type BTInsertablePartDisplayData3103 struct {
 	BTInsertableDisplayData2405
-	BtType                   *string                                     `json:"btType,omitempty"`
-	Buffers                  []BTGraphicsBuffer2668                      `json:"buffers,omitempty"`
-	FullElementId            *BTFullElementId756                         `json:"fullElementId,omitempty"`
-	GraphicsBuffers          *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
-	Id                       *string                                     `json:"id,omitempty"`
-	InsertableEntityData     *BTImmutableByteArray                       `json:"insertableEntityData,omitempty"`
-	Part                     *bool                                       `json:"part,omitempty"`
-	SketchFeature            *bool                                       `json:"sketchFeature,omitempty"`
-	TessellationSettingIndex *int32                                      `json:"tessellationSettingIndex,omitempty"`
-	PartData                 *BTPartData16                               `json:"partData,omitempty"`
-	PartDisplayData          *BTPartDisplayData17                        `json:"partDisplayData,omitempty"`
-	PartId                   *string                                     `json:"partId,omitempty"`
-	TessellationSetting      *int32                                      `json:"tessellationSetting,omitempty"`
+	AppearanceIdToAppearanceOverride *map[string]BTAppearanceOverride2517        `json:"appearanceIdToAppearanceOverride,omitempty"`
+	BtType                           *string                                     `json:"btType,omitempty"`
+	Buffers                          []BTGraphicsBuffer2668                      `json:"buffers,omitempty"`
+	FullElementId                    *BTFullElementId756                         `json:"fullElementId,omitempty"`
+	GraphicsBuffers                  *map[string]map[string]BTGraphicsBuffer2668 `json:"graphicsBuffers,omitempty"`
+	Id                               *string                                     `json:"id,omitempty"`
+	InsertableEntityData             *BTImmutableByteArray                       `json:"insertableEntityData,omitempty"`
+	Part                             *bool                                       `json:"part,omitempty"`
+	SketchFeature                    *bool                                       `json:"sketchFeature,omitempty"`
+	TessellationSettingIndex         *int32                                      `json:"tessellationSettingIndex,omitempty"`
+	BodyPartDataList                 []BTPartData16                              `json:"bodyPartDataList,omitempty"`
+	PartData                         *BTPartData16                               `json:"partData,omitempty"`
+	PartDisplayData                  *BTPartDisplayData17                        `json:"partDisplayData,omitempty"`
+	PartId                           *string                                     `json:"partId,omitempty"`
+	TessellationSetting              *int32                                      `json:"tessellationSetting,omitempty"`
 }
 
 // NewBTInsertablePartDisplayData3103 instantiates a new BTInsertablePartDisplayData3103 object
@@ -47,6 +49,38 @@ func NewBTInsertablePartDisplayData3103() *BTInsertablePartDisplayData3103 {
 func NewBTInsertablePartDisplayData3103WithDefaults() *BTInsertablePartDisplayData3103 {
 	this := BTInsertablePartDisplayData3103{}
 	return &this
+}
+
+// GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field value if set, zero value otherwise.
+func (o *BTInsertablePartDisplayData3103) GetAppearanceIdToAppearanceOverride() map[string]BTAppearanceOverride2517 {
+	if o == nil || o.AppearanceIdToAppearanceOverride == nil {
+		var ret map[string]BTAppearanceOverride2517
+		return ret
+	}
+	return *o.AppearanceIdToAppearanceOverride
+}
+
+// GetAppearanceIdToAppearanceOverrideOk returns a tuple with the AppearanceIdToAppearanceOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertablePartDisplayData3103) GetAppearanceIdToAppearanceOverrideOk() (*map[string]BTAppearanceOverride2517, bool) {
+	if o == nil || o.AppearanceIdToAppearanceOverride == nil {
+		return nil, false
+	}
+	return o.AppearanceIdToAppearanceOverride, true
+}
+
+// HasAppearanceIdToAppearanceOverride returns a boolean if a field has been set.
+func (o *BTInsertablePartDisplayData3103) HasAppearanceIdToAppearanceOverride() bool {
+	if o != nil && o.AppearanceIdToAppearanceOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAppearanceIdToAppearanceOverride gets a reference to the given map[string]BTAppearanceOverride2517 and assigns it to the AppearanceIdToAppearanceOverride field.
+func (o *BTInsertablePartDisplayData3103) SetAppearanceIdToAppearanceOverride(v map[string]BTAppearanceOverride2517) {
+	o.AppearanceIdToAppearanceOverride = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -337,6 +371,38 @@ func (o *BTInsertablePartDisplayData3103) SetTessellationSettingIndex(v int32) {
 	o.TessellationSettingIndex = &v
 }
 
+// GetBodyPartDataList returns the BodyPartDataList field value if set, zero value otherwise.
+func (o *BTInsertablePartDisplayData3103) GetBodyPartDataList() []BTPartData16 {
+	if o == nil || o.BodyPartDataList == nil {
+		var ret []BTPartData16
+		return ret
+	}
+	return o.BodyPartDataList
+}
+
+// GetBodyPartDataListOk returns a tuple with the BodyPartDataList field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertablePartDisplayData3103) GetBodyPartDataListOk() ([]BTPartData16, bool) {
+	if o == nil || o.BodyPartDataList == nil {
+		return nil, false
+	}
+	return o.BodyPartDataList, true
+}
+
+// HasBodyPartDataList returns a boolean if a field has been set.
+func (o *BTInsertablePartDisplayData3103) HasBodyPartDataList() bool {
+	if o != nil && o.BodyPartDataList != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetBodyPartDataList gets a reference to the given []BTPartData16 and assigns it to the BodyPartDataList field.
+func (o *BTInsertablePartDisplayData3103) SetBodyPartDataList(v []BTPartData16) {
+	o.BodyPartDataList = v
+}
+
 // GetPartData returns the PartData field value if set, zero value otherwise.
 func (o *BTInsertablePartDisplayData3103) GetPartData() BTPartData16 {
 	if o == nil || o.PartData == nil {
@@ -475,6 +541,9 @@ func (o BTInsertablePartDisplayData3103) MarshalJSON() ([]byte, error) {
 	if errBTInsertableDisplayData2405 != nil {
 		return []byte{}, errBTInsertableDisplayData2405
 	}
+	if o.AppearanceIdToAppearanceOverride != nil {
+		toSerialize["appearanceIdToAppearanceOverride"] = o.AppearanceIdToAppearanceOverride
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}
@@ -501,6 +570,9 @@ func (o BTInsertablePartDisplayData3103) MarshalJSON() ([]byte, error) {
 	}
 	if o.TessellationSettingIndex != nil {
 		toSerialize["tessellationSettingIndex"] = o.TessellationSettingIndex
+	}
+	if o.BodyPartDataList != nil {
+		toSerialize["bodyPartDataList"] = o.BodyPartDataList
 	}
 	if o.PartData != nil {
 		toSerialize["partData"] = o.PartData

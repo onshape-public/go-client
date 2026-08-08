@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **B2cId** | Pointer to **string** |  | [optional] 
 **BillingUpdateRequired** | Pointer to **bool** |  | [optional] 
 **CadSystemAtSignup** | Pointer to **string** |  | [optional] 
+**CompanyPurchase** | Pointer to [**BTPurchaseInfo**](BTPurchaseInfo.md) |  | [optional] 
 **CountryCode** | Pointer to **string** |  | [optional] 
 **CreatedAt** | Pointer to **JSONTime** |  | [optional] 
 **Credential** | Pointer to [**BTSessionCredentialInfo**](BTSessionCredentialInfo.md) |  | [optional] 
@@ -235,6 +236,31 @@ SetCadSystemAtSignup sets CadSystemAtSignup field to given value.
 `func (o *BTUserInfo) HasCadSystemAtSignup() bool`
 
 HasCadSystemAtSignup returns a boolean if a field has been set.
+
+### GetCompanyPurchase
+
+`func (o *BTUserInfo) GetCompanyPurchase() BTPurchaseInfo`
+
+GetCompanyPurchase returns the CompanyPurchase field if non-nil, zero value otherwise.
+
+### GetCompanyPurchaseOk
+
+`func (o *BTUserInfo) GetCompanyPurchaseOk() (*BTPurchaseInfo, bool)`
+
+GetCompanyPurchaseOk returns a tuple with the CompanyPurchase field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCompanyPurchase
+
+`func (o *BTUserInfo) SetCompanyPurchase(v BTPurchaseInfo)`
+
+SetCompanyPurchase sets CompanyPurchase field to given value.
+
+### HasCompanyPurchase
+
+`func (o *BTUserInfo) HasCompanyPurchase() bool`
+
+HasCompanyPurchase returns a boolean if a field has been set.
 
 ### GetCountryCode
 

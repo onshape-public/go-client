@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ElementId** | Pointer to **string** |  | [optional] 
 **MicroversionId** | Pointer to [**BTMicroversionId366**](BTMicroversionId366.md) |  | [optional] 
 **NodeId** | Pointer to **string** |  | [optional] 
+**NodeIdRaw** | Pointer to [**BTObjectId**](BTObjectId.md) |  | [optional] 
 **ReferenceParameter** | Pointer to [**BTMParameterReferenceWithConfiguration3028**](BTMParameterReferenceWithConfiguration3028.md) |  | [optional] 
 **ValidRevisionReference** | Pointer to **bool** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
@@ -156,6 +157,31 @@ SetNodeId sets NodeId field to given value.
 `func (o *BTNodeWithReference) HasNodeId() bool`
 
 HasNodeId returns a boolean if a field has been set.
+
+### GetNodeIdRaw
+
+`func (o *BTNodeWithReference) GetNodeIdRaw() BTObjectId`
+
+GetNodeIdRaw returns the NodeIdRaw field if non-nil, zero value otherwise.
+
+### GetNodeIdRawOk
+
+`func (o *BTNodeWithReference) GetNodeIdRawOk() (*BTObjectId, bool)`
+
+GetNodeIdRawOk returns a tuple with the NodeIdRaw field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNodeIdRaw
+
+`func (o *BTNodeWithReference) SetNodeIdRaw(v BTObjectId)`
+
+SetNodeIdRaw sets NodeIdRaw field to given value.
+
+### HasNodeIdRaw
+
+`func (o *BTNodeWithReference) HasNodeIdRaw() bool`
+
+HasNodeIdRaw returns a boolean if a field has been set.
 
 ### GetReferenceParameter
 
