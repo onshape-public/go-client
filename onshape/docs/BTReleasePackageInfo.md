@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **RetainedAsDraft** | Pointer to **bool** | Indicates whether the release is still in setup state and saved as a draft. | [optional] 
 **RevisionRuleId** | Pointer to **string** |  | [optional] 
 **RootItemsToRebuild** | Pointer to **[]string** |  | [optional] 
+**TransitionStatus** | Pointer to [**[]BTReleaseTransitionStatusInfo**](BTReleaseTransitionStatusInfo.md) |  | [optional] 
 **UpdatedItemIds** | Pointer to **[]string** |  | [optional] 
 **VersionId** | Pointer to **string** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -732,6 +733,31 @@ SetRootItemsToRebuild sets RootItemsToRebuild field to given value.
 `func (o *BTReleasePackageInfo) HasRootItemsToRebuild() bool`
 
 HasRootItemsToRebuild returns a boolean if a field has been set.
+
+### GetTransitionStatus
+
+`func (o *BTReleasePackageInfo) GetTransitionStatus() []BTReleaseTransitionStatusInfo`
+
+GetTransitionStatus returns the TransitionStatus field if non-nil, zero value otherwise.
+
+### GetTransitionStatusOk
+
+`func (o *BTReleasePackageInfo) GetTransitionStatusOk() (*[]BTReleaseTransitionStatusInfo, bool)`
+
+GetTransitionStatusOk returns a tuple with the TransitionStatus field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTransitionStatus
+
+`func (o *BTReleasePackageInfo) SetTransitionStatus(v []BTReleaseTransitionStatusInfo)`
+
+SetTransitionStatus sets TransitionStatus field to given value.
+
+### HasTransitionStatus
+
+`func (o *BTReleasePackageInfo) HasTransitionStatus() bool`
+
+HasTransitionStatus returns a boolean if a field has been set.
 
 ### GetUpdatedItemIds
 

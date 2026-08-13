@@ -43,7 +43,7 @@ func (r ApiCopyAssociativeDataRequest) Execute() (*BTAppAssociativeDataArrayInfo
 /*
 CopyAssociativeData Copy associative data from one view to another.
 
-Can only be copied between tabs in the same document. You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
+You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds).
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param did

@@ -5,11 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AppElementSessionId** | Pointer to **string** |  | [optional] 
+**CapabilitiesChanged** | Pointer to **bool** | Whether PLM capabilities were changed. | [optional] 
 **Data** | Pointer to **string** |  | [optional] 
 **DocumentId** | Pointer to **string** | Background PLM job&#39;s document ID. | [optional] 
 **Event** | Pointer to **string** |  | [optional] 
 **JobId** | Pointer to **string** | ID of the background PLM job that was created. | [optional] 
 **JobType** | Pointer to [**JobType**](JobType.md) |  | [optional] 
+**MappingsRefreshed** | Pointer to **bool** | Whether PLM mappings were refreshed. | [optional] 
 **MessageId** | Pointer to **string** |  | [optional] 
 **SettingsDisabled** | Pointer to **bool** | Whether PLM integration was disabled. | [optional] 
 **SettingsModified** | Pointer to **bool** | Whether PLM integration settings parameters were modified. | [optional] 
@@ -59,6 +61,31 @@ SetAppElementSessionId sets AppElementSessionId field to given value.
 `func (o *BTPLMMessageBody) HasAppElementSessionId() bool`
 
 HasAppElementSessionId returns a boolean if a field has been set.
+
+### GetCapabilitiesChanged
+
+`func (o *BTPLMMessageBody) GetCapabilitiesChanged() bool`
+
+GetCapabilitiesChanged returns the CapabilitiesChanged field if non-nil, zero value otherwise.
+
+### GetCapabilitiesChangedOk
+
+`func (o *BTPLMMessageBody) GetCapabilitiesChangedOk() (*bool, bool)`
+
+GetCapabilitiesChangedOk returns a tuple with the CapabilitiesChanged field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCapabilitiesChanged
+
+`func (o *BTPLMMessageBody) SetCapabilitiesChanged(v bool)`
+
+SetCapabilitiesChanged sets CapabilitiesChanged field to given value.
+
+### HasCapabilitiesChanged
+
+`func (o *BTPLMMessageBody) HasCapabilitiesChanged() bool`
+
+HasCapabilitiesChanged returns a boolean if a field has been set.
 
 ### GetData
 
@@ -184,6 +211,31 @@ SetJobType sets JobType field to given value.
 `func (o *BTPLMMessageBody) HasJobType() bool`
 
 HasJobType returns a boolean if a field has been set.
+
+### GetMappingsRefreshed
+
+`func (o *BTPLMMessageBody) GetMappingsRefreshed() bool`
+
+GetMappingsRefreshed returns the MappingsRefreshed field if non-nil, zero value otherwise.
+
+### GetMappingsRefreshedOk
+
+`func (o *BTPLMMessageBody) GetMappingsRefreshedOk() (*bool, bool)`
+
+GetMappingsRefreshedOk returns a tuple with the MappingsRefreshed field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappingsRefreshed
+
+`func (o *BTPLMMessageBody) SetMappingsRefreshed(v bool)`
+
+SetMappingsRefreshed sets MappingsRefreshed field to given value.
+
+### HasMappingsRefreshed
+
+`func (o *BTPLMMessageBody) HasMappingsRefreshed() bool`
+
+HasMappingsRefreshed returns a boolean if a field has been set.
 
 ### GetMessageId
 
