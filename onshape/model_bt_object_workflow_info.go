@@ -18,6 +18,8 @@ import (
 type BTObjectWorkflowInfo struct {
 	// Whether workflowable object can be discarded.
 	CanBeDiscarded *bool `json:"canBeDiscarded,omitempty"`
+	// The timestamp the workflowable object was created.
+	CreatedAt *JSONTime `json:"createdAt,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -31,6 +33,8 @@ type BTObjectWorkflowInfo struct {
 	// The error message from the last failed workflow action, if any.
 	LastEncounteredErrorMessage *string              `json:"lastEncounteredErrorMessage,omitempty"`
 	MetadataState               *BTMetadataStateType `json:"metadataState,omitempty"`
+	// The timestamp the workflowable object was last modified.
+	ModifiedAt *JSONTime `json:"modifiedAt,omitempty"`
 	// Name of the resource.
 	Name       *string                `json:"name,omitempty"`
 	ObjectType *BTAPIWorkflowableType `json:"objectType,omitempty"`
@@ -89,6 +93,38 @@ func (o *BTObjectWorkflowInfo) HasCanBeDiscarded() bool {
 // SetCanBeDiscarded gets a reference to the given bool and assigns it to the CanBeDiscarded field.
 func (o *BTObjectWorkflowInfo) SetCanBeDiscarded(v bool) {
 	o.CanBeDiscarded = &v
+}
+
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
+func (o *BTObjectWorkflowInfo) GetCreatedAt() JSONTime {
+	if o == nil || o.CreatedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.CreatedAt
+}
+
+// GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTObjectWorkflowInfo) GetCreatedAtOk() (*JSONTime, bool) {
+	if o == nil || o.CreatedAt == nil {
+		return nil, false
+	}
+	return o.CreatedAt, true
+}
+
+// HasCreatedAt returns a boolean if a field has been set.
+func (o *BTObjectWorkflowInfo) HasCreatedAt() bool {
+	if o != nil && o.CreatedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCreatedAt gets a reference to the given JSONTime and assigns it to the CreatedAt field.
+func (o *BTObjectWorkflowInfo) SetCreatedAt(v JSONTime) {
+	o.CreatedAt = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -315,6 +351,38 @@ func (o *BTObjectWorkflowInfo) SetMetadataState(v BTMetadataStateType) {
 	o.MetadataState = &v
 }
 
+// GetModifiedAt returns the ModifiedAt field value if set, zero value otherwise.
+func (o *BTObjectWorkflowInfo) GetModifiedAt() JSONTime {
+	if o == nil || o.ModifiedAt == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ModifiedAt
+}
+
+// GetModifiedAtOk returns a tuple with the ModifiedAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTObjectWorkflowInfo) GetModifiedAtOk() (*JSONTime, bool) {
+	if o == nil || o.ModifiedAt == nil {
+		return nil, false
+	}
+	return o.ModifiedAt, true
+}
+
+// HasModifiedAt returns a boolean if a field has been set.
+func (o *BTObjectWorkflowInfo) HasModifiedAt() bool {
+	if o != nil && o.ModifiedAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetModifiedAt gets a reference to the given JSONTime and assigns it to the ModifiedAt field.
+func (o *BTObjectWorkflowInfo) SetModifiedAt(v JSONTime) {
+	o.ModifiedAt = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTObjectWorkflowInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -480,6 +548,9 @@ func (o BTObjectWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.CanBeDiscarded != nil {
 		toSerialize["canBeDiscarded"] = o.CanBeDiscarded
 	}
+	if o.CreatedAt != nil {
+		toSerialize["createdAt"] = o.CreatedAt
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
@@ -500,6 +571,9 @@ func (o BTObjectWorkflowInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.MetadataState != nil {
 		toSerialize["metadataState"] = o.MetadataState
+	}
+	if o.ModifiedAt != nil {
+		toSerialize["modifiedAt"] = o.ModifiedAt
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

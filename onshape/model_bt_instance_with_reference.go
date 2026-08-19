@@ -28,6 +28,7 @@ type BTInstanceWithReference struct {
 	LockedState                             *BTInstanceWithReference                    `json:"lockedState,omitempty"`
 	MicroversionId                          *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	NodeId                                  *string                                     `json:"nodeId,omitempty"`
+	NodeIdRaw                               *BTObjectId                                 `json:"nodeIdRaw,omitempty"`
 	NodeWithReferenceList                   []BTNodeWithReference                       `json:"nodeWithReferenceList,omitempty"`
 	ReferenceParameter                      *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	StandardContent                         *bool                                       `json:"standardContent,omitempty"`
@@ -438,6 +439,38 @@ func (o *BTInstanceWithReference) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetNodeIdRaw returns the NodeIdRaw field value if set, zero value otherwise.
+func (o *BTInstanceWithReference) GetNodeIdRaw() BTObjectId {
+	if o == nil || o.NodeIdRaw == nil {
+		var ret BTObjectId
+		return ret
+	}
+	return *o.NodeIdRaw
+}
+
+// GetNodeIdRawOk returns a tuple with the NodeIdRaw field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInstanceWithReference) GetNodeIdRawOk() (*BTObjectId, bool) {
+	if o == nil || o.NodeIdRaw == nil {
+		return nil, false
+	}
+	return o.NodeIdRaw, true
+}
+
+// HasNodeIdRaw returns a boolean if a field has been set.
+func (o *BTInstanceWithReference) HasNodeIdRaw() bool {
+	if o != nil && o.NodeIdRaw != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeIdRaw gets a reference to the given BTObjectId and assigns it to the NodeIdRaw field.
+func (o *BTInstanceWithReference) SetNodeIdRaw(v BTObjectId) {
+	o.NodeIdRaw = &v
+}
+
 // GetNodeWithReferenceList returns the NodeWithReferenceList field value if set, zero value otherwise.
 func (o *BTInstanceWithReference) GetNodeWithReferenceList() []BTNodeWithReference {
 	if o == nil || o.NodeWithReferenceList == nil {
@@ -699,6 +732,9 @@ func (o BTInstanceWithReference) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.NodeIdRaw != nil {
+		toSerialize["nodeIdRaw"] = o.NodeIdRaw
 	}
 	if o.NodeWithReferenceList != nil {
 		toSerialize["nodeWithReferenceList"] = o.NodeWithReferenceList

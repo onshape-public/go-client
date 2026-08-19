@@ -242,156 +242,6 @@ func (o *BTOccurrence74) SetInternalOccurrence(v bool) {
 	o.GetActualInstance().(getResult).SetInternalOccurrence(v)
 }
 
-// GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
-func (o *BTOccurrence74) GetOccurrenceWithoutHead() BTOccurrence74 {
-	type getResult interface {
-		GetOccurrenceWithoutHead() BTOccurrence74
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceWithoutHead()
-	} else {
-		var de BTOccurrence74
-		return de
-	}
-}
-
-// GetOccurrenceWithoutHeadOk returns a tuple with the OccurrenceWithoutHead field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrence74) GetOccurrenceWithoutHeadOk() (*BTOccurrence74, bool) {
-	type getResult interface {
-		GetOccurrenceWithoutHeadOk() (*BTOccurrence74, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceWithoutHeadOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasOccurrenceWithoutHead returns a boolean if a field has been set.
-func (o *BTOccurrence74) HasOccurrenceWithoutHead() bool {
-	type getResult interface {
-		HasOccurrenceWithoutHead() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasOccurrenceWithoutHead()
-	} else {
-		return false
-	}
-}
-
-// SetOccurrenceWithoutHead gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutHead field.
-func (o *BTOccurrence74) SetOccurrenceWithoutHead(v BTOccurrence74) {
-	type getResult interface {
-		SetOccurrenceWithoutHead(v BTOccurrence74)
-	}
-
-	o.GetActualInstance().(getResult).SetOccurrenceWithoutHead(v)
-}
-
-// GetOccurrenceWithoutTail returns the OccurrenceWithoutTail field value if set, zero value otherwise.
-func (o *BTOccurrence74) GetOccurrenceWithoutTail() BTOccurrence74 {
-	type getResult interface {
-		GetOccurrenceWithoutTail() BTOccurrence74
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceWithoutTail()
-	} else {
-		var de BTOccurrence74
-		return de
-	}
-}
-
-// GetOccurrenceWithoutTailOk returns a tuple with the OccurrenceWithoutTail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrence74) GetOccurrenceWithoutTailOk() (*BTOccurrence74, bool) {
-	type getResult interface {
-		GetOccurrenceWithoutTailOk() (*BTOccurrence74, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceWithoutTailOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasOccurrenceWithoutTail returns a boolean if a field has been set.
-func (o *BTOccurrence74) HasOccurrenceWithoutTail() bool {
-	type getResult interface {
-		HasOccurrenceWithoutTail() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasOccurrenceWithoutTail()
-	} else {
-		return false
-	}
-}
-
-// SetOccurrenceWithoutTail gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutTail field.
-func (o *BTOccurrence74) SetOccurrenceWithoutTail(v BTOccurrence74) {
-	type getResult interface {
-		SetOccurrenceWithoutTail(v BTOccurrence74)
-	}
-
-	o.GetActualInstance().(getResult).SetOccurrenceWithoutTail(v)
-}
-
-// GetParent returns the Parent field value if set, zero value otherwise.
-func (o *BTOccurrence74) GetParent() BTOccurrence74 {
-	type getResult interface {
-		GetParent() BTOccurrence74
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParent()
-	} else {
-		var de BTOccurrence74
-		return de
-	}
-}
-
-// GetParentOk returns a tuple with the Parent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrence74) GetParentOk() (*BTOccurrence74, bool) {
-	type getResult interface {
-		GetParentOk() (*BTOccurrence74, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParentOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasParent returns a boolean if a field has been set.
-func (o *BTOccurrence74) HasParent() bool {
-	type getResult interface {
-		HasParent() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasParent()
-	} else {
-		return false
-	}
-}
-
-// SetParent gets a reference to the given BTOccurrence74 and assigns it to the Parent field.
-func (o *BTOccurrence74) SetParent(v BTOccurrence74) {
-	type getResult interface {
-		SetParent(v BTOccurrence74)
-	}
-
-	o.GetActualInstance().(getResult).SetParent(v)
-}
-
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *BTOccurrence74) GetPath() []string {
 	type getResult interface {
@@ -633,16 +483,13 @@ func (v *NullableBTOccurrence74) UnmarshalJSON(src []byte) error {
 
 type base_BTOccurrence74 struct {
 	// Type of JSON object.
-	BtType                *string         `json:"btType,omitempty"`
-	FullPathAsString      *string         `json:"fullPathAsString,omitempty"`
-	HeadInstanceId        *string         `json:"headInstanceId,omitempty"`
-	InternalOccurrence    *bool           `json:"internalOccurrence,omitempty"`
-	OccurrenceWithoutHead *BTOccurrence74 `json:"occurrenceWithoutHead,omitempty"`
-	OccurrenceWithoutTail *BTOccurrence74 `json:"occurrenceWithoutTail,omitempty"`
-	Parent                *BTOccurrence74 `json:"parent,omitempty"`
-	Path                  []string        `json:"path,omitempty"`
-	RootOccurrence        *bool           `json:"rootOccurrence,omitempty"`
-	TailInstanceId        *string         `json:"tailInstanceId,omitempty"`
+	BtType             *string  `json:"btType,omitempty"`
+	FullPathAsString   *string  `json:"fullPathAsString,omitempty"`
+	HeadInstanceId     *string  `json:"headInstanceId,omitempty"`
+	InternalOccurrence *bool    `json:"internalOccurrence,omitempty"`
+	Path               []string `json:"path,omitempty"`
+	RootOccurrence     *bool    `json:"rootOccurrence,omitempty"`
+	TailInstanceId     *string  `json:"tailInstanceId,omitempty"`
 }
 
 // Newbase_BTOccurrence74 instantiates a new base_BTOccurrence74 object
@@ -790,102 +637,6 @@ func (o *base_BTOccurrence74) SetInternalOccurrence(v bool) {
 	o.InternalOccurrence = &v
 }
 
-// GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
-func (o *base_BTOccurrence74) GetOccurrenceWithoutHead() BTOccurrence74 {
-	if o == nil || o.OccurrenceWithoutHead == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.OccurrenceWithoutHead
-}
-
-// GetOccurrenceWithoutHeadOk returns a tuple with the OccurrenceWithoutHead field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTOccurrence74) GetOccurrenceWithoutHeadOk() (*BTOccurrence74, bool) {
-	if o == nil || o.OccurrenceWithoutHead == nil {
-		return nil, false
-	}
-	return o.OccurrenceWithoutHead, true
-}
-
-// HasOccurrenceWithoutHead returns a boolean if a field has been set.
-func (o *base_BTOccurrence74) HasOccurrenceWithoutHead() bool {
-	if o != nil && o.OccurrenceWithoutHead != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceWithoutHead gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutHead field.
-func (o *base_BTOccurrence74) SetOccurrenceWithoutHead(v BTOccurrence74) {
-	o.OccurrenceWithoutHead = &v
-}
-
-// GetOccurrenceWithoutTail returns the OccurrenceWithoutTail field value if set, zero value otherwise.
-func (o *base_BTOccurrence74) GetOccurrenceWithoutTail() BTOccurrence74 {
-	if o == nil || o.OccurrenceWithoutTail == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.OccurrenceWithoutTail
-}
-
-// GetOccurrenceWithoutTailOk returns a tuple with the OccurrenceWithoutTail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTOccurrence74) GetOccurrenceWithoutTailOk() (*BTOccurrence74, bool) {
-	if o == nil || o.OccurrenceWithoutTail == nil {
-		return nil, false
-	}
-	return o.OccurrenceWithoutTail, true
-}
-
-// HasOccurrenceWithoutTail returns a boolean if a field has been set.
-func (o *base_BTOccurrence74) HasOccurrenceWithoutTail() bool {
-	if o != nil && o.OccurrenceWithoutTail != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceWithoutTail gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutTail field.
-func (o *base_BTOccurrence74) SetOccurrenceWithoutTail(v BTOccurrence74) {
-	o.OccurrenceWithoutTail = &v
-}
-
-// GetParent returns the Parent field value if set, zero value otherwise.
-func (o *base_BTOccurrence74) GetParent() BTOccurrence74 {
-	if o == nil || o.Parent == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.Parent
-}
-
-// GetParentOk returns a tuple with the Parent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTOccurrence74) GetParentOk() (*BTOccurrence74, bool) {
-	if o == nil || o.Parent == nil {
-		return nil, false
-	}
-	return o.Parent, true
-}
-
-// HasParent returns a boolean if a field has been set.
-func (o *base_BTOccurrence74) HasParent() bool {
-	if o != nil && o.Parent != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParent gets a reference to the given BTOccurrence74 and assigns it to the Parent field.
-func (o *base_BTOccurrence74) SetParent(v BTOccurrence74) {
-	o.Parent = &v
-}
-
 // GetPath returns the Path field value if set, zero value otherwise.
 func (o *base_BTOccurrence74) GetPath() []string {
 	if o == nil || o.Path == nil {
@@ -995,15 +746,6 @@ func (o base_BTOccurrence74) MarshalJSON() ([]byte, error) {
 	}
 	if o.InternalOccurrence != nil {
 		toSerialize["internalOccurrence"] = o.InternalOccurrence
-	}
-	if o.OccurrenceWithoutHead != nil {
-		toSerialize["occurrenceWithoutHead"] = o.OccurrenceWithoutHead
-	}
-	if o.OccurrenceWithoutTail != nil {
-		toSerialize["occurrenceWithoutTail"] = o.OccurrenceWithoutTail
-	}
-	if o.Parent != nil {
-		toSerialize["parent"] = o.Parent
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path

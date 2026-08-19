@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AdvancedParams** | Pointer to [**BTBExportAdvancedParams**](BTBExportAdvancedParams.md) |  | [optional] 
 **CloudStorageOptions** | Pointer to [**BTBCloudStorageOptions**](BTBCloudStorageOptions.md) |  | [optional] 
+**CorrelationId** | Pointer to **string** | User specified identifier that can be used as a correlation id across api calls. | [optional] 
 **DestinationName** | Pointer to **string** | The name of the exported file. | [optional] [default to "Untitled"]
 **EmailExportOptions** | Pointer to [**BTBEmailExportOptions**](BTBEmailExportOptions.md) |  | [optional] 
 **ExcludeHiddenEntities** | Pointer to **bool** | Whether or not to exclude hidden parts from export. | [optional] [default to false]
@@ -85,6 +86,31 @@ SetCloudStorageOptions sets CloudStorageOptions field to given value.
 `func (o *BTBObjExportParams) HasCloudStorageOptions() bool`
 
 HasCloudStorageOptions returns a boolean if a field has been set.
+
+### GetCorrelationId
+
+`func (o *BTBObjExportParams) GetCorrelationId() string`
+
+GetCorrelationId returns the CorrelationId field if non-nil, zero value otherwise.
+
+### GetCorrelationIdOk
+
+`func (o *BTBObjExportParams) GetCorrelationIdOk() (*string, bool)`
+
+GetCorrelationIdOk returns a tuple with the CorrelationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCorrelationId
+
+`func (o *BTBObjExportParams) SetCorrelationId(v string)`
+
+SetCorrelationId sets CorrelationId field to given value.
+
+### HasCorrelationId
+
+`func (o *BTBObjExportParams) HasCorrelationId() bool`
+
+HasCorrelationId returns a boolean if a field has been set.
 
 ### GetDestinationName
 

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Actions** | Pointer to [**[]BTWorkflowActionInfo**](BTWorkflowActionInfo.md) |  | [optional] 
 **ApproverIds** | Pointer to **[]string** |  | [optional] 
 **CanBeDiscarded** | Pointer to **bool** |  | [optional] 
+**CanCreateReleases** | Pointer to **bool** |  | [optional] 
 **CurrentStateDisplayName** | Pointer to **string** |  | [optional] 
 **DebugMicroversionId** | Pointer to **string** |  | [optional] 
 **ErrorMessage** | Pointer to **string** |  | [optional] 
@@ -112,6 +113,31 @@ SetCanBeDiscarded sets CanBeDiscarded field to given value.
 `func (o *BTWorkflowSnapshotInfo) HasCanBeDiscarded() bool`
 
 HasCanBeDiscarded returns a boolean if a field has been set.
+
+### GetCanCreateReleases
+
+`func (o *BTWorkflowSnapshotInfo) GetCanCreateReleases() bool`
+
+GetCanCreateReleases returns the CanCreateReleases field if non-nil, zero value otherwise.
+
+### GetCanCreateReleasesOk
+
+`func (o *BTWorkflowSnapshotInfo) GetCanCreateReleasesOk() (*bool, bool)`
+
+GetCanCreateReleasesOk returns a tuple with the CanCreateReleases field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanCreateReleases
+
+`func (o *BTWorkflowSnapshotInfo) SetCanCreateReleases(v bool)`
+
+SetCanCreateReleases sets CanCreateReleases field to given value.
+
+### HasCanCreateReleases
+
+`func (o *BTWorkflowSnapshotInfo) HasCanCreateReleases() bool`
+
+HasCanCreateReleases returns a boolean if a field has been set.
 
 ### GetCurrentStateDisplayName
 

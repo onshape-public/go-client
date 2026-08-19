@@ -24,70 +24,73 @@ type BTUserAdminInfo struct {
 	// Name of the resource.
 	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                    *string                  `json:"viewRef,omitempty"`
-	Image                      *string                  `json:"image,omitempty"`
-	IsOnshapeSupport           *bool                    `json:"isOnshapeSupport,omitempty"`
-	State                      *int32                   `json:"state,omitempty"`
-	DocumentationName          *string                  `json:"documentationName,omitempty"`
-	Email                      *string                  `json:"email,omitempty"`
-	FirstName                  *string                  `json:"firstName,omitempty"`
-	LastName                   *string                  `json:"lastName,omitempty"`
-	Company                    *BTCompanySummaryInfo    `json:"company,omitempty"`
-	CompanyUserState           *int32                   `json:"companyUserState,omitempty"`
-	ConfirmationRequested      *bool                    `json:"confirmationRequested,omitempty"`
-	DocumentationNameOverride  *string                  `json:"documentationNameOverride,omitempty"`
-	GlobalPermissions          *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
-	InvitationState            *int32                   `json:"invitationState,omitempty"`
-	IsExternal                 *bool                    `json:"isExternal,omitempty"`
-	IsGuest                    *bool                    `json:"isGuest,omitempty"`
-	IsLight                    *bool                    `json:"isLight,omitempty"`
-	LastLoginTime              *JSONTime                `json:"lastLoginTime,omitempty"`
-	PersonalMessageAllowed     *bool                    `json:"personalMessageAllowed,omitempty"`
-	Source                     *int32                   `json:"source,omitempty"`
-	ActivePlan                 *BTBillingPlanInfo       `json:"activePlan,omitempty"`
-	ActivePlanId               *string                  `json:"activePlanId,omitempty"`
-	ActivePurchases            []BTPurchaseInfo         `json:"activePurchases,omitempty"`
-	ActiveTrialInfo            *BTTrialInfo             `json:"activeTrialInfo,omitempty"`
-	B2cId                      *string                  `json:"b2cId,omitempty"`
-	BillingUpdateRequired      *bool                    `json:"billingUpdateRequired,omitempty"`
-	CadSystemAtSignup          *string                  `json:"cadSystemAtSignup,omitempty"`
-	CountryCode                *string                  `json:"countryCode,omitempty"`
-	CreatedAt                  *JSONTime                `json:"createdAt,omitempty"`
-	Credential                 *BTSessionCredentialInfo `json:"credential,omitempty"`
-	DefaultCompanyName         *string                  `json:"defaultCompanyName,omitempty"`
-	Description                *string                  `json:"description,omitempty"`
-	DeviceInfo                 *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
-	Discounts                  []BTDiscountInfo         `json:"discounts,omitempty"`
-	Enterprise                 *bool                    `json:"enterprise,omitempty"`
-	EulaId                     *string                  `json:"eulaId,omitempty"`
-	EulaRequired               *bool                    `json:"eulaRequired,omitempty"`
-	EvalCenter                 *bool                    `json:"evalCenter,omitempty"`
-	ForumId                    *string                  `json:"forumId,omitempty"`
-	IntendedUse                *int32                   `json:"intendedUse,omitempty"`
-	LastTrialInfo              *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
-	NeedToResetClientCacheTime *JSONTime                `json:"needToResetClientCacheTime,omitempty"`
-	NeedToShowNewWalkthrough   *bool                    `json:"needToShowNewWalkthrough,omitempty"`
-	OwnPurchase                *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
-	PhoneNumber                *string                  `json:"phoneNumber,omitempty"`
-	ProDiscoveryTrialRejected  *bool                    `json:"proDiscoveryTrialRejected,omitempty"`
-	ProductType                []string                 `json:"productType,omitempty"`
-	RedirectUrl                *string                  `json:"redirectUrl,omitempty"`
-	Role                       *int32                   `json:"role,omitempty"`
-	Roles                      []BTRole                 `json:"roles,omitempty"`
-	RumEnabled                 *bool                    `json:"rumEnabled,omitempty"`
-	ShowRenewStudentPages      *bool                    `json:"showRenewStudentPages,omitempty"`
-	StartupPage                *int32                   `json:"startupPage,omitempty"`
-	SystemUser                 *bool                    `json:"systemUser,omitempty"`
-	TotpEnabled                *bool                    `json:"totpEnabled,omitempty"`
-	TracingEnabled             *bool                    `json:"tracingEnabled,omitempty"`
-	TrialInfos                 []BTTrialInfo            `json:"trialInfos,omitempty"`
-	Discount                   *BTDiscount              `json:"discount,omitempty"`
-	InvitationId               *string                  `json:"invitationId,omitempty"`
-	InvitedByEmail             *string                  `json:"invitedByEmail,omitempty"`
-	InvitedDocumentId          *string                  `json:"invitedDocumentId,omitempty"`
-	IsTrialRequest             *bool                    `json:"isTrialRequest,omitempty"`
-	PrivacyConsents            []BTPrivacyConsentInfo   `json:"privacyConsents,omitempty"`
-	UserMetrics                *BTUserMetricsInfo       `json:"userMetrics,omitempty"`
+	ViewRef                     *string                  `json:"viewRef,omitempty"`
+	Image                       *string                  `json:"image,omitempty"`
+	IsOnshapeSupport            *bool                    `json:"isOnshapeSupport,omitempty"`
+	State                       *int32                   `json:"state,omitempty"`
+	DocumentationName           *string                  `json:"documentationName,omitempty"`
+	Email                       *string                  `json:"email,omitempty"`
+	FirstName                   *string                  `json:"firstName,omitempty"`
+	LastName                    *string                  `json:"lastName,omitempty"`
+	Company                     *BTCompanySummaryInfo    `json:"company,omitempty"`
+	CompanyUserState            *int32                   `json:"companyUserState,omitempty"`
+	ConfirmationRequested       *bool                    `json:"confirmationRequested,omitempty"`
+	DocumentationNameOverride   *string                  `json:"documentationNameOverride,omitempty"`
+	GlobalPermissions           *GlobalPermissionInfo    `json:"globalPermissions,omitempty"`
+	InvitationState             *int32                   `json:"invitationState,omitempty"`
+	IsExternal                  *bool                    `json:"isExternal,omitempty"`
+	IsGuest                     *bool                    `json:"isGuest,omitempty"`
+	IsLight                     *bool                    `json:"isLight,omitempty"`
+	LastLoginTime               *JSONTime                `json:"lastLoginTime,omitempty"`
+	PersonalMessageAllowed      *bool                    `json:"personalMessageAllowed,omitempty"`
+	ScheduledRemovalDate        *JSONTime                `json:"scheduledRemovalDate,omitempty"`
+	ShowOffBoardingNotification *bool                    `json:"showOffBoardingNotification,omitempty"`
+	Source                      *int32                   `json:"source,omitempty"`
+	ActivePlan                  *BTBillingPlanInfo       `json:"activePlan,omitempty"`
+	ActivePlanId                *string                  `json:"activePlanId,omitempty"`
+	ActivePurchases             []BTPurchaseInfo         `json:"activePurchases,omitempty"`
+	ActiveTrialInfo             *BTTrialInfo             `json:"activeTrialInfo,omitempty"`
+	B2cId                       *string                  `json:"b2cId,omitempty"`
+	BillingUpdateRequired       *bool                    `json:"billingUpdateRequired,omitempty"`
+	CadSystemAtSignup           *string                  `json:"cadSystemAtSignup,omitempty"`
+	CompanyPurchase             *BTPurchaseInfo          `json:"companyPurchase,omitempty"`
+	CountryCode                 *string                  `json:"countryCode,omitempty"`
+	CreatedAt                   *JSONTime                `json:"createdAt,omitempty"`
+	Credential                  *BTSessionCredentialInfo `json:"credential,omitempty"`
+	DefaultCompanyName          *string                  `json:"defaultCompanyName,omitempty"`
+	Description                 *string                  `json:"description,omitempty"`
+	DeviceInfo                  *BTDeviceLoginSecretInfo `json:"deviceInfo,omitempty"`
+	Discounts                   []BTDiscountInfo         `json:"discounts,omitempty"`
+	Enterprise                  *bool                    `json:"enterprise,omitempty"`
+	EulaId                      *string                  `json:"eulaId,omitempty"`
+	EulaRequired                *bool                    `json:"eulaRequired,omitempty"`
+	EvalCenter                  *bool                    `json:"evalCenter,omitempty"`
+	ForumId                     *string                  `json:"forumId,omitempty"`
+	IntendedUse                 *int32                   `json:"intendedUse,omitempty"`
+	LastTrialInfo               *BTTrialInfo             `json:"lastTrialInfo,omitempty"`
+	NeedToResetClientCacheTime  *JSONTime                `json:"needToResetClientCacheTime,omitempty"`
+	NeedToShowNewWalkthrough    *bool                    `json:"needToShowNewWalkthrough,omitempty"`
+	OwnPurchase                 *BTPurchaseInfo          `json:"ownPurchase,omitempty"`
+	PhoneNumber                 *string                  `json:"phoneNumber,omitempty"`
+	ProDiscoveryTrialRejected   *bool                    `json:"proDiscoveryTrialRejected,omitempty"`
+	ProductType                 []string                 `json:"productType,omitempty"`
+	RedirectUrl                 *string                  `json:"redirectUrl,omitempty"`
+	Role                        *int32                   `json:"role,omitempty"`
+	Roles                       []BTRole                 `json:"roles,omitempty"`
+	RumEnabled                  *bool                    `json:"rumEnabled,omitempty"`
+	ShowRenewStudentPages       *bool                    `json:"showRenewStudentPages,omitempty"`
+	StartupPage                 *int32                   `json:"startupPage,omitempty"`
+	SystemUser                  *bool                    `json:"systemUser,omitempty"`
+	TotpEnabled                 *bool                    `json:"totpEnabled,omitempty"`
+	TracingEnabled              *bool                    `json:"tracingEnabled,omitempty"`
+	TrialInfos                  []BTTrialInfo            `json:"trialInfos,omitempty"`
+	Discount                    *BTDiscount              `json:"discount,omitempty"`
+	InvitationId                *string                  `json:"invitationId,omitempty"`
+	InvitedByEmail              *string                  `json:"invitedByEmail,omitempty"`
+	InvitedDocumentId           *string                  `json:"invitedDocumentId,omitempty"`
+	IsTrialRequest              *bool                    `json:"isTrialRequest,omitempty"`
+	PrivacyConsents             []BTPrivacyConsentInfo   `json:"privacyConsents,omitempty"`
+	UserMetrics                 *BTUserMetricsInfo       `json:"userMetrics,omitempty"`
 }
 
 // NewBTUserAdminInfo instantiates a new BTUserAdminInfo object
@@ -836,6 +839,70 @@ func (o *BTUserAdminInfo) SetPersonalMessageAllowed(v bool) {
 	o.PersonalMessageAllowed = &v
 }
 
+// GetScheduledRemovalDate returns the ScheduledRemovalDate field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetScheduledRemovalDate() JSONTime {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ScheduledRemovalDate
+}
+
+// GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetScheduledRemovalDateOk() (*JSONTime, bool) {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		return nil, false
+	}
+	return o.ScheduledRemovalDate, true
+}
+
+// HasScheduledRemovalDate returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasScheduledRemovalDate() bool {
+	if o != nil && o.ScheduledRemovalDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheduledRemovalDate gets a reference to the given JSONTime and assigns it to the ScheduledRemovalDate field.
+func (o *BTUserAdminInfo) SetScheduledRemovalDate(v JSONTime) {
+	o.ScheduledRemovalDate = &v
+}
+
+// GetShowOffBoardingNotification returns the ShowOffBoardingNotification field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetShowOffBoardingNotification() bool {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowOffBoardingNotification
+}
+
+// GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetShowOffBoardingNotificationOk() (*bool, bool) {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		return nil, false
+	}
+	return o.ShowOffBoardingNotification, true
+}
+
+// HasShowOffBoardingNotification returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasShowOffBoardingNotification() bool {
+	if o != nil && o.ShowOffBoardingNotification != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowOffBoardingNotification gets a reference to the given bool and assigns it to the ShowOffBoardingNotification field.
+func (o *BTUserAdminInfo) SetShowOffBoardingNotification(v bool) {
+	o.ShowOffBoardingNotification = &v
+}
+
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *BTUserAdminInfo) GetSource() int32 {
 	if o == nil || o.Source == nil {
@@ -1090,6 +1157,38 @@ func (o *BTUserAdminInfo) HasCadSystemAtSignup() bool {
 // SetCadSystemAtSignup gets a reference to the given string and assigns it to the CadSystemAtSignup field.
 func (o *BTUserAdminInfo) SetCadSystemAtSignup(v string) {
 	o.CadSystemAtSignup = &v
+}
+
+// GetCompanyPurchase returns the CompanyPurchase field value if set, zero value otherwise.
+func (o *BTUserAdminInfo) GetCompanyPurchase() BTPurchaseInfo {
+	if o == nil || o.CompanyPurchase == nil {
+		var ret BTPurchaseInfo
+		return ret
+	}
+	return *o.CompanyPurchase
+}
+
+// GetCompanyPurchaseOk returns a tuple with the CompanyPurchase field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminInfo) GetCompanyPurchaseOk() (*BTPurchaseInfo, bool) {
+	if o == nil || o.CompanyPurchase == nil {
+		return nil, false
+	}
+	return o.CompanyPurchase, true
+}
+
+// HasCompanyPurchase returns a boolean if a field has been set.
+func (o *BTUserAdminInfo) HasCompanyPurchase() bool {
+	if o != nil && o.CompanyPurchase != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCompanyPurchase gets a reference to the given BTPurchaseInfo and assigns it to the CompanyPurchase field.
+func (o *BTUserAdminInfo) SetCompanyPurchase(v BTPurchaseInfo) {
+	o.CompanyPurchase = &v
 }
 
 // GetCountryCode returns the CountryCode field value if set, zero value otherwise.
@@ -2347,6 +2446,12 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	if o.PersonalMessageAllowed != nil {
 		toSerialize["personalMessageAllowed"] = o.PersonalMessageAllowed
 	}
+	if o.ScheduledRemovalDate != nil {
+		toSerialize["scheduledRemovalDate"] = o.ScheduledRemovalDate
+	}
+	if o.ShowOffBoardingNotification != nil {
+		toSerialize["showOffBoardingNotification"] = o.ShowOffBoardingNotification
+	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source
 	}
@@ -2370,6 +2475,9 @@ func (o BTUserAdminInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CadSystemAtSignup != nil {
 		toSerialize["cadSystemAtSignup"] = o.CadSystemAtSignup
+	}
+	if o.CompanyPurchase != nil {
+		toSerialize["companyPurchase"] = o.CompanyPurchase
 	}
 	if o.CountryCode != nil {
 		toSerialize["countryCode"] = o.CountryCode

@@ -23,6 +23,8 @@ const (
 	GBTAnnotationAttachmentLocationTopMiddle          GBTAnnotationAttachmentLocation = "TOP_MIDDLE"
 	GBTAnnotationAttachmentLocationBottomMiddle       GBTAnnotationAttachmentLocation = "BOTTOM_MIDDLE"
 	GBTAnnotationAttachmentLocationOppositeLeaderEdge GBTAnnotationAttachmentLocation = "OPPOSITE_LEADER_EDGE"
+	GBTAnnotationAttachmentLocationLeftMiddle         GBTAnnotationAttachmentLocation = "LEFT_MIDDLE"
+	GBTAnnotationAttachmentLocationRightMiddle        GBTAnnotationAttachmentLocation = "RIGHT_MIDDLE"
 	GBTAnnotationAttachmentLocationUnknown            GBTAnnotationAttachmentLocation = "UNKNOWN"
 )
 
@@ -31,6 +33,8 @@ var AllowedGBTAnnotationAttachmentLocationEnumValues = []GBTAnnotationAttachment
 	"TOP_MIDDLE",
 	"BOTTOM_MIDDLE",
 	"OPPOSITE_LEADER_EDGE",
+	"LEFT_MIDDLE",
+	"RIGHT_MIDDLE",
 	"UNKNOWN",
 }
 

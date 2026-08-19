@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Admin** | Pointer to **bool** |  | [optional] 
+**AwsCmkKmsArn** | Pointer to **string** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **DomainPrefix** | Pointer to **string** |  | [optional] 
 **EnterpriseBaseUrl** | Pointer to **string** |  | [optional] 
@@ -63,6 +64,31 @@ SetAdmin sets Admin field to given value.
 `func (o *BTCompanySummaryInfo) HasAdmin() bool`
 
 HasAdmin returns a boolean if a field has been set.
+
+### GetAwsCmkKmsArn
+
+`func (o *BTCompanySummaryInfo) GetAwsCmkKmsArn() string`
+
+GetAwsCmkKmsArn returns the AwsCmkKmsArn field if non-nil, zero value otherwise.
+
+### GetAwsCmkKmsArnOk
+
+`func (o *BTCompanySummaryInfo) GetAwsCmkKmsArnOk() (*string, bool)`
+
+GetAwsCmkKmsArnOk returns a tuple with the AwsCmkKmsArn field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAwsCmkKmsArn
+
+`func (o *BTCompanySummaryInfo) SetAwsCmkKmsArn(v string)`
+
+SetAwsCmkKmsArn sets AwsCmkKmsArn field to given value.
+
+### HasAwsCmkKmsArn
+
+`func (o *BTCompanySummaryInfo) HasAwsCmkKmsArn() bool`
+
+HasAwsCmkKmsArn returns a boolean if a field has been set.
 
 ### GetDescription
 
