@@ -6,8 +6,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssociativeDataIds** | Pointer to **[]string** |  | [optional] 
 **DestinationViewId** | Pointer to **string** |  | [optional] 
+**SourceDocumentId** | Pointer to **string** |  | [optional] 
 **SourceElementId** | Pointer to **string** |  | [optional] 
 **SourceViewId** | Pointer to **string** |  | [optional] 
+**SourceWvm** | Pointer to **string** |  | [optional] 
+**SourceWvmId** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -78,6 +81,31 @@ SetDestinationViewId sets DestinationViewId field to given value.
 
 HasDestinationViewId returns a boolean if a field has been set.
 
+### GetSourceDocumentId
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceDocumentId() string`
+
+GetSourceDocumentId returns the SourceDocumentId field if non-nil, zero value otherwise.
+
+### GetSourceDocumentIdOk
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceDocumentIdOk() (*string, bool)`
+
+GetSourceDocumentIdOk returns a tuple with the SourceDocumentId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceDocumentId
+
+`func (o *BTCopyViewAssociativeDataParams) SetSourceDocumentId(v string)`
+
+SetSourceDocumentId sets SourceDocumentId field to given value.
+
+### HasSourceDocumentId
+
+`func (o *BTCopyViewAssociativeDataParams) HasSourceDocumentId() bool`
+
+HasSourceDocumentId returns a boolean if a field has been set.
+
 ### GetSourceElementId
 
 `func (o *BTCopyViewAssociativeDataParams) GetSourceElementId() string`
@@ -127,6 +155,56 @@ SetSourceViewId sets SourceViewId field to given value.
 `func (o *BTCopyViewAssociativeDataParams) HasSourceViewId() bool`
 
 HasSourceViewId returns a boolean if a field has been set.
+
+### GetSourceWvm
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceWvm() string`
+
+GetSourceWvm returns the SourceWvm field if non-nil, zero value otherwise.
+
+### GetSourceWvmOk
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceWvmOk() (*string, bool)`
+
+GetSourceWvmOk returns a tuple with the SourceWvm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceWvm
+
+`func (o *BTCopyViewAssociativeDataParams) SetSourceWvm(v string)`
+
+SetSourceWvm sets SourceWvm field to given value.
+
+### HasSourceWvm
+
+`func (o *BTCopyViewAssociativeDataParams) HasSourceWvm() bool`
+
+HasSourceWvm returns a boolean if a field has been set.
+
+### GetSourceWvmId
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceWvmId() string`
+
+GetSourceWvmId returns the SourceWvmId field if non-nil, zero value otherwise.
+
+### GetSourceWvmIdOk
+
+`func (o *BTCopyViewAssociativeDataParams) GetSourceWvmIdOk() (*string, bool)`
+
+GetSourceWvmIdOk returns a tuple with the SourceWvmId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSourceWvmId
+
+`func (o *BTCopyViewAssociativeDataParams) SetSourceWvmId(v string)`
+
+SetSourceWvmId sets SourceWvmId field to given value.
+
+### HasSourceWvmId
+
+`func (o *BTCopyViewAssociativeDataParams) HasSourceWvmId() bool`
+
+HasSourceWvmId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

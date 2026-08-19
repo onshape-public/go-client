@@ -18,8 +18,11 @@ import (
 type BTCopyViewAssociativeDataParams struct {
 	AssociativeDataIds []string `json:"associativeDataIds,omitempty"`
 	DestinationViewId  *string  `json:"destinationViewId,omitempty"`
+	SourceDocumentId   *string  `json:"sourceDocumentId,omitempty"`
 	SourceElementId    *string  `json:"sourceElementId,omitempty"`
 	SourceViewId       *string  `json:"sourceViewId,omitempty"`
+	SourceWvm          *string  `json:"sourceWvm,omitempty"`
+	SourceWvmId        *string  `json:"sourceWvmId,omitempty"`
 }
 
 // NewBTCopyViewAssociativeDataParams instantiates a new BTCopyViewAssociativeDataParams object
@@ -103,6 +106,38 @@ func (o *BTCopyViewAssociativeDataParams) SetDestinationViewId(v string) {
 	o.DestinationViewId = &v
 }
 
+// GetSourceDocumentId returns the SourceDocumentId field value if set, zero value otherwise.
+func (o *BTCopyViewAssociativeDataParams) GetSourceDocumentId() string {
+	if o == nil || o.SourceDocumentId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceDocumentId
+}
+
+// GetSourceDocumentIdOk returns a tuple with the SourceDocumentId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCopyViewAssociativeDataParams) GetSourceDocumentIdOk() (*string, bool) {
+	if o == nil || o.SourceDocumentId == nil {
+		return nil, false
+	}
+	return o.SourceDocumentId, true
+}
+
+// HasSourceDocumentId returns a boolean if a field has been set.
+func (o *BTCopyViewAssociativeDataParams) HasSourceDocumentId() bool {
+	if o != nil && o.SourceDocumentId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceDocumentId gets a reference to the given string and assigns it to the SourceDocumentId field.
+func (o *BTCopyViewAssociativeDataParams) SetSourceDocumentId(v string) {
+	o.SourceDocumentId = &v
+}
+
 // GetSourceElementId returns the SourceElementId field value if set, zero value otherwise.
 func (o *BTCopyViewAssociativeDataParams) GetSourceElementId() string {
 	if o == nil || o.SourceElementId == nil {
@@ -167,6 +202,70 @@ func (o *BTCopyViewAssociativeDataParams) SetSourceViewId(v string) {
 	o.SourceViewId = &v
 }
 
+// GetSourceWvm returns the SourceWvm field value if set, zero value otherwise.
+func (o *BTCopyViewAssociativeDataParams) GetSourceWvm() string {
+	if o == nil || o.SourceWvm == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceWvm
+}
+
+// GetSourceWvmOk returns a tuple with the SourceWvm field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCopyViewAssociativeDataParams) GetSourceWvmOk() (*string, bool) {
+	if o == nil || o.SourceWvm == nil {
+		return nil, false
+	}
+	return o.SourceWvm, true
+}
+
+// HasSourceWvm returns a boolean if a field has been set.
+func (o *BTCopyViewAssociativeDataParams) HasSourceWvm() bool {
+	if o != nil && o.SourceWvm != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceWvm gets a reference to the given string and assigns it to the SourceWvm field.
+func (o *BTCopyViewAssociativeDataParams) SetSourceWvm(v string) {
+	o.SourceWvm = &v
+}
+
+// GetSourceWvmId returns the SourceWvmId field value if set, zero value otherwise.
+func (o *BTCopyViewAssociativeDataParams) GetSourceWvmId() string {
+	if o == nil || o.SourceWvmId == nil {
+		var ret string
+		return ret
+	}
+	return *o.SourceWvmId
+}
+
+// GetSourceWvmIdOk returns a tuple with the SourceWvmId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCopyViewAssociativeDataParams) GetSourceWvmIdOk() (*string, bool) {
+	if o == nil || o.SourceWvmId == nil {
+		return nil, false
+	}
+	return o.SourceWvmId, true
+}
+
+// HasSourceWvmId returns a boolean if a field has been set.
+func (o *BTCopyViewAssociativeDataParams) HasSourceWvmId() bool {
+	if o != nil && o.SourceWvmId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSourceWvmId gets a reference to the given string and assigns it to the SourceWvmId field.
+func (o *BTCopyViewAssociativeDataParams) SetSourceWvmId(v string) {
+	o.SourceWvmId = &v
+}
+
 func (o BTCopyViewAssociativeDataParams) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AssociativeDataIds != nil {
@@ -175,11 +274,20 @@ func (o BTCopyViewAssociativeDataParams) MarshalJSON() ([]byte, error) {
 	if o.DestinationViewId != nil {
 		toSerialize["destinationViewId"] = o.DestinationViewId
 	}
+	if o.SourceDocumentId != nil {
+		toSerialize["sourceDocumentId"] = o.SourceDocumentId
+	}
 	if o.SourceElementId != nil {
 		toSerialize["sourceElementId"] = o.SourceElementId
 	}
 	if o.SourceViewId != nil {
 		toSerialize["sourceViewId"] = o.SourceViewId
+	}
+	if o.SourceWvm != nil {
+		toSerialize["sourceWvm"] = o.SourceWvm
+	}
+	if o.SourceWvmId != nil {
+		toSerialize["sourceWvmId"] = o.SourceWvmId
 	}
 	return json.Marshal(toSerialize)
 }

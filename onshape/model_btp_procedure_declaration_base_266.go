@@ -907,6 +907,56 @@ func (o *BTPProcedureDeclarationBase266) SetSymbolName(v BTPIdentifier8) {
 	o.GetActualInstance().(getResult).SetSymbolName(v)
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *BTPProcedureDeclarationBase266) GetTopLevelType() GBTPDefinitionType {
+	type getResult interface {
+		GetTopLevelType() GBTPDefinitionType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTopLevelType()
+	} else {
+		var de GBTPDefinitionType
+		return de
+	}
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPProcedureDeclarationBase266) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	type getResult interface {
+		GetTopLevelTypeOk() (*GBTPDefinitionType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTopLevelTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *BTPProcedureDeclarationBase266) HasTopLevelType() bool {
+	type getResult interface {
+		HasTopLevelType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTopLevelType()
+	} else {
+		return false
+	}
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *BTPProcedureDeclarationBase266) SetTopLevelType(v GBTPDefinitionType) {
+	type getResult interface {
+		SetTopLevelType(v GBTPDefinitionType)
+	}
+
+	o.GetActualInstance().(getResult).SetTopLevelType(v)
+}
+
 // GetArguments returns the Arguments field value if set, zero value otherwise.
 func (o *BTPProcedureDeclarationBase266) GetArguments() []BTPArgumentDeclaration232 {
 	type getResult interface {
@@ -1357,6 +1407,7 @@ type base_BTPProcedureDeclarationBase266 struct {
 	ForExport             *bool                       `json:"forExport,omitempty"`
 	SpaceAfterExport      *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName            *BTPIdentifier8             `json:"symbolName,omitempty"`
+	TopLevelType          *GBTPDefinitionType         `json:"topLevelType,omitempty"`
 	Arguments             []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
 	Body                  *BTPStatementBlock271       `json:"body,omitempty"`
 	Precondition          *BTPStatement269            `json:"precondition,omitempty"`
@@ -1926,6 +1977,38 @@ func (o *base_BTPProcedureDeclarationBase266) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *base_BTPProcedureDeclarationBase266) GetTopLevelType() GBTPDefinitionType {
+	if o == nil || o.TopLevelType == nil {
+		var ret GBTPDefinitionType
+		return ret
+	}
+	return *o.TopLevelType
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPProcedureDeclarationBase266) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	if o == nil || o.TopLevelType == nil {
+		return nil, false
+	}
+	return o.TopLevelType, true
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *base_BTPProcedureDeclarationBase266) HasTopLevelType() bool {
+	if o != nil && o.TopLevelType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *base_BTPProcedureDeclarationBase266) SetTopLevelType(v GBTPDefinitionType) {
+	o.TopLevelType = &v
+}
+
 // GetArguments returns the Arguments field value if set, zero value otherwise.
 func (o *base_BTPProcedureDeclarationBase266) GetArguments() []BTPArgumentDeclaration232 {
 	if o == nil || o.Arguments == nil {
@@ -2178,6 +2261,9 @@ func (o base_BTPProcedureDeclarationBase266) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.TopLevelType != nil {
+		toSerialize["topLevelType"] = o.TopLevelType
 	}
 	if o.Arguments != nil {
 		toSerialize["arguments"] = o.Arguments

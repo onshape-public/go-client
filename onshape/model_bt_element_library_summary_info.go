@@ -18,6 +18,8 @@ import (
 type BTElementLibrarySummaryInfo struct {
 	// If present, this library is public and this field contains the version Id of the current public version. If not present, this library is not public.
 	CurrentPublicVersion *string `json:"currentPublicVersion,omitempty"`
+	// What this library is for, e.g. frames profiles.
+	DefinitionName *string `json:"definitionName,omitempty"`
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
@@ -32,12 +34,16 @@ type BTElementLibrarySummaryInfo struct {
 	Name *string `json:"name,omitempty"`
 	// The owner Id of an element library (either Onshape, company, or user).
 	OwnerId *string `json:"ownerId,omitempty"`
+	// The name of the owner of the library.
+	OwnerName *string `json:"ownerName,omitempty"`
 	// The type of library owner, Onshape, user, or company
 	OwnerType *int32 `json:"ownerType,omitempty"`
 	// The id of the root folder of the library
 	SourceFolderId *string `json:"sourceFolderId,omitempty"`
 	// If true, the current user is subscribed to this library. Applies only to public libraries.
 	Subscribed *bool `json:"subscribed,omitempty"`
+	// The name of the current version of the library.
+	VersionName *string `json:"versionName,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -89,6 +95,38 @@ func (o *BTElementLibrarySummaryInfo) HasCurrentPublicVersion() bool {
 // SetCurrentPublicVersion gets a reference to the given string and assigns it to the CurrentPublicVersion field.
 func (o *BTElementLibrarySummaryInfo) SetCurrentPublicVersion(v string) {
 	o.CurrentPublicVersion = &v
+}
+
+// GetDefinitionName returns the DefinitionName field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetDefinitionName() string {
+	if o == nil || o.DefinitionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.DefinitionName
+}
+
+// GetDefinitionNameOk returns a tuple with the DefinitionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetDefinitionNameOk() (*string, bool) {
+	if o == nil || o.DefinitionName == nil {
+		return nil, false
+	}
+	return o.DefinitionName, true
+}
+
+// HasDefinitionName returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasDefinitionName() bool {
+	if o != nil && o.DefinitionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDefinitionName gets a reference to the given string and assigns it to the DefinitionName field.
+func (o *BTElementLibrarySummaryInfo) SetDefinitionName(v string) {
+	o.DefinitionName = &v
 }
 
 // GetHref returns the Href field value if set, zero value otherwise.
@@ -315,6 +353,38 @@ func (o *BTElementLibrarySummaryInfo) SetOwnerId(v string) {
 	o.OwnerId = &v
 }
 
+// GetOwnerName returns the OwnerName field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetOwnerName() string {
+	if o == nil || o.OwnerName == nil {
+		var ret string
+		return ret
+	}
+	return *o.OwnerName
+}
+
+// GetOwnerNameOk returns a tuple with the OwnerName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetOwnerNameOk() (*string, bool) {
+	if o == nil || o.OwnerName == nil {
+		return nil, false
+	}
+	return o.OwnerName, true
+}
+
+// HasOwnerName returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasOwnerName() bool {
+	if o != nil && o.OwnerName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetOwnerName gets a reference to the given string and assigns it to the OwnerName field.
+func (o *BTElementLibrarySummaryInfo) SetOwnerName(v string) {
+	o.OwnerName = &v
+}
+
 // GetOwnerType returns the OwnerType field value if set, zero value otherwise.
 func (o *BTElementLibrarySummaryInfo) GetOwnerType() int32 {
 	if o == nil || o.OwnerType == nil {
@@ -411,6 +481,38 @@ func (o *BTElementLibrarySummaryInfo) SetSubscribed(v bool) {
 	o.Subscribed = &v
 }
 
+// GetVersionName returns the VersionName field value if set, zero value otherwise.
+func (o *BTElementLibrarySummaryInfo) GetVersionName() string {
+	if o == nil || o.VersionName == nil {
+		var ret string
+		return ret
+	}
+	return *o.VersionName
+}
+
+// GetVersionNameOk returns a tuple with the VersionName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTElementLibrarySummaryInfo) GetVersionNameOk() (*string, bool) {
+	if o == nil || o.VersionName == nil {
+		return nil, false
+	}
+	return o.VersionName, true
+}
+
+// HasVersionName returns a boolean if a field has been set.
+func (o *BTElementLibrarySummaryInfo) HasVersionName() bool {
+	if o != nil && o.VersionName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetVersionName gets a reference to the given string and assigns it to the VersionName field.
+func (o *BTElementLibrarySummaryInfo) SetVersionName(v string) {
+	o.VersionName = &v
+}
+
 // GetViewRef returns the ViewRef field value if set, zero value otherwise.
 func (o *BTElementLibrarySummaryInfo) GetViewRef() string {
 	if o == nil || o.ViewRef == nil {
@@ -448,6 +550,9 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.CurrentPublicVersion != nil {
 		toSerialize["currentPublicVersion"] = o.CurrentPublicVersion
 	}
+	if o.DefinitionName != nil {
+		toSerialize["definitionName"] = o.DefinitionName
+	}
 	if o.Href != nil {
 		toSerialize["href"] = o.Href
 	}
@@ -469,6 +574,9 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	if o.OwnerId != nil {
 		toSerialize["ownerId"] = o.OwnerId
 	}
+	if o.OwnerName != nil {
+		toSerialize["ownerName"] = o.OwnerName
+	}
 	if o.OwnerType != nil {
 		toSerialize["ownerType"] = o.OwnerType
 	}
@@ -477,6 +585,9 @@ func (o BTElementLibrarySummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Subscribed != nil {
 		toSerialize["subscribed"] = o.Subscribed
+	}
+	if o.VersionName != nil {
+		toSerialize["versionName"] = o.VersionName
 	}
 	if o.ViewRef != nil {
 		toSerialize["viewRef"] = o.ViewRef

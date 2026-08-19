@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **BodyIdToEntityAppearanceSettingsChanged** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **CacheablePartStudioDisplayDataVersion** | Pointer to [**GBTPartStudioDisplayDataVersion**](GBTPartStudioDisplayDataVersion.md) |  | [optional] 
+**DebugDescription** | Pointer to **string** |  | [optional] 
 **DecalIdToDecal** | Pointer to [**map[string]BTDecal2404**](BTDecal2404.md) |  | [optional] 
 **DeterministicIdToAssociatedFeatureIds** | Pointer to **map[string][]string** |  | [optional] 
 **DeterministicIdToEntity** | Pointer to [**map[string]BTBaseEntityData33**](BTBaseEntityData33.md) |  | [optional] 
@@ -263,6 +264,31 @@ SetCacheablePartStudioDisplayDataVersion sets CacheablePartStudioDisplayDataVers
 `func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() bool`
 
 HasCacheablePartStudioDisplayDataVersion returns a boolean if a field has been set.
+
+### GetDebugDescription
+
+`func (o *BTPartStudioDisplayData346) GetDebugDescription() string`
+
+GetDebugDescription returns the DebugDescription field if non-nil, zero value otherwise.
+
+### GetDebugDescriptionOk
+
+`func (o *BTPartStudioDisplayData346) GetDebugDescriptionOk() (*string, bool)`
+
+GetDebugDescriptionOk returns a tuple with the DebugDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugDescription
+
+`func (o *BTPartStudioDisplayData346) SetDebugDescription(v string)`
+
+SetDebugDescription sets DebugDescription field to given value.
+
+### HasDebugDescription
+
+`func (o *BTPartStudioDisplayData346) HasDebugDescription() bool`
+
+HasDebugDescription returns a boolean if a field has been set.
 
 ### GetDecalIdToDecal
 

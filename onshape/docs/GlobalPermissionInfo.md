@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **CreateReleases** | Pointer to **bool** |  | [optional] 
 **CreateTasks** | Pointer to **bool** |  | [optional] 
 **DeletePermanently** | Pointer to **bool** |  | [optional] 
+**EnableLabs** | Pointer to **bool** |  | [optional] 
 **ExportFiles** | Pointer to **bool** |  | [optional] 
 **ImportFiles** | Pointer to **bool** |  | [optional] 
 **ManageGuestUsers** | Pointer to **bool** |  | [optional] 
@@ -320,6 +321,31 @@ SetDeletePermanently sets DeletePermanently field to given value.
 `func (o *GlobalPermissionInfo) HasDeletePermanently() bool`
 
 HasDeletePermanently returns a boolean if a field has been set.
+
+### GetEnableLabs
+
+`func (o *GlobalPermissionInfo) GetEnableLabs() bool`
+
+GetEnableLabs returns the EnableLabs field if non-nil, zero value otherwise.
+
+### GetEnableLabsOk
+
+`func (o *GlobalPermissionInfo) GetEnableLabsOk() (*bool, bool)`
+
+GetEnableLabsOk returns a tuple with the EnableLabs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableLabs
+
+`func (o *GlobalPermissionInfo) SetEnableLabs(v bool)`
+
+SetEnableLabs sets EnableLabs field to given value.
+
+### HasEnableLabs
+
+`func (o *GlobalPermissionInfo) HasEnableLabs() bool`
+
+HasEnableLabs returns a boolean if a field has been set.
 
 ### GetExportFiles
 
