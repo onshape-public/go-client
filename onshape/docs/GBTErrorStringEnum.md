@@ -3589,7 +3589,23 @@
 
 * `GBTErrorStringEnumAsyncSimulationInvalidPosition` (value: `"ASYNC_SIMULATION_INVALID_POSITION"`)
 
+* `GBTErrorStringEnumSimulationAssemblyExceedsInstanceCountLimit` (value: `"SIMULATION_ASSEMBLY_EXCEEDS_INSTANCE_COUNT_LIMIT"`)
+
+* `GBTErrorStringEnumFgsSimulationTooManyContactPairs` (value: `"FGS_SIMULATION_TOO_MANY_CONTACT_PAIRS"`)
+
+* `GBTErrorStringEnumSimulationTimeout` (value: `"SIMULATION_TIMEOUT"`)
+
 * `GBTErrorStringEnumFixedPartRequiredForSimulationNoBoundaryCondition` (value: `"FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION"`)
+
+* `GBTErrorStringEnumSketchTimedOut` (value: `"SKETCH_TIMED_OUT"`)
+
+* `GBTErrorStringEnumAsyncSimulationAlreadyComplete` (value: `"ASYNC_SIMULATION_ALREADY_COMPLETE"`)
+
+* `GBTErrorStringEnumMateconnectorAttachToNotResolved` (value: `"MATECONNECTOR_ATTACH_TO_NOT_RESOLVED"`)
+
+* `GBTErrorStringEnumSimulationRigidInstanceNotSpecified` (value: `"SIMULATION_RIGID_INSTANCE_NOT_SPECIFIED"`)
+
+* `GBTErrorStringEnumSimulationRigidInstanceSuppressed` (value: `"SIMULATION_RIGID_INSTANCE_SUPPRESSED"`)
 
 * `GBTErrorStringEnumUnknown` (value: `"UNKNOWN"`)
 

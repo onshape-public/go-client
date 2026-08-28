@@ -34,6 +34,7 @@ type BTPTopLevelConstantDeclaration283 struct {
 	ForExport             *bool                               `json:"forExport,omitempty"`
 	SpaceAfterExport      *BTPSpace10                         `json:"spaceAfterExport,omitempty"`
 	SymbolName            *BTPIdentifier8                     `json:"symbolName,omitempty"`
+	TopLevelType          *GBTPDefinitionType                 `json:"topLevelType,omitempty"`
 	Declaration           *BTPStatementConstantDeclaration273 `json:"declaration,omitempty"`
 }
 
@@ -598,6 +599,38 @@ func (o *BTPTopLevelConstantDeclaration283) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *BTPTopLevelConstantDeclaration283) GetTopLevelType() GBTPDefinitionType {
+	if o == nil || o.TopLevelType == nil {
+		var ret GBTPDefinitionType
+		return ret
+	}
+	return *o.TopLevelType
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelConstantDeclaration283) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	if o == nil || o.TopLevelType == nil {
+		return nil, false
+	}
+	return o.TopLevelType, true
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *BTPTopLevelConstantDeclaration283) HasTopLevelType() bool {
+	if o != nil && o.TopLevelType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *BTPTopLevelConstantDeclaration283) SetTopLevelType(v GBTPDefinitionType) {
+	o.TopLevelType = &v
+}
+
 // GetDeclaration returns the Declaration field value if set, zero value otherwise.
 func (o *BTPTopLevelConstantDeclaration283) GetDeclaration() BTPStatementConstantDeclaration273 {
 	if o == nil || o.Declaration == nil {
@@ -690,6 +723,9 @@ func (o BTPTopLevelConstantDeclaration283) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.TopLevelType != nil {
+		toSerialize["topLevelType"] = o.TopLevelType
 	}
 	if o.Declaration != nil {
 		toSerialize["declaration"] = o.Declaration

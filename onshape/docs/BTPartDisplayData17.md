@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **PartId** | Pointer to **string** |  | [optional] 
 **PropertyIdToSource** | Pointer to [**map[string]BTPartMetadataSource2895**](BTPartMetadataSource2895.md) |  | [optional] 
 **ReferencingConfiguredPartNodeIds** | Pointer to [**[]BTObjectId**](BTObjectId.md) |  | [optional] 
+**SmApplicationType** | Pointer to [**GBTSMApplicationType**](GBTSMApplicationType.md) |  | [optional] 
 **Visibility** | Pointer to [**GBTPartVisibility**](GBTPartVisibility.md) |  | [optional] 
 
 ## Methods
@@ -700,6 +701,31 @@ SetReferencingConfiguredPartNodeIds sets ReferencingConfiguredPartNodeIds field 
 `func (o *BTPartDisplayData17) HasReferencingConfiguredPartNodeIds() bool`
 
 HasReferencingConfiguredPartNodeIds returns a boolean if a field has been set.
+
+### GetSmApplicationType
+
+`func (o *BTPartDisplayData17) GetSmApplicationType() GBTSMApplicationType`
+
+GetSmApplicationType returns the SmApplicationType field if non-nil, zero value otherwise.
+
+### GetSmApplicationTypeOk
+
+`func (o *BTPartDisplayData17) GetSmApplicationTypeOk() (*GBTSMApplicationType, bool)`
+
+GetSmApplicationTypeOk returns a tuple with the SmApplicationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSmApplicationType
+
+`func (o *BTPartDisplayData17) SetSmApplicationType(v GBTSMApplicationType)`
+
+SetSmApplicationType sets SmApplicationType field to given value.
+
+### HasSmApplicationType
+
+`func (o *BTPartDisplayData17) HasSmApplicationType() bool`
+
+HasSmApplicationType returns a boolean if a field has been set.
 
 ### GetVisibility
 

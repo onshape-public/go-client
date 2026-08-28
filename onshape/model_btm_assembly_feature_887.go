@@ -20,6 +20,11 @@ type BTMAssemblyFeature887 struct {
 	implBTMAssemblyFeature887 interface{}
 }
 
+// BTMSimulationFeature5034AsBTMAssemblyFeature887 is a convenience function that returns BTMSimulationFeature5034 wrapped in BTMAssemblyFeature887
+func (o *BTMSimulationFeature5034) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
+	return &BTMAssemblyFeature887{o}
+}
+
 // BTMWidthMate1011AsBTMAssemblyFeature887 is a convenience function that returns BTMWidthMate1011 wrapped in BTMAssemblyFeature887
 func (o *BTMWidthMate1011) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
@@ -60,11 +65,6 @@ func (o *BTMMateRelation1412) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
 }
 
-// BTMParametricPartStudioFeature3883AsBTMAssemblyFeature887 is a convenience function that returns BTMParametricPartStudioFeature3883 wrapped in BTMAssemblyFeature887
-func (o *BTMParametricPartStudioFeature3883) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
-	return &BTMAssemblyFeature887{o}
-}
-
 // BTExplosion2754AsBTMAssemblyFeature887 is a convenience function that returns BTExplosion2754 wrapped in BTMAssemblyFeature887
 func (o *BTExplosion2754) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
@@ -75,23 +75,13 @@ func (o *BTExplosionStepFeature3008) AsBTMAssemblyFeature887() *BTMAssemblyFeatu
 	return &BTMAssemblyFeature887{o}
 }
 
-// BTMAssemblyMirrorFeature3037AsBTMAssemblyFeature887 is a convenience function that returns BTMAssemblyMirrorFeature3037 wrapped in BTMAssemblyFeature887
-func (o *BTMAssemblyMirrorFeature3037) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
-	return &BTMAssemblyFeature887{o}
-}
-
-// BTMAssemblyPatternFeature2241AsBTMAssemblyFeature887 is a convenience function that returns BTMAssemblyPatternFeature2241 wrapped in BTMAssemblyFeature887
-func (o *BTMAssemblyPatternFeature2241) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
-	return &BTMAssemblyFeature887{o}
-}
-
 // BTMGenerativeDesignFeature3195AsBTMAssemblyFeature887 is a convenience function that returns BTMGenerativeDesignFeature3195 wrapped in BTMAssemblyFeature887
 func (o *BTMGenerativeDesignFeature3195) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
 }
 
-// BTMLoad3538AsBTMAssemblyFeature887 is a convenience function that returns BTMLoad3538 wrapped in BTMAssemblyFeature887
-func (o *BTMLoad3538) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
+// BTMAssemblyParametricInstanceFeature5441AsBTMAssemblyFeature887 is a convenience function that returns BTMAssemblyParametricInstanceFeature5441 wrapped in BTMAssemblyFeature887
+func (o *BTMAssemblyParametricInstanceFeature5441) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
 }
 
@@ -102,16 +92,6 @@ func (o *BTMMateGroup65) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 
 // BTMNonGeometricItem1864AsBTMAssemblyFeature887 is a convenience function that returns BTMNonGeometricItem1864 wrapped in BTMAssemblyFeature887
 func (o *BTMNonGeometricItem1864) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
-	return &BTMAssemblyFeature887{o}
-}
-
-// BTMAssemblyReplicateFeature1351AsBTMAssemblyFeature887 is a convenience function that returns BTMAssemblyReplicateFeature1351 wrapped in BTMAssemblyFeature887
-func (o *BTMAssemblyReplicateFeature1351) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
-	return &BTMAssemblyFeature887{o}
-}
-
-// BTMDerivedAssemblyMirrorFeature5094AsBTMAssemblyFeature887 is a convenience function that returns BTMDerivedAssemblyMirrorFeature5094 wrapped in BTMAssemblyFeature887
-func (o *BTMDerivedAssemblyMirrorFeature5094) AsBTMAssemblyFeature887() *BTMAssemblyFeature887 {
 	return &BTMAssemblyFeature887{o}
 }
 
@@ -987,406 +967,6 @@ func (o *BTMAssemblyFeature887) SetVariableStudioReference(v bool) {
 	o.GetActualInstance().(getResult).SetVariableStudioReference(v)
 }
 
-// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeature() bool {
-	type getResult interface {
-		GetAuxiliaryTreeFeature() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAuxiliaryTreeFeature()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
-	type getResult interface {
-		GetAuxiliaryTreeFeatureOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetAuxiliaryTreeFeatureOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasAuxiliaryTreeFeature() bool {
-	type getResult interface {
-		HasAuxiliaryTreeFeature() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasAuxiliaryTreeFeature()
-	} else {
-		return false
-	}
-}
-
-// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
-func (o *BTMAssemblyFeature887) SetAuxiliaryTreeFeature(v bool) {
-	type getResult interface {
-		SetAuxiliaryTreeFeature(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetAuxiliaryTreeFeature(v)
-}
-
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetFeatureFolder() bool {
-	type getResult interface {
-		GetFeatureFolder() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFeatureFolder()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetFeatureFolderOk() (*bool, bool) {
-	type getResult interface {
-		GetFeatureFolderOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFeatureFolderOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasFeatureFolder() bool {
-	type getResult interface {
-		HasFeatureFolder() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasFeatureFolder()
-	} else {
-		return false
-	}
-}
-
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *BTMAssemblyFeature887) SetFeatureFolder(v bool) {
-	type getResult interface {
-		SetFeatureFolder(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetFeatureFolder(v)
-}
-
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetFeatureListFieldIndex() int32 {
-	type getResult interface {
-		GetFeatureListFieldIndex() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFeatureListFieldIndex()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetFeatureListFieldIndexOk() (*int32, bool) {
-	type getResult interface {
-		GetFeatureListFieldIndexOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFeatureListFieldIndexOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasFeatureListFieldIndex() bool {
-	type getResult interface {
-		HasFeatureListFieldIndex() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasFeatureListFieldIndex()
-	} else {
-		return false
-	}
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *BTMAssemblyFeature887) SetFeatureListFieldIndex(v int32) {
-	type getResult interface {
-		SetFeatureListFieldIndex(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetFeatureListFieldIndex(v)
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectors() int32 {
-	type getResult interface {
-		GetFieldIndexForOwnedMateConnectors() int32
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFieldIndexForOwnedMateConnectors()
-	} else {
-		var de int32
-		return de
-	}
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	type getResult interface {
-		GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetFieldIndexForOwnedMateConnectorsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasFieldIndexForOwnedMateConnectors() bool {
-	type getResult interface {
-		HasFieldIndexForOwnedMateConnectors() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasFieldIndexForOwnedMateConnectors()
-	} else {
-		return false
-	}
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *BTMAssemblyFeature887) SetFieldIndexForOwnedMateConnectors(v int32) {
-	type getResult interface {
-		SetFieldIndexForOwnedMateConnectors(v int32)
-	}
-
-	o.GetActualInstance().(getResult).SetFieldIndexForOwnedMateConnectors(v)
-}
-
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetMateConnectors() []BTMMateConnector66 {
-	type getResult interface {
-		GetMateConnectors() []BTMMateConnector66
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetMateConnectors()
-	} else {
-		var de []BTMMateConnector66
-		return de
-	}
-}
-
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	type getResult interface {
-		GetMateConnectorsOk() ([]BTMMateConnector66, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetMateConnectorsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasMateConnectors() bool {
-	type getResult interface {
-		HasMateConnectors() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasMateConnectors()
-	} else {
-		return false
-	}
-}
-
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *BTMAssemblyFeature887) SetMateConnectors(v []BTMMateConnector66) {
-	type getResult interface {
-		SetMateConnectors(v []BTMMateConnector66)
-	}
-
-	o.GetActualInstance().(getResult).SetMateConnectors(v)
-}
-
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	type getResult interface {
-		GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceQueriesFromAllConfigurations()
-	} else {
-		var de []BTMIndividualQueryWithOccurrenceBase904
-		return de
-	}
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	type getResult interface {
-		GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetOccurrenceQueriesFromAllConfigurationsOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasOccurrenceQueriesFromAllConfigurations() bool {
-	type getResult interface {
-		HasOccurrenceQueriesFromAllConfigurations() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasOccurrenceQueriesFromAllConfigurations()
-	} else {
-		return false
-	}
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *BTMAssemblyFeature887) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	type getResult interface {
-		SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904)
-	}
-
-	o.GetActualInstance().(getResult).SetOccurrenceQueriesFromAllConfigurations(v)
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetParametricInstanceFeature() bool {
-	type getResult interface {
-		GetParametricInstanceFeature() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParametricInstanceFeature()
-	} else {
-		var de bool
-		return de
-	}
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetParametricInstanceFeatureOk() (*bool, bool) {
-	type getResult interface {
-		GetParametricInstanceFeatureOk() (*bool, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetParametricInstanceFeatureOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasParametricInstanceFeature() bool {
-	type getResult interface {
-		HasParametricInstanceFeature() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasParametricInstanceFeature()
-	} else {
-		return false
-	}
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *BTMAssemblyFeature887) SetParametricInstanceFeature(v bool) {
-	type getResult interface {
-		SetParametricInstanceFeature(v bool)
-	}
-
-	o.GetActualInstance().(getResult).SetParametricInstanceFeature(v)
-}
-
-// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
-func (o *BTMAssemblyFeature887) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
-	type getResult interface {
-		GetSubFeaturesNotUsedInQuery() []BTMFeature134
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetSubFeaturesNotUsedInQuery()
-	} else {
-		var de []BTMFeature134
-		return de
-	}
-}
-
-// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMAssemblyFeature887) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
-	type getResult interface {
-		GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool)
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.GetSubFeaturesNotUsedInQueryOk()
-	} else {
-		return nil, false
-	}
-}
-
-// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
-func (o *BTMAssemblyFeature887) HasSubFeaturesNotUsedInQuery() bool {
-	type getResult interface {
-		HasSubFeaturesNotUsedInQuery() bool
-	}
-
-	if tx, ok := o.GetActualInstance().(getResult); ok {
-		return tx.HasSubFeaturesNotUsedInQuery()
-	} else {
-		return false
-	}
-}
-
-// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
-func (o *BTMAssemblyFeature887) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
-	type getResult interface {
-		SetSubFeaturesNotUsedInQuery(v []BTMFeature134)
-	}
-
-	o.GetActualInstance().(getResult).SetSubFeaturesNotUsedInQuery(v)
-}
-
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *BTMAssemblyFeature887) GetVersion() int32 {
 	type getResult interface {
@@ -1531,59 +1111,17 @@ func (dst *BTMAssemblyFeature887) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMAssemblyMirrorFeature-3037'
-	if jsonDict["btType"] == "BTMAssemblyMirrorFeature-3037" {
-		// try to unmarshal JSON data into BTMAssemblyMirrorFeature3037
-		var qr *BTMAssemblyMirrorFeature3037
+	// check if the discriminator value is 'BTMAssemblyParametricInstanceFeature-5441'
+	if jsonDict["btType"] == "BTMAssemblyParametricInstanceFeature-5441" {
+		// try to unmarshal JSON data into BTMAssemblyParametricInstanceFeature5441
+		var qr *BTMAssemblyParametricInstanceFeature5441
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
 			dst.implBTMAssemblyFeature887 = qr
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMAssemblyMirrorFeature3037: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyPatternFeature-2241'
-	if jsonDict["btType"] == "BTMAssemblyPatternFeature-2241" {
-		// try to unmarshal JSON data into BTMAssemblyPatternFeature2241
-		var qr *BTMAssemblyPatternFeature2241
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMAssemblyFeature887 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMAssemblyPatternFeature2241: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMAssemblyReplicateFeature-1351'
-	if jsonDict["btType"] == "BTMAssemblyReplicateFeature-1351" {
-		// try to unmarshal JSON data into BTMAssemblyReplicateFeature1351
-		var qr *BTMAssemblyReplicateFeature1351
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMAssemblyFeature887 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMAssemblyReplicateFeature1351: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMDerivedAssemblyMirrorFeature-5094'
-	if jsonDict["btType"] == "BTMDerivedAssemblyMirrorFeature-5094" {
-		// try to unmarshal JSON data into BTMDerivedAssemblyMirrorFeature5094
-		var qr *BTMDerivedAssemblyMirrorFeature5094
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMAssemblyFeature887 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMDerivedAssemblyMirrorFeature5094: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMAssemblyParametricInstanceFeature5441: %s", err.Error())
 		}
 	}
 
@@ -1612,20 +1150,6 @@ func (dst *BTMAssemblyFeature887) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTMAssemblyFeature887 = nil
 			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMGeometryMate1260: %s", err.Error())
-		}
-	}
-
-	// check if the discriminator value is 'BTMLoad-3538'
-	if jsonDict["btType"] == "BTMLoad-3538" {
-		// try to unmarshal JSON data into BTMLoad3538
-		var qr *BTMLoad3538
-		err = json.Unmarshal(data, &qr)
-		if err == nil {
-			dst.implBTMAssemblyFeature887 = qr
-			return nil // data stored, return on the first match
-		} else {
-			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMLoad3538: %s", err.Error())
 		}
 	}
 
@@ -1699,17 +1223,17 @@ func (dst *BTMAssemblyFeature887) UnmarshalJSON(data []byte) error {
 		}
 	}
 
-	// check if the discriminator value is 'BTMParametricPartStudioFeature-3883'
-	if jsonDict["btType"] == "BTMParametricPartStudioFeature-3883" {
-		// try to unmarshal JSON data into BTMParametricPartStudioFeature3883
-		var qr *BTMParametricPartStudioFeature3883
+	// check if the discriminator value is 'BTMSimulationFeature-5034'
+	if jsonDict["btType"] == "BTMSimulationFeature-5034" {
+		// try to unmarshal JSON data into BTMSimulationFeature5034
+		var qr *BTMSimulationFeature5034
 		err = json.Unmarshal(data, &qr)
 		if err == nil {
 			dst.implBTMAssemblyFeature887 = qr
 			return nil // data stored, return on the first match
 		} else {
 			dst.implBTMAssemblyFeature887 = nil
-			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMParametricPartStudioFeature3883: %s", err.Error())
+			return fmt.Errorf("failed to unmarshal BTMAssemblyFeature887 as BTMSimulationFeature5034: %s", err.Error())
 		}
 	}
 
@@ -1822,16 +1346,8 @@ type base_BTMAssemblyFeature887 struct {
 	SuppressionConfigured *bool                    `json:"suppressionConfigured,omitempty"`
 	SuppressionState      *BTMSuppressionState1924 `json:"suppressionState,omitempty"`
 	// If `true`, the feature references a Variable Studio.
-	VariableStudioReference                *bool                                     `json:"variableStudioReference,omitempty"`
-	AuxiliaryTreeFeature                   *bool                                     `json:"auxiliaryTreeFeature,omitempty"`
-	FeatureFolder                          *bool                                     `json:"featureFolder,omitempty"`
-	FeatureListFieldIndex                  *int32                                    `json:"featureListFieldIndex,omitempty"`
-	FieldIndexForOwnedMateConnectors       *int32                                    `json:"fieldIndexForOwnedMateConnectors,omitempty"`
-	MateConnectors                         []BTMMateConnector66                      `json:"mateConnectors,omitempty"`
-	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
-	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
-	SubFeaturesNotUsedInQuery              []BTMFeature134                           `json:"subFeaturesNotUsedInQuery,omitempty"`
-	Version                                *int32                                    `json:"version,omitempty"`
+	VariableStudioReference *bool  `json:"variableStudioReference,omitempty"`
+	Version                 *int32 `json:"version,omitempty"`
 }
 
 // Newbase_BTMAssemblyFeature887 instantiates a new base_BTMAssemblyFeature887 object
@@ -2395,262 +1911,6 @@ func (o *base_BTMAssemblyFeature887) SetVariableStudioReference(v bool) {
 	o.VariableStudioReference = &v
 }
 
-// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetAuxiliaryTreeFeature() bool {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AuxiliaryTreeFeature
-}
-
-// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		return nil, false
-	}
-	return o.AuxiliaryTreeFeature, true
-}
-
-// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasAuxiliaryTreeFeature() bool {
-	if o != nil && o.AuxiliaryTreeFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
-func (o *base_BTMAssemblyFeature887) SetAuxiliaryTreeFeature(v bool) {
-	o.AuxiliaryTreeFeature = &v
-}
-
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetFeatureFolder() bool {
-	if o == nil || o.FeatureFolder == nil {
-		var ret bool
-		return ret
-	}
-	return *o.FeatureFolder
-}
-
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetFeatureFolderOk() (*bool, bool) {
-	if o == nil || o.FeatureFolder == nil {
-		return nil, false
-	}
-	return o.FeatureFolder, true
-}
-
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasFeatureFolder() bool {
-	if o != nil && o.FeatureFolder != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *base_BTMAssemblyFeature887) SetFeatureFolder(v bool) {
-	o.FeatureFolder = &v
-}
-
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetFeatureListFieldIndex() int32 {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FeatureListFieldIndex
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetFeatureListFieldIndexOk() (*int32, bool) {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		return nil, false
-	}
-	return o.FeatureListFieldIndex, true
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasFeatureListFieldIndex() bool {
-	if o != nil && o.FeatureListFieldIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *base_BTMAssemblyFeature887) SetFeatureListFieldIndex(v int32) {
-	o.FeatureListFieldIndex = &v
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectors() int32 {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FieldIndexForOwnedMateConnectors
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		return nil, false
-	}
-	return o.FieldIndexForOwnedMateConnectors, true
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasFieldIndexForOwnedMateConnectors() bool {
-	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *base_BTMAssemblyFeature887) SetFieldIndexForOwnedMateConnectors(v int32) {
-	o.FieldIndexForOwnedMateConnectors = &v
-}
-
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetMateConnectors() []BTMMateConnector66 {
-	if o == nil || o.MateConnectors == nil {
-		var ret []BTMMateConnector66
-		return ret
-	}
-	return o.MateConnectors
-}
-
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	if o == nil || o.MateConnectors == nil {
-		return nil, false
-	}
-	return o.MateConnectors, true
-}
-
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasMateConnectors() bool {
-	if o != nil && o.MateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *base_BTMAssemblyFeature887) SetMateConnectors(v []BTMMateConnector66) {
-	o.MateConnectors = v
-}
-
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		var ret []BTMIndividualQueryWithOccurrenceBase904
-		return ret
-	}
-	return o.OccurrenceQueriesFromAllConfigurations
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		return nil, false
-	}
-	return o.OccurrenceQueriesFromAllConfigurations, true
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasOccurrenceQueriesFromAllConfigurations() bool {
-	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *base_BTMAssemblyFeature887) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	o.OccurrenceQueriesFromAllConfigurations = v
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetParametricInstanceFeature() bool {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ParametricInstanceFeature
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetParametricInstanceFeatureOk() (*bool, bool) {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		return nil, false
-	}
-	return o.ParametricInstanceFeature, true
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasParametricInstanceFeature() bool {
-	if o != nil && o.ParametricInstanceFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *base_BTMAssemblyFeature887) SetParametricInstanceFeature(v bool) {
-	o.ParametricInstanceFeature = &v
-}
-
-// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
-func (o *base_BTMAssemblyFeature887) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		var ret []BTMFeature134
-		return ret
-	}
-	return o.SubFeaturesNotUsedInQuery
-}
-
-// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *base_BTMAssemblyFeature887) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		return nil, false
-	}
-	return o.SubFeaturesNotUsedInQuery, true
-}
-
-// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
-func (o *base_BTMAssemblyFeature887) HasSubFeaturesNotUsedInQuery() bool {
-	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
-func (o *base_BTMAssemblyFeature887) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
-	o.SubFeaturesNotUsedInQuery = v
-}
-
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *base_BTMAssemblyFeature887) GetVersion() int32 {
 	if o == nil || o.Version == nil {
@@ -2743,30 +2003,6 @@ func (o base_BTMAssemblyFeature887) MarshalJSON() ([]byte, error) {
 	}
 	if o.VariableStudioReference != nil {
 		toSerialize["variableStudioReference"] = o.VariableStudioReference
-	}
-	if o.AuxiliaryTreeFeature != nil {
-		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
-	}
-	if o.FeatureFolder != nil {
-		toSerialize["featureFolder"] = o.FeatureFolder
-	}
-	if o.FeatureListFieldIndex != nil {
-		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
-	}
-	if o.FieldIndexForOwnedMateConnectors != nil {
-		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
-	}
-	if o.MateConnectors != nil {
-		toSerialize["mateConnectors"] = o.MateConnectors
-	}
-	if o.OccurrenceQueriesFromAllConfigurations != nil {
-		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
-	}
-	if o.ParametricInstanceFeature != nil {
-		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
-	}
-	if o.SubFeaturesNotUsedInQuery != nil {
-		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Version != nil {
 		toSerialize["version"] = o.Version

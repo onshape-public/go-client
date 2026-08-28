@@ -16,7 +16,9 @@ import (
 
 // BTTranslationRequestInfo struct for BTTranslationRequestInfo
 type BTTranslationRequestInfo struct {
-	DocumentId *string `json:"documentId,omitempty"`
+	// User specified identifier that can be used as a correlation id across api calls.
+	CorrelationId *string `json:"correlationId,omitempty"`
+	DocumentId    *string `json:"documentId,omitempty"`
 	// The file name after evaluating a rule for the given `formatName`. `NULL` if `evaluateExportRule=false` or if the export rule is not found.
 	ExportRuleFileName *string `json:"exportRuleFileName,omitempty"`
 	FailureReason      *string `json:"failureReason,omitempty"`
@@ -53,6 +55,38 @@ func NewBTTranslationRequestInfo() *BTTranslationRequestInfo {
 func NewBTTranslationRequestInfoWithDefaults() *BTTranslationRequestInfo {
 	this := BTTranslationRequestInfo{}
 	return &this
+}
+
+// GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
+func (o *BTTranslationRequestInfo) GetCorrelationId() string {
+	if o == nil || o.CorrelationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CorrelationId
+}
+
+// GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslationRequestInfo) GetCorrelationIdOk() (*string, bool) {
+	if o == nil || o.CorrelationId == nil {
+		return nil, false
+	}
+	return o.CorrelationId, true
+}
+
+// HasCorrelationId returns a boolean if a field has been set.
+func (o *BTTranslationRequestInfo) HasCorrelationId() bool {
+	if o != nil && o.CorrelationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCorrelationId gets a reference to the given string and assigns it to the CorrelationId field.
+func (o *BTTranslationRequestInfo) SetCorrelationId(v string) {
+	o.CorrelationId = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -537,6 +571,9 @@ func (o *BTTranslationRequestInfo) SetWorkspaceId(v string) {
 
 func (o BTTranslationRequestInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CorrelationId != nil {
+		toSerialize["correlationId"] = o.CorrelationId
+	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
 	}

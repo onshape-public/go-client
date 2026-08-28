@@ -21,6 +21,7 @@ type BTRootAssemblyDisplayData96 struct {
 	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
 	BuildDurationMillis                    *float64                                      `json:"buildDurationMillis,omitempty"`
+	DebugDescription                       *string                                       `json:"debugDescription,omitempty"`
 	DeletedAssemblyFeatures                []string                                      `json:"deletedAssemblyFeatures,omitempty"`
 	DeletedGeometryMateIds                 []string                                      `json:"deletedGeometryMateIds,omitempty"`
 	DeletedLoads                           []string                                      `json:"deletedLoads,omitempty"`
@@ -196,6 +197,38 @@ func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool {
 // SetBuildDurationMillis gets a reference to the given float64 and assigns it to the BuildDurationMillis field.
 func (o *BTRootAssemblyDisplayData96) SetBuildDurationMillis(v float64) {
 	o.BuildDurationMillis = &v
+}
+
+// GetDebugDescription returns the DebugDescription field value if set, zero value otherwise.
+func (o *BTRootAssemblyDisplayData96) GetDebugDescription() string {
+	if o == nil || o.DebugDescription == nil {
+		var ret string
+		return ret
+	}
+	return *o.DebugDescription
+}
+
+// GetDebugDescriptionOk returns a tuple with the DebugDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRootAssemblyDisplayData96) GetDebugDescriptionOk() (*string, bool) {
+	if o == nil || o.DebugDescription == nil {
+		return nil, false
+	}
+	return o.DebugDescription, true
+}
+
+// HasDebugDescription returns a boolean if a field has been set.
+func (o *BTRootAssemblyDisplayData96) HasDebugDescription() bool {
+	if o != nil && o.DebugDescription != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDebugDescription gets a reference to the given string and assigns it to the DebugDescription field.
+func (o *BTRootAssemblyDisplayData96) SetDebugDescription(v string) {
+	o.DebugDescription = &v
 }
 
 // GetDeletedAssemblyFeatures returns the DeletedAssemblyFeatures field value if set, zero value otherwise.
@@ -1171,6 +1204,9 @@ func (o BTRootAssemblyDisplayData96) MarshalJSON() ([]byte, error) {
 	}
 	if o.BuildDurationMillis != nil {
 		toSerialize["buildDurationMillis"] = o.BuildDurationMillis
+	}
+	if o.DebugDescription != nil {
+		toSerialize["debugDescription"] = o.DebugDescription
 	}
 	if o.DeletedAssemblyFeatures != nil {
 		toSerialize["deletedAssemblyFeatures"] = o.DeletedAssemblyFeatures
