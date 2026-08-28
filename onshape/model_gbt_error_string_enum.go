@@ -1813,7 +1813,13 @@ const (
 	GBTErrorStringEnumBsurfBoundaryConditionsRelaxedInfo                          GBTErrorStringEnum = "BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO"
 	GBTErrorStringEnumAsyncSimulationVersionNotSelected                           GBTErrorStringEnum = "ASYNC_SIMULATION_VERSION_NOT_SELECTED"
 	GBTErrorStringEnumAsyncSimulationInvalidPosition                              GBTErrorStringEnum = "ASYNC_SIMULATION_INVALID_POSITION"
+	GBTErrorStringEnumSimulationAssemblyExceedsInstanceCountLimit                 GBTErrorStringEnum = "SIMULATION_ASSEMBLY_EXCEEDS_INSTANCE_COUNT_LIMIT"
+	GBTErrorStringEnumFgsSimulationTooManyContactPairs                            GBTErrorStringEnum = "FGS_SIMULATION_TOO_MANY_CONTACT_PAIRS"
+	GBTErrorStringEnumSimulationTimeout                                           GBTErrorStringEnum = "SIMULATION_TIMEOUT"
 	GBTErrorStringEnumFixedPartRequiredForSimulationNoBoundaryCondition           GBTErrorStringEnum = "FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION"
+	GBTErrorStringEnumSketchTimedOut                                              GBTErrorStringEnum = "SKETCH_TIMED_OUT"
+	GBTErrorStringEnumAsyncSimulationAlreadyComplete                              GBTErrorStringEnum = "ASYNC_SIMULATION_ALREADY_COMPLETE"
+	GBTErrorStringEnumMateconnectorAttachToNotResolved                            GBTErrorStringEnum = "MATECONNECTOR_ATTACH_TO_NOT_RESOLVED"
 	GBTErrorStringEnumUnknown                                                     GBTErrorStringEnum = "UNKNOWN"
 )
 
@@ -3612,7 +3618,13 @@ var AllowedGBTErrorStringEnumEnumValues = []GBTErrorStringEnum{
 	"BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO",
 	"ASYNC_SIMULATION_VERSION_NOT_SELECTED",
 	"ASYNC_SIMULATION_INVALID_POSITION",
+	"SIMULATION_ASSEMBLY_EXCEEDS_INSTANCE_COUNT_LIMIT",
+	"FGS_SIMULATION_TOO_MANY_CONTACT_PAIRS",
+	"SIMULATION_TIMEOUT",
 	"FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION",
+	"SKETCH_TIMED_OUT",
+	"ASYNC_SIMULATION_ALREADY_COMPLETE",
+	"MATECONNECTOR_ATTACH_TO_NOT_RESOLVED",
 	"UNKNOWN",
 }
 
