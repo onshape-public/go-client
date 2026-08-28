@@ -25,6 +25,7 @@ type BTTableCellPropertyParameter2983 struct {
 	Info                                *string                        `json:"info,omitempty"`
 	OverrideSpec                        *BTParameterSpec6              `json:"overrideSpec,omitempty"`
 	Parameter                           *BTMParameter1                 `json:"parameter,omitempty"`
+	Warning                             *string                        `json:"warning,omitempty"`
 	AggregationSkippedFilteredOutValues *bool                          `json:"aggregationSkippedFilteredOutValues,omitempty"`
 	IsUnchanged                         *bool                          `json:"isUnchanged,omitempty"`
 	OverrideStatusType                  *GBTMetadataOverrideStatusType `json:"overrideStatusType,omitempty"`
@@ -304,6 +305,38 @@ func (o *BTTableCellPropertyParameter2983) SetParameter(v BTMParameter1) {
 	o.Parameter = &v
 }
 
+// GetWarning returns the Warning field value if set, zero value otherwise.
+func (o *BTTableCellPropertyParameter2983) GetWarning() string {
+	if o == nil || o.Warning == nil {
+		var ret string
+		return ret
+	}
+	return *o.Warning
+}
+
+// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellPropertyParameter2983) GetWarningOk() (*string, bool) {
+	if o == nil || o.Warning == nil {
+		return nil, false
+	}
+	return o.Warning, true
+}
+
+// HasWarning returns a boolean if a field has been set.
+func (o *BTTableCellPropertyParameter2983) HasWarning() bool {
+	if o != nil && o.Warning != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWarning gets a reference to the given string and assigns it to the Warning field.
+func (o *BTTableCellPropertyParameter2983) SetWarning(v string) {
+	o.Warning = &v
+}
+
 // GetAggregationSkippedFilteredOutValues returns the AggregationSkippedFilteredOutValues field value if set, zero value otherwise.
 func (o *BTTableCellPropertyParameter2983) GetAggregationSkippedFilteredOutValues() bool {
 	if o == nil || o.AggregationSkippedFilteredOutValues == nil {
@@ -465,6 +498,9 @@ func (o BTTableCellPropertyParameter2983) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameter != nil {
 		toSerialize["parameter"] = o.Parameter
+	}
+	if o.Warning != nil {
+		toSerialize["warning"] = o.Warning
 	}
 	if o.AggregationSkippedFilteredOutValues != nil {
 		toSerialize["aggregationSkippedFilteredOutValues"] = o.AggregationSkippedFilteredOutValues

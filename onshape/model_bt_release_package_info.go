@@ -44,11 +44,12 @@ type BTReleasePackageInfo struct {
 	ParentPackages      []string                   `json:"parentPackages,omitempty"`
 	Properties          []BTWorkflowPropertyInfo   `json:"properties,omitempty"`
 	// Indicates whether the release is still in setup state and saved as a draft.
-	RetainedAsDraft    *bool    `json:"retainedAsDraft,omitempty"`
-	RevisionRuleId     *string  `json:"revisionRuleId,omitempty"`
-	RootItemsToRebuild []string `json:"rootItemsToRebuild,omitempty"`
-	UpdatedItemIds     []string `json:"updatedItemIds,omitempty"`
-	VersionId          *string  `json:"versionId,omitempty"`
+	RetainedAsDraft    *bool                           `json:"retainedAsDraft,omitempty"`
+	RevisionRuleId     *string                         `json:"revisionRuleId,omitempty"`
+	RootItemsToRebuild []string                        `json:"rootItemsToRebuild,omitempty"`
+	TransitionStatus   []BTReleaseTransitionStatusInfo `json:"transitionStatus,omitempty"`
+	UpdatedItemIds     []string                        `json:"updatedItemIds,omitempty"`
+	VersionId          *string                         `json:"versionId,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef       *string                 `json:"viewRef,omitempty"`
 	Workflow      *BTWorkflowSnapshotInfo `json:"workflow,omitempty"`
@@ -938,6 +939,38 @@ func (o *BTReleasePackageInfo) SetRootItemsToRebuild(v []string) {
 	o.RootItemsToRebuild = v
 }
 
+// GetTransitionStatus returns the TransitionStatus field value if set, zero value otherwise.
+func (o *BTReleasePackageInfo) GetTransitionStatus() []BTReleaseTransitionStatusInfo {
+	if o == nil || o.TransitionStatus == nil {
+		var ret []BTReleaseTransitionStatusInfo
+		return ret
+	}
+	return o.TransitionStatus
+}
+
+// GetTransitionStatusOk returns a tuple with the TransitionStatus field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageInfo) GetTransitionStatusOk() ([]BTReleaseTransitionStatusInfo, bool) {
+	if o == nil || o.TransitionStatus == nil {
+		return nil, false
+	}
+	return o.TransitionStatus, true
+}
+
+// HasTransitionStatus returns a boolean if a field has been set.
+func (o *BTReleasePackageInfo) HasTransitionStatus() bool {
+	if o != nil && o.TransitionStatus != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTransitionStatus gets a reference to the given []BTReleaseTransitionStatusInfo and assigns it to the TransitionStatus field.
+func (o *BTReleasePackageInfo) SetTransitionStatus(v []BTReleaseTransitionStatusInfo) {
+	o.TransitionStatus = v
+}
+
 // GetUpdatedItemIds returns the UpdatedItemIds field value if set, zero value otherwise.
 func (o *BTReleasePackageInfo) GetUpdatedItemIds() []string {
 	if o == nil || o.UpdatedItemIds == nil {
@@ -1244,6 +1277,9 @@ func (o BTReleasePackageInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.RootItemsToRebuild != nil {
 		toSerialize["rootItemsToRebuild"] = o.RootItemsToRebuild
+	}
+	if o.TransitionStatus != nil {
+		toSerialize["transitionStatus"] = o.TransitionStatus
 	}
 	if o.UpdatedItemIds != nil {
 		toSerialize["updatedItemIds"] = o.UpdatedItemIds

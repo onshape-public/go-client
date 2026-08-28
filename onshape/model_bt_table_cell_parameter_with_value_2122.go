@@ -25,6 +25,7 @@ type BTTableCellParameterWithValue2122 struct {
 	Info          *string                   `json:"info,omitempty"`
 	OverrideSpec  *BTParameterSpec6         `json:"overrideSpec,omitempty"`
 	Parameter     *BTMParameter1            `json:"parameter,omitempty"`
+	Warning       *string                   `json:"warning,omitempty"`
 	Value         *BTFSValue1888            `json:"value,omitempty"`
 }
 
@@ -301,6 +302,38 @@ func (o *BTTableCellParameterWithValue2122) SetParameter(v BTMParameter1) {
 	o.Parameter = &v
 }
 
+// GetWarning returns the Warning field value if set, zero value otherwise.
+func (o *BTTableCellParameterWithValue2122) GetWarning() string {
+	if o == nil || o.Warning == nil {
+		var ret string
+		return ret
+	}
+	return *o.Warning
+}
+
+// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellParameterWithValue2122) GetWarningOk() (*string, bool) {
+	if o == nil || o.Warning == nil {
+		return nil, false
+	}
+	return o.Warning, true
+}
+
+// HasWarning returns a boolean if a field has been set.
+func (o *BTTableCellParameterWithValue2122) HasWarning() bool {
+	if o != nil && o.Warning != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWarning gets a reference to the given string and assigns it to the Warning field.
+func (o *BTTableCellParameterWithValue2122) SetWarning(v string) {
+	o.Warning = &v
+}
+
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *BTTableCellParameterWithValue2122) GetValue() BTFSValue1888 {
 	if o == nil || o.Value == nil {
@@ -366,6 +399,9 @@ func (o BTTableCellParameterWithValue2122) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameter != nil {
 		toSerialize["parameter"] = o.Parameter
+	}
+	if o.Warning != nil {
+		toSerialize["warning"] = o.Warning
 	}
 	if o.Value != nil {
 		toSerialize["value"] = o.Value

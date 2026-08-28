@@ -50,6 +50,11 @@ func (o *BTBoundaryConditionDisplayData2478) AsBTAssemblyFeatureDisplayData1783(
 	return &BTAssemblyFeatureDisplayData1783{o}
 }
 
+// BTRigidFeatureDisplayData1595AsBTAssemblyFeatureDisplayData1783 is a convenience function that returns BTRigidFeatureDisplayData1595 wrapped in BTAssemblyFeatureDisplayData1783
+func (o *BTRigidFeatureDisplayData1595) AsBTAssemblyFeatureDisplayData1783() *BTAssemblyFeatureDisplayData1783 {
+	return &BTAssemblyFeatureDisplayData1783{o}
+}
+
 // NewBTAssemblyFeatureDisplayData1783 instantiates a new BTAssemblyFeatureDisplayData1783 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -444,6 +449,20 @@ func (dst *BTAssemblyFeatureDisplayData1783) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTAssemblyFeatureDisplayData1783 = nil
 			return fmt.Errorf("failed to unmarshal BTAssemblyFeatureDisplayData1783 as BTMateGroupDisplayData1990: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTRigidFeatureDisplayData-1595'
+	if jsonDict["btType"] == "BTRigidFeatureDisplayData-1595" {
+		// try to unmarshal JSON data into BTRigidFeatureDisplayData1595
+		var qr *BTRigidFeatureDisplayData1595
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTAssemblyFeatureDisplayData1783 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTAssemblyFeatureDisplayData1783 = nil
+			return fmt.Errorf("failed to unmarshal BTAssemblyFeatureDisplayData1783 as BTRigidFeatureDisplayData1595: %s", err.Error())
 		}
 	}
 
