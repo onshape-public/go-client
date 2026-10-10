@@ -20,6 +20,11 @@ type BTTableCellParameter2399 struct {
 	implBTTableCellParameter2399 interface{}
 }
 
+// BTTableCellConfigurationParameter3590AsBTTableCellParameter2399 is a convenience function that returns BTTableCellConfigurationParameter3590 wrapped in BTTableCellParameter2399
+func (o *BTTableCellConfigurationParameter3590) AsBTTableCellParameter2399() *BTTableCellParameter2399 {
+	return &BTTableCellParameter2399{o}
+}
+
 // BTTableCellParameterWithValue2122AsBTTableCellParameter2399 is a convenience function that returns BTTableCellParameterWithValue2122 wrapped in BTTableCellParameter2399
 func (o *BTTableCellParameterWithValue2122) AsBTTableCellParameter2399() *BTTableCellParameter2399 {
 	return &BTTableCellParameter2399{o}
@@ -447,6 +452,56 @@ func (o *BTTableCellParameter2399) SetParameter(v BTMParameter1) {
 	o.GetActualInstance().(getResult).SetParameter(v)
 }
 
+// GetWarning returns the Warning field value if set, zero value otherwise.
+func (o *BTTableCellParameter2399) GetWarning() string {
+	type getResult interface {
+		GetWarning() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetWarning()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTableCellParameter2399) GetWarningOk() (*string, bool) {
+	type getResult interface {
+		GetWarningOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetWarningOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasWarning returns a boolean if a field has been set.
+func (o *BTTableCellParameter2399) HasWarning() bool {
+	type getResult interface {
+		HasWarning() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasWarning()
+	} else {
+		return false
+	}
+}
+
+// SetWarning gets a reference to the given string and assigns it to the Warning field.
+func (o *BTTableCellParameter2399) SetWarning(v string) {
+	type getResult interface {
+		SetWarning(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetWarning(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 	var err error
@@ -455,6 +510,20 @@ func (dst *BTTableCellParameter2399) UnmarshalJSON(data []byte) error {
 	err = newStrictDecoder(data).Decode(&jsonDict)
 	if err != nil {
 		return fmt.Errorf("failed to unmarshal JSON into map for the discriminator lookup")
+	}
+
+	// check if the discriminator value is 'BTTableCellConfigurationParameter-3590'
+	if jsonDict["btType"] == "BTTableCellConfigurationParameter-3590" {
+		// try to unmarshal JSON data into BTTableCellConfigurationParameter3590
+		var qr *BTTableCellConfigurationParameter3590
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTTableCellParameter2399 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTTableCellParameter2399 = nil
+			return fmt.Errorf("failed to unmarshal BTTableCellParameter2399 as BTTableCellConfigurationParameter3590: %s", err.Error())
+		}
 	}
 
 	// check if the discriminator value is 'BTTableCellParameterWithValue-2122'
@@ -560,6 +629,7 @@ type base_BTTableCellParameter2399 struct {
 	Info          *string                   `json:"info,omitempty"`
 	OverrideSpec  *BTParameterSpec6         `json:"overrideSpec,omitempty"`
 	Parameter     *BTMParameter1            `json:"parameter,omitempty"`
+	Warning       *string                   `json:"warning,omitempty"`
 }
 
 // Newbase_BTTableCellParameter2399 instantiates a new base_BTTableCellParameter2399 object
@@ -835,6 +905,38 @@ func (o *base_BTTableCellParameter2399) SetParameter(v BTMParameter1) {
 	o.Parameter = &v
 }
 
+// GetWarning returns the Warning field value if set, zero value otherwise.
+func (o *base_BTTableCellParameter2399) GetWarning() string {
+	if o == nil || o.Warning == nil {
+		var ret string
+		return ret
+	}
+	return *o.Warning
+}
+
+// GetWarningOk returns a tuple with the Warning field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTTableCellParameter2399) GetWarningOk() (*string, bool) {
+	if o == nil || o.Warning == nil {
+		return nil, false
+	}
+	return o.Warning, true
+}
+
+// HasWarning returns a boolean if a field has been set.
+func (o *base_BTTableCellParameter2399) HasWarning() bool {
+	if o != nil && o.Warning != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetWarning gets a reference to the given string and assigns it to the Warning field.
+func (o *base_BTTableCellParameter2399) SetWarning(v string) {
+	o.Warning = &v
+}
+
 func (o base_BTTableCellParameter2399) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTTableCell1114, errBTTableCell1114 := json.Marshal(o.BTTableCell1114)
@@ -868,6 +970,9 @@ func (o base_BTTableCellParameter2399) MarshalJSON() ([]byte, error) {
 	}
 	if o.Parameter != nil {
 		toSerialize["parameter"] = o.Parameter
+	}
+	if o.Warning != nil {
+		toSerialize["warning"] = o.Warning
 	}
 	return json.Marshal(toSerialize)
 }

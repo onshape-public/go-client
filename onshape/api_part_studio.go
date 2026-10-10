@@ -1775,7 +1775,7 @@ func (r ApiExportPartStudioStlRequest) MaxFacetWidth(maxFacetWidth float64) ApiE
 	return r
 }
 
-// Max facet width. This specifies the limit on the size of any side of a tessellation facet.
+// Minimum facet width. This specifies the limit on the size of any side of a tessellation facet.
 func (r ApiExportPartStudioStlRequest) MinFacetWidth(minFacetWidth float64) ApiExportPartStudioStlRequest {
 	r.minFacetWidth = &minFacetWidth
 	return r

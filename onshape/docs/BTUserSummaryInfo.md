@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **IsLight** | Pointer to **bool** |  | [optional] 
 **LastLoginTime** | Pointer to **JSONTime** |  | [optional] 
 **PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
+**ScheduledRemovalDate** | Pointer to **JSONTime** |  | [optional] 
+**ShowOffBoardingNotification** | Pointer to **bool** |  | [optional] 
 **Source** | Pointer to **int32** |  | [optional] 
 
 ## Methods
@@ -310,6 +312,56 @@ SetPersonalMessageAllowed sets PersonalMessageAllowed field to given value.
 `func (o *BTUserSummaryInfo) HasPersonalMessageAllowed() bool`
 
 HasPersonalMessageAllowed returns a boolean if a field has been set.
+
+### GetScheduledRemovalDate
+
+`func (o *BTUserSummaryInfo) GetScheduledRemovalDate() JSONTime`
+
+GetScheduledRemovalDate returns the ScheduledRemovalDate field if non-nil, zero value otherwise.
+
+### GetScheduledRemovalDateOk
+
+`func (o *BTUserSummaryInfo) GetScheduledRemovalDateOk() (*JSONTime, bool)`
+
+GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScheduledRemovalDate
+
+`func (o *BTUserSummaryInfo) SetScheduledRemovalDate(v JSONTime)`
+
+SetScheduledRemovalDate sets ScheduledRemovalDate field to given value.
+
+### HasScheduledRemovalDate
+
+`func (o *BTUserSummaryInfo) HasScheduledRemovalDate() bool`
+
+HasScheduledRemovalDate returns a boolean if a field has been set.
+
+### GetShowOffBoardingNotification
+
+`func (o *BTUserSummaryInfo) GetShowOffBoardingNotification() bool`
+
+GetShowOffBoardingNotification returns the ShowOffBoardingNotification field if non-nil, zero value otherwise.
+
+### GetShowOffBoardingNotificationOk
+
+`func (o *BTUserSummaryInfo) GetShowOffBoardingNotificationOk() (*bool, bool)`
+
+GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowOffBoardingNotification
+
+`func (o *BTUserSummaryInfo) SetShowOffBoardingNotification(v bool)`
+
+SetShowOffBoardingNotification sets ShowOffBoardingNotification field to given value.
+
+### HasShowOffBoardingNotification
+
+`func (o *BTUserSummaryInfo) HasShowOffBoardingNotification() bool`
+
+HasShowOffBoardingNotification returns a boolean if a field has been set.
 
 ### GetSource
 

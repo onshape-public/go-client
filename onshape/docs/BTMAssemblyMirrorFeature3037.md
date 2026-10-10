@@ -5,27 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ArrayParameterFromFeature** | Pointer to [**BTMParameterArray2025**](BTMParameterArray2025.md) |  | [optional] 
-**AuxiliaryTreeFeature** | Pointer to **bool** |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Feature** | Pointer to [**BTMAssemblyFeature887**](BTMAssemblyFeature887.md) |  | [optional] 
-**FeatureFolder** | Pointer to **bool** |  | [optional] 
 **FeatureId** | Pointer to **string** | Unique ID of the feature instance within this Part Studio. | [optional] 
-**FeatureListFieldIndex** | Pointer to **int32** |  | [optional] 
 **FeatureType** | Pointer to **string** | The name of the feature spec that this feature instantiates. | [optional] 
-**FieldIndexForOwnedMateConnectors** | Pointer to **int32** |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **MateConnectorFeature** | Pointer to **bool** |  | [optional] 
-**MateConnectors** | Pointer to [**[]BTMMateConnector66**](BTMMateConnector66.md) |  | [optional] 
 **Name** | Pointer to **string** | User-visible name of the feature. | [optional] 
 **Namespace** | Pointer to **string** | Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of &#x60;\&quot;\&quot;&#x60;. Custom features identify the Feature Studio that contains the definition. | [optional] 
 **NodeId** | Pointer to **string** | ID for the feature node. | [optional] 
-**OccurrenceQueriesFromAllConfigurations** | Pointer to [**[]BTMIndividualQueryWithOccurrenceBase904**](BTMIndividualQueryWithOccurrenceBase904.md) |  | [optional] 
 **ParameterLibraries** | Pointer to [**[]BTMParameter1**](BTMParameter1.md) |  | [optional] 
-**ParametricInstanceFeature** | Pointer to **bool** |  | [optional] 
 **ParentSuppressed** | Pointer to **bool** |  | [optional] 
 **ReturnAfterSubfeatures** | Pointer to **bool** | For internal use only. Should always be &#x60;false&#x60;. | [optional] 
 **SubFeatures** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) | List of subfeatures belonging to the feature. | [optional] 
-**SubFeaturesNotUsedInQuery** | Pointer to [**[]BTMFeature134**](BTMFeature134.md) |  | [optional] 
 **Suppressed** | Pointer to **bool** | If &#x60;true&#x60;, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list. | [optional] 
 **SuppressionConfigured** | Pointer to **bool** | &#x60;true&#x60; if the suppression is configured in the Part Studio. | [optional] 
 **SuppressionState** | Pointer to [**BTMSuppressionState1924**](BTMSuppressionState1924.md) |  | [optional] 
@@ -75,31 +67,6 @@ SetArrayParameterFromFeature sets ArrayParameterFromFeature field to given value
 `func (o *BTMAssemblyMirrorFeature3037) HasArrayParameterFromFeature() bool`
 
 HasArrayParameterFromFeature returns a boolean if a field has been set.
-
-### GetAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) GetAuxiliaryTreeFeature() bool`
-
-GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field if non-nil, zero value otherwise.
-
-### GetAuxiliaryTreeFeatureOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetAuxiliaryTreeFeatureOk() (*bool, bool)`
-
-GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) SetAuxiliaryTreeFeature(v bool)`
-
-SetAuxiliaryTreeFeature sets AuxiliaryTreeFeature field to given value.
-
-### HasAuxiliaryTreeFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) HasAuxiliaryTreeFeature() bool`
-
-HasAuxiliaryTreeFeature returns a boolean if a field has been set.
 
 ### GetBtType
 
@@ -151,31 +118,6 @@ SetFeature sets Feature field to given value.
 
 HasFeature returns a boolean if a field has been set.
 
-### GetFeatureFolder
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFeatureFolder() bool`
-
-GetFeatureFolder returns the FeatureFolder field if non-nil, zero value otherwise.
-
-### GetFeatureFolderOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFeatureFolderOk() (*bool, bool)`
-
-GetFeatureFolderOk returns a tuple with the FeatureFolder field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFeatureFolder
-
-`func (o *BTMAssemblyMirrorFeature3037) SetFeatureFolder(v bool)`
-
-SetFeatureFolder sets FeatureFolder field to given value.
-
-### HasFeatureFolder
-
-`func (o *BTMAssemblyMirrorFeature3037) HasFeatureFolder() bool`
-
-HasFeatureFolder returns a boolean if a field has been set.
-
 ### GetFeatureId
 
 `func (o *BTMAssemblyMirrorFeature3037) GetFeatureId() string`
@@ -201,31 +143,6 @@ SetFeatureId sets FeatureId field to given value.
 
 HasFeatureId returns a boolean if a field has been set.
 
-### GetFeatureListFieldIndex
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFeatureListFieldIndex() int32`
-
-GetFeatureListFieldIndex returns the FeatureListFieldIndex field if non-nil, zero value otherwise.
-
-### GetFeatureListFieldIndexOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFeatureListFieldIndexOk() (*int32, bool)`
-
-GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFeatureListFieldIndex
-
-`func (o *BTMAssemblyMirrorFeature3037) SetFeatureListFieldIndex(v int32)`
-
-SetFeatureListFieldIndex sets FeatureListFieldIndex field to given value.
-
-### HasFeatureListFieldIndex
-
-`func (o *BTMAssemblyMirrorFeature3037) HasFeatureListFieldIndex() bool`
-
-HasFeatureListFieldIndex returns a boolean if a field has been set.
-
 ### GetFeatureType
 
 `func (o *BTMAssemblyMirrorFeature3037) GetFeatureType() string`
@@ -250,31 +167,6 @@ SetFeatureType sets FeatureType field to given value.
 `func (o *BTMAssemblyMirrorFeature3037) HasFeatureType() bool`
 
 HasFeatureType returns a boolean if a field has been set.
-
-### GetFieldIndexForOwnedMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFieldIndexForOwnedMateConnectors() int32`
-
-GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field if non-nil, zero value otherwise.
-
-### GetFieldIndexForOwnedMateConnectorsOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool)`
-
-GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetFieldIndexForOwnedMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) SetFieldIndexForOwnedMateConnectors(v int32)`
-
-SetFieldIndexForOwnedMateConnectors sets FieldIndexForOwnedMateConnectors field to given value.
-
-### HasFieldIndexForOwnedMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) HasFieldIndexForOwnedMateConnectors() bool`
-
-HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 
@@ -325,31 +217,6 @@ SetMateConnectorFeature sets MateConnectorFeature field to given value.
 `func (o *BTMAssemblyMirrorFeature3037) HasMateConnectorFeature() bool`
 
 HasMateConnectorFeature returns a boolean if a field has been set.
-
-### GetMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) GetMateConnectors() []BTMMateConnector66`
-
-GetMateConnectors returns the MateConnectors field if non-nil, zero value otherwise.
-
-### GetMateConnectorsOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetMateConnectorsOk() (*[]BTMMateConnector66, bool)`
-
-GetMateConnectorsOk returns a tuple with the MateConnectors field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) SetMateConnectors(v []BTMMateConnector66)`
-
-SetMateConnectors sets MateConnectors field to given value.
-
-### HasMateConnectors
-
-`func (o *BTMAssemblyMirrorFeature3037) HasMateConnectors() bool`
-
-HasMateConnectors returns a boolean if a field has been set.
 
 ### GetName
 
@@ -426,31 +293,6 @@ SetNodeId sets NodeId field to given value.
 
 HasNodeId returns a boolean if a field has been set.
 
-### GetOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTMAssemblyMirrorFeature3037) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904`
-
-GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field if non-nil, zero value otherwise.
-
-### GetOccurrenceQueriesFromAllConfigurationsOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetOccurrenceQueriesFromAllConfigurationsOk() (*[]BTMIndividualQueryWithOccurrenceBase904, bool)`
-
-GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTMAssemblyMirrorFeature3037) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904)`
-
-SetOccurrenceQueriesFromAllConfigurations sets OccurrenceQueriesFromAllConfigurations field to given value.
-
-### HasOccurrenceQueriesFromAllConfigurations
-
-`func (o *BTMAssemblyMirrorFeature3037) HasOccurrenceQueriesFromAllConfigurations() bool`
-
-HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-
 ### GetParameterLibraries
 
 `func (o *BTMAssemblyMirrorFeature3037) GetParameterLibraries() []BTMParameter1`
@@ -475,31 +317,6 @@ SetParameterLibraries sets ParameterLibraries field to given value.
 `func (o *BTMAssemblyMirrorFeature3037) HasParameterLibraries() bool`
 
 HasParameterLibraries returns a boolean if a field has been set.
-
-### GetParametricInstanceFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) GetParametricInstanceFeature() bool`
-
-GetParametricInstanceFeature returns the ParametricInstanceFeature field if non-nil, zero value otherwise.
-
-### GetParametricInstanceFeatureOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetParametricInstanceFeatureOk() (*bool, bool)`
-
-GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParametricInstanceFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) SetParametricInstanceFeature(v bool)`
-
-SetParametricInstanceFeature sets ParametricInstanceFeature field to given value.
-
-### HasParametricInstanceFeature
-
-`func (o *BTMAssemblyMirrorFeature3037) HasParametricInstanceFeature() bool`
-
-HasParametricInstanceFeature returns a boolean if a field has been set.
 
 ### GetParentSuppressed
 
@@ -575,31 +392,6 @@ SetSubFeatures sets SubFeatures field to given value.
 `func (o *BTMAssemblyMirrorFeature3037) HasSubFeatures() bool`
 
 HasSubFeatures returns a boolean if a field has been set.
-
-### GetSubFeaturesNotUsedInQuery
-
-`func (o *BTMAssemblyMirrorFeature3037) GetSubFeaturesNotUsedInQuery() []BTMFeature134`
-
-GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field if non-nil, zero value otherwise.
-
-### GetSubFeaturesNotUsedInQueryOk
-
-`func (o *BTMAssemblyMirrorFeature3037) GetSubFeaturesNotUsedInQueryOk() (*[]BTMFeature134, bool)`
-
-GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSubFeaturesNotUsedInQuery
-
-`func (o *BTMAssemblyMirrorFeature3037) SetSubFeaturesNotUsedInQuery(v []BTMFeature134)`
-
-SetSubFeaturesNotUsedInQuery sets SubFeaturesNotUsedInQuery field to given value.
-
-### HasSubFeaturesNotUsedInQuery
-
-`func (o *BTMAssemblyMirrorFeature3037) HasSubFeaturesNotUsedInQuery() bool`
-
-HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
 
 ### GetSuppressed
 

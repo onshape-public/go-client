@@ -147,6 +147,56 @@ func (o *BTPartStudioDisplayDataBase2751) SetBtType(v string) {
 	o.GetActualInstance().(getResult).SetBtType(v)
 }
 
+// GetDebugDescription returns the DebugDescription field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayDataBase2751) GetDebugDescription() string {
+	type getResult interface {
+		GetDebugDescription() string
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDebugDescription()
+	} else {
+		var de string
+		return de
+	}
+}
+
+// GetDebugDescriptionOk returns a tuple with the DebugDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayDataBase2751) GetDebugDescriptionOk() (*string, bool) {
+	type getResult interface {
+		GetDebugDescriptionOk() (*string, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetDebugDescriptionOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasDebugDescription returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayDataBase2751) HasDebugDescription() bool {
+	type getResult interface {
+		HasDebugDescription() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasDebugDescription()
+	} else {
+		return false
+	}
+}
+
+// SetDebugDescription gets a reference to the given string and assigns it to the DebugDescription field.
+func (o *BTPartStudioDisplayDataBase2751) SetDebugDescription(v string) {
+	type getResult interface {
+		SetDebugDescription(v string)
+	}
+
+	o.GetActualInstance().(getResult).SetDebugDescription(v)
+}
+
 // GetElementId returns the ElementId field value if set, zero value otherwise.
 func (o *BTPartStudioDisplayDataBase2751) GetElementId() string {
 	type getResult interface {
@@ -854,6 +904,7 @@ type base_BTPartStudioDisplayDataBase2751 struct {
 	AnnotationsForElement *BTAnnotationElementDisplayData894 `json:"annotationsForElement,omitempty"`
 	// Type of JSON object.
 	BtType                                 *string                                       `json:"btType,omitempty"`
+	DebugDescription                       *string                                       `json:"debugDescription,omitempty"`
 	ElementId                              *string                                       `json:"elementId,omitempty"`
 	FromFullElementId                      *BTFullElementId756                           `json:"fromFullElementId,omitempty"`
 	FullElementId                          *BTFullElementId756                           `json:"fullElementId,omitempty"`
@@ -947,6 +998,38 @@ func (o *base_BTPartStudioDisplayDataBase2751) HasBtType() bool {
 // SetBtType gets a reference to the given string and assigns it to the BtType field.
 func (o *base_BTPartStudioDisplayDataBase2751) SetBtType(v string) {
 	o.BtType = &v
+}
+
+// GetDebugDescription returns the DebugDescription field value if set, zero value otherwise.
+func (o *base_BTPartStudioDisplayDataBase2751) GetDebugDescription() string {
+	if o == nil || o.DebugDescription == nil {
+		var ret string
+		return ret
+	}
+	return *o.DebugDescription
+}
+
+// GetDebugDescriptionOk returns a tuple with the DebugDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPartStudioDisplayDataBase2751) GetDebugDescriptionOk() (*string, bool) {
+	if o == nil || o.DebugDescription == nil {
+		return nil, false
+	}
+	return o.DebugDescription, true
+}
+
+// HasDebugDescription returns a boolean if a field has been set.
+func (o *base_BTPartStudioDisplayDataBase2751) HasDebugDescription() bool {
+	if o != nil && o.DebugDescription != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDebugDescription gets a reference to the given string and assigns it to the DebugDescription field.
+func (o *base_BTPartStudioDisplayDataBase2751) SetDebugDescription(v string) {
+	o.DebugDescription = &v
 }
 
 // GetElementId returns the ElementId field value if set, zero value otherwise.
@@ -1340,6 +1423,9 @@ func (o base_BTPartStudioDisplayDataBase2751) MarshalJSON() ([]byte, error) {
 	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
+	}
+	if o.DebugDescription != nil {
+		toSerialize["debugDescription"] = o.DebugDescription
 	}
 	if o.ElementId != nil {
 		toSerialize["elementId"] = o.ElementId

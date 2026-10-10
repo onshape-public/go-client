@@ -29,6 +29,7 @@ const (
 	GBTPDefinitionTypeFileHeader        GBTPDefinitionType = "FILE_HEADER"
 	GBTPDefinitionTypeUndocumentable    GBTPDefinitionType = "UNDOCUMENTABLE"
 	GBTPDefinitionTypeConstLambda       GBTPDefinitionType = "CONST_LAMBDA"
+	GBTPDefinitionTypeOperator          GBTPDefinitionType = "OPERATOR"
 	GBTPDefinitionTypeUnknown           GBTPDefinitionType = "UNKNOWN"
 )
 
@@ -43,6 +44,7 @@ var AllowedGBTPDefinitionTypeEnumValues = []GBTPDefinitionType{
 	"FILE_HEADER",
 	"UNDOCUMENTABLE",
 	"CONST_LAMBDA",
+	"OPERATOR",
 	"UNKNOWN",
 }
 

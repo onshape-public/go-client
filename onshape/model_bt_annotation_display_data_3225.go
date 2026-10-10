@@ -267,6 +267,56 @@ func (o *BTAnnotationDisplayData3225) SetAnnotationPlane(v BTCoordinateSystem387
 	o.GetActualInstance().(getResult).SetAnnotationPlane(v)
 }
 
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetAnnotationType() GBTAnnotationType {
+	type getResult interface {
+		GetAnnotationType() GBTAnnotationType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationType()
+	} else {
+		var de GBTAnnotationType
+		return de
+	}
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetAnnotationTypeOk() (*GBTAnnotationType, bool) {
+	type getResult interface {
+		GetAnnotationTypeOk() (*GBTAnnotationType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAnnotationTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasAnnotationType() bool {
+	type getResult interface {
+		HasAnnotationType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAnnotationType()
+	} else {
+		return false
+	}
+}
+
+// SetAnnotationType gets a reference to the given GBTAnnotationType and assigns it to the AnnotationType field.
+func (o *BTAnnotationDisplayData3225) SetAnnotationType(v GBTAnnotationType) {
+	type getResult interface {
+		SetAnnotationType(v GBTAnnotationType)
+	}
+
+	o.GetActualInstance().(getResult).SetAnnotationType(v)
+}
+
 // GetAttachmentLocation returns the AttachmentLocation field value if set, zero value otherwise.
 func (o *BTAnnotationDisplayData3225) GetAttachmentLocation() GBTAnnotationAttachmentLocation {
 	type getResult interface {
@@ -715,6 +765,56 @@ func (o *BTAnnotationDisplayData3225) SetIsDerived(v bool) {
 	}
 
 	o.GetActualInstance().(getResult).SetIsDerived(v)
+}
+
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *BTAnnotationDisplayData3225) GetIsPlaneReferenceMissing() bool {
+	type getResult interface {
+		GetIsPlaneReferenceMissing() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsPlaneReferenceMissing()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationDisplayData3225) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	type getResult interface {
+		GetIsPlaneReferenceMissingOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetIsPlaneReferenceMissingOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *BTAnnotationDisplayData3225) HasIsPlaneReferenceMissing() bool {
+	type getResult interface {
+		HasIsPlaneReferenceMissing() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasIsPlaneReferenceMissing()
+	} else {
+		return false
+	}
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *BTAnnotationDisplayData3225) SetIsPlaneReferenceMissing(v bool) {
+	type getResult interface {
+		SetIsPlaneReferenceMissing(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetIsPlaneReferenceMissing(v)
 }
 
 // GetMainAnnotationId returns the MainAnnotationId field value if set, zero value otherwise.
@@ -1181,22 +1281,24 @@ type base_BTAnnotationDisplayData3225 struct {
 	AllReferencesPopulated *bool                            `json:"allReferencesPopulated,omitempty"`
 	AnnotationId           *string                          `json:"annotationId,omitempty"`
 	AnnotationPlane        *BTCoordinateSystem387           `json:"annotationPlane,omitempty"`
+	AnnotationType         *GBTAnnotationType               `json:"annotationType,omitempty"`
 	AttachmentLocation     *GBTAnnotationAttachmentLocation `json:"attachmentLocation,omitempty"`
 	BasePlane              *BTCoordinateSystem387           `json:"basePlane,omitempty"`
 	// Type of JSON object.
-	BtType                 *string          `json:"btType,omitempty"`
-	CharacteristicId       *string          `json:"characteristicId,omitempty"`
-	DeterministicId        *string          `json:"deterministicId,omitempty"`
-	DxdySegments           []BTVector2d1812 `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane   *bool            `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion             *bool            `json:"isDeletion,omitempty"`
-	IsDerived              *bool            `json:"isDerived,omitempty"`
-	MainAnnotationId       *string          `json:"mainAnnotationId,omitempty"`
-	MainConstraintId       *string          `json:"mainConstraintId,omitempty"`
-	MainFeatureId          *string          `json:"mainFeatureId,omitempty"`
-	MainParameterId        *string          `json:"mainParameterId,omitempty"`
-	MainPartId             *string          `json:"mainPartId,omitempty"`
-	ParentCharacteristicId *string          `json:"parentCharacteristicId,omitempty"`
+	BtType                  *string          `json:"btType,omitempty"`
+	CharacteristicId        *string          `json:"characteristicId,omitempty"`
+	DeterministicId         *string          `json:"deterministicId,omitempty"`
+	DxdySegments            []BTVector2d1812 `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane    *bool            `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion              *bool            `json:"isDeletion,omitempty"`
+	IsDerived               *bool            `json:"isDerived,omitempty"`
+	IsPlaneReferenceMissing *bool            `json:"isPlaneReferenceMissing,omitempty"`
+	MainAnnotationId        *string          `json:"mainAnnotationId,omitempty"`
+	MainConstraintId        *string          `json:"mainConstraintId,omitempty"`
+	MainFeatureId           *string          `json:"mainFeatureId,omitempty"`
+	MainParameterId         *string          `json:"mainParameterId,omitempty"`
+	MainPartId              *string          `json:"mainPartId,omitempty"`
+	ParentCharacteristicId  *string          `json:"parentCharacteristicId,omitempty"`
 }
 
 // Newbase_BTAnnotationDisplayData3225 instantiates a new base_BTAnnotationDisplayData3225 object
@@ -1342,6 +1444,38 @@ func (o *base_BTAnnotationDisplayData3225) HasAnnotationPlane() bool {
 // SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
 func (o *base_BTAnnotationDisplayData3225) SetAnnotationPlane(v BTCoordinateSystem387) {
 	o.AnnotationPlane = &v
+}
+
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetAnnotationType() GBTAnnotationType {
+	if o == nil || o.AnnotationType == nil {
+		var ret GBTAnnotationType
+		return ret
+	}
+	return *o.AnnotationType
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetAnnotationTypeOk() (*GBTAnnotationType, bool) {
+	if o == nil || o.AnnotationType == nil {
+		return nil, false
+	}
+	return o.AnnotationType, true
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasAnnotationType() bool {
+	if o != nil && o.AnnotationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationType gets a reference to the given GBTAnnotationType and assigns it to the AnnotationType field.
+func (o *base_BTAnnotationDisplayData3225) SetAnnotationType(v GBTAnnotationType) {
+	o.AnnotationType = &v
 }
 
 // GetAttachmentLocation returns the AttachmentLocation field value if set, zero value otherwise.
@@ -1632,6 +1766,38 @@ func (o *base_BTAnnotationDisplayData3225) SetIsDerived(v bool) {
 	o.IsDerived = &v
 }
 
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *base_BTAnnotationDisplayData3225) GetIsPlaneReferenceMissing() bool {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPlaneReferenceMissing
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTAnnotationDisplayData3225) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		return nil, false
+	}
+	return o.IsPlaneReferenceMissing, true
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *base_BTAnnotationDisplayData3225) HasIsPlaneReferenceMissing() bool {
+	if o != nil && o.IsPlaneReferenceMissing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *base_BTAnnotationDisplayData3225) SetIsPlaneReferenceMissing(v bool) {
+	o.IsPlaneReferenceMissing = &v
+}
+
 // GetMainAnnotationId returns the MainAnnotationId field value if set, zero value otherwise.
 func (o *base_BTAnnotationDisplayData3225) GetMainAnnotationId() string {
 	if o == nil || o.MainAnnotationId == nil {
@@ -1838,6 +2004,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
+	if o.AnnotationType != nil {
+		toSerialize["annotationType"] = o.AnnotationType
+	}
 	if o.AttachmentLocation != nil {
 		toSerialize["attachmentLocation"] = o.AttachmentLocation
 	}
@@ -1864,6 +2033,9 @@ func (o base_BTAnnotationDisplayData3225) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDerived != nil {
 		toSerialize["isDerived"] = o.IsDerived
+	}
+	if o.IsPlaneReferenceMissing != nil {
+		toSerialize["isPlaneReferenceMissing"] = o.IsPlaneReferenceMissing
 	}
 	if o.MainAnnotationId != nil {
 		toSerialize["mainAnnotationId"] = o.MainAnnotationId

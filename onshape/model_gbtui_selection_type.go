@@ -43,6 +43,7 @@ const (
 	GBTUiSelectionTypeAnnotation            GBTUiSelectionType = "ANNOTATION"
 	GBTUiSelectionTypeDimension             GBTUiSelectionType = "DIMENSION"
 	GBTUiSelectionTypeQueryVariable         GBTUiSelectionType = "QUERY_VARIABLE"
+	GBTUiSelectionTypeCenterOfMass          GBTUiSelectionType = "CENTER_OF_MASS"
 	GBTUiSelectionTypeUnknown               GBTUiSelectionType = "UNKNOWN"
 )
 
@@ -71,6 +72,7 @@ var AllowedGBTUiSelectionTypeEnumValues = []GBTUiSelectionType{
 	"ANNOTATION",
 	"DIMENSION",
 	"QUERY_VARIABLE",
+	"CENTER_OF_MASS",
 	"UNKNOWN",
 }
 

@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **Permission** | Pointer to [**BTOldPermission**](BTOldPermission.md) |  | [optional] 
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
+**PublicLinkable** | Pointer to **bool** |  | [optional] 
 **PublishedVersionId** | Pointer to **string** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
 **Sequence** | Pointer to **string** |  | [optional] 
@@ -578,6 +579,31 @@ SetPublic sets Public field to given value.
 `func (o *BTGlobalTreeNodeSummaryInfo) HasPublic() bool`
 
 HasPublic returns a boolean if a field has been set.
+
+### GetPublicLinkable
+
+`func (o *BTGlobalTreeNodeSummaryInfo) GetPublicLinkable() bool`
+
+GetPublicLinkable returns the PublicLinkable field if non-nil, zero value otherwise.
+
+### GetPublicLinkableOk
+
+`func (o *BTGlobalTreeNodeSummaryInfo) GetPublicLinkableOk() (*bool, bool)`
+
+GetPublicLinkableOk returns a tuple with the PublicLinkable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicLinkable
+
+`func (o *BTGlobalTreeNodeSummaryInfo) SetPublicLinkable(v bool)`
+
+SetPublicLinkable sets PublicLinkable field to given value.
+
+### HasPublicLinkable
+
+`func (o *BTGlobalTreeNodeSummaryInfo) HasPublicLinkable() bool`
+
+HasPublicLinkable returns a boolean if a field has been set.
 
 ### GetPublishedVersionId
 

@@ -18,6 +18,7 @@ import (
 type BTCompanyInfo struct {
 	Address           *BTAddressInfo `json:"address,omitempty"`
 	Admin             *bool          `json:"admin,omitempty"`
+	AwsCmkKmsArn      *string        `json:"awsCmkKmsArn,omitempty"`
 	Description       *string        `json:"description,omitempty"`
 	DomainPrefix      *string        `json:"domainPrefix,omitempty"`
 	EnterpriseBaseUrl *string        `json:"enterpriseBaseUrl,omitempty"`
@@ -118,6 +119,38 @@ func (o *BTCompanyInfo) HasAdmin() bool {
 // SetAdmin gets a reference to the given bool and assigns it to the Admin field.
 func (o *BTCompanyInfo) SetAdmin(v bool) {
 	o.Admin = &v
+}
+
+// GetAwsCmkKmsArn returns the AwsCmkKmsArn field value if set, zero value otherwise.
+func (o *BTCompanyInfo) GetAwsCmkKmsArn() string {
+	if o == nil || o.AwsCmkKmsArn == nil {
+		var ret string
+		return ret
+	}
+	return *o.AwsCmkKmsArn
+}
+
+// GetAwsCmkKmsArnOk returns a tuple with the AwsCmkKmsArn field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyInfo) GetAwsCmkKmsArnOk() (*string, bool) {
+	if o == nil || o.AwsCmkKmsArn == nil {
+		return nil, false
+	}
+	return o.AwsCmkKmsArn, true
+}
+
+// HasAwsCmkKmsArn returns a boolean if a field has been set.
+func (o *BTCompanyInfo) HasAwsCmkKmsArn() bool {
+	if o != nil && o.AwsCmkKmsArn != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAwsCmkKmsArn gets a reference to the given string and assigns it to the AwsCmkKmsArn field.
+func (o *BTCompanyInfo) SetAwsCmkKmsArn(v string) {
+	o.AwsCmkKmsArn = &v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -607,6 +640,9 @@ func (o BTCompanyInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Admin != nil {
 		toSerialize["admin"] = o.Admin
+	}
+	if o.AwsCmkKmsArn != nil {
+		toSerialize["awsCmkKmsArn"] = o.AwsCmkKmsArn
 	}
 	if o.Description != nil {
 		toSerialize["description"] = o.Description

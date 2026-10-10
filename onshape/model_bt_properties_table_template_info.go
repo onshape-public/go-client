@@ -20,10 +20,11 @@ type BTPropertiesTableTemplateInfo struct {
 	// URI to fetch complete information of the resource.
 	Href *string `json:"href,omitempty"`
 	// Id of the resource.
-	Id         *string `json:"id,omitempty"`
-	IsActive   *bool   `json:"isActive,omitempty"`
-	IsAllCaps  *bool   `json:"isAllCaps,omitempty"`
-	IsIndented *bool   `json:"isIndented,omitempty"`
+	Id                           *string `json:"id,omitempty"`
+	IsActive                     *bool   `json:"isActive,omitempty"`
+	IsAllCaps                    *bool   `json:"isAllCaps,omitempty"`
+	IsIndented                   *bool   `json:"isIndented,omitempty"`
+	IsShowingTopLevelAssemblyRow *bool   `json:"isShowingTopLevelAssemblyRow,omitempty"`
 	// Name of the resource.
 	Name            *string                        `json:"name,omitempty"`
 	PropertyColumns []BTSimplePropertyInfo         `json:"propertyColumns,omitempty"`
@@ -242,6 +243,38 @@ func (o *BTPropertiesTableTemplateInfo) SetIsIndented(v bool) {
 	o.IsIndented = &v
 }
 
+// GetIsShowingTopLevelAssemblyRow returns the IsShowingTopLevelAssemblyRow field value if set, zero value otherwise.
+func (o *BTPropertiesTableTemplateInfo) GetIsShowingTopLevelAssemblyRow() bool {
+	if o == nil || o.IsShowingTopLevelAssemblyRow == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsShowingTopLevelAssemblyRow
+}
+
+// GetIsShowingTopLevelAssemblyRowOk returns a tuple with the IsShowingTopLevelAssemblyRow field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPropertiesTableTemplateInfo) GetIsShowingTopLevelAssemblyRowOk() (*bool, bool) {
+	if o == nil || o.IsShowingTopLevelAssemblyRow == nil {
+		return nil, false
+	}
+	return o.IsShowingTopLevelAssemblyRow, true
+}
+
+// HasIsShowingTopLevelAssemblyRow returns a boolean if a field has been set.
+func (o *BTPropertiesTableTemplateInfo) HasIsShowingTopLevelAssemblyRow() bool {
+	if o != nil && o.IsShowingTopLevelAssemblyRow != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsShowingTopLevelAssemblyRow gets a reference to the given bool and assigns it to the IsShowingTopLevelAssemblyRow field.
+func (o *BTPropertiesTableTemplateInfo) SetIsShowingTopLevelAssemblyRow(v bool) {
+	o.IsShowingTopLevelAssemblyRow = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *BTPropertiesTableTemplateInfo) GetName() string {
 	if o == nil || o.Name == nil {
@@ -421,6 +454,9 @@ func (o BTPropertiesTableTemplateInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsIndented != nil {
 		toSerialize["isIndented"] = o.IsIndented
+	}
+	if o.IsShowingTopLevelAssemblyRow != nil {
+		toSerialize["isShowingTopLevelAssemblyRow"] = o.IsShowingTopLevelAssemblyRow
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

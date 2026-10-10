@@ -17,39 +17,40 @@ import (
 // BTRadialDimensionDisplayData348 struct for BTRadialDimensionDisplayData348
 type BTRadialDimensionDisplayData348 struct {
 	BTDimensionDisplayData323
-	AllReferences          []string               `json:"allReferences,omitempty"`
-	AllReferencesPopulated *bool                  `json:"allReferencesPopulated,omitempty"`
-	BtType                 *string                `json:"btType,omitempty"`
-	CharacteristicId       *string                `json:"characteristicId,omitempty"`
-	CoordinateSystem       *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
-	FeatureId              *string                `json:"featureId,omitempty"`
-	FitClass               *string                `json:"fitClass,omitempty"`
-	HasMaximumLimit_       *bool                  `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_       *bool                  `json:"hasMinimumLimit,omitempty"`
-	Id                     *string                `json:"id,omitempty"`
-	IsAnnotationDimension  *bool                  `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat   *bool                  `json:"isAssociatedWithFlat,omitempty"`
-	IsDerived              *bool                  `json:"isDerived,omitempty"`
-	IsDriven               *bool                  `json:"isDriven,omitempty"`
-	IsOverDefined          *bool                  `json:"isOverDefined,omitempty"`
-	LowerTolerance         *float64               `json:"lowerTolerance,omitempty"`
-	MaximumLimit           *float64               `json:"maximumLimit,omitempty"`
-	MinimumLimit           *float64               `json:"minimumLimit,omitempty"`
-	ParameterId            *string                `json:"parameterId,omitempty"`
-	PartId                 *string                `json:"partId,omitempty"`
-	PlaneMatrix            *BTBSMatrix386         `json:"planeMatrix,omitempty"`
-	Precision              *GBTTolerancePrecision `json:"precision,omitempty"`
-	ToleranceType          *GBTToleranceType      `json:"toleranceType,omitempty"`
-	UpperTolerance         *float64               `json:"upperTolerance,omitempty"`
-	Value                  *float64               `json:"value,omitempty"`
-	PositionR              *float64               `json:"positionR,omitempty"`
-	PositionT              *float64               `json:"positionT,omitempty"`
-	RadiusDisplay          *GBTRadiusDisplay      `json:"radiusDisplay,omitempty"`
-	RealDiameter           *bool                  `json:"realDiameter,omitempty"`
-	WitnessEndPoint0r      *float64               `json:"witnessEndPoint0r,omitempty"`
-	WitnessEndPoint0t      *float64               `json:"witnessEndPoint0t,omitempty"`
-	WitnessEndPoint1r      *float64               `json:"witnessEndPoint1r,omitempty"`
-	WitnessEndPoint1t      *float64               `json:"witnessEndPoint1t,omitempty"`
+	AllReferences           []string               `json:"allReferences,omitempty"`
+	AllReferencesPopulated  *bool                  `json:"allReferencesPopulated,omitempty"`
+	BtType                  *string                `json:"btType,omitempty"`
+	CharacteristicId        *string                `json:"characteristicId,omitempty"`
+	CoordinateSystem        *BTMatrix3x3340        `json:"coordinateSystem,omitempty"`
+	FeatureId               *string                `json:"featureId,omitempty"`
+	FitClass                *string                `json:"fitClass,omitempty"`
+	HasMaximumLimit_        *bool                  `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_        *bool                  `json:"hasMinimumLimit,omitempty"`
+	Id                      *string                `json:"id,omitempty"`
+	IsAnnotationDimension   *bool                  `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat    *bool                  `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived               *bool                  `json:"isDerived,omitempty"`
+	IsDriven                *bool                  `json:"isDriven,omitempty"`
+	IsOverDefined           *bool                  `json:"isOverDefined,omitempty"`
+	IsPlaneReferenceMissing *bool                  `json:"isPlaneReferenceMissing,omitempty"`
+	LowerTolerance          *float64               `json:"lowerTolerance,omitempty"`
+	MaximumLimit            *float64               `json:"maximumLimit,omitempty"`
+	MinimumLimit            *float64               `json:"minimumLimit,omitempty"`
+	ParameterId             *string                `json:"parameterId,omitempty"`
+	PartId                  *string                `json:"partId,omitempty"`
+	PlaneMatrix             *BTBSMatrix386         `json:"planeMatrix,omitempty"`
+	Precision               *GBTTolerancePrecision `json:"precision,omitempty"`
+	ToleranceType           *GBTToleranceType      `json:"toleranceType,omitempty"`
+	UpperTolerance          *float64               `json:"upperTolerance,omitempty"`
+	Value                   *float64               `json:"value,omitempty"`
+	PositionR               *float64               `json:"positionR,omitempty"`
+	PositionT               *float64               `json:"positionT,omitempty"`
+	RadiusDisplay           *GBTRadiusDisplay      `json:"radiusDisplay,omitempty"`
+	RealDiameter            *bool                  `json:"realDiameter,omitempty"`
+	WitnessEndPoint0r       *float64               `json:"witnessEndPoint0r,omitempty"`
+	WitnessEndPoint0t       *float64               `json:"witnessEndPoint0t,omitempty"`
+	WitnessEndPoint1r       *float64               `json:"witnessEndPoint1r,omitempty"`
+	WitnessEndPoint1t       *float64               `json:"witnessEndPoint1t,omitempty"`
 }
 
 // NewBTRadialDimensionDisplayData348 instantiates a new BTRadialDimensionDisplayData348 object
@@ -547,6 +548,38 @@ func (o *BTRadialDimensionDisplayData348) HasIsOverDefined() bool {
 // SetIsOverDefined gets a reference to the given bool and assigns it to the IsOverDefined field.
 func (o *BTRadialDimensionDisplayData348) SetIsOverDefined(v bool) {
 	o.IsOverDefined = &v
+}
+
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *BTRadialDimensionDisplayData348) GetIsPlaneReferenceMissing() bool {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPlaneReferenceMissing
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDimensionDisplayData348) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		return nil, false
+	}
+	return o.IsPlaneReferenceMissing, true
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *BTRadialDimensionDisplayData348) HasIsPlaneReferenceMissing() bool {
+	if o != nil && o.IsPlaneReferenceMissing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *BTRadialDimensionDisplayData348) SetIsPlaneReferenceMissing(v bool) {
+	o.IsPlaneReferenceMissing = &v
 }
 
 // GetLowerTolerance returns the LowerTolerance field value if set, zero value otherwise.
@@ -1179,6 +1212,9 @@ func (o BTRadialDimensionDisplayData348) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsOverDefined != nil {
 		toSerialize["isOverDefined"] = o.IsOverDefined
+	}
+	if o.IsPlaneReferenceMissing != nil {
+		toSerialize["isPlaneReferenceMissing"] = o.IsPlaneReferenceMissing
 	}
 	if o.LowerTolerance != nil {
 		toSerialize["lowerTolerance"] = o.LowerTolerance

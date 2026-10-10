@@ -17,14 +17,18 @@ import (
 // BTPLMMessageBody Webhook notification payload for all PLM related notifications.
 type BTPLMMessageBody struct {
 	AppElementSessionId *string `json:"appElementSessionId,omitempty"`
+	// Whether PLM capabilities were changed.
+	CapabilitiesChanged *bool   `json:"capabilitiesChanged,omitempty"`
 	Data                *string `json:"data,omitempty"`
 	// Background PLM job's document ID.
 	DocumentId *string `json:"documentId,omitempty"`
 	Event      *string `json:"event,omitempty"`
 	// ID of the background PLM job that was created.
-	JobId     *string  `json:"jobId,omitempty"`
-	JobType   *JobType `json:"jobType,omitempty"`
-	MessageId *string  `json:"messageId,omitempty"`
+	JobId   *string  `json:"jobId,omitempty"`
+	JobType *JobType `json:"jobType,omitempty"`
+	// Whether PLM mappings were refreshed.
+	MappingsRefreshed *bool   `json:"mappingsRefreshed,omitempty"`
+	MessageId         *string `json:"messageId,omitempty"`
 	// Whether PLM integration was disabled.
 	SettingsDisabled *bool `json:"settingsDisabled,omitempty"`
 	// Whether PLM integration settings parameters were modified.
@@ -80,6 +84,38 @@ func (o *BTPLMMessageBody) HasAppElementSessionId() bool {
 // SetAppElementSessionId gets a reference to the given string and assigns it to the AppElementSessionId field.
 func (o *BTPLMMessageBody) SetAppElementSessionId(v string) {
 	o.AppElementSessionId = &v
+}
+
+// GetCapabilitiesChanged returns the CapabilitiesChanged field value if set, zero value otherwise.
+func (o *BTPLMMessageBody) GetCapabilitiesChanged() bool {
+	if o == nil || o.CapabilitiesChanged == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CapabilitiesChanged
+}
+
+// GetCapabilitiesChangedOk returns a tuple with the CapabilitiesChanged field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLMMessageBody) GetCapabilitiesChangedOk() (*bool, bool) {
+	if o == nil || o.CapabilitiesChanged == nil {
+		return nil, false
+	}
+	return o.CapabilitiesChanged, true
+}
+
+// HasCapabilitiesChanged returns a boolean if a field has been set.
+func (o *BTPLMMessageBody) HasCapabilitiesChanged() bool {
+	if o != nil && o.CapabilitiesChanged != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCapabilitiesChanged gets a reference to the given bool and assigns it to the CapabilitiesChanged field.
+func (o *BTPLMMessageBody) SetCapabilitiesChanged(v bool) {
+	o.CapabilitiesChanged = &v
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
@@ -240,6 +276,38 @@ func (o *BTPLMMessageBody) HasJobType() bool {
 // SetJobType gets a reference to the given JobType and assigns it to the JobType field.
 func (o *BTPLMMessageBody) SetJobType(v JobType) {
 	o.JobType = &v
+}
+
+// GetMappingsRefreshed returns the MappingsRefreshed field value if set, zero value otherwise.
+func (o *BTPLMMessageBody) GetMappingsRefreshed() bool {
+	if o == nil || o.MappingsRefreshed == nil {
+		var ret bool
+		return ret
+	}
+	return *o.MappingsRefreshed
+}
+
+// GetMappingsRefreshedOk returns a tuple with the MappingsRefreshed field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPLMMessageBody) GetMappingsRefreshedOk() (*bool, bool) {
+	if o == nil || o.MappingsRefreshed == nil {
+		return nil, false
+	}
+	return o.MappingsRefreshed, true
+}
+
+// HasMappingsRefreshed returns a boolean if a field has been set.
+func (o *BTPLMMessageBody) HasMappingsRefreshed() bool {
+	if o != nil && o.MappingsRefreshed != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMappingsRefreshed gets a reference to the given bool and assigns it to the MappingsRefreshed field.
+func (o *BTPLMMessageBody) SetMappingsRefreshed(v bool) {
+	o.MappingsRefreshed = &v
 }
 
 // GetMessageId returns the MessageId field value if set, zero value otherwise.
@@ -407,6 +475,9 @@ func (o BTPLMMessageBody) MarshalJSON() ([]byte, error) {
 	if o.AppElementSessionId != nil {
 		toSerialize["appElementSessionId"] = o.AppElementSessionId
 	}
+	if o.CapabilitiesChanged != nil {
+		toSerialize["capabilitiesChanged"] = o.CapabilitiesChanged
+	}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
@@ -421,6 +492,9 @@ func (o BTPLMMessageBody) MarshalJSON() ([]byte, error) {
 	}
 	if o.JobType != nil {
 		toSerialize["jobType"] = o.JobType
+	}
+	if o.MappingsRefreshed != nil {
+		toSerialize["mappingsRefreshed"] = o.MappingsRefreshed
 	}
 	if o.MessageId != nil {
 		toSerialize["messageId"] = o.MessageId
