@@ -1204,6 +1204,106 @@ func (o *BTUserSummaryInfo) SetPersonalMessageAllowed(v bool) {
 	o.GetActualInstance().(getResult).SetPersonalMessageAllowed(v)
 }
 
+// GetScheduledRemovalDate returns the ScheduledRemovalDate field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetScheduledRemovalDate() JSONTime {
+	type getResult interface {
+		GetScheduledRemovalDate() JSONTime
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetScheduledRemovalDate()
+	} else {
+		var de JSONTime
+		return de
+	}
+}
+
+// GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetScheduledRemovalDateOk() (*JSONTime, bool) {
+	type getResult interface {
+		GetScheduledRemovalDateOk() (*JSONTime, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetScheduledRemovalDateOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasScheduledRemovalDate returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasScheduledRemovalDate() bool {
+	type getResult interface {
+		HasScheduledRemovalDate() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasScheduledRemovalDate()
+	} else {
+		return false
+	}
+}
+
+// SetScheduledRemovalDate gets a reference to the given JSONTime and assigns it to the ScheduledRemovalDate field.
+func (o *BTUserSummaryInfo) SetScheduledRemovalDate(v JSONTime) {
+	type getResult interface {
+		SetScheduledRemovalDate(v JSONTime)
+	}
+
+	o.GetActualInstance().(getResult).SetScheduledRemovalDate(v)
+}
+
+// GetShowOffBoardingNotification returns the ShowOffBoardingNotification field value if set, zero value otherwise.
+func (o *BTUserSummaryInfo) GetShowOffBoardingNotification() bool {
+	type getResult interface {
+		GetShowOffBoardingNotification() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetShowOffBoardingNotification()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSummaryInfo) GetShowOffBoardingNotificationOk() (*bool, bool) {
+	type getResult interface {
+		GetShowOffBoardingNotificationOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetShowOffBoardingNotificationOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasShowOffBoardingNotification returns a boolean if a field has been set.
+func (o *BTUserSummaryInfo) HasShowOffBoardingNotification() bool {
+	type getResult interface {
+		HasShowOffBoardingNotification() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasShowOffBoardingNotification()
+	} else {
+		return false
+	}
+}
+
+// SetShowOffBoardingNotification gets a reference to the given bool and assigns it to the ShowOffBoardingNotification field.
+func (o *BTUserSummaryInfo) SetShowOffBoardingNotification(v bool) {
+	type getResult interface {
+		SetShowOffBoardingNotification(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetShowOffBoardingNotification(v)
+}
+
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *BTUserSummaryInfo) GetSource() int32 {
 	type getResult interface {
@@ -1422,26 +1522,28 @@ type base_BTUserSummaryInfo struct {
 	// Name of the resource.
 	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                   *string               `json:"viewRef,omitempty"`
-	Image                     *string               `json:"image,omitempty"`
-	IsOnshapeSupport          *bool                 `json:"isOnshapeSupport,omitempty"`
-	State                     *int32                `json:"state,omitempty"`
-	DocumentationName         *string               `json:"documentationName,omitempty"`
-	Email                     *string               `json:"email,omitempty"`
-	FirstName                 *string               `json:"firstName,omitempty"`
-	LastName                  *string               `json:"lastName,omitempty"`
-	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
-	CompanyUserState          *int32                `json:"companyUserState,omitempty"`
-	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
-	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
-	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
-	InvitationState           *int32                `json:"invitationState,omitempty"`
-	IsExternal                *bool                 `json:"isExternal,omitempty"`
-	IsGuest                   *bool                 `json:"isGuest,omitempty"`
-	IsLight                   *bool                 `json:"isLight,omitempty"`
-	LastLoginTime             *JSONTime             `json:"lastLoginTime,omitempty"`
-	PersonalMessageAllowed    *bool                 `json:"personalMessageAllowed,omitempty"`
-	Source                    *int32                `json:"source,omitempty"`
+	ViewRef                     *string               `json:"viewRef,omitempty"`
+	Image                       *string               `json:"image,omitempty"`
+	IsOnshapeSupport            *bool                 `json:"isOnshapeSupport,omitempty"`
+	State                       *int32                `json:"state,omitempty"`
+	DocumentationName           *string               `json:"documentationName,omitempty"`
+	Email                       *string               `json:"email,omitempty"`
+	FirstName                   *string               `json:"firstName,omitempty"`
+	LastName                    *string               `json:"lastName,omitempty"`
+	Company                     *BTCompanySummaryInfo `json:"company,omitempty"`
+	CompanyUserState            *int32                `json:"companyUserState,omitempty"`
+	ConfirmationRequested       *bool                 `json:"confirmationRequested,omitempty"`
+	DocumentationNameOverride   *string               `json:"documentationNameOverride,omitempty"`
+	GlobalPermissions           *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
+	InvitationState             *int32                `json:"invitationState,omitempty"`
+	IsExternal                  *bool                 `json:"isExternal,omitempty"`
+	IsGuest                     *bool                 `json:"isGuest,omitempty"`
+	IsLight                     *bool                 `json:"isLight,omitempty"`
+	LastLoginTime               *JSONTime             `json:"lastLoginTime,omitempty"`
+	PersonalMessageAllowed      *bool                 `json:"personalMessageAllowed,omitempty"`
+	ScheduledRemovalDate        *JSONTime             `json:"scheduledRemovalDate,omitempty"`
+	ShowOffBoardingNotification *bool                 `json:"showOffBoardingNotification,omitempty"`
+	Source                      *int32                `json:"source,omitempty"`
 }
 
 // Newbase_BTUserSummaryInfo instantiates a new base_BTUserSummaryInfo object
@@ -2190,6 +2292,70 @@ func (o *base_BTUserSummaryInfo) SetPersonalMessageAllowed(v bool) {
 	o.PersonalMessageAllowed = &v
 }
 
+// GetScheduledRemovalDate returns the ScheduledRemovalDate field value if set, zero value otherwise.
+func (o *base_BTUserSummaryInfo) GetScheduledRemovalDate() JSONTime {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ScheduledRemovalDate
+}
+
+// GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetScheduledRemovalDateOk() (*JSONTime, bool) {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		return nil, false
+	}
+	return o.ScheduledRemovalDate, true
+}
+
+// HasScheduledRemovalDate returns a boolean if a field has been set.
+func (o *base_BTUserSummaryInfo) HasScheduledRemovalDate() bool {
+	if o != nil && o.ScheduledRemovalDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheduledRemovalDate gets a reference to the given JSONTime and assigns it to the ScheduledRemovalDate field.
+func (o *base_BTUserSummaryInfo) SetScheduledRemovalDate(v JSONTime) {
+	o.ScheduledRemovalDate = &v
+}
+
+// GetShowOffBoardingNotification returns the ShowOffBoardingNotification field value if set, zero value otherwise.
+func (o *base_BTUserSummaryInfo) GetShowOffBoardingNotification() bool {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowOffBoardingNotification
+}
+
+// GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTUserSummaryInfo) GetShowOffBoardingNotificationOk() (*bool, bool) {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		return nil, false
+	}
+	return o.ShowOffBoardingNotification, true
+}
+
+// HasShowOffBoardingNotification returns a boolean if a field has been set.
+func (o *base_BTUserSummaryInfo) HasShowOffBoardingNotification() bool {
+	if o != nil && o.ShowOffBoardingNotification != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowOffBoardingNotification gets a reference to the given bool and assigns it to the ShowOffBoardingNotification field.
+func (o *base_BTUserSummaryInfo) SetShowOffBoardingNotification(v bool) {
+	o.ShowOffBoardingNotification = &v
+}
+
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *base_BTUserSummaryInfo) GetSource() int32 {
 	if o == nil || o.Source == nil {
@@ -2292,6 +2458,12 @@ func (o base_BTUserSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PersonalMessageAllowed != nil {
 		toSerialize["personalMessageAllowed"] = o.PersonalMessageAllowed
+	}
+	if o.ScheduledRemovalDate != nil {
+		toSerialize["scheduledRemovalDate"] = o.ScheduledRemovalDate
+	}
+	if o.ShowOffBoardingNotification != nil {
+		toSerialize["showOffBoardingNotification"] = o.ShowOffBoardingNotification
 	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source

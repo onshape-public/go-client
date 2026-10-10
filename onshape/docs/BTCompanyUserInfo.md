@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **MakePersonalCopies** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ScheduledRemovalDate** | Pointer to **JSONTime** |  | [optional] 
+**ShowOffBoardingNotification** | Pointer to **bool** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **User** | Pointer to [**BTUserBasicSummaryInfo**](BTUserBasicSummaryInfo.md) |  | [optional] 
 **UserRolePriority** | Pointer to [**UserRolePriority**](UserRolePriority.md) |  | [optional] 
@@ -339,6 +340,31 @@ SetScheduledRemovalDate sets ScheduledRemovalDate field to given value.
 `func (o *BTCompanyUserInfo) HasScheduledRemovalDate() bool`
 
 HasScheduledRemovalDate returns a boolean if a field has been set.
+
+### GetShowOffBoardingNotification
+
+`func (o *BTCompanyUserInfo) GetShowOffBoardingNotification() bool`
+
+GetShowOffBoardingNotification returns the ShowOffBoardingNotification field if non-nil, zero value otherwise.
+
+### GetShowOffBoardingNotificationOk
+
+`func (o *BTCompanyUserInfo) GetShowOffBoardingNotificationOk() (*bool, bool)`
+
+GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowOffBoardingNotification
+
+`func (o *BTCompanyUserInfo) SetShowOffBoardingNotification(v bool)`
+
+SetShowOffBoardingNotification sets ShowOffBoardingNotification field to given value.
+
+### HasShowOffBoardingNotification
+
+`func (o *BTCompanyUserInfo) HasShowOffBoardingNotification() bool`
+
+HasShowOffBoardingNotification returns a boolean if a field has been set.
 
 ### GetState
 

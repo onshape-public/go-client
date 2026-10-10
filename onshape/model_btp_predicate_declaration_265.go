@@ -34,6 +34,7 @@ type BTPPredicateDeclaration265 struct {
 	ForExport             *bool                       `json:"forExport,omitempty"`
 	SpaceAfterExport      *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName            *BTPIdentifier8             `json:"symbolName,omitempty"`
+	TopLevelType          *GBTPDefinitionType         `json:"topLevelType,omitempty"`
 	Arguments             []BTPArgumentDeclaration232 `json:"arguments,omitempty"`
 	Body                  *BTPStatementBlock271       `json:"body,omitempty"`
 	Precondition          *BTPStatement269            `json:"precondition,omitempty"`
@@ -604,6 +605,38 @@ func (o *BTPPredicateDeclaration265) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *BTPPredicateDeclaration265) GetTopLevelType() GBTPDefinitionType {
+	if o == nil || o.TopLevelType == nil {
+		var ret GBTPDefinitionType
+		return ret
+	}
+	return *o.TopLevelType
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPPredicateDeclaration265) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	if o == nil || o.TopLevelType == nil {
+		return nil, false
+	}
+	return o.TopLevelType, true
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *BTPPredicateDeclaration265) HasTopLevelType() bool {
+	if o != nil && o.TopLevelType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *BTPPredicateDeclaration265) SetTopLevelType(v GBTPDefinitionType) {
+	o.TopLevelType = &v
+}
+
 // GetArguments returns the Arguments field value if set, zero value otherwise.
 func (o *BTPPredicateDeclaration265) GetArguments() []BTPArgumentDeclaration232 {
 	if o == nil || o.Arguments == nil {
@@ -888,6 +921,9 @@ func (o BTPPredicateDeclaration265) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.TopLevelType != nil {
+		toSerialize["topLevelType"] = o.TopLevelType
 	}
 	if o.Arguments != nil {
 		toSerialize["arguments"] = o.Arguments

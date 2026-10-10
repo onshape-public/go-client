@@ -16,35 +16,27 @@ import (
 
 // BTMParametricPartStudioFeature3883 struct for BTMParametricPartStudioFeature3883
 type BTMParametricPartStudioFeature3883 struct {
-	AuxiliaryTreeFeature *bool `json:"auxiliaryTreeFeature,omitempty"`
 	// Type of JSON object.
-	BtType        *string `json:"btType,omitempty"`
-	FeatureFolder *bool   `json:"featureFolder,omitempty"`
+	BtType *string `json:"btType,omitempty"`
 	// Unique ID of the feature instance within this Part Studio.
-	FeatureId             *string `json:"featureId,omitempty"`
-	FeatureListFieldIndex *int32  `json:"featureListFieldIndex,omitempty"`
+	FeatureId *string `json:"featureId,omitempty"`
 	// The name of the feature spec that this feature instantiates.
-	FeatureType                      *string `json:"featureType,omitempty"`
-	FieldIndexForOwnedMateConnectors *int32  `json:"fieldIndexForOwnedMateConnectors,omitempty"`
+	FeatureType *string `json:"featureType,omitempty"`
 	// Element microversion that is being imported.
-	ImportMicroversion   *string              `json:"importMicroversion,omitempty"`
-	MateConnectorFeature *bool                `json:"mateConnectorFeature,omitempty"`
-	MateConnectors       []BTMMateConnector66 `json:"mateConnectors,omitempty"`
+	ImportMicroversion   *string `json:"importMicroversion,omitempty"`
+	MateConnectorFeature *bool   `json:"mateConnectorFeature,omitempty"`
 	// User-visible name of the feature.
 	Name *string `json:"name,omitempty"`
 	// Indicates where the feature definition lives. Features in the FeatureScript standard library have a namespace value of `\"\"`. Custom features identify the Feature Studio that contains the definition.
 	Namespace *string `json:"namespace,omitempty"`
 	// ID for the feature node.
-	NodeId                                 *string                                   `json:"nodeId,omitempty"`
-	OccurrenceQueriesFromAllConfigurations []BTMIndividualQueryWithOccurrenceBase904 `json:"occurrenceQueriesFromAllConfigurations,omitempty"`
-	ParameterLibraries                     []BTMParameter1                           `json:"parameterLibraries,omitempty"`
-	ParametricInstanceFeature              *bool                                     `json:"parametricInstanceFeature,omitempty"`
-	ParentSuppressed                       *bool                                     `json:"parentSuppressed,omitempty"`
+	NodeId             *string         `json:"nodeId,omitempty"`
+	ParameterLibraries []BTMParameter1 `json:"parameterLibraries,omitempty"`
+	ParentSuppressed   *bool           `json:"parentSuppressed,omitempty"`
 	// For internal use only. Should always be `false`.
 	ReturnAfterSubfeatures *bool `json:"returnAfterSubfeatures,omitempty"`
 	// List of subfeatures belonging to the feature.
-	SubFeatures               []BTMFeature134 `json:"subFeatures,omitempty"`
-	SubFeaturesNotUsedInQuery []BTMFeature134 `json:"subFeaturesNotUsedInQuery,omitempty"`
+	SubFeatures []BTMFeature134 `json:"subFeatures,omitempty"`
 	// If `true`, the feature is suppressed. It will skip regeneration, denoted by a line through the name in the Feature list.
 	Suppressed *bool `json:"suppressed,omitempty"`
 	// `true` if the suppression is configured in the Part Studio.
@@ -70,38 +62,6 @@ func NewBTMParametricPartStudioFeature3883() *BTMParametricPartStudioFeature3883
 func NewBTMParametricPartStudioFeature3883WithDefaults() *BTMParametricPartStudioFeature3883 {
 	this := BTMParametricPartStudioFeature3883{}
 	return &this
-}
-
-// GetAuxiliaryTreeFeature returns the AuxiliaryTreeFeature field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetAuxiliaryTreeFeature() bool {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.AuxiliaryTreeFeature
-}
-
-// GetAuxiliaryTreeFeatureOk returns a tuple with the AuxiliaryTreeFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetAuxiliaryTreeFeatureOk() (*bool, bool) {
-	if o == nil || o.AuxiliaryTreeFeature == nil {
-		return nil, false
-	}
-	return o.AuxiliaryTreeFeature, true
-}
-
-// HasAuxiliaryTreeFeature returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasAuxiliaryTreeFeature() bool {
-	if o != nil && o.AuxiliaryTreeFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetAuxiliaryTreeFeature gets a reference to the given bool and assigns it to the AuxiliaryTreeFeature field.
-func (o *BTMParametricPartStudioFeature3883) SetAuxiliaryTreeFeature(v bool) {
-	o.AuxiliaryTreeFeature = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -136,38 +96,6 @@ func (o *BTMParametricPartStudioFeature3883) SetBtType(v string) {
 	o.BtType = &v
 }
 
-// GetFeatureFolder returns the FeatureFolder field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetFeatureFolder() bool {
-	if o == nil || o.FeatureFolder == nil {
-		var ret bool
-		return ret
-	}
-	return *o.FeatureFolder
-}
-
-// GetFeatureFolderOk returns a tuple with the FeatureFolder field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetFeatureFolderOk() (*bool, bool) {
-	if o == nil || o.FeatureFolder == nil {
-		return nil, false
-	}
-	return o.FeatureFolder, true
-}
-
-// HasFeatureFolder returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasFeatureFolder() bool {
-	if o != nil && o.FeatureFolder != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureFolder gets a reference to the given bool and assigns it to the FeatureFolder field.
-func (o *BTMParametricPartStudioFeature3883) SetFeatureFolder(v bool) {
-	o.FeatureFolder = &v
-}
-
 // GetFeatureId returns the FeatureId field value if set, zero value otherwise.
 func (o *BTMParametricPartStudioFeature3883) GetFeatureId() string {
 	if o == nil || o.FeatureId == nil {
@@ -200,38 +128,6 @@ func (o *BTMParametricPartStudioFeature3883) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
-// GetFeatureListFieldIndex returns the FeatureListFieldIndex field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetFeatureListFieldIndex() int32 {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FeatureListFieldIndex
-}
-
-// GetFeatureListFieldIndexOk returns a tuple with the FeatureListFieldIndex field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetFeatureListFieldIndexOk() (*int32, bool) {
-	if o == nil || o.FeatureListFieldIndex == nil {
-		return nil, false
-	}
-	return o.FeatureListFieldIndex, true
-}
-
-// HasFeatureListFieldIndex returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasFeatureListFieldIndex() bool {
-	if o != nil && o.FeatureListFieldIndex != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFeatureListFieldIndex gets a reference to the given int32 and assigns it to the FeatureListFieldIndex field.
-func (o *BTMParametricPartStudioFeature3883) SetFeatureListFieldIndex(v int32) {
-	o.FeatureListFieldIndex = &v
-}
-
 // GetFeatureType returns the FeatureType field value if set, zero value otherwise.
 func (o *BTMParametricPartStudioFeature3883) GetFeatureType() string {
 	if o == nil || o.FeatureType == nil {
@@ -262,38 +158,6 @@ func (o *BTMParametricPartStudioFeature3883) HasFeatureType() bool {
 // SetFeatureType gets a reference to the given string and assigns it to the FeatureType field.
 func (o *BTMParametricPartStudioFeature3883) SetFeatureType(v string) {
 	o.FeatureType = &v
-}
-
-// GetFieldIndexForOwnedMateConnectors returns the FieldIndexForOwnedMateConnectors field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetFieldIndexForOwnedMateConnectors() int32 {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		var ret int32
-		return ret
-	}
-	return *o.FieldIndexForOwnedMateConnectors
-}
-
-// GetFieldIndexForOwnedMateConnectorsOk returns a tuple with the FieldIndexForOwnedMateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetFieldIndexForOwnedMateConnectorsOk() (*int32, bool) {
-	if o == nil || o.FieldIndexForOwnedMateConnectors == nil {
-		return nil, false
-	}
-	return o.FieldIndexForOwnedMateConnectors, true
-}
-
-// HasFieldIndexForOwnedMateConnectors returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasFieldIndexForOwnedMateConnectors() bool {
-	if o != nil && o.FieldIndexForOwnedMateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetFieldIndexForOwnedMateConnectors gets a reference to the given int32 and assigns it to the FieldIndexForOwnedMateConnectors field.
-func (o *BTMParametricPartStudioFeature3883) SetFieldIndexForOwnedMateConnectors(v int32) {
-	o.FieldIndexForOwnedMateConnectors = &v
 }
 
 // GetImportMicroversion returns the ImportMicroversion field value if set, zero value otherwise.
@@ -358,38 +222,6 @@ func (o *BTMParametricPartStudioFeature3883) HasMateConnectorFeature() bool {
 // SetMateConnectorFeature gets a reference to the given bool and assigns it to the MateConnectorFeature field.
 func (o *BTMParametricPartStudioFeature3883) SetMateConnectorFeature(v bool) {
 	o.MateConnectorFeature = &v
-}
-
-// GetMateConnectors returns the MateConnectors field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetMateConnectors() []BTMMateConnector66 {
-	if o == nil || o.MateConnectors == nil {
-		var ret []BTMMateConnector66
-		return ret
-	}
-	return o.MateConnectors
-}
-
-// GetMateConnectorsOk returns a tuple with the MateConnectors field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetMateConnectorsOk() ([]BTMMateConnector66, bool) {
-	if o == nil || o.MateConnectors == nil {
-		return nil, false
-	}
-	return o.MateConnectors, true
-}
-
-// HasMateConnectors returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasMateConnectors() bool {
-	if o != nil && o.MateConnectors != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetMateConnectors gets a reference to the given []BTMMateConnector66 and assigns it to the MateConnectors field.
-func (o *BTMParametricPartStudioFeature3883) SetMateConnectors(v []BTMMateConnector66) {
-	o.MateConnectors = v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -488,38 +320,6 @@ func (o *BTMParametricPartStudioFeature3883) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
-// GetOccurrenceQueriesFromAllConfigurations returns the OccurrenceQueriesFromAllConfigurations field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetOccurrenceQueriesFromAllConfigurations() []BTMIndividualQueryWithOccurrenceBase904 {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		var ret []BTMIndividualQueryWithOccurrenceBase904
-		return ret
-	}
-	return o.OccurrenceQueriesFromAllConfigurations
-}
-
-// GetOccurrenceQueriesFromAllConfigurationsOk returns a tuple with the OccurrenceQueriesFromAllConfigurations field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetOccurrenceQueriesFromAllConfigurationsOk() ([]BTMIndividualQueryWithOccurrenceBase904, bool) {
-	if o == nil || o.OccurrenceQueriesFromAllConfigurations == nil {
-		return nil, false
-	}
-	return o.OccurrenceQueriesFromAllConfigurations, true
-}
-
-// HasOccurrenceQueriesFromAllConfigurations returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasOccurrenceQueriesFromAllConfigurations() bool {
-	if o != nil && o.OccurrenceQueriesFromAllConfigurations != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceQueriesFromAllConfigurations gets a reference to the given []BTMIndividualQueryWithOccurrenceBase904 and assigns it to the OccurrenceQueriesFromAllConfigurations field.
-func (o *BTMParametricPartStudioFeature3883) SetOccurrenceQueriesFromAllConfigurations(v []BTMIndividualQueryWithOccurrenceBase904) {
-	o.OccurrenceQueriesFromAllConfigurations = v
-}
-
 // GetParameterLibraries returns the ParameterLibraries field value if set, zero value otherwise.
 func (o *BTMParametricPartStudioFeature3883) GetParameterLibraries() []BTMParameter1 {
 	if o == nil || o.ParameterLibraries == nil {
@@ -550,38 +350,6 @@ func (o *BTMParametricPartStudioFeature3883) HasParameterLibraries() bool {
 // SetParameterLibraries gets a reference to the given []BTMParameter1 and assigns it to the ParameterLibraries field.
 func (o *BTMParametricPartStudioFeature3883) SetParameterLibraries(v []BTMParameter1) {
 	o.ParameterLibraries = v
-}
-
-// GetParametricInstanceFeature returns the ParametricInstanceFeature field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetParametricInstanceFeature() bool {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		var ret bool
-		return ret
-	}
-	return *o.ParametricInstanceFeature
-}
-
-// GetParametricInstanceFeatureOk returns a tuple with the ParametricInstanceFeature field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetParametricInstanceFeatureOk() (*bool, bool) {
-	if o == nil || o.ParametricInstanceFeature == nil {
-		return nil, false
-	}
-	return o.ParametricInstanceFeature, true
-}
-
-// HasParametricInstanceFeature returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasParametricInstanceFeature() bool {
-	if o != nil && o.ParametricInstanceFeature != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParametricInstanceFeature gets a reference to the given bool and assigns it to the ParametricInstanceFeature field.
-func (o *BTMParametricPartStudioFeature3883) SetParametricInstanceFeature(v bool) {
-	o.ParametricInstanceFeature = &v
 }
 
 // GetParentSuppressed returns the ParentSuppressed field value if set, zero value otherwise.
@@ -678,38 +446,6 @@ func (o *BTMParametricPartStudioFeature3883) HasSubFeatures() bool {
 // SetSubFeatures gets a reference to the given []BTMFeature134 and assigns it to the SubFeatures field.
 func (o *BTMParametricPartStudioFeature3883) SetSubFeatures(v []BTMFeature134) {
 	o.SubFeatures = v
-}
-
-// GetSubFeaturesNotUsedInQuery returns the SubFeaturesNotUsedInQuery field value if set, zero value otherwise.
-func (o *BTMParametricPartStudioFeature3883) GetSubFeaturesNotUsedInQuery() []BTMFeature134 {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		var ret []BTMFeature134
-		return ret
-	}
-	return o.SubFeaturesNotUsedInQuery
-}
-
-// GetSubFeaturesNotUsedInQueryOk returns a tuple with the SubFeaturesNotUsedInQuery field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTMParametricPartStudioFeature3883) GetSubFeaturesNotUsedInQueryOk() ([]BTMFeature134, bool) {
-	if o == nil || o.SubFeaturesNotUsedInQuery == nil {
-		return nil, false
-	}
-	return o.SubFeaturesNotUsedInQuery, true
-}
-
-// HasSubFeaturesNotUsedInQuery returns a boolean if a field has been set.
-func (o *BTMParametricPartStudioFeature3883) HasSubFeaturesNotUsedInQuery() bool {
-	if o != nil && o.SubFeaturesNotUsedInQuery != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSubFeaturesNotUsedInQuery gets a reference to the given []BTMFeature134 and assigns it to the SubFeaturesNotUsedInQuery field.
-func (o *BTMParametricPartStudioFeature3883) SetSubFeaturesNotUsedInQuery(v []BTMFeature134) {
-	o.SubFeaturesNotUsedInQuery = v
 }
 
 // GetSuppressed returns the Suppressed field value if set, zero value otherwise.
@@ -874,35 +610,20 @@ func (o *BTMParametricPartStudioFeature3883) SetVersion(v int32) {
 
 func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.AuxiliaryTreeFeature != nil {
-		toSerialize["auxiliaryTreeFeature"] = o.AuxiliaryTreeFeature
-	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
-	}
-	if o.FeatureFolder != nil {
-		toSerialize["featureFolder"] = o.FeatureFolder
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
 	}
-	if o.FeatureListFieldIndex != nil {
-		toSerialize["featureListFieldIndex"] = o.FeatureListFieldIndex
-	}
 	if o.FeatureType != nil {
 		toSerialize["featureType"] = o.FeatureType
-	}
-	if o.FieldIndexForOwnedMateConnectors != nil {
-		toSerialize["fieldIndexForOwnedMateConnectors"] = o.FieldIndexForOwnedMateConnectors
 	}
 	if o.ImportMicroversion != nil {
 		toSerialize["importMicroversion"] = o.ImportMicroversion
 	}
 	if o.MateConnectorFeature != nil {
 		toSerialize["mateConnectorFeature"] = o.MateConnectorFeature
-	}
-	if o.MateConnectors != nil {
-		toSerialize["mateConnectors"] = o.MateConnectors
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -913,14 +634,8 @@ func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
 	}
-	if o.OccurrenceQueriesFromAllConfigurations != nil {
-		toSerialize["occurrenceQueriesFromAllConfigurations"] = o.OccurrenceQueriesFromAllConfigurations
-	}
 	if o.ParameterLibraries != nil {
 		toSerialize["parameterLibraries"] = o.ParameterLibraries
-	}
-	if o.ParametricInstanceFeature != nil {
-		toSerialize["parametricInstanceFeature"] = o.ParametricInstanceFeature
 	}
 	if o.ParentSuppressed != nil {
 		toSerialize["parentSuppressed"] = o.ParentSuppressed
@@ -930,9 +645,6 @@ func (o BTMParametricPartStudioFeature3883) MarshalJSON() ([]byte, error) {
 	}
 	if o.SubFeatures != nil {
 		toSerialize["subFeatures"] = o.SubFeatures
-	}
-	if o.SubFeaturesNotUsedInQuery != nil {
-		toSerialize["subFeaturesNotUsedInQuery"] = o.SubFeaturesNotUsedInQuery
 	}
 	if o.Suppressed != nil {
 		toSerialize["suppressed"] = o.Suppressed

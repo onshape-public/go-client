@@ -32,6 +32,7 @@ type BTRadialDistanceDimensionDisplayData2644 struct {
 	IsDerived                  *bool                  `json:"isDerived,omitempty"`
 	IsDriven                   *bool                  `json:"isDriven,omitempty"`
 	IsOverDefined              *bool                  `json:"isOverDefined,omitempty"`
+	IsPlaneReferenceMissing    *bool                  `json:"isPlaneReferenceMissing,omitempty"`
 	LowerTolerance             *float64               `json:"lowerTolerance,omitempty"`
 	MaximumLimit               *float64               `json:"maximumLimit,omitempty"`
 	MinimumLimit               *float64               `json:"minimumLimit,omitempty"`
@@ -547,6 +548,38 @@ func (o *BTRadialDistanceDimensionDisplayData2644) HasIsOverDefined() bool {
 // SetIsOverDefined gets a reference to the given bool and assigns it to the IsOverDefined field.
 func (o *BTRadialDistanceDimensionDisplayData2644) SetIsOverDefined(v bool) {
 	o.IsOverDefined = &v
+}
+
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetIsPlaneReferenceMissing() bool {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPlaneReferenceMissing
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		return nil, false
+	}
+	return o.IsPlaneReferenceMissing, true
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *BTRadialDistanceDimensionDisplayData2644) HasIsPlaneReferenceMissing() bool {
+	if o != nil && o.IsPlaneReferenceMissing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *BTRadialDistanceDimensionDisplayData2644) SetIsPlaneReferenceMissing(v bool) {
+	o.IsPlaneReferenceMissing = &v
 }
 
 // GetLowerTolerance returns the LowerTolerance field value if set, zero value otherwise.
@@ -1179,6 +1212,9 @@ func (o BTRadialDistanceDimensionDisplayData2644) MarshalJSON() ([]byte, error) 
 	}
 	if o.IsOverDefined != nil {
 		toSerialize["isOverDefined"] = o.IsOverDefined
+	}
+	if o.IsPlaneReferenceMissing != nil {
+		toSerialize["isPlaneReferenceMissing"] = o.IsPlaneReferenceMissing
 	}
 	if o.LowerTolerance != nil {
 		toSerialize["lowerTolerance"] = o.LowerTolerance

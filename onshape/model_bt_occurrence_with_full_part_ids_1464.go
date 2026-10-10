@@ -17,19 +17,16 @@ import (
 // BTOccurrenceWithFullPartIds1464 struct for BTOccurrenceWithFullPartIds1464
 type BTOccurrenceWithFullPartIds1464 struct {
 	BTOccurrence74
-	BtType                *string                          `json:"btType,omitempty"`
-	FullPathAsString      *string                          `json:"fullPathAsString,omitempty"`
-	HeadInstanceId        *string                          `json:"headInstanceId,omitempty"`
-	InternalOccurrence    *bool                            `json:"internalOccurrence,omitempty"`
-	OccurrenceWithoutHead *BTOccurrence74                  `json:"occurrenceWithoutHead,omitempty"`
-	OccurrenceWithoutTail *BTOccurrence74                  `json:"occurrenceWithoutTail,omitempty"`
-	Parent                *BTOccurrence74                  `json:"parent,omitempty"`
-	Path                  []string                         `json:"path,omitempty"`
-	RootOccurrence        *bool                            `json:"rootOccurrence,omitempty"`
-	TailInstanceId        *string                          `json:"tailInstanceId,omitempty"`
-	FullElementId         *BTFullElementIdWithDocument1729 `json:"fullElementId,omitempty"`
-	PartIds               []string                         `json:"partIds,omitempty"`
-	Transform             *BTBSMatrix386                   `json:"transform,omitempty"`
+	BtType             *string                          `json:"btType,omitempty"`
+	FullPathAsString   *string                          `json:"fullPathAsString,omitempty"`
+	HeadInstanceId     *string                          `json:"headInstanceId,omitempty"`
+	InternalOccurrence *bool                            `json:"internalOccurrence,omitempty"`
+	Path               []string                         `json:"path,omitempty"`
+	RootOccurrence     *bool                            `json:"rootOccurrence,omitempty"`
+	TailInstanceId     *string                          `json:"tailInstanceId,omitempty"`
+	FullElementId      *BTFullElementIdWithDocument1729 `json:"fullElementId,omitempty"`
+	PartIds            []string                         `json:"partIds,omitempty"`
+	Transform          *BTBSMatrix386                   `json:"transform,omitempty"`
 }
 
 // NewBTOccurrenceWithFullPartIds1464 instantiates a new BTOccurrenceWithFullPartIds1464 object
@@ -175,102 +172,6 @@ func (o *BTOccurrenceWithFullPartIds1464) HasInternalOccurrence() bool {
 // SetInternalOccurrence gets a reference to the given bool and assigns it to the InternalOccurrence field.
 func (o *BTOccurrenceWithFullPartIds1464) SetInternalOccurrence(v bool) {
 	o.InternalOccurrence = &v
-}
-
-// GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field value if set, zero value otherwise.
-func (o *BTOccurrenceWithFullPartIds1464) GetOccurrenceWithoutHead() BTOccurrence74 {
-	if o == nil || o.OccurrenceWithoutHead == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.OccurrenceWithoutHead
-}
-
-// GetOccurrenceWithoutHeadOk returns a tuple with the OccurrenceWithoutHead field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrenceWithFullPartIds1464) GetOccurrenceWithoutHeadOk() (*BTOccurrence74, bool) {
-	if o == nil || o.OccurrenceWithoutHead == nil {
-		return nil, false
-	}
-	return o.OccurrenceWithoutHead, true
-}
-
-// HasOccurrenceWithoutHead returns a boolean if a field has been set.
-func (o *BTOccurrenceWithFullPartIds1464) HasOccurrenceWithoutHead() bool {
-	if o != nil && o.OccurrenceWithoutHead != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceWithoutHead gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutHead field.
-func (o *BTOccurrenceWithFullPartIds1464) SetOccurrenceWithoutHead(v BTOccurrence74) {
-	o.OccurrenceWithoutHead = &v
-}
-
-// GetOccurrenceWithoutTail returns the OccurrenceWithoutTail field value if set, zero value otherwise.
-func (o *BTOccurrenceWithFullPartIds1464) GetOccurrenceWithoutTail() BTOccurrence74 {
-	if o == nil || o.OccurrenceWithoutTail == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.OccurrenceWithoutTail
-}
-
-// GetOccurrenceWithoutTailOk returns a tuple with the OccurrenceWithoutTail field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrenceWithFullPartIds1464) GetOccurrenceWithoutTailOk() (*BTOccurrence74, bool) {
-	if o == nil || o.OccurrenceWithoutTail == nil {
-		return nil, false
-	}
-	return o.OccurrenceWithoutTail, true
-}
-
-// HasOccurrenceWithoutTail returns a boolean if a field has been set.
-func (o *BTOccurrenceWithFullPartIds1464) HasOccurrenceWithoutTail() bool {
-	if o != nil && o.OccurrenceWithoutTail != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetOccurrenceWithoutTail gets a reference to the given BTOccurrence74 and assigns it to the OccurrenceWithoutTail field.
-func (o *BTOccurrenceWithFullPartIds1464) SetOccurrenceWithoutTail(v BTOccurrence74) {
-	o.OccurrenceWithoutTail = &v
-}
-
-// GetParent returns the Parent field value if set, zero value otherwise.
-func (o *BTOccurrenceWithFullPartIds1464) GetParent() BTOccurrence74 {
-	if o == nil || o.Parent == nil {
-		var ret BTOccurrence74
-		return ret
-	}
-	return *o.Parent
-}
-
-// GetParentOk returns a tuple with the Parent field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTOccurrenceWithFullPartIds1464) GetParentOk() (*BTOccurrence74, bool) {
-	if o == nil || o.Parent == nil {
-		return nil, false
-	}
-	return o.Parent, true
-}
-
-// HasParent returns a boolean if a field has been set.
-func (o *BTOccurrenceWithFullPartIds1464) HasParent() bool {
-	if o != nil && o.Parent != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetParent gets a reference to the given BTOccurrence74 and assigns it to the Parent field.
-func (o *BTOccurrenceWithFullPartIds1464) SetParent(v BTOccurrence74) {
-	o.Parent = &v
 }
 
 // GetPath returns the Path field value if set, zero value otherwise.
@@ -486,15 +387,6 @@ func (o BTOccurrenceWithFullPartIds1464) MarshalJSON() ([]byte, error) {
 	}
 	if o.InternalOccurrence != nil {
 		toSerialize["internalOccurrence"] = o.InternalOccurrence
-	}
-	if o.OccurrenceWithoutHead != nil {
-		toSerialize["occurrenceWithoutHead"] = o.OccurrenceWithoutHead
-	}
-	if o.OccurrenceWithoutTail != nil {
-		toSerialize["occurrenceWithoutTail"] = o.OccurrenceWithoutTail
-	}
-	if o.Parent != nil {
-		toSerialize["parent"] = o.Parent
 	}
 	if o.Path != nil {
 		toSerialize["path"] = o.Path

@@ -24,6 +24,8 @@ type BTUserSettingsInfo struct {
 	DefaultUnits                         *BTDefaultUnitsInfo                    `json:"defaultUnits,omitempty"`
 	DisplayAssemblyProperties            *bool                                  `json:"displayAssemblyProperties,omitempty"`
 	DrawingBackgroundId                  *int32                                 `json:"drawingBackgroundId,omitempty"`
+	EnableLabs                           *bool                                  `json:"enableLabs,omitempty"`
+	EnabledLabsFeatures                  []int32                                `json:"enabledLabsFeatures,omitempty"`
 	EnforceApplicationAcl                *bool                                  `json:"enforceApplicationAcl,omitempty"`
 	ExportDrawingOptions                 *string                                `json:"exportDrawingOptions,omitempty"`
 	ExportSolidOptions                   *string                                `json:"exportSolidOptions,omitempty"`
@@ -331,6 +333,70 @@ func (o *BTUserSettingsInfo) HasDrawingBackgroundId() bool {
 // SetDrawingBackgroundId gets a reference to the given int32 and assigns it to the DrawingBackgroundId field.
 func (o *BTUserSettingsInfo) SetDrawingBackgroundId(v int32) {
 	o.DrawingBackgroundId = &v
+}
+
+// GetEnableLabs returns the EnableLabs field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetEnableLabs() bool {
+	if o == nil || o.EnableLabs == nil {
+		var ret bool
+		return ret
+	}
+	return *o.EnableLabs
+}
+
+// GetEnableLabsOk returns a tuple with the EnableLabs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetEnableLabsOk() (*bool, bool) {
+	if o == nil || o.EnableLabs == nil {
+		return nil, false
+	}
+	return o.EnableLabs, true
+}
+
+// HasEnableLabs returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasEnableLabs() bool {
+	if o != nil && o.EnableLabs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableLabs gets a reference to the given bool and assigns it to the EnableLabs field.
+func (o *BTUserSettingsInfo) SetEnableLabs(v bool) {
+	o.EnableLabs = &v
+}
+
+// GetEnabledLabsFeatures returns the EnabledLabsFeatures field value if set, zero value otherwise.
+func (o *BTUserSettingsInfo) GetEnabledLabsFeatures() []int32 {
+	if o == nil || o.EnabledLabsFeatures == nil {
+		var ret []int32
+		return ret
+	}
+	return o.EnabledLabsFeatures
+}
+
+// GetEnabledLabsFeaturesOk returns a tuple with the EnabledLabsFeatures field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserSettingsInfo) GetEnabledLabsFeaturesOk() ([]int32, bool) {
+	if o == nil || o.EnabledLabsFeatures == nil {
+		return nil, false
+	}
+	return o.EnabledLabsFeatures, true
+}
+
+// HasEnabledLabsFeatures returns a boolean if a field has been set.
+func (o *BTUserSettingsInfo) HasEnabledLabsFeatures() bool {
+	if o != nil && o.EnabledLabsFeatures != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabledLabsFeatures gets a reference to the given []int32 and assigns it to the EnabledLabsFeatures field.
+func (o *BTUserSettingsInfo) SetEnabledLabsFeatures(v []int32) {
+	o.EnabledLabsFeatures = v
 }
 
 // GetEnforceApplicationAcl returns the EnforceApplicationAcl field value if set, zero value otherwise.
@@ -1446,6 +1512,12 @@ func (o BTUserSettingsInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DrawingBackgroundId != nil {
 		toSerialize["drawingBackgroundId"] = o.DrawingBackgroundId
+	}
+	if o.EnableLabs != nil {
+		toSerialize["enableLabs"] = o.EnableLabs
+	}
+	if o.EnabledLabsFeatures != nil {
+		toSerialize["enabledLabsFeatures"] = o.EnabledLabsFeatures
 	}
 	if o.EnforceApplicationAcl != nil {
 		toSerialize["enforceApplicationAcl"] = o.EnforceApplicationAcl

@@ -21,6 +21,7 @@ type BTNodeWithReference struct {
 	ElementId              *string                                     `json:"elementId,omitempty"`
 	MicroversionId         *BTMicroversionId366                        `json:"microversionId,omitempty"`
 	NodeId                 *string                                     `json:"nodeId,omitempty"`
+	NodeIdRaw              *BTObjectId                                 `json:"nodeIdRaw,omitempty"`
 	ReferenceParameter     *BTMParameterReferenceWithConfiguration3028 `json:"referenceParameter,omitempty"`
 	ValidRevisionReference *bool                                       `json:"validRevisionReference,omitempty"`
 	VersionId              *string                                     `json:"versionId,omitempty"`
@@ -203,6 +204,38 @@ func (o *BTNodeWithReference) SetNodeId(v string) {
 	o.NodeId = &v
 }
 
+// GetNodeIdRaw returns the NodeIdRaw field value if set, zero value otherwise.
+func (o *BTNodeWithReference) GetNodeIdRaw() BTObjectId {
+	if o == nil || o.NodeIdRaw == nil {
+		var ret BTObjectId
+		return ret
+	}
+	return *o.NodeIdRaw
+}
+
+// GetNodeIdRawOk returns a tuple with the NodeIdRaw field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTNodeWithReference) GetNodeIdRawOk() (*BTObjectId, bool) {
+	if o == nil || o.NodeIdRaw == nil {
+		return nil, false
+	}
+	return o.NodeIdRaw, true
+}
+
+// HasNodeIdRaw returns a boolean if a field has been set.
+func (o *BTNodeWithReference) HasNodeIdRaw() bool {
+	if o != nil && o.NodeIdRaw != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetNodeIdRaw gets a reference to the given BTObjectId and assigns it to the NodeIdRaw field.
+func (o *BTNodeWithReference) SetNodeIdRaw(v BTObjectId) {
+	o.NodeIdRaw = &v
+}
+
 // GetReferenceParameter returns the ReferenceParameter field value if set, zero value otherwise.
 func (o *BTNodeWithReference) GetReferenceParameter() BTMParameterReferenceWithConfiguration3028 {
 	if o == nil || o.ReferenceParameter == nil {
@@ -315,6 +348,9 @@ func (o BTNodeWithReference) MarshalJSON() ([]byte, error) {
 	}
 	if o.NodeId != nil {
 		toSerialize["nodeId"] = o.NodeId
+	}
+	if o.NodeIdRaw != nil {
+		toSerialize["nodeIdRaw"] = o.NodeIdRaw
 	}
 	if o.ReferenceParameter != nil {
 		toSerialize["referenceParameter"] = o.ReferenceParameter

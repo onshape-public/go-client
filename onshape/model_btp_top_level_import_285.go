@@ -34,6 +34,7 @@ type BTPTopLevelImport285 struct {
 	ForExport                       *bool                       `json:"forExport,omitempty"`
 	SpaceAfterExport                *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName                      *BTPIdentifier8             `json:"symbolName,omitempty"`
+	TopLevelType                    *GBTPDefinitionType         `json:"topLevelType,omitempty"`
 	CombinedNamespacePathAndVersion *string                     `json:"combinedNamespacePathAndVersion,omitempty"`
 	// Element microversion that is being imported.
 	ImportMicroversion *string          `json:"importMicroversion,omitempty"`
@@ -604,6 +605,38 @@ func (o *BTPTopLevelImport285) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *BTPTopLevelImport285) GetTopLevelType() GBTPDefinitionType {
+	if o == nil || o.TopLevelType == nil {
+		var ret GBTPDefinitionType
+		return ret
+	}
+	return *o.TopLevelType
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelImport285) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	if o == nil || o.TopLevelType == nil {
+		return nil, false
+	}
+	return o.TopLevelType, true
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *BTPTopLevelImport285) HasTopLevelType() bool {
+	if o != nil && o.TopLevelType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *BTPTopLevelImport285) SetTopLevelType(v GBTPDefinitionType) {
+	o.TopLevelType = &v
+}
+
 // GetCombinedNamespacePathAndVersion returns the CombinedNamespacePathAndVersion field value if set, zero value otherwise.
 func (o *BTPTopLevelImport285) GetCombinedNamespacePathAndVersion() string {
 	if o == nil || o.CombinedNamespacePathAndVersion == nil {
@@ -856,6 +889,9 @@ func (o BTPTopLevelImport285) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.TopLevelType != nil {
+		toSerialize["topLevelType"] = o.TopLevelType
 	}
 	if o.CombinedNamespacePathAndVersion != nil {
 		toSerialize["combinedNamespacePathAndVersion"] = o.CombinedNamespacePathAndVersion

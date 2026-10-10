@@ -17,51 +17,53 @@ import (
 // BTAnnotationWeldDisplayData4919 struct for BTAnnotationWeldDisplayData4919
 type BTAnnotationWeldDisplayData4919 struct {
 	BTAnnotationDisplayData3225
-	AllReferences          []string                         `json:"allReferences,omitempty"`
-	AllReferencesPopulated *bool                            `json:"allReferencesPopulated,omitempty"`
-	AnnotationId           *string                          `json:"annotationId,omitempty"`
-	AnnotationPlane        *BTCoordinateSystem387           `json:"annotationPlane,omitempty"`
-	AttachmentLocation     *GBTAnnotationAttachmentLocation `json:"attachmentLocation,omitempty"`
-	BasePlane              *BTCoordinateSystem387           `json:"basePlane,omitempty"`
-	BtType                 *string                          `json:"btType,omitempty"`
-	CharacteristicId       *string                          `json:"characteristicId,omitempty"`
-	DeterministicId        *string                          `json:"deterministicId,omitempty"`
-	DxdySegments           []BTVector2d1812                 `json:"dxdySegments,omitempty"`
-	IsConstrainedToPlane   *bool                            `json:"isConstrainedToPlane,omitempty"`
-	IsDeletion             *bool                            `json:"isDeletion,omitempty"`
-	IsDerived              *bool                            `json:"isDerived,omitempty"`
-	MainAnnotationId       *string                          `json:"mainAnnotationId,omitempty"`
-	MainConstraintId       *string                          `json:"mainConstraintId,omitempty"`
-	MainFeatureId          *string                          `json:"mainFeatureId,omitempty"`
-	MainParameterId        *string                          `json:"mainParameterId,omitempty"`
-	MainPartId             *string                          `json:"mainPartId,omitempty"`
-	ParentCharacteristicId *string                          `json:"parentCharacteristicId,omitempty"`
-	AllAround              *bool                            `json:"allAround,omitempty"`
-	Flag                   *GBTFieldWeldFlag                `json:"flag,omitempty"`
-	IsoFlip                *bool                            `json:"isoFlip,omitempty"`
-	JointType              *GBTWeldJointType                `json:"jointType,omitempty"`
-	LowerContourType       *GBTWeldContourType              `json:"lowerContourType,omitempty"`
-	LowerFinishing         *GBTWeldFinishing                `json:"lowerFinishing,omitempty"`
-	LowerFlag              *bool                            `json:"lowerFlag,omitempty"`
-	LowerGroove            *float64                         `json:"lowerGroove,omitempty"`
-	LowerRootOpening       *float64                         `json:"lowerRootOpening,omitempty"`
-	LowerValueFour         *float64                         `json:"lowerValueFour,omitempty"`
-	LowerValueOne          *float64                         `json:"lowerValueOne,omitempty"`
-	LowerValueThree        *float64                         `json:"lowerValueThree,omitempty"`
-	LowerValueTwo          *float64                         `json:"lowerValueTwo,omitempty"`
-	LowerWeldType          *GBTWeldType                     `json:"lowerWeldType,omitempty"`
-	Reference              *string                          `json:"reference,omitempty"`
-	Standard               *GBTWeldStandard                 `json:"standard,omitempty"`
-	UpperContourType       *GBTWeldContourType              `json:"upperContourType,omitempty"`
-	UpperFinishing         *GBTWeldFinishing                `json:"upperFinishing,omitempty"`
-	UpperFlag              *bool                            `json:"upperFlag,omitempty"`
-	UpperGroove            *float64                         `json:"upperGroove,omitempty"`
-	UpperRootOpening       *float64                         `json:"upperRootOpening,omitempty"`
-	UpperValueFour         *float64                         `json:"upperValueFour,omitempty"`
-	UpperValueOne          *float64                         `json:"upperValueOne,omitempty"`
-	UpperValueThree        *float64                         `json:"upperValueThree,omitempty"`
-	UpperValueTwo          *float64                         `json:"upperValueTwo,omitempty"`
-	UpperWeldType          *GBTWeldType                     `json:"upperWeldType,omitempty"`
+	AllReferences           []string                         `json:"allReferences,omitempty"`
+	AllReferencesPopulated  *bool                            `json:"allReferencesPopulated,omitempty"`
+	AnnotationId            *string                          `json:"annotationId,omitempty"`
+	AnnotationPlane         *BTCoordinateSystem387           `json:"annotationPlane,omitempty"`
+	AnnotationType          *GBTAnnotationType               `json:"annotationType,omitempty"`
+	AttachmentLocation      *GBTAnnotationAttachmentLocation `json:"attachmentLocation,omitempty"`
+	BasePlane               *BTCoordinateSystem387           `json:"basePlane,omitempty"`
+	BtType                  *string                          `json:"btType,omitempty"`
+	CharacteristicId        *string                          `json:"characteristicId,omitempty"`
+	DeterministicId         *string                          `json:"deterministicId,omitempty"`
+	DxdySegments            []BTVector2d1812                 `json:"dxdySegments,omitempty"`
+	IsConstrainedToPlane    *bool                            `json:"isConstrainedToPlane,omitempty"`
+	IsDeletion              *bool                            `json:"isDeletion,omitempty"`
+	IsDerived               *bool                            `json:"isDerived,omitempty"`
+	IsPlaneReferenceMissing *bool                            `json:"isPlaneReferenceMissing,omitempty"`
+	MainAnnotationId        *string                          `json:"mainAnnotationId,omitempty"`
+	MainConstraintId        *string                          `json:"mainConstraintId,omitempty"`
+	MainFeatureId           *string                          `json:"mainFeatureId,omitempty"`
+	MainParameterId         *string                          `json:"mainParameterId,omitempty"`
+	MainPartId              *string                          `json:"mainPartId,omitempty"`
+	ParentCharacteristicId  *string                          `json:"parentCharacteristicId,omitempty"`
+	AllAround               *bool                            `json:"allAround,omitempty"`
+	Flag                    *GBTFieldWeldFlag                `json:"flag,omitempty"`
+	IsoFlip                 *bool                            `json:"isoFlip,omitempty"`
+	JointType               *GBTWeldJointType                `json:"jointType,omitempty"`
+	LowerContourType        *GBTWeldContourType              `json:"lowerContourType,omitempty"`
+	LowerFinishing          *GBTWeldFinishing                `json:"lowerFinishing,omitempty"`
+	LowerFlag               *bool                            `json:"lowerFlag,omitempty"`
+	LowerGroove             *float64                         `json:"lowerGroove,omitempty"`
+	LowerRootOpening        *float64                         `json:"lowerRootOpening,omitempty"`
+	LowerValueFour          *float64                         `json:"lowerValueFour,omitempty"`
+	LowerValueOne           *float64                         `json:"lowerValueOne,omitempty"`
+	LowerValueThree         *float64                         `json:"lowerValueThree,omitempty"`
+	LowerValueTwo           *float64                         `json:"lowerValueTwo,omitempty"`
+	LowerWeldType           *GBTWeldType                     `json:"lowerWeldType,omitempty"`
+	Reference               *string                          `json:"reference,omitempty"`
+	Standard                *GBTWeldStandard                 `json:"standard,omitempty"`
+	UpperContourType        *GBTWeldContourType              `json:"upperContourType,omitempty"`
+	UpperFinishing          *GBTWeldFinishing                `json:"upperFinishing,omitempty"`
+	UpperFlag               *bool                            `json:"upperFlag,omitempty"`
+	UpperGroove             *float64                         `json:"upperGroove,omitempty"`
+	UpperRootOpening        *float64                         `json:"upperRootOpening,omitempty"`
+	UpperValueFour          *float64                         `json:"upperValueFour,omitempty"`
+	UpperValueOne           *float64                         `json:"upperValueOne,omitempty"`
+	UpperValueThree         *float64                         `json:"upperValueThree,omitempty"`
+	UpperValueTwo           *float64                         `json:"upperValueTwo,omitempty"`
+	UpperWeldType           *GBTWeldType                     `json:"upperWeldType,omitempty"`
 }
 
 // NewBTAnnotationWeldDisplayData4919 instantiates a new BTAnnotationWeldDisplayData4919 object
@@ -207,6 +209,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasAnnotationPlane() bool {
 // SetAnnotationPlane gets a reference to the given BTCoordinateSystem387 and assigns it to the AnnotationPlane field.
 func (o *BTAnnotationWeldDisplayData4919) SetAnnotationPlane(v BTCoordinateSystem387) {
 	o.AnnotationPlane = &v
+}
+
+// GetAnnotationType returns the AnnotationType field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetAnnotationType() GBTAnnotationType {
+	if o == nil || o.AnnotationType == nil {
+		var ret GBTAnnotationType
+		return ret
+	}
+	return *o.AnnotationType
+}
+
+// GetAnnotationTypeOk returns a tuple with the AnnotationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetAnnotationTypeOk() (*GBTAnnotationType, bool) {
+	if o == nil || o.AnnotationType == nil {
+		return nil, false
+	}
+	return o.AnnotationType, true
+}
+
+// HasAnnotationType returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasAnnotationType() bool {
+	if o != nil && o.AnnotationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAnnotationType gets a reference to the given GBTAnnotationType and assigns it to the AnnotationType field.
+func (o *BTAnnotationWeldDisplayData4919) SetAnnotationType(v GBTAnnotationType) {
+	o.AnnotationType = &v
 }
 
 // GetAttachmentLocation returns the AttachmentLocation field value if set, zero value otherwise.
@@ -495,6 +529,38 @@ func (o *BTAnnotationWeldDisplayData4919) HasIsDerived() bool {
 // SetIsDerived gets a reference to the given bool and assigns it to the IsDerived field.
 func (o *BTAnnotationWeldDisplayData4919) SetIsDerived(v bool) {
 	o.IsDerived = &v
+}
+
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *BTAnnotationWeldDisplayData4919) GetIsPlaneReferenceMissing() bool {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPlaneReferenceMissing
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAnnotationWeldDisplayData4919) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		return nil, false
+	}
+	return o.IsPlaneReferenceMissing, true
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *BTAnnotationWeldDisplayData4919) HasIsPlaneReferenceMissing() bool {
+	if o != nil && o.IsPlaneReferenceMissing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *BTAnnotationWeldDisplayData4919) SetIsPlaneReferenceMissing(v bool) {
+	o.IsPlaneReferenceMissing = &v
 }
 
 // GetMainAnnotationId returns the MainAnnotationId field value if set, zero value otherwise.
@@ -1543,6 +1609,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	if o.AnnotationPlane != nil {
 		toSerialize["annotationPlane"] = o.AnnotationPlane
 	}
+	if o.AnnotationType != nil {
+		toSerialize["annotationType"] = o.AnnotationType
+	}
 	if o.AttachmentLocation != nil {
 		toSerialize["attachmentLocation"] = o.AttachmentLocation
 	}
@@ -1569,6 +1638,9 @@ func (o BTAnnotationWeldDisplayData4919) MarshalJSON() ([]byte, error) {
 	}
 	if o.IsDerived != nil {
 		toSerialize["isDerived"] = o.IsDerived
+	}
+	if o.IsPlaneReferenceMissing != nil {
+		toSerialize["isPlaneReferenceMissing"] = o.IsPlaneReferenceMissing
 	}
 	if o.MainAnnotationId != nil {
 		toSerialize["mainAnnotationId"] = o.MainAnnotationId
