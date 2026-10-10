@@ -191,31 +191,31 @@ func (a *WorkflowApiService) EnumerateObjectWorkflowsExecute(r ApiEnumerateObjec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetActiveWorkflowsRequest struct {
+type ApiGetActiveWorkflowRequest struct {
 	ctx        context.Context
 	ApiService *WorkflowApiService
 	documentId *string
 }
 
-func (r ApiGetActiveWorkflowsRequest) DocumentId(documentId string) ApiGetActiveWorkflowsRequest {
+func (r ApiGetActiveWorkflowRequest) DocumentId(documentId string) ApiGetActiveWorkflowRequest {
 	r.documentId = &documentId
 	return r
 }
 
-func (r ApiGetActiveWorkflowsRequest) Execute() (*BTActiveWorkflowInfo, *http.Response, error) {
-	return r.ApiService.GetActiveWorkflowsExecute(r)
+func (r ApiGetActiveWorkflowRequest) Execute() (*BTActiveWorkflowInfo, *http.Response, error) {
+	return r.ApiService.GetActiveWorkflowExecute(r)
 }
 
 /*
-GetActiveWorkflows Get all active workflows for the currently logged in user's company.
+GetActiveWorkflow Get all active workflows for the currently logged in user's company.
 
 Optionally takes a document ID to return all workflows for that document's owning company.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@return ApiGetActiveWorkflowsRequest
+	@return ApiGetActiveWorkflowRequest
 */
-func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiveWorkflowsRequest {
-	return ApiGetActiveWorkflowsRequest{
+func (a *WorkflowApiService) GetActiveWorkflow(ctx context.Context) ApiGetActiveWorkflowRequest {
+	return ApiGetActiveWorkflowRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -224,7 +224,7 @@ func (a *WorkflowApiService) GetActiveWorkflows(ctx context.Context) ApiGetActiv
 // Execute executes the request
 //
 //	@return BTActiveWorkflowInfo
-func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
+func (a *WorkflowApiService) GetActiveWorkflowExecute(r ApiGetActiveWorkflowRequest) (*BTActiveWorkflowInfo, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -232,7 +232,7 @@ func (a *WorkflowApiService) GetActiveWorkflowsExecute(r ApiGetActiveWorkflowsRe
 		localVarReturnValue *BTActiveWorkflowInfo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetActiveWorkflows")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WorkflowApiService.GetActiveWorkflow")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

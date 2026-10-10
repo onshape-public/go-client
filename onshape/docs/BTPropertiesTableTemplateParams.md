@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CompanyId** | Pointer to **string** |  | [optional] 
 **IsAllCaps** | Pointer to **bool** |  | [optional] 
 **IsIndented** | Pointer to **bool** |  | [optional] 
+**IsShowingTopLevelAssemblyRow** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **PropertyColumns** | Pointer to **[]string** |  | [optional] 
 **TableType** | Pointer to [**BTPropertiesTableTemplateType**](BTPropertiesTableTemplateType.md) |  | [optional] 
@@ -104,6 +105,31 @@ SetIsIndented sets IsIndented field to given value.
 `func (o *BTPropertiesTableTemplateParams) HasIsIndented() bool`
 
 HasIsIndented returns a boolean if a field has been set.
+
+### GetIsShowingTopLevelAssemblyRow
+
+`func (o *BTPropertiesTableTemplateParams) GetIsShowingTopLevelAssemblyRow() bool`
+
+GetIsShowingTopLevelAssemblyRow returns the IsShowingTopLevelAssemblyRow field if non-nil, zero value otherwise.
+
+### GetIsShowingTopLevelAssemblyRowOk
+
+`func (o *BTPropertiesTableTemplateParams) GetIsShowingTopLevelAssemblyRowOk() (*bool, bool)`
+
+GetIsShowingTopLevelAssemblyRowOk returns a tuple with the IsShowingTopLevelAssemblyRow field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsShowingTopLevelAssemblyRow
+
+`func (o *BTPropertiesTableTemplateParams) SetIsShowingTopLevelAssemblyRow(v bool)`
+
+SetIsShowingTopLevelAssemblyRow sets IsShowingTopLevelAssemblyRow field to given value.
+
+### HasIsShowingTopLevelAssemblyRow
+
+`func (o *BTPropertiesTableTemplateParams) HasIsShowingTopLevelAssemblyRow() bool`
+
+HasIsShowingTopLevelAssemblyRow returns a boolean if a field has been set.
 
 ### GetName
 

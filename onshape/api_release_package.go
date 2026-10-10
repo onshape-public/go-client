@@ -48,7 +48,7 @@ func (r ApiCreateObsoletionPackageRequest) Execute() (map[string]interface{}, *h
 CreateObsoletionPackage Create an obsoletion candidate to make an existing revision obsolete.
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param wfid Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
+	@param wfid Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow).
 	@return ApiCreateObsoletionPackageRequest
 */
 func (a *ReleasePackageApiService) CreateObsoletionPackage(ctx context.Context, wfid string) ApiCreateObsoletionPackageRequest {
@@ -180,7 +180,7 @@ This endpoint creates a release candidate with items added to it. It does <b>not
 To add items from other documents, you must select `Allow adding items from other documents` in your [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog).
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-	@param wfid Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
+	@param wfid Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow).
 	@return ApiCreateReleasePackageRequest
 */
 func (a *ReleasePackageApiService) CreateReleasePackage(ctx context.Context, wfid string) ApiCreateReleasePackageRequest {
@@ -284,14 +284,20 @@ func (a *ReleasePackageApiService) CreateReleasePackageExecute(r ApiCreateReleas
 }
 
 type ApiGetReleasePackageRequest struct {
-	ctx        context.Context
-	ApiService *ReleasePackageApiService
-	rpid       string
-	detailed   *bool
+	ctx         context.Context
+	ApiService  *ReleasePackageApiService
+	rpid        string
+	detailed    *bool
+	fullHistory *bool
 }
 
 func (r ApiGetReleasePackageRequest) Detailed(detailed bool) ApiGetReleasePackageRequest {
 	r.detailed = &detailed
+	return r
+}
+
+func (r ApiGetReleasePackageRequest) FullHistory(fullHistory bool) ApiGetReleasePackageRequest {
+	r.fullHistory = &fullHistory
 	return r
 }
 
@@ -339,6 +345,9 @@ func (a *ReleasePackageApiService) GetReleasePackageExecute(r ApiGetReleasePacka
 
 	if r.detailed != nil {
 		localVarQueryParams.Add("detailed", parameterToString(*r.detailed, ""))
+	}
+	if r.fullHistory != nil {
+		localVarQueryParams.Add("fullHistory", parameterToString(*r.fullHistory, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -421,7 +430,7 @@ func (r ApiUpdateReleasePackageRequest) Action(action string) ApiUpdateReleasePa
 	return r
 }
 
-// Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions.
+// Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflow](#/Workflow/getActiveWorkflow) to get the list of active workflows and their transitions.
 func (r ApiUpdateReleasePackageRequest) Wfaction(wfaction string) ApiUpdateReleasePackageRequest {
 	r.wfaction = &wfaction
 	return r
