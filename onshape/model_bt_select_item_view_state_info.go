@@ -16,9 +16,10 @@ import (
 
 // BTSelectItemViewStateInfo struct for BTSelectItemViewStateInfo
 type BTSelectItemViewStateInfo struct {
-	ActiveSelectorId  *string                  `json:"activeSelectorId,omitempty"`
-	DocumentSelectors []BTDocumentSelectorInfo `json:"documentSelectors,omitempty"`
-	Purpose           *string                  `json:"purpose,omitempty"`
+	ActiveSelectorId      *string                  `json:"activeSelectorId,omitempty"`
+	DocumentSelectors     []BTDocumentSelectorInfo `json:"documentSelectors,omitempty"`
+	Purpose               *string                  `json:"purpose,omitempty"`
+	StandardContentSource *int32                   `json:"standardContentSource,omitempty"`
 }
 
 // NewBTSelectItemViewStateInfo instantiates a new BTSelectItemViewStateInfo object
@@ -134,6 +135,38 @@ func (o *BTSelectItemViewStateInfo) SetPurpose(v string) {
 	o.Purpose = &v
 }
 
+// GetStandardContentSource returns the StandardContentSource field value if set, zero value otherwise.
+func (o *BTSelectItemViewStateInfo) GetStandardContentSource() int32 {
+	if o == nil || o.StandardContentSource == nil {
+		var ret int32
+		return ret
+	}
+	return *o.StandardContentSource
+}
+
+// GetStandardContentSourceOk returns a tuple with the StandardContentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSelectItemViewStateInfo) GetStandardContentSourceOk() (*int32, bool) {
+	if o == nil || o.StandardContentSource == nil {
+		return nil, false
+	}
+	return o.StandardContentSource, true
+}
+
+// HasStandardContentSource returns a boolean if a field has been set.
+func (o *BTSelectItemViewStateInfo) HasStandardContentSource() bool {
+	if o != nil && o.StandardContentSource != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStandardContentSource gets a reference to the given int32 and assigns it to the StandardContentSource field.
+func (o *BTSelectItemViewStateInfo) SetStandardContentSource(v int32) {
+	o.StandardContentSource = &v
+}
+
 func (o BTSelectItemViewStateInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ActiveSelectorId != nil {
@@ -144,6 +177,9 @@ func (o BTSelectItemViewStateInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Purpose != nil {
 		toSerialize["purpose"] = o.Purpose
+	}
+	if o.StandardContentSource != nil {
+		toSerialize["standardContentSource"] = o.StandardContentSource
 	}
 	return json.Marshal(toSerialize)
 }

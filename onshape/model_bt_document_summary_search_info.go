@@ -64,6 +64,7 @@ type BTDocumentSummarySearchInfo struct {
 	Permission                    *BTOldPermission          `json:"permission,omitempty"`
 	PermissionSet                 []string                  `json:"permissionSet,omitempty"`
 	Public                        *bool                     `json:"public,omitempty"`
+	PublicLinkable                *bool                     `json:"publicLinkable,omitempty"`
 	PublishedVersionId            *string                   `json:"publishedVersionId,omitempty"`
 	RecentVersion                 *BTBaseInfo               `json:"recentVersion,omitempty"`
 	Sequence                      *string                   `json:"sequence,omitempty"`
@@ -1494,6 +1495,38 @@ func (o *BTDocumentSummarySearchInfo) SetPublic(v bool) {
 	o.Public = &v
 }
 
+// GetPublicLinkable returns the PublicLinkable field value if set, zero value otherwise.
+func (o *BTDocumentSummarySearchInfo) GetPublicLinkable() bool {
+	if o == nil || o.PublicLinkable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PublicLinkable
+}
+
+// GetPublicLinkableOk returns a tuple with the PublicLinkable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentSummarySearchInfo) GetPublicLinkableOk() (*bool, bool) {
+	if o == nil || o.PublicLinkable == nil {
+		return nil, false
+	}
+	return o.PublicLinkable, true
+}
+
+// HasPublicLinkable returns a boolean if a field has been set.
+func (o *BTDocumentSummarySearchInfo) HasPublicLinkable() bool {
+	if o != nil && o.PublicLinkable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicLinkable gets a reference to the given bool and assigns it to the PublicLinkable field.
+func (o *BTDocumentSummarySearchInfo) SetPublicLinkable(v bool) {
+	o.PublicLinkable = &v
+}
+
 // GetPublishedVersionId returns the PublishedVersionId field value if set, zero value otherwise.
 func (o *BTDocumentSummarySearchInfo) GetPublishedVersionId() string {
 	if o == nil || o.PublishedVersionId == nil {
@@ -1947,6 +1980,9 @@ func (o BTDocumentSummarySearchInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Public != nil {
 		toSerialize["public"] = o.Public
+	}
+	if o.PublicLinkable != nil {
+		toSerialize["publicLinkable"] = o.PublicLinkable
 	}
 	if o.PublishedVersionId != nil {
 		toSerialize["publishedVersionId"] = o.PublishedVersionId

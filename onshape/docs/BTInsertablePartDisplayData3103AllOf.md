@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BodyPartDataList** | Pointer to [**[]BTPartData16**](BTPartData16.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
 **PartData** | Pointer to [**BTPartData16**](BTPartData16.md) |  | [optional] 
 **PartDisplayData** | Pointer to [**BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
@@ -28,6 +29,31 @@ will change when the set of required properties is changed
 NewBTInsertablePartDisplayData3103AllOfWithDefaults instantiates a new BTInsertablePartDisplayData3103AllOf object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103AllOf) GetBodyPartDataList() []BTPartData16`
+
+GetBodyPartDataList returns the BodyPartDataList field if non-nil, zero value otherwise.
+
+### GetBodyPartDataListOk
+
+`func (o *BTInsertablePartDisplayData3103AllOf) GetBodyPartDataListOk() (*[]BTPartData16, bool)`
+
+GetBodyPartDataListOk returns a tuple with the BodyPartDataList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103AllOf) SetBodyPartDataList(v []BTPartData16)`
+
+SetBodyPartDataList sets BodyPartDataList field to given value.
+
+### HasBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103AllOf) HasBodyPartDataList() bool`
+
+HasBodyPartDataList returns a boolean if a field has been set.
 
 ### GetBtType
 

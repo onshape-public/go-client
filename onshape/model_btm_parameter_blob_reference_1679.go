@@ -24,11 +24,12 @@ type BTMParameterBlobReference1679 struct {
 	// ID of the parameter's node.
 	NodeId *string `json:"nodeId,omitempty"`
 	// Unique ID of the parameter.
-	ParameterId   *string       `json:"parameterId,omitempty"`
-	ParameterName *string       `json:"parameterName,omitempty"`
-	ValueString   *string       `json:"valueString,omitempty"`
-	BlobImport    *BTMImport136 `json:"blobImport,omitempty"`
-	Namespace     *string       `json:"namespace,omitempty"`
+	ParameterId        *string                            `json:"parameterId,omitempty"`
+	ParameterName      *string                            `json:"parameterName,omitempty"`
+	ValueString        *string                            `json:"valueString,omitempty"`
+	BlobImport         *BTMImport136                      `json:"blobImport,omitempty"`
+	ElementLibraryData *BTElementLibraryReferenceData3133 `json:"elementLibraryData,omitempty"`
+	Namespace          *string                            `json:"namespace,omitempty"`
 }
 
 // NewBTMParameterBlobReference1679 instantiates a new BTMParameterBlobReference1679 object
@@ -304,6 +305,38 @@ func (o *BTMParameterBlobReference1679) SetBlobImport(v BTMImport136) {
 	o.BlobImport = &v
 }
 
+// GetElementLibraryData returns the ElementLibraryData field value if set, zero value otherwise.
+func (o *BTMParameterBlobReference1679) GetElementLibraryData() BTElementLibraryReferenceData3133 {
+	if o == nil || o.ElementLibraryData == nil {
+		var ret BTElementLibraryReferenceData3133
+		return ret
+	}
+	return *o.ElementLibraryData
+}
+
+// GetElementLibraryDataOk returns a tuple with the ElementLibraryData field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTMParameterBlobReference1679) GetElementLibraryDataOk() (*BTElementLibraryReferenceData3133, bool) {
+	if o == nil || o.ElementLibraryData == nil {
+		return nil, false
+	}
+	return o.ElementLibraryData, true
+}
+
+// HasElementLibraryData returns a boolean if a field has been set.
+func (o *BTMParameterBlobReference1679) HasElementLibraryData() bool {
+	if o != nil && o.ElementLibraryData != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetElementLibraryData gets a reference to the given BTElementLibraryReferenceData3133 and assigns it to the ElementLibraryData field.
+func (o *BTMParameterBlobReference1679) SetElementLibraryData(v BTElementLibraryReferenceData3133) {
+	o.ElementLibraryData = &v
+}
+
 // GetNamespace returns the Namespace field value if set, zero value otherwise.
 func (o *BTMParameterBlobReference1679) GetNamespace() string {
 	if o == nil || o.Namespace == nil {
@@ -369,6 +402,9 @@ func (o BTMParameterBlobReference1679) MarshalJSON() ([]byte, error) {
 	}
 	if o.BlobImport != nil {
 		toSerialize["blobImport"] = o.BlobImport
+	}
+	if o.ElementLibraryData != nil {
+		toSerialize["elementLibraryData"] = o.ElementLibraryData
 	}
 	if o.Namespace != nil {
 		toSerialize["namespace"] = o.Namespace

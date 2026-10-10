@@ -24,33 +24,35 @@ type BTUserAdminSummaryInfo struct {
 	// Name of the resource.
 	Name *string `json:"name,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
-	ViewRef                   *string               `json:"viewRef,omitempty"`
-	Image                     *string               `json:"image,omitempty"`
-	IsOnshapeSupport          *bool                 `json:"isOnshapeSupport,omitempty"`
-	State                     *int32                `json:"state,omitempty"`
-	DocumentationName         *string               `json:"documentationName,omitempty"`
-	Email                     *string               `json:"email,omitempty"`
-	FirstName                 *string               `json:"firstName,omitempty"`
-	LastName                  *string               `json:"lastName,omitempty"`
-	Company                   *BTCompanySummaryInfo `json:"company,omitempty"`
-	CompanyUserState          *int32                `json:"companyUserState,omitempty"`
-	ConfirmationRequested     *bool                 `json:"confirmationRequested,omitempty"`
-	DocumentationNameOverride *string               `json:"documentationNameOverride,omitempty"`
-	GlobalPermissions         *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
-	InvitationState           *int32                `json:"invitationState,omitempty"`
-	IsExternal                *bool                 `json:"isExternal,omitempty"`
-	IsGuest                   *bool                 `json:"isGuest,omitempty"`
-	IsLight                   *bool                 `json:"isLight,omitempty"`
-	LastLoginTime             *JSONTime             `json:"lastLoginTime,omitempty"`
-	PersonalMessageAllowed    *bool                 `json:"personalMessageAllowed,omitempty"`
-	Source                    *int32                `json:"source,omitempty"`
-	ActivePlanId              *string               `json:"activePlanId,omitempty"`
-	BillingUpdateRequired     *bool                 `json:"billingUpdateRequired,omitempty"`
-	CompanyRoles              []CompanyRole         `json:"companyRoles,omitempty"`
-	CreatedAt                 *JSONTime             `json:"createdAt,omitempty"`
-	ForumId                   *string               `json:"forumId,omitempty"`
-	SystemUser                *bool                 `json:"systemUser,omitempty"`
-	TotpEnabled               *bool                 `json:"totpEnabled,omitempty"`
+	ViewRef                     *string               `json:"viewRef,omitempty"`
+	Image                       *string               `json:"image,omitempty"`
+	IsOnshapeSupport            *bool                 `json:"isOnshapeSupport,omitempty"`
+	State                       *int32                `json:"state,omitempty"`
+	DocumentationName           *string               `json:"documentationName,omitempty"`
+	Email                       *string               `json:"email,omitempty"`
+	FirstName                   *string               `json:"firstName,omitempty"`
+	LastName                    *string               `json:"lastName,omitempty"`
+	Company                     *BTCompanySummaryInfo `json:"company,omitempty"`
+	CompanyUserState            *int32                `json:"companyUserState,omitempty"`
+	ConfirmationRequested       *bool                 `json:"confirmationRequested,omitempty"`
+	DocumentationNameOverride   *string               `json:"documentationNameOverride,omitempty"`
+	GlobalPermissions           *GlobalPermissionInfo `json:"globalPermissions,omitempty"`
+	InvitationState             *int32                `json:"invitationState,omitempty"`
+	IsExternal                  *bool                 `json:"isExternal,omitempty"`
+	IsGuest                     *bool                 `json:"isGuest,omitempty"`
+	IsLight                     *bool                 `json:"isLight,omitempty"`
+	LastLoginTime               *JSONTime             `json:"lastLoginTime,omitempty"`
+	PersonalMessageAllowed      *bool                 `json:"personalMessageAllowed,omitempty"`
+	ScheduledRemovalDate        *JSONTime             `json:"scheduledRemovalDate,omitempty"`
+	ShowOffBoardingNotification *bool                 `json:"showOffBoardingNotification,omitempty"`
+	Source                      *int32                `json:"source,omitempty"`
+	ActivePlanId                *string               `json:"activePlanId,omitempty"`
+	BillingUpdateRequired       *bool                 `json:"billingUpdateRequired,omitempty"`
+	CompanyRoles                []CompanyRole         `json:"companyRoles,omitempty"`
+	CreatedAt                   *JSONTime             `json:"createdAt,omitempty"`
+	ForumId                     *string               `json:"forumId,omitempty"`
+	SystemUser                  *bool                 `json:"systemUser,omitempty"`
+	TotpEnabled                 *bool                 `json:"totpEnabled,omitempty"`
 }
 
 // NewBTUserAdminSummaryInfo instantiates a new BTUserAdminSummaryInfo object
@@ -799,6 +801,70 @@ func (o *BTUserAdminSummaryInfo) SetPersonalMessageAllowed(v bool) {
 	o.PersonalMessageAllowed = &v
 }
 
+// GetScheduledRemovalDate returns the ScheduledRemovalDate field value if set, zero value otherwise.
+func (o *BTUserAdminSummaryInfo) GetScheduledRemovalDate() JSONTime {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		var ret JSONTime
+		return ret
+	}
+	return *o.ScheduledRemovalDate
+}
+
+// GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminSummaryInfo) GetScheduledRemovalDateOk() (*JSONTime, bool) {
+	if o == nil || o.ScheduledRemovalDate == nil {
+		return nil, false
+	}
+	return o.ScheduledRemovalDate, true
+}
+
+// HasScheduledRemovalDate returns a boolean if a field has been set.
+func (o *BTUserAdminSummaryInfo) HasScheduledRemovalDate() bool {
+	if o != nil && o.ScheduledRemovalDate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheduledRemovalDate gets a reference to the given JSONTime and assigns it to the ScheduledRemovalDate field.
+func (o *BTUserAdminSummaryInfo) SetScheduledRemovalDate(v JSONTime) {
+	o.ScheduledRemovalDate = &v
+}
+
+// GetShowOffBoardingNotification returns the ShowOffBoardingNotification field value if set, zero value otherwise.
+func (o *BTUserAdminSummaryInfo) GetShowOffBoardingNotification() bool {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowOffBoardingNotification
+}
+
+// GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTUserAdminSummaryInfo) GetShowOffBoardingNotificationOk() (*bool, bool) {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		return nil, false
+	}
+	return o.ShowOffBoardingNotification, true
+}
+
+// HasShowOffBoardingNotification returns a boolean if a field has been set.
+func (o *BTUserAdminSummaryInfo) HasShowOffBoardingNotification() bool {
+	if o != nil && o.ShowOffBoardingNotification != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowOffBoardingNotification gets a reference to the given bool and assigns it to the ShowOffBoardingNotification field.
+func (o *BTUserAdminSummaryInfo) SetShowOffBoardingNotification(v bool) {
+	o.ShowOffBoardingNotification = &v
+}
+
 // GetSource returns the Source field value if set, zero value otherwise.
 func (o *BTUserAdminSummaryInfo) GetSource() int32 {
 	if o == nil || o.Source == nil {
@@ -1125,6 +1191,12 @@ func (o BTUserAdminSummaryInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.PersonalMessageAllowed != nil {
 		toSerialize["personalMessageAllowed"] = o.PersonalMessageAllowed
+	}
+	if o.ScheduledRemovalDate != nil {
+		toSerialize["scheduledRemovalDate"] = o.ScheduledRemovalDate
+	}
+	if o.ShowOffBoardingNotification != nil {
+		toSerialize["showOffBoardingNotification"] = o.ShowOffBoardingNotification
 	}
 	if o.Source != nil {
 		toSerialize["source"] = o.Source

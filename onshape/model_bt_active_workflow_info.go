@@ -43,7 +43,7 @@ type BTActiveWorkflowInfo struct {
 	EnabledActiveMultipleWorkflows *bool `json:"enabledActiveMultipleWorkflows,omitempty"`
 	// Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object
 	HasInactiveCustomWorkflows *bool `json:"hasInactiveCustomWorkflows,omitempty"`
-	// Whether user has even authenticated against PLM. Used to trigger OAuth handshake
+	// Whether user has authenticated against PLM. Used to trigger OAuth handshake
 	IsCurrentUserLoggedIntoToPLM *bool                    `json:"isCurrentUserLoggedIntoToPLM,omitempty"`
 	ObsoletionWorkflow           *BTPublishedWorkflowInfo `json:"obsoletionWorkflow,omitempty"`
 	// Deprecated, use obsoletionWorkflowInfo.workflow.id instead
@@ -51,12 +51,12 @@ type BTActiveWorkflowInfo struct {
 	ObsoletionWorkflowInfo *BTActiveWorkflowTypeInfo `json:"obsoletionWorkflowInfo,omitempty"`
 	// Deprecated, no current alternative
 	OsCategoryIdToArenaNumberFormatId *map[string]string `json:"osCategoryIdToArenaNumberFormatId,omitempty"`
-	PLMIntegrationType                *int32             `json:"pLMIntegrationType,omitempty"`
-	PLMName                           *string            `json:"pLMName,omitempty"`
 	PartNumberingSchemeId             *string            `json:"partNumberingSchemeId,omitempty"`
 	// Deprecated, use the pickableWorkflows field on the workflowInfo object
-	PickableWorkflows []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
-	ReleaseWorkflow   *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
+	PickableWorkflows  []BTPublishedWorkflowInfo `json:"pickableWorkflows,omitempty"`
+	PlmIntegrationType *int32                    `json:"plmIntegrationType,omitempty"`
+	PlmName            *string                   `json:"plmName,omitempty"`
+	ReleaseWorkflow    *BTPublishedWorkflowInfo  `json:"releaseWorkflow,omitempty"`
 	// Deprecated, use releaseWorkflowInfo.workflow.id instead
 	ReleaseWorkflowId   *string                   `json:"releaseWorkflowId,omitempty"`
 	ReleaseWorkflowInfo *BTActiveWorkflowTypeInfo `json:"releaseWorkflowInfo,omitempty"`
@@ -889,70 +889,6 @@ func (o *BTActiveWorkflowInfo) SetOsCategoryIdToArenaNumberFormatId(v map[string
 	o.OsCategoryIdToArenaNumberFormatId = &v
 }
 
-// GetPLMIntegrationType returns the PLMIntegrationType field value if set, zero value otherwise.
-func (o *BTActiveWorkflowInfo) GetPLMIntegrationType() int32 {
-	if o == nil || o.PLMIntegrationType == nil {
-		var ret int32
-		return ret
-	}
-	return *o.PLMIntegrationType
-}
-
-// GetPLMIntegrationTypeOk returns a tuple with the PLMIntegrationType field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTActiveWorkflowInfo) GetPLMIntegrationTypeOk() (*int32, bool) {
-	if o == nil || o.PLMIntegrationType == nil {
-		return nil, false
-	}
-	return o.PLMIntegrationType, true
-}
-
-// HasPLMIntegrationType returns a boolean if a field has been set.
-func (o *BTActiveWorkflowInfo) HasPLMIntegrationType() bool {
-	if o != nil && o.PLMIntegrationType != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPLMIntegrationType gets a reference to the given int32 and assigns it to the PLMIntegrationType field.
-func (o *BTActiveWorkflowInfo) SetPLMIntegrationType(v int32) {
-	o.PLMIntegrationType = &v
-}
-
-// GetPLMName returns the PLMName field value if set, zero value otherwise.
-func (o *BTActiveWorkflowInfo) GetPLMName() string {
-	if o == nil || o.PLMName == nil {
-		var ret string
-		return ret
-	}
-	return *o.PLMName
-}
-
-// GetPLMNameOk returns a tuple with the PLMName field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *BTActiveWorkflowInfo) GetPLMNameOk() (*string, bool) {
-	if o == nil || o.PLMName == nil {
-		return nil, false
-	}
-	return o.PLMName, true
-}
-
-// HasPLMName returns a boolean if a field has been set.
-func (o *BTActiveWorkflowInfo) HasPLMName() bool {
-	if o != nil && o.PLMName != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetPLMName gets a reference to the given string and assigns it to the PLMName field.
-func (o *BTActiveWorkflowInfo) SetPLMName(v string) {
-	o.PLMName = &v
-}
-
 // GetPartNumberingSchemeId returns the PartNumberingSchemeId field value if set, zero value otherwise.
 func (o *BTActiveWorkflowInfo) GetPartNumberingSchemeId() string {
 	if o == nil || o.PartNumberingSchemeId == nil {
@@ -1015,6 +951,70 @@ func (o *BTActiveWorkflowInfo) HasPickableWorkflows() bool {
 // SetPickableWorkflows gets a reference to the given []BTPublishedWorkflowInfo and assigns it to the PickableWorkflows field.
 func (o *BTActiveWorkflowInfo) SetPickableWorkflows(v []BTPublishedWorkflowInfo) {
 	o.PickableWorkflows = v
+}
+
+// GetPlmIntegrationType returns the PlmIntegrationType field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetPlmIntegrationType() int32 {
+	if o == nil || o.PlmIntegrationType == nil {
+		var ret int32
+		return ret
+	}
+	return *o.PlmIntegrationType
+}
+
+// GetPlmIntegrationTypeOk returns a tuple with the PlmIntegrationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetPlmIntegrationTypeOk() (*int32, bool) {
+	if o == nil || o.PlmIntegrationType == nil {
+		return nil, false
+	}
+	return o.PlmIntegrationType, true
+}
+
+// HasPlmIntegrationType returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasPlmIntegrationType() bool {
+	if o != nil && o.PlmIntegrationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPlmIntegrationType gets a reference to the given int32 and assigns it to the PlmIntegrationType field.
+func (o *BTActiveWorkflowInfo) SetPlmIntegrationType(v int32) {
+	o.PlmIntegrationType = &v
+}
+
+// GetPlmName returns the PlmName field value if set, zero value otherwise.
+func (o *BTActiveWorkflowInfo) GetPlmName() string {
+	if o == nil || o.PlmName == nil {
+		var ret string
+		return ret
+	}
+	return *o.PlmName
+}
+
+// GetPlmNameOk returns a tuple with the PlmName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTActiveWorkflowInfo) GetPlmNameOk() (*string, bool) {
+	if o == nil || o.PlmName == nil {
+		return nil, false
+	}
+	return o.PlmName, true
+}
+
+// HasPlmName returns a boolean if a field has been set.
+func (o *BTActiveWorkflowInfo) HasPlmName() bool {
+	if o != nil && o.PlmName != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPlmName gets a reference to the given string and assigns it to the PlmName field.
+func (o *BTActiveWorkflowInfo) SetPlmName(v string) {
+	o.PlmName = &v
 }
 
 // GetReleaseWorkflow returns the ReleaseWorkflow field value if set, zero value otherwise.
@@ -1478,17 +1478,17 @@ func (o BTActiveWorkflowInfo) MarshalJSON() ([]byte, error) {
 	if o.OsCategoryIdToArenaNumberFormatId != nil {
 		toSerialize["osCategoryIdToArenaNumberFormatId"] = o.OsCategoryIdToArenaNumberFormatId
 	}
-	if o.PLMIntegrationType != nil {
-		toSerialize["pLMIntegrationType"] = o.PLMIntegrationType
-	}
-	if o.PLMName != nil {
-		toSerialize["pLMName"] = o.PLMName
-	}
 	if o.PartNumberingSchemeId != nil {
 		toSerialize["partNumberingSchemeId"] = o.PartNumberingSchemeId
 	}
 	if o.PickableWorkflows != nil {
 		toSerialize["pickableWorkflows"] = o.PickableWorkflows
+	}
+	if o.PlmIntegrationType != nil {
+		toSerialize["plmIntegrationType"] = o.PlmIntegrationType
+	}
+	if o.PlmName != nil {
+		toSerialize["plmName"] = o.PlmName
 	}
 	if o.ReleaseWorkflow != nil {
 		toSerialize["releaseWorkflow"] = o.ReleaseWorkflow

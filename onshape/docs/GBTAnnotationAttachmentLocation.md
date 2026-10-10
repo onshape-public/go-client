@@ -9,6 +9,10 @@
 
 * `GBTAnnotationAttachmentLocationOppositeLeaderEdge` (value: `"OPPOSITE_LEADER_EDGE"`)
 
+* `GBTAnnotationAttachmentLocationLeftMiddle` (value: `"LEFT_MIDDLE"`)
+
+* `GBTAnnotationAttachmentLocationRightMiddle` (value: `"RIGHT_MIDDLE"`)
+
 * `GBTAnnotationAttachmentLocationUnknown` (value: `"UNKNOWN"`)
 
 

@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **IsDerived** | Pointer to **bool** |  | [optional] 
 **IsDriven** | Pointer to **bool** |  | [optional] 
 **IsOverDefined** | Pointer to **bool** |  | [optional] 
+**IsPlaneReferenceMissing** | Pointer to **bool** |  | [optional] 
 **LowerTolerance** | Pointer to **float64** |  | [optional] 
 **MaximumLimit** | Pointer to **float64** |  | [optional] 
 **MinimumLimit** | Pointer to **float64** |  | [optional] 
@@ -423,6 +424,31 @@ SetIsOverDefined sets IsOverDefined field to given value.
 `func (o *BTDimensionDisplayData323) HasIsOverDefined() bool`
 
 HasIsOverDefined returns a boolean if a field has been set.
+
+### GetIsPlaneReferenceMissing
+
+`func (o *BTDimensionDisplayData323) GetIsPlaneReferenceMissing() bool`
+
+GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field if non-nil, zero value otherwise.
+
+### GetIsPlaneReferenceMissingOk
+
+`func (o *BTDimensionDisplayData323) GetIsPlaneReferenceMissingOk() (*bool, bool)`
+
+GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsPlaneReferenceMissing
+
+`func (o *BTDimensionDisplayData323) SetIsPlaneReferenceMissing(v bool)`
+
+SetIsPlaneReferenceMissing sets IsPlaneReferenceMissing field to given value.
+
+### HasIsPlaneReferenceMissing
+
+`func (o *BTDimensionDisplayData323) HasIsPlaneReferenceMissing() bool`
+
+HasIsPlaneReferenceMissing returns a boolean if a field has been set.
 
 ### GetLowerTolerance
 

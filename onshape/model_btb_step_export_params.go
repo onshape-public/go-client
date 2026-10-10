@@ -18,6 +18,8 @@ import (
 type BTBStepExportParams struct {
 	AdvancedParams      *BTBExportAdvancedParams `json:"advancedParams,omitempty"`
 	CloudStorageOptions *BTBCloudStorageOptions  `json:"cloudStorageOptions,omitempty"`
+	// User specified identifier that can be used as a correlation id across api calls.
+	CorrelationId *string `json:"correlationId,omitempty"`
 	// The name of the exported file.
 	DestinationName    *string                `json:"destinationName,omitempty"`
 	EmailExportOptions *BTBEmailExportOptions `json:"emailExportOptions,omitempty"`
@@ -160,6 +162,38 @@ func (o *BTBStepExportParams) HasCloudStorageOptions() bool {
 // SetCloudStorageOptions gets a reference to the given BTBCloudStorageOptions and assigns it to the CloudStorageOptions field.
 func (o *BTBStepExportParams) SetCloudStorageOptions(v BTBCloudStorageOptions) {
 	o.CloudStorageOptions = &v
+}
+
+// GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
+func (o *BTBStepExportParams) GetCorrelationId() string {
+	if o == nil || o.CorrelationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CorrelationId
+}
+
+// GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTBStepExportParams) GetCorrelationIdOk() (*string, bool) {
+	if o == nil || o.CorrelationId == nil {
+		return nil, false
+	}
+	return o.CorrelationId, true
+}
+
+// HasCorrelationId returns a boolean if a field has been set.
+func (o *BTBStepExportParams) HasCorrelationId() bool {
+	if o != nil && o.CorrelationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCorrelationId gets a reference to the given string and assigns it to the CorrelationId field.
+func (o *BTBStepExportParams) SetCorrelationId(v string) {
+	o.CorrelationId = &v
 }
 
 // GetDestinationName returns the DestinationName field value if set, zero value otherwise.
@@ -553,6 +587,9 @@ func (o BTBStepExportParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.CloudStorageOptions != nil {
 		toSerialize["cloudStorageOptions"] = o.CloudStorageOptions
+	}
+	if o.CorrelationId != nil {
+		toSerialize["correlationId"] = o.CorrelationId
 	}
 	if o.DestinationName != nil {
 		toSerialize["destinationName"] = o.DestinationName
