@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.223.92697-90c317e616c3",
+    "version" : "1.223.93118-b7e399f9a55f",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -49116,9 +49116,9 @@
           "peerElementType" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
           "workspaceName" : "INTERNAL",
-          "peerWvId" : "INTERNAL",
           "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
+          "peerWvId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
       },
@@ -49280,9 +49280,9 @@
           "peerElementType" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
           "workspaceName" : "INTERNAL",
-          "peerWvId" : "INTERNAL",
           "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
+          "peerWvId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
       },
@@ -49314,9 +49314,9 @@
           "peerElementType" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
           "workspaceName" : "INTERNAL",
-          "peerWvId" : "INTERNAL",
           "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
+          "peerWvId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
       },
