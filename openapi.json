@@ -11,7 +11,7 @@
       "name" : "Apache 2.0",
       "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "version" : "1.224.94530-acac45b698ef",
+    "version" : "1.224.94704-6aae4b0b50b6",
     "x-logo" : {
       "url" : "images/logo-onshape-gray-green-nav-bar.svg",
       "backgroundColor" : "#ffffff",
@@ -49466,10 +49466,10 @@
           "peerConfiguration" : "INTERNAL",
           "peerElementId" : "INTERNAL",
           "peerElementType" : "INTERNAL",
-          "workspaceName" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
-          "peerDocumentId" : "INTERNAL",
+          "workspaceName" : "INTERNAL",
           "peerWvId" : "INTERNAL",
+          "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
@@ -49630,10 +49630,10 @@
           "peerConfiguration" : "INTERNAL",
           "peerElementId" : "INTERNAL",
           "peerElementType" : "INTERNAL",
-          "workspaceName" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
-          "peerDocumentId" : "INTERNAL",
+          "workspaceName" : "INTERNAL",
           "peerWvId" : "INTERNAL",
+          "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
@@ -49664,10 +49664,10 @@
           "peerConfiguration" : "INTERNAL",
           "peerElementId" : "INTERNAL",
           "peerElementType" : "INTERNAL",
-          "workspaceName" : "INTERNAL",
           "thumbnailId" : "INTERNAL",
-          "peerDocumentId" : "INTERNAL",
+          "workspaceName" : "INTERNAL",
           "peerWvId" : "INTERNAL",
+          "peerDocumentId" : "INTERNAL",
           "peerPartId" : "INTERNAL",
           "workspaceId" : "INTERNAL"
         }
@@ -59101,6 +59101,7 @@
             "description" : "The raw value of the configuration parameter."
           }
         },
+        "description" : "The configuration parameters of the referring element.",
         "x-BTVisibility-properties" : {
           "isCosmetic" : "INTERNAL",
           "isVisible" : "INTERNAL"
