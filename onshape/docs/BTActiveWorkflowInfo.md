@@ -24,15 +24,15 @@ Name | Type | Description | Notes
 **DrawingCanDuplicatePartNumber** | Pointer to **bool** |  | [optional] 
 **EnabledActiveMultipleWorkflows** | Pointer to **bool** | Deprecated, can be determined by checking if the length of releaseWorkflowInfo.pickableWorkflows &gt; 1 | [optional] 
 **HasInactiveCustomWorkflows** | Pointer to **bool** | Deprecated, use hasInactiveCustomWorkflows field on the workflowInfo object | [optional] 
-**IsCurrentUserLoggedIntoToPLM** | Pointer to **bool** | Whether user has even authenticated against PLM. Used to trigger OAuth handshake | [optional] 
+**IsCurrentUserLoggedIntoToPLM** | Pointer to **bool** | Whether user has authenticated against PLM. Used to trigger OAuth handshake | [optional] 
 **ObsoletionWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ObsoletionWorkflowId** | Pointer to **string** | Deprecated, use obsoletionWorkflowInfo.workflow.id instead | [optional] 
 **ObsoletionWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
 **OsCategoryIdToArenaNumberFormatId** | Pointer to **map[string]string** | Deprecated, no current alternative | [optional] 
-**PLMIntegrationType** | Pointer to **int32** |  | [optional] 
-**PLMName** | Pointer to **string** |  | [optional] 
 **PartNumberingSchemeId** | Pointer to **string** |  | [optional] 
 **PickableWorkflows** | Pointer to [**[]BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) | Deprecated, use the pickableWorkflows field on the workflowInfo object | [optional] 
+**PlmIntegrationType** | Pointer to **int32** |  | [optional] 
+**PlmName** | Pointer to **string** |  | [optional] 
 **ReleaseWorkflow** | Pointer to [**BTPublishedWorkflowInfo**](BTPublishedWorkflowInfo.md) |  | [optional] 
 **ReleaseWorkflowId** | Pointer to **string** | Deprecated, use releaseWorkflowInfo.workflow.id instead | [optional] 
 **ReleaseWorkflowInfo** | Pointer to [**BTActiveWorkflowTypeInfo**](BTActiveWorkflowTypeInfo.md) |  | [optional] 
@@ -690,56 +690,6 @@ SetOsCategoryIdToArenaNumberFormatId sets OsCategoryIdToArenaNumberFormatId fiel
 
 HasOsCategoryIdToArenaNumberFormatId returns a boolean if a field has been set.
 
-### GetPLMIntegrationType
-
-`func (o *BTActiveWorkflowInfo) GetPLMIntegrationType() int32`
-
-GetPLMIntegrationType returns the PLMIntegrationType field if non-nil, zero value otherwise.
-
-### GetPLMIntegrationTypeOk
-
-`func (o *BTActiveWorkflowInfo) GetPLMIntegrationTypeOk() (*int32, bool)`
-
-GetPLMIntegrationTypeOk returns a tuple with the PLMIntegrationType field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPLMIntegrationType
-
-`func (o *BTActiveWorkflowInfo) SetPLMIntegrationType(v int32)`
-
-SetPLMIntegrationType sets PLMIntegrationType field to given value.
-
-### HasPLMIntegrationType
-
-`func (o *BTActiveWorkflowInfo) HasPLMIntegrationType() bool`
-
-HasPLMIntegrationType returns a boolean if a field has been set.
-
-### GetPLMName
-
-`func (o *BTActiveWorkflowInfo) GetPLMName() string`
-
-GetPLMName returns the PLMName field if non-nil, zero value otherwise.
-
-### GetPLMNameOk
-
-`func (o *BTActiveWorkflowInfo) GetPLMNameOk() (*string, bool)`
-
-GetPLMNameOk returns a tuple with the PLMName field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetPLMName
-
-`func (o *BTActiveWorkflowInfo) SetPLMName(v string)`
-
-SetPLMName sets PLMName field to given value.
-
-### HasPLMName
-
-`func (o *BTActiveWorkflowInfo) HasPLMName() bool`
-
-HasPLMName returns a boolean if a field has been set.
-
 ### GetPartNumberingSchemeId
 
 `func (o *BTActiveWorkflowInfo) GetPartNumberingSchemeId() string`
@@ -789,6 +739,56 @@ SetPickableWorkflows sets PickableWorkflows field to given value.
 `func (o *BTActiveWorkflowInfo) HasPickableWorkflows() bool`
 
 HasPickableWorkflows returns a boolean if a field has been set.
+
+### GetPlmIntegrationType
+
+`func (o *BTActiveWorkflowInfo) GetPlmIntegrationType() int32`
+
+GetPlmIntegrationType returns the PlmIntegrationType field if non-nil, zero value otherwise.
+
+### GetPlmIntegrationTypeOk
+
+`func (o *BTActiveWorkflowInfo) GetPlmIntegrationTypeOk() (*int32, bool)`
+
+GetPlmIntegrationTypeOk returns a tuple with the PlmIntegrationType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlmIntegrationType
+
+`func (o *BTActiveWorkflowInfo) SetPlmIntegrationType(v int32)`
+
+SetPlmIntegrationType sets PlmIntegrationType field to given value.
+
+### HasPlmIntegrationType
+
+`func (o *BTActiveWorkflowInfo) HasPlmIntegrationType() bool`
+
+HasPlmIntegrationType returns a boolean if a field has been set.
+
+### GetPlmName
+
+`func (o *BTActiveWorkflowInfo) GetPlmName() string`
+
+GetPlmName returns the PlmName field if non-nil, zero value otherwise.
+
+### GetPlmNameOk
+
+`func (o *BTActiveWorkflowInfo) GetPlmNameOk() (*string, bool)`
+
+GetPlmNameOk returns a tuple with the PlmName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPlmName
+
+`func (o *BTActiveWorkflowInfo) SetPlmName(v string)`
+
+SetPlmName sets PlmName field to given value.
+
+### HasPlmName
+
+`func (o *BTActiveWorkflowInfo) HasPlmName() bool`
+
+HasPlmName returns a boolean if a field has been set.
 
 ### GetReleaseWorkflow
 

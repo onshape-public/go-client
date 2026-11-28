@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ExpYear** | Pointer to **int32** |  | [optional] 
 **Last4** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**PaymentMethodId** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -154,6 +155,31 @@ SetName sets Name field to given value.
 `func (o *BTCardInfo) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetPaymentMethodId
+
+`func (o *BTCardInfo) GetPaymentMethodId() string`
+
+GetPaymentMethodId returns the PaymentMethodId field if non-nil, zero value otherwise.
+
+### GetPaymentMethodIdOk
+
+`func (o *BTCardInfo) GetPaymentMethodIdOk() (*string, bool)`
+
+GetPaymentMethodIdOk returns a tuple with the PaymentMethodId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPaymentMethodId
+
+`func (o *BTCardInfo) SetPaymentMethodId(v string)`
+
+SetPaymentMethodId sets PaymentMethodId field to given value.
+
+### HasPaymentMethodId
+
+`func (o *BTCardInfo) HasPaymentMethodId() bool`
+
+HasPaymentMethodId returns a boolean if a field has been set.
 
 ### GetType
 

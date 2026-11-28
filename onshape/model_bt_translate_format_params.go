@@ -30,8 +30,10 @@ type BTTranslateFormatParams struct {
 	CloudStorageAccountId *string `json:"cloudStorageAccountId,omitempty"`
 	ColorMethod           *string `json:"colorMethod,omitempty"`
 	// URL-encoded string of configuration values (separated by `;`). See the [Configurations API Guide](https://onshape-public.github.io/docs/api-adv/configs/) for details.
-	Configuration    *string `json:"configuration,omitempty"`
-	ConnectionId     *string `json:"connectionId,omitempty"`
+	Configuration *string `json:"configuration,omitempty"`
+	ConnectionId  *string `json:"connectionId,omitempty"`
+	// User specified identifier that can be used as a correlation id across api calls.
+	CorrelationId    *string `json:"correlationId,omitempty"`
 	CreateComposite  *bool   `json:"createComposite,omitempty"`
 	CurrentSheetOnly *bool   `json:"currentSheetOnly,omitempty"`
 	// The name of the exported file.
@@ -520,6 +522,38 @@ func (o *BTTranslateFormatParams) HasConnectionId() bool {
 // SetConnectionId gets a reference to the given string and assigns it to the ConnectionId field.
 func (o *BTTranslateFormatParams) SetConnectionId(v string) {
 	o.ConnectionId = &v
+}
+
+// GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
+func (o *BTTranslateFormatParams) GetCorrelationId() string {
+	if o == nil || o.CorrelationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CorrelationId
+}
+
+// GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslateFormatParams) GetCorrelationIdOk() (*string, bool) {
+	if o == nil || o.CorrelationId == nil {
+		return nil, false
+	}
+	return o.CorrelationId, true
+}
+
+// HasCorrelationId returns a boolean if a field has been set.
+func (o *BTTranslateFormatParams) HasCorrelationId() bool {
+	if o != nil && o.CorrelationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCorrelationId gets a reference to the given string and assigns it to the CorrelationId field.
+func (o *BTTranslateFormatParams) SetCorrelationId(v string) {
+	o.CorrelationId = &v
 }
 
 // GetCreateComposite returns the CreateComposite field value if set, zero value otherwise.
@@ -3489,6 +3523,9 @@ func (o BTTranslateFormatParams) MarshalJSON() ([]byte, error) {
 	}
 	if o.ConnectionId != nil {
 		toSerialize["connectionId"] = o.ConnectionId
+	}
+	if o.CorrelationId != nil {
+		toSerialize["correlationId"] = o.CorrelationId
 	}
 	if o.CreateComposite != nil {
 		toSerialize["createComposite"] = o.CreateComposite

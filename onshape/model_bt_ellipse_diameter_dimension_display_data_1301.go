@@ -17,41 +17,42 @@ import (
 // BTEllipseDiameterDimensionDisplayData1301 struct for BTEllipseDiameterDimensionDisplayData1301
 type BTEllipseDiameterDimensionDisplayData1301 struct {
 	BTLinearDimensionDisplayData330
-	BtType                 *string                 `json:"btType,omitempty"`
-	AllReferences          []string                `json:"allReferences,omitempty"`
-	AllReferencesPopulated *bool                   `json:"allReferencesPopulated,omitempty"`
-	CharacteristicId       *string                 `json:"characteristicId,omitempty"`
-	CoordinateSystem       *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
-	FeatureId              *string                 `json:"featureId,omitempty"`
-	FitClass               *string                 `json:"fitClass,omitempty"`
-	HasMaximumLimit_       *bool                   `json:"hasMaximumLimit,omitempty"`
-	HasMinimumLimit_       *bool                   `json:"hasMinimumLimit,omitempty"`
-	Id                     *string                 `json:"id,omitempty"`
-	IsAnnotationDimension  *bool                   `json:"isAnnotationDimension,omitempty"`
-	IsAssociatedWithFlat   *bool                   `json:"isAssociatedWithFlat,omitempty"`
-	IsDerived              *bool                   `json:"isDerived,omitempty"`
-	IsDriven               *bool                   `json:"isDriven,omitempty"`
-	IsOverDefined          *bool                   `json:"isOverDefined,omitempty"`
-	LowerTolerance         *float64                `json:"lowerTolerance,omitempty"`
-	MaximumLimit           *float64                `json:"maximumLimit,omitempty"`
-	MinimumLimit           *float64                `json:"minimumLimit,omitempty"`
-	ParameterId            *string                 `json:"parameterId,omitempty"`
-	PartId                 *string                 `json:"partId,omitempty"`
-	PlaneMatrix            *BTBSMatrix386          `json:"planeMatrix,omitempty"`
-	Precision              *GBTTolerancePrecision  `json:"precision,omitempty"`
-	ToleranceType          *GBTToleranceType       `json:"toleranceType,omitempty"`
-	UpperTolerance         *float64                `json:"upperTolerance,omitempty"`
-	Value                  *float64                `json:"value,omitempty"`
-	HasExtension           *bool                   `json:"hasExtension,omitempty"`
-	PositionX              *float64                `json:"positionX,omitempty"`
-	PositionY              *float64                `json:"positionY,omitempty"`
-	WitnessEndPoint0X      *float64                `json:"witnessEndPoint0X,omitempty"`
-	WitnessEndPoint0Y      *float64                `json:"witnessEndPoint0Y,omitempty"`
-	WitnessEndPoint1X      *float64                `json:"witnessEndPoint1X,omitempty"`
-	WitnessEndPoint1Y      *float64                `json:"witnessEndPoint1Y,omitempty"`
-	WitnessExtension0Z     *float64                `json:"witnessExtension0Z,omitempty"`
-	WitnessExtension1Z     *float64                `json:"witnessExtension1Z,omitempty"`
-	WitnessExtensionCurve  *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
+	BtType                  *string                 `json:"btType,omitempty"`
+	AllReferences           []string                `json:"allReferences,omitempty"`
+	AllReferencesPopulated  *bool                   `json:"allReferencesPopulated,omitempty"`
+	CharacteristicId        *string                 `json:"characteristicId,omitempty"`
+	CoordinateSystem        *BTMatrix3x3340         `json:"coordinateSystem,omitempty"`
+	FeatureId               *string                 `json:"featureId,omitempty"`
+	FitClass                *string                 `json:"fitClass,omitempty"`
+	HasMaximumLimit_        *bool                   `json:"hasMaximumLimit,omitempty"`
+	HasMinimumLimit_        *bool                   `json:"hasMinimumLimit,omitempty"`
+	Id                      *string                 `json:"id,omitempty"`
+	IsAnnotationDimension   *bool                   `json:"isAnnotationDimension,omitempty"`
+	IsAssociatedWithFlat    *bool                   `json:"isAssociatedWithFlat,omitempty"`
+	IsDerived               *bool                   `json:"isDerived,omitempty"`
+	IsDriven                *bool                   `json:"isDriven,omitempty"`
+	IsOverDefined           *bool                   `json:"isOverDefined,omitempty"`
+	IsPlaneReferenceMissing *bool                   `json:"isPlaneReferenceMissing,omitempty"`
+	LowerTolerance          *float64                `json:"lowerTolerance,omitempty"`
+	MaximumLimit            *float64                `json:"maximumLimit,omitempty"`
+	MinimumLimit            *float64                `json:"minimumLimit,omitempty"`
+	ParameterId             *string                 `json:"parameterId,omitempty"`
+	PartId                  *string                 `json:"partId,omitempty"`
+	PlaneMatrix             *BTBSMatrix386          `json:"planeMatrix,omitempty"`
+	Precision               *GBTTolerancePrecision  `json:"precision,omitempty"`
+	ToleranceType           *GBTToleranceType       `json:"toleranceType,omitempty"`
+	UpperTolerance          *float64                `json:"upperTolerance,omitempty"`
+	Value                   *float64                `json:"value,omitempty"`
+	HasExtension            *bool                   `json:"hasExtension,omitempty"`
+	PositionX               *float64                `json:"positionX,omitempty"`
+	PositionY               *float64                `json:"positionY,omitempty"`
+	WitnessEndPoint0X       *float64                `json:"witnessEndPoint0X,omitempty"`
+	WitnessEndPoint0Y       *float64                `json:"witnessEndPoint0Y,omitempty"`
+	WitnessEndPoint1X       *float64                `json:"witnessEndPoint1X,omitempty"`
+	WitnessEndPoint1Y       *float64                `json:"witnessEndPoint1Y,omitempty"`
+	WitnessExtension0Z      *float64                `json:"witnessExtension0Z,omitempty"`
+	WitnessExtension1Z      *float64                `json:"witnessExtension1Z,omitempty"`
+	WitnessExtensionCurve   *BTCurveDisplayData4722 `json:"witnessExtensionCurve,omitempty"`
 }
 
 // NewBTEllipseDiameterDimensionDisplayData1301 instantiates a new BTEllipseDiameterDimensionDisplayData1301 object
@@ -549,6 +550,38 @@ func (o *BTEllipseDiameterDimensionDisplayData1301) HasIsOverDefined() bool {
 // SetIsOverDefined gets a reference to the given bool and assigns it to the IsOverDefined field.
 func (o *BTEllipseDiameterDimensionDisplayData1301) SetIsOverDefined(v bool) {
 	o.IsOverDefined = &v
+}
+
+// GetIsPlaneReferenceMissing returns the IsPlaneReferenceMissing field value if set, zero value otherwise.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetIsPlaneReferenceMissing() bool {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsPlaneReferenceMissing
+}
+
+// GetIsPlaneReferenceMissingOk returns a tuple with the IsPlaneReferenceMissing field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) GetIsPlaneReferenceMissingOk() (*bool, bool) {
+	if o == nil || o.IsPlaneReferenceMissing == nil {
+		return nil, false
+	}
+	return o.IsPlaneReferenceMissing, true
+}
+
+// HasIsPlaneReferenceMissing returns a boolean if a field has been set.
+func (o *BTEllipseDiameterDimensionDisplayData1301) HasIsPlaneReferenceMissing() bool {
+	if o != nil && o.IsPlaneReferenceMissing != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsPlaneReferenceMissing gets a reference to the given bool and assigns it to the IsPlaneReferenceMissing field.
+func (o *BTEllipseDiameterDimensionDisplayData1301) SetIsPlaneReferenceMissing(v bool) {
+	o.IsPlaneReferenceMissing = &v
 }
 
 // GetLowerTolerance returns the LowerTolerance field value if set, zero value otherwise.
@@ -1245,6 +1278,9 @@ func (o BTEllipseDiameterDimensionDisplayData1301) MarshalJSON() ([]byte, error)
 	}
 	if o.IsOverDefined != nil {
 		toSerialize["isOverDefined"] = o.IsOverDefined
+	}
+	if o.IsPlaneReferenceMissing != nil {
+		toSerialize["isPlaneReferenceMissing"] = o.IsPlaneReferenceMissing
 	}
 	if o.LowerTolerance != nil {
 		toSerialize["lowerTolerance"] = o.LowerTolerance

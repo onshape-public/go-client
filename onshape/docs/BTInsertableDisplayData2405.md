@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AppearanceIdToAppearanceOverride** | Pointer to [**map[string]BTAppearanceOverride2517**](BTAppearanceOverride2517.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Buffers** | Pointer to [**[]BTGraphicsBuffer2668**](BTGraphicsBuffer2668.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
@@ -32,6 +33,31 @@ will change when the set of required properties is changed
 NewBTInsertableDisplayData2405WithDefaults instantiates a new BTInsertableDisplayData2405 object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAppearanceIdToAppearanceOverride
+
+`func (o *BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverride() map[string]BTAppearanceOverride2517`
+
+GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field if non-nil, zero value otherwise.
+
+### GetAppearanceIdToAppearanceOverrideOk
+
+`func (o *BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverrideOk() (*map[string]BTAppearanceOverride2517, bool)`
+
+GetAppearanceIdToAppearanceOverrideOk returns a tuple with the AppearanceIdToAppearanceOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAppearanceIdToAppearanceOverride
+
+`func (o *BTInsertableDisplayData2405) SetAppearanceIdToAppearanceOverride(v map[string]BTAppearanceOverride2517)`
+
+SetAppearanceIdToAppearanceOverride sets AppearanceIdToAppearanceOverride field to given value.
+
+### HasAppearanceIdToAppearanceOverride
+
+`func (o *BTInsertableDisplayData2405) HasAppearanceIdToAppearanceOverride() bool`
+
+HasAppearanceIdToAppearanceOverride returns a boolean if a field has been set.
 
 ### GetBtType
 

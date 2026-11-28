@@ -16,6 +16,8 @@ import (
 
 // BTTranslationRequestImportInfo struct for BTTranslationRequestImportInfo
 type BTTranslationRequestImportInfo struct {
+	// User specified identifier that can be used as a correlation id across api calls.
+	CorrelationId *string `json:"correlationId,omitempty"`
 	DocumentId    *string `json:"documentId,omitempty"`
 	FailureReason *string `json:"failureReason,omitempty"`
 	// URI to fetch complete information of the resource.
@@ -51,6 +53,38 @@ func NewBTTranslationRequestImportInfo() *BTTranslationRequestImportInfo {
 func NewBTTranslationRequestImportInfoWithDefaults() *BTTranslationRequestImportInfo {
 	this := BTTranslationRequestImportInfo{}
 	return &this
+}
+
+// GetCorrelationId returns the CorrelationId field value if set, zero value otherwise.
+func (o *BTTranslationRequestImportInfo) GetCorrelationId() string {
+	if o == nil || o.CorrelationId == nil {
+		var ret string
+		return ret
+	}
+	return *o.CorrelationId
+}
+
+// GetCorrelationIdOk returns a tuple with the CorrelationId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTTranslationRequestImportInfo) GetCorrelationIdOk() (*string, bool) {
+	if o == nil || o.CorrelationId == nil {
+		return nil, false
+	}
+	return o.CorrelationId, true
+}
+
+// HasCorrelationId returns a boolean if a field has been set.
+func (o *BTTranslationRequestImportInfo) HasCorrelationId() bool {
+	if o != nil && o.CorrelationId != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCorrelationId gets a reference to the given string and assigns it to the CorrelationId field.
+func (o *BTTranslationRequestImportInfo) SetCorrelationId(v string) {
+	o.CorrelationId = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -503,6 +537,9 @@ func (o *BTTranslationRequestImportInfo) SetWorkspaceId(v string) {
 
 func (o BTTranslationRequestImportInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.CorrelationId != nil {
+		toSerialize["correlationId"] = o.CorrelationId
+	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId
 	}

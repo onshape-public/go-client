@@ -19,6 +19,7 @@ type BTWorkflowSnapshotInfo struct {
 	Actions                 []BTWorkflowActionInfo `json:"actions,omitempty"`
 	ApproverIds             []string               `json:"approverIds,omitempty"`
 	CanBeDiscarded          *bool                  `json:"canBeDiscarded,omitempty"`
+	CanCreateReleases       *bool                  `json:"canCreateReleases,omitempty"`
 	CurrentStateDisplayName *string                `json:"currentStateDisplayName,omitempty"`
 	DebugMicroversionId     *string                `json:"debugMicroversionId,omitempty"`
 	ErrorMessage            *string                `json:"errorMessage,omitempty"`
@@ -143,6 +144,38 @@ func (o *BTWorkflowSnapshotInfo) HasCanBeDiscarded() bool {
 // SetCanBeDiscarded gets a reference to the given bool and assigns it to the CanBeDiscarded field.
 func (o *BTWorkflowSnapshotInfo) SetCanBeDiscarded(v bool) {
 	o.CanBeDiscarded = &v
+}
+
+// GetCanCreateReleases returns the CanCreateReleases field value if set, zero value otherwise.
+func (o *BTWorkflowSnapshotInfo) GetCanCreateReleases() bool {
+	if o == nil || o.CanCreateReleases == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanCreateReleases
+}
+
+// GetCanCreateReleasesOk returns a tuple with the CanCreateReleases field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTWorkflowSnapshotInfo) GetCanCreateReleasesOk() (*bool, bool) {
+	if o == nil || o.CanCreateReleases == nil {
+		return nil, false
+	}
+	return o.CanCreateReleases, true
+}
+
+// HasCanCreateReleases returns a boolean if a field has been set.
+func (o *BTWorkflowSnapshotInfo) HasCanCreateReleases() bool {
+	if o != nil && o.CanCreateReleases != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanCreateReleases gets a reference to the given bool and assigns it to the CanCreateReleases field.
+func (o *BTWorkflowSnapshotInfo) SetCanCreateReleases(v bool) {
+	o.CanCreateReleases = &v
 }
 
 // GetCurrentStateDisplayName returns the CurrentStateDisplayName field value if set, zero value otherwise.
@@ -507,6 +540,9 @@ func (o BTWorkflowSnapshotInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanBeDiscarded != nil {
 		toSerialize["canBeDiscarded"] = o.CanBeDiscarded
+	}
+	if o.CanCreateReleases != nil {
+		toSerialize["canCreateReleases"] = o.CanCreateReleases
 	}
 	if o.CurrentStateDisplayName != nil {
 		toSerialize["currentStateDisplayName"] = o.CurrentStateDisplayName

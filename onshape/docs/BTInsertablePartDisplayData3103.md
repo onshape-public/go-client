@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**BodyPartDataList** | Pointer to [**[]BTPartData16**](BTPartData16.md) |  | [optional] 
 **PartData** | Pointer to [**BTPartData16**](BTPartData16.md) |  | [optional] 
 **PartDisplayData** | Pointer to [**BTPartDisplayData17**](BTPartDisplayData17.md) |  | [optional] 
 **PartId** | Pointer to **string** |  | [optional] 
@@ -53,6 +54,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTInsertablePartDisplayData3103) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103) GetBodyPartDataList() []BTPartData16`
+
+GetBodyPartDataList returns the BodyPartDataList field if non-nil, zero value otherwise.
+
+### GetBodyPartDataListOk
+
+`func (o *BTInsertablePartDisplayData3103) GetBodyPartDataListOk() (*[]BTPartData16, bool)`
+
+GetBodyPartDataListOk returns a tuple with the BodyPartDataList field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103) SetBodyPartDataList(v []BTPartData16)`
+
+SetBodyPartDataList sets BodyPartDataList field to given value.
+
+### HasBodyPartDataList
+
+`func (o *BTInsertablePartDisplayData3103) HasBodyPartDataList() bool`
+
+HasBodyPartDataList returns a boolean if a field has been set.
 
 ### GetPartData
 

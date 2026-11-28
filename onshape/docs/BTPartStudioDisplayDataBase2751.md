@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AnnotationsForElement** | Pointer to [**BTAnnotationElementDisplayData894**](BTAnnotationElementDisplayData894.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
+**DebugDescription** | Pointer to **string** |  | [optional] 
 **ElementId** | Pointer to **string** |  | [optional] 
 **FromFullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
 **FullElementId** | Pointer to [**BTFullElementId756**](BTFullElementId756.md) |  | [optional] 
@@ -87,6 +88,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTPartStudioDisplayDataBase2751) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetDebugDescription
+
+`func (o *BTPartStudioDisplayDataBase2751) GetDebugDescription() string`
+
+GetDebugDescription returns the DebugDescription field if non-nil, zero value otherwise.
+
+### GetDebugDescriptionOk
+
+`func (o *BTPartStudioDisplayDataBase2751) GetDebugDescriptionOk() (*string, bool)`
+
+GetDebugDescriptionOk returns a tuple with the DebugDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugDescription
+
+`func (o *BTPartStudioDisplayDataBase2751) SetDebugDescription(v string)`
+
+SetDebugDescription sets DebugDescription field to given value.
+
+### HasDebugDescription
+
+`func (o *BTPartStudioDisplayDataBase2751) HasDebugDescription() bool`
+
+HasDebugDescription returns a boolean if a field has been set.
 
 ### GetElementId
 

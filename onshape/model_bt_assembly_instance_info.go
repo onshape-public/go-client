@@ -16,7 +16,9 @@ import (
 
 // BTAssemblyInstanceInfo List of instances including those created by patterns and replicates.
 type BTAssemblyInstanceInfo struct {
-	Configuration        *string                   `json:"configuration,omitempty"`
+	Configuration *string `json:"configuration,omitempty"`
+	// Reference designator of the instance.
+	Designator           *string                   `json:"designator,omitempty"`
 	DocumentId           *string                   `json:"documentId,omitempty"`
 	DocumentMicroversion *string                   `json:"documentMicroversion,omitempty"`
 	DocumentVersion      *string                   `json:"documentVersion,omitempty"`
@@ -82,6 +84,38 @@ func (o *BTAssemblyInstanceInfo) HasConfiguration() bool {
 // SetConfiguration gets a reference to the given string and assigns it to the Configuration field.
 func (o *BTAssemblyInstanceInfo) SetConfiguration(v string) {
 	o.Configuration = &v
+}
+
+// GetDesignator returns the Designator field value if set, zero value otherwise.
+func (o *BTAssemblyInstanceInfo) GetDesignator() string {
+	if o == nil || o.Designator == nil {
+		var ret string
+		return ret
+	}
+	return *o.Designator
+}
+
+// GetDesignatorOk returns a tuple with the Designator field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTAssemblyInstanceInfo) GetDesignatorOk() (*string, bool) {
+	if o == nil || o.Designator == nil {
+		return nil, false
+	}
+	return o.Designator, true
+}
+
+// HasDesignator returns a boolean if a field has been set.
+func (o *BTAssemblyInstanceInfo) HasDesignator() bool {
+	if o != nil && o.Designator != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDesignator gets a reference to the given string and assigns it to the Designator field.
+func (o *BTAssemblyInstanceInfo) SetDesignator(v string) {
+	o.Designator = &v
 }
 
 // GetDocumentId returns the DocumentId field value if set, zero value otherwise.
@@ -600,6 +634,9 @@ func (o BTAssemblyInstanceInfo) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Configuration != nil {
 		toSerialize["configuration"] = o.Configuration
+	}
+	if o.Designator != nil {
+		toSerialize["designator"] = o.Designator
 	}
 	if o.DocumentId != nil {
 		toSerialize["documentId"] = o.DocumentId

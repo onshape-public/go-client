@@ -8,9 +8,6 @@ Name | Type | Description | Notes
 **FullPathAsString** | Pointer to **string** |  | [optional] 
 **HeadInstanceId** | Pointer to **string** |  | [optional] 
 **InternalOccurrence** | Pointer to **bool** |  | [optional] 
-**OccurrenceWithoutHead** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**OccurrenceWithoutTail** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
-**Parent** | Pointer to [**BTOccurrence74**](BTOccurrence74.md) |  | [optional] 
 **Path** | Pointer to **[]string** |  | [optional] 
 **RootOccurrence** | Pointer to **bool** |  | [optional] 
 **TailInstanceId** | Pointer to **string** |  | [optional] 
@@ -133,81 +130,6 @@ SetInternalOccurrence sets InternalOccurrence field to given value.
 `func (o *BTOccurrence74) HasInternalOccurrence() bool`
 
 HasInternalOccurrence returns a boolean if a field has been set.
-
-### GetOccurrenceWithoutHead
-
-`func (o *BTOccurrence74) GetOccurrenceWithoutHead() BTOccurrence74`
-
-GetOccurrenceWithoutHead returns the OccurrenceWithoutHead field if non-nil, zero value otherwise.
-
-### GetOccurrenceWithoutHeadOk
-
-`func (o *BTOccurrence74) GetOccurrenceWithoutHeadOk() (*BTOccurrence74, bool)`
-
-GetOccurrenceWithoutHeadOk returns a tuple with the OccurrenceWithoutHead field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOccurrenceWithoutHead
-
-`func (o *BTOccurrence74) SetOccurrenceWithoutHead(v BTOccurrence74)`
-
-SetOccurrenceWithoutHead sets OccurrenceWithoutHead field to given value.
-
-### HasOccurrenceWithoutHead
-
-`func (o *BTOccurrence74) HasOccurrenceWithoutHead() bool`
-
-HasOccurrenceWithoutHead returns a boolean if a field has been set.
-
-### GetOccurrenceWithoutTail
-
-`func (o *BTOccurrence74) GetOccurrenceWithoutTail() BTOccurrence74`
-
-GetOccurrenceWithoutTail returns the OccurrenceWithoutTail field if non-nil, zero value otherwise.
-
-### GetOccurrenceWithoutTailOk
-
-`func (o *BTOccurrence74) GetOccurrenceWithoutTailOk() (*BTOccurrence74, bool)`
-
-GetOccurrenceWithoutTailOk returns a tuple with the OccurrenceWithoutTail field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetOccurrenceWithoutTail
-
-`func (o *BTOccurrence74) SetOccurrenceWithoutTail(v BTOccurrence74)`
-
-SetOccurrenceWithoutTail sets OccurrenceWithoutTail field to given value.
-
-### HasOccurrenceWithoutTail
-
-`func (o *BTOccurrence74) HasOccurrenceWithoutTail() bool`
-
-HasOccurrenceWithoutTail returns a boolean if a field has been set.
-
-### GetParent
-
-`func (o *BTOccurrence74) GetParent() BTOccurrence74`
-
-GetParent returns the Parent field if non-nil, zero value otherwise.
-
-### GetParentOk
-
-`func (o *BTOccurrence74) GetParentOk() (*BTOccurrence74, bool)`
-
-GetParentOk returns a tuple with the Parent field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetParent
-
-`func (o *BTOccurrence74) SetParent(v BTOccurrence74)`
-
-SetParent sets Parent field to given value.
-
-### HasParent
-
-`func (o *BTOccurrence74) HasParent() bool`
-
-HasParent returns a boolean if a field has been set.
 
 ### GetPath
 

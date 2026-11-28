@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CorrelationId** | Pointer to **string** | User specified identifier that can be used as a correlation id across api calls. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **ExportRuleFileName** | Pointer to **string** | The file name after evaluating a rule for the given &#x60;formatName&#x60;. &#x60;NULL&#x60; if &#x60;evaluateExportRule&#x3D;false&#x60; or if the export rule is not found. | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
@@ -38,6 +39,31 @@ will change when the set of required properties is changed
 NewBTTranslationRequestInfoWithDefaults instantiates a new BTTranslationRequestInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCorrelationId
+
+`func (o *BTTranslationRequestInfo) GetCorrelationId() string`
+
+GetCorrelationId returns the CorrelationId field if non-nil, zero value otherwise.
+
+### GetCorrelationIdOk
+
+`func (o *BTTranslationRequestInfo) GetCorrelationIdOk() (*string, bool)`
+
+GetCorrelationIdOk returns a tuple with the CorrelationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCorrelationId
+
+`func (o *BTTranslationRequestInfo) SetCorrelationId(v string)`
+
+SetCorrelationId sets CorrelationId field to given value.
+
+### HasCorrelationId
+
+`func (o *BTTranslationRequestInfo) HasCorrelationId() bool`
+
+HasCorrelationId returns a boolean if a field has been set.
 
 ### GetDocumentId
 

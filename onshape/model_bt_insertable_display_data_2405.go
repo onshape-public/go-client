@@ -47,6 +47,56 @@ func NewBTInsertableDisplayData2405WithDefaults() *BTInsertableDisplayData2405 {
 	return &this
 }
 
+// GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field value if set, zero value otherwise.
+func (o *BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverride() map[string]BTAppearanceOverride2517 {
+	type getResult interface {
+		GetAppearanceIdToAppearanceOverride() map[string]BTAppearanceOverride2517
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAppearanceIdToAppearanceOverride()
+	} else {
+		var de map[string]BTAppearanceOverride2517
+		return de
+	}
+}
+
+// GetAppearanceIdToAppearanceOverrideOk returns a tuple with the AppearanceIdToAppearanceOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverrideOk() (*map[string]BTAppearanceOverride2517, bool) {
+	type getResult interface {
+		GetAppearanceIdToAppearanceOverrideOk() (*map[string]BTAppearanceOverride2517, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetAppearanceIdToAppearanceOverrideOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasAppearanceIdToAppearanceOverride returns a boolean if a field has been set.
+func (o *BTInsertableDisplayData2405) HasAppearanceIdToAppearanceOverride() bool {
+	type getResult interface {
+		HasAppearanceIdToAppearanceOverride() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasAppearanceIdToAppearanceOverride()
+	} else {
+		return false
+	}
+}
+
+// SetAppearanceIdToAppearanceOverride gets a reference to the given map[string]BTAppearanceOverride2517 and assigns it to the AppearanceIdToAppearanceOverride field.
+func (o *BTInsertableDisplayData2405) SetAppearanceIdToAppearanceOverride(v map[string]BTAppearanceOverride2517) {
+	type getResult interface {
+		SetAppearanceIdToAppearanceOverride(v map[string]BTAppearanceOverride2517)
+	}
+
+	o.GetActualInstance().(getResult).SetAppearanceIdToAppearanceOverride(v)
+}
+
 // GetBtType returns the BtType field value if set, zero value otherwise.
 func (o *BTInsertableDisplayData2405) GetBtType() string {
 	type getResult interface {
@@ -601,6 +651,7 @@ func (v *NullableBTInsertableDisplayData2405) UnmarshalJSON(src []byte) error {
 }
 
 type base_BTInsertableDisplayData2405 struct {
+	AppearanceIdToAppearanceOverride *map[string]BTAppearanceOverride2517 `json:"appearanceIdToAppearanceOverride,omitempty"`
 	// Type of JSON object.
 	BtType                   *string                                     `json:"btType,omitempty"`
 	Buffers                  []BTGraphicsBuffer2668                      `json:"buffers,omitempty"`
@@ -628,6 +679,38 @@ func Newbase_BTInsertableDisplayData2405() *base_BTInsertableDisplayData2405 {
 func Newbase_BTInsertableDisplayData2405WithDefaults() *base_BTInsertableDisplayData2405 {
 	this := base_BTInsertableDisplayData2405{}
 	return &this
+}
+
+// GetAppearanceIdToAppearanceOverride returns the AppearanceIdToAppearanceOverride field value if set, zero value otherwise.
+func (o *base_BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverride() map[string]BTAppearanceOverride2517 {
+	if o == nil || o.AppearanceIdToAppearanceOverride == nil {
+		var ret map[string]BTAppearanceOverride2517
+		return ret
+	}
+	return *o.AppearanceIdToAppearanceOverride
+}
+
+// GetAppearanceIdToAppearanceOverrideOk returns a tuple with the AppearanceIdToAppearanceOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTInsertableDisplayData2405) GetAppearanceIdToAppearanceOverrideOk() (*map[string]BTAppearanceOverride2517, bool) {
+	if o == nil || o.AppearanceIdToAppearanceOverride == nil {
+		return nil, false
+	}
+	return o.AppearanceIdToAppearanceOverride, true
+}
+
+// HasAppearanceIdToAppearanceOverride returns a boolean if a field has been set.
+func (o *base_BTInsertableDisplayData2405) HasAppearanceIdToAppearanceOverride() bool {
+	if o != nil && o.AppearanceIdToAppearanceOverride != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAppearanceIdToAppearanceOverride gets a reference to the given map[string]BTAppearanceOverride2517 and assigns it to the AppearanceIdToAppearanceOverride field.
+func (o *base_BTInsertableDisplayData2405) SetAppearanceIdToAppearanceOverride(v map[string]BTAppearanceOverride2517) {
+	o.AppearanceIdToAppearanceOverride = &v
 }
 
 // GetBtType returns the BtType field value if set, zero value otherwise.
@@ -920,6 +1003,9 @@ func (o *base_BTInsertableDisplayData2405) SetTessellationSettingIndex(v int32) 
 
 func (o base_BTInsertableDisplayData2405) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.AppearanceIdToAppearanceOverride != nil {
+		toSerialize["appearanceIdToAppearanceOverride"] = o.AppearanceIdToAppearanceOverride
+	}
 	if o.BtType != nil {
 		toSerialize["btType"] = o.BtType
 	}

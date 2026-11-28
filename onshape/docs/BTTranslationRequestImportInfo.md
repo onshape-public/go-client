@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CorrelationId** | Pointer to **string** | User specified identifier that can be used as a correlation id across api calls. | [optional] 
 **DocumentId** | Pointer to **string** |  | [optional] 
 **FailureReason** | Pointer to **string** |  | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
@@ -37,6 +38,31 @@ will change when the set of required properties is changed
 NewBTTranslationRequestImportInfoWithDefaults instantiates a new BTTranslationRequestImportInfo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCorrelationId
+
+`func (o *BTTranslationRequestImportInfo) GetCorrelationId() string`
+
+GetCorrelationId returns the CorrelationId field if non-nil, zero value otherwise.
+
+### GetCorrelationIdOk
+
+`func (o *BTTranslationRequestImportInfo) GetCorrelationIdOk() (*string, bool)`
+
+GetCorrelationIdOk returns a tuple with the CorrelationId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCorrelationId
+
+`func (o *BTTranslationRequestImportInfo) SetCorrelationId(v string)`
+
+SetCorrelationId sets CorrelationId field to given value.
+
+### HasCorrelationId
+
+`func (o *BTTranslationRequestImportInfo) HasCorrelationId() bool`
+
+HasCorrelationId returns a boolean if a field has been set.
 
 ### GetDocumentId
 
