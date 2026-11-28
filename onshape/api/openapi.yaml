@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.217.82464-38d03936c08d
+  version: 1.217.82698-3619ed465c08
   x-logo:
     url: images/logo-onshape-gray-green-nav-bar.svg
     backgroundColor: '#ffffff'
@@ -32894,22 +32894,18 @@ components:
         sourceId: sourceId
         targetId: targetId
         entityType: parts
+        changes:
+          key: null
         targetValue: targetValue
         geometryChangeMessages:
         - geometryChangeMessages
         - geometryChangeMessages
         sourceValue: sourceValue
         type: NONE
-        collectionChanges:
-          key:
-          - null
-          - null
       properties:
-        collectionChanges:
+        changes:
           additionalProperties:
-            items:
-              $ref: '#/components/schemas/BTDiffInfo'
-            type: array
+            $ref: '#/components/schemas/BTDiffInfo'
           type: object
         entityType:
           $ref: '#/components/schemas/BTDiffInfoCollectionType'
@@ -69766,16 +69762,14 @@ components:
             sourceId: sourceId
             targetId: targetId
             entityType: parts
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: NONE
-            collectionChanges:
-              key:
-              - null
-              - null
         geometryChangeMessages:
         - geometryChangeMessages
         - geometryChangeMessages
@@ -69785,29 +69779,25 @@ components:
           - sourceId: sourceId
             targetId: targetId
             entityType: parts
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: NONE
-            collectionChanges:
-              key:
-              - null
-              - null
           - sourceId: sourceId
             targetId: targetId
             entityType: parts
+            changes:
+              key: null
             targetValue: targetValue
             geometryChangeMessages:
             - geometryChangeMessages
             - geometryChangeMessages
             sourceValue: sourceValue
             type: NONE
-            collectionChanges:
-              key:
-              - null
-              - null
         sourceVersionId: sourceVersionId
         sourceConfiguration: sourceConfiguration
         targetConfiguration: targetConfiguration
