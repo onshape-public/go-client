@@ -15,3 +15,12 @@ func TestPartNumberAPI(t *testing.T) {
     }.Execute()
     
 }
+/*** ADDITIONAL TESTS
+
+OpenAPITest{
+    Call: onshape.ApiUpdateNextNumbersRequest{},
+    Expect: Todo(),
+}.Execute()
+
+
+***/
