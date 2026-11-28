@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **AssemblyFeatures** | Pointer to [**[]BTAssemblyFeatureDisplayData1783**](BTAssemblyFeatureDisplayData1783.md) |  | [optional] 
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **BuildDurationMillis** | Pointer to **float64** |  | [optional] 
+**DebugDescription** | Pointer to **string** |  | [optional] 
 **DeletedAssemblyFeatures** | Pointer to **[]string** |  | [optional] 
 **DeletedGeometryMateIds** | Pointer to **[]string** |  | [optional] 
 **DeletedLoads** | Pointer to **[]string** |  | [optional] 
@@ -157,6 +158,31 @@ SetBuildDurationMillis sets BuildDurationMillis field to given value.
 `func (o *BTRootAssemblyDisplayData96) HasBuildDurationMillis() bool`
 
 HasBuildDurationMillis returns a boolean if a field has been set.
+
+### GetDebugDescription
+
+`func (o *BTRootAssemblyDisplayData96) GetDebugDescription() string`
+
+GetDebugDescription returns the DebugDescription field if non-nil, zero value otherwise.
+
+### GetDebugDescriptionOk
+
+`func (o *BTRootAssemblyDisplayData96) GetDebugDescriptionOk() (*string, bool)`
+
+GetDebugDescriptionOk returns a tuple with the DebugDescription field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDebugDescription
+
+`func (o *BTRootAssemblyDisplayData96) SetDebugDescription(v string)`
+
+SetDebugDescription sets DebugDescription field to given value.
+
+### HasDebugDescription
+
+`func (o *BTRootAssemblyDisplayData96) HasDebugDescription() bool`
+
+HasDebugDescription returns a boolean if a field has been set.
 
 ### GetDeletedAssemblyFeatures
 

@@ -5,7 +5,7 @@ All URIs are relative to *https://cad.onshape.com/api/v16*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**EnumerateObjectWorkflows**](WorkflowApi.md#EnumerateObjectWorkflows) | **Get** /workflow/companies/{cid}/objects | Enumerate all of a company&#39;s workflowable objects.
-[**GetActiveWorkflows**](WorkflowApi.md#GetActiveWorkflows) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
+[**GetActiveWorkflow**](WorkflowApi.md#GetActiveWorkflow) | **Get** /workflow/active | Get all active workflows for the currently logged in user&#39;s company.
 [**GetAllowedApprovers**](WorkflowApi.md#GetAllowedApprovers) | **Get** /workflow/c/{companyId}/approvers | Get all identities allowed to be approvers on a workflow object.
 [**GetAuditLog**](WorkflowApi.md#GetAuditLog) | **Get** /workflow/obj/{objectId}/auditlog | Get all audit log entries for a workflowable object.
 [**GetWorkflowById**](WorkflowApi.md#GetWorkflowById) | **Get** /workflow/obj/{objectId} | Lightweight information about the current state of a workflowable object like release package.
@@ -91,9 +91,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetActiveWorkflows
+## GetActiveWorkflow
 
-> BTActiveWorkflowInfo GetActiveWorkflows(ctx).DocumentId(documentId).Execute()
+> BTActiveWorkflowInfo GetActiveWorkflow(ctx).DocumentId(documentId).Execute()
 
 Get all active workflows for the currently logged in user's company.
 
@@ -116,13 +116,13 @@ func main() {
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.WorkflowApi.GetActiveWorkflows(context.Background()).DocumentId(documentId).Execute()
+    resp, r, err := apiClient.WorkflowApi.GetActiveWorkflow(context.Background()).DocumentId(documentId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetActiveWorkflows``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `WorkflowApi.GetActiveWorkflow``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetActiveWorkflows`: BTActiveWorkflowInfo
-    fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.GetActiveWorkflows`: %v\n", resp)
+    // response from `GetActiveWorkflow`: BTActiveWorkflowInfo
+    fmt.Fprintf(os.Stdout, "Response from `WorkflowApi.GetActiveWorkflow`: %v\n", resp)
 }
 ```
 
@@ -132,7 +132,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetActiveWorkflowsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetActiveWorkflowRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

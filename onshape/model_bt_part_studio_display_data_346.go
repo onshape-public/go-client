@@ -25,6 +25,7 @@ type BTPartStudioDisplayData346 struct {
 	// Type of JSON object.
 	BtType                                         *string                                             `json:"btType,omitempty"`
 	CacheablePartStudioDisplayDataVersion          *GBTPartStudioDisplayDataVersion                    `json:"cacheablePartStudioDisplayDataVersion,omitempty"`
+	DebugDescription                               *string                                             `json:"debugDescription,omitempty"`
 	DecalIdToDecal                                 *map[string]BTDecal2404                             `json:"decalIdToDecal,omitempty"`
 	DeterministicIdToAssociatedFeatureIds          *map[string][]string                                `json:"deterministicIdToAssociatedFeatureIds,omitempty"`
 	DeterministicIdToEntity                        *map[string]BTBaseEntityData33                      `json:"deterministicIdToEntity,omitempty"`
@@ -330,6 +331,38 @@ func (o *BTPartStudioDisplayData346) HasCacheablePartStudioDisplayDataVersion() 
 // SetCacheablePartStudioDisplayDataVersion gets a reference to the given GBTPartStudioDisplayDataVersion and assigns it to the CacheablePartStudioDisplayDataVersion field.
 func (o *BTPartStudioDisplayData346) SetCacheablePartStudioDisplayDataVersion(v GBTPartStudioDisplayDataVersion) {
 	o.CacheablePartStudioDisplayDataVersion = &v
+}
+
+// GetDebugDescription returns the DebugDescription field value if set, zero value otherwise.
+func (o *BTPartStudioDisplayData346) GetDebugDescription() string {
+	if o == nil || o.DebugDescription == nil {
+		var ret string
+		return ret
+	}
+	return *o.DebugDescription
+}
+
+// GetDebugDescriptionOk returns a tuple with the DebugDescription field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartStudioDisplayData346) GetDebugDescriptionOk() (*string, bool) {
+	if o == nil || o.DebugDescription == nil {
+		return nil, false
+	}
+	return o.DebugDescription, true
+}
+
+// HasDebugDescription returns a boolean if a field has been set.
+func (o *BTPartStudioDisplayData346) HasDebugDescription() bool {
+	if o != nil && o.DebugDescription != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDebugDescription gets a reference to the given string and assigns it to the DebugDescription field.
+func (o *BTPartStudioDisplayData346) SetDebugDescription(v string) {
+	o.DebugDescription = &v
 }
 
 // GetDecalIdToDecal returns the DecalIdToDecal field value if set, zero value otherwise.
@@ -1381,6 +1414,9 @@ func (o BTPartStudioDisplayData346) MarshalJSON() ([]byte, error) {
 	}
 	if o.CacheablePartStudioDisplayDataVersion != nil {
 		toSerialize["cacheablePartStudioDisplayDataVersion"] = o.CacheablePartStudioDisplayDataVersion
+	}
+	if o.DebugDescription != nil {
+		toSerialize["debugDescription"] = o.DebugDescription
 	}
 	if o.DecalIdToDecal != nil {
 		toSerialize["decalIdToDecal"] = o.DecalIdToDecal

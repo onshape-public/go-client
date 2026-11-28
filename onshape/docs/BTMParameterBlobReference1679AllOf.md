@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlobImport** | Pointer to [**BTMImport136**](BTMImport136.md) |  | [optional] 
 **BtType** | Pointer to **string** |  | [optional] 
+**ElementLibraryData** | Pointer to [**BTElementLibraryReferenceData3133**](BTElementLibraryReferenceData3133.md) |  | [optional] 
 **ImportMicroversion** | Pointer to **string** | Element microversion that is being imported. | [optional] 
 **Namespace** | Pointer to **string** |  | [optional] 
 
@@ -77,6 +78,31 @@ SetBtType sets BtType field to given value.
 `func (o *BTMParameterBlobReference1679AllOf) HasBtType() bool`
 
 HasBtType returns a boolean if a field has been set.
+
+### GetElementLibraryData
+
+`func (o *BTMParameterBlobReference1679AllOf) GetElementLibraryData() BTElementLibraryReferenceData3133`
+
+GetElementLibraryData returns the ElementLibraryData field if non-nil, zero value otherwise.
+
+### GetElementLibraryDataOk
+
+`func (o *BTMParameterBlobReference1679AllOf) GetElementLibraryDataOk() (*BTElementLibraryReferenceData3133, bool)`
+
+GetElementLibraryDataOk returns a tuple with the ElementLibraryData field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetElementLibraryData
+
+`func (o *BTMParameterBlobReference1679AllOf) SetElementLibraryData(v BTElementLibraryReferenceData3133)`
+
+SetElementLibraryData sets ElementLibraryData field to given value.
+
+### HasElementLibraryData
+
+`func (o *BTMParameterBlobReference1679AllOf) HasElementLibraryData() bool`
+
+HasElementLibraryData returns a boolean if a field has been set.
 
 ### GetImportMicroversion
 

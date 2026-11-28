@@ -30,7 +30,7 @@ import (
 )
 
 func main() {
-    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
+    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow).
     revisionId := "revisionId_example" // string | ID of revision to obsolete. See [Revision](https://cad.onshape.com/glassworks/explorer/#/Revision).
     debugMode := true // bool |  (optional) (default to false)
 
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wfid** | **string** | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows). | 
+**wfid** | **string** | Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow). | 
 
 ### Other Parameters
 
@@ -104,7 +104,7 @@ import (
 )
 
 func main() {
-    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows).
+    wfid := "wfid_example" // string | Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow).
     bTReleasePackageParams := *openapiclient.NewBTReleasePackageParams() // BTReleasePackageParams | 
     debugMode := true // bool |  (optional) (default to false)
 
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wfid** | **string** | Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows). | 
+**wfid** | **string** | Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow). | 
 
 ### Other Parameters
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ## GetReleasePackage
 
-> BTReleasePackageInfo GetReleasePackage(ctx, rpid).Detailed(detailed).Execute()
+> BTReleasePackageInfo GetReleasePackage(ctx, rpid).Detailed(detailed).FullHistory(fullHistory).Execute()
 
 Get details about the specified release candidate.
 
@@ -178,10 +178,11 @@ import (
 func main() {
     rpid := "rpid_example" // string | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
     detailed := true // bool |  (optional) (default to false)
+    fullHistory := true // bool |  (optional) (default to false)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
-    resp, r, err := apiClient.ReleasePackageApi.GetReleasePackage(context.Background(), rpid).Detailed(detailed).Execute()
+    resp, r, err := apiClient.ReleasePackageApi.GetReleasePackage(context.Background(), rpid).Detailed(detailed).FullHistory(fullHistory).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReleasePackageApi.GetReleasePackage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -208,6 +209,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **detailed** | **bool** |  | [default to false]
+ **fullHistory** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -251,7 +253,7 @@ func main() {
     rpid := "rpid_example" // string | Release candidate package ID, as returned by [createReleasePackage](#/ReleasePackage/createReleasePackage).
     bTUpdateReleasePackageParams := *openapiclient.NewBTUpdateReleasePackageParams() // BTUpdateReleasePackageParams | 
     action := "action_example" // string | `UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT` (optional) (default to "UPDATE")
-    wfaction := "wfaction_example" // string | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    `SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE`    * `DISCARD` can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * `CREATE_AND_RELEASE` and `CREATE_AND_OBSOLETE` can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions. (optional)
+    wfaction := "wfaction_example" // string | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    `SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE`    * `DISCARD` can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * `CREATE_AND_RELEASE` and `CREATE_AND_OBSOLETE` can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflow](#/Workflow/getActiveWorkflow) to get the list of active workflows and their transitions. (optional)
 
     apiConfiguration := openapiclient.NewAPIConfiguration()
     apiClient := openapiclient.NewAPIClient(apiConfiguration)
@@ -283,7 +285,7 @@ Name | Type | Description  | Notes
 
  **bTUpdateReleasePackageParams** | [**BTUpdateReleasePackageParams**](BTUpdateReleasePackageParams.md) |  | 
  **action** | **string** | &#x60;UPDATE | ADD_ITEMS | REMOVE_ITEMS | SAVE_DRAFT&#x60; | [default to &quot;UPDATE&quot;]
- **wfaction** | **string** | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows) to get the list of active workflows and their transitions. | 
+ **wfaction** | **string** | Workflow action to perform on the release candidate. When using the Onshape default release or obsoletion workflows, allowed values are:    &#x60;SUBMIT | CREATE_AND_RELEASE | RELEASE | REJECT | OBSOLETE | DISCARD | CREATE_AND_OBSOLETE&#x60;    * &#x60;DISCARD&#x60; can only be performed by the creator of the release candidate and is the only transition that can be performed even if items have errors.    * &#x60;CREATE_AND_RELEASE&#x60; and &#x60;CREATE_AND_OBSOLETE&#x60; can only be performed by creator if the [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog) for the company allow release without approvers. If Release management settings restrict the approver list to a subset of company users, only those users can perform transitions.    When using a custom workflow, allowed values are determined by the workflow definition. See [getActiveWorkflow](#/Workflow/getActiveWorkflow) to get the list of active workflows and their transitions. | 
 
 ### Return type
 

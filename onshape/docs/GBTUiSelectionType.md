@@ -49,6 +49,8 @@
 
 * `GBTUiSelectionTypeQueryVariable` (value: `"QUERY_VARIABLE"`)
 
+* `GBTUiSelectionTypeCenterOfMass` (value: `"CENTER_OF_MASS"`)
+
 * `GBTUiSelectionTypeUnknown` (value: `"UNKNOWN"`)
 
 

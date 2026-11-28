@@ -12,6 +12,8 @@ Name | Type | Description | Notes
 **DefaultUnits** | Pointer to [**BTDefaultUnitsInfo**](BTDefaultUnitsInfo.md) |  | [optional] 
 **DisplayAssemblyProperties** | Pointer to **bool** |  | [optional] 
 **DrawingBackgroundId** | Pointer to **int32** |  | [optional] 
+**EnableLabs** | Pointer to **bool** |  | [optional] 
+**EnabledLabsFeatures** | Pointer to **[]int32** |  | [optional] 
 **EnforceApplicationAcl** | Pointer to **bool** |  | [optional] 
 **ExportDrawingOptions** | Pointer to **string** |  | [optional] 
 **ExportSolidOptions** | Pointer to **string** |  | [optional] 
@@ -265,6 +267,56 @@ SetDrawingBackgroundId sets DrawingBackgroundId field to given value.
 `func (o *BTUserSettingsInfo) HasDrawingBackgroundId() bool`
 
 HasDrawingBackgroundId returns a boolean if a field has been set.
+
+### GetEnableLabs
+
+`func (o *BTUserSettingsInfo) GetEnableLabs() bool`
+
+GetEnableLabs returns the EnableLabs field if non-nil, zero value otherwise.
+
+### GetEnableLabsOk
+
+`func (o *BTUserSettingsInfo) GetEnableLabsOk() (*bool, bool)`
+
+GetEnableLabsOk returns a tuple with the EnableLabs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnableLabs
+
+`func (o *BTUserSettingsInfo) SetEnableLabs(v bool)`
+
+SetEnableLabs sets EnableLabs field to given value.
+
+### HasEnableLabs
+
+`func (o *BTUserSettingsInfo) HasEnableLabs() bool`
+
+HasEnableLabs returns a boolean if a field has been set.
+
+### GetEnabledLabsFeatures
+
+`func (o *BTUserSettingsInfo) GetEnabledLabsFeatures() []int32`
+
+GetEnabledLabsFeatures returns the EnabledLabsFeatures field if non-nil, zero value otherwise.
+
+### GetEnabledLabsFeaturesOk
+
+`func (o *BTUserSettingsInfo) GetEnabledLabsFeaturesOk() (*[]int32, bool)`
+
+GetEnabledLabsFeaturesOk returns a tuple with the EnabledLabsFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabledLabsFeatures
+
+`func (o *BTUserSettingsInfo) SetEnabledLabsFeatures(v []int32)`
+
+SetEnabledLabsFeatures sets EnabledLabsFeatures field to given value.
+
+### HasEnabledLabsFeatures
+
+`func (o *BTUserSettingsInfo) HasEnabledLabsFeatures() bool`
+
+HasEnabledLabsFeatures returns a boolean if a field has been set.
 
 ### GetEnforceApplicationAcl
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CanBeDiscarded** | Pointer to **bool** | Whether workflowable object can be discarded. | [optional] 
+**CreatedAt** | Pointer to **JSONTime** | The timestamp the workflowable object was created. | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **IsDiscarded** | Pointer to **bool** | Whether workflowable object has been discarded. | [optional] 
@@ -12,6 +13,7 @@ Name | Type | Description | Notes
 **LastAttemptTimestamp** | Pointer to **JSONTime** | The timestamp of the last workflow action. | [optional] 
 **LastEncounteredErrorMessage** | Pointer to **string** | The error message from the last failed workflow action, if any. | [optional] 
 **MetadataState** | Pointer to [**BTMetadataStateType**](BTMetadataStateType.md) |  | [optional] 
+**ModifiedAt** | Pointer to **JSONTime** | The timestamp the workflowable object was last modified. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **ObjectType** | Pointer to [**BTAPIWorkflowableType**](BTAPIWorkflowableType.md) |  | [optional] 
 **StateId** | Pointer to **string** | The current state of object like SETUP, REJECTED etc. Custom workflows can have any declared state. | [optional] 
@@ -61,6 +63,31 @@ SetCanBeDiscarded sets CanBeDiscarded field to given value.
 `func (o *BTObjectWorkflowInfo) HasCanBeDiscarded() bool`
 
 HasCanBeDiscarded returns a boolean if a field has been set.
+
+### GetCreatedAt
+
+`func (o *BTObjectWorkflowInfo) GetCreatedAt() JSONTime`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *BTObjectWorkflowInfo) GetCreatedAtOk() (*JSONTime, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *BTObjectWorkflowInfo) SetCreatedAt(v JSONTime)`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *BTObjectWorkflowInfo) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
 
 ### GetHref
 
@@ -236,6 +263,31 @@ SetMetadataState sets MetadataState field to given value.
 `func (o *BTObjectWorkflowInfo) HasMetadataState() bool`
 
 HasMetadataState returns a boolean if a field has been set.
+
+### GetModifiedAt
+
+`func (o *BTObjectWorkflowInfo) GetModifiedAt() JSONTime`
+
+GetModifiedAt returns the ModifiedAt field if non-nil, zero value otherwise.
+
+### GetModifiedAtOk
+
+`func (o *BTObjectWorkflowInfo) GetModifiedAtOk() (*JSONTime, bool)`
+
+GetModifiedAtOk returns a tuple with the ModifiedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetModifiedAt
+
+`func (o *BTObjectWorkflowInfo) SetModifiedAt(v JSONTime)`
+
+SetModifiedAt sets ModifiedAt field to given value.
+
+### HasModifiedAt
+
+`func (o *BTObjectWorkflowInfo) HasModifiedAt() bool`
+
+HasModifiedAt returns a boolean if a field has been set.
 
 ### GetName
 

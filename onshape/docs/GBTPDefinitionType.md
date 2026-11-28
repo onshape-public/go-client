@@ -21,6 +21,8 @@
 
 * `GBTPDefinitionTypeConstLambda` (value: `"CONST_LAMBDA"`)
 
+* `GBTPDefinitionTypeOperator` (value: `"OPERATOR"`)
+
 * `GBTPDefinitionTypeUnknown` (value: `"UNKNOWN"`)
 
 
