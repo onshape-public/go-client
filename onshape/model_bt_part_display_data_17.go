@@ -43,6 +43,7 @@ type BTPartDisplayData17 struct {
 	PartId                           *string                              `json:"partId,omitempty"`
 	PropertyIdToSource               *map[string]BTPartMetadataSource2895 `json:"propertyIdToSource,omitempty"`
 	ReferencingConfiguredPartNodeIds []BTObjectId                         `json:"referencingConfiguredPartNodeIds,omitempty"`
+	SmApplicationType                *GBTSMApplicationType                `json:"smApplicationType,omitempty"`
 	Visibility                       *GBTPartVisibility                   `json:"visibility,omitempty"`
 }
 
@@ -895,6 +896,38 @@ func (o *BTPartDisplayData17) SetReferencingConfiguredPartNodeIds(v []BTObjectId
 	o.ReferencingConfiguredPartNodeIds = v
 }
 
+// GetSmApplicationType returns the SmApplicationType field value if set, zero value otherwise.
+func (o *BTPartDisplayData17) GetSmApplicationType() GBTSMApplicationType {
+	if o == nil || o.SmApplicationType == nil {
+		var ret GBTSMApplicationType
+		return ret
+	}
+	return *o.SmApplicationType
+}
+
+// GetSmApplicationTypeOk returns a tuple with the SmApplicationType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPartDisplayData17) GetSmApplicationTypeOk() (*GBTSMApplicationType, bool) {
+	if o == nil || o.SmApplicationType == nil {
+		return nil, false
+	}
+	return o.SmApplicationType, true
+}
+
+// HasSmApplicationType returns a boolean if a field has been set.
+func (o *BTPartDisplayData17) HasSmApplicationType() bool {
+	if o != nil && o.SmApplicationType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSmApplicationType gets a reference to the given GBTSMApplicationType and assigns it to the SmApplicationType field.
+func (o *BTPartDisplayData17) SetSmApplicationType(v GBTSMApplicationType) {
+	o.SmApplicationType = &v
+}
+
 // GetVisibility returns the Visibility field value if set, zero value otherwise.
 func (o *BTPartDisplayData17) GetVisibility() GBTPartVisibility {
 	if o == nil || o.Visibility == nil {
@@ -1006,6 +1039,9 @@ func (o BTPartDisplayData17) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReferencingConfiguredPartNodeIds != nil {
 		toSerialize["referencingConfiguredPartNodeIds"] = o.ReferencingConfiguredPartNodeIds
+	}
+	if o.SmApplicationType != nil {
+		toSerialize["smApplicationType"] = o.SmApplicationType
 	}
 	if o.Visibility != nil {
 		toSerialize["visibility"] = o.Visibility

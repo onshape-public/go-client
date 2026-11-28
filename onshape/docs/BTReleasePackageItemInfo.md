@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AddedAutomatically** | Pointer to **bool** |  | [optional] 
 **CanExport** | Pointer to **bool** |  | [optional] 
+**CanRevert** | Pointer to **bool** |  | [optional] 
 **ChangeDetectionStatus** | Pointer to **int32** |  | [optional] 
 **CompanyId** | Pointer to **string** |  | [optional] 
 **Configuration** | Pointer to **string** |  | [optional] 
@@ -110,6 +111,31 @@ SetCanExport sets CanExport field to given value.
 `func (o *BTReleasePackageItemInfo) HasCanExport() bool`
 
 HasCanExport returns a boolean if a field has been set.
+
+### GetCanRevert
+
+`func (o *BTReleasePackageItemInfo) GetCanRevert() bool`
+
+GetCanRevert returns the CanRevert field if non-nil, zero value otherwise.
+
+### GetCanRevertOk
+
+`func (o *BTReleasePackageItemInfo) GetCanRevertOk() (*bool, bool)`
+
+GetCanRevertOk returns a tuple with the CanRevert field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCanRevert
+
+`func (o *BTReleasePackageItemInfo) SetCanRevert(v bool)`
+
+SetCanRevert sets CanRevert field to given value.
+
+### HasCanRevert
+
+`func (o *BTReleasePackageItemInfo) HasCanRevert() bool`
+
+HasCanRevert returns a boolean if a field has been set.
 
 ### GetChangeDetectionStatus
 

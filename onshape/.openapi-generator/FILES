@@ -21,6 +21,7 @@ api_feature_studio.go
 api_folder.go
 api_insertable.go
 api_item.go
+api_material.go
 api_metadata.go
 api_metadata_category.go
 api_numbering_scheme.go
@@ -596,6 +597,7 @@ docs/BTJsonMatch2290.md
 docs/BTKeyMouseValuesInfo.md
 docs/BTLazilyParsedFeatureScript.md
 docs/BTLegacySearchHit.md
+docs/BTLibraryMaterialInfo.md
 docs/BTLineDescription1559.md
 docs/BTLinearDimensionDisplayData330.md
 docs/BTLinearDimensionDisplayData330AllOf.md
@@ -638,6 +640,7 @@ docs/BTMAssemblyFeature887AllOf.md
 docs/BTMAssemblyFeatureFolder2543.md
 docs/BTMAssemblyFeatureFolder2543AllOf.md
 docs/BTMAssemblyMirrorFeature3037.md
+docs/BTMAssemblyParametricInstanceFeature5441.md
 docs/BTMAssemblyPatternFeature2241.md
 docs/BTMAssemblyReplicateFeature1351.md
 docs/BTMBoundaryCondition5556.md
@@ -830,8 +833,10 @@ docs/BTMateGroupDisplayData1990.md
 docs/BTMateGroupDisplayData1990AllOf.md
 docs/BTMateOccurrenceData1671.md
 docs/BTMateOccurrenceData1671AllOf.md
+docs/BTMaterialLibraryInfo.md
 docs/BTMaterialLibraryMetadataInfo.md
 docs/BTMaterialLibrarySettingsInfo.md
+docs/BTMaterialPropertyDefinitionInfo.md
 docs/BTMatrix3x3340.md
 docs/BTMergePreviewInfo.md
 docs/BTMergeStrategy.md
@@ -947,6 +952,7 @@ docs/BTPFunctionOrPredicateDeclaration247.md
 docs/BTPFunctionOrPredicateDeclaration247AllOf.md
 docs/BTPIdentifier8.md
 docs/BTPIdentifier8AllOf.md
+docs/BTPLMContextInfo.md
 docs/BTPLMMessageBody.md
 docs/BTPLValue249.md
 docs/BTPLValueAccess250.md
@@ -1123,7 +1129,6 @@ docs/BTPlaneDescription692.md
 docs/BTPlaneDescription692AllOf.md
 docs/BTPlaneOrientationFilter1700.md
 docs/BTPlaneOrientationFilter1700AllOf.md
-docs/BTPlmContextInfo.md
 docs/BTPointEntity1439.md
 docs/BTPolylineDisplayData3522.md
 docs/BTPolylineDisplayData3522AllOf.md
@@ -1171,6 +1176,9 @@ docs/BTReleasePackageInfo.md
 docs/BTReleasePackageItemInfo.md
 docs/BTReleasePackageItemParams.md
 docs/BTReleasePackageParams.md
+docs/BTReleaseStage.md
+docs/BTReleaseSummaryState.md
+docs/BTReleaseTransitionStatusInfo.md
 docs/BTResourceOwnerInfo.md
 docs/BTResourceOwnerInfoAllOf.md
 docs/BTRestUserRole.md
@@ -1192,6 +1200,8 @@ docs/BTRole.md
 docs/BTRootAssemblyDisplayData96.md
 docs/BTRootAssemblyInfo.md
 docs/BTRootDiffInfo.md
+docs/BTSMApplicationTypeFilter4430.md
+docs/BTSMApplicationTypeFilter4430AllOf.md
 docs/BTSMBendTableRowMetadata1705.md
 docs/BTSMBendTableRowMetadata1705AllOf.md
 docs/BTSMDefinitionEntityTypeFilter1651.md
@@ -1297,6 +1307,8 @@ docs/BTTableAssemblyCrossHighlightDataItem2659.md
 docs/BTTableBaseCrossHighlightData2609.md
 docs/BTTableBaseRowMetadata3181.md
 docs/BTTableCell1114.md
+docs/BTTableCellConfigurationParameter3590.md
+docs/BTTableCellConfigurationParameter3590AllOf.md
 docs/BTTableCellModifier4883.md
 docs/BTTableCellModifierForceShowConfigured5170.md
 docs/BTTableCellModifierInfo4585.md
@@ -1543,6 +1555,7 @@ docs/GBTPreProcessParasolidOption.md
 docs/GBTQuantityType.md
 docs/GBTRadiusDisplay.md
 docs/GBTRhinoVersions.md
+docs/GBTSMApplicationType.md
 docs/GBTSimulationContactBehavior.md
 docs/GBTSketchCurveType.md
 docs/GBTSketchEntityType.md
@@ -1581,6 +1594,7 @@ docs/License.md
 docs/Lines.md
 docs/Link.md
 docs/Material.md
+docs/MaterialApi.md
 docs/MaterialNormalTextureInfo.md
 docs/MaterialOcclusionTextureInfo.md
 docs/MaterialPbrMetallicRoughness.md
@@ -2033,6 +2047,7 @@ model_bt_json_match_2290.go
 model_bt_key_mouse_values_info.go
 model_bt_lazily_parsed_feature_script.go
 model_bt_legacy_search_hit.go
+model_bt_library_material_info.go
 model_bt_line_description_1559.go
 model_bt_linear_dimension_display_data_330.go
 model_bt_link_to_latest_document_info.go
@@ -2070,8 +2085,10 @@ model_bt_mate_display_data_1358.go
 model_bt_mate_filter_162.go
 model_bt_mate_group_display_data_1990.go
 model_bt_mate_occurrence_data_1671.go
+model_bt_material_library_info.go
 model_bt_material_library_metadata_info.go
 model_bt_material_library_settings_info.go
+model_bt_material_property_definition_info.go
 model_bt_matrix3x3_340.go
 model_bt_merge_preview_info.go
 model_bt_merge_strategy.go
@@ -2208,7 +2225,6 @@ model_bt_plan_subscriber_info.go
 model_bt_planar_image_mapping_4398.go
 model_bt_plane_description_692.go
 model_bt_plane_orientation_filter_1700.go
-model_bt_plm_context_info.go
 model_bt_point_entity_1439.go
 model_bt_polyline_display_data_3522.go
 model_bt_privacy_consent_info.go
@@ -2246,6 +2262,9 @@ model_bt_release_package_info.go
 model_bt_release_package_item_info.go
 model_bt_release_package_item_params.go
 model_bt_release_package_params.go
+model_bt_release_stage.go
+model_bt_release_summary_state.go
+model_bt_release_transition_status_info.go
 model_bt_resource_owner_info.go
 model_bt_rest_user_role.go
 model_bt_restore_from_history_info.go
@@ -2335,6 +2354,7 @@ model_bt_table_assembly_cross_highlight_data_item_2659.go
 model_bt_table_base_cross_highlight_data_2609.go
 model_bt_table_base_row_metadata_3181.go
 model_bt_table_cell_1114.go
+model_bt_table_cell_configuration_parameter_3590.go
 model_bt_table_cell_modifier_4883.go
 model_bt_table_cell_modifier_force_show_configured_5170.go
 model_bt_table_cell_modifier_info_4585.go
@@ -2499,6 +2519,7 @@ model_btm_assembly_feature2_1022.go
 model_btm_assembly_feature_887.go
 model_btm_assembly_feature_folder_2543.go
 model_btm_assembly_mirror_feature_3037.go
+model_btm_assembly_parametric_instance_feature_5441.go
 model_btm_assembly_pattern_feature_2241.go
 model_btm_assembly_replicate_feature_1351.go
 model_btm_boundary_condition_5556.go
@@ -2674,8 +2695,10 @@ model_btpl_value_249.go
 model_btpl_value_access_250.go
 model_btpl_value_box_dereference_251.go
 model_btpl_value_var_reference_252.go
+model_btplm_context_info.go
 model_btplm_message_body.go
 model_btpso_identity_2741.go
+model_btsm_application_type_filter_4430.go
 model_btsm_bend_table_row_metadata_1705.go
 model_btsm_definition_entity_type_filter_1651.go
 model_btsm_other_joint_table_row_metadata_2640.go
@@ -2799,6 +2822,7 @@ model_gbtm_geom_status.go
 model_gbtp_definition_type.go
 model_gbtp_operator.go
 model_gbtp_type.go
+model_gbtsm_application_type.go
 model_gbtui_hint.go
 model_gbtui_selection_type.go
 model_gl_tf.go

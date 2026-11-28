@@ -25,7 +25,7 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   termsOfService: https://www.onshape.com/legal/terms-of-use
   title: Onshape REST API
-  version: 1.217.82464-38d03936c08d
+  version: 1.218.84032-34acba44be17
   x-logo:
     url: images/logo-onshape-gray-green-nav-bar.svg
     backgroundColor: '#ffffff'
@@ -87,6 +87,8 @@ tags:
 - description: "Manage non-geometric [items](https://cad.onshape.com/help/Content/Plans/items.htm).\
     \ (Professional, Educator, and Enterprise accounts only.)"
   name: Item
+- description: Work with the Onshape Material Library.
+  name: Material
 - description: Access and modify metadata.
   name: Metadata
 - description: Access properties associated with metadata categories.
@@ -124,7 +126,7 @@ tags:
 - description: "Access, modify, and delete thumbnails."
   name: Thumbnail
 - description: "Import and export Onshape surfaces, parts, Part Studios, Assemblies,\
-    \ and subassemblies to/from other file formats (STL, PARASOLID, SOLIDWORKS, etc)."
+    \ and subassemblies to/from other file formats (STL, PARASOLID, etc)."
   name: Translation
 - description: Access user information.
   name: User
@@ -882,8 +884,7 @@ paths:
   /appelements/d/{did}/w/{wid}/e/{eid}/copyassociativedata:
     post:
       deprecated: false
-      description: "Can only be copied between tabs in the same document. You can\
-        \ manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
+      description: "You can manage associativity with [translateIds](https://cad.onshape.com/glassworks/explorer/#/PartStudio/translateIds)."
       operationId: copyAssociativeData
       parameters:
       - explode: false
@@ -6271,8 +6272,8 @@ paths:
           \ `19`: Transfer documents out of Enterprise \n * `20`: Sync to configured\
           \ PLM Integration in Enterprise settings \n * `21`: Create tasks \n * `22`:\
           \ Manage standard content metadata \n * `23`: Workspace protection permissions\
-          \ \n * `24`: Import files \n * `25`: Use revision tools  * `26`: Export\
-          \ files \n"
+          \ \n * `24`: Import files \n * `25`: Use revision tools \n * `26`: Export\
+          \ files \n * `27`: Allow access to Onshape Labs \n"
         explode: true
         in: query
         name: permission
@@ -6314,7 +6315,8 @@ paths:
         \ Transfer documents out of Enterprise \n * `20`: Sync to configured PLM Integration\
         \ in Enterprise settings \n * `21`: Create tasks \n * `22`: Manage standard\
         \ content metadata \n * `23`: Workspace protection permissions \n * `24`:\
-        \ Import files \n * `25`: Use revision tools  * `26`: Export files \n"
+        \ Import files \n * `25`: Use revision tools \n * `26`: Export files \n *\
+        \ `27`: Allow access to Onshape Labs \n"
       operationId: addGlobalPermissionsForIdentity
       parameters:
       - description: Company ID
@@ -10348,6 +10350,113 @@ paths:
       summary: Update an item.
       tags:
       - Item
+      x-BTVisibility: PRODUCTION
+  /materials/libraries/d/{did}/w/{wid}/e/{eid}/csv:
+    post:
+      deprecated: false
+      description: Update a material in an Onshape Material Library from a csv file.
+        Changes made replace the existing library.
+      operationId: updateLibrary
+      parameters:
+      - description: Document ID.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Workspace ID.
+        explode: false
+        in: path
+        name: wid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Element ID.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/BTBFileUpload'
+      responses:
+        default:
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                type: object
+          description: default response
+      security:
+      - OAuth2:
+        - OAuth2Write
+        BasicAuth:
+        - OAuth2Write
+      summary: Updates an existing material library
+      tags:
+      - Material
+      x-BTVisibility: PRODUCTION
+  /materials/libraries/d/{did}/{wvm}/{wvmid}/e/{eid}:
+    get:
+      deprecated: false
+      description: Get a JSON representation of the material library.
+      operationId: getLibrary
+      parameters:
+      - description: Document ID.
+        explode: false
+        in: path
+        name: did
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: One of w or v or m corresponding to whether a workspace or version
+          or microversion was entered.
+        explode: false
+        in: path
+        name: wvm
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "Workspace (w), Version (v) or Microversion (m) ID."
+        explode: false
+        in: path
+        name: wvmid
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Element ID.
+        explode: false
+        in: path
+        name: eid
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json;charset=UTF-8; qs=0.09:
+              schema:
+                $ref: '#/components/schemas/BTMaterialLibraryInfo'
+          description: Success!
+      security:
+      - OAuth2:
+        - OAuth2Read
+        BasicAuth:
+        - OAuth2Read
+      summary: Get a list of materials from a material library.
+      tags:
+      - Material
       x-BTVisibility: PRODUCTION
   /metadata/d/{did}/{wvm}/{wvmid}/e:
     get:
@@ -16635,7 +16744,7 @@ paths:
       deprecated: false
       operationId: createObsoletionPackage
       parameters:
-      - description: "Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows)."
+      - description: "Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow)."
         explode: false
         in: path
         name: wfid
@@ -16687,7 +16796,7 @@ paths:
         \ adding items from other documents` in your [Release management settings](https://cad.onshape.com/help/Content/Plans/release_management_2.htm#rel_candidate_dialog)."
       operationId: createReleasePackage
       parameters:
-      - description: "Workflow ID. See [getActiveWorkflows](#/Workflow/getActiveWorkflows)."
+      - description: "Workflow ID. See [getActiveWorkflow](#/Workflow/getActiveWorkflow)."
         explode: false
         in: path
         name: wfid
@@ -16741,6 +16850,14 @@ paths:
       - explode: true
         in: query
         name: detailed
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: fullHistory
         required: false
         schema:
           default: false
@@ -16802,7 +16919,7 @@ paths:
           \ for the company allow release without approvers. If Release management\
           \ settings restrict the approver list to a subset of company users, only\
           \ those users can perform transitions. \n \nWhen using a custom workflow,\
-          \ allowed values are determined by the workflow definition. See [getActiveWorkflows](#/Workflow/getActiveWorkflows)\
+          \ allowed values are determined by the workflow definition. See [getActiveWorkflow](#/Workflow/getActiveWorkflow)\
           \ to get the list of active workflows and their transitions."
         explode: true
         in: query
@@ -20346,7 +20463,7 @@ paths:
       deprecated: false
       description: Optionally takes a document ID to return all workflows for that
         document's owning company.
-      operationId: getActiveWorkflows
+      operationId: getActiveWorkflow
       parameters:
       - explode: true
         in: query
@@ -22341,11 +22458,9 @@ components:
         hasInactiveCustomWorkflows: true
         canCurrentUserSyncStandardContentToPLM: true
         drawingCanDuplicatePartNumber: true
-        pLMIntegrationType: 0
         canCurrentUserSyncRevisionsToPLM: true
         canCurrentUserSyncToPLM: true
         canCurrentUserCreateReleases: true
-        pLMName: pLMName
         releaseWorkflowInfo:
           workflow:
             elementId: elementId
@@ -22414,6 +22529,7 @@ components:
           publishedDate: 2000-01-23T04:56:07.000+00:00
         enabledActiveMultipleWorkflows: true
         canCurrentUserSyncBomToPLM: true
+        plmIntegrationType: 0
         canCurrentUserManageWorkflows: true
         obsoletionWorkflowId: obsoletionWorkflowId
         taskWorkflowInfo:
@@ -22551,6 +22667,7 @@ components:
         canCurrentUserSeeArenaItemLink: true
         standardContentUsingAutoNumbering: true
         companyId: companyId
+        plmName: plmName
         documentId: documentId
         allowReleaseItemsFromOtherDocuments: true
       properties:
@@ -22604,7 +22721,7 @@ components:
             \ object"
           type: boolean
         isCurrentUserLoggedIntoToPLM:
-          description: Whether user has even authenticated against PLM. Used to trigger
+          description: Whether user has authenticated against PLM. Used to trigger
             OAuth handshake
           type: boolean
         obsoletionWorkflow:
@@ -22620,11 +22737,6 @@ components:
             type: string
           description: "Deprecated, no current alternative"
           type: object
-        pLMIntegrationType:
-          format: int32
-          type: integer
-        pLMName:
-          type: string
         partNumberingSchemeId:
           type: string
         pickableWorkflows:
@@ -22633,6 +22745,11 @@ components:
           items:
             $ref: '#/components/schemas/BTPublishedWorkflowInfo'
           type: array
+        plmIntegrationType:
+          format: int32
+          type: integer
+        plmName:
+          type: string
         releaseWorkflow:
           $ref: '#/components/schemas/BTPublishedWorkflowInfo'
         releaseWorkflowId:
@@ -22837,6 +22954,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -22998,6 +23116,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -23120,6 +23239,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -23241,6 +23361,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -23357,6 +23478,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -25177,17 +25299,23 @@ components:
         description: description
         items:
         - sourceElementId: sourceElementId
+          sourceWvm: sourceWvm
           sourceViewId: sourceViewId
+          sourceWvmId: sourceWvmId
           associativeDataIds:
           - associativeDataIds
           - associativeDataIds
           destinationViewId: destinationViewId
+          sourceDocumentId: sourceDocumentId
         - sourceElementId: sourceElementId
+          sourceWvm: sourceWvm
           sourceViewId: sourceViewId
+          sourceWvmId: sourceWvmId
           associativeDataIds:
           - associativeDataIds
           - associativeDataIds
           destinationViewId: destinationViewId
+          sourceDocumentId: sourceDocumentId
         transactionId: transactionId
       properties:
         description:
@@ -25837,6 +25965,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -25854,6 +25983,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -25955,6 +26085,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -25972,6 +26103,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -26059,6 +26191,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -26076,6 +26209,7 @@ components:
             type: Assembly
             documentVersion: documentVersion
             revision: revision
+            designator: designator
             name: name
             errorStatus: null
             documentId: documentId
@@ -26469,6 +26603,7 @@ components:
         type: Assembly
         documentVersion: documentVersion
         revision: revision
+        designator: designator
         name: name
         errorStatus: null
         documentId: documentId
@@ -26480,6 +26615,9 @@ components:
         status: DeletedElement
       properties:
         configuration:
+          type: string
+        designator:
+          description: Reference designator of the instance.
           type: string
         documentId:
           type: string
@@ -26747,59 +26885,47 @@ components:
         editDescription: editDescription
         transformDefinitions:
         - occurrences:
-          - parent: null
-            path:
+          - path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
-          - parent: null
-            path:
+          - path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           transform:
           - 0.8008281904610115
           - 0.8008281904610115
           isRelative: true
         - occurrences:
-          - parent: null
-            path:
+          - path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
-          - parent: null
-            path:
+          - path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           transform:
           - 0.8008281904610115
           - 0.8008281904610115
@@ -27772,25 +27898,15 @@ components:
       type: object
     BTAssemblySimulation-2246:
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
@@ -27799,10 +27915,6 @@ components:
           type: boolean
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         modal:
           type: boolean
         name:
@@ -27819,16 +27931,10 @@ components:
         numberOfModes:
           format: double
           type: number
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         returnAfterSubfeatures:
@@ -27836,10 +27942,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -27900,30 +28002,24 @@ components:
     BTAssemblyTransformDefinitionParams:
       example:
         occurrences:
-        - parent: null
-          path:
+        - path:
           - path
           - path
-          occurrenceWithoutHead: null
           tailInstanceId: tailInstanceId
           headInstanceId: headInstanceId
           fullPathAsString: fullPathAsString
           btType: btType
           internalOccurrence: true
           rootOccurrence: true
-          occurrenceWithoutTail: null
-        - parent: null
-          path:
+        - path:
           - path
           - path
-          occurrenceWithoutHead: null
           tailInstanceId: tailInstanceId
           headInstanceId: headInstanceId
           fullPathAsString: fullPathAsString
           btType: btType
           internalOccurrence: true
           rootOccurrence: true
-          occurrenceWithoutTail: null
         transform:
         - 0.8008281904610115
         - 0.8008281904610115
@@ -30172,6 +30268,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -30958,6 +31055,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -31072,6 +31170,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -31136,6 +31235,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -31195,6 +31295,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -31545,6 +31646,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -31923,7 +32025,8 @@ components:
             \ \n * `20`: Sync to configured PLM Integration in Enterprise settings\
             \ \n * `21`: Create tasks \n * `22`: Manage standard content metadata\
             \ \n * `23`: Workspace protection permissions \n * `24`: Import files\
-            \ \n * `25`: Use revision tools  * `26`: Export files \n"
+            \ \n * `25`: Use revision tools \n * `26`: Export files \n * `27`: Allow\
+            \ access to Onshape Labs \n"
           items:
             description: "List of global permissions to grant. See [Onshape Help:\
               \ Global Permissions](https://cad.onshape.com/help/Content/Plans/global_permissions.htm#Assignin)\
@@ -31939,7 +32042,8 @@ components:
               \ of Enterprise \n * `20`: Sync to configured PLM Integration in Enterprise\
               \ settings \n * `21`: Create tasks \n * `22`: Manage standard content\
               \ metadata \n * `23`: Workspace protection permissions \n * `24`: Import\
-              \ files \n * `25`: Use revision tools  * `26`: Export files \n"
+              \ files \n * `25`: Use revision tools \n * `26`: Export files \n * `27`:\
+              \ Allow access to Onshape Labs \n"
             format: int32
             type: integer
           type: array
@@ -32477,11 +32581,14 @@ components:
     BTCopyViewAssociativeDataParams:
       example:
         sourceElementId: sourceElementId
+        sourceWvm: sourceWvm
         sourceViewId: sourceViewId
+        sourceWvmId: sourceWvmId
         associativeDataIds:
         - associativeDataIds
         - associativeDataIds
         destinationViewId: destinationViewId
+        sourceDocumentId: sourceDocumentId
       properties:
         associativeDataIds:
           items:
@@ -32489,9 +32596,15 @@ components:
           type: array
         destinationViewId:
           type: string
+        sourceDocumentId:
+          type: string
         sourceElementId:
           type: string
         sourceViewId:
+          type: string
+        sourceWvm:
+          type: string
+        sourceWvmId:
           type: string
       type: object
     BTCosmeticThreadMetadata-3248:
@@ -33177,6 +33290,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -39469,6 +39583,7 @@ components:
                 btType: btType
                 "y": 7.061401241503109
                 z: 9.301444243932576
+              smApplicationType: SHEET_METAL
               propertyIdToSource:
                 key:
                   sourceId: sourceId
@@ -40114,6 +40229,7 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
+            smApplicationType: SHEET_METAL
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -40374,6 +40490,7 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
+            smApplicationType: SHEET_METAL
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -41235,6 +41352,7 @@ components:
                   points:
                   - 0.10263654006109402
                   - 0.10263654006109402
+                isElementLibraryReference: true
                 bottomRightCorner:
                   x: 2.3021358869347655
                   btType: btType
@@ -44092,6 +44210,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -44208,6 +44327,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -44326,6 +44446,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -44442,6 +44563,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -44568,6 +44690,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -44684,6 +44807,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -45582,18 +45706,15 @@ components:
           - deterministicIdList
           id: id
           occurrence:
-            parent: null
             path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           type: ENTITY
           tableRowId: tableRowId
         - btType: btType
@@ -45602,18 +45723,15 @@ components:
           - deterministicIdList
           id: id
           occurrence:
-            parent: null
             path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           type: ENTITY
           tableRowId: tableRowId
         isExcluding: true
@@ -45657,18 +45775,15 @@ components:
           - deterministicIdList
           id: id
           occurrence:
-            parent: null
             path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           type: ENTITY
           tableRowId: tableRowId
         - btType: btType
@@ -45677,18 +45792,15 @@ components:
           - deterministicIdList
           id: id
           occurrence:
-            parent: null
             path:
             - path
             - path
-            occurrenceWithoutHead: null
             tailInstanceId: tailInstanceId
             headInstanceId: headInstanceId
             fullPathAsString: fullPathAsString
             btType: btType
             internalOccurrence: true
             rootOccurrence: true
-            occurrenceWithoutTail: null
           type: ENTITY
           tableRowId: tableRowId
         btType: btType
@@ -45894,6 +46006,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -47089,6 +47202,25 @@ components:
         type:
           $ref: '#/components/schemas/BTSearchEntityType'
       type: object
+    BTLibraryMaterialInfo:
+      example:
+        displayName: displayName
+        propertyValues:
+          key: propertyValues
+        id: id
+        category: category
+      properties:
+        category:
+          type: string
+        displayName:
+          type: string
+        id:
+          type: string
+        propertyValues:
+          additionalProperties:
+            type: string
+          type: object
+      type: object
     BTLineDescription-1559:
       allOf:
       - $ref: '#/components/schemas/BTCurveDescription-1583'
@@ -47225,6 +47357,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -47347,6 +47480,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -47498,6 +47632,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -47620,6 +47755,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -47741,6 +47877,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -47857,6 +47994,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -47983,6 +48121,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -48105,6 +48244,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -48226,6 +48366,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -48342,6 +48483,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -48633,6 +48775,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -48747,6 +48890,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -48811,6 +48955,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -48870,6 +49015,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -48929,6 +49075,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -49043,6 +49190,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -49107,6 +49255,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -49166,6 +49315,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -49294,6 +49444,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -49509,6 +49660,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -50052,6 +50204,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -50240,6 +50393,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -50448,6 +50602,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -50549,6 +50704,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -50650,6 +50806,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -50749,6 +50906,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -50947,6 +51105,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -51025,6 +51184,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -51194,6 +51354,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -51316,6 +51477,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -51437,6 +51599,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -51553,6 +51716,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -51673,6 +51837,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -51804,6 +51969,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -51926,6 +52092,7 @@ components:
                     adminEnterprise: true
                     importFiles: true
                     deletePermanently: true
+                    enableLabs: true
                     exportFiles: true
                     manageRbac: true
                   isExternal: true
@@ -52047,6 +52214,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -52163,6 +52331,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -52283,6 +52452,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -52583,19 +52753,15 @@ components:
           BTMAssemblyFeature1-2218: '#/components/schemas/BTMAssemblyFeature1-2218'
           BTMAssemblyFeature2-1022: '#/components/schemas/BTMAssemblyFeature2-1022'
           BTMAssemblyFeatureFolder-2543: '#/components/schemas/BTMAssemblyFeatureFolder-2543'
-          BTMAssemblyMirrorFeature-3037: '#/components/schemas/BTMAssemblyMirrorFeature-3037'
-          BTMAssemblyPatternFeature-2241: '#/components/schemas/BTMAssemblyPatternFeature-2241'
-          BTMAssemblyReplicateFeature-1351: '#/components/schemas/BTMAssemblyReplicateFeature-1351'
-          BTMDerivedAssemblyMirrorFeature-5094: '#/components/schemas/BTMDerivedAssemblyMirrorFeature-5094'
+          BTMAssemblyParametricInstanceFeature-5441: '#/components/schemas/BTMAssemblyParametricInstanceFeature-5441'
           BTMGenerativeDesignFeature-3195: '#/components/schemas/BTMGenerativeDesignFeature-3195'
           BTMGeometryMate-1260: '#/components/schemas/BTMGeometryMate-1260'
-          BTMLoad-3538: '#/components/schemas/BTMLoad-3538'
           BTMMate-64: '#/components/schemas/BTMMate-64'
           BTMMateConnector-66: '#/components/schemas/BTMMateConnector-66'
           BTMMateGroup-65: '#/components/schemas/BTMMateGroup-65'
           BTMMateRelation-1412: '#/components/schemas/BTMMateRelation-1412'
           BTMNonGeometricItem-1864: '#/components/schemas/BTMNonGeometricItem-1864'
-          BTMParametricPartStudioFeature-3883: '#/components/schemas/BTMParametricPartStudioFeature-3883'
+          BTMSimulationFeature-5034: '#/components/schemas/BTMSimulationFeature-5034'
           BTMWidthMate-1011: '#/components/schemas/BTMWidthMate-1011'
         propertyName: btType
       properties:
@@ -52634,37 +52800,23 @@ components:
       properties:
         arrayParameterFromFeature:
           $ref: '#/components/schemas/BTMParameterArray-2025'
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
         feature:
           $ref: '#/components/schemas/BTMAssemblyFeature-887'
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -52676,16 +52828,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         returnAfterSubfeatures:
@@ -52693,10 +52839,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -52716,37 +52858,40 @@ components:
           format: int32
           type: integer
       type: object
-    BTMAssemblyPatternFeature-2241:
+    BTMAssemblyParametricInstanceFeature-5441:
+      allOf:
+      - $ref: '#/components/schemas/BTMAssemblyFeature-887'
+      - $ref: '#/components/schemas/BTAnnotationDeleteDisplayData_1815_allOf'
+      discriminator:
+        mapping:
+          BTMAssemblyMirrorFeature-3037: '#/components/schemas/BTMAssemblyMirrorFeature-3037'
+          BTMAssemblyPatternFeature-2241: '#/components/schemas/BTMAssemblyPatternFeature-2241'
+          BTMAssemblyReplicateFeature-1351: '#/components/schemas/BTMAssemblyReplicateFeature-1351'
+          BTMDerivedAssemblyMirrorFeature-5094: '#/components/schemas/BTMDerivedAssemblyMirrorFeature-5094'
+          BTMParametricPartStudioFeature-3883: '#/components/schemas/BTMParametricPartStudioFeature-3883'
+        propertyName: btType
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
-        featureFolder:
-          type: boolean
+      type: object
+    BTMAssemblyPatternFeature-2241:
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -52758,16 +52903,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         patternType:
@@ -52777,10 +52916,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -52802,35 +52937,21 @@ components:
       type: object
     BTMAssemblyReplicateFeature-1351:
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -52842,16 +52963,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         returnAfterSubfeatures:
@@ -52859,10 +52974,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -53008,37 +53119,23 @@ components:
       properties:
         arrayParameterFromFeature:
           $ref: '#/components/schemas/BTMParameterArray-2025'
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
         feature:
           $ref: '#/components/schemas/BTMAssemblyFeature-887'
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -53050,16 +53147,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         referenceParameter:
@@ -53069,10 +53160,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -53437,9 +53524,8 @@ components:
       type: object
     BTMLoad-3538:
       allOf:
-      - $ref: '#/components/schemas/BTMAssemblyFeature-887'
-      - $ref: '#/components/schemas/BTMLoad_3538_allOf'
       - $ref: '#/components/schemas/BTMSimulationFeature-5034'
+      - $ref: '#/components/schemas/BTMLoad_3538_allOf'
       properties:
         btType:
           description: Type of JSON object.
@@ -54037,35 +54123,21 @@ components:
       type: object
     BTMParametricPartStudioFeature-3883:
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -54077,16 +54149,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         returnAfterSubfeatures:
@@ -54094,10 +54160,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -54167,35 +54229,21 @@ components:
           BTMLoad-3538: '#/components/schemas/BTMLoad-3538'
         propertyName: btType
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           description: Type of JSON object.
           type: string
-        featureFolder:
-          type: boolean
         featureId:
           description: Unique ID of the feature instance within this Part Studio.
           type: string
-        featureListFieldIndex:
-          format: int32
-          type: integer
         featureType:
           description: The name of the feature spec that this feature instantiates.
           type: string
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
           writeOnly: true
         mateConnectorFeature:
           type: boolean
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
         name:
           description: User-visible name of the feature.
           type: string
@@ -54207,16 +54255,10 @@ components:
         nodeId:
           description: ID for the feature node.
           type: string
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
         parameterLibraries:
           items:
             $ref: '#/components/schemas/BTMParameter-1'
           type: array
-        parametricInstanceFeature:
-          type: boolean
         parentSuppressed:
           type: boolean
         returnAfterSubfeatures:
@@ -54224,10 +54266,6 @@ components:
           type: boolean
         subFeatures:
           description: List of subfeatures belonging to the feature.
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
-        subFeaturesNotUsedInQuery:
           items:
             $ref: '#/components/schemas/BTMFeature-134'
           type: array
@@ -54707,6 +54745,69 @@ components:
           description: Type of JSON object.
           type: string
       type: object
+    BTMaterialLibraryInfo:
+      example:
+        propertyDefinitions:
+        - displayName: displayName
+          unitsChoices:
+          - unitsChoices
+          - unitsChoices
+          name: name
+          description: description
+          displayUnits: displayUnits
+          units: units
+          category: category
+          type: type
+        - displayName: displayName
+          unitsChoices:
+          - unitsChoices
+          - unitsChoices
+          name: name
+          description: description
+          displayUnits: displayUnits
+          units: units
+          category: category
+          type: type
+        materials:
+        - displayName: displayName
+          propertyValues:
+            key: propertyValues
+          id: id
+          category: category
+        - displayName: displayName
+          propertyValues:
+            key: propertyValues
+          id: id
+          category: category
+        displayName: displayName
+        versioned: true
+        externalElementReference:
+          elementId: elementId
+          elementMicroversionId: elementMicroversionId
+          versionId: versionId
+          documentId: documentId
+        name: name
+        description: description
+      properties:
+        description:
+          type: string
+        displayName:
+          type: string
+        externalElementReference:
+          $ref: '#/components/schemas/BTExternalElementReferenceInfo'
+        materials:
+          items:
+            $ref: '#/components/schemas/BTLibraryMaterialInfo'
+          type: array
+        name:
+          type: string
+        propertyDefinitions:
+          items:
+            $ref: '#/components/schemas/BTMaterialPropertyDefinitionInfo'
+          type: array
+        versioned:
+          type: boolean
+      type: object
     BTMaterialLibraryMetadataInfo:
       example:
         elementId: elementId
@@ -54780,6 +54881,39 @@ components:
           items:
             $ref: '#/components/schemas/BTMaterialLibraryMetadataInfo'
           type: array
+      type: object
+    BTMaterialPropertyDefinitionInfo:
+      example:
+        displayName: displayName
+        unitsChoices:
+        - unitsChoices
+        - unitsChoices
+        name: name
+        description: description
+        displayUnits: displayUnits
+        units: units
+        category: category
+        type: type
+      properties:
+        category:
+          type: string
+        description:
+          type: string
+        displayName:
+          type: string
+        displayUnits:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+        units:
+          type: string
+        unitsChoices:
+          items:
+            type: string
+          type: array
+          uniqueItems: true
       type: object
     BTMatrix3x3-340:
       example:
@@ -57576,18 +57710,15 @@ components:
             - deterministicIdList
             id: id
             occurrence:
-              parent: null
               path:
               - path
               - path
-              occurrenceWithoutHead: null
               tailInstanceId: tailInstanceId
               headInstanceId: headInstanceId
               fullPathAsString: fullPathAsString
               btType: btType
               internalOccurrence: true
               rootOccurrence: true
-              occurrenceWithoutTail: null
             type: ENTITY
             tableRowId: tableRowId
           - btType: btType
@@ -57596,18 +57727,15 @@ components:
             - deterministicIdList
             id: id
             occurrence:
-              parent: null
               path:
               - path
               - path
-              occurrenceWithoutHead: null
               tailInstanceId: tailInstanceId
               headInstanceId: headInstanceId
               fullPathAsString: fullPathAsString
               btType: btType
               internalOccurrence: true
               rootOccurrence: true
-              occurrenceWithoutTail: null
             type: ENTITY
             tableRowId: tableRowId
           isExcluding: true
@@ -57651,18 +57779,15 @@ components:
             - deterministicIdList
             id: id
             occurrence:
-              parent: null
               path:
               - path
               - path
-              occurrenceWithoutHead: null
               tailInstanceId: tailInstanceId
               headInstanceId: headInstanceId
               fullPathAsString: fullPathAsString
               btType: btType
               internalOccurrence: true
               rootOccurrence: true
-              occurrenceWithoutTail: null
             type: ENTITY
             tableRowId: tableRowId
           - btType: btType
@@ -57671,18 +57796,15 @@ components:
             - deterministicIdList
             id: id
             occurrence:
-              parent: null
               path:
               - path
               - path
-              occurrenceWithoutHead: null
               tailInstanceId: tailInstanceId
               headInstanceId: headInstanceId
               fullPathAsString: fullPathAsString
               btType: btType
               internalOccurrence: true
               rootOccurrence: true
-              occurrenceWithoutTail: null
             type: ENTITY
             tableRowId: tableRowId
           btType: btType
@@ -57749,18 +57871,15 @@ components:
                 - deterministicIdList
                 id: id
                 occurrence:
-                  parent: null
                   path:
                   - path
                   - path
-                  occurrenceWithoutHead: null
                   tailInstanceId: tailInstanceId
                   headInstanceId: headInstanceId
                   fullPathAsString: fullPathAsString
                   btType: btType
                   internalOccurrence: true
                   rootOccurrence: true
-                  occurrenceWithoutTail: null
                 type: ENTITY
                 tableRowId: tableRowId
               - btType: btType
@@ -57769,18 +57888,15 @@ components:
                 - deterministicIdList
                 id: id
                 occurrence:
-                  parent: null
                   path:
                   - path
                   - path
-                  occurrenceWithoutHead: null
                   tailInstanceId: tailInstanceId
                   headInstanceId: headInstanceId
                   fullPathAsString: fullPathAsString
                   btType: btType
                   internalOccurrence: true
                   rootOccurrence: true
-                  occurrenceWithoutTail: null
                 type: ENTITY
                 tableRowId: tableRowId
               isExcluding: true
@@ -57824,18 +57940,15 @@ components:
                 - deterministicIdList
                 id: id
                 occurrence:
-                  parent: null
                   path:
                   - path
                   - path
-                  occurrenceWithoutHead: null
                   tailInstanceId: tailInstanceId
                   headInstanceId: headInstanceId
                   fullPathAsString: fullPathAsString
                   btType: btType
                   internalOccurrence: true
                   rootOccurrence: true
-                  occurrenceWithoutTail: null
                 type: ENTITY
                 tableRowId: tableRowId
               - btType: btType
@@ -57844,18 +57957,15 @@ components:
                 - deterministicIdList
                 id: id
                 occurrence:
-                  parent: null
                   path:
                   - path
                   - path
-                  occurrenceWithoutHead: null
                   tailInstanceId: tailInstanceId
                   headInstanceId: headInstanceId
                   fullPathAsString: fullPathAsString
                   btType: btType
                   internalOccurrence: true
                   rootOccurrence: true
-                  occurrenceWithoutTail: null
                 type: ENTITY
                 tableRowId: tableRowId
               btType: btType
@@ -58401,18 +58511,15 @@ components:
           BTOccurrenceWithFullPartIds-1464: '#/components/schemas/BTOccurrenceWithFullPartIds-1464'
         propertyName: btType
       example:
-        parent: null
         path:
         - path
         - path
-        occurrenceWithoutHead: null
         tailInstanceId: tailInstanceId
         headInstanceId: headInstanceId
         fullPathAsString: fullPathAsString
         btType: btType
         internalOccurrence: true
         rootOccurrence: true
-        occurrenceWithoutTail: null
       properties:
         btType:
           description: Type of JSON object.
@@ -58423,12 +58530,6 @@ components:
           type: string
         internalOccurrence:
           type: boolean
-        occurrenceWithoutHead:
-          $ref: '#/components/schemas/BTOccurrence-74'
-        occurrenceWithoutTail:
-          $ref: '#/components/schemas/BTOccurrence-74'
-        parent:
-          $ref: '#/components/schemas/BTOccurrence-74'
         path:
           items:
             type: string
@@ -58964,6 +59065,12 @@ components:
       properties:
         btType:
           description: Type of JSON object.
+          type: string
+      type: object
+    BTPLMContextInfo:
+      description: PLM Context information .
+      properties:
+        description:
           type: string
       type: object
     BTPLMMessageBody:
@@ -60600,6 +60707,7 @@ components:
           btType: btType
           "y": 7.061401241503109
           z: 9.301444243932576
+        smApplicationType: SHEET_METAL
         propertyIdToSource:
           key:
             sourceId: sourceId
@@ -60809,6 +60917,8 @@ components:
           items:
             $ref: '#/components/schemas/BTObjectId'
           type: array
+        smApplicationType:
+          $ref: '#/components/schemas/GBTSMApplicationType'
         visibility:
           $ref: '#/components/schemas/GBTPartVisibility'
       type: object
@@ -62096,6 +62206,7 @@ components:
               btType: btType
               "y": 7.061401241503109
               z: 9.301444243932576
+            smApplicationType: SHEET_METAL
             propertyIdToSource:
               key:
                 sourceId: sourceId
@@ -62741,6 +62852,7 @@ components:
             btType: btType
             "y": 7.061401241503109
             z: 9.301444243932576
+          smApplicationType: SHEET_METAL
           propertyIdToSource:
             key:
               sourceId: sourceId
@@ -63001,6 +63113,7 @@ components:
             btType: btType
             "y": 7.061401241503109
             z: 9.301444243932576
+          smApplicationType: SHEET_METAL
           propertyIdToSource:
             key:
               sourceId: sourceId
@@ -63862,6 +63975,7 @@ components:
                 points:
                 - 0.10263654006109402
                 - 0.10263654006109402
+              isElementLibraryReference: true
               bottomRightCorner:
                 x: 2.3021358869347655
                 btType: btType
@@ -64172,12 +64286,6 @@ components:
           description: Type of JSON object.
           type: string
       type: object
-    BTPlmContextInfo:
-      description: PLM Context information .
-      properties:
-        description:
-          type: string
-      type: object
     BTPointEntity-1439:
       allOf:
       - $ref: '#/components/schemas/BTFeatureEntity-34'
@@ -64312,6 +64420,7 @@ components:
         tableType: BOM
         companyId: companyId
         isAllCaps: true
+        isShowingTopLevelAssemblyRow: true
         propertyColumns:
         - publishState: 0
           displayName: displayName
@@ -64346,6 +64455,8 @@ components:
           type: boolean
         isIndented:
           type: boolean
+        isShowingTopLevelAssemblyRow:
+          type: boolean
         name:
           description: Name of the resource.
           type: string
@@ -64367,6 +64478,7 @@ components:
         tableType: BOM
         companyId: companyId
         isAllCaps: true
+        isShowingTopLevelAssemblyRow: true
         propertyColumns:
         - propertyColumns
         - propertyColumns
@@ -64378,6 +64490,8 @@ components:
         isAllCaps:
           type: boolean
         isIndented:
+          type: boolean
+        isShowingTopLevelAssemblyRow:
           type: boolean
         name:
           type: string
@@ -64883,6 +64997,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -65204,6 +65319,7 @@ components:
           BTOccurrenceFilter-166: '#/components/schemas/BTOccurrenceFilter-166'
           BTOrFilter-167: '#/components/schemas/BTOrFilter-167'
           BTPlaneOrientationFilter-1700: '#/components/schemas/BTPlaneOrientationFilter-1700'
+          BTSMApplicationTypeFilter-4430: '#/components/schemas/BTSMApplicationTypeFilter-4430'
           BTSMDefinitionEntityTypeFilter-1651: '#/components/schemas/BTSMDefinitionEntityTypeFilter-1651'
           BTSectionGeometryFilter-4161: '#/components/schemas/BTSectionGeometryFilter-4161'
           BTSketchObjectFilter-184: '#/components/schemas/BTSketchObjectFilter-184'
@@ -65351,6 +65467,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65465,6 +65582,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65529,6 +65647,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65588,6 +65707,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65647,6 +65767,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65761,6 +65882,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65825,6 +65947,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -65884,6 +66007,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66024,6 +66148,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66138,6 +66263,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66202,6 +66328,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66261,6 +66388,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66320,6 +66448,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66434,6 +66563,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66498,6 +66628,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66557,6 +66688,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -66699,6 +66831,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -66813,6 +66946,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -66877,6 +67011,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -66936,6 +67071,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -66995,6 +67131,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67109,6 +67246,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67173,6 +67311,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67232,6 +67371,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67294,6 +67434,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67408,6 +67549,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67472,6 +67614,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67531,6 +67674,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67590,6 +67734,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67704,6 +67849,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67768,6 +67914,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67827,6 +67974,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -67910,6 +68058,7 @@ components:
           viewRef: https://openapi-generator.tech
           elementType: 6
           isRevisionManaged: true
+          canRevert: true
           errors:
           - severity: 5
             pendingTaskId: pendingTaskId
@@ -68059,6 +68208,7 @@ components:
           viewRef: https://openapi-generator.tech
           elementType: 6
           isRevisionManaged: true
+          canRevert: true
           errors:
           - severity: 5
             pendingTaskId: pendingTaskId
@@ -68168,6 +68318,19 @@ components:
               state: 0
               value: value
           diffThumbnailConfigurationKey: diffThumbnailConfigurationKey
+        transitionStatus:
+        - retryable: true
+          lastUpdatedAt: 2000-01-23T04:56:07.000+00:00
+          errorMessage: errorMessage
+          supportCode: supportCode
+          summaryState: HEALTHY
+          lastStage: RELEASE_PACKAGE_INITIALIZED
+        - retryable: true
+          lastUpdatedAt: 2000-01-23T04:56:07.000+00:00
+          errorMessage: errorMessage
+          supportCode: supportCode
+          summaryState: HEALTHY
+          lastStage: RELEASE_PACKAGE_INITIALIZED
         properties:
         - computedPropertyEvalInfo: computedPropertyEvalInfo
           isNotifierProperty: true
@@ -68442,6 +68605,10 @@ components:
           items:
             type: string
           type: array
+        transitionStatus:
+          items:
+            $ref: '#/components/schemas/BTReleaseTransitionStatusInfo'
+          type: array
         updatedItemIds:
           items:
             type: string
@@ -68506,6 +68673,7 @@ components:
         viewRef: https://openapi-generator.tech
         elementType: 6
         isRevisionManaged: true
+        canRevert: true
         errors:
         - severity: 5
           pendingTaskId: pendingTaskId
@@ -68619,6 +68787,8 @@ components:
         addedAutomatically:
           type: boolean
         canExport:
+          type: boolean
+        canRevert:
           type: boolean
         changeDetectionStatus:
           format: int32
@@ -68834,6 +69004,58 @@ components:
             $ref: '#/components/schemas/BTReleasePackageItemParams'
           type: array
       type: object
+    BTReleaseStage:
+      enum:
+      - RELEASE_PACKAGE_INITIALIZED
+      - PRETRANSITION_MUTATIONS_COMMITTED
+      - WORKFLOW_TRANSITION_STARTED
+      - WORKFLOW_STATE_SAVED
+      - APPROVERS_RECORDED
+      - WORKFLOW_AUDIT_COMPLETED
+      - POSTSUBMIT_FANOUT_COMPLETED
+      - PRETRANSITION_MUTATIONS_STARTED
+      - APPROVERS_METADATA_STARTED
+      - POSTSUBMIT_FANOUT_STARTED
+      - RELEASE_PACKAGE_VALIDATION
+      - RELEASE_PACKAGE_METADATA_UPDATE
+      - RELEASE_PACKAGE_UPDATE
+      - PRETRANSITION_VALIDATION_STARTED
+      - HANDLE_FROZEN_PACKAGE
+      - UPDATE_PACKAGE_PROPERTIES
+      - CREATE_RELEASE_PACKAGE_INFO
+      type: string
+    BTReleaseSummaryState:
+      enum:
+      - HEALTHY
+      - IN_PROGRESS
+      - FAILED_PRECOMMIT
+      - FAILED_POSTCOMMIT
+      - DEGRADED_POSTCOMMIT
+      - FAILED
+      type: string
+    BTReleaseTransitionStatusInfo:
+      example:
+        retryable: true
+        lastUpdatedAt: 2000-01-23T04:56:07.000+00:00
+        errorMessage: errorMessage
+        supportCode: supportCode
+        summaryState: HEALTHY
+        lastStage: RELEASE_PACKAGE_INITIALIZED
+      properties:
+        errorMessage:
+          type: string
+        lastStage:
+          $ref: '#/components/schemas/BTReleaseStage'
+        lastUpdatedAt:
+          format: date-time
+          type: string
+        retryable:
+          type: boolean
+        summaryState:
+          $ref: '#/components/schemas/BTReleaseSummaryState'
+        supportCode:
+          type: string
+      type: object
     BTResourceOwnerInfo:
       allOf:
       - $ref: '#/components/schemas/BTGlobalTreeNodeInfo'
@@ -68994,6 +69216,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -69223,6 +69446,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -69324,6 +69548,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -69618,6 +69843,7 @@ components:
           type: Assembly
           documentVersion: documentVersion
           revision: revision
+          designator: designator
           name: name
           errorStatus: null
           documentId: documentId
@@ -69635,6 +69861,7 @@ components:
           type: Assembly
           documentVersion: documentVersion
           revision: revision
+          designator: designator
           name: name
           errorStatus: null
           documentId: documentId
@@ -69858,6 +70085,15 @@ components:
           type: string
         type:
           $ref: '#/components/schemas/GBTNodeChange'
+      type: object
+    BTSMApplicationTypeFilter-4430:
+      allOf:
+      - $ref: '#/components/schemas/BTQueryFilter-183'
+      - $ref: '#/components/schemas/BTSMApplicationTypeFilter_4430_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
       type: object
     BTSMBendTableRowMetadata-1705:
       allOf:
@@ -70444,6 +70680,7 @@ components:
           points:
           - 0.10263654006109402
           - 0.10263654006109402
+        isElementLibraryReference: true
         bottomRightCorner:
           x: 2.3021358869347655
           btType: btType
@@ -70473,6 +70710,8 @@ components:
           type: array
         featureId:
           type: string
+        isElementLibraryReference:
+          type: boolean
         isOnFlat:
           type: boolean
         points:
@@ -70860,6 +71099,7 @@ components:
           type: Assembly
           documentVersion: documentVersion
           revision: revision
+          designator: designator
           name: name
           errorStatus: null
           documentId: documentId
@@ -70877,6 +71117,7 @@ components:
           type: Assembly
           documentVersion: documentVersion
           revision: revision
+          designator: designator
           name: name
           errorStatus: null
           documentId: documentId
@@ -71064,6 +71305,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -71462,6 +71704,15 @@ components:
             $ref: '#/components/schemas/BTTableCellModifier-4883'
           type: array
       type: object
+    BTTableCellConfigurationParameter-3590:
+      allOf:
+      - $ref: '#/components/schemas/BTTableCellParameter-2399'
+      - $ref: '#/components/schemas/BTTableCellConfigurationParameter_3590_allOf'
+      properties:
+        btType:
+          description: Type of JSON object.
+          type: string
+      type: object
     BTTableCellModifier-4883:
       discriminator:
         mapping:
@@ -71509,6 +71760,7 @@ components:
       - $ref: '#/components/schemas/BTTableCellParameter_2399_allOf'
       discriminator:
         mapping:
+          BTTableCellConfigurationParameter-3590: '#/components/schemas/BTTableCellConfigurationParameter-3590'
           BTTableCellParameterWithValue-2122: '#/components/schemas/BTTableCellParameterWithValue-2122'
           BTTableCellPropertyParameter-2983: '#/components/schemas/BTTableCellPropertyParameter-2983'
         propertyName: btType
@@ -71950,6 +72202,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -72037,6 +72290,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -72143,6 +72397,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72257,6 +72512,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72321,6 +72577,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72380,6 +72637,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72439,6 +72697,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72553,6 +72812,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72617,6 +72877,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72676,6 +72937,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -72897,6 +73159,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           image: image
@@ -72960,6 +73223,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           image: image
@@ -73668,6 +73932,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -73755,6 +74020,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -73861,6 +74127,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -73975,6 +74242,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74039,6 +74307,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74098,6 +74367,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74157,6 +74427,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74271,6 +74542,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74335,6 +74607,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74394,6 +74667,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -74615,6 +74889,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             image: image
@@ -74678,6 +74953,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             image: image
@@ -75111,6 +75387,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -75198,6 +75475,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -75304,6 +75582,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75418,6 +75697,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75482,6 +75762,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75541,6 +75822,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75600,6 +75882,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75714,6 +75997,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75778,6 +76062,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -75837,6 +76122,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -76058,6 +76344,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             image: image
@@ -76121,6 +76408,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             image: image
@@ -76727,6 +77015,7 @@ components:
           adminEnterprise: true
           importFiles: true
           deletePermanently: true
+          enableLabs: true
           exportFiles: true
           manageRbac: true
         image: image
@@ -76900,6 +77189,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -77921,18 +78211,15 @@ components:
         - deterministicIdList
         id: id
         occurrence:
-          parent: null
           path:
           - path
           - path
-          occurrenceWithoutHead: null
           tailInstanceId: tailInstanceId
           headInstanceId: headInstanceId
           fullPathAsString: fullPathAsString
           btType: btType
           internalOccurrence: true
           rootOccurrence: true
-          occurrenceWithoutTail: null
         type: ENTITY
         tableRowId: tableRowId
       properties:
@@ -78010,6 +78297,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -78116,6 +78404,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -78235,6 +78524,7 @@ components:
               adminEnterprise: true
               importFiles: true
               deletePermanently: true
+              enableLabs: true
               exportFiles: true
               manageRbac: true
             isExternal: true
@@ -78353,7 +78643,7 @@ components:
     BTUnitsMaximumDisplayPrecisionInfo:
       example:
         unitsDisplayPrecision:
-          key: 2
+          key: 4
       properties:
         unitsDisplayPrecision:
           additionalProperties:
@@ -78921,6 +79211,7 @@ components:
           adminEnterprise: true
           importFiles: true
           deletePermanently: true
+          enableLabs: true
           exportFiles: true
           manageRbac: true
         clientId: clientId
@@ -78976,7 +79267,7 @@ components:
         axisRotationLock: true
         contextTranslucencySliderValue: 1.4658129
         unitsDisplayPrecision:
-          key: 3
+          key: 2
         selectItemViewStateInfos:
         - activeSelectorId: activeSelectorId
           purpose: purpose
@@ -79087,11 +79378,11 @@ components:
             - keys
         unitsMaximumDisplayPrecision:
           unitsDisplayPrecision:
-            key: 2
+            key: 4
         graphicsRenderMode: graphicsRenderMode
-        theme: 9
+        theme: 3
         id: id
-        makeTransparentOpacitySliderValue: 2.302136
+        makeTransparentOpacitySliderValue: 7.0614014
         substituteApprovers:
         - companyId: companyId
           identity:
@@ -79177,6 +79468,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -79296,6 +79588,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -79337,6 +79630,9 @@ components:
         sketchShowErrors: true
         useDecimalComma: true
         isolateHideTransparent: isolateHideTransparent
+        enabledLabsFeatures:
+        - 5
+        - 5
         exportDrawingOptions: exportDrawingOptions
         isolateEnableSelectionDesire: true
         materialLibrarySettings:
@@ -79374,7 +79670,7 @@ components:
             documentId: documentId
             documentName: documentName
             workspaceId: workspaceId
-        startupPage: 7
+        startupPage: 9
         enforceApplicationAcl: true
         reverseScrollWheelZoomDirection: true
         sketchShowExpressions: true
@@ -79398,9 +79694,10 @@ components:
               key: 0
         miniToolbarSettings: miniToolbarSettings
         mouseActions: mouseActions
-        isolateOpacitySliderValue: 5.637377
+        isolateOpacitySliderValue: 2.302136
         makeTransparentEnableSelectionDesire: true
-        viewMappingId: 4
+        enableLabs: true
+        viewMappingId: 7
       properties:
         axisRotationLock:
           type: boolean
@@ -79422,6 +79719,13 @@ components:
         drawingBackgroundId:
           format: int32
           type: integer
+        enableLabs:
+          type: boolean
+        enabledLabsFeatures:
+          items:
+            format: int32
+            type: integer
+          type: array
         enforceApplicationAcl:
           type: boolean
         exportDrawingOptions:
@@ -79550,6 +79854,7 @@ components:
           adminEnterprise: true
           importFiles: true
           deletePermanently: true
+          enableLabs: true
           exportFiles: true
           manageRbac: true
         isExternal: true
@@ -80336,6 +80641,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -81149,6 +81455,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -81271,6 +81578,7 @@ components:
                   adminEnterprise: true
                   importFiles: true
                   deletePermanently: true
+                  enableLabs: true
                   exportFiles: true
                   manageRbac: true
                 isExternal: true
@@ -81392,6 +81700,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -81508,6 +81817,7 @@ components:
                 adminEnterprise: true
                 importFiles: true
                 deletePermanently: true
+                enableLabs: true
                 exportFiles: true
                 manageRbac: true
               isExternal: true
@@ -81628,6 +81938,7 @@ components:
             adminEnterprise: true
             importFiles: true
             deletePermanently: true
+            enableLabs: true
             exportFiles: true
             manageRbac: true
           isExternal: true
@@ -110716,6 +111027,8 @@ components:
       - TOP_MIDDLE
       - BOTTOM_MIDDLE
       - OPPOSITE_LEADER_EDGE
+      - LEFT_MIDDLE
+      - RIGHT_MIDDLE
       - UNKNOWN
       type: string
     GBTAnnotationType:
@@ -112808,7 +113121,13 @@ components:
       - BSURF_BOUNDARY_CONDITIONS_RELAXED_INFO
       - ASYNC_SIMULATION_VERSION_NOT_SELECTED
       - ASYNC_SIMULATION_INVALID_POSITION
+      - SIMULATION_ASSEMBLY_EXCEEDS_INSTANCE_COUNT_LIMIT
+      - FGS_SIMULATION_TOO_MANY_CONTACT_PAIRS
+      - SIMULATION_TIMEOUT
       - FIXED_PART_REQUIRED_FOR_SIMULATION_NO_BOUNDARY_CONDITION
+      - SKETCH_TIMED_OUT
+      - ASYNC_SIMULATION_ALREADY_COMPLETE
+      - MATECONNECTOR_ATTACH_TO_NOT_RESOLVED
       - UNKNOWN
       type: string
     GBTExportResolution:
@@ -113237,6 +113556,13 @@ components:
       - V8
       - UNKNOWN
       type: string
+    GBTSMApplicationType:
+      enum:
+      - SHEET_METAL
+      - FLEXIBLE_PCB
+      - NONE
+      - UNKNOWN
+      type: string
     GBTSimulationContactBehavior:
       enum:
       - MATES_ONLY
@@ -113620,6 +113946,7 @@ components:
         adminEnterprise: true
         importFiles: true
         deletePermanently: true
+        enableLabs: true
         exportFiles: true
         manageRbac: true
       properties:
@@ -113644,6 +113971,8 @@ components:
         createTasks:
           type: boolean
         deletePermanently:
+          type: boolean
+        enableLabs:
           type: boolean
         exportFiles:
           type: boolean
@@ -222665,32 +222994,8 @@ components:
       type: object
     BTMAssemblyFeature_887_allOf:
       properties:
-        auxiliaryTreeFeature:
-          type: boolean
         btType:
           type: string
-        featureFolder:
-          type: boolean
-        featureListFieldIndex:
-          format: int32
-          type: integer
-        fieldIndexForOwnedMateConnectors:
-          format: int32
-          type: integer
-        mateConnectors:
-          items:
-            $ref: '#/components/schemas/BTMMateConnector-66'
-          type: array
-        occurrenceQueriesFromAllConfigurations:
-          items:
-            $ref: '#/components/schemas/BTMIndividualQueryWithOccurrenceBase-904'
-          type: array
-        parametricInstanceFeature:
-          type: boolean
-        subFeaturesNotUsedInQuery:
-          items:
-            $ref: '#/components/schemas/BTMFeature-134'
-          type: array
         version:
           format: int32
           type: integer
@@ -223196,6 +223501,8 @@ components:
           $ref: '#/components/schemas/BTMImport-136'
         btType:
           type: string
+        elementLibraryData:
+          $ref: '#/components/schemas/BTElementLibraryReferenceData-3133'
         importMicroversion:
           description: Element microversion that is being imported.
           type: string
@@ -224658,10 +224965,6 @@ components:
         maxNumberOfPicks:
           format: int32
           type: integer
-        parameters:
-          items:
-            $ref: '#/components/schemas/BTParameterSpec-6'
-          type: array
         showLabelsOnly:
           type: boolean
       type: object
@@ -225090,7 +225393,7 @@ components:
             type: string
           type: array
         plmContext:
-          $ref: '#/components/schemas/BTPlmContextInfo'
+          $ref: '#/components/schemas/BTPLMContextInfo'
         roleMapEntries:
           items:
             $ref: '#/components/schemas/RoleMapEntry'
@@ -225220,6 +225523,13 @@ components:
       properties:
         revisionId:
           type: string
+      type: object
+    BTSMApplicationTypeFilter_4430_allOf:
+      properties:
+        btType:
+          type: string
+        smApplicationType:
+          $ref: '#/components/schemas/GBTSMApplicationType'
       type: object
     BTSMBendTableRowMetadata_1705_allOf:
       properties:
@@ -225540,6 +225850,19 @@ components:
         assemblyCrossHighlightItems:
           items:
             $ref: '#/components/schemas/BTTableAssemblyCrossHighlightDataItem-2659'
+          type: array
+      type: object
+    BTTableCellConfigurationParameter_3590_allOf:
+      properties:
+        btType:
+          type: string
+        configurationParameterIdToValue:
+          additionalProperties:
+            $ref: '#/components/schemas/BTFSValue-1888'
+          type: object
+        configurationParameters:
+          items:
+            $ref: '#/components/schemas/BTMConfigurationParameter-819'
           type: array
       type: object
     BTTableCellModifierInfo_4585_allOf:

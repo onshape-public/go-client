@@ -27,6 +27,7 @@ type GlobalPermissionInfo struct {
 	CreateReleases                  *bool `json:"createReleases,omitempty"`
 	CreateTasks                     *bool `json:"createTasks,omitempty"`
 	DeletePermanently               *bool `json:"deletePermanently,omitempty"`
+	EnableLabs                      *bool `json:"enableLabs,omitempty"`
 	ExportFiles                     *bool `json:"exportFiles,omitempty"`
 	ImportFiles                     *bool `json:"importFiles,omitempty"`
 	ManageGuestUsers                *bool `json:"manageGuestUsers,omitempty"`
@@ -407,6 +408,38 @@ func (o *GlobalPermissionInfo) HasDeletePermanently() bool {
 // SetDeletePermanently gets a reference to the given bool and assigns it to the DeletePermanently field.
 func (o *GlobalPermissionInfo) SetDeletePermanently(v bool) {
 	o.DeletePermanently = &v
+}
+
+// GetEnableLabs returns the EnableLabs field value if set, zero value otherwise.
+func (o *GlobalPermissionInfo) GetEnableLabs() bool {
+	if o == nil || o.EnableLabs == nil {
+		var ret bool
+		return ret
+	}
+	return *o.EnableLabs
+}
+
+// GetEnableLabsOk returns a tuple with the EnableLabs field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GlobalPermissionInfo) GetEnableLabsOk() (*bool, bool) {
+	if o == nil || o.EnableLabs == nil {
+		return nil, false
+	}
+	return o.EnableLabs, true
+}
+
+// HasEnableLabs returns a boolean if a field has been set.
+func (o *GlobalPermissionInfo) HasEnableLabs() bool {
+	if o != nil && o.EnableLabs != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnableLabs gets a reference to the given bool and assigns it to the EnableLabs field.
+func (o *GlobalPermissionInfo) SetEnableLabs(v bool) {
+	o.EnableLabs = &v
 }
 
 // GetExportFiles returns the ExportFiles field value if set, zero value otherwise.
@@ -795,6 +828,9 @@ func (o GlobalPermissionInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.DeletePermanently != nil {
 		toSerialize["deletePermanently"] = o.DeletePermanently
+	}
+	if o.EnableLabs != nil {
+		toSerialize["enableLabs"] = o.EnableLabs
 	}
 	if o.ExportFiles != nil {
 		toSerialize["exportFiles"] = o.ExportFiles

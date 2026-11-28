@@ -18,6 +18,7 @@ import (
 type BTReleasePackageItemInfo struct {
 	AddedAutomatically            *bool                    `json:"addedAutomatically,omitempty"`
 	CanExport                     *bool                    `json:"canExport,omitempty"`
+	CanRevert                     *bool                    `json:"canRevert,omitempty"`
 	ChangeDetectionStatus         *int32                   `json:"changeDetectionStatus,omitempty"`
 	CompanyId                     *string                  `json:"companyId,omitempty"`
 	Configuration                 *string                  `json:"configuration,omitempty"`
@@ -138,6 +139,38 @@ func (o *BTReleasePackageItemInfo) HasCanExport() bool {
 // SetCanExport gets a reference to the given bool and assigns it to the CanExport field.
 func (o *BTReleasePackageItemInfo) SetCanExport(v bool) {
 	o.CanExport = &v
+}
+
+// GetCanRevert returns the CanRevert field value if set, zero value otherwise.
+func (o *BTReleasePackageItemInfo) GetCanRevert() bool {
+	if o == nil || o.CanRevert == nil {
+		var ret bool
+		return ret
+	}
+	return *o.CanRevert
+}
+
+// GetCanRevertOk returns a tuple with the CanRevert field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTReleasePackageItemInfo) GetCanRevertOk() (*bool, bool) {
+	if o == nil || o.CanRevert == nil {
+		return nil, false
+	}
+	return o.CanRevert, true
+}
+
+// HasCanRevert returns a boolean if a field has been set.
+func (o *BTReleasePackageItemInfo) HasCanRevert() bool {
+	if o != nil && o.CanRevert != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCanRevert gets a reference to the given bool and assigns it to the CanRevert field.
+func (o *BTReleasePackageItemInfo) SetCanRevert(v bool) {
+	o.CanRevert = &v
 }
 
 // GetChangeDetectionStatus returns the ChangeDetectionStatus field value if set, zero value otherwise.
@@ -1267,6 +1300,9 @@ func (o BTReleasePackageItemInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.CanExport != nil {
 		toSerialize["canExport"] = o.CanExport
+	}
+	if o.CanRevert != nil {
+		toSerialize["canRevert"] = o.CanRevert
 	}
 	if o.ChangeDetectionStatus != nil {
 		toSerialize["changeDetectionStatus"] = o.ChangeDetectionStatus
