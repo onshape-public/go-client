@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **PersonalMessageAllowed** | Pointer to **bool** |  | [optional] 
+**ScheduledRemovalDate** | Pointer to **JSONTime** |  | [optional] 
+**ShowOffBoardingNotification** | Pointer to **bool** |  | [optional] 
 **Source** | Pointer to **int32** |  | [optional] 
 **State** | Pointer to **int32** |  | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
@@ -572,6 +574,56 @@ SetPersonalMessageAllowed sets PersonalMessageAllowed field to given value.
 `func (o *BTTaskUserSummaryInfo) HasPersonalMessageAllowed() bool`
 
 HasPersonalMessageAllowed returns a boolean if a field has been set.
+
+### GetScheduledRemovalDate
+
+`func (o *BTTaskUserSummaryInfo) GetScheduledRemovalDate() JSONTime`
+
+GetScheduledRemovalDate returns the ScheduledRemovalDate field if non-nil, zero value otherwise.
+
+### GetScheduledRemovalDateOk
+
+`func (o *BTTaskUserSummaryInfo) GetScheduledRemovalDateOk() (*JSONTime, bool)`
+
+GetScheduledRemovalDateOk returns a tuple with the ScheduledRemovalDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScheduledRemovalDate
+
+`func (o *BTTaskUserSummaryInfo) SetScheduledRemovalDate(v JSONTime)`
+
+SetScheduledRemovalDate sets ScheduledRemovalDate field to given value.
+
+### HasScheduledRemovalDate
+
+`func (o *BTTaskUserSummaryInfo) HasScheduledRemovalDate() bool`
+
+HasScheduledRemovalDate returns a boolean if a field has been set.
+
+### GetShowOffBoardingNotification
+
+`func (o *BTTaskUserSummaryInfo) GetShowOffBoardingNotification() bool`
+
+GetShowOffBoardingNotification returns the ShowOffBoardingNotification field if non-nil, zero value otherwise.
+
+### GetShowOffBoardingNotificationOk
+
+`func (o *BTTaskUserSummaryInfo) GetShowOffBoardingNotificationOk() (*bool, bool)`
+
+GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShowOffBoardingNotification
+
+`func (o *BTTaskUserSummaryInfo) SetShowOffBoardingNotification(v bool)`
+
+SetShowOffBoardingNotification sets ShowOffBoardingNotification field to given value.
+
+### HasShowOffBoardingNotification
+
+`func (o *BTTaskUserSummaryInfo) HasShowOffBoardingNotification() bool`
+
+HasShowOffBoardingNotification returns a boolean if a field has been set.
 
 ### GetSource
 

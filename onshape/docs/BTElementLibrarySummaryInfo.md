@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CurrentPublicVersion** | Pointer to **string** | If present, this library is public and this field contains the version Id of the current public version. If not present, this library is not public. | [optional] 
+**DefinitionName** | Pointer to **string** | What this library is for, e.g. frames profiles. | [optional] 
 **Href** | Pointer to **string** | URI to fetch complete information of the resource. | [optional] 
 **Id** | Pointer to **string** | Id of the resource. | [optional] 
 **LibraryDefinitionId** | Pointer to **string** | The ID of the definition of the element library. | [optional] 
@@ -12,9 +13,11 @@ Name | Type | Description | Notes
 **LibraryVersion** | Pointer to **string** | The current version Id of the library. | [optional] 
 **Name** | Pointer to **string** | Name of the resource. | [optional] 
 **OwnerId** | Pointer to **string** | The owner Id of an element library (either Onshape, company, or user). | [optional] 
+**OwnerName** | Pointer to **string** | The name of the owner of the library. | [optional] 
 **OwnerType** | Pointer to **int32** | The type of library owner, Onshape, user, or company | [optional] 
 **SourceFolderId** | Pointer to **string** | The id of the root folder of the library | [optional] 
 **Subscribed** | Pointer to **bool** | If true, the current user is subscribed to this library. Applies only to public libraries. | [optional] 
+**VersionName** | Pointer to **string** | The name of the current version of the library. | [optional] 
 **ViewRef** | Pointer to **string** | URI to visualize the resource in a webclient if applicable. | [optional] 
 
 ## Methods
@@ -60,6 +63,31 @@ SetCurrentPublicVersion sets CurrentPublicVersion field to given value.
 `func (o *BTElementLibrarySummaryInfo) HasCurrentPublicVersion() bool`
 
 HasCurrentPublicVersion returns a boolean if a field has been set.
+
+### GetDefinitionName
+
+`func (o *BTElementLibrarySummaryInfo) GetDefinitionName() string`
+
+GetDefinitionName returns the DefinitionName field if non-nil, zero value otherwise.
+
+### GetDefinitionNameOk
+
+`func (o *BTElementLibrarySummaryInfo) GetDefinitionNameOk() (*string, bool)`
+
+GetDefinitionNameOk returns a tuple with the DefinitionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDefinitionName
+
+`func (o *BTElementLibrarySummaryInfo) SetDefinitionName(v string)`
+
+SetDefinitionName sets DefinitionName field to given value.
+
+### HasDefinitionName
+
+`func (o *BTElementLibrarySummaryInfo) HasDefinitionName() bool`
+
+HasDefinitionName returns a boolean if a field has been set.
 
 ### GetHref
 
@@ -236,6 +264,31 @@ SetOwnerId sets OwnerId field to given value.
 
 HasOwnerId returns a boolean if a field has been set.
 
+### GetOwnerName
+
+`func (o *BTElementLibrarySummaryInfo) GetOwnerName() string`
+
+GetOwnerName returns the OwnerName field if non-nil, zero value otherwise.
+
+### GetOwnerNameOk
+
+`func (o *BTElementLibrarySummaryInfo) GetOwnerNameOk() (*string, bool)`
+
+GetOwnerNameOk returns a tuple with the OwnerName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwnerName
+
+`func (o *BTElementLibrarySummaryInfo) SetOwnerName(v string)`
+
+SetOwnerName sets OwnerName field to given value.
+
+### HasOwnerName
+
+`func (o *BTElementLibrarySummaryInfo) HasOwnerName() bool`
+
+HasOwnerName returns a boolean if a field has been set.
+
 ### GetOwnerType
 
 `func (o *BTElementLibrarySummaryInfo) GetOwnerType() int32`
@@ -310,6 +363,31 @@ SetSubscribed sets Subscribed field to given value.
 `func (o *BTElementLibrarySummaryInfo) HasSubscribed() bool`
 
 HasSubscribed returns a boolean if a field has been set.
+
+### GetVersionName
+
+`func (o *BTElementLibrarySummaryInfo) GetVersionName() string`
+
+GetVersionName returns the VersionName field if non-nil, zero value otherwise.
+
+### GetVersionNameOk
+
+`func (o *BTElementLibrarySummaryInfo) GetVersionNameOk() (*string, bool)`
+
+GetVersionNameOk returns a tuple with the VersionName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVersionName
+
+`func (o *BTElementLibrarySummaryInfo) SetVersionName(v string)`
+
+SetVersionName sets VersionName field to given value.
+
+### HasVersionName
+
+`func (o *BTElementLibrarySummaryInfo) HasVersionName() bool`
+
+HasVersionName returns a boolean if a field has been set.
 
 ### GetViewRef
 

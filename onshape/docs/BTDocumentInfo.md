@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **PermissionSet** | Pointer to **[]string** |  | [optional] 
 **ProjectId** | Pointer to **string** |  | [optional] 
 **Public** | Pointer to **bool** |  | [optional] 
+**PublicLinkable** | Pointer to **bool** |  | [optional] 
 **PublishedVersionId** | Pointer to **string** |  | [optional] 
 **RecentVersion** | Pointer to [**BTBaseInfo**](BTBaseInfo.md) |  | [optional] 
 **RequireApprovedDrawingTemplatesPreference** | Pointer to **bool** |  | [optional] 
@@ -1129,6 +1130,31 @@ SetPublic sets Public field to given value.
 `func (o *BTDocumentInfo) HasPublic() bool`
 
 HasPublic returns a boolean if a field has been set.
+
+### GetPublicLinkable
+
+`func (o *BTDocumentInfo) GetPublicLinkable() bool`
+
+GetPublicLinkable returns the PublicLinkable field if non-nil, zero value otherwise.
+
+### GetPublicLinkableOk
+
+`func (o *BTDocumentInfo) GetPublicLinkableOk() (*bool, bool)`
+
+GetPublicLinkableOk returns a tuple with the PublicLinkable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPublicLinkable
+
+`func (o *BTDocumentInfo) SetPublicLinkable(v bool)`
+
+SetPublicLinkable sets PublicLinkable field to given value.
+
+### HasPublicLinkable
+
+`func (o *BTDocumentInfo) HasPublicLinkable() bool`
+
+HasPublicLinkable returns a boolean if a field has been set.
 
 ### GetPublishedVersionId
 

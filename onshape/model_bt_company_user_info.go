@@ -29,11 +29,12 @@ type BTCompanyUserInfo struct {
 	Light              *bool     `json:"light,omitempty"`
 	MakePersonalCopies *bool     `json:"makePersonalCopies,omitempty"`
 	// Name of the resource.
-	Name                 *string                 `json:"name,omitempty"`
-	ScheduledRemovalDate *JSONTime               `json:"scheduledRemovalDate,omitempty"`
-	State                *int32                  `json:"state,omitempty"`
-	User                 *BTUserBasicSummaryInfo `json:"user,omitempty"`
-	UserRolePriority     *UserRolePriority       `json:"userRolePriority,omitempty"`
+	Name                        *string                 `json:"name,omitempty"`
+	ScheduledRemovalDate        *JSONTime               `json:"scheduledRemovalDate,omitempty"`
+	ShowOffBoardingNotification *bool                   `json:"showOffBoardingNotification,omitempty"`
+	State                       *int32                  `json:"state,omitempty"`
+	User                        *BTUserBasicSummaryInfo `json:"user,omitempty"`
+	UserRolePriority            *UserRolePriority       `json:"userRolePriority,omitempty"`
 	// URI to visualize the resource in a webclient if applicable.
 	ViewRef *string `json:"viewRef,omitempty"`
 }
@@ -439,6 +440,38 @@ func (o *BTCompanyUserInfo) SetScheduledRemovalDate(v JSONTime) {
 	o.ScheduledRemovalDate = &v
 }
 
+// GetShowOffBoardingNotification returns the ShowOffBoardingNotification field value if set, zero value otherwise.
+func (o *BTCompanyUserInfo) GetShowOffBoardingNotification() bool {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ShowOffBoardingNotification
+}
+
+// GetShowOffBoardingNotificationOk returns a tuple with the ShowOffBoardingNotification field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTCompanyUserInfo) GetShowOffBoardingNotificationOk() (*bool, bool) {
+	if o == nil || o.ShowOffBoardingNotification == nil {
+		return nil, false
+	}
+	return o.ShowOffBoardingNotification, true
+}
+
+// HasShowOffBoardingNotification returns a boolean if a field has been set.
+func (o *BTCompanyUserInfo) HasShowOffBoardingNotification() bool {
+	if o != nil && o.ShowOffBoardingNotification != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShowOffBoardingNotification gets a reference to the given bool and assigns it to the ShowOffBoardingNotification field.
+func (o *BTCompanyUserInfo) SetShowOffBoardingNotification(v bool) {
+	o.ShowOffBoardingNotification = &v
+}
+
 // GetState returns the State field value if set, zero value otherwise.
 func (o *BTCompanyUserInfo) GetState() int32 {
 	if o == nil || o.State == nil {
@@ -604,6 +637,9 @@ func (o BTCompanyUserInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.ScheduledRemovalDate != nil {
 		toSerialize["scheduledRemovalDate"] = o.ScheduledRemovalDate
+	}
+	if o.ShowOffBoardingNotification != nil {
+		toSerialize["showOffBoardingNotification"] = o.ShowOffBoardingNotification
 	}
 	if o.State != nil {
 		toSerialize["state"] = o.State

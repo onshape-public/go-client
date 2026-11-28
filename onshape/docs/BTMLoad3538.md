@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **DefinedByComponents** | Pointer to **bool** |  | [optional] 
 **DirectionFlipped** | Pointer to **bool** |  | [optional] 
 **FgsUnits** | Pointer to **string** |  | [optional] 
+**FieldIndexForSuppressedInSimulationsMap** | Pointer to **int32** |  | [optional] 
 **LoadComponentParameterIds** | Pointer to **map[string]string** |  | [optional] 
 **LoadRegionParameterId** | Pointer to **string** |  | [optional] 
 **LoadType** | Pointer to [**GBTLoadType**](GBTLoadType.md) |  | [optional] 
@@ -134,6 +135,31 @@ SetFgsUnits sets FgsUnits field to given value.
 `func (o *BTMLoad3538) HasFgsUnits() bool`
 
 HasFgsUnits returns a boolean if a field has been set.
+
+### GetFieldIndexForSuppressedInSimulationsMap
+
+`func (o *BTMLoad3538) GetFieldIndexForSuppressedInSimulationsMap() int32`
+
+GetFieldIndexForSuppressedInSimulationsMap returns the FieldIndexForSuppressedInSimulationsMap field if non-nil, zero value otherwise.
+
+### GetFieldIndexForSuppressedInSimulationsMapOk
+
+`func (o *BTMLoad3538) GetFieldIndexForSuppressedInSimulationsMapOk() (*int32, bool)`
+
+GetFieldIndexForSuppressedInSimulationsMapOk returns a tuple with the FieldIndexForSuppressedInSimulationsMap field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFieldIndexForSuppressedInSimulationsMap
+
+`func (o *BTMLoad3538) SetFieldIndexForSuppressedInSimulationsMap(v int32)`
+
+SetFieldIndexForSuppressedInSimulationsMap sets FieldIndexForSuppressedInSimulationsMap field to given value.
+
+### HasFieldIndexForSuppressedInSimulationsMap
+
+`func (o *BTMLoad3538) HasFieldIndexForSuppressedInSimulationsMap() bool`
+
+HasFieldIndexForSuppressedInSimulationsMap returns a boolean if a field has been set.
 
 ### GetLoadComponentParameterIds
 

@@ -19,13 +19,14 @@ type BTSketchImageDisplayData1379 struct {
 	BottomLeftCorner  *BTVector3d389 `json:"bottomLeftCorner,omitempty"`
 	BottomRightCorner *BTVector3d389 `json:"bottomRightCorner,omitempty"`
 	// Type of JSON object.
-	BtType        *string                        `json:"btType,omitempty"`
-	Entities      []BTSketchEntityDisplayData354 `json:"entities,omitempty"`
-	FeatureId     *string                        `json:"featureId,omitempty"`
-	IsOnFlat      *bool                          `json:"isOnFlat,omitempty"`
-	Points        []float64                      `json:"points,omitempty"`
-	SourceId      *string                        `json:"sourceId,omitempty"`
-	TopLeftCorner *BTVector3d389                 `json:"topLeftCorner,omitempty"`
+	BtType                    *string                        `json:"btType,omitempty"`
+	Entities                  []BTSketchEntityDisplayData354 `json:"entities,omitempty"`
+	FeatureId                 *string                        `json:"featureId,omitempty"`
+	IsElementLibraryReference *bool                          `json:"isElementLibraryReference,omitempty"`
+	IsOnFlat                  *bool                          `json:"isOnFlat,omitempty"`
+	Points                    []float64                      `json:"points,omitempty"`
+	SourceId                  *string                        `json:"sourceId,omitempty"`
+	TopLeftCorner             *BTVector3d389                 `json:"topLeftCorner,omitempty"`
 }
 
 // NewBTSketchImageDisplayData1379 instantiates a new BTSketchImageDisplayData1379 object
@@ -205,6 +206,38 @@ func (o *BTSketchImageDisplayData1379) SetFeatureId(v string) {
 	o.FeatureId = &v
 }
 
+// GetIsElementLibraryReference returns the IsElementLibraryReference field value if set, zero value otherwise.
+func (o *BTSketchImageDisplayData1379) GetIsElementLibraryReference() bool {
+	if o == nil || o.IsElementLibraryReference == nil {
+		var ret bool
+		return ret
+	}
+	return *o.IsElementLibraryReference
+}
+
+// GetIsElementLibraryReferenceOk returns a tuple with the IsElementLibraryReference field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTSketchImageDisplayData1379) GetIsElementLibraryReferenceOk() (*bool, bool) {
+	if o == nil || o.IsElementLibraryReference == nil {
+		return nil, false
+	}
+	return o.IsElementLibraryReference, true
+}
+
+// HasIsElementLibraryReference returns a boolean if a field has been set.
+func (o *BTSketchImageDisplayData1379) HasIsElementLibraryReference() bool {
+	if o != nil && o.IsElementLibraryReference != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetIsElementLibraryReference gets a reference to the given bool and assigns it to the IsElementLibraryReference field.
+func (o *BTSketchImageDisplayData1379) SetIsElementLibraryReference(v bool) {
+	o.IsElementLibraryReference = &v
+}
+
 // GetIsOnFlat returns the IsOnFlat field value if set, zero value otherwise.
 func (o *BTSketchImageDisplayData1379) GetIsOnFlat() bool {
 	if o == nil || o.IsOnFlat == nil {
@@ -349,6 +382,9 @@ func (o BTSketchImageDisplayData1379) MarshalJSON() ([]byte, error) {
 	}
 	if o.FeatureId != nil {
 		toSerialize["featureId"] = o.FeatureId
+	}
+	if o.IsElementLibraryReference != nil {
+		toSerialize["isElementLibraryReference"] = o.IsElementLibraryReference
 	}
 	if o.IsOnFlat != nil {
 		toSerialize["isOnFlat"] = o.IsOnFlat

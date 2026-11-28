@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **BtType** | Pointer to **string** | Type of JSON object. | [optional] 
 **Entities** | Pointer to [**[]BTSketchEntityDisplayData354**](BTSketchEntityDisplayData354.md) |  | [optional] 
 **FeatureId** | Pointer to **string** |  | [optional] 
+**IsElementLibraryReference** | Pointer to **bool** |  | [optional] 
 **IsOnFlat** | Pointer to **bool** |  | [optional] 
 **Points** | Pointer to **[]float64** |  | [optional] 
 **SourceId** | Pointer to **string** |  | [optional] 
@@ -157,6 +158,31 @@ SetFeatureId sets FeatureId field to given value.
 `func (o *BTSketchImageDisplayData1379) HasFeatureId() bool`
 
 HasFeatureId returns a boolean if a field has been set.
+
+### GetIsElementLibraryReference
+
+`func (o *BTSketchImageDisplayData1379) GetIsElementLibraryReference() bool`
+
+GetIsElementLibraryReference returns the IsElementLibraryReference field if non-nil, zero value otherwise.
+
+### GetIsElementLibraryReferenceOk
+
+`func (o *BTSketchImageDisplayData1379) GetIsElementLibraryReferenceOk() (*bool, bool)`
+
+GetIsElementLibraryReferenceOk returns a tuple with the IsElementLibraryReference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsElementLibraryReference
+
+`func (o *BTSketchImageDisplayData1379) SetIsElementLibraryReference(v bool)`
+
+SetIsElementLibraryReference sets IsElementLibraryReference field to given value.
+
+### HasIsElementLibraryReference
+
+`func (o *BTSketchImageDisplayData1379) HasIsElementLibraryReference() bool`
+
+HasIsElementLibraryReference returns a boolean if a field has been set.
 
 ### GetIsOnFlat
 

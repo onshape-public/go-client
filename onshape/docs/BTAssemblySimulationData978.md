@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ContactBehavior** | Pointer to [**GBTSimulationContactBehavior**](GBTSimulationContactBehavior.md) |  | [optional] 
 **Loads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
 **LoadsByNodeId** | Pointer to [**map[string]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
+**RigidFeatures** | Pointer to [**[]BTMRigidFeature3076**](BTMRigidFeature3076.md) |  | [optional] 
 **SimulationFeatures** | Pointer to [**[]BTMSimulationFeature5034**](BTMSimulationFeature5034.md) |  | [optional] 
 **Simulations** | Pointer to [**[]BTAssemblySimulation2246**](BTAssemblySimulation2246.md) |  | [optional] 
 **StructuralLoads** | Pointer to [**[]BTMLoad3538**](BTMLoad3538.md) |  | [optional] 
@@ -130,6 +131,31 @@ SetLoadsByNodeId sets LoadsByNodeId field to given value.
 `func (o *BTAssemblySimulationData978) HasLoadsByNodeId() bool`
 
 HasLoadsByNodeId returns a boolean if a field has been set.
+
+### GetRigidFeatures
+
+`func (o *BTAssemblySimulationData978) GetRigidFeatures() []BTMRigidFeature3076`
+
+GetRigidFeatures returns the RigidFeatures field if non-nil, zero value otherwise.
+
+### GetRigidFeaturesOk
+
+`func (o *BTAssemblySimulationData978) GetRigidFeaturesOk() (*[]BTMRigidFeature3076, bool)`
+
+GetRigidFeaturesOk returns a tuple with the RigidFeatures field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRigidFeatures
+
+`func (o *BTAssemblySimulationData978) SetRigidFeatures(v []BTMRigidFeature3076)`
+
+SetRigidFeatures sets RigidFeatures field to given value.
+
+### HasRigidFeatures
+
+`func (o *BTAssemblySimulationData978) HasRigidFeatures() bool`
+
+HasRigidFeatures returns a boolean if a field has been set.
 
 ### GetSimulationFeatures
 

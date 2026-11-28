@@ -200,6 +200,11 @@ func (o *BTGeometryFilter130) AsBTQueryFilter183() *BTQueryFilter183 {
 	return &BTQueryFilter183{o}
 }
 
+// BTSMApplicationTypeFilter4430AsBTQueryFilter183 is a convenience function that returns BTSMApplicationTypeFilter4430 wrapped in BTQueryFilter183
+func (o *BTSMApplicationTypeFilter4430) AsBTQueryFilter183() *BTQueryFilter183 {
+	return &BTQueryFilter183{o}
+}
+
 // NewBTQueryFilter183 instantiates a new BTQueryFilter183 object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
@@ -638,6 +643,20 @@ func (dst *BTQueryFilter183) UnmarshalJSON(data []byte) error {
 		} else {
 			dst.implBTQueryFilter183 = nil
 			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTPlaneOrientationFilter1700: %s", err.Error())
+		}
+	}
+
+	// check if the discriminator value is 'BTSMApplicationTypeFilter-4430'
+	if jsonDict["btType"] == "BTSMApplicationTypeFilter-4430" {
+		// try to unmarshal JSON data into BTSMApplicationTypeFilter4430
+		var qr *BTSMApplicationTypeFilter4430
+		err = json.Unmarshal(data, &qr)
+		if err == nil {
+			dst.implBTQueryFilter183 = qr
+			return nil // data stored, return on the first match
+		} else {
+			dst.implBTQueryFilter183 = nil
+			return fmt.Errorf("failed to unmarshal BTQueryFilter183 as BTSMApplicationTypeFilter4430: %s", err.Error())
 		}
 	}
 

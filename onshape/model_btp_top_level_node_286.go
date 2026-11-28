@@ -937,6 +937,56 @@ func (o *BTPTopLevelNode286) SetSymbolName(v BTPIdentifier8) {
 	o.GetActualInstance().(getResult).SetSymbolName(v)
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *BTPTopLevelNode286) GetTopLevelType() GBTPDefinitionType {
+	type getResult interface {
+		GetTopLevelType() GBTPDefinitionType
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTopLevelType()
+	} else {
+		var de GBTPDefinitionType
+		return de
+	}
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTPTopLevelNode286) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	type getResult interface {
+		GetTopLevelTypeOk() (*GBTPDefinitionType, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetTopLevelTypeOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *BTPTopLevelNode286) HasTopLevelType() bool {
+	type getResult interface {
+		HasTopLevelType() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasTopLevelType()
+	} else {
+		return false
+	}
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *BTPTopLevelNode286) SetTopLevelType(v GBTPDefinitionType) {
+	type getResult interface {
+		SetTopLevelType(v GBTPDefinitionType)
+	}
+
+	o.GetActualInstance().(getResult).SetTopLevelType(v)
+}
+
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *BTPTopLevelNode286) UnmarshalJSON(data []byte) error {
 	var err error
@@ -1171,6 +1221,7 @@ type base_BTPTopLevelNode286 struct {
 	ForExport             *bool                       `json:"forExport,omitempty"`
 	SpaceAfterExport      *BTPSpace10                 `json:"spaceAfterExport,omitempty"`
 	SymbolName            *BTPIdentifier8             `json:"symbolName,omitempty"`
+	TopLevelType          *GBTPDefinitionType         `json:"topLevelType,omitempty"`
 }
 
 // Newbase_BTPTopLevelNode286 instantiates a new base_BTPTopLevelNode286 object
@@ -1734,6 +1785,38 @@ func (o *base_BTPTopLevelNode286) SetSymbolName(v BTPIdentifier8) {
 	o.SymbolName = &v
 }
 
+// GetTopLevelType returns the TopLevelType field value if set, zero value otherwise.
+func (o *base_BTPTopLevelNode286) GetTopLevelType() GBTPDefinitionType {
+	if o == nil || o.TopLevelType == nil {
+		var ret GBTPDefinitionType
+		return ret
+	}
+	return *o.TopLevelType
+}
+
+// GetTopLevelTypeOk returns a tuple with the TopLevelType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTPTopLevelNode286) GetTopLevelTypeOk() (*GBTPDefinitionType, bool) {
+	if o == nil || o.TopLevelType == nil {
+		return nil, false
+	}
+	return o.TopLevelType, true
+}
+
+// HasTopLevelType returns a boolean if a field has been set.
+func (o *base_BTPTopLevelNode286) HasTopLevelType() bool {
+	if o != nil && o.TopLevelType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetTopLevelType gets a reference to the given GBTPDefinitionType and assigns it to the TopLevelType field.
+func (o *base_BTPTopLevelNode286) SetTopLevelType(v GBTPDefinitionType) {
+	o.TopLevelType = &v
+}
+
 func (o base_BTPTopLevelNode286) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	serializedBTPNode7, errBTPNode7 := json.Marshal(o.BTPNode7)
@@ -1794,6 +1877,9 @@ func (o base_BTPTopLevelNode286) MarshalJSON() ([]byte, error) {
 	}
 	if o.SymbolName != nil {
 		toSerialize["symbolName"] = o.SymbolName
+	}
+	if o.TopLevelType != nil {
+		toSerialize["topLevelType"] = o.TopLevelType
 	}
 	return json.Marshal(toSerialize)
 }

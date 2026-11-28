@@ -2229,6 +2229,56 @@ func (o *BTDocumentInfo) SetPublic(v bool) {
 	o.GetActualInstance().(getResult).SetPublic(v)
 }
 
+// GetPublicLinkable returns the PublicLinkable field value if set, zero value otherwise.
+func (o *BTDocumentInfo) GetPublicLinkable() bool {
+	type getResult interface {
+		GetPublicLinkable() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPublicLinkable()
+	} else {
+		var de bool
+		return de
+	}
+}
+
+// GetPublicLinkableOk returns a tuple with the PublicLinkable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BTDocumentInfo) GetPublicLinkableOk() (*bool, bool) {
+	type getResult interface {
+		GetPublicLinkableOk() (*bool, bool)
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.GetPublicLinkableOk()
+	} else {
+		return nil, false
+	}
+}
+
+// HasPublicLinkable returns a boolean if a field has been set.
+func (o *BTDocumentInfo) HasPublicLinkable() bool {
+	type getResult interface {
+		HasPublicLinkable() bool
+	}
+
+	if tx, ok := o.GetActualInstance().(getResult); ok {
+		return tx.HasPublicLinkable()
+	} else {
+		return false
+	}
+}
+
+// SetPublicLinkable gets a reference to the given bool and assigns it to the PublicLinkable field.
+func (o *BTDocumentInfo) SetPublicLinkable(v bool) {
+	type getResult interface {
+		SetPublicLinkable(v bool)
+	}
+
+	o.GetActualInstance().(getResult).SetPublicLinkable(v)
+}
+
 // GetPublishedVersionId returns the PublishedVersionId field value if set, zero value otherwise.
 func (o *BTDocumentInfo) GetPublishedVersionId() string {
 	type getResult interface {
@@ -3017,6 +3067,7 @@ type base_BTDocumentInfo struct {
 	Permission                                *BTOldPermission      `json:"permission,omitempty"`
 	PermissionSet                             []string              `json:"permissionSet,omitempty"`
 	Public                                    *bool                 `json:"public,omitempty"`
+	PublicLinkable                            *bool                 `json:"publicLinkable,omitempty"`
 	PublishedVersionId                        *string               `json:"publishedVersionId,omitempty"`
 	RecentVersion                             *BTBaseInfo           `json:"recentVersion,omitempty"`
 	Sequence                                  *string               `json:"sequence,omitempty"`
@@ -4450,6 +4501,38 @@ func (o *base_BTDocumentInfo) SetPublic(v bool) {
 	o.Public = &v
 }
 
+// GetPublicLinkable returns the PublicLinkable field value if set, zero value otherwise.
+func (o *base_BTDocumentInfo) GetPublicLinkable() bool {
+	if o == nil || o.PublicLinkable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.PublicLinkable
+}
+
+// GetPublicLinkableOk returns a tuple with the PublicLinkable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *base_BTDocumentInfo) GetPublicLinkableOk() (*bool, bool) {
+	if o == nil || o.PublicLinkable == nil {
+		return nil, false
+	}
+	return o.PublicLinkable, true
+}
+
+// HasPublicLinkable returns a boolean if a field has been set.
+func (o *base_BTDocumentInfo) HasPublicLinkable() bool {
+	if o != nil && o.PublicLinkable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPublicLinkable gets a reference to the given bool and assigns it to the PublicLinkable field.
+func (o *base_BTDocumentInfo) SetPublicLinkable(v bool) {
+	o.PublicLinkable = &v
+}
+
 // GetPublishedVersionId returns the PublishedVersionId field value if set, zero value otherwise.
 func (o *base_BTDocumentInfo) GetPublishedVersionId() string {
 	if o == nil || o.PublishedVersionId == nil {
@@ -4999,6 +5082,9 @@ func (o base_BTDocumentInfo) MarshalJSON() ([]byte, error) {
 	}
 	if o.Public != nil {
 		toSerialize["public"] = o.Public
+	}
+	if o.PublicLinkable != nil {
+		toSerialize["publicLinkable"] = o.PublicLinkable
 	}
 	if o.PublishedVersionId != nil {
 		toSerialize["publishedVersionId"] = o.PublishedVersionId
